@@ -1,0 +1,200 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  STUDENT
+  INSTRUCTOR
+  ADMIN
+  SUPER_ADMIN
+}
+
+enum SubscriptionTier {
+  FREE
+  BASIC
+  PREMIUM
+  PRO
+}
+
+enum ExerciseType {
+  MULTIPLE_CHOICE
+  FILL_IN_THE_BLANK
+  MATCHING
+  WRITING
+  SPEAKING
+}
+
+enum ExamSectionType {
+  LISTENING
+  READING
+  WRITING
+  SPEAKING
+}
+
+model User {
+  id                String            @id @default(uuid())
+  email             String            @unique
+  passwordHash      String
+  firstName         String?
+  lastName          String?
+  role              Role              @default(STUDENT)
+  isEmailVerified   Boolean           @default(false)
+  verificationToken String?
+  resetToken        String?
+  resetTokenExpiry  DateTime?
+  createdAt         DateTime          @default(now())
+  updatedAt         DateTime          @updatedAt
+  
+  // Billing
+  stripeCustomerId  String?           @unique
+  subscriptionId    String?
+  subscriptionTier  SubscriptionTier  @default(FREE)
+  subActiveUntil    DateTime?
+  
+  // Relations
+  progress          UserProgress[]
+  examAttempts      ExamAttempt[]
+  aiUsageLogs       AIUsageLog[]
+  sessions          Session[]
+}
+
+model Session {
+  id           String   @id @default(uuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  refreshToken String   @unique
+  deviceInfo   String?
+  ipAddress    String?
+  createdAt    DateTime @default(now())
+  expiresAt    DateTime
+}
+
+model Level {
+  id          String   @id @default(uuid())
+  code        String   @unique // A1, A2, B1, B2, C1, C2
+  name        String
+  description String
+  modules     Module[]
+}
+
+model Module {
+  id          String   @id @default(uuid())
+  levelId     String
+  level       Level    @relation(fields: [levelId], references: [id], onDelete: Cascade)
+  title       String
+  description String
+  orderIndex  Int
+  lessons     Lesson[]
+}
+
+model Lesson {
+  id          String         @id @default(uuid())
+  moduleId    String
+  module      Module         @relation(fields: [moduleId], references: [id], onDelete: Cascade)
+  title       String
+  description String
+  content     Json           // Structured vocabulary, grammar, reading markdown
+  orderIndex  Int
+  exercises   Exercise[]
+  progress    UserProgress[]
+}
+
+model Exercise {
+  id          String       @id @default(uuid())
+  lessonId    String
+  lesson      Lesson       @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  type        ExerciseType
+  question    String
+  options     Json?        // Array of MCQ choices or matching elements
+  correctKey  String       // Correct string key or exact text
+  audioUrl    String?      // Optional sound prompt
+  points      Int          @default(10)
+}
+
+model UserProgress {
+  id          String   @id @default(uuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId    String
+  lesson      Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  isCompleted Boolean  @default(false)
+  score       Int      @default(0)
+  completedAt DateTime @default(now())
+
+  @@unique([userId, lessonId])
+}
+
+model TcfExam {
+  id          String       @id @default(uuid())
+  title       String
+  description String
+  isOfficial  Boolean      @default(false)
+  createdAt   DateTime     @default(now())
+  sections    TcfSection[]
+  attempts    ExamAttempt[]
+}
+
+model TcfSection {
+  id          String          @id @default(uuid())
+  examId      String
+  exam        TcfExam         @relation(fields: [examId], references: [id], onDelete: Cascade)
+  type        ExamSectionType
+  durationMin Int
+  orderIndex  Int
+  questions   TcfQuestion[]
+}
+
+model TcfQuestion {
+  id          String   @id @default(uuid())
+  sectionId   String
+  section     TcfSection @relation(fields: [sectionId], references: [id], onDelete: Cascade)
+  text        String
+  audioUrl    String?  // Listening section audio prompt
+  imageUrl    String?
+  options     Json?    // Optional MCQ choices list
+  correctKey  String?  // Exact match criteria for listening/reading parts
+  maxScore    Int      @default(1)
+  orderIndex  Int
+}
+
+model ExamAttempt {
+  id          String        @id @default(uuid())
+  userId      String
+  user        User          @relation(fields: [userId], references: [id], onDelete: Cascade)
+  examId      String
+  exam        TcfExam       @relation(fields: [examId], references: [id], onDelete: Cascade)
+  startedAt   DateTime      @default(now())
+  completedAt DateTime?
+  rawScore    Float?
+  clbLevel    String?       // Canadian Language Benchmarks (CLB 4 to CLB 10+)
+  feedbacks   AIFeedback[]
+}
+
+model AIFeedback {
+  id          String       @id @default(uuid())
+  attemptId   String
+  attempt     ExamAttempt  @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  sectionType ExamSectionType
+  overallScore Float
+  strengths   Json         // String array
+  weaknesses  Json         // String array
+  corrections Json         // Granular edits (JSON array of {original, suggested, explanation})
+  comments    String
+  createdAt   DateTime     @default(now())
+}
+
+model AIUsageLog {
+  id         String   @id @default(uuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  service    String   // whisper, elevenlabs, gpt-4o-evaluation
+  inputToken Int      @default(0)
+  outputToken Int     @default(0)
+  costUSD    Float    @default(0)
+  timestamp  DateTime @default(now())
+}

@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  evora_postgres:
+    image: postgres:15-alpine
+    container_name: evora_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: evora
+    ports:
+      - "5480:5432"
+    volumes:
+      - evora_db_data:/var/lib/postgresql/data
+
+  evora_redis:
+    image: redis:7-alpine
+    container_name: evora_redis
+    restart: always
+    ports:
+      - "6385:6379"
+    volumes:
+      - evora_redis_data:/data
+
+volumes:
+  evora_db_data:
+  evora_redis_data:
