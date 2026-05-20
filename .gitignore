@@ -1,0 +1,54 @@
+# ── Node / npm ─────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+/*/node_modules/
+*/node_modules/
+
+# ── Build artifacts ───────────────────────────────
+# Backend
+/backend/.next/
+backend/.next/
+backend/dist/
+backend/.env
+backend/.env.*      # any env files you may create
+/backend/build/
+backend/build/
+
+# Frontend (Next.js)
+frontend/.next/
+frontend/.turbo/
+frontend/.vercel/
+frontend/.env.local
+frontend/.env*
+frontend/out/
+frontend/build/
+
+# ── OS / editor ───────────────────────────────────
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# ── Generated uploads & temporary files ───────────
+/backend/uploads/
+backend/uploads/
+frontend/public/audio/
+frontend/public/uploads/
+
+# ── Prisma / database ─────────────────────────────
+/backend/prisma/dev.db
+/backend/prisma/migrations/
+prisma/dev.db
+prisma/migrations/
+
+# ── Misc ───────────────────────────────────────────
+coverage/
+*.tsbuildinfo
+*.tscache
+*.tgz
