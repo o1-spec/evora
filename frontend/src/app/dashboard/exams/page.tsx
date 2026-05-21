@@ -1,119 +1,129 @@
 'use client';
 
-import { useState } from 'react';
-import { useQuery, useMutation } from '@tanstack/react-query';
-import { motion } from 'framer-motion';
+import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
-import { FileText, Clock, Headphones, BookOpen, PenLine, Mic, ArrowRight, Trophy } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { FileText, Clock, PlayCircle, BarChart, CheckCircle2, History } from 'lucide-react';
 import api from '@/lib/api';
-
-const SECTION_ICONS: Record<string, any> = {
-  LISTENING: Headphones, READING: BookOpen, WRITING: PenLine, SPEAKING: Mic,
-};
-const SECTION_COLORS: Record<string, string> = {
-  LISTENING: '#38bdf8', READING: '#a78bfa', WRITING: '#34d399', SPEAKING: '#fb923c',
-};
 
 export default function ExamsPage() {
   const router = useRouter();
-  const [startingId, setStartingId] = useState<string | null>(null);
 
-  const { data: exams, isLoading } = useQuery({
+  const { data: exams, isLoading: loadingExams } = useQuery({
     queryKey: ['tcf-exams'],
-    queryFn: () => api.get('/tcf/exams').then(r => r.data.exams),
+    queryFn: () => api.get('/tcf/exams').then(r => r.data),
   });
 
-  const startMutation = useMutation({
-    mutationFn: (examId: string) =>
-      api.post('/tcf/attempts/start', { examId }).then(r => r.data),
-    onSuccess: (data, examId) => {
-      router.push(`/dashboard/exams/${examId}/attempt/${data.attemptId}`);
-    },
-    onError: (err: any) => {
-      alert(err?.response?.data?.error || 'Impossible de démarrer cet examen.');
-      setStartingId(null);
-    },
+  const { data: history, isLoading: loadingHistory } = useQuery({
+    queryKey: ['tcf-history'],
+    queryFn: () => api.get('/tcf/history').then(r => r.data),
   });
+
+  const startExam = async (examId: string) => {
+    try {
+      const { data } = await api.post(`/tcf/exams/${examId}/start`);
+      router.push(`/dashboard/exams/${examId}/attempt/${data.attempt.id}`);
+    } catch (err) {
+      alert('Failed to start exam. Check console.');
+      console.error(err);
+    }
+  };
 
   return (
     <div>
-      <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
+      <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} style={{ marginBottom: '3rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.5rem' }}>
-          <FileText size={24} color="hsl(250,95%,64%)" />
-          <h1 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.875rem', fontWeight: 800 }}>Simulateur TCF Canada</h1>
+          <FileText size={24} color="hsl(var(--primary))" />
+          <h1 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.875rem', fontWeight: 800 }}>TCF Canada Simulator</h1>
         </div>
-        <p style={{ color: 'hsl(220,12%,55%)', marginBottom: '2.5rem', fontSize: '0.95rem' }}>
-          Examens blancs officiels simulant fidèlement les 4 épreuves du TCF Canada. Résultats CLB automatiques.
+        <p style={{ color: 'hsl(var(--text-secondary))', fontSize: '0.95rem' }}>
+          Take full, accurately timed mock exams to prepare for the official test.
         </p>
       </motion.div>
 
-      {/* CLB Info Banner */}
-      <div className="glass" style={{ padding: '1.25rem 1.75rem', marginBottom: '2rem', borderLeft: '3px solid hsl(250,95%,64%)', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-        <Trophy size={22} color="hsl(250,95%,64%)" style={{ flexShrink: 0 }} />
-        <div>
-          <div style={{ fontWeight: 700, fontSize: '0.95rem', marginBottom: '0.2rem' }}>Niveaux CLB — Repères linguistiques canadiens</div>
-          <div style={{ fontSize: '0.83rem', color: 'hsl(220,12%,55%)' }}>
-            CLB 4–5 = A2 · CLB 6–7 = B1 · CLB 8–9 = B2 · CLB 10+ = C1/C2. Immigration Canada exige généralement CLB 7+.
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem' }} className="xl:grid-cols-3">
+        
+        {/* Main Section: Available Exams */}
+        <div style={{ gridColumn: 'span 2' }}>
+          <h2 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <PlayCircle size={20} color="hsl(var(--primary))" /> Available Mock Exams
+          </h2>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+            {loadingExams ? (
+              [...Array(3)].map((_, i) => <div key={i} className="skeleton" style={{ height: 140, borderRadius: 16 }} />)
+            ) : exams?.length === 0 ? (
+              <div className="card" style={{ padding: '3rem', textAlign: 'center', color: 'hsl(var(--text-muted))' }}>No exams available currently.</div>
+            ) : (
+              exams?.map((exam: any, i: number) => (
+                <motion.div key={exam.id} className="card hover:shadow-md transition-shadow flex flex-col sm:flex-row" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }}
+                  style={{ display: 'flex' }}>
+                  
+                  <div style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.75rem' }}>
+                      <h3 style={{ fontSize: '1.15rem', fontWeight: 700, color: 'hsl(var(--text-primary))' }}>{exam.title}</h3>
+                      {exam.isPremium && <span className="badge badge-primary" style={{ fontSize: '0.7rem' }}>Premium</span>}
+                    </div>
+                    <p style={{ fontSize: '0.9rem', color: 'hsl(var(--text-secondary))', marginBottom: '1.25rem' }}>{exam.description}</p>
+                    
+                    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.85rem', color: 'hsl(var(--text-muted))' }}><Clock size={14} /> ~2h 45m</div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.85rem', color: 'hsl(var(--text-muted))' }}><FileText size={14} /> 4 Sections</div>
+                    </div>
+                  </div>
+
+                  <div style={{ padding: '1.5rem', backgroundColor: 'hsl(var(--bg-base))', display: 'flex', alignItems: 'center', justifyContent: 'center', borderLeft: '1px solid hsl(var(--border))' }} className="sm:border-t-0 border-t">
+                    <button onClick={() => startExam(exam.id)} className="btn-primary" style={{ width: '100%', whiteSpace: 'nowrap' }}>
+                      Start Exam
+                    </button>
+                  </div>
+                </motion.div>
+              ))
+            )}
           </div>
         </div>
-      </div>
 
-      {isLoading ? (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-          {[...Array(2)].map((_, i) => <div key={i} className="skeleton" style={{ height: 220, borderRadius: 16 }} />)}
-        </div>
-      ) : (
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-          {(exams || []).map((exam: any, i: number) => (
-            <motion.div key={exam.id} className="glass" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }} style={{ padding: '2rem' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
-                <div>
-                  {exam.isOfficial && <span className="badge badge-primary" style={{ marginBottom: '0.625rem' }}>✓ Officiel</span>}
-                  <h2 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.25rem', fontWeight: 800, marginBottom: '0.375rem' }}>{exam.title}</h2>
-                  <p style={{ color: 'hsl(220,12%,55%)', fontSize: '0.875rem' }}>{exam.description}</p>
-                </div>
+        {/* Sidebar: History */}
+        <div>
+          <div className="card" style={{ padding: '1.5rem', position: 'sticky', top: '6rem' }}>
+            <h2 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', borderBottom: '1px solid hsl(var(--border))', paddingBottom: '1rem' }}>
+              <History size={18} color="hsl(var(--text-secondary))" /> Recent Attempts
+            </h2>
+
+            {loadingHistory ? (
+              <div className="skeleton" style={{ height: 100 }} />
+            ) : history?.length === 0 ? (
+              <div style={{ textAlign: 'center', padding: '2rem 0', color: 'hsl(var(--text-muted))', fontSize: '0.9rem' }}>
+                You haven't taken any exams yet. Start your first mock exam to see your history here!
               </div>
-
-              {/* Sections */}
-              <div style={{ display: 'flex', gap: '0.875rem', flexWrap: 'wrap', marginBottom: '1.75rem' }}>
-                {exam.sections?.map((sec: any) => {
-                  const Icon = SECTION_ICONS[sec.type] || FileText;
-                  const color = SECTION_COLORS[sec.type] || '#818cf8';
-                  return (
-                    <div key={sec.id} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.875rem', borderRadius: '0.5rem', background: `${color}15`, border: `1px solid ${color}30` }}>
-                      <Icon size={15} color={color} />
-                      <span style={{ fontSize: '0.8rem', fontWeight: 600, color }}>{sec.type}</span>
-                      <span style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', fontSize: '0.75rem', color: 'hsl(220,12%,55%)' }}>
-                        <Clock size={12} /> {sec.durationMin} min
+            ) : (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                {history?.slice(0, 5).map((attempt: any) => (
+                  <div key={attempt.id} style={{ padding: '1rem', borderRadius: '0.75rem', backgroundColor: 'hsl(var(--bg-base))', border: '1px solid hsl(var(--border))' }}>
+                    <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'hsl(var(--text-primary))', marginBottom: '0.25rem' }}>{attempt.exam.title}</div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <span style={{ fontSize: '0.8rem', color: 'hsl(var(--text-secondary))' }}>
+                        {new Date(attempt.startedAt).toLocaleDateString()}
                       </span>
+                      {attempt.status === 'COMPLETED' ? (
+                        <span className="badge badge-accent" style={{ fontSize: '0.7rem' }}>Completed</span>
+                      ) : (
+                        <span className="badge badge-secondary" style={{ fontSize: '0.7rem' }}>In Progress</span>
+                      )}
                     </div>
-                  );
-                })}
+                    {attempt.status === 'COMPLETED' && (
+                      <button onClick={() => router.push(`/dashboard/exams/report/${attempt.id}`)} className="btn-ghost" style={{ width: '100%', marginTop: '0.75rem', padding: '0.4rem', fontSize: '0.8rem', backgroundColor: 'white', border: '1px solid hsl(var(--border))' }}>
+                        View Report
+                      </button>
+                    )}
+                  </div>
+                ))}
               </div>
-
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap' }}>
-                <div style={{ fontSize: '0.85rem', color: 'hsl(220,12%,50%)' }}>
-                  Durée totale : {exam.sections?.reduce((a: number, s: any) => a + s.durationMin, 0)} min
-                </div>
-                <button id={`start-exam-${exam.id}`}
-                  onClick={() => { setStartingId(exam.id); startMutation.mutate(exam.id); }}
-                  disabled={startMutation.isPending && startingId === exam.id}
-                  className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  {startMutation.isPending && startingId === exam.id ? 'Démarrage...' : <> Commencer l'examen <ArrowRight size={16} /></>}
-                </button>
-              </div>
-            </motion.div>
-          ))}
-
-          {(!exams || exams.length === 0) && (
-            <div className="glass" style={{ padding: '3rem', textAlign: 'center' }}>
-              <FileText size={48} color="hsl(220,12%,35%)" style={{ margin: '0 auto 1rem', display: 'block' }} />
-              <p style={{ color: 'hsl(220,12%,50%)' }}>Aucun examen disponible. Assurez-vous que le backend est démarré.</p>
-            </div>
-          )}
+            )}
+          </div>
         </div>
-      )}
+
+      </div>
     </div>
   );
 }

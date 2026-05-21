@@ -1,137 +1,167 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Globe, BookOpen, FileText, BarChart3, CreditCard, LogOut, Menu, X, Brain, User } from 'lucide-react';
+import { useQuery } from '@tanstack/react-query';
+import { BookOpen, FileText, BarChart3, CreditCard, LogOut, Menu, X, Brain, Globe, ShieldCheck } from 'lucide-react';
 import { useAuthStore } from '@/store/useAuthStore';
+import api from '@/lib/api';
 
-const NAV = [
-  { href: '/dashboard/academy', label: 'Académie', icon: BookOpen },
-  { href: '/dashboard/exams', label: 'TCF Canada', icon: FileText },
-  { href: '/dashboard/tutor', label: 'Tuteur IA', icon: Brain },
-  { href: '/dashboard/progress', label: 'Progression', icon: BarChart3 },
-  { href: '/dashboard/billing', label: 'Abonnement', icon: CreditCard },
+const NAV_LINKS = [
+  { href: '/dashboard/academy', label: 'Academy', icon: BookOpen },
+  { href: '/dashboard/exams', label: 'TCF Simulator', icon: FileText },
+  { href: '/dashboard/tutor', label: 'AI Tutor', icon: Brain },
+  { href: '/dashboard/progress', label: 'Progress', icon: BarChart3 },
+  { href: '/dashboard/billing', label: 'Subscription', icon: CreditCard },
 ];
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
   const router = useRouter();
-  const { user, isAuthenticated, loadFromStorage, logout } = useAuthStore();
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const pathname = usePathname();
+  const { user, logout } = useAuthStore();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => { loadFromStorage(); }, []);
+  // Validate session on mount
   useEffect(() => {
-    if (!isAuthenticated && typeof window !== 'undefined') {
-      const token = localStorage.getItem('accessToken');
-      if (!token) router.push('/login');
-    }
-  }, [isAuthenticated]);
+    if (!user) router.push('/login');
+  }, [user, router]);
 
-  const handleLogout = async () => { await logout(); router.push('/login'); };
+  const { data: profile } = useQuery({
+    queryKey: ['user-profile'],
+    queryFn: () => api.get('/auth/profile').then(r => r.data.user),
+    enabled: !!user,
+  });
 
-  const tierColors: Record<string, string> = {
-    FREE: 'hsl(220,12%,55%)', BASIC: 'hsl(162,82%,50%)', PREMIUM: 'hsl(250,95%,64%)', PRO: 'hsl(37,95%,58%)',
+  const handleLogout = async () => {
+    await logout();
+    router.push('/');
   };
 
-  const SidebarContent = () => (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '1.5rem 1rem' }}>
-      {/* Logo */}
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '2rem', padding: '0 0.5rem' }}>
-        <div style={{ width: 34, height: 34, borderRadius: 9, background: 'linear-gradient(135deg, hsl(250,95%,64%), hsl(162,82%,50%))', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-          <Globe size={18} color="white" />
-        </div>
-        <span style={{ fontFamily: 'Outfit,sans-serif', fontWeight: 800, fontSize: '1.15rem' }}>Évora</span>
-      </div>
-
-      {/* Nav */}
-      <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem', flex: 1 }}>
-        {NAV.map(({ href, label, icon: Icon }) => {
-          const active = pathname.startsWith(href);
-          return (
-            <Link key={href} href={href} onClick={() => setSidebarOpen(false)}
-              style={{
-                display: 'flex', alignItems: 'center', gap: '0.75rem',
-                padding: '0.7rem 0.875rem', borderRadius: '0.625rem', textDecoration: 'none',
-                fontWeight: active ? 600 : 400, fontSize: '0.925rem',
-                background: active ? 'hsla(250,95%,64%,0.15)' : 'transparent',
-                color: active ? 'hsl(250,95%,72%)' : 'hsl(220,12%,65%)',
-                transition: 'all 0.15s',
-                borderLeft: active ? '2px solid hsl(250,95%,64%)' : '2px solid transparent',
-              }}>
-              <Icon size={18} />
-              {label}
-            </Link>
-          );
-        })}
-      </nav>
-
-      {/* User */}
-      <div className="glass" style={{ padding: '1rem', marginTop: '1rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '0.875rem' }}>
-          <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'linear-gradient(135deg, hsl(250,95%,64%), hsl(162,82%,50%))', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-            <User size={16} color="white" />
-          </div>
-          <div style={{ minWidth: 0 }}>
-            <div style={{ fontSize: '0.875rem', fontWeight: 600, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-              {user?.firstName || user?.email?.split('@')[0] || 'Étudiant'}
-            </div>
-            <div style={{ fontSize: '0.75rem', fontWeight: 600, color: tierColors[user?.subscriptionTier || 'FREE'] }}>
-              {user?.subscriptionTier || 'FREE'}
-            </div>
-          </div>
-        </div>
-        <button onClick={handleLogout} style={{ width: '100%', display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0.75rem', background: 'rgba(239,68,68,0.1)', border: '1px solid rgba(239,68,68,0.2)', borderRadius: '0.5rem', color: 'hsl(0,84%,65%)', fontSize: '0.875rem', cursor: 'pointer', fontWeight: 500 }}>
-          <LogOut size={15} /> Déconnexion
-        </button>
-      </div>
-    </div>
-  );
+  if (!user) return null;
 
   return (
-    <div style={{ display: 'flex', minHeight: '100vh', background: 'hsl(225,20%,6%)' }}>
-      {/* Desktop Sidebar */}
-      <aside style={{ width: 240, flexShrink: 0, borderRight: '1px solid rgba(255,255,255,0.07)', position: 'sticky', top: 0, height: '100vh', display: 'flex', flexDirection: 'column' }} className="hidden-mobile">
-        <SidebarContent />
+    <div style={{ minHeight: '100vh', display: 'flex', backgroundColor: 'hsl(var(--bg-base))' }}>
+
+      {/* SIDEBAR (Desktop) */}
+      <aside style={{
+        width: 280, backgroundColor: 'white', borderRight: '1px solid hsl(var(--border))',
+        display: 'flex', flexDirection: 'column', position: 'fixed', height: '100vh', zIndex: 40
+      }} className="hidden lg:flex">
+
+        {/* Brand */}
+        <div style={{ height: '5rem', display: 'flex', alignItems: 'center', padding: '0 1.5rem', borderBottom: '1px solid hsl(var(--border))' }}>
+          <Link href="/dashboard/academy" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
+            <div style={{ width: 32, height: 32, borderRadius: 8, backgroundColor: 'hsl(var(--primary))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Globe size={18} color="white" />
+            </div>
+            <span style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 800, fontSize: '1.25rem', color: 'hsl(var(--text-primary))' }}>Évora</span>
+          </Link>
+        </div>
+
+        {/* Navigation */}
+        <nav style={{ flex: 1, padding: '1.5rem 1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+          {NAV_LINKS.map(link => {
+            const isActive = pathname.startsWith(link.href);
+            return (
+              <Link key={link.href} href={link.href} style={{
+                display: 'flex', alignItems: 'center', gap: '0.875rem', padding: '0.75rem 1rem', borderRadius: '0.75rem',
+                backgroundColor: isActive ? 'hsl(var(--primary-light))' : 'transparent',
+                color: isActive ? 'hsl(var(--primary-hover))' : 'hsl(var(--text-secondary))',
+                fontWeight: isActive ? 600 : 500, transition: 'all 0.2s', textDecoration: 'none'
+              }}>
+                <link.icon size={20} color={isActive ? 'hsl(var(--primary))' : 'currentColor'} />
+                {link.label}
+              </Link>
+            );
+          })}
+        </nav>
+
+        {/* User Card */}
+        <div style={{ padding: '1.5rem 1rem', borderTop: '1px solid hsl(var(--border))' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem', padding: '0.5rem' }}>
+            <div style={{ width: 40, height: 40, borderRadius: '50%', backgroundColor: 'hsl(var(--primary))', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 600, fontSize: '1.1rem', textTransform: 'uppercase' }}>
+              {user.firstName?.[0] || user.email[0]}
+            </div>
+            <div style={{ flex: 1, minWidth: 0 }}>
+              <div style={{ fontWeight: 600, fontSize: '0.9rem', color: 'hsl(var(--text-primary))', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                {user.firstName ? `${user.firstName} ${user.lastName || ''}` : user.email.split('@')[0]}
+              </div>
+              <div style={{ fontSize: '0.75rem', color: 'hsl(var(--text-secondary))' }}>
+                {profile?.subscriptionTier || user.subscriptionTier} Plan
+              </div>
+            </div>
+          </div>
+          <button onClick={handleLogout} style={{
+            display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.75rem 1rem', width: '100%',
+            borderRadius: '0.75rem', border: 'none', background: 'transparent', color: 'hsl(var(--text-secondary))',
+            fontWeight: 500, cursor: 'pointer', transition: 'all 0.2s', textAlign: 'left'
+          }} onMouseOver={e => e.currentTarget.style.backgroundColor = 'hsl(var(--bg-base))'} onMouseOut={e => e.currentTarget.style.backgroundColor = 'transparent'}>
+            <LogOut size={18} /> Sign out
+          </button>
+        </div>
       </aside>
 
-      {/* Mobile drawer */}
-      <AnimatePresence>
-        {sidebarOpen && (
-          <>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-              onClick={() => setSidebarOpen(false)}
-              style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.6)', zIndex: 40 }} />
-            <motion.aside initial={{ x: -280 }} animate={{ x: 0 }} exit={{ x: -280 }} transition={{ type: 'spring', damping: 28, stiffness: 260 }}
-              style={{ position: 'fixed', left: 0, top: 0, bottom: 0, width: 260, zIndex: 50, background: 'hsl(226,20%,9%)', borderRight: '1px solid rgba(255,255,255,0.08)' }}>
-              <div style={{ position: 'absolute', top: 16, right: 16 }}>
-                <button onClick={() => setSidebarOpen(false)} style={{ background: 'rgba(255,255,255,0.06)', border: 'none', borderRadius: 8, padding: '6px', cursor: 'pointer', color: 'white', display: 'flex' }}>
-                  <X size={18} />
-                </button>
-              </div>
-              <SidebarContent />
-            </motion.aside>
-          </>
-        )}
-      </AnimatePresence>
-
-      {/* Main */}
-      <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
-        {/* Mobile topbar */}
-        <header style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '1rem 1.25rem', borderBottom: '1px solid rgba(255,255,255,0.06)', position: 'sticky', top: 0, zIndex: 30, background: 'hsl(226,20%,7%)', backdropFilter: 'blur(20px)' }}>
-          <button onClick={() => setSidebarOpen(true)} style={{ background: 'rgba(255,255,255,0.06)', border: 'none', borderRadius: 8, padding: '7px', cursor: 'pointer', color: 'white', display: 'flex' }}>
-            <Menu size={20} />
-          </button>
-          <span style={{ fontFamily: 'Outfit,sans-serif', fontWeight: 700, fontSize: '1rem' }}>Évora</span>
-        </header>
-
-        <main style={{ flex: 1, padding: '2rem 1.5rem', maxWidth: 1200, width: '100%', margin: '0 auto' }}>
-          {children}
-        </main>
+      {/* MOBILE HEADER */}
+      <div style={{
+        position: 'fixed', top: 0, left: 0, right: 0, height: '4rem', backgroundColor: 'white', borderBottom: '1px solid hsl(var(--border))',
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1rem', zIndex: 40
+      }} className="lg:hidden">
+        <Link href="/dashboard/academy" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
+          <div style={{ width: 28, height: 28, borderRadius: 6, backgroundColor: 'hsl(var(--primary))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Globe size={16} color="white" />
+          </div>
+          <span style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 800, fontSize: '1.1rem', color: 'hsl(var(--text-primary))' }}>Évora</span>
+        </Link>
+        <button onClick={() => setIsMobileMenuOpen(true)} style={{ background: 'transparent', border: 'none', color: 'hsl(var(--text-primary))' }}>
+          <Menu size={24} />
+        </button>
       </div>
 
-      <style>{`.hidden-mobile { display: flex; } @media (max-width: 768px) { .hidden-mobile { display: none !important; } }`}</style>
+      {/* MOBILE MENU DRAWER */}
+      {isMobileMenuOpen && (
+        <div style={{ position: 'fixed', inset: 0, zIndex: 50, display: 'flex' }} className="lg:hidden">
+          <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0,0,0,0.5)' }} onClick={() => setIsMobileMenuOpen(false)} />
+          <div style={{ position: 'relative', width: 280, backgroundColor: 'white', height: '100%', display: 'flex', flexDirection: 'column' }}>
+            <div style={{ height: '4rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1rem', borderBottom: '1px solid hsl(var(--border))' }}>
+              <span style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 800, fontSize: '1.25rem', color: 'hsl(var(--text-primary))' }}>Menu</span>
+              <button onClick={() => setIsMobileMenuOpen(false)} style={{ background: 'transparent', border: 'none', color: 'hsl(var(--text-secondary))' }}><X size={24} /></button>
+            </div>
+            <nav style={{ flex: 1, padding: '1rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+              {NAV_LINKS.map(link => {
+                const isActive = pathname.startsWith(link.href);
+                return (
+                  <Link key={link.href} href={link.href} onClick={() => setIsMobileMenuOpen(false)} style={{
+                    display: 'flex', alignItems: 'center', gap: '0.875rem', padding: '0.75rem 1rem', borderRadius: '0.75rem',
+                    backgroundColor: isActive ? 'hsl(var(--primary-light))' : 'transparent',
+                    color: isActive ? 'hsl(var(--primary-hover))' : 'hsl(var(--text-secondary))',
+                    fontWeight: isActive ? 600 : 500, textDecoration: 'none'
+                  }}>
+                    <link.icon size={20} color={isActive ? 'hsl(var(--primary))' : 'currentColor'} />
+                    {link.label}
+                  </Link>
+                );
+              })}
+            </nav>
+            <div style={{ padding: '1rem', borderTop: '1px solid hsl(var(--border))' }}>
+              <button onClick={handleLogout} style={{
+                display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.75rem 1rem', width: '100%',
+                borderRadius: '0.75rem', border: 'none', background: 'transparent', color: 'hsl(var(--text-secondary))',
+                fontWeight: 500, textAlign: 'left'
+              }}>
+                <LogOut size={18} /> Sign out
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* MAIN CONTENT AREA */}
+      <main style={{ flex: 1, padding: '2rem', display: 'flex', flexDirection: 'column' }} className="lg:pl-[280px] pt-20 lg:pt-8">
+        <div style={{ maxWidth: 1000, width: '100%', margin: '0 auto', flex: 1 }}>
+          {children}
+        </div>
+      </main>
     </div>
   );
 }

@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useMutation } from '@tanstack/react-query';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Brain, Send, Mic, MicOff, Loader2, Volume2 } from 'lucide-react';
+import { Brain, Send, Mic, MicOff, Loader2 } from 'lucide-react';
 import api from '@/lib/api';
 import { useAuthStore } from '@/store/useAuthStore';
 
@@ -88,16 +88,16 @@ export default function TutorPage() {
     <div style={{ display: 'flex', flexDirection: 'column', height: 'calc(100vh - 5rem)', maxWidth: 780, margin: '0 auto' }}>
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', flexShrink: 0 }}>
-        <div style={{ width: 48, height: 48, borderRadius: 14, background: 'linear-gradient(135deg, hsl(250,95%,64%), hsl(162,82%,50%))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={{ width: 48, height: 48, borderRadius: 14, backgroundColor: 'hsl(var(--primary))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
           <Brain size={24} color="white" />
         </div>
         <div>
-          <h1 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.5rem', fontWeight: 800 }}>Tuteur Évora IA</h1>
-          <p style={{ color: 'hsl(220,12%,55%)', fontSize: '0.85rem' }}>Votre assistant personnel 24/7 · Posez n'importe quelle question</p>
+          <h1 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.5rem', fontWeight: 800 }}>Évora AI Tutor</h1>
+          <p style={{ color: 'hsl(var(--text-secondary))', fontSize: '0.85rem' }}>Your personal 24/7 assistant · Ask any question</p>
         </div>
         <div style={{ marginLeft: 'auto' }}>
-          <span className={`badge ${isLoading ? 'badge-warning' : 'badge-accent'}`}>
-            {isLoading ? '● Réflexion...' : '● En ligne'}
+          <span className={`badge ${isLoading ? 'badge-secondary' : 'badge-primary'}`} style={{ backgroundColor: isLoading ? 'transparent' : undefined }}>
+            {isLoading ? '● Thinking...' : '● Online'}
           </span>
         </div>
       </div>
@@ -109,16 +109,17 @@ export default function TutorPage() {
             <motion.div key={i} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}
               style={{ display: 'flex', justifyContent: msg.role === 'user' ? 'flex-end' : 'flex-start' }}>
               {msg.role === 'assistant' && (
-                <div style={{ width: 30, height: 30, borderRadius: '50%', background: 'linear-gradient(135deg, hsl(250,95%,64%), hsl(162,82%,50%))', display: 'flex', alignItems: 'center', justifyContent: 'center', marginRight: '0.625rem', flexShrink: 0, marginTop: 4 }}>
+                <div style={{ width: 30, height: 30, borderRadius: '50%', backgroundColor: 'hsl(var(--primary))', display: 'flex', alignItems: 'center', justifyContent: 'center', marginRight: '0.625rem', flexShrink: 0, marginTop: 4 }}>
                   <Brain size={14} color="white" />
                 </div>
               )}
               <div style={{
                 maxWidth: '80%', padding: '0.875rem 1.125rem', borderRadius: msg.role === 'user' ? '1rem 1rem 0.25rem 1rem' : '1rem 1rem 1rem 0.25rem',
-                background: msg.role === 'user' ? 'linear-gradient(135deg, hsl(250,95%,64%), hsl(248,87%,55%))' : 'rgba(255,255,255,0.06)',
-                border: msg.role === 'user' ? 'none' : '1px solid rgba(255,255,255,0.08)',
+                backgroundColor: msg.role === 'user' ? 'hsl(var(--primary))' : 'white',
+                border: msg.role === 'user' ? 'none' : '1px solid hsl(var(--border))',
                 fontSize: '0.9rem', lineHeight: 1.75, whiteSpace: 'pre-wrap',
-                color: msg.role === 'user' ? 'white' : 'hsl(220,12%,80%)',
+                color: msg.role === 'user' ? 'white' : 'hsl(var(--text-primary))',
+                boxShadow: '0 1px 2px rgba(0,0,0,0.05)',
               }}>
                 {msg.content}
               </div>
@@ -128,11 +129,11 @@ export default function TutorPage() {
 
         {isLoading && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
-            <div style={{ width: 30, height: 30, borderRadius: '50%', background: 'linear-gradient(135deg, hsl(250,95%,64%), hsl(162,82%,50%))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ width: 30, height: 30, borderRadius: '50%', backgroundColor: 'hsl(var(--primary))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Brain size={14} color="white" />
             </div>
-            <div style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '1rem 1rem 1rem 0.25rem', padding: '0.875rem 1.125rem' }}>
-              <Loader2 size={18} style={{ animation: 'spin 1s linear infinite', color: 'hsl(250,95%,64%)' }} />
+            <div style={{ backgroundColor: 'white', border: '1px solid hsl(var(--border))', borderRadius: '1rem 1rem 1rem 0.25rem', padding: '0.875rem 1.125rem', boxShadow: '0 1px 2px rgba(0,0,0,0.05)' }}>
+              <Loader2 size={18} className="animate-spin" style={{ color: 'hsl(var(--primary))' }} />
             </div>
           </motion.div>
         )}
@@ -140,24 +141,22 @@ export default function TutorPage() {
       </div>
 
       {/* Input */}
-      <div className="glass" style={{ padding: '0.875rem 1rem', display: 'flex', gap: '0.75rem', alignItems: 'flex-end', flexShrink: 0 }}>
+      <div className="card" style={{ padding: '0.875rem 1rem', display: 'flex', gap: '0.75rem', alignItems: 'flex-end', flexShrink: 0, backgroundColor: 'white' }}>
         <textarea value={input} onChange={e => setInput(e.target.value)} onKeyDown={handleKeyDown}
-          placeholder="Posez votre question en français... (Entrée pour envoyer)"
-          rows={2} style={{ flex: 1, background: 'transparent', border: 'none', outline: 'none', resize: 'none', color: 'hsl(220,18%,92%)', fontSize: '0.9rem', fontFamily: 'Inter,sans-serif', lineHeight: 1.6 }} />
+          placeholder="Ask a question in French... (Enter to send)"
+          rows={2} style={{ flex: 1, background: 'transparent', border: 'none', outline: 'none', resize: 'none', color: 'hsl(var(--text-primary))', fontSize: '0.95rem', fontFamily: 'Inter,sans-serif', lineHeight: 1.6 }} />
 
         <div style={{ display: 'flex', gap: '0.5rem', flexShrink: 0 }}>
           <button id="mic-btn" onClick={toggleRecording} title="Enregistrer votre voix"
-            style={{ width: 40, height: 40, borderRadius: '50%', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', background: isRecording ? 'hsla(0,84%,60%,0.2)' : 'rgba(255,255,255,0.07)', color: isRecording ? 'hsl(0,84%,65%)' : 'hsl(220,12%,60%)', transition: 'all 0.2s', flexShrink: 0 }}>
+            style={{ width: 40, height: 40, borderRadius: '50%', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: isRecording ? 'hsla(0, 84%, 60%, 0.1)' : 'hsl(var(--bg-base))', color: isRecording ? 'hsl(0, 84%, 60%)' : 'hsl(var(--text-secondary))', transition: 'all 0.2s', flexShrink: 0 }}>
             {isRecording ? <MicOff size={18} /> : <Mic size={18} />}
           </button>
           <button id="send-btn" onClick={sendMessage} disabled={!input.trim() || isLoading}
-            style={{ width: 40, height: 40, borderRadius: '50%', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', background: input.trim() ? 'hsl(250,95%,64%)' : 'rgba(255,255,255,0.06)', color: 'white', transition: 'all 0.2s', flexShrink: 0 }}>
+            style={{ width: 40, height: 40, borderRadius: '50%', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: input.trim() ? 'hsl(var(--primary))' : 'hsl(var(--bg-base))', color: input.trim() ? 'white' : 'hsl(var(--text-muted))', transition: 'all 0.2s', flexShrink: 0 }}>
             <Send size={17} />
           </button>
         </div>
       </div>
-
-      <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
     </div>
   );
 }

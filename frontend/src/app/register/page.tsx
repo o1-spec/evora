@@ -1,92 +1,162 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Globe, Eye, EyeOff, Loader2 } from 'lucide-react';
+import { Globe, ArrowRight, Loader2, Mail, Lock, User } from 'lucide-react';
 import { useAuthStore } from '@/store/useAuthStore';
+import api from '@/lib/api';
 
 export default function RegisterPage() {
   const router = useRouter();
-  const { register, isLoading } = useAuthStore();
-  const [form, setForm] = useState({ firstName: '', lastName: '', email: '', password: '' });
-  const [showPassword, setShowPassword] = useState(false);
+  const { register } = useAuthStore();
+  const [formData, setFormData] = useState({ firstName: '', lastName: '', email: '', password: '' });
   const [error, setError] = useState('');
-
-  const set = (k: string) => (e: React.ChangeEvent<HTMLInputElement>) =>
-    setForm(prev => ({ ...prev, [k]: e.target.value }));
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    if (form.password.length < 8) { setError('Le mot de passe doit comporter au moins 8 caractères.'); return; }
+    setIsLoading(true);
+
     try {
-      await register(form);
+      await register(formData);
       router.push('/dashboard/academy');
     } catch (err: any) {
-      setError(err?.response?.data?.error || 'Erreur lors de l\'inscription.');
+      setError(err.response?.data?.error || 'Failed to create account.');
+    } finally {
+      setIsLoading(false);
     }
   };
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
   return (
-    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'hsl(225,20%,6%)', padding: '2rem', position: 'relative', overflow: 'hidden' }}>
-      <div style={{ position: 'absolute', top: '-10%', right: '20%', width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, hsla(250,95%,64%,0.1) 0%, transparent 70%)', pointerEvents: 'none' }} />
+    <div style={{ minHeight: '100vh', display: 'flex', backgroundColor: 'hsl(var(--bg-base))' }}>
+      
+      {/* Left side - Visual */}
+      <div style={{ flex: 1, backgroundColor: 'hsl(var(--primary-light))', display: 'none', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '4rem', position: 'relative', overflow: 'hidden' }} className="lg:flex">
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'radial-gradient(circle at center, hsla(221, 83%, 53%, 0.1) 0%, transparent 70%)' }} />
+        
+        <div style={{ maxWidth: 480, position: 'relative', zIndex: 10, textAlign: 'center' }}>
+          <h2 style={{ fontSize: '2.5rem', fontFamily: 'Outfit, sans-serif', fontWeight: 800, color: 'hsl(var(--primary-hover))', marginBottom: '1.5rem', lineHeight: 1.2 }}>
+            Start your TCF Canada preparation today.
+          </h2>
+          <p style={{ fontSize: '1.1rem', color: 'hsl(var(--primary))', opacity: 0.8 }}>
+            Create a free account to access authentic mock exams and interactive French lessons.
+          </p>
+        </div>
+      </div>
 
-      <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-        className="glass-strong" style={{ width: '100%', maxWidth: 480, padding: '2.75rem 2.5rem' }}>
-
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '2rem' }}>
-          <div style={{ width: 36, height: 36, borderRadius: 10, background: 'linear-gradient(135deg, hsl(250,95%,64%), hsl(162,82%,50%))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Globe size={20} color="white" />
-          </div>
-          <span style={{ fontFamily: 'Outfit,sans-serif', fontWeight: 800, fontSize: '1.25rem' }}>Évora</span>
+      {/* Right side - Form */}
+      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: '2rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'flex-end', width: '100%' }}>
+          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
+            <div style={{ width: 32, height: 32, borderRadius: 8, backgroundColor: 'hsl(var(--primary))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Globe size={18} color="white" />
+            </div>
+            <span style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 800, fontSize: '1.25rem', color: 'hsl(var(--text-primary))' }}>Évora</span>
+          </Link>
         </div>
 
-        <h1 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.75rem', fontWeight: 800, marginBottom: '0.5rem' }}>Créez votre compte 🚀</h1>
-        <p style={{ color: 'hsl(220,12%,55%)', fontSize: '0.9rem', marginBottom: '2rem' }}>Gratuit pour toujours. Évoluez quand vous êtes prêt.</p>
+        <div style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }} style={{ width: '100%', maxWidth: 440 }}>
+            <h1 style={{ fontSize: '2rem', marginBottom: '0.5rem', color: 'hsl(var(--text-primary))' }}>Create an account</h1>
+            <p style={{ color: 'hsl(var(--text-secondary))', marginBottom: '2.5rem' }}>Join Évora and start improving your French skills.</p>
 
-        {error && (
-          <div style={{ background: 'hsla(0,84%,60%,0.12)', border: '1px solid hsla(0,84%,60%,0.3)', borderRadius: 8, padding: '0.75rem 1rem', marginBottom: '1.5rem', color: 'hsl(0,84%,70%)', fontSize: '0.875rem' }}>{error}</div>
-        )}
+            {error && (
+              <div style={{ backgroundColor: 'hsla(0, 84%, 60%, 0.1)', color: 'hsl(0, 84%, 60%)', padding: '0.875rem', borderRadius: '0.75rem', marginBottom: '1.5rem', fontSize: '0.9rem', border: '1px solid hsla(0, 84%, 60%, 0.2)' }}>
+                {error}
+              </div>
+            )}
 
-        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-            <div>
-              <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.5rem', color: 'hsl(220,12%,75%)' }}>Prénom</label>
-              <input id="firstName" type="text" value={form.firstName} onChange={set('firstName')} placeholder="Marie" className="input-field" />
-            </div>
-            <div>
-              <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.5rem', color: 'hsl(220,12%,75%)' }}>Nom</label>
-              <input id="lastName" type="text" value={form.lastName} onChange={set('lastName')} placeholder="Dupont" className="input-field" />
-            </div>
-          </div>
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              <div style={{ display: 'flex', gap: '1rem' }}>
+                <div style={{ flex: 1 }}>
+                  <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, color: 'hsl(var(--text-primary))', marginBottom: '0.5rem' }}>First name</label>
+                  <div style={{ position: 'relative' }}>
+                    <User size={18} color="hsl(var(--text-muted))" style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)' }} />
+                    <input
+                      type="text"
+                      name="firstName"
+                      required
+                      value={formData.firstName}
+                      onChange={handleChange}
+                      className="input-field"
+                      style={{ paddingLeft: '2.75rem' }}
+                      placeholder="Jane"
+                    />
+                  </div>
+                </div>
+                <div style={{ flex: 1 }}>
+                  <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, color: 'hsl(var(--text-primary))', marginBottom: '0.5rem' }}>Last name</label>
+                  <div style={{ position: 'relative' }}>
+                    <User size={18} color="hsl(var(--text-muted))" style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)' }} />
+                    <input
+                      type="text"
+                      name="lastName"
+                      required
+                      value={formData.lastName}
+                      onChange={handleChange}
+                      className="input-field"
+                      style={{ paddingLeft: '2.75rem' }}
+                      placeholder="Doe"
+                    />
+                  </div>
+                </div>
+              </div>
 
-          <div>
-            <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.5rem', color: 'hsl(220,12%,75%)' }}>Adresse email</label>
-            <input id="email" type="email" value={form.email} onChange={set('email')} placeholder="vous@exemple.com" className="input-field" required />
-          </div>
+              <div>
+                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, color: 'hsl(var(--text-primary))', marginBottom: '0.5rem' }}>Email address</label>
+                <div style={{ position: 'relative' }}>
+                  <Mail size={18} color="hsl(var(--text-muted))" style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)' }} />
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="input-field"
+                    style={{ paddingLeft: '2.75rem' }}
+                    placeholder="you@example.com"
+                  />
+                </div>
+              </div>
 
-          <div>
-            <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, marginBottom: '0.5rem', color: 'hsl(220,12%,75%)' }}>Mot de passe</label>
-            <div style={{ position: 'relative' }}>
-              <input id="password" type={showPassword ? 'text' : 'password'} value={form.password} onChange={set('password')} placeholder="Min. 8 caractères" className="input-field" style={{ paddingRight: '3rem' }} required />
-              <button type="button" onClick={() => setShowPassword(!showPassword)} style={{ position: 'absolute', right: '0.875rem', top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', cursor: 'pointer', color: 'hsl(220,12%,50%)', display: 'flex' }}>
-                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              <div>
+                <label style={{ display: 'block', fontSize: '0.875rem', fontWeight: 500, color: 'hsl(var(--text-primary))', marginBottom: '0.5rem' }}>Password</label>
+                <div style={{ position: 'relative' }}>
+                  <Lock size={18} color="hsl(var(--text-muted))" style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)' }} />
+                  <input
+                    type="password"
+                    name="password"
+                    required
+                    value={formData.password}
+                    onChange={handleChange}
+                    className="input-field"
+                    style={{ paddingLeft: '2.75rem' }}
+                    placeholder="Create a strong password"
+                  />
+                </div>
+              </div>
+
+              <button type="submit" disabled={isLoading} className="btn-primary" style={{ marginTop: '0.5rem', width: '100%', padding: '0.875rem' }}>
+                {isLoading ? <Loader2 size={18} className="animate-spin" /> : 'Create Account'}
               </button>
-            </div>
-          </div>
+            </form>
 
-          <button id="register-btn" type="submit" disabled={isLoading} className="btn-primary" style={{ width: '100%', marginTop: '0.5rem' }}>
-            {isLoading ? <><Loader2 size={18} /> Création du compte...</> : 'Créer mon compte gratuitement'}
-          </button>
-        </form>
-
-        <p style={{ textAlign: 'center', marginTop: '1.75rem', fontSize: '0.875rem', color: 'hsl(220,12%,55%)' }}>
-          Déjà un compte ?{' '}
-          <Link href="/login" style={{ color: 'hsl(250,95%,70%)', fontWeight: 600, textDecoration: 'none' }}>Se connecter</Link>
-        </p>
-      </motion.div>
+            <p style={{ textAlign: 'center', marginTop: '2.5rem', fontSize: '0.95rem', color: 'hsl(var(--text-secondary))' }}>
+              Already have an account?{' '}
+              <Link href="/login" style={{ color: 'hsl(var(--primary))', fontWeight: 600, textDecoration: 'none' }}>
+                Sign in <ArrowRight size={14} style={{ display: 'inline', verticalAlign: 'middle' }} />
+              </Link>
+            </p>
+          </motion.div>
+        </div>
+      </div>
     </div>
   );
 }
