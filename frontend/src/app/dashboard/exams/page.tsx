@@ -44,7 +44,7 @@ export default function ExamsPage() {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '3rem' }} className="xl:grid-cols-3">
         
         {/* Main Section: Available Exams */}
-        <div style={{ gridColumn: 'span 2' }}>
+        <div className="xl:col-span-2">
           <h2 style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <PlayCircle size={20} color="hsl(var(--primary))" /> Available Mock Exams
           </h2>

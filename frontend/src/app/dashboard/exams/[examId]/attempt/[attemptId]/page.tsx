@@ -106,7 +106,7 @@ export default function ExamAttemptPage() {
   return (
     <div style={{ maxWidth: 860, margin: '0 auto' }}>
       {/* Exam Header */}
-      <div className="card" style={{ padding: '1.25rem 1.5rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+      <div className="card flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-5 mb-6">
         <div style={{ flex: 1 }}>
           <div style={{ fontFamily: 'Outfit,sans-serif', fontWeight: 700, fontSize: '1.1rem', marginBottom: '0.5rem', color: 'hsl(var(--text-primary))' }}>{exam?.title}</div>
           <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
@@ -185,7 +185,7 @@ export default function ExamAttemptPage() {
                   {/* Speaking */}
                   {section.type === 'SPEAKING' && (
                     <div>
-                      <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '1rem' }}>
+                      <div className="flex flex-col sm:flex-row gap-4 sm:items-center mb-4">
                         <button onClick={() => toggleRecording(q.id)}
                           style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.875rem 1.25rem', borderRadius: '0.75rem', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.9rem', backgroundColor: isRecording ? 'hsla(0, 84%, 60%, 0.1)' : 'hsl(var(--accent-light))', color: isRecording ? 'hsl(0, 84%, 60%)' : 'hsl(var(--accent))', transition: 'all 0.2s' }}>
                           {isRecording ? <><MicOff size={18} /> Stop Recording</> : <><Mic size={18} /> Record Response</>}

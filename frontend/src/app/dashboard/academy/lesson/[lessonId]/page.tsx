@@ -72,7 +72,7 @@ export default function LessonPage() {
                     <h2 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.25rem', fontWeight: 700, marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'hsl(var(--text-primary))' }}>
                       <Volume2 size={20} color="hsl(var(--primary))" /> Vocabulary
                     </h2>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: '1rem' }}>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                       {content.vocabulary.map((v: any, i: number) => (
                         <div key={i} style={{ backgroundColor: 'hsl(var(--bg-base))', borderRadius: '0.75rem', padding: '1rem', border: '1px solid hsl(var(--border))' }}>
                           <div style={{ fontWeight: 700, fontSize: '1.05rem', color: 'hsl(var(--primary))', marginBottom: '0.25rem' }}>{v.french}</div>
@@ -159,7 +159,7 @@ export default function LessonPage() {
                       )}
 
                       {ex.type === 'SPEAKING' && (
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '1.25rem', padding: '1.25rem', backgroundColor: 'hsl(var(--bg-base))', borderRadius: '0.75rem', border: '1px solid hsl(var(--border))' }}>
+                        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 p-5 bg-[hsl(var(--bg-base))] rounded-xl border border-[hsl(var(--border))]">
                           <div style={{ width: 48, height: 48, borderRadius: '50%', backgroundColor: 'hsl(var(--accent-light))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                             <Mic size={24} color="hsl(var(--accent))" />
                           </div>
@@ -171,8 +171,9 @@ export default function LessonPage() {
                       )}
 
                       {result && (
-                        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
-                          style={{ marginTop: '1.5rem', padding: '1rem 1.25rem', borderRadius: '0.75rem', backgroundColor: result.isCorrect ? 'hsl(142, 71%, 95%)' : 'hsl(0, 84%, 95%)', border: `1px solid ${result.isCorrect ? 'hsl(142, 71%, 45%, 0.3)' : 'hsl(0, 84%, 60%, 0.3)'}`, display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
+                          <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
+                            className="mt-6 p-4 rounded-xl flex flex-col sm:flex-row items-start gap-3"
+                            style={{ backgroundColor: result.isCorrect ? 'hsl(142, 71%, 95%)' : 'hsl(0, 84%, 95%)', border: `1px solid ${result.isCorrect ? 'hsl(142, 71%, 45%, 0.3)' : 'hsl(0, 84%, 60%, 0.3)'}` }}>
                           {result.isCorrect ? <CheckCircle size={20} color="hsl(142, 71%, 45%)" style={{ flexShrink: 0, marginTop: 2 }} /> : <XCircle size={20} color="hsl(0, 84%, 60%)" style={{ flexShrink: 0, marginTop: 2 }} />}
                           <div>
                             <div style={{ fontWeight: 600, fontSize: '0.9rem', color: result.isCorrect ? 'hsl(142, 71%, 40%)' : 'hsl(0, 84%, 50%)', marginBottom: '0.25rem' }}>

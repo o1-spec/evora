@@ -157,7 +157,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       )}
 
       {/* MAIN CONTENT AREA */}
-      <main style={{ flex: 1, padding: '2rem', display: 'flex', flexDirection: 'column' }} className="lg:pl-[280px] pt-20 lg:pt-8">
+      <main className="flex-1 flex flex-col p-4 md:p-8 pt-20 lg:pt-8 lg:pl-[280px]">
         <div style={{ maxWidth: 1000, width: '100%', margin: '0 auto', flex: 1 }}>
           {children}
         </div>

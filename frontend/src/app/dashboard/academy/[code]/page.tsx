@@ -27,7 +27,7 @@ export default function AcademyLevelPage() {
       </Link>
 
       <div style={{ marginBottom: '3rem', borderBottom: '1px solid hsl(var(--border))', paddingBottom: '2rem' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-4">
           <div style={{ width: 56, height: 56, borderRadius: 16, backgroundColor: 'hsl(var(--primary-light))', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem', fontWeight: 800, color: 'hsl(var(--primary))', fontFamily: 'Outfit,sans-serif' }}>
             {level.code}
           </div>
@@ -46,8 +46,8 @@ export default function AcademyLevelPage() {
       <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
         {level.modules?.map((mod: any, i: number) => (
           <motion.div key={mod.id} className="card" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.1 }} style={{ overflow: 'hidden' }}>
-            
-            <div style={{ padding: '1.5rem', backgroundColor: 'hsl(var(--bg-base))', borderBottom: '1px solid hsl(var(--border))', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+
+            <div className="p-6 border-b flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4" style={{ backgroundColor: 'hsl(var(--bg-base))', borderColor: 'hsl(var(--border))' }}>
               <div>
                 <h3 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.25rem', fontWeight: 700, color: 'hsl(var(--text-primary))', marginBottom: '0.25rem' }}>
                   Module {mod.orderIndex}: {mod.title}
@@ -59,7 +59,7 @@ export default function AcademyLevelPage() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1px', backgroundColor: 'hsl(var(--border))' }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px" style={{ backgroundColor: 'hsl(var(--border))' }}>
               {mod.lessons?.map((lesson: any) => (
                 <Link key={lesson.id} href={`/dashboard/academy/lesson/${lesson.id}`} style={{ textDecoration: 'none' }}>
                   <div style={{ backgroundColor: 'white', padding: '1.5rem', height: '100%', display: 'flex', flexDirection: 'column', transition: 'background-color 0.2s' }} className="hover:bg-slate-50">
@@ -67,11 +67,11 @@ export default function AcademyLevelPage() {
                       <h4 style={{ fontWeight: 600, color: 'hsl(var(--text-primary))', fontSize: '1rem', lineHeight: 1.4 }}>{lesson.title}</h4>
                       <PlayCircle size={18} color="hsl(var(--primary))" style={{ flexShrink: 0, opacity: 0.5 }} />
                     </div>
-                    
+
                     <p style={{ fontSize: '0.85rem', color: 'hsl(var(--text-secondary))', marginBottom: '1.5rem', flex: 1, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                       {lesson.content?.substring(0, 100) || 'Interactive lesson content...'}...
                     </p>
-                    
+
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: '0.8rem' }}>
                       <span className="badge badge-secondary" style={{ backgroundColor: 'transparent' }}>Lesson {lesson.orderIndex}</span>
                       <span style={{ color: 'hsl(var(--primary))', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '0.25rem' }}>Start <ArrowLeft size={14} style={{ transform: 'rotate(180deg)' }} /></span>

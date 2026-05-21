@@ -76,8 +76,8 @@ export default function LandingPage() {
       </header>
 
       {/* HERO SECTION */}
-      <section style={{ padding: '6rem 1.5rem', backgroundColor: 'hsl(var(--bg-base))', overflow: 'hidden' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+      <section className="py-12 md:py-24 px-4 md:px-6" style={{ backgroundColor: 'hsl(var(--bg-base))', overflow: 'hidden' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center" style={{ maxWidth: 1200, margin: '0 auto' }}>
           
           {/* Hero Left */}
           <motion.div initial="hidden" animate="show" variants={fadeUp} custom={0}>
@@ -153,7 +153,7 @@ export default function LandingPage() {
 
       {/* TRUST / STATS SECTION */}
       <section style={{ borderBottom: '1px solid hsl(var(--border))', borderTop: '1px solid hsl(var(--border))', backgroundColor: 'white' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '2rem 1.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', textAlign: 'center' }}>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 py-8 md:py-12 px-4 md:px-6 text-center" style={{ maxWidth: 1200, margin: '0 auto' }}>
           <div>
             <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'hsl(var(--text-primary))', fontFamily: 'Outfit, sans-serif' }}>4 Skills</div>
             <div style={{ fontSize: '0.85rem', color: 'hsl(var(--text-secondary))', marginTop: '0.25rem' }}>Comprehensive TCF Practice</div>
@@ -174,14 +174,14 @@ export default function LandingPage() {
       </section>
 
       {/* FEATURES SECTION */}
-      <section id="features" style={{ padding: '6rem 1.5rem', backgroundColor: 'white' }}>
+      <section id="features" className="py-16 md:py-24 px-4 md:px-6" style={{ backgroundColor: 'white' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem', maxWidth: 600, margin: '0 auto 4rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem', maxWidth: 600, margin: '0 auto 3rem' }}>
             <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)', marginBottom: '1rem' }}>Everything you need to succeed</h2>
             <p style={{ fontSize: '1.1rem', color: 'hsl(var(--text-secondary))' }}>A complete suite of learning tools and AI-driven feedback designed specifically for TCF Canada candidates.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {FEATURES.map((f, i) => (
               <motion.div key={f.title} className="card" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} style={{ padding: '2rem' }}>
                 <div style={{ width: 48, height: 48, borderRadius: 12, backgroundColor: 'hsl(var(--bg-base))', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem', border: '1px solid hsl(var(--border))' }}>
@@ -196,14 +196,14 @@ export default function LandingPage() {
       </section>
 
       {/* LEARNING PATH SECTION */}
-      <section id="academy" style={{ padding: '6rem 1.5rem', backgroundColor: 'hsl(var(--bg-base))' }}>
+      <section id="academy" className="py-16 md:py-24 px-4 md:px-6" style={{ backgroundColor: 'hsl(var(--bg-base))' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)', marginBottom: '1rem' }}>Structured Learning Path</h2>
             <p style={{ fontSize: '1.1rem', color: 'hsl(var(--text-secondary))' }}>Progress logically from absolute beginner to complete mastery.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {PATH_LEVELS.map((level, i) => (
               <motion.div key={level.level} className="card" initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} style={{ padding: '1.5rem', textAlign: 'center' }}>
                 <div style={{ fontSize: '2rem', fontWeight: 800, color: 'hsl(var(--primary))', fontFamily: 'Outfit, sans-serif', marginBottom: '0.5rem' }}>{level.level}</div>
@@ -216,15 +216,15 @@ export default function LandingPage() {
       </section>
 
       {/* TCF PRACTICE SECTION */}
-      <section id="simulator" style={{ padding: '6rem 1.5rem', backgroundColor: 'white' }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '3rem' }}>
+      <section id="simulator" className="py-16 md:py-24 px-4 md:px-6" style={{ backgroundColor: 'white' }}>
+        <div className="flex flex-col gap-8 md:gap-12" style={{ maxWidth: 1200, margin: '0 auto' }}>
           
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', maxWidth: 700, margin: '0 auto' }}>
             <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)', marginBottom: '1rem' }}>Authentic TCF Simulator</h2>
             <p style={{ fontSize: '1.1rem', color: 'hsl(var(--text-secondary))' }}>Practice under real exam conditions. Our simulator accurately replicates the format, timing, and difficulty of the official TCF Canada test.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {TCF_MODULES.map((mod, i) => (
               <div key={mod.title} className="card" style={{ padding: '2rem' }}>
                 <h3 style={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'hsl(var(--primary))' }}>{mod.title}</h3>
@@ -241,14 +241,14 @@ export default function LandingPage() {
       </section>
 
       {/* PRICING SECTION */}
-      <section id="pricing" style={{ padding: '6rem 1.5rem', backgroundColor: 'hsl(var(--bg-base))' }}>
+      <section id="pricing" className="py-16 md:py-24 px-4 md:px-6" style={{ backgroundColor: 'hsl(var(--bg-base))' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)', marginBottom: '1rem' }}>Simple, transparent pricing</h2>
             <p style={{ fontSize: '1.1rem', color: 'hsl(var(--text-secondary))' }}>Invest in your future in Canada with a plan that fits your needs.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', alignItems: 'start' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
             {PLANS.map((plan, i) => (
               <motion.div key={plan.name} className={plan.highlight ? "card-elevated" : "card"} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} 
                 style={{ 
@@ -288,9 +288,9 @@ export default function LandingPage() {
       </section>
 
       {/* FOOTER */}
-      <footer style={{ backgroundColor: 'white', borderTop: '1px solid hsl(var(--border))', padding: '4rem 1.5rem 2rem' }}>
+      <footer className="pt-16 pb-8 px-4 md:px-6" style={{ backgroundColor: 'white', borderTop: '1px solid hsl(var(--border))' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem', marginBottom: '4rem' }}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
             <div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1rem' }}>
                 <Globe size={20} color="hsl(var(--primary))" />

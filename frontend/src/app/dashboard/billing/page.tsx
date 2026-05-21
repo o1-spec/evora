@@ -57,7 +57,7 @@ export default function BillingPage() {
       </div>
 
       {/* Sandbox Notice */}
-      <div style={{ background: 'hsla(37, 95%, 58%, 0.1)', border: '1px solid hsla(37, 95%, 58%, 0.2)', borderRadius: '0.75rem', padding: '1rem 1.25rem', marginBottom: '2.5rem', fontSize: '0.875rem', color: 'hsl(37, 90%, 40%)', display: 'flex', gap: '0.5rem' }}>
+      <div className="flex flex-col sm:flex-row items-start gap-3 p-4 mb-10 text-sm rounded-xl" style={{ background: 'hsla(37, 95%, 58%, 0.1)', border: '1px solid hsla(37, 95%, 58%, 0.2)', color: 'hsl(37, 90%, 40%)' }}>
         <Zap size={18} style={{ flexShrink: 0, marginTop: 2 }} />
         <div>
           <strong>Developer Sandbox Mode</strong>: Click "Test Sandbox" to simulate an instant upgrade without payment.
@@ -67,11 +67,11 @@ export default function BillingPage() {
 
       {/* Plans Grid */}
       {isLoading ? (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[...Array(3)].map((_, i) => <div key={i} className="skeleton" style={{ height: 400, borderRadius: 16 }} />)}
         </div>
       ) : (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {(plans || []).map((plan: any, i: number) => {
             const isCurrent = plan.tier === (user?.subscriptionTier || 'FREE');
             const isPremium = plan.tier === 'PREMIUM';

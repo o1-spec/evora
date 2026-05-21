@@ -25,7 +25,7 @@ export default function AcademyPage() {
       </motion.div>
 
       {/* CLB Target Banner */}
-      <div className="card" style={{ padding: '1.25rem 1.75rem', marginBottom: '2.5rem', borderLeft: '4px solid hsl(var(--primary))', display: 'flex', alignItems: 'center', gap: '1rem', backgroundColor: 'hsl(var(--primary-light))' }}>
+      <div className="card flex flex-col sm:flex-row items-start sm:items-center gap-4 p-5 mb-10 border-l-4" style={{ borderColor: 'hsl(var(--primary))', backgroundColor: 'hsl(var(--primary-light))' }}>
         <Target size={22} color="hsl(var(--primary))" style={{ flexShrink: 0 }} />
         <div>
           <div style={{ fontWeight: 700, fontSize: '0.95rem', marginBottom: '0.2rem', color: 'hsl(var(--primary-hover))' }}>Your TCF Canada Goal: CLB 7 (B2 Level)</div>
@@ -35,7 +35,7 @@ export default function AcademyPage() {
         </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem' }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {isLoading ? (
           [...Array(4)].map((_, i) => <div key={i} className="skeleton" style={{ height: 160, borderRadius: 16 }} />)
         ) : (

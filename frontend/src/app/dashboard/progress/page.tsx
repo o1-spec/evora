@@ -43,7 +43,7 @@ export default function ProgressPage() {
       </motion.div>
 
       {/* Stats Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '1.25rem', marginBottom: '2.5rem' }}>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-10">
         {STATS.map((stat, i) => (
           <motion.div key={stat.label} className="card" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.08 }} style={{ padding: '1.5rem', textAlign: 'center' }}>
@@ -58,7 +58,7 @@ export default function ProgressPage() {
         ))}
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '1.5rem' }} className="lg:grid-cols-2">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Exam History */}
         <div className="card" style={{ padding: '1.75rem' }}>
           <h2 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.15rem', fontWeight: 700, marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -71,8 +71,8 @@ export default function ProgressPage() {
           ) : profile?.examAttempts?.length > 0 ? (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {profile.examAttempts.map((attempt: any) => (
-                <div key={attempt.id} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0.875rem 1rem', background: 'hsl(var(--bg-base))', borderRadius: '0.625rem', border: '1px solid hsl(var(--border))', gap: '1rem', flexWrap: 'wrap' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: 'hsl(var(--text-secondary))' }}>
+                <div key={attempt.id} className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-[hsl(var(--bg-base))] rounded-xl border border-[hsl(var(--border))] gap-3">
+                  <div className="flex items-center gap-2 text-sm text-[hsl(var(--text-secondary))]">
                     <Calendar size={14} />
                     {new Date(attempt.startedAt).toLocaleDateString()}
                   </div>

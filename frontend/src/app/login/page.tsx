@@ -35,7 +35,7 @@ export default function LoginPage() {
     <div style={{ minHeight: '100vh', display: 'flex', backgroundColor: 'hsl(var(--bg-base))' }}>
       
       {/* Left side - Form */}
-      <div style={{ flex: 1, display: 'flex', flexDirection: 'column', padding: '2rem' }}>
+      <div className="flex-1 flex flex-col p-4 sm:p-8 lg:p-12">
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none', width: 'fit-content' }}>
           <div style={{ width: 32, height: 32, borderRadius: 8, backgroundColor: 'hsl(var(--primary))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Globe size={18} color="white" />
@@ -107,7 +107,7 @@ export default function LoginPage() {
       </div>
 
       {/* Right side - Visual */}
-      <div style={{ flex: 1, backgroundColor: 'hsl(var(--primary-light))', display: 'none', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '4rem', position: 'relative', overflow: 'hidden' }} className="lg:flex">
+      <div className="hidden lg:flex flex-1 flex-col items-center justify-center p-16 relative overflow-hidden" style={{ backgroundColor: 'hsl(var(--primary-light))' }}>
         <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'radial-gradient(circle at center, hsla(221, 83%, 53%, 0.1) 0%, transparent 70%)' }} />
         
         <div style={{ maxWidth: 480, position: 'relative', zIndex: 10, textAlign: 'center' }}>

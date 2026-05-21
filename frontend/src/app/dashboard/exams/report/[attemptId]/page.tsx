@@ -46,7 +46,7 @@ export default function ExamReportPage() {
               </h1>
               <p style={{ color: 'hsl(var(--text-secondary))', marginBottom: '2.5rem', fontSize: '0.95rem' }}>{data.exam?.title}</p>
 
-              <div style={{ display: 'flex', gap: '3rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 justify-center">
                 <div>
                   <div style={{ fontSize: '4rem', fontWeight: 900, fontFamily: 'Outfit,sans-serif', color: 'hsl(var(--text-primary))', lineHeight: 1 }}>
                     {data.rawScore?.toFixed(0)}%
@@ -68,7 +68,7 @@ export default function ExamReportPage() {
             {data.feedbacks?.map((fb: any, i: number) => (
               <motion.div key={fb.id} className="card" initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }} style={{ padding: '2rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 gap-2">
                   <h2 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.25rem', fontWeight: 700, color: 'hsl(var(--text-primary))' }}>
                     {fb.sectionType.replace('_', ' ')}
                   </h2>
