@@ -95,7 +95,7 @@ export default function WrittenExpressionPage() {
               </p>
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "2rem" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))", gap: "2rem" }}>
               {tasks.map((task) => (
                 <ExamSectionCard
                   key={task.number}
@@ -184,7 +184,7 @@ export default function WrittenExpressionPage() {
 
           {/* Recent written topics */}
           <div style={{ marginBottom: "4rem" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: "2.5rem" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", flexWrap: "wrap", gap: "1rem", marginBottom: "2.5rem" }}>
               <div>
                 <h2 style={{ fontSize: "1.75rem", fontFamily: "Outfit, sans-serif", fontWeight: 800, marginBottom: "0.25rem" }}>
                   Recent Essay Prompts
@@ -206,7 +206,7 @@ export default function WrittenExpressionPage() {
               </Link>
             </div>
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "1.5rem" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))", gap: "1.5rem" }}>
               {recentTopics.map((topic, i) => (
                 <TopicCard
                   key={i}

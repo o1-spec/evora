@@ -70,7 +70,7 @@ export default function AccountPage() {
 
       <div style={{ backgroundColor: "#ffffff", padding: "4rem 1.5rem" }}>
         <div style={{ maxWidth: "1280px", margin: "0 auto", width: "100%" }}>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: "2.5rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))", gap: "2.5rem" }}>
             
             {/* Left Column: Account Details & Subscription */}
             <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
@@ -207,6 +207,8 @@ export default function AccountPage() {
                         display: "flex",
                         justifyContent: "space-between",
                         alignItems: "center",
+                        flexWrap: "wrap",
+                        gap: "1rem",
                       }}
                     >
                       <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>

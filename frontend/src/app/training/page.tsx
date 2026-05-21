@@ -66,7 +66,7 @@ export default function TrainingPage() {
             </p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "2rem", marginBottom: "4rem" }}>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 280px), 1fr))", gap: "2rem", marginBottom: "4rem" }}>
             {learningPillars.map((pillar, i) => (
               <div
                 key={i}

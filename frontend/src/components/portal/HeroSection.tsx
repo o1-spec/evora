@@ -53,11 +53,10 @@ export default function HeroSection() {
             Plateforme spécialisée pour pratiquer les 4 épreuves du TCF avec des exercices, simulations et corrections assistées par IA. Obtenez votre CLB 7+ pour vos démarches d'immigration.
           </p>
 
-          {/* Quick CTA Actions */}
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
               gap: "1rem",
               marginBottom: "2rem",
             }}
@@ -240,7 +239,7 @@ export default function HeroSection() {
             <div
               style={{
                 display: "grid",
-                gridTemplateColumns: "1fr 1fr",
+                gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 140px), 1fr))",
                 gap: "0.75rem",
                 marginBottom: "1.5rem",
               }}
