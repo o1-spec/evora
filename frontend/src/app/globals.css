@@ -37,6 +37,8 @@ body {
   color: hsl(var(--text-primary));
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -175,6 +177,26 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 999px; }
 ::-webkit-scrollbar-thumb:hover { background: hsl(215, 20%, 80%); }
+
+/* ─── Container ─── */
+.container-max {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .container-max {
+    padding: 2rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-max {
+    padding: 4rem 1.5rem;
+  }
+}
 
 /* ─── Animations ─── */
 @keyframes fadeUp {
