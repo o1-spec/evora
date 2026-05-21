@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Brain,
@@ -15,6 +16,8 @@ import {
   ShieldCheck,
   PlayCircle,
   MessageSquare,
+  Menu,
+  X,
 } from "lucide-react";
 
 const fadeUp = {
@@ -170,6 +173,8 @@ const PLANS = [
 ];
 
 export default function LandingPage() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <div
       style={{ minHeight: "100vh", display: "flex", flexDirection: "column" }}
@@ -186,16 +191,19 @@ export default function LandingPage() {
         }}
       >
         <div
-          className=""
           style={{
-            height: "6rem",
-            padding: "2rem",
+            height: "auto",
+            minHeight: "4rem",
+            padding: "1rem",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
+            maxWidth: "1280px",
+            margin: "0 auto",
+            width: "100%",
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+          <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.5rem", textDecoration: "none" }}>
             <div
               style={{
                 width: 32,
@@ -219,8 +227,9 @@ export default function LandingPage() {
             >
               Évora
             </span>
-          </div>
+          </Link>
 
+          {/* Desktop Navigation */}
           <nav
             style={{ display: "none", gap: "2rem", alignItems: "center" }}
             className="md:flex"
@@ -260,8 +269,10 @@ export default function LandingPage() {
             </Link>
           </nav>
 
+          {/* Desktop Buttons */}
           <div
-            style={{ display: "flex", gap: "0.75rem", alignItems: "center" }}
+            style={{ display: "none", gap: "0.75rem", alignItems: "center" }}
+            className="md:flex"
           >
             <Link href="/login" className="btn-ghost">
               Sign In
@@ -270,7 +281,96 @@ export default function LandingPage() {
               Get Started
             </Link>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              background: "none",
+              border: "none",
+              cursor: "pointer",
+              padding: "0.5rem",
+            }}
+            className="md:hidden"
+          >
+            {mobileMenuOpen ? (
+              <X size={24} color="hsl(var(--text-primary))" />
+            ) : (
+              <Menu size={24} color="hsl(var(--text-primary))" />
+            )}
+          </button>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            style={{
+              borderTop: "1px solid hsl(var(--border))",
+              backgroundColor: "rgba(255, 255, 255, 0.98)",
+              padding: "1rem",
+              display: "flex",
+              flexDirection: "column",
+              gap: "1rem",
+            }}
+            className="md:hidden"
+          >
+            <Link
+              href="#academy"
+              onClick={() => setMobileMenuOpen(false)}
+              style={{
+                fontSize: "0.95rem",
+                fontWeight: 500,
+                color: "hsl(var(--text-primary))",
+                textDecoration: "none",
+                padding: "0.5rem 0",
+              }}
+            >
+              Academy
+            </Link>
+            <Link
+              href="#simulator"
+              onClick={() => setMobileMenuOpen(false)}
+              style={{
+                fontSize: "0.95rem",
+                fontWeight: 500,
+                color: "hsl(var(--text-primary))",
+                textDecoration: "none",
+                padding: "0.5rem 0",
+              }}
+            >
+              TCF Simulator
+            </Link>
+            <Link
+              href="#pricing"
+              onClick={() => setMobileMenuOpen(false)}
+              style={{
+                fontSize: "0.95rem",
+                fontWeight: 500,
+                color: "hsl(var(--text-primary))",
+                textDecoration: "none",
+                padding: "0.5rem 0",
+              }}
+            >
+              Pricing
+            </Link>
+            <hr style={{ borderColor: "hsl(var(--border))" }} />
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem" }}>
+              <Link href="/login" className="btn-ghost" style={{ width: "100%" }}>
+                Sign In
+              </Link>
+              <Link href="/register" className="btn-primary" style={{ width: "100%" }}>
+                Get Started
+              </Link>
+            </div>
+          </motion.div>
+        )}
       </header>
 
       {/* HERO SECTION */}
