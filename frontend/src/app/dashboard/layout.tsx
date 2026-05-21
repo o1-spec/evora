@@ -46,7 +46,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       {/* SIDEBAR (Desktop) */}
       <aside style={{
         width: 280, backgroundColor: 'white', borderRight: '1px solid hsl(var(--border))',
-        display: 'flex', flexDirection: 'column', position: 'fixed', height: '100vh', zIndex: 40
+        flexDirection: 'column', position: 'fixed', height: '100vh', zIndex: 40
       }} className="hidden lg:flex">
 
         {/* Brand */}
@@ -105,8 +105,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       {/* MOBILE HEADER */}
       <div style={{
         position: 'fixed', top: 0, left: 0, right: 0, height: '4rem', backgroundColor: 'white', borderBottom: '1px solid hsl(var(--border))',
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1rem', zIndex: 40
-      }} className="lg:hidden">
+        alignItems: 'center', justifyContent: 'space-between', padding: '0 1rem', zIndex: 40
+      }} className="flex lg:hidden">
         <Link href="/dashboard/academy" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
           <div style={{ width: 28, height: 28, borderRadius: 6, backgroundColor: 'hsl(var(--primary))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Globe size={16} color="white" />
@@ -120,7 +120,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
       {/* MOBILE MENU DRAWER */}
       {isMobileMenuOpen && (
-        <div style={{ position: 'fixed', inset: 0, zIndex: 50, display: 'flex' }} className="lg:hidden">
+        <div style={{ position: 'fixed', inset: 0, zIndex: 50 }} className="flex lg:hidden">
           <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0,0,0,0.5)' }} onClick={() => setIsMobileMenuOpen(false)} />
           <div style={{ position: 'relative', width: 280, backgroundColor: 'white', height: '100%', display: 'flex', flexDirection: 'column' }}>
             <div style={{ height: '4rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1rem', borderBottom: '1px solid hsl(var(--border))' }}>

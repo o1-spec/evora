@@ -231,8 +231,8 @@ export default function LandingPage() {
 
           {/* Desktop Navigation */}
           <nav
-            style={{ display: "none", gap: "2rem", alignItems: "center" }}
-            className="md:flex"
+            style={{ gap: "2rem", alignItems: "center" }}
+            className="hidden md:flex"
           >
             <Link
               href="#academy"
@@ -271,8 +271,8 @@ export default function LandingPage() {
 
           {/* Desktop Buttons */}
           <div
-            style={{ display: "none", gap: "0.75rem", alignItems: "center" }}
-            className="md:flex"
+            style={{ gap: "0.75rem", alignItems: "center" }}
+            className="hidden md:flex"
           >
             <Link href="/login" className="btn-ghost">
               Sign In
@@ -286,7 +286,6 @@ export default function LandingPage() {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             style={{
-              display: "flex",
               alignItems: "center",
               justifyContent: "center",
               background: "none",
@@ -294,7 +293,7 @@ export default function LandingPage() {
               cursor: "pointer",
               padding: "0.5rem",
             }}
-            className="md:hidden"
+            className="flex md:hidden"
           >
             {mobileMenuOpen ? (
               <X size={24} color="hsl(var(--text-primary))" />
@@ -315,11 +314,10 @@ export default function LandingPage() {
               borderTop: "1px solid hsl(var(--border))",
               backgroundColor: "rgba(255, 255, 255, 0.98)",
               padding: "1rem",
-              display: "flex",
               flexDirection: "column",
               gap: "1rem",
             }}
-            className="md:hidden"
+            className="flex md:hidden"
           >
             <Link
               href="#academy"
