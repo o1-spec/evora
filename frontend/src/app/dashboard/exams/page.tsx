@@ -1,13 +1,17 @@
 'use client';
 
+import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { FileText, Clock, PlayCircle, BarChart, CheckCircle2, History } from 'lucide-react';
+import ConfirmModal from '@/components/portal/ConfirmModal';
 import api from '@/lib/api';
 
 export default function ExamsPage() {
   const router = useRouter();
+  const [examToStart, setExamToStart] = useState<any>(null);
+  const [startingExam, setStartingExam] = useState(false);
 
   const { data: exams, isLoading: loadingExams } = useQuery({
     queryKey: ['tcf-exams'],
@@ -19,13 +23,17 @@ export default function ExamsPage() {
     queryFn: () => api.get('/tcf/history').then(r => r.data.attempts),
   });
 
-  const startExam = async (examId: string) => {
+  const startExam = async () => {
+    if (!examToStart) return;
+    setStartingExam(true);
     try {
-      const { data } = await api.post(`/tcf/exams/${examId}/start`);
-      router.push(`/dashboard/exams/${examId}/attempt/${data.attempt.id}`);
+      const { data } = await api.post(`/tcf/exams/${examToStart.id}/start`);
+      router.push(`/dashboard/exams/${examToStart.id}/attempt/${data.attempt.id}`);
     } catch (err) {
       alert('Failed to start exam. Check console.');
       console.error(err);
+      setStartingExam(false);
+      setExamToStart(null);
     }
   };
 
@@ -73,7 +81,7 @@ export default function ExamsPage() {
                   </div>
 
                   <div style={{ padding: '1.5rem', backgroundColor: 'hsl(var(--bg-base))', display: 'flex', alignItems: 'center', justifyContent: 'center', borderLeft: '1px solid hsl(var(--border))' }} className="sm:border-t-0 border-t">
-                    <button onClick={() => startExam(exam.id)} className="btn-primary" style={{ width: '100%', whiteSpace: 'nowrap' }}>
+                    <button onClick={() => setExamToStart(exam)} className="btn-primary" style={{ width: '100%', whiteSpace: 'nowrap' }}>
                       Start Exam
                     </button>
                   </div>
@@ -124,6 +132,18 @@ export default function ExamsPage() {
         </div>
 
       </div>
+
+      <ConfirmModal
+        open={!!examToStart}
+        onClose={() => !startingExam && setExamToStart(null)}
+        onConfirm={startExam}
+        title="Start Mock Exam?"
+        message={`You are about to start a full TCF mock exam (~2h 45m). Ensure you have enough uninterrupted time and a quiet environment.`}
+        confirmLabel="Start Exam"
+        cancelLabel="Cancel"
+        variant="info"
+        loading={startingExam}
+      />
     </div>
   );
 }

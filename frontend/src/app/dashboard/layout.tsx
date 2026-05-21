@@ -7,6 +7,7 @@ import { useQuery } from '@tanstack/react-query';
 import { BookOpen, FileText, BarChart3, CreditCard, LogOut, Menu, X, Brain, Globe, ShieldCheck } from 'lucide-react';
 import { useAuthStore } from '@/store/useAuthStore';
 import api from '@/lib/api';
+import ConfirmModal from '@/components/portal/ConfirmModal';
 
 const NAV_LINKS = [
   { href: '/dashboard/academy', label: 'Academy', icon: BookOpen },
@@ -22,6 +23,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const { user, logout } = useAuthStore();
   const [mounted, setMounted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showSignOutModal, setShowSignOutModal] = useState(false);
+  const [signingOut, setSigningOut] = useState(false);
 
   // Set mounted on client mount
   useEffect(() => {
@@ -42,7 +45,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   });
 
   const handleLogout = async () => {
+    setSigningOut(true);
     await logout();
+    setSigningOut(false);
+    setShowSignOutModal(false);
     router.push('/');
   };
 
@@ -100,7 +106,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               </div>
             </div>
           </div>
-          <button onClick={handleLogout} style={{
+          <button onClick={() => setShowSignOutModal(true)} style={{
             display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.75rem 1rem', width: '100%',
             borderRadius: '0.75rem', border: 'none', background: 'transparent', color: 'hsl(var(--text-secondary))',
             fontWeight: 500, cursor: 'pointer', transition: 'all 0.2s', textAlign: 'left'
@@ -152,7 +158,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               })}
             </nav>
             <div style={{ padding: '1rem', borderTop: '1px solid hsl(var(--border))' }}>
-              <button onClick={handleLogout} style={{
+              <button onClick={() => { setIsMobileMenuOpen(false); setShowSignOutModal(true); }} style={{
                 display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.75rem 1rem', width: '100%',
                 borderRadius: '0.75rem', border: 'none', background: 'transparent', color: 'hsl(var(--text-secondary))',
                 fontWeight: 500, textAlign: 'left'
@@ -170,6 +176,19 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           {children}
         </div>
       </main>
+
+      {/* SIGN OUT CONFIRMATION MODAL */}
+      <ConfirmModal
+        open={showSignOutModal}
+        onClose={() => setShowSignOutModal(false)}
+        onConfirm={handleLogout}
+        title="Sign out of Évora?"
+        message="You will be returned to the home page. Any unsaved progress will be lost."
+        confirmLabel="Yes, sign out"
+        cancelLabel="Stay logged in"
+        variant="danger"
+        loading={signingOut}
+      />
     </div>
   );
 }

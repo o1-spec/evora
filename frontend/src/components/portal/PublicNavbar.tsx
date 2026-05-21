@@ -6,11 +6,14 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Globe, Menu, X, LogIn, LogOut, User } from "lucide-react";
 import { useAuthStore } from "@/store/useAuthStore";
+import ConfirmModal from "@/components/portal/ConfirmModal";
 
 export default function PublicNavbar() {
   const pathname = usePathname();
   const { user, logout } = useAuthStore();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [showSignOutModal, setShowSignOutModal] = useState(false);
+  const [signingOut, setSigningOut] = useState(false);
 
   const navItems = [
     { label: "Welcome", route: "/" },
@@ -24,11 +27,15 @@ export default function PublicNavbar() {
   ];
 
   const handleLogout = async () => {
+    setSigningOut(true);
     try {
       await logout();
+      setShowSignOutModal(false);
       window.location.href = "/";
     } catch (err) {
       console.error("Logout failed:", err);
+    } finally {
+      setSigningOut(false);
     }
   };
 
@@ -127,7 +134,7 @@ export default function PublicNavbar() {
         <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }} className="hidden xl:flex">
           {user ? (
             <button
-              onClick={handleLogout}
+              onClick={() => setShowSignOutModal(true)}
               className="btn-ghost"
               style={{
                 display: "inline-flex",
@@ -234,7 +241,7 @@ export default function PublicNavbar() {
                 <button
                   onClick={() => {
                     setMobileMenuOpen(false);
-                    handleLogout();
+                    setShowSignOutModal(true);
                   }}
                   style={{
                     display: "flex",
@@ -278,6 +285,18 @@ export default function PublicNavbar() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <ConfirmModal
+        open={showSignOutModal}
+        onClose={() => setShowSignOutModal(false)}
+        onConfirm={handleLogout}
+        title="Sign out of Évora?"
+        message="You will be returned to the home page."
+        confirmLabel="Yes, sign out"
+        cancelLabel="Stay logged in"
+        variant="danger"
+        loading={signingOut}
+      />
     </header>
   );
 }
