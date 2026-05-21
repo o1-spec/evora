@@ -240,3 +240,27 @@ h1, h2, h3, h4, h5, h6 {
 .clb-8  { color: #06b6d4; }
 .clb-9  { color: #6366f1; }
 .clb-10 { color: #a855f7; }
+
+/* ─── Dashboard Layout ─── */
+.dashboard-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  padding-top: 5rem;
+}
+
+@media (min-width: 768px) {
+  .dashboard-main {
+    padding: 2rem;
+    padding-top: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dashboard-main {
+    padding: 2rem;
+    padding-top: 2rem;
+    padding-left: calc(280px + 2rem) !important;
+  }
+}

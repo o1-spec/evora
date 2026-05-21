@@ -165,7 +165,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       )}
 
       {/* MAIN CONTENT AREA */}
-      <main className="flex-1 flex flex-col p-4 md:p-8 pt-20 lg:pt-8 lg:pl-[280px]">
+      <main className="dashboard-main">
         <div style={{ maxWidth: 1400, width: '100%', margin: '0 auto', flex: 1 }}>
           {children}
         </div>
