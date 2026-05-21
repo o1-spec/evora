@@ -8,6 +8,7 @@ const router = Router();
 router.use(authMiddleware as any);
 
 router.get('/exams', TcfController.getExams as any);
+router.get('/history', TcfController.getHistory as any);
 router.get('/exams/:examId', TcfController.getExamDetails as any);
 
 // Start an attempt with dynamic limit verification

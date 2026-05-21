@@ -13,7 +13,7 @@ export default function AcademyLevelPage() {
 
   const { data: level, isLoading } = useQuery({
     queryKey: ['level', code],
-    queryFn: () => api.get(`/learning/levels/${code}`).then(r => r.data),
+    queryFn: () => api.get(`/learning/levels/${code}`).then(r => r.data.level),
     enabled: !!code,
   });
 

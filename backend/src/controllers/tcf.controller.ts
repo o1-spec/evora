@@ -308,4 +308,34 @@ export class TcfController {
       return res.status(500).json({ error: 'Failed to download exam report.' });
     }
   }
+
+  /**
+   * Fetch recent simulated exam attempts history for the logged-in user
+   */
+  public static async getHistory(req: AuthenticatedRequest, res: Response) {
+    try {
+      if (!req.user) return res.status(401).json({ error: 'Unauthorized' });
+      const userId = req.user.id;
+
+      const attempts = await prisma.examAttempt.findMany({
+        where: { userId },
+        orderBy: { startedAt: 'desc' },
+        include: {
+          exam: {
+            select: { title: true }
+          }
+        }
+      });
+
+      const history = attempts.map(attempt => ({
+        ...attempt,
+        status: attempt.completedAt ? 'COMPLETED' : 'IN_PROGRESS'
+      }));
+
+      return res.status(200).json({ attempts: history });
+    } catch (error) {
+      console.error('Get history error:', error);
+      return res.status(500).json({ error: 'Failed to retrieve exam attempt history.' });
+    }
+  }
 }

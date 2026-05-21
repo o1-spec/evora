@@ -81,3 +81,8 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     }
   },
 }));
+
+// Restore session synchronously on client-side boot to prevent redirects
+if (typeof window !== 'undefined') {
+  useAuthStore.getState().loadFromStorage();
+}

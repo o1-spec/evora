@@ -11,12 +11,12 @@ export default function ExamsPage() {
 
   const { data: exams, isLoading: loadingExams } = useQuery({
     queryKey: ['tcf-exams'],
-    queryFn: () => api.get('/tcf/exams').then(r => r.data),
+    queryFn: () => api.get('/tcf/exams').then(r => r.data.exams),
   });
 
   const { data: history, isLoading: loadingHistory } = useQuery({
     queryKey: ['tcf-history'],
-    queryFn: () => api.get('/tcf/history').then(r => r.data),
+    queryFn: () => api.get('/tcf/history').then(r => r.data.attempts),
   });
 
   const startExam = async (examId: string) => {

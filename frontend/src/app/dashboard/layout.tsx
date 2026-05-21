@@ -20,17 +20,25 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
   const router = useRouter();
   const pathname = usePathname();
   const { user, logout } = useAuthStore();
+  const [mounted, setMounted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  // Set mounted on client mount
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Validate session on mount
   useEffect(() => {
-    if (!user) router.push('/login');
-  }, [user, router]);
+    if (mounted && !user) {
+      router.push('/login');
+    }
+  }, [mounted, user, router]);
 
   const { data: profile } = useQuery({
     queryKey: ['user-profile'],
     queryFn: () => api.get('/auth/profile').then(r => r.data.user),
-    enabled: !!user,
+    enabled: !!user && mounted,
   });
 
   const handleLogout = async () => {
@@ -38,7 +46,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     router.push('/');
   };
 
-  if (!user) return null;
+  if (!mounted || !user) return null;
 
   return (
     <div style={{ minHeight: '100vh', display: 'flex', backgroundColor: 'hsl(var(--bg-base))' }}>
@@ -158,7 +166,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
       {/* MAIN CONTENT AREA */}
       <main className="flex-1 flex flex-col p-4 md:p-8 pt-20 lg:pt-8 lg:pl-[280px]">
-        <div style={{ maxWidth: 1000, width: '100%', margin: '0 auto', flex: 1 }}>
+        <div style={{ maxWidth: 1400, width: '100%', margin: '0 auto', flex: 1 }}>
           {children}
         </div>
       </main>
