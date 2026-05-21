@@ -5,7 +5,6 @@ import { Book, CheckCircle, Award, Sparkles, BookOpen, Layers, Languages, HelpCi
 import PublicLayout from "@/components/portal/PublicLayout";
 import PublicPageHero from "@/components/portal/PublicPageHero";
 import AcademyLevelsSection from "@/components/portal/AcademyLevelsSection";
-import QuickAccessMenu from "@/components/portal/QuickAccessMenu";
 
 export default function TrainingPage() {
   const learningPillars = [
@@ -44,9 +43,6 @@ export default function TrainingPage() {
         badgeColor="hsl(var(--accent))"
         accentIcon={<BookOpen size={12} />}
       />
-
-      {/* Quick Access Menu Row below navbar */}
-      <QuickAccessMenu />
 
       {/* Core Catalog Levels Listing */}
       <AcademyLevelsSection />

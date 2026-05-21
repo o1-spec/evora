@@ -5,7 +5,6 @@ import { DollarSign, ShieldCheck, Sparkles, HelpCircle } from "lucide-react";
 import PublicLayout from "@/components/portal/PublicLayout";
 import PublicPageHero from "@/components/portal/PublicPageHero";
 import PricingSection from "@/components/portal/PricingSection";
-import QuickAccessMenu from "@/components/portal/QuickAccessMenu";
 
 export default function PricingPage() {
   const faqs = [
@@ -36,9 +35,6 @@ export default function PricingPage() {
         badgeColor="hsl(var(--primary))"
         accentIcon={<DollarSign size={12} />}
       />
-
-      {/* Quick Access Menu Row below navbar */}
-      <QuickAccessMenu />
 
       {/* Main Pricing Sections Grid */}
       <PricingSection />

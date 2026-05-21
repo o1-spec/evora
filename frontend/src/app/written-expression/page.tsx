@@ -7,7 +7,6 @@ import PublicLayout from "@/components/portal/PublicLayout";
 import PublicPageHero from "@/components/portal/PublicPageHero";
 import ExamSectionCard from "@/components/portal/ExamSectionCard";
 import TopicCard from "@/components/portal/TopicCard";
-import QuickAccessMenu from "@/components/portal/QuickAccessMenu";
 
 export default function WrittenExpressionPage() {
   const tasks = [
@@ -76,9 +75,6 @@ export default function WrittenExpressionPage() {
         badgeColor="hsl(var(--primary))"
         accentIcon={<PenTool size={12} />}
       />
-
-      {/* Quick Access Menu Row below navbar */}
-      <QuickAccessMenu />
 
       {/* Main Section Content */}
       <div style={{ backgroundColor: "#ffffff", padding: "4rem 1.5rem" }}>

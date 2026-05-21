@@ -1,7 +1,6 @@
 "use client";
 
 import PublicLayout from "@/components/portal/PublicLayout";
-import QuickAccessMenu from "@/components/portal/QuickAccessMenu";
 import HeroSection from "@/components/portal/HeroSection";
 import ExamSkillsSection from "@/components/portal/ExamSkillsSection";
 import RecentTopicsSection from "@/components/portal/RecentTopicsSection";
@@ -11,9 +10,6 @@ import PricingSection from "@/components/portal/PricingSection";
 export default function Home() {
   return (
     <PublicLayout>
-      {/* Quick access icon row below navbar */}
-      <QuickAccessMenu />
-
       {/* Hero section */}
       <HeroSection />
 
