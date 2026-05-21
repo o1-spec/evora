@@ -78,22 +78,22 @@ export default function Footer() {
             </h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
               <li>
-                <Link href="#skills" style={{ fontSize: "0.875rem", color: "hsl(var(--text-secondary))", textDecoration: "none" }}>
+                <Link href="/written-expression" style={{ fontSize: "0.875rem", color: "hsl(var(--text-secondary))", textDecoration: "none" }}>
                   Expression Écrite (E.E)
                 </Link>
               </li>
               <li>
-                <Link href="#skills" style={{ fontSize: "0.875rem", color: "hsl(var(--text-secondary))", textDecoration: "none" }}>
+                <Link href="/oral-expression" style={{ fontSize: "0.875rem", color: "hsl(var(--text-secondary))", textDecoration: "none" }}>
                   Expression Orale (E.O)
                 </Link>
               </li>
               <li>
-                <Link href="#skills" style={{ fontSize: "0.875rem", color: "hsl(var(--text-secondary))", textDecoration: "none" }}>
+                <Link href="/reading-comprehension" style={{ fontSize: "0.875rem", color: "hsl(var(--text-secondary))", textDecoration: "none" }}>
                   Compréhension Écrite (C.E)
                 </Link>
               </li>
               <li>
-                <Link href="#skills" style={{ fontSize: "0.875rem", color: "hsl(var(--text-secondary))", textDecoration: "none" }}>
+                <Link href="/oral-comprehension" style={{ fontSize: "0.875rem", color: "hsl(var(--text-secondary))", textDecoration: "none" }}>
                   Compréhension Orale (C.O)
                 </Link>
               </li>
@@ -116,22 +116,22 @@ export default function Footer() {
             </h4>
             <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.75rem" }}>
               <li>
-                <Link href="#academy" style={{ fontSize: "0.875rem", color: "hsl(var(--text-secondary))", textDecoration: "none" }}>
+                <Link href="/training" style={{ fontSize: "0.875rem", color: "hsl(var(--text-secondary))", textDecoration: "none" }}>
                   Niveaux Débutants (A1 - A2)
                 </Link>
               </li>
               <li>
-                <Link href="#academy" style={{ fontSize: "0.875rem", color: "hsl(var(--text-secondary))", textDecoration: "none" }}>
+                <Link href="/training" style={{ fontSize: "0.875rem", color: "hsl(var(--text-secondary))", textDecoration: "none" }}>
                   Niveau Intermédiaire (B1)
                 </Link>
               </li>
               <li>
-                <Link href="#academy" style={{ fontSize: "0.875rem", color: "hsl(var(--text-secondary))", textDecoration: "none" }}>
+                <Link href="/training" style={{ fontSize: "0.875rem", color: "hsl(var(--text-secondary))", textDecoration: "none" }}>
                   Cible TCF Canada (B2 Avancé)
                 </Link>
               </li>
               <li>
-                <Link href="#academy" style={{ fontSize: "0.875rem", color: "hsl(var(--text-secondary))", textDecoration: "none" }}>
+                <Link href="/training" style={{ fontSize: "0.875rem", color: "hsl(var(--text-secondary))", textDecoration: "none" }}>
                   Niveaux Autonomes (C1 - C2)
                 </Link>
               </li>

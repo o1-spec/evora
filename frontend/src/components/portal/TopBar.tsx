@@ -24,27 +24,27 @@ export default function TopBar() {
         }}
       >
         <div>
-          <span>Bienvenue sur la plateforme de préparation au TCF Canada</span>
+          <span>Welcome to the TCF Canada preparation platform</span>
         </div>
         <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
           <Link
-            href="#academy"
+            href="/training"
             style={{ color: "inherit", textDecoration: "none" }}
             onMouseOver={(e) => (e.currentTarget.style.color = "hsl(var(--primary))")}
             onMouseOut={(e) => (e.currentTarget.style.color = "inherit")}
           >
-            Formations
+            Training
           </Link>
           <Link
-            href="#pricing"
+            href="/pricing"
             style={{ color: "inherit", textDecoration: "none" }}
             onMouseOver={(e) => (e.currentTarget.style.color = "hsl(var(--primary))")}
             onMouseOut={(e) => (e.currentTarget.style.color = "inherit")}
           >
-            Tarifs
+            Prices
           </Link>
           <Link
-            href="#blog"
+            href="#"
             style={{ color: "inherit", textDecoration: "none" }}
             onMouseOver={(e) => (e.currentTarget.style.color = "hsl(var(--primary))")}
             onMouseOut={(e) => (e.currentTarget.style.color = "inherit")}
@@ -57,7 +57,7 @@ export default function TopBar() {
             onMouseOver={(e) => (e.currentTarget.style.color = "hsl(var(--primary))")}
             onMouseOut={(e) => (e.currentTarget.style.color = "inherit")}
           >
-            Contactez-nous
+            Contact us
           </Link>
           <a
             href="https://wa.me/message/TCF_CANADA"
