@@ -198,7 +198,7 @@ export default function RegisterPage() {
     }}>
       
       {/* Top Header - Logo (Mobile & Tablet) */}
-      <div className="lg:hidden flex items-center justify-between p-5 border-b" style={{ borderColor: 'rgba(226, 232, 240, 0.8)', backgroundColor: 'rgba(255,255,255,0.8)', backdropFilter: 'blur(8px)' }}>
+      <div className="lg:hidden flex items-center justify-between p-5 border-b" style={{ borderColor: 'rgba(226, 232, 240, 0.8)', backgroundColor: 'rgba(255,255,255,0.8)', backdropFilter: 'blur(8px)', padding: '15px' }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', textDecoration: 'none' }}>
           <div style={{ width: 36, height: 36, borderRadius: 10, backgroundColor: 'hsl(var(--primary))', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 10px rgba(59,130,246,0.2)' }}>
             <Globe size={18} color="white" />
