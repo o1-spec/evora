@@ -47,8 +47,8 @@ export class AuthController {
       });
 
       // Generate access and refresh tokens
-      const accessToken = jwt.sign({ id: user.id, email: user.email, role: user.role }, JWT_ACCESS_SECRET, { expiresIn: JWT_ACCESS_EXPIRY });
-      const refreshToken = jwt.sign({ id: user.id }, JWT_REFRESH_SECRET, { expiresIn: JWT_REFRESH_EXPIRY });
+      const accessToken = jwt.sign({ id: user.id, email: user.email, role: user.role }, JWT_ACCESS_SECRET, { expiresIn: JWT_ACCESS_EXPIRY as any });
+      const refreshToken = jwt.sign({ id: user.id }, JWT_REFRESH_SECRET, { expiresIn: JWT_REFRESH_EXPIRY as any });
 
       // Save session in database
       const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 days
@@ -105,8 +105,8 @@ export class AuthController {
       }
 
       // Generate access and refresh tokens
-      const accessToken = jwt.sign({ id: user.id, email: user.email, role: user.role }, JWT_ACCESS_SECRET, { expiresIn: JWT_ACCESS_EXPIRY });
-      const refreshToken = jwt.sign({ id: user.id }, JWT_REFRESH_SECRET, { expiresIn: JWT_REFRESH_EXPIRY });
+      const accessToken = jwt.sign({ id: user.id, email: user.email, role: user.role }, JWT_ACCESS_SECRET, { expiresIn: JWT_ACCESS_EXPIRY as any });
+      const refreshToken = jwt.sign({ id: user.id }, JWT_REFRESH_SECRET, { expiresIn: JWT_REFRESH_EXPIRY as any });
 
       // Save session in database
       const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000); // 7 days
@@ -173,8 +173,8 @@ export class AuthController {
       const user = session.user;
 
       // Rotate tokens
-      const newAccessToken = jwt.sign({ id: user.id, email: user.email, role: user.role }, JWT_ACCESS_SECRET, { expiresIn: JWT_ACCESS_EXPIRY });
-      const newRefreshToken = jwt.sign({ id: user.id }, JWT_REFRESH_SECRET, { expiresIn: JWT_REFRESH_EXPIRY });
+      const newAccessToken = jwt.sign({ id: user.id, email: user.email, role: user.role }, JWT_ACCESS_SECRET, { expiresIn: JWT_ACCESS_EXPIRY as any });
+      const newRefreshToken = jwt.sign({ id: user.id }, JWT_REFRESH_SECRET, { expiresIn: JWT_REFRESH_EXPIRY as any });
 
       // Delete old session and insert new rotated session
       await prisma.session.delete({ where: { id: session.id } });
