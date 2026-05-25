@@ -2,8 +2,11 @@
 
 import Link from "next/link";
 import { FileText, Mic, PlayCircle, ShieldCheck, ArrowRight } from "lucide-react";
+import { useAuthStore } from "@/store/useAuthStore";
 
 export default function HeroSection() {
+  const { isAuthenticated } = useAuthStore();
+
   return (
     <section
       style={{
@@ -141,20 +144,41 @@ export default function HeroSection() {
           </div>
 
           <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-            <Link
-              href="/register"
-              className="btn-primary"
-              style={{ padding: "0.875rem 2.25rem", fontSize: "1rem" }}
-            >
-              Démarrer un test blanc
-            </Link>
-            <Link
-              href="#skills"
-              className="btn-secondary"
-              style={{ padding: "0.875rem 2.25rem", fontSize: "1rem" }}
-            >
-              Découvrir les épreuves
-            </Link>
+            {isAuthenticated ? (
+              <>
+                <Link
+                  href="/dashboard/academy"
+                  className="btn-primary"
+                  style={{ padding: "0.875rem 2.25rem", fontSize: "1rem" }}
+                >
+                  Tableau de bord
+                </Link>
+                <Link
+                  href="/dashboard/exams"
+                  className="btn-secondary"
+                  style={{ padding: "0.875rem 2.25rem", fontSize: "1rem" }}
+                >
+                  Démarrer un test blanc
+                </Link>
+              </>
+            ) : (
+              <>
+                <Link
+                  href="/register"
+                  className="btn-primary"
+                  style={{ padding: "0.875rem 2.25rem", fontSize: "1rem" }}
+                >
+                  S'inscrire gratuitement
+                </Link>
+                <Link
+                  href="/login"
+                  className="btn-secondary"
+                  style={{ padding: "0.875rem 2.25rem", fontSize: "1rem" }}
+                >
+                  Démarrer un test blanc
+                </Link>
+              </>
+            )}
           </div>
         </div>
 
