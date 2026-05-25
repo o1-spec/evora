@@ -1,13 +1,27 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { BookOpen, Sparkles, CheckCircle, ArrowRight, Clock, Award } from "lucide-react";
 import PublicLayout from "@/components/portal/PublicLayout";
 import PublicPageHero from "@/components/portal/PublicPageHero";
 import ExamSectionCard from "@/components/portal/ExamSectionCard";
 import TopicCard from "@/components/portal/TopicCard";
+import { useAuthStore } from "@/store/useAuthStore";
+import TrainingSeriesGrid from "@/components/portal/TrainingSeriesGrid";
 
 export default function ReadingComprehensionPage() {
+  const { isAuthenticated } = useAuthStore();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (mounted && isAuthenticated) {
+    return <TrainingSeriesGrid sectionType="READING" title="TCF Canada Reading Comprehension" />;
+  }
+
   const levels = [
     {
       number: "CLB 4 - 5",

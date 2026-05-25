@@ -1,14 +1,28 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Mic, Sparkles, CheckCircle, ArrowRight, PlayCircle, Volume2 } from "lucide-react";
 import PublicLayout from "@/components/portal/PublicLayout";
 import PublicPageHero from "@/components/portal/PublicPageHero";
 import ExamSectionCard from "@/components/portal/ExamSectionCard";
 import TopicCard from "@/components/portal/TopicCard";
+import { useAuthStore } from "@/store/useAuthStore";
+import TrainingSeriesGrid from "@/components/portal/TrainingSeriesGrid";
 
 export default function OralExpressionPage() {
+  const { isAuthenticated } = useAuthStore();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (mounted && isAuthenticated) {
+    return <TrainingSeriesGrid sectionType="SPEAKING" title="TCF Canada Oral Expression" />;
+  }
+
   const tasks = [
     {
       number: 1,
