@@ -12,6 +12,7 @@ const SKILLS = [
     icon: Headphones,
     color: "#3b82f6", // Blue
     bgColor: "hsl(214, 100%, 97%)",
+    href: "/oral-comprehension"
   },
   {
     title: "Compréhension écrite",
@@ -21,6 +22,7 @@ const SKILLS = [
     icon: BookOpen,
     color: "#10b981", // Green
     bgColor: "hsl(149, 80%, 96%)",
+    href: "/reading-comprehension"
   },
   {
     title: "Expression orale",
@@ -30,6 +32,7 @@ const SKILLS = [
     icon: Mic,
     color: "#f97316", // Orange
     bgColor: "hsl(31, 100%, 97%)",
+    href: "/oral-expression"
   },
   {
     title: "Expression écrite",
@@ -39,10 +42,21 @@ const SKILLS = [
     icon: FileText,
     color: "#8b5cf6", // Purple
     bgColor: "hsl(262, 80%, 97%)",
+    href: "/written-expression"
   },
 ];
 
+import { useAuthStore } from "@/store/useAuthStore";
+import { useEffect, useState } from "react";
+
 export default function ExamSkillsSection() {
+  const { isAuthenticated } = useAuthStore();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <section id="skills" className="py-16 md:py-24" style={{ backgroundColor: "#ffffff" }}>
       <div className="container-max">
@@ -177,7 +191,7 @@ export default function ExamSkillsSection() {
 
                   {/* CTA Button */}
                   <Link
-                    href="/register"
+                    href={mounted && isAuthenticated ? skill.href : "/register"}
                     className="btn-secondary"
                     style={{
                       width: "100%",
