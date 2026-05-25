@@ -10,8 +10,8 @@ const SKILLS = [
     questions: "39 questions QCM",
     duration: "35 minutes",
     icon: Headphones,
-    color: "#3b82f6", // Blue
-    bgColor: "hsl(214, 100%, 97%)",
+    color: "#6366f1", // Indigo / Premium Purple tint
+    bgColor: "hsl(226, 100%, 97%)",
     href: "/oral-comprehension"
   },
   {

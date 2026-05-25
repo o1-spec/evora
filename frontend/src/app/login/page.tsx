@@ -191,7 +191,7 @@ export default function LoginPage() {
   return (
     <div className="flex flex-col lg:flex-row min-h-screen" style={{ 
       backgroundColor: '#f8fafc',
-      background: 'radial-gradient(at 0% 0%, hsla(221, 83%, 53%, 0.04) 0px, transparent 50%), radial-gradient(at 100% 100%, hsla(262, 83%, 53%, 0.04) 0px, transparent 50%)'
+      background: 'radial-gradient(at 0% 0%, hsla(262, 83%, 58%, 0.04) 0px, transparent 50%), radial-gradient(at 100% 100%, hsla(262, 83%, 58%, 0.04) 0px, transparent 50%)'
     }}>
 
       {/* Top Header - Logo (Mobile & Tablet) */}
@@ -359,7 +359,7 @@ export default function LoginPage() {
         }}
       >
         {/* Soft glowing ambient brand lights */}
-        <div style={{ position: 'absolute', top: '-10%', right: '-10%', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', top: '-10%', right: '-10%', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(139,92,246,0.06) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
         <div style={{ position: 'absolute', bottom: '-10%', left: '-10%', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(16,185,129,0.04) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
 
         {/* Animated Grid backing */}

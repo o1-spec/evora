@@ -6,9 +6,9 @@
   --bg-surface: 0 0% 100%;        /* white */
   --bg-card: 0 0% 100%;           /* white */
   
-  --primary: 221 83% 53%;         /* blue-600 */
-  --primary-hover: 221 83% 45%;   /* blue-700 */
-  --primary-light: 214 100% 97%;  /* blue-50 */
+  --primary: 262 83% 58%;         /* violet-600 */
+  --primary-hover: 262 83% 50%;   /* violet-700 */
+  --primary-light: 262 100% 97%;  /* violet-50 */
   
   --accent: 142 71% 45%;          /* emerald-500 */
   --accent-light: 149 80% 90%;    /* emerald-100 */
@@ -18,7 +18,7 @@
   --text-muted: 215 20% 65%;      /* slate-400 */
   
   --border: 214 32% 91%;          /* slate-200 */
-  --border-focus: 221 83% 53%;
+  --border-focus: 262 83% 58%;
 }
 
 * {

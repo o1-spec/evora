@@ -79,7 +79,7 @@ export default function HeroSection() {
                 boxShadow: "0 1px 2px rgba(0,0,0,0.02)",
                 transition: "all 0.2s",
               }}
-              className="hover:border-blue-400 hover:shadow-sm"
+              className="hover:border-purple-400 hover:shadow-sm"
             >
               <div
                 style={{
@@ -118,7 +118,7 @@ export default function HeroSection() {
                 boxShadow: "0 1px 2px rgba(0,0,0,0.02)",
                 transition: "all 0.2s",
               }}
-              className="hover:border-blue-400 hover:shadow-sm"
+              className="hover:border-purple-400 hover:shadow-sm"
             >
               <div
                 style={{
@@ -272,7 +272,7 @@ export default function HeroSection() {
                 style={{
                   padding: "0.875rem",
                   backgroundColor: "hsl(var(--primary-light))",
-                  border: "1px solid hsla(221, 83%, 53%, 0.1)",
+                  border: "1px solid hsla(262, 83%, 58%, 0.1)",
                   borderRadius: "0.75rem",
                   textAlign: "center",
                 }}
@@ -345,7 +345,7 @@ export default function HeroSection() {
               right: "-5%",
               width: "105%",
               height: "100%",
-              backgroundColor: "hsla(221, 83%, 53%, 0.03)",
+              backgroundColor: "hsla(262, 83%, 58%, 0.03)",
               borderRadius: "1rem",
               zIndex: 0,
               transform: "rotate(2deg)",

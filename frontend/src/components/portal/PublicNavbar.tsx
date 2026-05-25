@@ -108,12 +108,12 @@ export default function PublicNavbar() {
                   textDecoration: "none",
                   padding: "0.4rem 0.75rem",
                   borderRadius: "0.375rem",
-                  backgroundColor: isActive ? "rgba(59, 130, 246, 0.08)" : "transparent",
+                  backgroundColor: isActive ? "rgba(139, 92, 246, 0.08)" : "transparent",
                   transition: "all 0.15s ease",
                 }}
                 onMouseOver={(e) => {
                   if (!isActive) {
-                    e.currentTarget.style.backgroundColor = "rgba(59, 130, 246, 0.04)";
+                    e.currentTarget.style.backgroundColor = "rgba(139, 92, 246, 0.04)";
                     e.currentTarget.style.color = "hsl(var(--primary))";
                   }
                 }}
@@ -163,7 +163,7 @@ export default function PublicNavbar() {
                 color: "hsl(var(--primary))",
                 textDecoration: "none",
                 borderRadius: "0.375rem",
-                backgroundColor: pathname === "/login" ? "rgba(59, 130, 246, 0.08)" : "transparent",
+                backgroundColor: pathname === "/login" ? "rgba(139, 92, 246, 0.08)" : "transparent",
               }}
             >
               <LogIn size={14} />
@@ -206,11 +206,9 @@ export default function PublicNavbar() {
               borderTop: "1px solid hsl(var(--border))",
               backgroundColor: "rgba(255, 255, 255, 0.98)",
               padding: "1rem 1.5rem",
-              display: "flex",
-              flexDirection: "column",
               gap: "0.5rem",
             }}
-            className="flex xl:hidden"
+            className="flex xl:hidden flex-col"
           >
             {navItems.map((item) => {
               const isActive = pathname === item.route;
@@ -226,7 +224,7 @@ export default function PublicNavbar() {
                     textDecoration: "none",
                     padding: "0.5rem 0.75rem",
                     borderRadius: "0.375rem",
-                    backgroundColor: isActive ? "rgba(59, 130, 246, 0.08)" : "transparent",
+                    backgroundColor: isActive ? "rgba(139, 92, 246, 0.08)" : "transparent",
                     display: "block",
                   }}
                 >

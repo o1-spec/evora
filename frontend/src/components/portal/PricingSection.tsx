@@ -130,7 +130,7 @@ export default function PricingSection() {
                   ? "2px solid hsl(var(--primary))"
                   : "1px solid hsl(var(--border))",
                 boxShadow: plan.highlight
-                  ? "0 20px 25px -5px rgba(59, 130, 246, 0.1), 0 10px 10px -5px rgba(59, 130, 246, 0.04)"
+                  ? "0 20px 25px -5px rgba(139, 92, 246, 0.1), 0 10px 10px -5px rgba(139, 92, 246, 0.04)"
                   : "0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02)",
                 transition: "transform 0.2s, box-shadow 0.2s",
               }}
@@ -231,7 +231,7 @@ export default function PricingSection() {
                         width: 18,
                         height: 18,
                         borderRadius: "50%",
-                        backgroundColor: plan.highlight ? "hsla(221, 83%, 53%, 0.1)" : "hsl(var(--bg-base))",
+                        backgroundColor: plan.highlight ? "hsla(262, 83%, 58%, 0.1)" : "hsl(var(--bg-base))",
                         border: plan.highlight ? "none" : "1px solid hsl(var(--border))",
                         display: "flex",
                         alignItems: "center",
@@ -263,7 +263,7 @@ export default function PricingSection() {
                   display: "flex",
                   alignItems: "center",
                   borderRadius: "0.75rem",
-                  boxShadow: plan.highlight ? "0 4px 6px -1px rgba(59, 130, 246, 0.2)" : "none",
+                  boxShadow: plan.highlight ? "0 4px 6px -1px rgba(139, 92, 246, 0.2)" : "none",
                 }}
               >
                 {plan.cta}
@@ -279,9 +279,9 @@ export default function PricingSection() {
             margin: "3rem auto 0",
             textAlign: "center",
             padding: "1rem 1.5rem",
-            backgroundColor: "hsla(221, 83%, 53%, 0.03)",
+            backgroundColor: "hsla(262, 83%, 58%, 0.03)",
             borderRadius: "0.75rem",
-            border: "1px dashed hsla(221, 83%, 53%, 0.15)",
+            border: "1px dashed hsla(262, 83%, 58%, 0.15)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",

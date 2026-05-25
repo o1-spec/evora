@@ -146,7 +146,7 @@ export default function Navbar() {
                 fontSize: "0.9rem",
                 borderRadius: "0.5rem",
                 fontWeight: 700,
-                boxShadow: "0 4px 6px -1px rgba(59, 130, 246, 0.15)",
+                boxShadow: "0 4px 6px -1px rgba(139, 92, 246, 0.15)",
                 whiteSpace: "nowrap"
               }}
             >
@@ -207,11 +207,9 @@ export default function Navbar() {
               borderTop: "1px solid hsl(var(--border))",
               backgroundColor: "rgba(255, 255, 255, 0.98)",
               padding: "1.5rem",
-              display: "flex",
-              flexDirection: "column",
               gap: "1.25rem",
             }}
-            className="flex lg:hidden"
+            className="flex lg:hidden flex-col"
           >
             <Link
               href="/"
