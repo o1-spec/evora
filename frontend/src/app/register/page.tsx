@@ -23,7 +23,7 @@ export default function RegisterPage() {
 
     try {
       await register(formData);
-      router.push('/dashboard/academy');
+      router.push('/');
     } catch (err: any) {
       setError(err.response?.data?.error || 'Failed to create account.');
     } finally {
