@@ -55,6 +55,18 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
   const meta = SECTION_METADATA[sectionType];
   const IconComponent = meta.icon;
 
+  // Responsive device width state tracking
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   // General Portal states
   const [activeFilter, setActiveFilter] = useState<'ALL' | 'FINISHED' | 'UNFINISHED'>('ALL');
   const [selectedSeries, setSelectedSeries] = useState<number | null>(null);
@@ -511,22 +523,25 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
         <main
           style={{
             flex: 1,
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            height: 'calc(100vh - 140px)',
-            overflow: 'hidden'
+            display: isMobile ? 'flex' : 'grid',
+            flexDirection: isMobile ? 'column' : undefined,
+            gridTemplateColumns: isMobile ? undefined : 'repeat(auto-fit, minmax(320px, 1fr))',
+            height: isMobile ? 'auto' : 'calc(100vh - 140px)',
+            overflow: isMobile ? 'visible' : 'hidden'
           }}
         >
           {/* 📄 Left Column: Examiner Prompt Card */}
           <section
             style={{
-              padding: '2.5rem',
-              overflowY: 'auto',
-              borderRight: '1px solid #e2e8f0',
+              padding: isMobile ? '1.5rem 1rem' : '2.5rem',
+              overflowY: isMobile ? 'visible' : 'auto',
+              borderRight: isMobile ? 'none' : '1px solid #e2e8f0',
+              borderBottom: isMobile ? '1px solid #e2e8f0' : 'none',
               backgroundColor: 'white',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              width: '100%'
             }}
           >
             <div style={{ maxWidth: '520px', margin: '0 auto', width: '100%' }}>
@@ -606,11 +621,12 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
           {/* 📝 Right Column: Frosted Text Editor Workspace */}
           <section
             style={{
-              padding: '2.5rem',
-              overflowY: 'auto',
+              padding: isMobile ? '1.5rem 1rem' : '2.5rem',
+              overflowY: isMobile ? 'visible' : 'auto',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              width: '100%'
             }}
           >
             <div style={{ maxWidth: '560px', margin: '0 auto', width: '100%' }}>
@@ -1257,24 +1273,27 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
         <main
           style={{
             flex: 1,
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            height: 'calc(100vh - 140px)',
-            overflow: 'hidden'
+            display: isMobile ? 'flex' : 'grid',
+            flexDirection: isMobile ? 'column' : undefined,
+            gridTemplateColumns: isMobile ? undefined : 'repeat(auto-fit, minmax(320px, 1fr))',
+            height: isMobile ? 'auto' : 'calc(100vh - 140px)',
+            overflow: isMobile ? 'visible' : 'hidden'
           }}
         >
           {/* 📄 LEFT COLUMN: READABLE DOCUMENT CANVAS */}
           <section
             style={{
-              padding: '2.5rem',
-              overflowY: 'auto',
-              borderRight: '1px solid #e2e8f0',
+              padding: isMobile ? '1.5rem 1rem' : '2.5rem',
+              overflowY: isMobile ? 'visible' : 'auto',
+              borderRight: isMobile ? 'none' : '1px solid #e2e8f0',
+              borderBottom: isMobile ? '1px solid #e2e8f0' : 'none',
               backgroundColor: 'white',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
               alignItems: 'center',
-              position: 'relative'
+              position: 'relative',
+              width: '100%'
             }}
           >
             {/* Sleek watermarked sheet */}
@@ -1384,11 +1403,12 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
           {/* 📝 RIGHT COLUMN: QUESTION & SELECTION MATRIX */}
           <section
             style={{
-              padding: '3rem 2.5rem',
-              overflowY: 'auto',
+              padding: isMobile ? '1.5rem 1rem' : '3rem 2.5rem',
+              overflowY: isMobile ? 'visible' : 'auto',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center'
+              justifyContent: 'center',
+              width: '100%'
             }}
           >
             <div style={{ maxWidth: '520px', margin: '0 auto', width: '100%' }}>
