@@ -92,7 +92,7 @@ export default function PublicNavbar() {
 
         {/* Center Navigation Links (Desktop) */}
         <nav
-          style={{ display: "flex", gap: "0.25rem", alignItems: "center" }}
+          style={{ gap: "0.25rem", alignItems: "center" }}
           className="hidden xl:flex"
         >
           {navItems.map((item) => {
@@ -131,7 +131,7 @@ export default function PublicNavbar() {
         </nav>
 
         {/* Right Actions: Login/Logout (Desktop) */}
-        <div style={{ display: "flex", gap: "0.5rem", alignItems: "center" }} className="hidden xl:flex">
+        <div style={{ gap: "0.5rem", alignItems: "center" }} className="hidden xl:flex">
           {user ? (
             <button
               onClick={() => setShowSignOutModal(true)}
@@ -176,6 +176,7 @@ export default function PublicNavbar() {
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           style={{
+            display: "flex",
             alignItems: "center",
             justifyContent: "center",
             background: "none",
@@ -183,7 +184,7 @@ export default function PublicNavbar() {
             cursor: "pointer",
             padding: "0.4rem",
           }}
-          className="flex xl:hidden"
+          className="xl:hidden"
         >
           {mobileMenuOpen ? (
             <X size={20} color="hsl(var(--text-primary))" />
