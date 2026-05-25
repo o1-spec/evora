@@ -65,7 +65,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
         {/* Brand */}
         <div style={{ height: '5rem', display: 'flex', alignItems: 'center', padding: '0 1.5rem', borderBottom: '1px solid hsl(var(--border))' }}>
-          <Link href="/dashboard/academy" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
+          <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', textDecoration: 'none' }}>
             <div style={{ width: 32, height: 32, borderRadius: 8, backgroundColor: 'hsl(var(--primary))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               <Globe size={18} color="white" />
             </div>
@@ -121,7 +121,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         position: 'fixed', top: 0, left: 0, right: 0, height: '4rem', backgroundColor: 'white', borderBottom: '1px solid hsl(var(--border))',
         alignItems: 'center', justifyContent: 'space-between', padding: '0 1rem', zIndex: 40
       }} className="flex lg:hidden">
-        <Link href="/dashboard/academy" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
+        <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none' }}>
           <div style={{ width: 28, height: 28, borderRadius: 6, backgroundColor: 'hsl(var(--primary))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <Globe size={16} color="white" />
           </div>
