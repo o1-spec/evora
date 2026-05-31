@@ -21,12 +21,21 @@ export class OpenAIService {
    * Evaluate a French essay or writing exercise.
    */
   public static async evaluateWriting(text: string, promptInstruction: string): Promise<EvaluationResult> {
-    if (this.apiKey) {
+    const useOllama = process.env.USE_OLLAMA === 'true';
+    if (useOllama || this.apiKey) {
       try {
+        const apiUrl = useOllama 
+          ? `${process.env.OLLAMA_API_URL || 'http://localhost:11434/v1'}/chat/completions`
+          : 'https://api.openai.com/v1/chat/completions';
+        const modelName = useOllama
+          ? (process.env.OLLAMA_MODEL || 'llama3')
+          : 'gpt-4o';
+        const authHeader = useOllama ? 'Bearer ollama' : `Bearer ${this.apiKey}`;
+
         const response = await axios.post(
-          'https://api.openai.com/v1/chat/completions',
+          apiUrl,
           {
-            model: 'gpt-4o',
+            model: modelName,
             response_format: { type: 'json_object' },
             messages: [
               {
@@ -62,7 +71,7 @@ You MUST respond with a strict JSON object with this shape:
           },
           {
             headers: {
-              Authorization: `Bearer ${this.apiKey}`,
+              Authorization: authHeader,
               'Content-Type': 'application/json'
             }
           }
@@ -71,7 +80,7 @@ You MUST respond with a strict JSON object with this shape:
         const content = response.data.choices[0].message.content;
         return JSON.parse(content) as EvaluationResult;
       } catch (error) {
-        console.error('Error with OpenAI Live API, calling offline fallback...', error);
+        console.error(`Error with ${useOllama ? 'Ollama' : 'OpenAI Live'} API, calling offline fallback...`, error);
       }
     }
 
@@ -83,12 +92,21 @@ You MUST respond with a strict JSON object with this shape:
    * Evaluate a spoken speech transcript (from Whisper speech-to-text).
    */
   public static async evaluateSpeaking(transcript: string, promptInstruction: string): Promise<EvaluationResult> {
-    if (this.apiKey) {
+    const useOllama = process.env.USE_OLLAMA === 'true';
+    if (useOllama || this.apiKey) {
       try {
+        const apiUrl = useOllama 
+          ? `${process.env.OLLAMA_API_URL || 'http://localhost:11434/v1'}/chat/completions`
+          : 'https://api.openai.com/v1/chat/completions';
+        const modelName = useOllama
+          ? (process.env.OLLAMA_MODEL || 'llama3')
+          : 'gpt-4o';
+        const authHeader = useOllama ? 'Bearer ollama' : `Bearer ${this.apiKey}`;
+
         const response = await axios.post(
-          'https://api.openai.com/v1/chat/completions',
+          apiUrl,
           {
-            model: 'gpt-4o',
+            model: modelName,
             response_format: { type: 'json_object' },
             messages: [
               {
@@ -121,7 +139,7 @@ You MUST respond with a strict JSON object with this shape:
           },
           {
             headers: {
-              Authorization: `Bearer ${this.apiKey}`,
+              Authorization: authHeader,
               'Content-Type': 'application/json'
             }
           }
@@ -130,7 +148,7 @@ You MUST respond with a strict JSON object with this shape:
         const content = response.data.choices[0].message.content;
         return JSON.parse(content) as EvaluationResult;
       } catch (error) {
-        console.error('Error with OpenAI Live Speaking API, calling offline fallback...', error);
+        console.error(`Error with ${useOllama ? 'Ollama' : 'OpenAI Live Speaking'} API, calling offline fallback...`, error);
       }
     }
 

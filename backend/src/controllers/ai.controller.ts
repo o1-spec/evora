@@ -112,10 +112,19 @@ export class AiController {
       }
 
       const apiKey = process.env.OPENAI_API_KEY || '';
+      const useOllama = process.env.USE_OLLAMA === 'true';
       let reply = "";
 
-      if (apiKey) {
+      if (useOllama || apiKey) {
         try {
+          const apiUrl = useOllama 
+            ? `${process.env.OLLAMA_API_URL || 'http://localhost:11434/v1'}/chat/completions`
+            : 'https://api.openai.com/v1/chat/completions';
+          const modelName = useOllama
+            ? (process.env.OLLAMA_MODEL || 'llama3')
+            : 'gpt-4o';
+          const authHeader = useOllama ? 'Bearer ollama' : `Bearer ${apiKey}`;
+
           const messages = [
             {
               role: 'system',
@@ -129,14 +138,14 @@ export class AiController {
           ];
 
           const response = await axios.post(
-            'https://api.openai.com/v1/chat/completions',
-            { model: 'gpt-4o', messages, temperature: 0.7 },
-            { headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json' } }
+            apiUrl,
+            { model: modelName, messages, temperature: 0.7 },
+            { headers: { Authorization: authHeader, 'Content-Type': 'application/json' } }
           );
 
           reply = response.data.choices[0].message.content || "";
         } catch (err) {
-          console.error('Error in OpenAI Chat, falling back to mock...', err);
+          console.error(`Error in ${useOllama ? 'Ollama' : 'OpenAI'} Chat, falling back to mock...`, err);
         }
       }
 
