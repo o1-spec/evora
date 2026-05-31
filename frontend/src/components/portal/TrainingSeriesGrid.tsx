@@ -118,11 +118,11 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
     if (sectionType === 'READING') {
       setQuestions(readingQuestions);
     } else if (sectionType === 'WRITING') {
-      setWTasks(writtenTasks);
+      setWTasks(activeSeriesId !== null ? writtenTasks.filter(t => t.seriesId === activeSeriesId) : []);
     } else {
       setQuestions(generateMockQuestions(sectionType));
     }
-  }, [sectionType]);
+  }, [sectionType, activeSeriesId]);
 
   // Handle active countdown ticking
   useEffect(() => {

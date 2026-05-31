@@ -1,5 +1,7 @@
 import { prisma } from '../services/db.service';
 import { ExerciseType, ExamSectionType } from '@prisma/client';
+import * as fs from 'fs';
+import * as path from 'path';
 
 async function seed() {
   console.log('🌱 Starting Database Seeding...');
@@ -302,6 +304,68 @@ async function seed() {
     });
 
     console.log('🎉 Seeding Completed Successfully! All levels, modules, exercises, and TCF simulator mock questions are in place.');
+
+    // 6. Seed the 40 Training Series (120 Written Tasks)
+    console.log(' - Seeding 120 Writing Training Tasks...');
+    const writtenTasksPath = path.join(__dirname, 'written_tasks.json');
+    if (fs.existsSync(writtenTasksPath)) {
+      const writtenTasksRaw = fs.readFileSync(writtenTasksPath, 'utf8');
+      const writtenTasks = JSON.parse(writtenTasksRaw);
+
+      // Group by seriesId
+      const seriesMap: { [key: number]: any[] } = {};
+      for (const task of writtenTasks) {
+        if (!seriesMap[task.seriesId]) {
+          seriesMap[task.seriesId] = [];
+        }
+        seriesMap[task.seriesId].push(task);
+      }
+
+      for (const seriesId of Object.keys(seriesMap).map(Number).sort((a, b) => a - b)) {
+        const tasks = seriesMap[seriesId];
+        // Create an exam for each series
+        const trainingExam = await prisma.tcfExam.create({
+          data: {
+            title: `TCF Canada - Entraînement Série #${seriesId}`,
+            description: `Série d'entraînement intensive #${seriesId} axée sur les tâches de l'expression écrite progressive (Tâches 1, 2 et 3).`,
+            isOfficial: false
+          }
+        });
+
+        const trainingWritingSec = await prisma.tcfSection.create({
+          data: {
+            examId: trainingExam.id,
+            type: ExamSectionType.WRITING,
+            durationMin: 60,
+            orderIndex: 1
+          }
+        });
+
+        for (const t of tasks) {
+          // Format text with rich information
+          const richText = `### TÂCHE ${t.taskNumber} (${t.difficulty}) : ${t.title}\n\n${t.prompt}\n\n**Conseil contextuel :** ${t.contextAdvice}\n\n*Word bounds: ${t.minWords} - ${t.maxWords} words. Points: ${t.points}.*`;
+          
+          await prisma.tcfQuestion.create({
+            data: {
+              sectionId: trainingWritingSec.id,
+              text: richText,
+              correctKey: `writing_series_${seriesId}_task_${t.taskNumber}`,
+              orderIndex: t.taskNumber,
+              options: {
+                minWords: t.minWords,
+                maxWords: t.maxWords,
+                points: t.points,
+                title: t.title,
+                contextAdvice: t.contextAdvice
+              }
+            }
+          });
+        }
+      }
+      console.log(`🎉 Successfully seeded 40 Training Exams with 120 Written Tasks!`);
+    } else {
+      console.log('⚠️ written_tasks.json not found in seeds folder. Skipping training series seeding.');
+    }
   } catch (error) {
     console.error('Fatal error seeding database:', error);
   } finally {

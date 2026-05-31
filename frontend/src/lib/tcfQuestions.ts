@@ -11,6 +11,7 @@ export interface TcfQuestionData {
 
 export interface TcfWrittenTaskData {
   id: number;
+  seriesId: number;
   taskNumber: 1 | 2 | 3;
   difficulty: 'A1-A2' | 'B1-B2' | 'C1-C2';
   minWords: number;
@@ -347,56 +348,10 @@ export const readingQuestions: TcfQuestionData[] = [
   })
 ];
 
+import bulkWrittenTasks from './written_tasks.json';
+
 // High-fidelity Written Tasks (Tasks 1, 2, and 3) specifically for the Writing Practice Simulator
-export const writtenTasks: TcfWrittenTaskData[] = [
-  {
-    id: 1,
-    taskNumber: 1,
-    difficulty: 'A1-A2',
-    minWords: 60,
-    maxWords: 120,
-    points: 200,
-    title: 'Task 1: Invitation message to a colleague',
-    prompt: `Vous changez de département au sein de votre entreprise à Montréal. Rédigez un message à un collègue proche (par exemple, Antoine) pour l'inviter à déjeuner afin de célébrer votre nouveau poste. 
-
-Dans votre message :
-1. Expliquez brièvement votre changement de poste.
-2. Proposez une date, un horaire et un lieu de rendez-vous.
-3. Exprimez votre enthousiasme à l'idée de retravailler ensemble dans le futur.`,
-    contextAdvice: 'Use a warm but professional tone. Adhere strictly to the word count (60 - 120 words). Address all three points explicitly to secure maximum task achievement points.'
-  },
-  {
-    id: 2,
-    taskNumber: 2,
-    difficulty: 'B1-B2',
-    minWords: 120,
-    maxWords: 150,
-    points: 300,
-    title: 'Task 2: Advantages and drawbacks of remote work',
-    prompt: `Rédigez un article d'opinion court destiné au journal local de votre quartier sur le sujet du télétravail. 
-
-Dans cet article, vous devez :
-1. Expliquer les avantages écologiques et familiaux du travail depuis chez soi.
-2. Argumenter sur le risque d'isolement social des travailleurs.
-3. Proposer un compromis (par exemple, un système hybride de 2 ou 3 jours par semaine).`,
-    contextAdvice: 'Organize your text with clear paragraphs. Use robust logical connectors (tels que "cependant", "en outre", "par conséquent") to defend your arguments.'
-  },
-  {
-    id: 3,
-    taskNumber: 3,
-    difficulty: 'C1-C2',
-    minWords: 120,
-    maxWords: 180,
-    points: 400,
-    title: 'Task 3: Societal debate on cars in city centers',
-    prompt: `Débat public : Faut-il interdire complètement la circulation des véhicules individuels thermiques dans le centre-ville des grandes métropoles canadiennes ?
-
-Comparez les deux points de vue suivants et donnez votre avis motivé :
-- Option A : L'interdiction absolue permet une réduction immédiate de la pollution atmosphérique et favorise les mobilités douces.
-- Option B : Cette mesure pénalise lourdement les commerçants de proximité et isole les résidents des banlieues excentrées sans transport alternatif.`,
-    contextAdvice: 'Synthesize the conflict objectively before establishing your structured personal stance. Keep your syntax complex and use sophisticated vocabulary.'
-  }
-];
+export const writtenTasks: TcfWrittenTaskData[] = bulkWrittenTasks as TcfWrittenTaskData[];
 
 // Generate simple mock questions for other sections to allow general robust simulator function
 export const generateMockQuestions = (section: 'WRITING' | 'LISTENING' | 'SPEAKING'): TcfQuestionData[] => {
