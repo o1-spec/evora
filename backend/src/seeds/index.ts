@@ -7,6 +7,16 @@ async function seed() {
   console.log('🌱 Starting Database Seeding...');
 
   try {
+    // Clear existing exams and custom content to prevent duplicate records
+    console.log(' - Wiping existing TCF Exams...');
+    await prisma.tcfExam.deleteMany();
+    
+    // Clear lesson exercises & lessons to prevent duplicate seeds
+    console.log(' - Wiping existing learning modules & content...');
+    await prisma.exercise.deleteMany();
+    await prisma.lesson.deleteMany();
+    await prisma.module.deleteMany();
+
     // 1. Seed French Learning Levels
     console.log(' - Seeding Learning Levels...');
     const a1Level = await prisma.level.upsert({
@@ -305,66 +315,114 @@ async function seed() {
 
     console.log('🎉 Seeding Completed Successfully! All levels, modules, exercises, and TCF simulator mock questions are in place.');
 
-    // 6. Seed the 40 Training Series (120 Written Tasks)
-    console.log(' - Seeding 120 Writing Training Tasks...');
+    // 6. Seed the 40 Training Series (120 Written Tasks & 120 Oral Tasks)
+    console.log(' - Seeding 120 Writing & 120 Speaking Training Tasks...');
     const writtenTasksPath = path.join(__dirname, 'written_tasks.json');
-    if (fs.existsSync(writtenTasksPath)) {
+    const oralTasksPath = path.join(__dirname, 'oral_tasks.json');
+
+    if (fs.existsSync(writtenTasksPath) && fs.existsSync(oralTasksPath)) {
       const writtenTasksRaw = fs.readFileSync(writtenTasksPath, 'utf8');
       const writtenTasks = JSON.parse(writtenTasksRaw);
 
-      // Group by seriesId
-      const seriesMap: { [key: number]: any[] } = {};
+      const oralTasksRaw = fs.readFileSync(oralTasksPath, 'utf8');
+      const oralTasks = JSON.parse(oralTasksRaw);
+
+      // Group written tasks by seriesId
+      const writtenMap: { [key: number]: any[] } = {};
       for (const task of writtenTasks) {
-        if (!seriesMap[task.seriesId]) {
-          seriesMap[task.seriesId] = [];
+        if (!writtenMap[task.seriesId]) {
+          writtenMap[task.seriesId] = [];
         }
-        seriesMap[task.seriesId].push(task);
+        writtenMap[task.seriesId].push(task);
       }
 
-      for (const seriesId of Object.keys(seriesMap).map(Number).sort((a, b) => a - b)) {
-        const tasks = seriesMap[seriesId];
+      // Group oral tasks by seriesId
+      const oralMap: { [key: number]: any[] } = {};
+      for (const task of oralTasks) {
+        if (!oralMap[task.seriesId]) {
+          oralMap[task.seriesId] = [];
+        }
+        oralMap[task.seriesId].push(task);
+      }
+
+      for (const seriesId of Object.keys(writtenMap).map(Number).sort((a, b) => a - b)) {
+        const wTasks = writtenMap[seriesId] || [];
+        const oTasks = oralMap[seriesId] || [];
+
         // Create an exam for each series
         const trainingExam = await prisma.tcfExam.create({
           data: {
             title: `TCF Canada - Entraînement Série #${seriesId}`,
-            description: `Série d'entraînement intensive #${seriesId} axée sur les tâches de l'expression écrite progressive (Tâches 1, 2 et 3).`,
+            description: `Série d'entraînement intensive #${seriesId} comprenant les sections progressives d'Expression Écrite et d'Expression Orale (A1 à C2).`,
             isOfficial: false
           }
         });
 
-        const trainingWritingSec = await prisma.tcfSection.create({
-          data: {
-            examId: trainingExam.id,
-            type: ExamSectionType.WRITING,
-            durationMin: 60,
-            orderIndex: 1
-          }
-        });
-
-        for (const t of tasks) {
-          // Format text with rich information
-          const richText = `### TÂCHE ${t.taskNumber} (${t.difficulty}) : ${t.title}\n\n${t.prompt}\n\n**Conseil contextuel :** ${t.contextAdvice}\n\n*Word bounds: ${t.minWords} - ${t.maxWords} words. Points: ${t.points}.*`;
-          
-          await prisma.tcfQuestion.create({
+        // Seed WRITING section
+        if (wTasks.length > 0) {
+          const trainingWritingSec = await prisma.tcfSection.create({
             data: {
-              sectionId: trainingWritingSec.id,
-              text: richText,
-              correctKey: `writing_series_${seriesId}_task_${t.taskNumber}`,
-              orderIndex: t.taskNumber,
-              options: {
-                minWords: t.minWords,
-                maxWords: t.maxWords,
-                points: t.points,
-                title: t.title,
-                contextAdvice: t.contextAdvice
-              }
+              examId: trainingExam.id,
+              type: ExamSectionType.WRITING,
+              durationMin: 60,
+              orderIndex: 1
             }
           });
+
+          for (const t of wTasks) {
+            const richText = `### TÂCHE ${t.taskNumber} (${t.difficulty}) : ${t.title}\n\n${t.prompt}\n\n**Conseil contextuel :** ${t.contextAdvice}\n\n*Word bounds: ${t.minWords} - ${t.maxWords} words. Points: ${t.points}.*`;
+            await prisma.tcfQuestion.create({
+              data: {
+                sectionId: trainingWritingSec.id,
+                text: richText,
+                correctKey: `writing_series_${seriesId}_task_${t.taskNumber}`,
+                orderIndex: t.taskNumber,
+                options: {
+                  minWords: t.minWords,
+                  maxWords: t.maxWords,
+                  points: t.points,
+                  title: t.title,
+                  contextAdvice: t.contextAdvice
+                }
+              }
+            });
+          }
+        }
+
+        // Seed SPEAKING section
+        if (oTasks.length > 0) {
+          const trainingSpeakingSec = await prisma.tcfSection.create({
+            data: {
+              examId: trainingExam.id,
+              type: ExamSectionType.SPEAKING,
+              durationMin: 12,
+              orderIndex: 2
+            }
+          });
+
+          for (const t of oTasks) {
+            const richText = `### TÂCHE ${t.taskNumber} (${t.difficulty}) : ${t.title}\n\n${t.prompt}\n\n**Conseil contextuel :** ${t.contextAdvice}\n\n*Duration bounds: ${t.minDurationSec}s - ${t.maxDurationSec}s. Points: ${t.points}.*`;
+            await prisma.tcfQuestion.create({
+              data: {
+                sectionId: trainingSpeakingSec.id,
+                text: richText,
+                correctKey: `speaking_series_${seriesId}_task_${t.taskNumber}`,
+                orderIndex: t.taskNumber,
+                options: {
+                  minDurationSec: t.minDurationSec,
+                  maxDurationSec: t.maxDurationSec,
+                  points: t.points,
+                  title: t.title,
+                  contextAdvice: t.contextAdvice
+                }
+              }
+            });
+          }
         }
       }
-      console.log(`🎉 Successfully seeded 40 Training Exams with 120 Written Tasks!`);
+      console.log(`🎉 Successfully seeded 40 Training Exams with 120 Written and 120 Speaking Tasks!`);
     } else {
-      console.log('⚠️ written_tasks.json not found in seeds folder. Skipping training series seeding.');
+      console.log('⚠️ written_tasks.json or oral_tasks.json not found in seeds folder. Skipping training series seeding.');
     }
   } catch (error) {
     console.error('Fatal error seeding database:', error);
