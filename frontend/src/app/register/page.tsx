@@ -182,7 +182,6 @@ export default function RegisterPage() {
       router.push('/');
     } catch (err: any) {
       setError(err.response?.data?.error || 'Failed to create account.');
-    } finally {
       setIsLoading(false);
     }
   };
