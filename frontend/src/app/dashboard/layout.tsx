@@ -93,7 +93,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
         {/* User Card */}
         <div style={{ padding: '1.5rem 1rem', borderTop: '1px solid hsl(var(--border))' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem', padding: '0.5rem' }}>
+          <Link href="/dashboard/billing" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem', padding: '0.5rem', borderRadius: '0.75rem', cursor: 'pointer', transition: 'all 0.2s', textDecoration: 'none' }} onMouseOver={e => e.currentTarget.style.backgroundColor = 'hsl(var(--bg-base))'} onMouseOut={e => e.currentTarget.style.backgroundColor = 'transparent'}>
             <div style={{ width: 40, height: 40, borderRadius: '50%', backgroundColor: 'hsl(var(--primary))', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 600, fontSize: '1.1rem', textTransform: 'uppercase' }}>
               {user.firstName?.[0] || user.email[0]}
             </div>
@@ -105,7 +105,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 {profile?.subscriptionTier || user.subscriptionTier} Plan
               </div>
             </div>
-          </div>
+          </Link>
           <button onClick={() => setShowSignOutModal(true)} style={{
             display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.75rem 1rem', width: '100%',
             borderRadius: '0.75rem', border: 'none', background: 'transparent', color: 'hsl(var(--text-secondary))',

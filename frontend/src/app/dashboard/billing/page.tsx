@@ -24,11 +24,6 @@ export default function BillingPage() {
     onSuccess: (url) => { window.location.href = url; },
   });
 
-  const sandboxMutation = useMutation({
-    mutationFn: (tier: string) => api.post('/billing/sandbox-upgrade', { tier }).then(r => r.data),
-    onSuccess: () => { window.location.reload(); },
-  });
-
   const TIER_COLORS: Record<string, string> = {
     FREE: 'hsl(var(--text-secondary))', BASIC: 'hsl(var(--accent))', PREMIUM: 'hsl(var(--primary))', PRO: '#f59e0b',
   };
@@ -56,14 +51,7 @@ export default function BillingPage() {
         </div>
       </div>
 
-      {/* Sandbox Notice */}
-      <div className="flex flex-col sm:flex-row items-start gap-3 p-4 mb-10 text-sm rounded-xl" style={{ background: 'hsla(37, 95%, 58%, 0.1)', border: '1px solid hsla(37, 95%, 58%, 0.2)', color: 'hsl(37, 90%, 40%)' }}>
-        <Zap size={18} style={{ flexShrink: 0, marginTop: 2 }} />
-        <div>
-          <strong>Developer Sandbox Mode</strong>: Click "Test Sandbox" to simulate an instant upgrade without payment.
-          In production, connect your Stripe keys in the <code>.env</code> file to enable real checkout.
-        </div>
-      </div>
+
 
       {/* Plans Grid */}
       {isLoading ? (
@@ -114,14 +102,7 @@ export default function BillingPage() {
                       {checkoutMutation.isPending ? <Loader2 size={16} className="animate-spin" /> : <><ExternalLink size={16} /> Subscribe</>}
                     </button>
                   )}
-                  {!isCurrent && (
-                    <button id={`sandbox-${plan.tier}`}
-                      onClick={() => sandboxMutation.mutate(plan.tier)}
-                      disabled={sandboxMutation.isPending}
-                      className="btn-ghost" style={{ width: '100%', border: '1px dashed hsl(var(--border))' }}>
-                      {sandboxMutation.isPending ? 'Processing...' : '⚡ Test Sandbox'}
-                    </button>
-                  )}
+
                   {isCurrent && (
                     <div style={{ textAlign: 'center', fontSize: '0.9rem', color: color, padding: '0.5rem', fontWeight: 600, backgroundColor: `${color}10`, borderRadius: '0.5rem' }}>
                       Active Plan
