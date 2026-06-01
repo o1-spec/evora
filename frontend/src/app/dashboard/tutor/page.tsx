@@ -85,7 +85,7 @@ export default function TutorPage() {
   const isLoading = chatMutation.isPending || speakMutation.isPending;
 
   return (
-    <div className="flex flex-col h-[calc(100vh-8rem)] lg:h-[calc(100vh-5rem)] max-w-[780px] mx-auto w-full">
+    <div className="flex flex-col h-[calc(100vh-8rem)] lg:h-[calc(100vh-5rem)] w-full px-4 md:px-6 lg:px-8">
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', flexShrink: 0 }}>
         <div style={{ width: 48, height: 48, borderRadius: 14, backgroundColor: 'hsl(var(--primary))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
