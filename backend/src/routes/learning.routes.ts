@@ -6,6 +6,7 @@ const router = Router();
 
 router.use(authMiddleware as any);
 
+router.get('/progress/academy', LearningController.getAcademyProgress as any);
 router.get('/levels', LearningController.getLevels as any);
 router.get('/levels/:code', LearningController.getLevelByCode as any);
 router.get('/lessons/:lessonId', LearningController.getLesson as any);

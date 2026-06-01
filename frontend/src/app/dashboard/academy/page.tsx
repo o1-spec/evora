@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import {
@@ -8,6 +8,7 @@ import {
   MessageSquare, ChevronRight, Sparkles, Lock, CheckCircle,
   GraduationCap, Layers, Zap, Star
 } from 'lucide-react';
+import api from '@/lib/api';
 
 // ─── TCF PREP DATA ──────────────────────────────────────────────────────────
 
@@ -269,6 +270,64 @@ function ModuleCard({ mod, levelColor }: { mod: typeof FRENCH_LEVELS[0]['modules
 
 export default function AcademyPage() {
   const [activeTrack, setActiveTrack] = useState<'tcf' | 'french'>('tcf');
+  const [tcfBands, setTcfBands] = useState(TCF_BANDS);
+  const [frenchLevels, setFrenchLevels] = useState(FRENCH_LEVELS);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadProgress() {
+      try {
+        const { data } = await api.get('/learning/progress/academy');
+        
+        // 1. Update TCF Bands state dynamically based on API responses
+        setTcfBands(prev => prev.map(band => {
+          if (band.id === 'beginner' && data.beginner) {
+            return {
+              ...band,
+              progress: data.beginner.progress,
+              skills: band.skills.map(skill => {
+                const apiSkill = data.beginner.skills.find((s: any) => s.label === skill.label);
+                return apiSkill ? { ...skill, done: apiSkill.done, exercises: apiSkill.exercises } : skill;
+              })
+            };
+          }
+          if (band.id === 'intermediate' && data.intermediate) {
+            return {
+              ...band,
+              progress: data.intermediate.progress,
+              skills: band.skills.map(skill => {
+                const apiSkill = data.intermediate.skills.find((s: any) => s.label === skill.label);
+                return apiSkill ? { ...skill, done: apiSkill.done, exercises: apiSkill.exercises } : skill;
+              })
+            };
+          }
+          return band;
+        }));
+
+        // 2. Update Comprehensive French CEFR Levels dynamically based on API responses
+        setFrenchLevels(prev => prev.map(level => {
+          const apiLevel = data[level.code.toLowerCase()];
+          if (apiLevel) {
+            return {
+              ...level,
+              progress: apiLevel.progress,
+              modules: level.modules.map(mod => {
+                const apiMod = apiLevel.modules.find((m: any) => m.label === mod.label);
+                return apiMod ? { ...mod, done: apiMod.done, count: apiMod.count } : mod;
+              })
+            };
+          }
+          return level;
+        }));
+
+        setIsLoading(false);
+      } catch (error) {
+        console.error('Failed to load live academy progress:', error);
+        setIsLoading(false);
+      }
+    }
+    loadProgress();
+  }, []);
 
   return (
     <div>
@@ -372,7 +431,7 @@ export default function AcademyPage() {
 
             {/* CLB Bands */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-              {TCF_BANDS.map((band, bi) => (
+              {tcfBands.map((band, bi) => (
                 <motion.div
                   key={band.id}
                   initial={{ opacity: 0, y: 20 }}
@@ -471,7 +530,7 @@ export default function AcademyPage() {
 
             {/* CEFR Level Sections */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-              {FRENCH_LEVELS.map((level, li) => (
+              {frenchLevels.map((level, li) => (
                 <motion.div
                   key={level.code}
                   initial={{ opacity: 0, y: 20 }}

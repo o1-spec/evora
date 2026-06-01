@@ -133,22 +133,39 @@ export default function LessonPage() {
 
                       <p style={{ fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '1.5rem', color: 'hsl(var(--text-primary))', fontWeight: 500 }}>{ex.question}</p>
 
-                      {ex.type === 'MULTIPLE_CHOICE' && (
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                          {(ex.options as string[])?.map(opt => (
-                            <button key={opt} onClick={() => setAnswers(p => ({ ...p, [ex.id]: opt }))}
-                              style={{
-                                textAlign: 'left', padding: '1rem 1.25rem', borderRadius: '0.75rem', cursor: 'pointer', fontSize: '0.95rem', transition: 'all 0.2s', border: '1px solid',
-                                backgroundColor: answers[ex.id] === opt ? 'hsl(var(--primary-light))' : 'white',
-                                borderColor: answers[ex.id] === opt ? 'hsl(var(--primary))' : 'hsl(var(--border))',
-                                color: answers[ex.id] === opt ? 'hsl(var(--primary-hover))' : 'hsl(var(--text-primary))',
-                                fontWeight: answers[ex.id] === opt ? 600 : 400,
-                              }}>
-                              {opt}
-                            </button>
-                          ))}
-                        </div>
-                      )}
+                      {ex.type === 'MULTIPLE_CHOICE' && (() => {
+                        let parsedOptions: string[] = [];
+                        if (Array.isArray(ex.options)) {
+                          parsedOptions = ex.options;
+                        } else if (typeof ex.options === 'string') {
+                          try {
+                            const parsed = JSON.parse(ex.options);
+                            if (Array.isArray(parsed)) {
+                              parsedOptions = parsed;
+                            }
+                          } catch {
+                            parsedOptions = [];
+                          }
+                        }
+                        if (parsedOptions.length === 0) return null;
+
+                        return (
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                            {parsedOptions.map(opt => (
+                              <button key={opt} onClick={() => setAnswers(p => ({ ...p, [ex.id]: opt }))}
+                                style={{
+                                  textAlign: 'left', padding: '1rem 1.25rem', borderRadius: '0.75rem', cursor: 'pointer', fontSize: '0.95rem', transition: 'all 0.2s', border: '1px solid',
+                                  backgroundColor: answers[ex.id] === opt ? 'hsl(var(--primary-light))' : 'white',
+                                  borderColor: answers[ex.id] === opt ? 'hsl(var(--primary))' : 'hsl(var(--border))',
+                                  color: answers[ex.id] === opt ? 'hsl(var(--primary-hover))' : 'hsl(var(--text-primary))',
+                                  fontWeight: answers[ex.id] === opt ? 600 : 400,
+                                }}>
+                                {opt}
+                              </button>
+                            ))}
+                          </div>
+                        );
+                      })()}
 
                       {(ex.type === 'FILL_IN_THE_BLANK' || ex.type === 'WRITING') && (
                         <textarea value={answers[ex.id] || ''} onChange={e => setAnswers(p => ({ ...p, [ex.id]: e.target.value }))}

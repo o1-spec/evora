@@ -27,10 +27,11 @@ export default function ExamsPage() {
     if (!examToStart) return;
     setStartingExam(true);
     try {
-      const { data } = await api.post(`/tcf/exams/${examToStart.id}/start`);
-      router.push(`/dashboard/exams/${examToStart.id}/attempt/${data.attempt.id}`);
-    } catch (err) {
-      alert('Failed to start exam. Check console.');
+      const { data } = await api.post('/tcf/attempts/start', { examId: examToStart.id });
+      router.push(`/dashboard/exams/${examToStart.id}/attempt/${data.attemptId}`);
+    } catch (err: any) {
+      const errMsg = err.response?.data?.error || 'Failed to start exam. Check console.';
+      alert(errMsg);
       console.error(err);
       setStartingExam(false);
       setExamToStart(null);
