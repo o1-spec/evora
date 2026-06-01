@@ -228,7 +228,7 @@ function WritingWorkspace({
 export default function ExamAttemptPage() {
   const { examId, attemptId } = useParams<{ examId: string; attemptId: string }>();
   const router = useRouter();
-  const { answers, setAnswer, currentSectionIndex, nextSection, setTimer, tickTimer, timeRemainingSeconds, setAttempt } = useExamStore();
+  const { answers, setAnswer, currentSectionIndex, nextSection, setTimer, tickTimer, timeRemainingSeconds, setAttempt, markSectionComplete, completedSections } = useExamStore();
   const [isRecording, setIsRecording] = useState(false);
   const mediaRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
@@ -290,6 +290,12 @@ export default function ExamAttemptPage() {
         setIsRecording(true);
       } catch { alert('Microphone access denied.'); }
     }
+  };
+
+  // Check if all questions in current section are answered
+  const isSectionComplete = () => {
+    if (!section) return false;
+    return section.questions?.every((q: any) => answers[q.id] && answers[q.id].trim().length > 0) || false;
   };
 
   const getAudioUrl = (ans: string) => {
@@ -620,9 +626,29 @@ export default function ExamAttemptPage() {
             </div>
 
             {/* Navigation */}
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '2.5rem', gap: '1rem' }}>
-              <button onClick={handleNextOrSubmit} disabled={submitMutation.isPending}
-                className="btn-primary" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.875rem 1.5rem', fontSize: '0.95rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', marginTop: '2.5rem', gap: '1rem' }}>
+              {!isSectionComplete() && !isLastSection && (
+                <div style={{ fontSize: '0.85rem', color: 'hsl(var(--text-secondary))', fontWeight: 500, padding: '0.75rem 1rem', backgroundColor: 'hsl(var(--bg-base))', borderRadius: '0.75rem', border: '1px solid hsl(var(--border))' }}>
+                  ⚠️ Please answer all questions before proceeding
+                </div>
+              )}
+              <button onClick={() => {
+                if (isSectionComplete()) {
+                  markSectionComplete(currentSectionIndex);
+                  handleNextOrSubmit();
+                }
+              }} 
+              disabled={submitMutation.isPending || (!isLastSection && !isSectionComplete())}
+                className={!isLastSection && !isSectionComplete() ? 'btn-secondary' : 'btn-primary'} 
+                style={{ 
+                  display: 'flex', 
+                  alignItems: 'center', 
+                  gap: '0.5rem', 
+                  padding: '0.875rem 1.5rem', 
+                  fontSize: '0.95rem',
+                  opacity: (!isLastSection && !isSectionComplete()) ? 0.5 : 1,
+                  cursor: (!isLastSection && !isSectionComplete()) ? 'not-allowed' : 'pointer'
+                }}>
                 {submitMutation.isPending ? 'Submitting...' : isLastSection ? <><Send size={18} /> Submit Exam</> : <>Next Section <ChevronRight size={18} /></>}
               </button>
             </div>
