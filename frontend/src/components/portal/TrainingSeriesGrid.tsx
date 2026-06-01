@@ -9,7 +9,7 @@ import {
   Volume2, ShieldCheck, Flame, Trophy, RefreshCw, LayoutGrid, Check,
   Info, AlertTriangle, Eye, X, Send, AlertCircle, FileText, CheckCircle
 } from 'lucide-react';
-import { readingQuestions, generateMockQuestions, writtenTasks, TcfQuestionData, TcfWrittenTaskData } from '@/lib/tcfQuestions';
+import { readingQuestions, generateMockQuestions, writtenTasks, oralTasks, TcfQuestionData, TcfWrittenTaskData, TcfOralTaskData } from '@/lib/tcfQuestions';
 
 interface TrainingSeriesGridProps {
   sectionType: 'READING' | 'WRITING' | 'LISTENING' | 'SPEAKING';
@@ -91,6 +91,19 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
   });
   const [activeReportTab, setActiveReportTab] = useState<1 | 2 | 3>(1);
 
+  // --- Stateful Oral Expression Simulator states ---
+  const [oTasks, setOTasks] = useState<TcfOralTaskData[]>([]);
+  const [currentOTaskIndex, setCurrentOTaskIndex] = useState<number>(0); // 0, 1, 2
+  const [speakingAnswers, setSpeakingAnswers] = useState<Record<number, { isRecorded: boolean; durationSec: number; transcript: string }>>({
+    1: { isRecorded: false, durationSec: 0, transcript: '' },
+    2: { isRecorded: false, durationSec: 0, transcript: '' },
+    3: { isRecorded: false, durationSec: 0, transcript: '' }
+  });
+  const [recordingState, setRecordingState] = useState<'IDLE' | 'PREPARING' | 'RECORDING' | 'PAUSED' | 'SAVED'>('IDLE');
+  const [prepTimeRemaining, setPrepTimeRemaining] = useState<number>(180); // 3 minutes preparation for Task 2
+  const [recordTime, setRecordTime] = useState<number>(0);
+  const [isTranscribing, setIsTranscribing] = useState<boolean>(false);
+
   // Custom Toast state
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'info' | 'warning' } | null>(null);
 
@@ -113,16 +126,41 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
     }
   }, [toast]);
 
-  // Load questions and written tasks
+  // Load questions, written tasks, and oral tasks
   useEffect(() => {
     if (sectionType === 'READING') {
       setQuestions(activeSeriesId !== null ? readingQuestions.filter(q => q.seriesId === activeSeriesId) : []);
     } else if (sectionType === 'WRITING') {
       setWTasks(activeSeriesId !== null ? writtenTasks.filter(t => t.seriesId === activeSeriesId) : []);
+    } else if (sectionType === 'SPEAKING') {
+      setOTasks(activeSeriesId !== null ? oralTasks.filter(t => t.seriesId === activeSeriesId) : []);
     } else {
       setQuestions(generateMockQuestions(sectionType));
     }
   }, [sectionType, activeSeriesId]);
+
+  // Handle Speaking-specific preparation and recording timers
+  useEffect(() => {
+    let t: ReturnType<typeof setInterval> | null = null;
+    if (activeSeriesId !== null && !isExamFinished && sectionType === 'SPEAKING') {
+      t = setInterval(() => {
+        if (recordingState === 'PREPARING') {
+          setPrepTimeRemaining(prev => {
+            if (prev <= 1) {
+              setRecordingState('RECORDING');
+              return 0;
+            }
+            return prev - 1;
+          });
+        } else if (recordingState === 'RECORDING') {
+          setRecordTime(prev => prev + 1);
+        }
+      }, 1000);
+    }
+    return () => {
+      if (t) clearInterval(t);
+    };
+  }, [activeSeriesId, isExamFinished, sectionType, recordingState]);
 
   // Handle active countdown ticking
   useEffect(() => {
@@ -154,12 +192,18 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
     const id = i + 1;
     const isUnlocked = id <= 3;
     const isFinished = id === 1; 
+    
+    // Dynamic series parameters based on sectionType
+    const questionsCount = (sectionType === 'WRITING' || sectionType === 'SPEAKING') ? 3 : 39;
+    const durationMinutes = sectionType === 'SPEAKING' ? 15 : 60;
+    const points = sectionType === 'SPEAKING' ? 900 : 699;
+
     return {
       id,
       title: `Series ${id}`,
-      questionsCount: 39,
-      durationMinutes: 60,
-      points: 699,
+      questionsCount,
+      durationMinutes,
+      points,
       isUnlocked,
       isFinished,
     };
@@ -253,6 +297,15 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
     setIsExamFinished(false);
     setAnswers({});
     setWritingAnswers({ 1: '', 2: '', 3: '' });
+    setSpeakingAnswers({
+      1: { isRecorded: false, durationSec: 0, transcript: '' },
+      2: { isRecorded: false, durationSec: 0, transcript: '' },
+      3: { isRecorded: false, durationSec: 0, transcript: '' }
+    });
+    setRecordingState('IDLE');
+    setCurrentOTaskIndex(0);
+    setPrepTimeRemaining(180);
+    setRecordTime(0);
   };
 
   // Calculate final score statistics
@@ -337,6 +390,52 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
         ],
         strengths: ["Excellente synthèse des deux options", "Stance personnelle convaincante"],
         weaknesses: ["Accord de l'adjectif dans le paragraphe final", "Légère confusion de préposition"]
+      };
+    }
+  };
+
+  // Generate simulated AI corrections for speaking feedback
+  const getSimulatedOralCorrections = (taskNum: number) => {
+    const ans = speakingAnswers[taskNum];
+    const duration = ans?.durationSec || 0;
+
+    if (taskNum === 1) {
+      return {
+        score: duration === 0 ? 0 : duration < 30 ? 45 : duration > 120 ? 60 : 86,
+        clb: duration === 0 ? 'CLB 0' : duration < 30 ? 'CLB 5' : duration > 120 ? 'CLB 6' : 'CLB 9',
+        transcript: ans?.transcript || "Bonjour ! Je m'appelle Alex. Je viens d'emménager dans le quartier à Montréal la semaine dernière. J'ai trente ans et je travaille comme développeur web. Dans ma famille, il y a ma femme et notre petit chien. Pendant mon temps libre, j'aime faire du vélo au parc et faire le sport. Je suis très ravi d'être votre voisin et j'espère qu'on pourra prendre un café un jour !",
+        corrections: [
+          { original: "Je viens de emménager", suggested: "Je viens d'emménager", explanation: "L'élision est obligatoire devant une voyelle pour assurer une prononciation fluide." },
+          { original: "faire le sport", suggested: "faire du sport", explanation: "On utilise l'article contracté 'du' après le verbe faire pour exprimer une activité sportive." },
+          { original: "Je suis très ravi", suggested: "Je suis ravi / Je suis extrêmement ravi", explanation: "'Ravi' étant déjà un qualificatif absolu, l'utilisation de 'très' est redondante. Préférez 'absolument' ou supprimez-le." }
+        ],
+        strengths: ["Bonne intonation et débit de parole naturel", "Utilisation de structures grammaticales simples mais maîtrisées"],
+        weaknesses: ["Légères hésitations sur le vocabulaire des loisirs", "Prononciation de la liaison dans 'trente ans'"]
+      };
+    } else if (taskNum === 2) {
+      return {
+        score: duration === 0 ? 0 : duration < 60 ? 50 : 84,
+        clb: duration === 0 ? 'CLB 0' : duration < 60 ? 'CLB 6' : 'CLB 8',
+        transcript: ans?.transcript || "Bonjour, je vous appelle pour avoir des renseignements pour inscrire dans votre club de sport. D'abord, je veux savoir quels sont les tarifs pour l'abonnement mensuel ? Est-ce que il y a des réductions pour les étudiants ? De plus, je voudrais savoir les horaires d'ouverture le weekend. Proposez-vous des cours collectifs de tennis ou de natation ? Merci beaucoup pour vos réponses et votre temps.",
+        corrections: [
+          { original: "renseignements pour inscrire", suggested: "renseignements pour m'inscrire", explanation: "Le verbe s'inscrire est pronominal, il nécessite le pronom réfléchi 'm'' à la première personne." },
+          { original: "je veux savoir", suggested: "je souhaiterais savoir / je voudrais savoir", explanation: "L'emploi du présent de l'indicatif 'veux' est trop direct. Utilisez le conditionnel de politesse." },
+          { original: "Est-ce que il y a", suggested: "Est-ce qu'il y a", explanation: "L'élision 'qu'il' est requise devant le pronom sujet 'il'." }
+        ],
+        strengths: ["Respect parfait des consignes d'interaction sociale", "Utilisation constante du vouvoiement poli"],
+        weaknesses: ["Structures interrogatives peu variées", "Formulation un peu répétitive des demandes d'information"]
+      };
+    } else {
+      return {
+        score: duration === 0 ? 0 : duration < 90 ? 55 : 90,
+        clb: duration === 0 ? 'CLB 0' : duration < 90 ? 'CLB 6' : 'CLB 10',
+        transcript: ans?.transcript || "C'est une question tout à fait cruciale aujourd'hui. D'une part, il est indéniable que la désinformation sur les réseaux sociaux pose un risque majeur pour la cohésion sociale et la démocratie. Les plateformes ont donc le devoir moral de réguler les contenus haineux et mensongers. Cependant, d'autre part, attribuer un pouvoir de censure absolu à des entreprises privées menace directement notre liberté d'expression individuelle. À mon avis, un cadre législatif neutre et transparent est indispensable pour concilier sécurité informationnelle et libertés fondamentales.",
+        corrections: [
+          { original: "pose un risque majeur", suggested: "représente un risque majeur", explanation: "Le verbe 'représenter' offre un registre lexical plus académique et adapté aux critères du niveau C1/C2." },
+          { original: "doivent contrôler les informations", suggested: "se doivent de réguler les flux d'informations", explanation: "Tournure syntaxique raffinée avec le verbe pronominal 'se devoir de' augmentant l'élégance du discours." }
+        ],
+        strengths: ["Structure argumentative rigoureuse avec introduction, thèse et synthèse", "Richesse et précision du vocabulaire abstrait", "Débit fluide et articulateurs logiques impeccables"],
+        weaknesses: ["Léger trébuchement de prononciation sur le mot 'fondamentales'", "Rythme de phrase parfois un peu trop rapide"]
       };
     }
   };
@@ -852,6 +951,566 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
           )}
         </AnimatePresence>
 
+      </div>
+    );
+  }
+
+  // --- RENDER SCREEN 1B: STUNNING TCF ORAL SIMULATOR WORKSPACE ---
+  if (activeSeriesId !== null && !isExamFinished && sectionType === 'SPEAKING') {
+    const currentOTask = oTasks[currentOTaskIndex];
+    if (!currentOTask) return null;
+
+    const taskAnswer = speakingAnswers[currentOTask.taskNumber] || { isRecorded: false, durationSec: 0, transcript: '' };
+
+    const handleStartPrep = () => {
+      setRecordingState('PREPARING');
+      setPrepTimeRemaining(180); // 3 minutes
+    };
+
+    const handleSkipPrep = () => {
+      setRecordingState('RECORDING');
+      setRecordTime(0);
+    };
+
+    const handleStartRecording = () => {
+      setRecordingState('RECORDING');
+      setRecordTime(0);
+    };
+
+    const handleStopRecording = () => {
+      setRecordingState('SAVED');
+      // Set a realistic duration and simulated transcript
+      const finalDuration = recordTime > 5 ? recordTime : 75; // fallback to 75s if stopped instantly
+      setIsTranscribing(true);
+      
+      setTimeout(() => {
+        setIsTranscribing(false);
+        setSpeakingAnswers(prev => ({
+          ...prev,
+          [currentOTask.taskNumber]: {
+            isRecorded: true,
+            durationSec: finalDuration,
+            transcript: currentOTask.taskNumber === 1 
+              ? "Bonjour ! Je m'appelle Alex. Je viens d'emménager dans le quartier à Montréal la semaine dernière. J'ai trente ans et je travaille comme développeur web. Dans ma famille, il y a ma femme et notre petit chien. Pendant mon temps libre, j'aime faire du vélo au parc et faire le sport. Je suis très ravi d'être votre voisin !"
+              : currentOTask.taskNumber === 2
+              ? "Bonjour, je vous appelle pour avoir des renseignements pour inscrire dans votre club de sport. D'abord, je veux savoir quels sont les tarifs pour l'abonnement mensuel ? Est-ce que il y a des réductions pour les étudiants ? De plus, je voudrais savoir les horaires d'ouverture le weekend."
+              : "C'est une question tout à fait cruciale aujourd'hui. D'une part, il est indéniable que la désinformation sur les réseaux sociaux pose un risque majeur pour la cohésion sociale et la démocratie. Les plateformes ont donc le devoir moral de réguler les contenus haineux et mensongers."
+          }
+        }));
+        triggerToast(`Task ${currentOTask.taskNumber} audio response processed successfully!`, 'success');
+      }, 1500);
+    };
+
+    const handleRerecord = () => {
+      setRecordingState('IDLE');
+      setRecordTime(0);
+      setPrepTimeRemaining(180);
+      setSpeakingAnswers(prev => ({
+        ...prev,
+        [currentOTask.taskNumber]: { isRecorded: false, durationSec: 0, transcript: '' }
+      }));
+    };
+
+    const handleAutoFillOral = () => {
+      setIsTranscribing(true);
+      setTimeout(() => {
+        setIsTranscribing(false);
+        setSpeakingAnswers({
+          1: {
+            isRecorded: true,
+            durationSec: 85,
+            transcript: "Bonjour ! Je m'appelle Alex. Je viens d'emménager dans le quartier à Montréal la semaine dernière. J'ai trente ans et je travaille comme développeur web. Dans ma famille, il y a ma femme et notre petit chien. Pendant mon temps libre, j'aime faire du vélo au parc et faire le sport. Je suis très ravi d'être votre voisin et j'espère qu'on pourra prendre un café un jour !"
+          },
+          2: {
+            isRecorded: true,
+            durationSec: 142,
+            transcript: "Bonjour, je vous appelle pour avoir des renseignements pour inscrire dans votre club de sport. D'abord, je veux savoir quels sont les tarifs pour l'abonnement mensuel ? Est-ce que il y a des réductions pour les étudiants ? De plus, je voudrais savoir les horaires d'ouverture le weekend. Proposez-vous des cours collectifs de tennis ou de natation ? Merci beaucoup pour vos réponses et votre temps."
+          },
+          3: {
+            isRecorded: true,
+            durationSec: 210,
+            transcript: "C'est une question tout à fait cruciale aujourd'hui. D'une part, il est indéniable que la désinformation sur les réseaux sociaux pose un risque majeur pour la cohésion sociale et la démocratie. Les plateformes ont donc le devoir moral de réguler les contenus haineux et mensongers. Cependant, d'autre part, attribuer un pouvoir de censure absolu à des entreprises privées menace directement notre liberté d'expression individuelle. À mon avis, un cadre législatif neutre et transparent est indispensable pour concilier sécurité informationnelle et libertés fondamentales."
+          }
+        });
+        setRecordingState('SAVED');
+        triggerToast("Speaking drafts successfully injected!", 'success');
+      }, 800);
+    };
+
+    // Format minutes/seconds for task timer
+    const formatDuration = (sec: number) => {
+      const mm = Math.floor(sec / 60).toString().padStart(2, '0');
+      const ss = (sec % 60).toString().padStart(2, '0');
+      return `${mm}:${ss}`;
+    };
+
+    return (
+      <div 
+        style={{ 
+          backgroundColor: '#f8fafc', 
+          minHeight: '100vh',
+          width: '100%',
+          display: 'flex',
+          flexDirection: 'column',
+          overflow: 'hidden'
+        }}
+      >
+        <AnimatePresence>
+          {toast && (
+            <motion.div
+              initial={{ opacity: 0, y: -20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20, scale: 0.95 }}
+              style={{
+                position: 'fixed', top: '24px', left: '50%', transform: 'translateX(-50%)', zIndex: 99999,
+                backgroundColor: toast.type === 'success' ? '#10b981' : toast.type === 'warning' ? '#f59e0b' : '#3b82f6',
+                color: 'white', padding: '0.85rem 1.75rem', borderRadius: '0.75rem',
+                boxShadow: '0 10px 25px -5px rgba(0,0,0,0.15)', fontWeight: 700, fontSize: '0.85rem',
+                display: 'flex', alignItems: 'center', gap: '0.5rem', pointerEvents: 'none'
+              }}
+            >
+              <Info size={16} />
+              {toast.message}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* 📋 Sticky Header Action Bar */}
+        <header
+          style={{
+            height: '70px', backgroundColor: 'white', borderBottom: '1px solid #e2e8f0',
+            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+            padding: '0 2rem', position: 'sticky', top: 0, zIndex: 100, flexShrink: 0
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <button 
+              onClick={() => setActiveModal('LEAVE_EXAM')}
+              style={{
+                border: 'none', background: 'transparent', cursor: 'pointer', color: '#64748b',
+                display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '0.5rem',
+                borderRadius: '0.5rem', transition: 'all 0.2s'
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#f1f5f9'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; }}
+            >
+              <ArrowLeft size={18} />
+            </button>
+            <div>
+              <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#f97316', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                TCF Oral Expression
+              </span>
+              <h2 style={{ fontSize: '0.95rem', fontWeight: 800, color: '#0f172a', margin: 0 }}>
+                Speaking Simulator · Series {activeSeriesId}
+              </h2>
+            </div>
+          </div>
+
+          {/* Center Tasks selector pills */}
+          <div style={{ display: 'flex', gap: '0.5rem' }}>
+            {oTasks.map((t, idx) => {
+              const isActive = idx === currentOTaskIndex;
+              const isDone = speakingAnswers[t.taskNumber]?.isRecorded;
+              return (
+                <button
+                  key={t.id}
+                  onClick={() => {
+                    setCurrentOTaskIndex(idx);
+                    setRecordingState(speakingAnswers[t.taskNumber]?.isRecorded ? 'SAVED' : 'IDLE');
+                  }}
+                  style={{
+                    padding: '0.5rem 1rem', borderRadius: '0.6rem', border: 'none', fontWeight: 700, fontSize: '0.8rem',
+                    cursor: 'pointer', backgroundColor: isActive ? '#f97316' : '#f1f5f9', color: isActive ? 'white' : '#64748b',
+                    display: 'flex', alignItems: 'center', gap: '0.35rem', transition: 'all 0.2s'
+                  }}
+                >
+                  Task {t.taskNumber}
+                  {isDone && <CheckCircle size={12} color={isActive ? 'white' : '#10b981'} />}
+                </button>
+              );
+            })}
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+            <button
+              onClick={handleAutoFillOral}
+              style={{
+                padding: '0.45rem 0.85rem', borderRadius: '0.5rem', border: '1px solid #f97316',
+                backgroundColor: 'rgba(249,115,22,0.02)', color: '#f97316', fontWeight: 700, fontSize: '0.75rem',
+                cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.35rem', transition: 'all 0.2s'
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(249,115,22,0.06)'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(249,115,22,0.02)'; }}
+            >
+              <RefreshCw size={12} />
+              Inject Drafts
+            </button>
+
+            <div 
+              style={{ 
+                display: 'flex', alignItems: 'center', gap: '0.4rem', 
+                backgroundColor: timeRemaining < 300 ? '#fef2f2' : '#faf5ff',
+                border: timeRemaining < 300 ? '1px solid #fca5a5' : '1px solid #ddd6fe',
+                padding: '0.45rem 0.85rem', borderRadius: '0.6rem',
+                color: timeRemaining < 300 ? '#ef4444' : '#6d28d9',
+                fontWeight: 700, fontFamily: 'monospace', fontSize: '0.9rem'
+              }}
+            >
+              <Clock size={14} />
+              {formatTime(timeRemaining)}
+            </div>
+          </div>
+        </header>
+
+        {/* 📚 2-Column Split Workspace */}
+        <main
+          style={{
+            flex: 1, display: isMobile ? 'flex' : 'grid', flexDirection: isMobile ? 'column' : undefined,
+            gridTemplateColumns: isMobile ? undefined : 'repeat(auto-fit, minmax(320px, 1fr))',
+            height: isMobile ? 'auto' : 'calc(100vh - 140px)', overflow: isMobile ? 'visible' : 'hidden'
+          }}
+        >
+          {/* Left Column: Prompt details */}
+          <section
+            style={{
+              padding: isMobile ? '1.5rem 1rem' : '2.5rem', overflowY: isMobile ? 'visible' : 'auto',
+              borderRight: isMobile ? 'none' : '1px solid #e2e8f0', borderBottom: isMobile ? '1px solid #e2e8f0' : 'none',
+              backgroundColor: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '100%'
+            }}
+          >
+            <div style={{ maxWidth: '520px', margin: '0 auto', width: '100%' }}>
+              <div style={{ marginBottom: '1.25rem', display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                <span 
+                  style={{ 
+                    fontSize: '0.7rem', fontWeight: 800, backgroundColor: '#fff7ed', color: '#ea580c',
+                    padding: '0.2rem 0.5rem', borderRadius: '0.25rem', border: '1px solid #ffedd5'
+                  }}
+                >
+                  Task {currentOTask.taskNumber} · {currentOTask.difficulty}
+                </span>
+                <span 
+                  style={{ 
+                    fontSize: '0.7rem', fontWeight: 800, backgroundColor: '#e0f2fe', color: '#0369a1',
+                    padding: '0.2rem 0.5rem', borderRadius: '0.25rem'
+                  }}
+                >
+                  Time limit: {currentOTask.minDurationSec}s - {currentOTask.maxDurationSec}s
+                </span>
+              </div>
+
+              <h3 style={{ fontSize: '1.4rem', fontWeight: 900, color: '#0f172a', marginBottom: '1rem' }}>
+                {currentOTask.title}
+              </h3>
+
+              <div 
+                style={{ 
+                  backgroundColor: '#fffaf5', borderRadius: '1rem', border: '1px solid #ffedd5', padding: '1.75rem',
+                  fontSize: '1.05rem', lineHeight: 1.7, color: '#431407', fontWeight: 500,
+                  whiteSpace: 'pre-wrap', marginBottom: '1.5rem', fontFamily: 'Inter, sans-serif'
+                }}
+              >
+                {currentOTask.prompt}
+              </div>
+
+              <div style={{ backgroundColor: 'hsl(35, 100%, 97%)', border: '1.5px dashed hsl(35, 100%, 80%)', borderRadius: '1rem', padding: '1.25rem', display: 'flex', gap: '0.5rem' }}>
+                <Lightbulb size={20} style={{ color: 'hsl(35, 100%, 40%)', flexShrink: 0 }} />
+                <p style={{ fontSize: '0.8rem', color: 'hsl(35, 95%, 20%)', lineHeight: 1.5 }}>
+                  <strong>Strategic advice:</strong> {currentOTask.contextAdvice}
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Right Column: Audio Recording panel */}
+          <section
+            style={{
+              padding: isMobile ? '1.5rem 1rem' : '2.5rem', overflowY: isMobile ? 'visible' : 'auto',
+              display: 'flex', flexDirection: 'column', justifyContent: 'center', width: '100%'
+            }}
+          >
+            <div style={{ maxWidth: '560px', margin: '0 auto', width: '100%', textAlign: 'center' }}>
+              
+              {/* Task 2 Preparation Step */}
+              {currentOTask.taskNumber === 2 && recordingState === 'IDLE' && (
+                <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} style={{ padding: '2.5rem', borderRadius: '1.5rem', backgroundColor: 'white', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+                  <Volume2 size={48} style={{ color: '#ea580c', margin: '0 auto 1.5rem' }} />
+                  <h4 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.75rem' }}>
+                    Interactive Roleplay Preparation
+                  </h4>
+                  <p style={{ fontSize: '0.85rem', color: '#64748b', lineHeight: 1.6, marginBottom: '2rem' }}>
+                    According to official TCF Canada guidelines, you are allowed **3 minutes** to prepare your response card and structure your interview questions before the speaking timer begins.
+                  </p>
+                  
+                  <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
+                    <button
+                      onClick={handleStartPrep}
+                      style={{
+                        backgroundColor: '#ea580c', border: 'none', borderRadius: '0.75rem',
+                        padding: '0.75rem 1.5rem', color: 'white', fontWeight: 700, fontSize: '0.9rem', cursor: 'pointer',
+                        boxShadow: '0 4px 12px rgba(234,88,12,0.2)'
+                      }}
+                    >
+                      Start 3m Prep
+                    </button>
+                    <button
+                      onClick={handleSkipPrep}
+                      style={{
+                        backgroundColor: 'transparent', border: '1px solid #cbd5e1', borderRadius: '0.75rem',
+                        padding: '0.75rem 1.5rem', color: '#475569', fontWeight: 600, fontSize: '0.9rem', cursor: 'pointer'
+                      }}
+                    >
+                      Skip Prep & Record
+                    </button>
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Prep Ticker Display */}
+              {recordingState === 'PREPARING' && (
+                <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} style={{ padding: '2.5rem', borderRadius: '1.5rem', backgroundColor: '#fff7ed', border: '1.5px dashed #ffedd5' }}>
+                  <Clock size={40} style={{ color: '#ea580c', margin: '0 auto 1rem' }} />
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#ea580c', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                    Preparation Ticking Down
+                  </span>
+                  <div style={{ fontSize: '3rem', fontWeight: 900, fontFamily: 'monospace', color: '#7c2d12', margin: '0.5rem 0' }}>
+                    {formatDuration(prepTimeRemaining)}
+                  </div>
+                  <p style={{ fontSize: '0.8rem', color: '#9a3412', marginBottom: '1.5rem' }}>
+                    Take notes and structure your questions. Recording will start automatically once this timer reaches zero.
+                  </p>
+                  <button
+                    onClick={handleSkipPrep}
+                    style={{
+                      backgroundColor: '#ea580c', border: 'none', borderRadius: '0.75rem',
+                      padding: '0.6rem 1.25rem', color: 'white', fontWeight: 700, fontSize: '0.8rem', cursor: 'pointer'
+                    }}
+                  >
+                    Start Recording Now
+                  </button>
+                </motion.div>
+              )}
+
+              {/* Live Recorder Workspace */}
+              {((currentOTask.taskNumber !== 2 && recordingState === 'IDLE') || recordingState === 'RECORDING') && (
+                <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} style={{ padding: '3rem 2rem', borderRadius: '1.5rem', backgroundColor: 'white', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+                  
+                  {/* Flashing Status indicator */}
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginBottom: '2rem' }}>
+                    <div 
+                      style={{ 
+                        width: '8px', height: '8px', borderRadius: '50%',
+                        backgroundColor: recordingState === 'RECORDING' ? '#ef4444' : '#64748b'
+                      }} 
+                    />
+                    <span style={{ fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', color: recordingState === 'RECORDING' ? '#ef4444' : '#64748b', letterSpacing: '0.05em' }}>
+                      {recordingState === 'RECORDING' ? 'Live Microphone Recording' : 'Microphone Ready'}
+                    </span>
+                  </div>
+
+                  {/* Pulsing Central Mic Ring */}
+                  <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '2rem' }}>
+                    <button
+                      onClick={recordingState === 'RECORDING' ? handleStopRecording : handleStartRecording}
+                      style={{
+                        width: '96px', height: '96px', borderRadius: '50%', border: 'none',
+                        background: recordingState === 'RECORDING' 
+                          ? 'radial-gradient(circle, #ef4444 0%, #dc2626 100%)'
+                          : 'radial-gradient(circle, #ea580c 0%, #c2410c 100%)',
+                        color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        cursor: 'pointer', position: 'relative', outline: 'none',
+                        boxShadow: recordingState === 'RECORDING'
+                          ? '0 0 0 8px rgba(239, 68, 68, 0.15), 0 8px 24px rgba(239, 68, 68, 0.3)'
+                          : '0 0 0 8px rgba(234, 88, 12, 0.1), 0 8px 24px rgba(234, 88, 12, 0.35)',
+                        transition: 'all 0.2s'
+                      }}
+                    >
+                      <Mic size={36} />
+                    </button>
+                  </div>
+
+                  {/* Dynamic Timer Ticker */}
+                  <div style={{ fontSize: '2rem', fontWeight: 800, fontFamily: 'monospace', color: '#1e293b', marginBottom: '1.5rem' }}>
+                    {formatDuration(recordTime)} / {formatDuration(currentOTask.maxDurationSec)}
+                  </div>
+
+                  {/* Audio Wave Visualizer mockup */}
+                  {recordingState === 'RECORDING' ? (
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: '4px', height: '50px', marginBottom: '1rem' }}>
+                      {[8, 2, 9, 3, 7, 1, 6, 4, 8, 3, 9, 2, 7, 5, 8].map((val, idx) => (
+                        <motion.div
+                          key={idx}
+                          animate={{ height: [12, val * 5, 12] }}
+                          transition={{ repeat: Infinity, duration: 0.5 + (idx % 3) * 0.15, ease: "easeInOut" }}
+                          style={{ width: '4px', backgroundColor: '#ef4444', borderRadius: '2px' }}
+                        />
+                      ))}
+                    </div>
+                  ) : (
+                    <div style={{ fontSize: '0.8rem', color: '#64748b', lineHeight: 1.5 }}>
+                      Click the microphone button to start recording your response. Speak clearly in French.
+                    </div>
+                  )}
+
+                  {recordingState === 'RECORDING' && (
+                    <button
+                      onClick={handleStopRecording}
+                      style={{
+                        marginTop: '1.5rem', padding: '0.5rem 1.25rem', borderRadius: '0.5rem',
+                        border: 'none', backgroundColor: '#f1f5f9', color: '#334155',
+                        fontWeight: 700, fontSize: '0.8rem', cursor: 'pointer', transition: 'all 0.2s'
+                      }}
+                    >
+                      Stop & Save Response
+                    </button>
+                  )}
+                </motion.div>
+              )}
+
+              {/* Saved response / Audio play and Transcribing block */}
+              {recordingState === 'SAVED' && (
+                <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} style={{ padding: '2.5rem', borderRadius: '1.5rem', backgroundColor: 'white', border: '1px solid #e2e8f0', boxShadow: '0 4px 20px rgba(0,0,0,0.05)' }}>
+                  
+                  {isTranscribing ? (
+                    <div style={{ padding: '1.5rem 0' }}>
+                      <RefreshCw size={36} className="animate-spin" style={{ color: '#ea580c', margin: '0 auto 1rem' }} />
+                      <h4 style={{ fontSize: '1rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.35rem' }}>
+                        Processing Audio Signal...
+                      </h4>
+                      <p style={{ fontSize: '0.75rem', color: '#64748b' }}>
+                        AI Neural Transcriber is outputting French text transcript...
+                      </p>
+                    </div>
+                  ) : (
+                    <div>
+                      <ShieldCheck size={40} style={{ color: '#10b981', margin: '0 auto 1rem' }} />
+                      <h4 style={{ fontSize: '1.1rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.5rem' }}>
+                        Audio Response Recorded
+                      </h4>
+                      <p style={{ fontSize: '0.8rem', color: '#64748b', marginBottom: '1.5rem' }}>
+                        Response duration: **{formatDuration(taskAnswer.durationSec)}**. Your audio has been saved successfully in your practice session record.
+                      </p>
+
+                      <div 
+                        style={{ 
+                          textAlign: 'left', backgroundColor: '#f8fafc', padding: '1.25rem', borderRadius: '0.75rem',
+                          border: '1px solid #e2e8f0', fontSize: '0.85rem', lineHeight: 1.6, color: '#334155',
+                          marginBottom: '2rem', fontStyle: 'italic', maxHeight: '150px', overflowY: 'auto'
+                        }}
+                      >
+                        <strong>Speech transcript preview:</strong><br />
+                        "{taskAnswer.transcript}"
+                      </div>
+
+                      <div style={{ display: 'flex', gap: '0.75rem', justifyContent: 'center' }}>
+                        <button
+                          onClick={handleRerecord}
+                          style={{
+                            backgroundColor: 'white', border: '1px solid #cbd5e1', borderRadius: '0.75rem',
+                            padding: '0.6rem 1.25rem', color: '#475569', fontWeight: 600, fontSize: '0.8rem', cursor: 'pointer'
+                          }}
+                        >
+                          Re-record Response
+                        </button>
+                      </div>
+                    </div>
+                  )}
+                </motion.div>
+              )}
+
+            </div>
+          </section>
+        </main>
+
+        {/* 📋 Simulator Sticky Footer bar */}
+        <footer
+          style={{
+            height: '70px', backgroundColor: 'white', borderTop: '1px solid #e2e8f0',
+            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+            padding: '0 2rem', flexShrink: 0
+          }}
+        >
+          <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#64748b' }}>
+            Oral Expression Series {activeSeriesId} · Speaking Training
+          </span>
+
+          {currentOTaskIndex < 2 ? (
+            <button
+              onClick={() => {
+                setCurrentOTaskIndex(prev => prev + 1);
+                setRecordingState(speakingAnswers[oTasks[currentOTaskIndex + 1].taskNumber]?.isRecorded ? 'SAVED' : 'IDLE');
+              }}
+              style={{
+                backgroundColor: '#f97316', border: 'none', borderRadius: '0.6rem',
+                padding: '0.6rem 1.5rem', color: 'white', fontWeight: 700, fontSize: '0.8rem',
+                cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '0.25rem'
+              }}
+            >
+              Next Task
+              <ChevronRight size={15} />
+            </button>
+          ) : (
+            <button
+              onClick={handleFinishExam}
+              disabled={recordingState === 'RECORDING'}
+              style={{
+                backgroundColor: '#10b981', border: 'none', borderRadius: '0.6rem',
+                padding: '0.6rem 1.5rem', color: 'white', fontWeight: 700, fontSize: '0.8rem',
+                cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '0.25rem',
+                opacity: recordingState === 'RECORDING' ? 0.5 : 1
+              }}
+            >
+              Finish Oral Exam
+              <ChevronRight size={15} />
+            </button>
+          )}
+        </footer>
+
+        {/* Custom Confirmation Modals */}
+        <AnimatePresence>
+          {activeModal === 'LEAVE_EXAM' && (
+            <div 
+              style={{ 
+                position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+                backgroundColor: 'rgba(9, 13, 22, 0.45)', backdropFilter: 'blur(10px)',
+                zIndex: 99999, display: 'flex', justifyContent: 'center', alignItems: 'center',
+                padding: '1.5rem'
+              }}
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.95 }}
+                style={{
+                  width: '100%', maxWidth: '420px', backgroundColor: 'white',
+                  borderRadius: '1.5rem', padding: '2rem', textAlign: 'center',
+                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', border: '1px solid #e2e8f0'
+                }}
+              >
+                <div style={{ width: '56px', height: '56px', borderRadius: '50%', backgroundColor: '#fee2e2', color: '#ef4444', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.25rem' }}>
+                  <AlertTriangle size={24} />
+                </div>
+                <h3 style={{ fontSize: '1.2rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.5rem' }}>
+                  Exit Speaking Simulator?
+                </h3>
+                <p style={{ fontSize: '0.85rem', color: '#64748b', lineHeight: 1.5, marginBottom: '1.75rem' }}>
+                  Are you sure you want to exit? Your recorded spoken answers in this series will not be saved.
+                </p>
+                <div style={{ display: 'flex', gap: '0.75rem' }}>
+                  <button 
+                    onClick={() => setActiveModal(null)}
+                    style={{ flex: 1, padding: '0.7rem', borderRadius: '0.75rem', border: '1px solid #cbd5e1', backgroundColor: 'white', color: '#475569', fontWeight: 600, fontSize: '0.85rem', cursor: 'pointer' }}
+                  >
+                    Keep Practicing
+                  </button>
+                  <button 
+                    onClick={confirmLeaveExam}
+                    style={{ flex: 1, padding: '0.7rem', borderRadius: '0.75rem', border: 'none', backgroundColor: '#ef4444', color: 'white', fontWeight: 700, fontSize: '0.85rem', cursor: 'pointer' }}
+                  >
+                    Yes, Exit
+                  </button>
+                </div>
+              </motion.div>
+            </div>
+          )}
+        </AnimatePresence>
       </div>
     );
   }
@@ -1811,6 +2470,281 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
     );
   }
 
+  // --- RENDER SCREEN 2B: HIGH-END AI SCORING REPORT CARD FOR ORAL SIMULATOR ---
+  if (activeSeriesId !== null && isExamFinished && sectionType === 'SPEAKING') {
+    const feedback1 = getSimulatedOralCorrections(1);
+    const feedback2 = getSimulatedOralCorrections(2);
+    const feedback3 = getSimulatedOralCorrections(3);
+
+    const activeFeedback = activeReportTab === 1 ? feedback1 : activeReportTab === 2 ? feedback2 : feedback3;
+    const activeAnswer = speakingAnswers[activeReportTab] || { isRecorded: false, durationSec: 0, transcript: '' };
+
+    // Compute average CLB level
+    const avgScore = (feedback1.score + feedback2.score + feedback3.score) / 3;
+    let overallClb = 'CLB 6';
+    if (avgScore === 0) overallClb = 'CLB 0';
+    else if (avgScore >= 85) overallClb = 'CLB 9';
+    else if (avgScore >= 74) overallClb = 'CLB 8';
+    else if (avgScore >= 60) overallClb = 'CLB 7';
+
+    // Format duration helper
+    const formatDuration = (sec: number) => {
+      const mm = Math.floor(sec / 60).toString().padStart(2, '0');
+      const ss = (sec % 60).toString().padStart(2, '0');
+      return `${mm}:${ss}`;
+    };
+
+    return (
+      <div 
+        style={{ 
+          backgroundColor: '#f1f5f9', 
+          minHeight: '100vh', 
+          display: 'flex', 
+          alignItems: 'center', 
+          justifyContent: 'center',
+          padding: '4rem 1.5rem',
+          width: '100%'
+        }}
+      >
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="card-elevated"
+          style={{
+            width: '100%',
+            maxWidth: '820px',
+            backgroundColor: 'white',
+            borderRadius: '2rem',
+            padding: '3rem',
+            border: '1px solid rgba(255,255,255,0.7)',
+            position: 'relative'
+          }}
+        >
+          {/* Header section with Trophy and Score card */}
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', alignItems: 'center', borderBottom: '1px solid #e2e8f0', paddingBottom: '2rem', marginBottom: '2rem' }}>
+            <div 
+              style={{ 
+                width: '64px', 
+                height: '64px', 
+                borderRadius: '50%', 
+                backgroundColor: '#fff7ed', 
+                color: '#ea580c',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+              }}
+            >
+              <Trophy size={32} />
+            </div>
+
+            <div style={{ flex: 1 }}>
+              <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#ea580c', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                TCF Speaking Series {activeSeriesId} AI Evaluation
+              </span>
+              <h2 style={{ fontSize: '1.75rem', fontWeight: 900, color: '#0f172a', marginTop: '0.1rem' }}>
+                Oral Expression Correction Dashboard
+              </h2>
+            </div>
+
+            {/* Glowing CLB tag */}
+            <div 
+              style={{ 
+                padding: '0.75rem 1.5rem', 
+                borderRadius: '1rem', 
+                background: 'linear-gradient(135deg, #ea580c 0%, #c2410c 100%)', 
+                color: 'white', 
+                textAlign: 'center',
+                boxShadow: '0 8px 20px -4px rgba(234,88,12,0.3)'
+              }}
+            >
+              <div style={{ fontSize: '0.65rem', fontWeight: 700, textTransform: 'uppercase', opacity: 0.9 }}>
+                Overall CLB Level
+              </div>
+              <div style={{ fontSize: '1.75rem', fontWeight: 900, fontFamily: 'Outfit, sans-serif' }}>
+                {overallClb}
+              </div>
+            </div>
+          </div>
+
+          {/* Tab selector for Task 1, 2, and 3 report cards */}
+          <div style={{ display: 'flex', gap: '0.5rem', borderBottom: '2px solid #f1f5f9', paddingBottom: '0.75rem', marginBottom: '1.75rem' }}>
+            {([1, 2, 3] as const).map((taskNum) => {
+              const isActive = activeReportTab === taskNum;
+              const taskScore = taskNum === 1 ? feedback1.score : taskNum === 2 ? feedback2.score : feedback3.score;
+              return (
+                <button
+                  key={taskNum}
+                  onClick={() => setActiveReportTab(taskNum)}
+                  style={{
+                    padding: '0.6rem 1.25rem',
+                    borderRadius: '0.75rem',
+                    border: 'none',
+                    fontWeight: 700,
+                    fontSize: '0.85rem',
+                    cursor: 'pointer',
+                    backgroundColor: isActive ? 'rgba(234,88,12,0.08)' : 'transparent',
+                    color: isActive ? '#c2410c' : '#64748b',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    transition: 'all 0.2s'
+                  }}
+                >
+                  Task {taskNum} report card
+                  <span style={{ fontSize: '0.75rem', padding: '0.1rem 0.4rem', borderRadius: '0.35rem', backgroundColor: isActive ? '#ea580c' : '#f1f5f9', color: isActive ? 'white' : '#64748b' }}>
+                    {taskScore}%
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Interactive AI Corrections layout */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+            
+            {/* Left Box: Speech Transcript Preview */}
+            <div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                <h4 style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.05em' }}>
+                  Speech-to-Text Transcript
+                </h4>
+                <span style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: 600 }}>
+                  Duration: {formatDuration(activeAnswer.durationSec)}
+                </span>
+              </div>
+              
+              <div 
+                style={{
+                  height: '240px',
+                  overflowY: 'auto',
+                  padding: '1.25rem',
+                  backgroundColor: '#f8fafc',
+                  borderRadius: '1rem',
+                  border: '1.5px solid #cbd5e1',
+                  fontSize: '0.9rem',
+                  lineHeight: 1.6,
+                  color: '#334155',
+                  whiteSpace: 'pre-wrap',
+                  fontFamily: 'Inter, sans-serif'
+                }}
+              >
+                {activeAnswer.isRecorded ? activeFeedback.transcript : "[Aucun enregistrement audio pour cette tâche.]"}
+              </div>
+            </div>
+
+            {/* Right Box: AI Corrections list & explanations accordion */}
+            <div>
+              <h4 style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', color: '#64748b', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>
+                Linguistic & Pronunciation Feedback
+              </h4>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxHeight: '240px', overflowY: 'auto', paddingRight: '0.25rem' }}>
+                {activeAnswer.isRecorded ? (
+                  activeFeedback.corrections.map((corr, idx) => (
+                    <div 
+                      key={idx}
+                      style={{
+                        padding: '1rem',
+                        borderRadius: '0.85rem',
+                        backgroundColor: 'white',
+                        border: '1px solid #e2e8f0',
+                        boxShadow: '0 2px 4px rgba(0,0,0,0.01)'
+                      }}
+                    >
+                      {/* Original in Red */}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: '#b91c1c', textDecoration: 'line-through', fontWeight: 500 }}>
+                        <span style={{ padding: '0.1rem 0.3rem', borderRadius: '0.25rem', backgroundColor: '#fee2e2', fontSize: '0.7rem', fontWeight: 700 }}>Spoken</span>
+                        "{corr.original}"
+                      </div>
+                      {/* Suggested in Green */}
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem', color: '#047857', fontWeight: 700, marginTop: '0.35rem' }}>
+                        <span style={{ padding: '0.1rem 0.3rem', borderRadius: '0.25rem', backgroundColor: '#d1fae5', fontSize: '0.7rem', fontWeight: 700 }}>Suggested</span>
+                        "{corr.suggested}"
+                      </div>
+                      {/* Explanation */}
+                      <div style={{ fontSize: '0.75rem', color: '#64748b', lineHeight: 1.5, marginTop: '0.5rem', borderTop: '1px dashed #e2e8f0', paddingTop: '0.4rem', fontStyle: 'italic' }}>
+                        💡 {corr.explanation}
+                      </div>
+                    </div>
+                  ))
+                ) : (
+                  <div style={{ fontSize: '0.85rem', color: '#64748b', fontStyle: 'italic', padding: '1rem', textAlign: 'center' }}>
+                    No feedback available without recording.
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Strengths & Weaknesses quick tags list */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginTop: '2.5rem', borderTop: '1px solid #e2e8f0', paddingTop: '2rem' }}>
+            <div>
+              <h4 style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', color: '#059669', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
+                Speaking Strengths
+              </h4>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                {activeAnswer.isRecorded ? (
+                  activeFeedback.strengths.map(s => (
+                    <span key={s} style={{ fontSize: '0.75rem', fontWeight: 600, backgroundColor: '#d1fae5', color: '#065f46', padding: '0.25rem 0.65rem', borderRadius: '0.5rem' }}>
+                      ✦ {s}
+                    </span>
+                  ))
+                ) : (
+                  <span style={{ fontSize: '0.75rem', color: '#64748b' }}>N/A</span>
+                )}
+              </div>
+            </div>
+
+            <div>
+              <h4 style={{ fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', color: '#ef4444', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
+                Pronunciation / Grammar to Adjust
+              </h4>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                {activeAnswer.isRecorded ? (
+                  activeFeedback.weaknesses.map(w => (
+                    <span key={w} style={{ fontSize: '0.75rem', fontWeight: 600, backgroundColor: '#fee2e2', color: '#991b1b', padding: '0.25rem 0.65rem', borderRadius: '0.5rem' }}>
+                      ⚠ {w}
+                    </span>
+                  ))
+                ) : (
+                  <span style={{ fontSize: '0.75rem', color: '#64748b' }}>N/A</span>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom actions panel */}
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '3rem', borderTop: '1px solid #e2e8f0', paddingTop: '2rem' }}>
+            <button
+              onClick={handleRestartTraining}
+              style={{
+                padding: '0.85rem 2.5rem',
+                borderRadius: '0.75rem',
+                border: 'none',
+                backgroundColor: '#ea580c',
+                color: 'white',
+                fontWeight: 700,
+                fontSize: '0.95rem',
+                cursor: 'pointer',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                boxShadow: '0 4px 12px rgba(234,88,12,0.2)',
+                transition: 'all 0.2s'
+              }}
+              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#d0520b'; }}
+              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#ea580c'; }}
+            >
+              <RefreshCw size={16} />
+              Go Back to Series
+            </button>
+          </div>
+
+        </motion.div>
+      </div>
+    );
+  }
+
   // --- RENDER SCREEN 2: HIGH-END SCORE CARD EVALUATION DASHBOARD ---
   if (activeSeriesId !== null && isExamFinished) {
     const report = scoreStats();
@@ -2081,15 +3015,21 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', backgroundColor: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(8px)', padding: '0.5rem 1.25rem', borderRadius: '0.75rem', border: '1px solid rgba(255,255,255,0.1)' }}>
               <Clock size={16} />
-              <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>{sectionType === 'WRITING' ? '60 Minutes / Series' : '60 Minutes / Series'}</span>
+              <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>
+                {sectionType === 'WRITING' ? '60 Minutes / Series' : sectionType === 'SPEAKING' ? '15 Minutes / Series' : '60 Minutes / Series'}
+              </span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', backgroundColor: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(8px)', padding: '0.5rem 1.25rem', borderRadius: '0.75rem', border: '1px solid rgba(255,255,255,0.1)' }}>
               <HelpCircle size={16} />
-              <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>{sectionType === 'WRITING' ? '3 Tasks to Draft' : '39 Custom Questions'}</span>
+              <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>
+                {sectionType === 'WRITING' ? '3 Tasks to Draft' : sectionType === 'SPEAKING' ? '3 Tasks to Record' : '39 Custom Questions'}
+              </span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', backgroundColor: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(8px)', padding: '0.5rem 1.25rem', borderRadius: '0.75rem', border: '1px solid rgba(255,255,255,0.1)' }}>
               <Award size={16} />
-              <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>{sectionType === 'WRITING' ? 'CLB 5 to CLB 10+ AI score' : 'CLB 4 to CLB 10+ Scaling'}</span>
+              <span style={{ fontSize: '0.9rem', fontWeight: 600 }}>
+                {sectionType === 'WRITING' ? 'CLB 5 to CLB 10+ AI score' : sectionType === 'SPEAKING' ? 'CLB 5 to CLB 10+ AI Monologue' : 'CLB 4 to CLB 10+ Scaling'}
+              </span>
             </div>
           </motion.div>
         </div>
@@ -2238,7 +3178,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
 
                   <p style={{ color: 'hsl(var(--text-secondary))', fontSize: '0.85rem', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                     <HelpCircle size={14} style={{ color: 'hsl(var(--text-muted))' }} />
-                    {sectionType === 'WRITING' ? '3 Tasks to Draft' : `${series.questionsCount} Questions included`}
+                    {sectionType === 'WRITING' ? '3 Tasks to Draft' : sectionType === 'SPEAKING' ? '3 Tasks to Record' : `${series.questionsCount} Questions included`}
                   </p>
                   <p style={{ color: 'hsl(var(--text-secondary))', fontSize: '0.85rem', fontWeight: 500, display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.25rem' }}>
                     <Clock size={14} style={{ color: 'hsl(var(--text-muted))' }} />
@@ -2410,15 +3350,15 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
                     {/* Highly aesthetic metrics boxes */}
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem', marginBottom: '2rem' }}>
                       <div style={{ padding: '1rem', borderRadius: '1rem', backgroundColor: 'hsl(var(--bg-base))', textAlign: 'center', border: '1px solid hsl(var(--border))' }}>
-                        <div style={{ fontSize: '1.5rem', fontWeight: 900, color: `hsl(${meta.color})` }}>{sectionType === 'WRITING' ? '3' : '39'}</div>
-                        <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'hsl(var(--text-secondary))', marginTop: '0.1rem' }}>{sectionType === 'WRITING' ? 'Tasks' : 'Questions'}</div>
+                        <div style={{ fontSize: '1.5rem', fontWeight: 900, color: `hsl(${meta.color})` }}>{(sectionType === 'WRITING' || sectionType === 'SPEAKING') ? '3' : '39'}</div>
+                        <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'hsl(var(--text-secondary))', marginTop: '0.1rem' }}>{(sectionType === 'WRITING' || sectionType === 'SPEAKING') ? 'Tasks' : 'Questions'}</div>
                       </div>
                       <div style={{ padding: '1rem', borderRadius: '1rem', backgroundColor: 'hsl(var(--bg-base))', textAlign: 'center', border: '1px solid hsl(var(--border))' }}>
-                        <div style={{ fontSize: '1.5rem', fontWeight: 900, color: `hsl(${meta.color})` }}>60</div>
+                        <div style={{ fontSize: '1.5rem', fontWeight: 900, color: `hsl(${meta.color})` }}>{sectionType === 'SPEAKING' ? '15' : '60'}</div>
                         <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'hsl(var(--text-secondary))', marginTop: '0.1rem' }}>Minutes</div>
                       </div>
                       <div style={{ padding: '1rem', borderRadius: '1rem', backgroundColor: 'hsl(var(--bg-base))', textAlign: 'center', border: '1px solid hsl(var(--border))' }}>
-                        <div style={{ fontSize: '1.5rem', fontWeight: 900, color: `hsl(${meta.color})` }}>699</div>
+                        <div style={{ fontSize: '1.5rem', fontWeight: 900, color: `hsl(${meta.color})` }}>{sectionType === 'SPEAKING' ? '900' : '699'}</div>
                         <div style={{ fontSize: '0.75rem', fontWeight: 600, color: 'hsl(var(--text-secondary))', marginTop: '0.1rem' }}>Max Points</div>
                       </div>
                     </div>
@@ -2443,6 +3383,8 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
                         <p style={{ color: 'hsl(35, 95%, 25%)', fontSize: '0.8rem', lineHeight: 1.5 }}>
                           {sectionType === 'WRITING' ? (
                             "Focus strictly on word counts (Task 1: 60-120, Task 2: 120-150, Task 3: 120-180). Structuring clear paragraphs and connecting arguments logically with cohesive French connectors yields the highest CLB tiers."
+                          ) : sectionType === 'SPEAKING' ? (
+                            "Ensure you fill the recommended speaking duration (Task 1: 2 mins, Task 2: 3 mins, Task 3: 4.5 mins). Keep your speech fluent, avoid long pauses, use rich vocabulary, and sound warm and interactive in Task 2."
                           ) : (
                             "The questions increase progressively in difficulty: A1 → A2 → B1 → B2 → C1 → C2. Manage your time carefully. We highly recommend focusing the bulk of your reading on the final 20 high-tier questions."
                           )}
