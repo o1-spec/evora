@@ -116,7 +116,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
   // Load questions and written tasks
   useEffect(() => {
     if (sectionType === 'READING') {
-      setQuestions(readingQuestions);
+      setQuestions(activeSeriesId !== null ? readingQuestions.filter(q => q.seriesId === activeSeriesId) : []);
     } else if (sectionType === 'WRITING') {
       setWTasks(activeSeriesId !== null ? writtenTasks.filter(t => t.seriesId === activeSeriesId) : []);
     } else {
