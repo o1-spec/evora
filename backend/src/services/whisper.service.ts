@@ -31,25 +31,10 @@ export class WhisperService {
 
         return response.data.text || '';
       } catch (error) {
-        console.error('Error in Whisper Speech-to-Text API, using local mock transcript...', error);
+        console.error('Error in Whisper Speech-to-Text API', error);
       }
     }
 
-    // High quality offline fallback
-    return this.getOfflineTranscript();
-  }
-
-  private static getOfflineTranscript(): string {
-    const mockTranscripts = [
-      "Bonjour, je m'appelle Pierre. Je voudrais immigrer au Canada pour travailler comme ingénieur. J'aime beaucoup la nature et les lacs canadiens.",
-      "Oui, je suis tout à fait d'accord avec cette idée. À mon avis, le transport en commun est essentiel pour réduire la pollution dans les grandes villes.",
-      "Dans mon pays natal, le système éducatif est un peu différent. Nous commençons l'école primaire à l'âge de six ans et nous avons beaucoup de devoirs à faire à la maison.",
-      "Pardon, je n'ai pas très bien compris votre question. Pourriez-vous répéter s'il vous plaît? Je pense que la culture francophone est très riche.",
-      "Je vais vous présenter mon projet favori. C'est une application mobile qui permet d'apprendre le français de manière amusante et avec de l'intelligence artificielle."
-    ];
-
-    // Pick a random mock transcript
-    const index = Math.floor(Math.random() * mockTranscripts.length);
-    return mockTranscripts[index];
+    return '';
   }
 }

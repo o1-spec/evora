@@ -9,7 +9,8 @@ import {
   Volume2, ShieldCheck, Flame, Trophy, RefreshCw, LayoutGrid, Check,
   Info, AlertTriangle, Eye, X, Send, AlertCircle, FileText, CheckCircle
 } from 'lucide-react';
-import { readingQuestions, generateMockQuestions, writtenTasks, oralTasks, TcfQuestionData, TcfWrittenTaskData, TcfOralTaskData } from '@/lib/tcfQuestions';
+import { readingQuestions, listeningQuestions, writtenTasks, oralTasks, TcfQuestionData, TcfWrittenTaskData, TcfOralTaskData } from '@/lib/tcfQuestions';
+import api from '@/lib/api';
 
 interface TrainingSeriesGridProps {
   sectionType: 'READING' | 'WRITING' | 'LISTENING' | 'SPEAKING';
@@ -80,7 +81,6 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
   const [answers, setAnswers] = useState<Record<number, 'A' | 'B' | 'C' | 'D'>>({});
   const [timeRemaining, setTimeRemaining] = useState<number>(3600); // 60 mins
   const [isExamFinished, setIsExamFinished] = useState<boolean>(false);
-  const [isAutoFilling, setIsAutoFilling] = useState<boolean>(false);
   const [showNavGrid, setShowNavGrid] = useState<boolean>(false);
 
   // --- Stateful Written Expression Simulator states ---
@@ -113,6 +113,13 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
   // Timer reference
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
+  // Real AI evaluation and audio recording states/refs
+  const [writingEvaluations, setWritingEvaluations] = useState<Record<number, any>>({});
+  const [isEvaluatingWriting, setIsEvaluatingWriting] = useState<boolean>(false);
+  const mediaRecorderRef = useRef<MediaRecorder | null>(null);
+  const audioChunksRef = useRef<Blob[]>([]);
+  const audioStreamRef = useRef<MediaStream | null>(null);
+
   // Trigger temporary custom toast
   const triggerToast = (message: string, type: 'success' | 'info' | 'warning' = 'info') => {
     setToast({ message, type });
@@ -130,12 +137,12 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
   useEffect(() => {
     if (sectionType === 'READING') {
       setQuestions(activeSeriesId !== null ? readingQuestions.filter(q => q.seriesId === activeSeriesId) : []);
+    } else if (sectionType === 'LISTENING') {
+      setQuestions(activeSeriesId !== null ? listeningQuestions.filter(q => q.seriesId === activeSeriesId) : []);
     } else if (sectionType === 'WRITING') {
       setWTasks(activeSeriesId !== null ? writtenTasks.filter(t => t.seriesId === activeSeriesId) : []);
     } else if (sectionType === 'SPEAKING') {
       setOTasks(activeSeriesId !== null ? oralTasks.filter(t => t.seriesId === activeSeriesId) : []);
-    } else {
-      setQuestions(generateMockQuestions(sectionType));
     }
   }, [sectionType, activeSeriesId]);
 
@@ -252,43 +259,51 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
     triggerToast('Practice session closed.', 'info');
   };
 
-  // Fill remaining answers automatically (Simulation Helper)
-  const handleAutoFill = () => {
-    setIsAutoFilling(true);
-    setTimeout(() => {
-      if (sectionType === 'WRITING') {
-        const simulatedAnswers: Record<number, string> = {};
-        simulatedAnswers[1] = "Bonjour Antoine, j'espère que tu vas bien. Je t'écris ce petit mot car je change de département à partir de la semaine prochaine. Je quitte les ventes pour rejoindre l'équipe marketing à Montréal. Pour fêter ça, je te propose de déjeuner ensemble jeudi midi vers 12h30 au Bistrot Gourmand en centre-ville. Je suis vraiment ravi de célébrer ça avec toi et très enthousiaste à l'idée de collaborer sur de futurs projets. À bientôt !";
-        simulatedAnswers[2] = "Le télétravail s'impose aujourd'hui comme une évolution incontournable au Québec. D'un côté, travailler de chez soi présente d'immenses bienfaits écologiques en supprimant les transports quotidiens et favorise un équilibre familial précieux. Cependant, un isolement social prononcé menace les travailleurs qui manquent de contacts humains directs. C'est pourquoi un aménagement hybride associant 2 jours au bureau et 3 jours à distance représente la solution la plus équilibrée.";
-        simulatedAnswers[3] = "Faut-il bannir les automobiles thermiques des centres-villes canadiens ? D'une part, l'Option A privilégie une approche écologique radicale favorisant la qualité de l'air. D'autre part, l'Option B rappelle les dures réalités économiques des commerçants et l'isolement des banlieues excentrées. Selon moi, il convient de développer massivement les transports collectifs avant d'interdire les voitures individuelles. Une transition progressive est la seule clé de la réussite.";
-        setWritingAnswers(simulatedAnswers);
-      } else {
-        const simulatedAnswers: Record<number, 'A' | 'B' | 'C' | 'D'> = { ...answers };
-        questions.forEach(q => {
-          if (!simulatedAnswers[q.id]) {
-            const keys: ('A' | 'B' | 'C' | 'D')[] = ['A', 'B', 'C', 'D'];
-            const hitRate = 0.78; 
-            if (Math.random() < hitRate) {
-              simulatedAnswers[q.id] = q.correctKey;
-            } else {
-              const wrongKeys = keys.filter(k => k !== q.correctKey);
-              simulatedAnswers[q.id] = wrongKeys[Math.floor(Math.random() * wrongKeys.length)];
-            }
-          }
-        });
-        setAnswers(simulatedAnswers);
-      }
-      setIsAutoFilling(false);
-      triggerToast('Drafts filled successfully!', 'success');
-    }, 400);
-  };
-
   // Grade exam and calculate results
-  const handleFinishExam = () => {
-    setIsExamFinished(true);
-    setShowNavGrid(false);
+  const handleFinishExam = async () => {
     if (timerRef.current) clearInterval(timerRef.current);
-    triggerToast('Answers submitted and graded!', 'success');
+    setShowNavGrid(false);
+
+    if (sectionType === 'WRITING') {
+      setIsEvaluatingWriting(true);
+      try {
+        const evaluations: Record<number, any> = {};
+
+        await Promise.all([1, 2, 3].map(async (taskNum) => {
+          const text = writingAnswers[taskNum] || '';
+          if (text.trim().length > 5) {
+            const currentWTask = wTasks.find(t => t.taskNumber === taskNum);
+            const prompt = currentWTask ? currentWTask.prompt : `Task ${taskNum}`;
+            const response = await api.post('/ai/evaluate-writing', {
+              text,
+              promptInstruction: prompt
+            });
+            evaluations[taskNum] = response.data.evaluation;
+          } else {
+            evaluations[taskNum] = {
+              overallScore: 0,
+              clbLevel: 'CLB 0',
+              strengths: [],
+              weaknesses: ["No response provided."],
+              corrections: [],
+              comments: "No response was written for this task."
+            };
+          }
+        }));
+
+        setWritingEvaluations(evaluations);
+        setIsExamFinished(true);
+        triggerToast('Written tasks submitted and graded by AI!', 'success');
+      } catch (err) {
+        console.error('Failed to grade writing tasks:', err);
+        triggerToast('Failed to evaluate writing tasks. Please check your connection.', 'warning');
+      } finally {
+        setIsEvaluatingWriting(false);
+      }
+    } else {
+      setIsExamFinished(true);
+      triggerToast('Answers submitted and graded!', 'success');
+    }
   };
 
   // Reset attempt session
@@ -297,6 +312,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
     setIsExamFinished(false);
     setAnswers({});
     setWritingAnswers({ 1: '', 2: '', 3: '' });
+    setWritingEvaluations({});
     setSpeakingAnswers({
       1: { isRecorded: false, durationSec: 0, transcript: '' },
       2: { isRecorded: false, durationSec: 0, transcript: '' },
@@ -352,19 +368,30 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
     return text.trim().split(/\s+/).filter(Boolean).length;
   };
 
-  // Generate simulated AI corrections for writing feedback
-  const getSimulatedCorrections = (taskNum: number) => {
-    const text = writingAnswers[taskNum];
-    const wordCount = countWords(text);
+  // Generate real AI corrections for writing feedback
+  const getWritingCorrections = (taskNum: number) => {
+    const text = writingAnswers[taskNum] || '';
+    const evalData = writingEvaluations[taskNum];
 
+    if (evalData) {
+      return {
+        score: evalData.overallScore ?? 50,
+        clb: evalData.clbLevel ?? 'CLB 5',
+        corrections: evalData.corrections ?? [],
+        strengths: evalData.strengths ?? [],
+        weaknesses: evalData.weaknesses ?? [],
+        comments: evalData.comments ?? ""
+      };
+    }
+
+    // High quality offline fallback in case API is completely unreachable
+    const wordCount = countWords(text);
     if (taskNum === 1) {
       return {
         score: wordCount < 60 ? 45 : wordCount > 120 ? 60 : 85,
         clb: wordCount < 60 ? 'CLB 5' : wordCount > 120 ? 'CLB 6' : 'CLB 9',
         corrections: [
-          { original: "Je vais a Paris", suggested: "Je vais à Paris", explanation: "L'accent grave est requis sur la préposition 'à' pour la différencier du verbe avoir." },
-          { original: "Pour célébré mon poste", suggested: "Pour célébrer mon poste", explanation: "Après la préposition 'pour', le verbe doit être à l'infinitif ('célébrer')." },
-          { original: "Je suis ravi de déjeuner avec toi", suggested: "Je serais ravi de déjeuner avec toi", explanation: "L'emploi du conditionnel 'serais' est plus poli pour formuler une suggestion chaleureuse." }
+          { original: "Je vais a Paris", suggested: "Je vais à Paris", explanation: "L'accent grave est requis sur la préposition 'à' pour la différencier du verbe avoir." }
         ],
         strengths: ["Respect des consignes", "Choix du registre familier adapté"],
         weaknesses: ["Fautes d'accents sur les prépositions", "Conjugaisons après préposition"]
@@ -374,8 +401,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
         score: wordCount < 120 ? 55 : 82,
         clb: wordCount < 120 ? 'CLB 6' : 'CLB 8',
         corrections: [
-          { original: "Le télétravail présente beaucoup de bienfaits", suggested: "Le télétravail offre de nombreux avantages", explanation: "Le terme 'avantages' est plus précis et professionnel que 'bienfaits' dans un article d'opinion." },
-          { original: "C'est pourquoi un système hybride", suggested: "C'est pourquoi, un modèle hybride", explanation: "Ajout d'une virgule après le connecteur de transition et emploi de 'modèle' pour enrichir le lexique." }
+          { original: "Le télétravail présente beaucoup de bienfaits", suggested: "Le télétravail offre de nombreux avantages", explanation: "Le terme 'avantages' est plus précis et professionnel que 'bienfaits' dans un article d'opinion." }
         ],
         strengths: ["Bonne articulation logique", "Paragraphes structurés"],
         weaknesses: ["Répétitions du mot 'travail'", "Vocabulaire parfois trop général"]
@@ -385,8 +411,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
         score: wordCount < 120 ? 50 : 88,
         clb: wordCount < 120 ? 'CLB 6' : 'CLB 9',
         corrections: [
-          { original: "Option A privilégie une approche", suggested: "L'Option A privilégie une approche", explanation: "L'élision et l'article défini 'L\'' sont indispensables devant 'Option'." },
-          { original: "Développer massivement", suggested: "Développer de manière massive", explanation: "Tournure stylistique plus élégante et soutenue pour l'épreuve de niveau C1/C2." }
+          { original: "Option A privilégie une approche", suggested: "L'Option A privilégie une approche", explanation: "L'élision et l'article défini 'L\'' sont indispensables devant 'Option'." }
         ],
         strengths: ["Excellente synthèse des deux options", "Stance personnelle convaincante"],
         weaknesses: ["Accord de l'adjectif dans le paragraphe final", "Légère confusion de préposition"]
@@ -394,20 +419,31 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
     }
   };
 
-  // Generate simulated AI corrections for speaking feedback
-  const getSimulatedOralCorrections = (taskNum: number) => {
+  // Generate real AI corrections for speaking feedback
+  const getOralCorrections = (taskNum: number) => {
     const ans = speakingAnswers[taskNum];
     const duration = ans?.durationSec || 0;
 
+    if (ans && (ans as any).evaluation) {
+      const evalData = (ans as any).evaluation;
+      return {
+        score: evalData.overallScore ?? 50,
+        clb: evalData.clbLevel ?? 'CLB 5',
+        transcript: ans.transcript,
+        corrections: evalData.corrections ?? [],
+        strengths: evalData.strengths ?? [],
+        weaknesses: evalData.weaknesses ?? []
+      };
+    }
+
+    // High quality offline fallback in case API transcription wasn't triggered
     if (taskNum === 1) {
       return {
         score: duration === 0 ? 0 : duration < 30 ? 45 : duration > 120 ? 60 : 86,
         clb: duration === 0 ? 'CLB 0' : duration < 30 ? 'CLB 5' : duration > 120 ? 'CLB 6' : 'CLB 9',
-        transcript: ans?.transcript || "Bonjour ! Je m'appelle Alex. Je viens d'emménager dans le quartier à Montréal la semaine dernière. J'ai trente ans et je travaille comme développeur web. Dans ma famille, il y a ma femme et notre petit chien. Pendant mon temps libre, j'aime faire du vélo au parc et faire le sport. Je suis très ravi d'être votre voisin et j'espère qu'on pourra prendre un café un jour !",
+        transcript: ans?.transcript || "(No audio response recorded)",
         corrections: [
-          { original: "Je viens de emménager", suggested: "Je viens d'emménager", explanation: "L'élision est obligatoire devant une voyelle pour assurer une prononciation fluide." },
-          { original: "faire le sport", suggested: "faire du sport", explanation: "On utilise l'article contracté 'du' après le verbe faire pour exprimer une activité sportive." },
-          { original: "Je suis très ravi", suggested: "Je suis ravi / Je suis extrêmement ravi", explanation: "'Ravi' étant déjà un qualificatif absolu, l'utilisation de 'très' est redondante. Préférez 'absolument' ou supprimez-le." }
+          { original: "Je viens de emménager", suggested: "Je viens d'emménager", explanation: "L'élision est obligatoire devant une voyelle pour assurer une prononciation fluide." }
         ],
         strengths: ["Bonne intonation et débit de parole naturel", "Utilisation de structures grammaticales simples mais maîtrisées"],
         weaknesses: ["Légères hésitations sur le vocabulaire des loisirs", "Prononciation de la liaison dans 'trente ans'"]
@@ -416,11 +452,9 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
       return {
         score: duration === 0 ? 0 : duration < 60 ? 50 : 84,
         clb: duration === 0 ? 'CLB 0' : duration < 60 ? 'CLB 6' : 'CLB 8',
-        transcript: ans?.transcript || "Bonjour, je vous appelle pour avoir des renseignements pour inscrire dans votre club de sport. D'abord, je veux savoir quels sont les tarifs pour l'abonnement mensuel ? Est-ce que il y a des réductions pour les étudiants ? De plus, je voudrais savoir les horaires d'ouverture le weekend. Proposez-vous des cours collectifs de tennis ou de natation ? Merci beaucoup pour vos réponses et votre temps.",
+        transcript: ans?.transcript || "(No audio response recorded)",
         corrections: [
-          { original: "renseignements pour inscrire", suggested: "renseignements pour m'inscrire", explanation: "Le verbe s'inscrire est pronominal, il nécessite le pronom réfléchi 'm'' à la première personne." },
-          { original: "je veux savoir", suggested: "je souhaiterais savoir / je voudrais savoir", explanation: "L'emploi du présent de l'indicatif 'veux' est trop direct. Utilisez le conditionnel de politesse." },
-          { original: "Est-ce que il y a", suggested: "Est-ce qu'il y a", explanation: "L'élision 'qu'il' est requise devant le pronom sujet 'il'." }
+          { original: "renseignements pour inscrire", suggested: "renseignements pour m'inscrire", explanation: "Le verbe s'inscrire est pronominal, il nécessite le pronom réfléchi 'm'' à la première personne." }
         ],
         strengths: ["Respect parfait des consignes d'interaction sociale", "Utilisation constante du vouvoiement poli"],
         weaknesses: ["Structures interrogatives peu variées", "Formulation un peu répétitive des demandes d'information"]
@@ -429,12 +463,11 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
       return {
         score: duration === 0 ? 0 : duration < 90 ? 55 : 90,
         clb: duration === 0 ? 'CLB 0' : duration < 90 ? 'CLB 6' : 'CLB 10',
-        transcript: ans?.transcript || "C'est une question tout à fait cruciale aujourd'hui. D'une part, il est indéniable que la désinformation sur les réseaux sociaux pose un risque majeur pour la cohésion sociale et la démocratie. Les plateformes ont donc le devoir moral de réguler les contenus haineux et mensongers. Cependant, d'autre part, attribuer un pouvoir de censure absolu à des entreprises privées menace directement notre liberté d'expression individuelle. À mon avis, un cadre législatif neutre et transparent est indispensable pour concilier sécurité informationnelle et libertés fondamentales.",
+        transcript: ans?.transcript || "(No audio response recorded)",
         corrections: [
-          { original: "pose un risque majeur", suggested: "représente un risque majeur", explanation: "Le verbe 'représenter' offre un registre lexical plus académique et adapté aux critères du niveau C1/C2." },
-          { original: "doivent contrôler les informations", suggested: "se doivent de réguler les flux d'informations", explanation: "Tournure syntaxique raffinée avec le verbe pronominal 'se devoir de' augmentant l'élégance du discours." }
+          { original: "pose un risque majeur", suggested: "représente un risque majeur", explanation: "Le verbe 'représenter' offre un registre lexical plus académique et adapté aux critères du niveau C1/C2." }
         ],
-        strengths: ["Structure argumentative rigoureuse avec introduction, thèse et synthèse", "Richesse et précision du vocabulaire abstrait", "Débit fluide et articulateurs logiques impeccables"],
+        strengths: ["Structure argumentative rigoureuse avec introduction, thèse et synthèse", "Richesse et précision du vocabulaire abstrait", "Débit fluide et articulateurs logiques indispensables"],
         weaknesses: ["Léger trébuchement de prononciation sur le mot 'fondamentales'", "Rythme de phrase parfois un peu trop rapide"]
       };
     }
@@ -572,31 +605,6 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
 
           {/* Right Timer pill */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            {/* Quick Auto draft filler */}
-            <button
-              onClick={handleAutoFill}
-              disabled={isAutoFilling}
-              style={{
-                padding: '0.45rem 0.85rem',
-                borderRadius: '0.5rem',
-                border: '1px solid #f97316',
-                backgroundColor: 'rgba(249,115,22,0.02)',
-                color: '#f97316',
-                fontWeight: 700,
-                fontSize: '0.75rem',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.35rem',
-                transition: 'all 0.2s'
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(249,115,22,0.06)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(249,115,22,0.02)'; }}
-            >
-              <RefreshCw size={12} className={isAutoFilling ? 'animate-spin' : ''} />
-              Inject Drafts
-            </button>
-
             <div 
               style={{ 
                 display: 'flex', 
@@ -972,33 +980,80 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
       setRecordTime(0);
     };
 
-    const handleStartRecording = () => {
-      setRecordingState('RECORDING');
-      setRecordTime(0);
+    const handleStartRecording = async () => {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        audioStreamRef.current = stream;
+        audioChunksRef.current = [];
+
+        const recorder = new MediaRecorder(stream);
+        mediaRecorderRef.current = recorder;
+
+        recorder.ondataavailable = (event) => {
+          if (event.data.size > 0) {
+            audioChunksRef.current.push(event.data);
+          }
+        };
+
+        recorder.onstop = async () => {
+          const audioBlob = new Blob(audioChunksRef.current, { type: 'audio/webm' });
+          // Stop all audio tracks
+          stream.getTracks().forEach(track => track.stop());
+
+          // Call evaluate speech endpoint
+          await uploadAndEvaluateSpeech(audioBlob);
+        };
+
+        recorder.start();
+        setRecordingState('RECORDING');
+        setRecordTime(0);
+      } catch (err) {
+        console.error('Error starting audio recording:', err);
+        triggerToast('Microphone access denied or error starting recording.', 'warning');
+      }
     };
 
     const handleStopRecording = () => {
       setRecordingState('SAVED');
-      // Set a realistic duration and simulated transcript
-      const finalDuration = recordTime > 5 ? recordTime : 75; // fallback to 75s if stopped instantly
+      if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') {
+        mediaRecorderRef.current.stop();
+      }
+    };
+
+    const uploadAndEvaluateSpeech = async (audioBlob: Blob) => {
       setIsTranscribing(true);
-      
-      setTimeout(() => {
-        setIsTranscribing(false);
+      try {
+        const formData = new FormData();
+        formData.append('audio', audioBlob, `task_${currentOTask.taskNumber}.webm`);
+        formData.append('taskInstruction', currentOTask.prompt);
+
+        const response = await api.post('/ai/evaluate-speech', formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+
+        const { transcript, evaluation } = response.data;
+        const durationSec = recordTime > 5 ? recordTime : 75;
+
         setSpeakingAnswers(prev => ({
           ...prev,
           [currentOTask.taskNumber]: {
             isRecorded: true,
-            durationSec: finalDuration,
-            transcript: currentOTask.taskNumber === 1 
-              ? "Bonjour ! Je m'appelle Alex. Je viens d'emménager dans le quartier à Montréal la semaine dernière. J'ai trente ans et je travaille comme développeur web. Dans ma famille, il y a ma femme et notre petit chien. Pendant mon temps libre, j'aime faire du vélo au parc et faire le sport. Je suis très ravi d'être votre voisin !"
-              : currentOTask.taskNumber === 2
-              ? "Bonjour, je vous appelle pour avoir des renseignements pour inscrire dans votre club de sport. D'abord, je veux savoir quels sont les tarifs pour l'abonnement mensuel ? Est-ce que il y a des réductions pour les étudiants ? De plus, je voudrais savoir les horaires d'ouverture le weekend."
-              : "C'est une question tout à fait cruciale aujourd'hui. D'une part, il est indéniable que la désinformation sur les réseaux sociaux pose un risque majeur pour la cohésion sociale et la démocratie. Les plateformes ont donc le devoir moral de réguler les contenus haineux et mensongers."
+            durationSec,
+            transcript: transcript || '(No speech detected)',
+            evaluation
           }
         }));
+
         triggerToast(`Task ${currentOTask.taskNumber} audio response processed successfully!`, 'success');
-      }, 1500);
+      } catch (error) {
+        console.error('Failed to evaluate speech:', error);
+        triggerToast('Failed to evaluate speech. Please try again.', 'warning');
+        setRecordingState('IDLE');
+      } finally {
+        setIsTranscribing(false);
+      }
     };
 
     const handleRerecord = () => {
@@ -1009,32 +1064,6 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
         ...prev,
         [currentOTask.taskNumber]: { isRecorded: false, durationSec: 0, transcript: '' }
       }));
-    };
-
-    const handleAutoFillOral = () => {
-      setIsTranscribing(true);
-      setTimeout(() => {
-        setIsTranscribing(false);
-        setSpeakingAnswers({
-          1: {
-            isRecorded: true,
-            durationSec: 85,
-            transcript: "Bonjour ! Je m'appelle Alex. Je viens d'emménager dans le quartier à Montréal la semaine dernière. J'ai trente ans et je travaille comme développeur web. Dans ma famille, il y a ma femme et notre petit chien. Pendant mon temps libre, j'aime faire du vélo au parc et faire le sport. Je suis très ravi d'être votre voisin et j'espère qu'on pourra prendre un café un jour !"
-          },
-          2: {
-            isRecorded: true,
-            durationSec: 142,
-            transcript: "Bonjour, je vous appelle pour avoir des renseignements pour inscrire dans votre club de sport. D'abord, je veux savoir quels sont les tarifs pour l'abonnement mensuel ? Est-ce que il y a des réductions pour les étudiants ? De plus, je voudrais savoir les horaires d'ouverture le weekend. Proposez-vous des cours collectifs de tennis ou de natation ? Merci beaucoup pour vos réponses et votre temps."
-          },
-          3: {
-            isRecorded: true,
-            durationSec: 210,
-            transcript: "C'est une question tout à fait cruciale aujourd'hui. D'une part, il est indéniable que la désinformation sur les réseaux sociaux pose un risque majeur pour la cohésion sociale et la démocratie. Les plateformes ont donc le devoir moral de réguler les contenus haineux et mensongers. Cependant, d'autre part, attribuer un pouvoir de censure absolu à des entreprises privées menace directement notre liberté d'expression individuelle. À mon avis, un cadre législatif neutre et transparent est indispensable pour concilier sécurité informationnelle et libertés fondamentales."
-          }
-        });
-        setRecordingState('SAVED');
-        triggerToast("Speaking drafts successfully injected!", 'success');
-      }, 800);
     };
 
     // Format minutes/seconds for task timer
@@ -1132,20 +1161,6 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            <button
-              onClick={handleAutoFillOral}
-              style={{
-                padding: '0.45rem 0.85rem', borderRadius: '0.5rem', border: '1px solid #f97316',
-                backgroundColor: 'rgba(249,115,22,0.02)', color: '#f97316', fontWeight: 700, fontSize: '0.75rem',
-                cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.35rem', transition: 'all 0.2s'
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(249,115,22,0.06)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(249,115,22,0.02)'; }}
-            >
-              <RefreshCw size={12} />
-              Inject Drafts
-            </button>
-
             <div 
               style={{ 
                 display: 'flex', alignItems: 'center', gap: '0.4rem', 
@@ -1515,11 +1530,41 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
     );
   }
 
+  // --- RENDER SCREEN: WRITING EVALUATION LOADER ---
+  if (activeSeriesId !== null && isEvaluatingWriting && sectionType === 'WRITING') {
+    return (
+      <div 
+        style={{ 
+          backgroundColor: '#f1f5f9', 
+          minHeight: '100vh', 
+          display: 'flex', 
+          flexDirection: 'column',
+          alignItems: 'center', 
+          justifyContent: 'center',
+          padding: '2rem'
+        }}
+      >
+        <div style={{ textAlign: 'center', maxWidth: '400px', width: '100%' }}>
+          <Sparkles size={48} className="animate-pulse" style={{ color: 'hsl(262, 83%, 53%)', margin: '0 auto 1.5rem' }} />
+          <h2 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a', marginBottom: '0.75rem', fontFamily: 'Outfit, sans-serif' }}>
+            Evora AI Grading in Progress
+          </h2>
+          <p style={{ fontSize: '0.9rem', color: '#64748b', lineHeight: 1.6, marginBottom: '2rem' }}>
+            Analyzing your French grammar, vocabulary diversity, and sentence structure. This may take up to 15 seconds...
+          </p>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div className="animate-spin" style={{ width: '24px', height: '24px', border: '3px solid #cbd5e1', borderTopColor: 'hsl(262, 83%, 53%)', borderRadius: '50%' }} />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   // --- RENDER SCREEN 2A: HIGH-END AI SCORING REPORT CARD FOR WRITTEN SIMULATOR ---
   if (activeSeriesId !== null && isExamFinished && sectionType === 'WRITING') {
-    const feedback1 = getSimulatedCorrections(1);
-    const feedback2 = getSimulatedCorrections(2);
-    const feedback3 = getSimulatedCorrections(3);
+    const feedback1 = getWritingCorrections(1);
+    const feedback2 = getWritingCorrections(2);
+    const feedback3 = getWritingCorrections(3);
 
     const activeFeedback = activeReportTab === 1 ? feedback1 : activeReportTab === 2 ? feedback2 : feedback3;
     const activeTextAnswer = writingAnswers[activeReportTab] || '';
@@ -1676,7 +1721,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
               </h4>
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxHeight: '240px', overflowY: 'auto', paddingRight: '0.25rem' }}>
-                {activeFeedback.corrections.map((corr, idx) => (
+                {activeFeedback.corrections.map((corr: { original: string; suggested: string; explanation: string }, idx: number) => (
                   <div 
                     key={idx}
                     style={{
@@ -1714,7 +1759,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
                 Linguistic Strengths
               </h4>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {activeFeedback.strengths.map(s => (
+                {activeFeedback.strengths.map((s: string) => (
                   <span key={s} style={{ fontSize: '0.75rem', fontWeight: 600, backgroundColor: '#d1fae5', color: '#065f46', padding: '0.25rem 0.65rem', borderRadius: '0.5rem' }}>
                     ✦ {s}
                   </span>
@@ -1727,7 +1772,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
                 Linguistic Weaknesses
               </h4>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                {activeFeedback.weaknesses.map(w => (
+                {activeFeedback.weaknesses.map((w: string) => (
                   <span key={w} style={{ fontSize: '0.75rem', fontWeight: 600, backgroundColor: '#fee2e2', color: '#991b1b', padding: '0.25rem 0.65rem', borderRadius: '0.5rem' }}>
                     ⚠ {w}
                   </span>
@@ -1881,31 +1926,6 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
 
           {/* Right Timer & Quick Helpers */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-            {/* Autofill test helper */}
-            <button
-              onClick={handleAutoFill}
-              disabled={isAutoFilling}
-              style={{
-                padding: '0.45rem 0.85rem',
-                borderRadius: '0.5rem',
-                border: '1px solid #f97316',
-                backgroundColor: 'rgba(249,115,22,0.02)',
-                color: '#f97316',
-                fontWeight: 700,
-                fontSize: '0.75rem',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '0.35rem',
-                transition: 'all 0.2s'
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(249,115,22,0.06)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'rgba(249,115,22,0.02)'; }}
-            >
-              <RefreshCw size={12} className={isAutoFilling ? 'animate-spin' : ''} />
-              {isAutoFilling ? 'Filling...' : 'Autofill'}
-            </button>
-
             {/* Countdown clock badge */}
             <div 
               style={{ 
@@ -2472,9 +2492,9 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
 
   // --- RENDER SCREEN 2B: HIGH-END AI SCORING REPORT CARD FOR ORAL SIMULATOR ---
   if (activeSeriesId !== null && isExamFinished && sectionType === 'SPEAKING') {
-    const feedback1 = getSimulatedOralCorrections(1);
-    const feedback2 = getSimulatedOralCorrections(2);
-    const feedback3 = getSimulatedOralCorrections(3);
+    const feedback1 = getOralCorrections(1);
+    const feedback2 = getOralCorrections(2);
+    const feedback3 = getOralCorrections(3);
 
     const activeFeedback = activeReportTab === 1 ? feedback1 : activeReportTab === 2 ? feedback2 : feedback3;
     const activeAnswer = speakingAnswers[activeReportTab] || { isRecorded: false, durationSec: 0, transcript: '' };
@@ -2640,7 +2660,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', maxHeight: '240px', overflowY: 'auto', paddingRight: '0.25rem' }}>
                 {activeAnswer.isRecorded ? (
-                  activeFeedback.corrections.map((corr, idx) => (
+                  activeFeedback.corrections.map((corr: { original: string; suggested: string; explanation: string }, idx: number) => (
                     <div 
                       key={idx}
                       style={{
@@ -2684,7 +2704,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
               </h4>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                 {activeAnswer.isRecorded ? (
-                  activeFeedback.strengths.map(s => (
+                  activeFeedback.strengths.map((s: string) => (
                     <span key={s} style={{ fontSize: '0.75rem', fontWeight: 600, backgroundColor: '#d1fae5', color: '#065f46', padding: '0.25rem 0.65rem', borderRadius: '0.5rem' }}>
                       ✦ {s}
                     </span>
@@ -2701,7 +2721,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
               </h4>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                 {activeAnswer.isRecorded ? (
-                  activeFeedback.weaknesses.map(w => (
+                  activeFeedback.weaknesses.map((w: string) => (
                     <span key={w} style={{ fontSize: '0.75rem', fontWeight: 600, backgroundColor: '#fee2e2', color: '#991b1b', padding: '0.25rem 0.65rem', borderRadius: '0.5rem' }}>
                       ⚠ {w}
                     </span>

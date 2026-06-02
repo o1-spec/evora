@@ -65,6 +65,38 @@ export class AiController {
   }
 
   /**
+   * Evaluate written French text and provide constructive corrections, strengths, weaknesses, and score
+   */
+  public static async evaluateWriting(req: AuthenticatedRequest, res: Response) {
+    try {
+      const { text, promptInstruction } = req.body;
+      if (!text) {
+        return res.status(400).json({ error: 'Le texte à évaluer est obligatoire.' });
+      }
+      if (!req.user) return res.status(401).json({ error: 'Unauthorized' });
+
+      const userId = req.user.id;
+      const instruction = promptInstruction || "TCF Canada Section Écrite - Rédiger des textes descriptifs et argumentatifs.";
+
+      const evaluation = await OpenAIService.evaluateWriting(text, instruction);
+
+      await prisma.aIUsageLog.create({
+        data: {
+          userId,
+          service: 'gpt-4o-writing-simulator',
+          inputToken: 250,
+          outputToken: 350
+        }
+      });
+
+      return res.status(200).json({ evaluation });
+    } catch (error) {
+      console.error('Evaluate writing error:', error);
+      return res.status(500).json({ error: 'Failed to process AI writing assessment.' });
+    }
+  }
+
+  /**
    * Synthesize French sentences to high-quality MP3 audio files for exercises or listening sections
    */
   public static async synthesizeText(req: AuthenticatedRequest, res: Response) {
@@ -145,7 +177,7 @@ export class AiController {
 
           reply = response.data.choices[0].message.content || "";
         } catch (err) {
-          console.error(`Error in ${useOllama ? 'Ollama' : 'OpenAI'} Chat, falling back to mock...`, err);
+          console.error(`Error in ${useOllama ? 'Ollama' : 'OpenAI'} Chat, falling back to offline response...`, err);
         }
       }
 

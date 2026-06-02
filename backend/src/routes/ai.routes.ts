@@ -39,6 +39,7 @@ router.post(
   AiController.evaluateSpeech as any
 );
 
+router.post('/evaluate-writing', AiController.evaluateWriting as any);
 router.post('/synthesize-text', AiController.synthesizeText as any);
 router.post('/tutor-chat', AiController.tutorChat as any);
 

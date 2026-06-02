@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { User, Calendar, CreditCard, Award, BookOpen, Clock, Settings, Sparkles, CheckCircle } from "lucide-react";
+import { User, Calendar, CreditCard, Award, BookOpen, Clock, Settings, Sparkles, CheckCircle, Trophy } from "lucide-react";
 import { useAuthStore } from "@/store/useAuthStore";
+import { useQuery } from "@tanstack/react-query";
+import api from "@/lib/api";
 import PublicLayout from "@/components/portal/PublicLayout";
 import PublicPageHero from "@/components/portal/PublicPageHero";
 
@@ -42,21 +44,35 @@ export default function AccountPage() {
     );
   }
 
-  // Simulated metrics and progress details
-  const mockSubscription = {
-    planName: "Premium Membership",
+  const { data: profile, isLoading } = useQuery({
+    queryKey: ['user-profile'],
+    queryFn: () => api.get('/auth/profile').then(r => r.data.user),
+  });
+
+  const subTier = profile?.subscriptionTier || 'free';
+  const isPremium = subTier.toLowerCase() === 'premium';
+  
+  const subscription = {
+    planName: isPremium ? "Premium Membership" : "Free Plan",
     period: "Monthly",
-    status: "Active",
-    nextBillingDate: "June 21, 2026",
-    price: "29€",
+    status: isPremium ? "Active" : "Free tier",
+    nextBillingDate: profile?.subActiveUntil 
+      ? new Date(profile.subActiveUntil).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+      : "N/A",
+    price: isPremium ? "29€" : "0€",
   };
 
-  const progressHistory = [
-    { type: "Written Expression", topic: "Task 1: Invitation restaurant", date: "May 20, 2026", clbScore: "CLB 8", status: "Completed" },
-    { type: "Oral Expression", topic: "Task 1: Introduction personnelle", date: "May 18, 2026", clbScore: "CLB 7", status: "Completed" },
-    { type: "Reading Comprehension", topic: "Timed Practice: Text Section B", date: "May 15, 2026", clbScore: "CLB 9", status: "Completed" },
-    { type: "Oral Comprehension", topic: "Timed Practice: Audio Section A", date: "May 10, 2026", clbScore: "CLB 8", status: "Completed" },
-  ];
+  const completedLessons = profile?.progress?.filter((p: any) => p.isCompleted) || [];
+  const totalLessonsCount = profile?.progress?.length || 0;
+  const skillCoveragePercent = totalLessonsCount > 0 
+    ? Math.round((completedLessons.length / totalLessonsCount) * 100)
+    : 0;
+
+  const latestAttempt = profile?.examAttempts?.[0];
+  const projectedLevel = latestAttempt?.clbLevel || "CLB 5";
+  const projectedPercent = (parseInt(projectedLevel.replace('CLB ', '')) || 5) * 10;
+
+  const attemptsList = profile?.examAttempts?.slice(0, 4) || [];
 
   return (
     <PublicLayout>
@@ -135,25 +151,27 @@ export default function AccountPage() {
                   }}
                 >
                   <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "hsl(var(--primary))", display: "block", textTransform: "uppercase" }}>
-                    {mockSubscription.planName}
+                    {isLoading ? 'Loading...' : subscription.planName}
                   </span>
                   <div style={{ display: "flex", alignItems: "baseline", gap: "0.25rem", marginTop: "0.5rem" }}>
                     <span style={{ fontSize: "2rem", fontWeight: 900, fontFamily: "Outfit, sans-serif" }}>
-                      {mockSubscription.price}
+                      {isLoading ? '...' : subscription.price}
                     </span>
                     <span style={{ fontSize: "0.85rem", color: "hsl(var(--text-secondary))" }}>
-                      / {mockSubscription.period}
+                      / {subscription.period}
                     </span>
                   </div>
                 </div>
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.75rem", fontSize: "0.85rem" }}>
                   <div style={{ display: "flex", justifyContent: "space-between" }}>
                     <span style={{ color: "hsl(var(--text-secondary))" }}>Status</span>
-                    <span style={{ fontWeight: 600, color: "rgb(34, 197, 94)" }}>{mockSubscription.status}</span>
+                    <span style={{ fontWeight: 600, color: isPremium ? "rgb(34, 197, 94)" : "hsl(var(--text-muted))" }}>
+                      {isLoading ? '...' : subscription.status}
+                    </span>
                   </div>
                   <div style={{ display: "flex", justifyContent: "space-between" }}>
                     <span style={{ color: "hsl(var(--text-secondary))" }}>Next billing date</span>
-                    <span style={{ fontWeight: 600 }}>{mockSubscription.nextBillingDate}</span>
+                    <span style={{ fontWeight: 600 }}>{isLoading ? '...' : subscription.nextBillingDate}</span>
                   </div>
                 </div>
               </div>
@@ -172,19 +190,23 @@ export default function AccountPage() {
                   <div>
                     <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.4rem", fontSize: "0.85rem" }}>
                       <span style={{ fontWeight: 600 }}>TCF Skill Coverage</span>
-                      <span style={{ color: "hsl(var(--primary))", fontWeight: 700 }}>75%</span>
+                      <span style={{ color: "hsl(var(--primary))", fontWeight: 700 }}>
+                        {isLoading ? '...' : `${skillCoveragePercent}%`}
+                      </span>
                     </div>
                     <div className="progress-track">
-                      <div className="progress-fill" style={{ width: "75%" }} />
+                      <div className="progress-fill" style={{ width: isLoading ? '0%' : `${skillCoveragePercent}%` }} />
                     </div>
                   </div>
                   <div>
                     <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "0.4rem", fontSize: "0.85rem" }}>
                       <span style={{ fontWeight: 600 }}>Target Benchmark Level</span>
-                      <span style={{ color: "hsl(var(--accent))", fontWeight: 700 }}>CLB 9 Projected</span>
+                      <span style={{ color: "hsl(var(--accent))", fontWeight: 700 }}>
+                        {isLoading ? '...' : `${projectedLevel} Projected`}
+                      </span>
                     </div>
                     <div className="progress-track" style={{ height: "8px" }}>
-                      <div className="progress-fill" style={{ width: "90%", backgroundColor: "hsl(var(--accent))" }} />
+                      <div className="progress-fill" style={{ width: isLoading ? '0%' : `${projectedPercent}%`, backgroundColor: "hsl(var(--accent))" }} />
                     </div>
                   </div>
                 </div>
@@ -196,44 +218,55 @@ export default function AccountPage() {
                   Recent Practices & AI Scores
                 </h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
-                  {progressHistory.map((item, i) => (
-                    <div
-                      key={i}
-                      style={{
-                        padding: "1rem",
-                        borderRadius: "0.75rem",
-                        border: "1px solid hsl(var(--border))",
-                        backgroundColor: "hsl(var(--bg-base))",
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        flexWrap: "wrap",
-                        gap: "1rem",
-                      }}
-                    >
-                      <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
-                        <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "hsl(var(--text-primary))" }}>
-                          {item.type}
-                        </span>
-                        <span style={{ fontSize: "0.75rem", color: "hsl(var(--text-muted))", display: "inline-flex", alignItems: "center", gap: "0.25rem" }}>
-                          <Clock size={10} />
-                          {item.date} • {item.topic}
-                        </span>
-                      </div>
-                      <span
+                  {isLoading ? (
+                    <div style={{ textAlign: "center", color: "hsl(var(--text-muted))", fontSize: "0.95rem", padding: "1rem" }}>
+                      Loading practice history...
+                    </div>
+                  ) : attemptsList.length > 0 ? (
+                    attemptsList.map((item: any, i: number) => (
+                      <div
+                        key={item.id || i}
                         style={{
-                          fontSize: "0.8rem",
-                          fontWeight: 700,
-                          padding: "0.2rem 0.5rem",
-                          borderRadius: "0.25rem",
-                          backgroundColor: "hsl(var(--primary-light))",
-                          color: "hsl(var(--primary))",
+                          padding: "1rem",
+                          borderRadius: "0.75rem",
+                          border: "1px solid hsl(var(--border))",
+                          backgroundColor: "hsl(var(--bg-base))",
+                          display: "flex",
+                          justifyContent: "space-between",
+                          alignItems: "center",
+                          flexWrap: "wrap",
+                          gap: "1rem",
                         }}
                       >
-                        {item.clbScore}
-                      </span>
+                        <div style={{ display: "flex", flexDirection: "column", gap: "0.25rem" }}>
+                          <span style={{ fontSize: "0.8rem", fontWeight: 700, color: "hsl(var(--text-primary))" }}>
+                            {item.title || "TCF Exam Simulation"}
+                          </span>
+                          <span style={{ fontSize: "0.75rem", color: "hsl(var(--text-muted))", display: "inline-flex", alignItems: "center", gap: "0.25rem" }}>
+                            <Clock size={10} />
+                            {new Date(item.startedAt).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })} • {item.completedAt ? "Completed" : "In Progress"}
+                          </span>
+                        </div>
+                        <span
+                          style={{
+                            fontSize: "0.8rem",
+                            fontWeight: 700,
+                            padding: "0.2rem 0.5rem",
+                            borderRadius: "0.25rem",
+                            backgroundColor: "hsl(var(--primary-light))",
+                            color: "hsl(var(--primary))",
+                          }}
+                        >
+                          {item.clbLevel || "–"}
+                        </span>
+                      </div>
+                    ))
+                  ) : (
+                    <div style={{ textAlign: "center", padding: "1.5rem 1rem", color: "hsl(var(--text-muted))", fontSize: "0.9rem" }}>
+                      <Trophy size={32} style={{ margin: "0 auto 0.75rem", opacity: 0.3 }} />
+                      <p>No timed exams completed yet.</p>
                     </div>
-                  ))}
+                  )}
                 </div>
                 <div style={{ marginTop: "1.5rem", textAlign: "center" }}>
                   <Link
