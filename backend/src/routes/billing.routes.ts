@@ -21,7 +21,4 @@ router.use(authMiddleware as any);
 router.post('/checkout', BillingController.checkout as any);
 router.post('/portal', BillingController.customerPortal as any);
 
-// Developer Sandbox local upgrade trigger
-router.post('/sandbox-upgrade', BillingController.handleSandboxUpgrade as any);
-
 export default router;

@@ -269,7 +269,61 @@ export default function ExamAttemptPage() {
     else nextSection();
   };
 
+  const recognitionRef = useRef<any>(null);
+  const [liveTranscript, setLiveTranscript] = useState('');
+  const speechSupported = typeof window !== 'undefined' && ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window);
+
   const toggleRecording = async (questionId: string) => {
+    // ── Browser-native Speech Recognition (preferred) ──
+    if (speechSupported) {
+      if (isRecording) {
+        recognitionRef.current?.stop();
+        setIsRecording(false);
+        return;
+      }
+
+      const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+      const recognition = new SpeechRecognition();
+      recognition.lang = 'fr-FR';
+      recognition.continuous = true;
+      recognition.interimResults = true;
+
+      let finalTranscript = '';
+
+      recognition.onresult = (event: any) => {
+        let interim = '';
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          const t = event.results[i][0].transcript;
+          if (event.results[i].isFinal) {
+            finalTranscript += t + ' ';
+          } else {
+            interim += t;
+          }
+        }
+        setLiveTranscript(finalTranscript + interim);
+        setAnswer(questionId, finalTranscript + interim);
+      };
+
+      recognition.onerror = (event: any) => {
+        console.error('SpeechRecognition error:', event.error);
+        setIsRecording(false);
+      };
+
+      recognition.onend = () => {
+        setIsRecording(false);
+        if (finalTranscript.trim()) {
+          setAnswer(questionId, finalTranscript.trim());
+        }
+      };
+
+      recognitionRef.current = recognition;
+      recognition.start();
+      setIsRecording(true);
+      setLiveTranscript('');
+      return;
+    }
+
+    // ── Fallback: MediaRecorder (audio blob) ──
     if (isRecording) {
       mediaRef.current?.stop();
       setIsRecording(false);
@@ -575,8 +629,29 @@ export default function ExamAttemptPage() {
                               <><Mic size={18} /> Record Response</>
                             )}
                           </button>
-                          {answers[q.id] && <span className="badge badge-accent">✓ Recording Captured</span>}
+                          {answers[q.id] && !isRecording && <span className="badge badge-accent">✓ {answers[q.id]?.startsWith('[AUDIO') ? 'Recording Captured' : 'Voice Transcribed'}</span>}
                         </div>
+
+                        {/* Live transcription preview while recording with SpeechRecognition */}
+                        {isRecording && speechSupported && liveTranscript && (
+                          <div style={{
+                            margin: '0.75rem 0',
+                            padding: '1rem 1.25rem',
+                            backgroundColor: 'rgba(16, 185, 129, 0.05)',
+                            borderRadius: '0.75rem',
+                            border: '1px solid rgba(16, 185, 129, 0.2)',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '0.35rem'
+                          }}>
+                            <span style={{ fontSize: '0.7rem', fontWeight: 800, color: '#10b981', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                              🎙️ Live Transcription
+                            </span>
+                            <p style={{ fontSize: '0.925rem', color: 'hsl(var(--text-secondary))', lineHeight: 1.65, margin: 0, fontStyle: 'italic' }}>
+                              {liveTranscript}
+                            </p>
+                          </div>
+                        )}
 
                         {/* Render Audio Player if audio recording exists */}
                         {(() => {

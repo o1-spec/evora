@@ -163,18 +163,5 @@ export class StripeService {
     }
   }
 
-  /**
-   * Process a direct subscription upgrade (used by the offline Sandbox portal helper)
-   */
-  public static async processSandboxUpgrade(userId: string, tier: SubscriptionTier): Promise<void> {
-    await prisma.user.update({
-      where: { id: userId },
-      data: {
-        subscriptionTier: tier,
-        subscriptionId: `sub_sandbox_${Math.random().toString(36).substring(4)}`,
-        subActiveUntil: new Date(Date.now() + 365 * 24 * 60 * 60 * 1000) // 1 year mock active
-      }
-    });
-    console.log(`[SANDBOX] Direct upgraded user ${userId} to ${tier}`);
-  }
+
 }

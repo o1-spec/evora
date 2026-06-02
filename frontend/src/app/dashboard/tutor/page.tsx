@@ -54,7 +54,64 @@ export default function TutorPage() {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
   };
 
+  const recognitionRef = useRef<any>(null);
+  const [liveTranscript, setLiveTranscript] = useState('');
+  const speechSupported = typeof window !== 'undefined' && ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window);
+
   const toggleRecording = async () => {
+    // ── Browser-native Speech Recognition (preferred) ──
+    if (speechSupported) {
+      if (isRecording) {
+        recognitionRef.current?.stop();
+        setIsRecording(false);
+        return;
+      }
+
+      const SpeechRecognition = (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition;
+      const recognition = new SpeechRecognition();
+      recognition.lang = 'fr-FR';
+      recognition.continuous = true;
+      recognition.interimResults = true;
+
+      let finalTranscript = '';
+
+      recognition.onresult = (event: any) => {
+        let interim = '';
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+          const t = event.results[i][0].transcript;
+          if (event.results[i].isFinal) {
+            finalTranscript += t + ' ';
+          } else {
+            interim += t;
+          }
+        }
+        setLiveTranscript(finalTranscript + interim);
+        setInput(finalTranscript + interim);
+      };
+
+      recognition.onerror = (event: any) => {
+        console.error('SpeechRecognition error:', event.error);
+        setIsRecording(false);
+        if (event.error === 'not-allowed') {
+          alert('Accès au microphone refusé. Veuillez autoriser l\'accès dans les paramètres de votre navigateur.');
+        }
+      };
+
+      recognition.onend = () => {
+        setIsRecording(false);
+        if (finalTranscript.trim()) {
+          setInput(finalTranscript.trim());
+        }
+      };
+
+      recognitionRef.current = recognition;
+      recognition.start();
+      setIsRecording(true);
+      setLiveTranscript('');
+      return;
+    }
+
+    // ── Fallback: MediaRecorder + backend evaluate-speech ──
     if (isRecording) {
       mediaRef.current?.stop();
       setIsRecording(false);

@@ -12,7 +12,13 @@ export interface AuthenticatedRequest extends Request {
   };
 }
 
-const JWT_ACCESS_SECRET = process.env.JWT_ACCESS_SECRET || 'evora_super_jwt_access_secret_key_change_me_in_production_123!';
+function requireEnv(key: string): string {
+  const val = process.env[key];
+  if (!val) throw new Error(`FATAL: ${key} must be set in environment variables.`);
+  return val;
+}
+
+const JWT_ACCESS_SECRET = requireEnv('JWT_ACCESS_SECRET');
 
 export async function authMiddleware(req: AuthenticatedRequest, res: Response, next: NextFunction) {
   try {

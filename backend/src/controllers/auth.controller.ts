@@ -4,9 +4,16 @@ import * as jwt from 'jsonwebtoken';
 import { prisma } from '../services/db.service';
 import { AuthenticatedRequest } from '../middlewares/auth.middleware';
 import { Role } from '@prisma/client';
+import { EmailService } from '../services/email.service';
 
-const JWT_ACCESS_SECRET = process.env.JWT_ACCESS_SECRET || 'evora_super_jwt_access_secret_key_change_me_in_production_123!';
-const JWT_REFRESH_SECRET = process.env.JWT_REFRESH_SECRET || 'evora_super_jwt_refresh_secret_key_change_me_in_production_456!';
+function requireEnv(key: string): string {
+  const val = process.env[key];
+  if (!val) throw new Error(`FATAL: ${key} must be set in environment variables.`);
+  return val;
+}
+
+const JWT_ACCESS_SECRET = requireEnv('JWT_ACCESS_SECRET');
+const JWT_REFRESH_SECRET = requireEnv('JWT_REFRESH_SECRET');
 const JWT_ACCESS_EXPIRY = process.env.JWT_ACCESS_EXPIRY || '15m';
 const JWT_REFRESH_EXPIRY = process.env.JWT_REFRESH_EXPIRY || '7d';
 
@@ -61,6 +68,10 @@ export class AuthController {
           expiresAt
         }
       });
+
+      // Send verification email (non-blocking – don't fail registration if email fails)
+      EmailService.sendVerificationEmail(user.email, verificationToken, user.firstName || undefined)
+        .catch(err => console.error('[Auth] Failed to send verification email:', err.message));
 
       return res.status(201).json({
         message: 'Inscription réussie.',
@@ -269,12 +280,12 @@ export class AuthController {
         data: { resetToken, resetTokenExpiry }
       });
 
-      // MOCK Email send
-      console.log(`[MOCK EMAIL] Password reset token for ${email}: ${resetToken}`);
+      // Send real password-reset email (non-blocking)
+      EmailService.sendPasswordResetEmail(email, resetToken)
+        .catch(err => console.error('[Auth] Failed to send password reset email:', err.message));
 
       return res.status(200).json({ 
-        message: 'Un lien de réinitialisation vous a été envoyé.',
-        mockResetToken: resetToken // Handed to user in local test mode
+        message: 'Un lien de réinitialisation vous a été envoyé.'
       });
     } catch (error) {
       console.error('Forgot password error:', error);

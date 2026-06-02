@@ -107,31 +107,6 @@ export class BillingController {
   }
 
   /**
-   * Process simulated upgrades immediately in local developer sandbox environment
-   */
-  public static async handleSandboxUpgrade(req: AuthenticatedRequest, res: Response) {
-    try {
-      const { tier, userId } = req.body;
-      if (!req.user) return res.status(401).json({ error: 'Unauthorized' });
-
-      const targetUserId = userId || req.user.id;
-
-      if (!tier || !Object.values(SubscriptionTier).includes(tier)) {
-        return res.status(400).json({ error: 'Niveau invalide.' });
-      }
-
-      await StripeService.processSandboxUpgrade(targetUserId, tier as SubscriptionTier);
-
-      return res.status(200).json({
-        message: `[SANDBOX] Votre compte a été mis à jour avec succès au niveau ${tier}!`
-      });
-    } catch (error) {
-      console.error('Sandbox upgrade error:', error);
-      return res.status(500).json({ error: 'Failed to execute simulated upgrade.' });
-    }
-  }
-
-  /**
    * Receive Stripe Webhook triggers
    */
   public static async stripeWebhook(req: Request, res: Response) {
