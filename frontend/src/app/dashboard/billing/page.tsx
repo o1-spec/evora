@@ -1,13 +1,16 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useQuery, useMutation } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
-import { CreditCard, CheckCircle, Zap, Loader2, ExternalLink } from 'lucide-react';
+import { CreditCard, CheckCircle, Loader2, ExternalLink } from 'lucide-react';
 import api from '@/lib/api';
 import { useAuthStore } from '@/store/useAuthStore';
 
 export default function BillingPage() {
   const { user } = useAuthStore();
+
+  const router = useRouter();
 
   const { data: plans, isLoading } = useQuery({
     queryKey: ['billing-plans'],
@@ -21,7 +24,17 @@ export default function BillingPage() {
         successUrl: `${window.location.origin}/dashboard/billing?success=true`,
         cancelUrl: `${window.location.origin}/dashboard/billing`,
       }).then(r => r.data.url),
-    onSuccess: (url) => { window.location.href = url; },
+    onSuccess: (url: string) => {
+      // Internal sandbox URL (no Stripe configured) — use Next.js router so React
+      // can cleanly unmount framer-motion animated nodes before navigating.
+      if (url.startsWith('/')) {
+        router.push(url);
+      } else {
+        // External Stripe URL — defer one tick to flush the current render cycle
+        // before the browser unloads the page, avoiding the removeChild error.
+        setTimeout(() => { window.location.href = url; }, 0);
+      }
+    },
   });
 
   const TIER_COLORS: Record<string, string> = {
@@ -98,8 +111,18 @@ export default function BillingPage() {
                     <button id={`checkout-${plan.tier}`}
                       onClick={() => checkoutMutation.mutate(plan.tier)}
                       disabled={checkoutMutation.isPending}
-                      className={isPremium ? "btn-primary" : "btn-secondary"} style={{ width: '100%' }}>
-                      {checkoutMutation.isPending ? <Loader2 size={16} className="animate-spin" /> : <><ExternalLink size={16} /> Subscribe</>}
+                      className={isPremium ? "btn-primary" : "btn-secondary"} style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+                      {checkoutMutation.isPending ? (
+                        <>
+                          <Loader2 size={16} className="animate-spin" />
+                          <span>Processing...</span>
+                        </>
+                      ) : (
+                        <>
+                          <ExternalLink size={16} />
+                          <span>Subscribe</span>
+                        </>
+                      )}
                     </button>
                   )}
 
