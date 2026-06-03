@@ -8,7 +8,7 @@ import {
   LayoutDashboard, Users, CreditCard, BookOpen, FileQuestion,
   GraduationCap, ClipboardList, MessageSquare, Activity,
   Mail, Settings, LogOut, ChevronLeft, ChevronRight, Shield,
-  Menu, X
+  Menu, X, History
 } from 'lucide-react';
 import { useState } from 'react';
 
@@ -23,6 +23,7 @@ const NAV_ITEMS = [
   { href: '/admin/ai-feedback', label: 'AI Feedback', icon: MessageSquare },
   { href: '/admin/ai-usage', label: 'AI Usage', icon: Activity },
   { href: '/admin/email-logs', label: 'Email Logs', icon: Mail },
+  { href: '/admin/audit-logs', label: 'Audit Logs', icon: History },
   { href: '/admin/settings', label: 'Settings', icon: Settings },
 ];
 

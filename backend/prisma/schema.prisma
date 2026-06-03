@@ -63,6 +63,7 @@ model User {
   examAttempts      ExamAttempt[]
   aiUsageLogs       AIUsageLog[]
   sessions          Session[]
+  auditLogs         AdminAuditLog[]
 }
 
 model Session {
@@ -217,5 +218,17 @@ model PlatformSetting {
   key       String   @id
   value     String
   updatedAt DateTime @updatedAt
+}
+
+model AdminAuditLog {
+  id          String   @id @default(uuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  action      String
+  targetType  String
+  targetId    String?
+  description String
+  ipAddress   String?
+  createdAt   DateTime @default(now())
 }
 

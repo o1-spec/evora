@@ -33,6 +33,7 @@ router.delete('/exams/:id', AdminController.deleteExam as any);
 // ─── Questions ───────────────────────────────────────────────────────────────
 router.get('/questions', AdminController.getQuestions as any);
 router.post('/questions', AdminController.createQuestion as any);
+router.post('/questions/import', AdminController.importQuestions as any);
 router.patch('/questions/:id', AdminController.updateQuestion as any);
 router.delete('/questions/:id', AdminController.deleteQuestion as any);
 
@@ -50,6 +51,9 @@ router.get('/ai-usage', AdminController.getAiUsageLogs as any);
 // ─── Email Logs ──────────────────────────────────────────────────────────────
 router.get('/email-logs', AdminController.getEmailLogs as any);
 router.post('/email-logs/resend/:userId', AdminController.resendVerification as any);
+
+// ─── Audit Logs ──────────────────────────────────────────────────────────────
+router.get('/audit-logs', AdminController.getAuditLogs as any);
 
 // ─── Platform Settings ───────────────────────────────────────────────────────
 router.get('/settings', AdminController.getSettings as any);

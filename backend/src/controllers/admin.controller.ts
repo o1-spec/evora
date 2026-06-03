@@ -180,6 +180,8 @@ export class AdminController {
         select: { id: true, email: true, role: true },
       });
 
+      await AdminController.logAction(req, 'UPDATE_ROLE', 'USER', target.id, `Changed role of ${target.email} from ${target.role} to ${role}`);
+
       return res.status(200).json(adminResponse({ user: updated }));
     } catch (error) {
       console.error('[Admin] updateUserRole error:', error);
@@ -198,6 +200,9 @@ export class AdminController {
       }
 
       await prisma.user.delete({ where: { id } });
+
+      await AdminController.logAction(req, 'DELETE_USER', 'USER', target.id, `Deleted user account ${target.email}`);
+
       return res.status(200).json(adminResponse({ message: 'User deleted successfully.' }));
     } catch (error) {
       console.error('[Admin] deleteUser error:', error);
@@ -282,6 +287,8 @@ export class AdminController {
         select: { id: true, email: true, subscriptionTier: true, subActiveUntil: true },
       });
 
+      await AdminController.logAction(req, cancel ? 'CANCEL_SUBSCRIPTION' : 'UPDATE_SUBSCRIPTION', 'SUBSCRIPTION', user.id, cancel ? `Cancelled subscription for ${user.email}` : `Updated subscription for ${user.email}: tier=${tier}, extendDays=${extendDays}`);
+
       return res.status(200).json(adminResponse({ user: updated }));
     } catch (error) {
       console.error('[Admin] updateSubscription error:', error);
@@ -345,6 +352,9 @@ export class AdminController {
         return res.status(400).json({ success: false, error: 'Title and description are required.' });
       }
       const exam = await prisma.tcfExam.create({ data: { title, description, isOfficial: Boolean(isOfficial) } });
+
+      await AdminController.logAction(req, 'CREATE_EXAM', 'EXAM', exam.id, `Created exam "${exam.title}"`);
+
       return res.status(201).json(adminResponse({ exam }));
     } catch (error) {
       return res.status(500).json({ success: false, error: 'Failed to create exam.' });
@@ -358,6 +368,9 @@ export class AdminController {
         where: { id: req.params.id },
         data: { title, description, isOfficial: Boolean(isOfficial) },
       });
+
+      await AdminController.logAction(req, 'UPDATE_EXAM', 'EXAM', exam.id, `Updated exam details for "${exam.title}"`);
+
       return res.status(200).json(adminResponse({ exam }));
     } catch (error) {
       return res.status(500).json({ success: false, error: 'Failed to update exam.' });
@@ -367,6 +380,9 @@ export class AdminController {
   public static async deleteExam(req: AuthenticatedRequest, res: Response) {
     try {
       await prisma.tcfExam.delete({ where: { id: req.params.id } });
+
+      await AdminController.logAction(req, 'DELETE_EXAM', 'EXAM', req.params.id, `Deleted exam id ${req.params.id}`);
+
       return res.status(200).json(adminResponse({ message: 'Exam deleted.' }));
     } catch (error) {
       return res.status(500).json({ success: false, error: 'Failed to delete exam.' });
@@ -416,6 +432,9 @@ export class AdminController {
       const question = await prisma.tcfQuestion.create({
         data: { sectionId, text, options, correctKey, audioUrl, imageUrl, maxScore: maxScore || 1, orderIndex: orderIndex || 0 },
       });
+
+      await AdminController.logAction(req, 'CREATE_QUESTION', 'QUESTION', question.id, `Created question in section ${question.sectionId}`);
+
       return res.status(201).json(adminResponse({ question }));
     } catch (error) {
       return res.status(500).json({ success: false, error: 'Failed to create question.' });
@@ -429,6 +448,9 @@ export class AdminController {
         where: { id: req.params.id },
         data: { text, options, correctKey, audioUrl, imageUrl, maxScore, orderIndex },
       });
+
+      await AdminController.logAction(req, 'UPDATE_QUESTION', 'QUESTION', question.id, `Updated question details for id ${question.id}`);
+
       return res.status(200).json(adminResponse({ question }));
     } catch (error) {
       return res.status(500).json({ success: false, error: 'Failed to update question.' });
@@ -438,6 +460,9 @@ export class AdminController {
   public static async deleteQuestion(req: AuthenticatedRequest, res: Response) {
     try {
       await prisma.tcfQuestion.delete({ where: { id: req.params.id } });
+
+      await AdminController.logAction(req, 'DELETE_QUESTION', 'QUESTION', req.params.id, `Deleted question id ${req.params.id}`);
+
       return res.status(200).json(adminResponse({ message: 'Question deleted.' }));
     } catch (error) {
       return res.status(500).json({ success: false, error: 'Failed to delete question.' });
@@ -634,6 +659,8 @@ export class AdminController {
         select: { id: true, email: true, isSuspended: true },
       });
 
+      await AdminController.logAction(req, isSuspended ? 'SUSPEND_USER' : 'ACTIVATE_USER', 'USER', target.id, `${isSuspended ? 'Suspended' : 'Activated'} user ${target.email}`);
+
       return res.status(200).json(adminResponse({ user: updated }));
     } catch (error) {
       console.error('[Admin] updateUserStatus error:', error);
@@ -762,10 +789,134 @@ export class AdminController {
         )
       );
 
+      await AdminController.logAction(req, 'UPDATE_SETTINGS', 'SETTINGS', null, `Updated platform settings keys: ${Object.keys(settings).join(', ')}`);
+
       return res.status(200).json(adminResponse({ message: 'Settings updated successfully.' }));
     } catch (error) {
       console.error('[Admin] updateSettings error:', error);
       return res.status(500).json({ success: false, error: 'Failed to update settings.' });
+    }
+  }
+
+  // ─── AUDIT LOGGING HELPER & ENDPOINTS ──────────────────────────────────────
+
+  private static async logAction(
+    req: AuthenticatedRequest,
+    action: string,
+    targetType: string,
+    targetId: string | null,
+    description: string
+  ) {
+    try {
+      const adminId = req.user?.id;
+      if (!adminId) return;
+      const ipAddress = (req.headers['x-forwarded-for'] as string) || req.socket.remoteAddress || null;
+      await prisma.adminAuditLog.create({
+        data: {
+          userId: adminId,
+          action,
+          targetType,
+          targetId,
+          description,
+          ipAddress,
+        },
+      });
+    } catch (err) {
+      console.error('[Admin Audit Log] Failed to write log:', err);
+    }
+  }
+
+  public static async getAuditLogs(req: AuthenticatedRequest, res: Response) {
+    try {
+      const page = parseInt(req.query.page as string) || 1;
+      const limit = parseInt(req.query.limit as string) || 20;
+      const action = req.query.action as string;
+      const skip = (page - 1) * limit;
+
+      const where: any = {};
+      if (action) where.action = action;
+
+      const [logs, total] = await Promise.all([
+        prisma.adminAuditLog.findMany({
+          where,
+          skip,
+          take: limit,
+          orderBy: { createdAt: 'desc' },
+          include: { user: { select: { email: true, firstName: true, lastName: true } } },
+        }),
+        prisma.adminAuditLog.count({ where }),
+      ]);
+
+      return res.status(200).json(adminResponse({
+        logs,
+        pagination: { page, limit, total, pages: Math.ceil(total / limit) },
+      }));
+    } catch (error) {
+      console.error('[Admin] getAuditLogs error:', error);
+      return res.status(500).json({ success: false, error: 'Failed to fetch audit logs.' });
+    }
+  }
+
+  // ─── BULK INGESTION ────────────────────────────────────────────────────────
+
+  public static async importQuestions(req: AuthenticatedRequest, res: Response) {
+    try {
+      const { sectionId, questions } = req.body;
+      if (!sectionId) {
+        return res.status(400).json({ success: false, error: 'sectionId is required.' });
+      }
+      if (!questions || !Array.isArray(questions) || questions.length === 0) {
+        return res.status(400).json({ success: false, error: 'No questions provided for import.' });
+      }
+
+      // Check section exists
+      const section = await prisma.tcfSection.findUnique({ where: { id: sectionId } });
+      if (!section) {
+        return res.status(404).json({ success: false, error: 'Target section not found.' });
+      }
+
+      // Format data list
+      const dataToInsert = questions.map((q: any, index: number) => {
+        let opts = null;
+        if (q.options) {
+          if (Array.isArray(q.options)) {
+            opts = q.options;
+          } else if (typeof q.options === 'string') {
+            try {
+              opts = JSON.parse(q.options);
+            } catch {
+              opts = q.options.split('|').map((o: string) => o.trim());
+            }
+          }
+        }
+        return {
+          sectionId,
+          text: q.text || 'Imported Question text placeholder',
+          options: opts ? opts : undefined,
+          correctKey: q.correctKey || null,
+          audioUrl: q.audioUrl || null,
+          imageUrl: q.imageUrl || null,
+          maxScore: Number(q.maxScore) || 1,
+          orderIndex: Number(q.orderIndex) || index,
+        };
+      });
+
+      // Bulk create
+      await prisma.tcfQuestion.createMany({ data: dataToInsert });
+
+      // Log the admin audit event
+      await AdminController.logAction(
+        req,
+        'IMPORT_QUESTIONS',
+        'QUESTION',
+        null,
+        `Imported ${questions.length} questions into section ${sectionId}`
+      );
+
+      return res.status(201).json(adminResponse({ message: `Successfully imported ${questions.length} questions.` }));
+    } catch (error) {
+      console.error('[Admin] importQuestions error:', error);
+      return res.status(500).json({ success: false, error: 'Failed to import TCF questions.' });
     }
   }
 }
