@@ -16,7 +16,6 @@ export default function PublicNavbar() {
   const [signingOut, setSigningOut] = useState(false);
 
   const navItems = [
-    { label: "Welcome", route: "/" },
     { label: "Written expression", route: "/written-expression" },
     { label: "Oral expression", route: "/oral-expression" },
     { label: "Reading comprehension", route: "/reading-comprehension" },
