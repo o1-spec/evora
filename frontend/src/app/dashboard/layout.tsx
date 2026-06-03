@@ -49,7 +49,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     await logout();
     setSigningOut(false);
     setShowSignOutModal(false);
-    router.push('/');
+    window.location.href = '/';
   };
 
   if (!mounted || !user) return null;

@@ -132,6 +132,34 @@ export default function PublicNavbar() {
 
         {/* Right Actions: Login/Logout (Desktop) */}
         <div style={{ gap: "0.5rem", alignItems: "center" }} className="hidden xl:flex">
+          {user && ["ADMIN", "SUPER_ADMIN"].includes(user.role) && (
+            <Link
+              href="/admin"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.35rem",
+                padding: "0.4rem 0.75rem",
+                fontSize: "0.825rem",
+                fontWeight: 600,
+                color: "hsl(var(--primary))",
+                backgroundColor: "rgba(139, 92, 246, 0.08)",
+                borderRadius: "0.375rem",
+                textDecoration: "none",
+                marginRight: "0.25rem",
+                whiteSpace: "nowrap",
+                transition: "all 0.15s ease",
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.backgroundColor = "rgba(139, 92, 246, 0.15)";
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.backgroundColor = "rgba(139, 92, 246, 0.08)";
+              }}
+            >
+              Admin Panel
+            </Link>
+          )}
           {user ? (
             <button
               onClick={() => setShowSignOutModal(true)}
@@ -236,6 +264,26 @@ export default function PublicNavbar() {
             <hr style={{ borderColor: "hsl(var(--border))", margin: "0.5rem 0" }} />
 
             <div>
+              {user && ["ADMIN", "SUPER_ADMIN"].includes(user.role) && (
+                <Link
+                  href="/admin"
+                  onClick={() => setMobileMenuOpen(false)}
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
+                    width: "100%",
+                    padding: "0.5rem 0.75rem",
+                    fontSize: "0.9rem",
+                    fontWeight: 600,
+                    color: "hsl(var(--primary))",
+                    textDecoration: "none",
+                    marginBottom: "0.25rem",
+                  }}
+                >
+                  Admin Panel
+                </Link>
+              )}
               {user ? (
                 <button
                   onClick={() => {

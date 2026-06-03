@@ -48,12 +48,17 @@ export async function authMiddleware(req: AuthenticatedRequest, res: Response, n
         email: true,
         role: true,
         subscriptionTier: true,
-        subActiveUntil: true
+        subActiveUntil: true,
+        isSuspended: true
       }
     });
 
     if (!user) {
       return res.status(401).json({ error: 'User associated with this token no longer exists.' });
+    }
+
+    if (user.isSuspended) {
+      return res.status(403).json({ error: 'This account has been suspended. Please contact support.' });
     }
 
     // Attach to request

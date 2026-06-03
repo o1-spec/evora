@@ -9,7 +9,9 @@ import learningRouter from './routes/learning.routes';
 import tcfRouter from './routes/tcf.routes';
 import aiRouter from './routes/ai.routes';
 import billingRouter from './routes/billing.routes';
+import adminRouter from './routes/admin.routes';
 import { errorMiddleware } from './middlewares/error.middleware';
+
 
 const app: Application = expressLib();
 
@@ -34,6 +36,8 @@ app.use('/api/auth', authRouter);
 app.use('/api/learning', learningRouter);
 app.use('/api/tcf', tcfRouter);
 app.use('/api/ai', aiRouter);
+app.use('/api/admin', adminRouter);
+
 
 // Health Check endpoint
 app.get('/health', (req, res) => {

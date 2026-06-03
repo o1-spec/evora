@@ -56,6 +56,7 @@ model User {
   subscriptionId    String?
   subscriptionTier  SubscriptionTier  @default(FREE)
   subActiveUntil    DateTime?
+  isSuspended       Boolean           @default(false)
   
   // Relations
   progress          UserProgress[]
@@ -186,6 +187,8 @@ model AIFeedback {
   weaknesses  Json         // String array
   corrections Json         // Granular edits (JSON array of {original, suggested, explanation})
   comments    String
+  isReviewed  Boolean      @default(false)
+  reviewedAt  DateTime?
   createdAt   DateTime     @default(now())
 }
 
@@ -199,3 +202,20 @@ model AIUsageLog {
   costUSD    Float    @default(0)
   timestamp  DateTime @default(now())
 }
+
+model EmailLog {
+  id        String   @id @default(uuid())
+  toEmail   String
+  type      String   // VERIFICATION, PASSWORD_RESET, SUBSCRIPTION
+  status    String   // SENT, FAILED
+  error     String?
+  sentAt    DateTime @default(now())
+  userId    String?
+}
+
+model PlatformSetting {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+}
+
