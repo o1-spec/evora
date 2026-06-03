@@ -1,13 +1,13 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { CheckCircle2, Sparkles, Loader2, CreditCard, ArrowRight } from 'lucide-react';
 import api from '@/lib/api';
 import { useAuthStore } from '@/store/useAuthStore';
 
-export default function SandboxSuccessPage() {
+function SandboxSuccessContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading');
@@ -215,5 +215,24 @@ export default function SandboxSuccessPage() {
         </motion.div>
       </div>
     </div>
+  );
+}
+
+export default function SandboxSuccessPage() {
+  return (
+    <Suspense fallback={
+      <div style={{
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#090d16',
+        color: '#94a3b8'
+      }}>
+        <Loader2 size={32} className="animate-spin" />
+      </div>
+    }>
+      <SandboxSuccessContent />
+    </Suspense>
   );
 }
