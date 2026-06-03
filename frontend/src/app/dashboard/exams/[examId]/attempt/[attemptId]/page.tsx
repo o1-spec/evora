@@ -230,6 +230,7 @@ export default function ExamAttemptPage() {
   const router = useRouter();
   const { answers, setAnswer, currentSectionIndex, nextSection, setTimer, tickTimer, timeRemainingSeconds, setAttempt, markSectionComplete, completedSections } = useExamStore();
   const [isRecording, setIsRecording] = useState(false);
+  const [isTranscribing, setIsTranscribing] = useState(false);
   const mediaRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<Blob[]>([]);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
@@ -334,11 +335,24 @@ export default function ExamAttemptPage() {
         const recorder = new MediaRecorder(stream);
         mediaRef.current = recorder;
         recorder.ondataavailable = e => chunksRef.current.push(e.data);
-        recorder.onstop = () => {
-          const blob = new Blob(chunksRef.current, { type: 'audio/webm' });
-          const url = URL.createObjectURL(blob);
-          setAnswer(questionId, `[AUDIO_RECORDED:${url}]`);
+        recorder.onstop = async () => {
           stream.getTracks().forEach(t => t.stop());
+          const blob = new Blob(chunksRef.current, { type: 'audio/webm' });
+          setIsTranscribing(true);
+          try {
+            const formData = new FormData();
+            formData.append('audio', blob, 'response.webm');
+            const { data } = await api.post('/ai/upload-audio', formData, {
+              headers: { 'Content-Type': 'multipart/form-data' },
+            });
+            setAnswer(questionId, data.transcript || '');
+          } catch (err) {
+            console.error('Audio upload failed:', err);
+            setAnswer(questionId, '');
+            alert('Transcription failed. Please try recording again or type your response.');
+          } finally {
+            setIsTranscribing(false);
+          }
         };
         recorder.start();
         setIsRecording(true);
@@ -544,11 +558,41 @@ export default function ExamAttemptPage() {
                       </div>
                     )}
 
-                    {/* Listening audio prompt */}
+                    {/* Listening audio player */}
                     {q.audioUrl && (
-                      <div style={{ marginBottom: '1.5rem', padding: '1rem 1.25rem', backgroundColor: 'hsl(var(--primary-light))', borderRadius: '0.75rem', border: '1px solid hsl(var(--primary))', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                        <Headphones size={20} color="hsl(var(--primary))" />
-                        <span style={{ fontSize: '0.9rem', color: 'hsl(var(--text-primary))', fontWeight: 600 }}>TCF Audio (Simulation)</span>
+                      <div style={{
+                        marginBottom: '1.5rem',
+                        padding: '1rem 1.25rem',
+                        backgroundColor: 'rgba(236, 72, 153, 0.04)',
+                        borderRadius: '0.875rem',
+                        border: '1px solid rgba(236, 72, 153, 0.2)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        gap: '0.6rem',
+                      }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                          <Headphones size={18} color="#ec4899" />
+                          <span style={{ fontSize: '0.8rem', fontWeight: 800, color: '#ec4899', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                            Audio — Écoute Attentivement
+                          </span>
+                        </div>
+                        {q.audioUrl.startsWith('http') || q.audioUrl.startsWith('/') ? (
+                          <audio
+                            src={q.audioUrl}
+                            controls
+                            controlsList="nodownload"
+                            style={{
+                              width: '100%',
+                              height: 40,
+                              borderRadius: '0.5rem',
+                              accentColor: '#ec4899',
+                            }}
+                          />
+                        ) : (
+                          <div style={{ fontSize: '0.85rem', color: '#94a3b8', fontStyle: 'italic' }}>
+                            🎧 Simulation audio — écoutez l&apos;enregistrement correspondant avant de répondre.
+                          </div>
+                        )}
                       </div>
                     )}
 
@@ -629,7 +673,19 @@ export default function ExamAttemptPage() {
                               <><Mic size={18} /> Record Response</>
                             )}
                           </button>
-                          {answers[q.id] && !isRecording && <span className="badge badge-accent">✓ {answers[q.id]?.startsWith('[AUDIO') ? 'Recording Captured' : 'Voice Transcribed'}</span>}
+                          {answers[q.id] && !isRecording && !isTranscribing && (
+                            <span className="badge badge-accent">
+                              ✓ {answers[q.id]?.startsWith('[AUDIO') ? 'Recording Captured' : 'Voice Transcribed'}
+                            </span>
+                          )}
+                          {isTranscribing && (
+                            <span style={{ fontSize: '0.8rem', color: '#8b5cf6', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" style={{ animation: 'spin 1s linear infinite' }}>
+                                <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                              </svg>
+                              Transcribing…
+                            </span>
+                          )}
                         </div>
 
                         {/* Live transcription preview while recording with SpeechRecognition */}

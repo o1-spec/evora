@@ -39,8 +39,22 @@ router.post(
   AiController.evaluateSpeech as any
 );
 
-router.post('/evaluate-writing', AiController.evaluateWriting as any);
-router.post('/synthesize-text', AiController.synthesizeText as any);
-router.post('/tutor-chat', AiController.tutorChat as any);
+// ── Guarded writing evaluation (GPT-4o) ──────────────────────────────────────
+router.post('/evaluate-writing', checkAiUsageLimit as any, AiController.evaluateWriting as any);
+
+// ── Guarded TTS synthesis (ElevenLabs) ───────────────────────────────────────
+router.post('/synthesize-text', checkAiUsageLimit as any, AiController.synthesizeText as any);
+
+// ── Guarded AI tutor chat (GPT-4o) ───────────────────────────────────────────
+router.post('/tutor-chat', checkAiUsageLimit as any, AiController.tutorChat as any);
+
+// ── Transcript-only upload (MediaRecorder fallback for Speaking section) ──────
+// No score generated — just Whisper transcription returned as plain text.
+router.post(
+  '/upload-audio',
+  checkAiUsageLimit as any,
+  upload.single('audio'),
+  AiController.uploadAndTranscribe as any
+);
 
 export default router;

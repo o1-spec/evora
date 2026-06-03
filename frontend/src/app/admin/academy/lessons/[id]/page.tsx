@@ -22,6 +22,9 @@ export default function LessonDetailPage({ params }: { params: Promise<{ id: str
   const [formOpen, setFormOpen] = useState(false);
   const [editTarget, setEditTarget] = useState<any>(null);
   const [jsonError, setJsonError] = useState<string | null>(null);
+  const [lessonDetailsOpen, setLessonDetailsOpen] = useState(false);
+  const [lessonDetailsForm, setLessonDetailsForm] = useState({ title: '', description: '', content: '' });
+  const [lessonJsonError, setLessonJsonError] = useState<string | null>(null);
 
   const emptyForm = { type: 'MULTIPLE_CHOICE', question: '', options: '[]', correctKey: '', audioUrl: '', points: 10 };
   const [form, setForm] = useState(emptyForm);
@@ -84,6 +87,16 @@ export default function LessonDetailPage({ params }: { params: Promise<{ id: str
     onError: (err: any) => toast.error(err?.response?.data?.error || 'Failed to delete exercise.'),
   });
 
+  const updateLessonMutation = useMutation({
+    mutationFn: (payload: any) => api.patch(`/admin/academy/lessons/${id}`, payload),
+    onSuccess: () => {
+      toast.success('Lesson content updated.');
+      queryClient.invalidateQueries({ queryKey: ['admin-lesson-detail', id] });
+      setLessonDetailsOpen(false);
+    },
+    onError: (err: any) => toast.error(err?.response?.data?.error || 'Failed to update lesson details.'),
+  });
+
   if (isLoading) return (
     <div className="admin-page">
       <div className="skeleton" style={{ height: 40, width: 140, marginBottom: 16 }} />
@@ -118,9 +131,26 @@ export default function LessonDetailPage({ params }: { params: Promise<{ id: str
           <h1 className="admin-page-title">{lesson.title}</h1>
           <p className="admin-page-subtitle">{lesson.description || 'Review and manage CEFR exercises'}</p>
         </div>
-        <button className="admin-btn-primary" style={{ display: 'flex', alignItems: 'center', gap: 6 }} onClick={() => { setForm(emptyForm); setEditTarget(null); setJsonError(null); setFormOpen(true); }}>
-          <Plus size={16} /> New Exercise
-        </button>
+        <div style={{ display: 'flex', gap: 10 }}>
+          <button
+            className="admin-btn-secondary"
+            style={{ display: 'flex', alignItems: 'center', gap: 6 }}
+            onClick={() => {
+              setLessonDetailsForm({
+                title: lesson.title,
+                description: lesson.description || '',
+                content: JSON.stringify(lesson.content || {}, null, 2),
+              });
+              setLessonJsonError(null);
+              setLessonDetailsOpen(true);
+            }}
+          >
+            <Edit2 size={15} /> Edit Lesson Content
+          </button>
+          <button className="admin-btn-primary" style={{ display: 'flex', alignItems: 'center', gap: 6 }} onClick={() => { setForm(emptyForm); setEditTarget(null); setJsonError(null); setFormOpen(true); }}>
+            <Plus size={16} /> New Exercise
+          </button>
+        </div>
       </div>
 
       <div className="admin-card" style={{ padding: 0, overflow: 'hidden' }}>
@@ -279,6 +309,82 @@ export default function LessonDetailPage({ params }: { params: Promise<{ id: str
         onConfirm={() => deleteTarget && deleteMutation.mutate(deleteTarget.id)}
         onCancel={() => setDeleteTarget(null)}
       />
+
+      {/* Edit Lesson Metadata & Content Portal */}
+      {lessonDetailsOpen && typeof window !== 'undefined' && createPortal(
+        <dialog open className="admin-modal" onClose={() => setLessonDetailsOpen(false)}>
+          <div className="admin-modal-content" style={{ width: '100%', maxWidth: 540 }}>
+            <div className="admin-modal-header">
+              <div className="admin-modal-icon-wrap" style={{ background: 'rgba(139, 92, 246, 0.15)' }}>
+                <Edit2 size={20} style={{ color: '#8b5cf6' }} />
+              </div>
+              <button className="admin-modal-close" onClick={() => setLessonDetailsOpen(false)}>
+                <X size={18} />
+              </button>
+            </div>
+            <h3 className="admin-modal-title">Edit Lesson Content</h3>
+
+            <div className="admin-form-group" style={{ marginTop: 16 }}>
+              <label className="admin-label">Lesson Title</label>
+              <input className="admin-input" style={{ width: '100%' }} value={lessonDetailsForm.title} onChange={(e) => setLessonDetailsForm(f => ({ ...f, title: e.target.value }))} />
+            </div>
+
+            <div className="admin-form-group">
+              <label className="admin-label">Lesson Description</label>
+              <textarea className="admin-textarea" style={{ width: '100%' }} rows={2} value={lessonDetailsForm.description} onChange={(e) => setLessonDetailsForm(f => ({ ...f, description: e.target.value }))} />
+            </div>
+
+            <div className="admin-form-group">
+              <label className="admin-label">Structured Content (JSON)</label>
+              <textarea
+                className="admin-textarea"
+                style={{ width: '100%', fontFamily: 'monospace', fontSize: 12, borderColor: lessonJsonError ? '#ef4444' : '' }}
+                rows={8}
+                value={lessonDetailsForm.content}
+                onChange={(e) => {
+                  const val = e.target.value;
+                  setLessonDetailsForm(f => ({ ...f, content: val }));
+                  if (!val.trim()) {
+                    setLessonJsonError(null);
+                    return;
+                  }
+                  try {
+                    JSON.parse(val);
+                    setLessonJsonError(null);
+                  } catch (err: any) {
+                    setLessonJsonError(`Invalid JSON syntax: ${err.message}`);
+                  }
+                }}
+                placeholder='{ "grammar": "...", "vocabulary": ["word1", "word2"] }'
+              />
+              {lessonJsonError && <p style={{ color: '#ef4444', fontSize: 11, marginTop: 4 }}>{lessonJsonError}</p>}
+            </div>
+
+            <div className="admin-modal-actions" style={{ marginTop: 24 }}>
+              <button className="admin-btn-secondary" onClick={() => setLessonDetailsOpen(false)}>Cancel</button>
+              <button
+                className="admin-btn-primary"
+                disabled={updateLessonMutation.isPending || !!lessonJsonError}
+                onClick={() => {
+                  try {
+                    const parsed = JSON.parse(lessonDetailsForm.content);
+                    updateLessonMutation.mutate({
+                      title: lessonDetailsForm.title,
+                      description: lessonDetailsForm.description,
+                      content: parsed
+                    });
+                  } catch {
+                    toast.error('Please resolve JSON format errors before saving.');
+                  }
+                }}
+              >
+                {updateLessonMutation.isPending ? 'Saving...' : 'Save Lesson'}
+              </button>
+            </div>
+          </div>
+        </dialog>,
+        document.body
+      )}
     </div>
   );
 }

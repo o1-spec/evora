@@ -120,4 +120,59 @@ export class BillingController {
       return res.status(400).send(`Webhook Error: ${error.message}`);
     }
   }
+
+  /**
+   * Mock Billing Sandbox Activation: upgrade user plan without Stripe
+   */
+  public static async sandboxActivate(req: AuthenticatedRequest, res: Response) {
+    try {
+      const { tier } = req.body;
+      if (!req.user) return res.status(401).json({ error: 'Unauthorized' });
+      const userId = req.user.id;
+
+      if (!tier || !Object.values(SubscriptionTier).includes(tier)) {
+        return res.status(400).json({ error: 'Niveau d\'abonnement invalide.' });
+      }
+
+      // Upgrade user tier in database immediately
+      const activeUntil = new Date(Date.now() + 31 * 24 * 60 * 60 * 1000); // 31 days
+      const updatedUser = await prisma.user.update({
+        where: { id: userId },
+        data: {
+          subscriptionTier: tier as SubscriptionTier,
+          subActiveUntil: activeUntil,
+          subscriptionId: `sub_mock_sandbox_${Math.random().toString(36).substring(4)}`
+        },
+        select: {
+          id: true,
+          email: true,
+          subscriptionTier: true,
+          subActiveUntil: true
+        }
+      });
+
+      console.log(`[Mock Billing Sandbox]: User ${userId} successfully upgraded to ${tier}`);
+
+      // Log action in AdminAuditLog
+      const ipAddress = (req.headers['x-forwarded-for'] as string) || req.socket.remoteAddress || null;
+      await prisma.adminAuditLog.create({
+        data: {
+          userId,
+          action: 'MOCK_SANDBOX_UPGRADE',
+          targetType: 'SUBSCRIPTION',
+          targetId: userId,
+          description: `Upgraded account to mock subscription tier: ${tier}`,
+          ipAddress
+        }
+      });
+
+      return res.status(200).json({
+        message: 'Abonnement activé avec succès (Mode Sandbox).',
+        user: updatedUser
+      });
+    } catch (error) {
+      console.error('Sandbox activation error:', error);
+      return res.status(500).json({ error: 'Failed to activate mock subscription.' });
+    }
+  }
 }

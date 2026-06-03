@@ -20,5 +20,6 @@ router.post(
 router.use(authMiddleware as any);
 router.post('/checkout', BillingController.checkout as any);
 router.post('/portal', BillingController.customerPortal as any);
+router.post('/sandbox-activate', BillingController.sandboxActivate as any);
 
 export default router;

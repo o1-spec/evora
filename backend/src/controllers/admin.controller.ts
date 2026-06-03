@@ -1180,5 +1180,223 @@ export class AdminController {
       return res.status(500).json({ success: false, error: 'Failed to delete exercise.' });
     }
   }
+
+  // ─── ACADEMY CRUD EXTENSIONS ───────────────────────────────────────────────
+
+  public static async createLevel(req: AuthenticatedRequest, res: Response) {
+    try {
+      const { code, name, description } = req.body;
+      if (!code || !name) {
+        return res.status(400).json({ success: false, error: 'code and name are required.' });
+      }
+
+      // Check if code already exists
+      const existing = await prisma.level.findUnique({ where: { code } });
+      if (existing) {
+        return res.status(400).json({ success: false, error: `Level with code ${code} already exists.` });
+      }
+
+      const level = await prisma.level.create({
+        data: { code, name, description: description || '' },
+      });
+
+      await AdminController.logAction(req, 'CREATE_LEVEL', 'LEVEL', level.id, `Created level ${code}: ${name}`);
+
+      return res.status(201).json(adminResponse({ level }));
+    } catch (error) {
+      console.error('[Admin] createLevel error:', error);
+      return res.status(500).json({ success: false, error: 'Failed to create level.' });
+    }
+  }
+
+  public static async updateLevel(req: AuthenticatedRequest, res: Response) {
+    try {
+      const { id } = req.params;
+      const { name, description } = req.body;
+
+      const level = await prisma.level.update({
+        where: { id },
+        data: { name, description },
+      });
+
+      await AdminController.logAction(req, 'UPDATE_LEVEL', 'LEVEL', level.id, `Updated level ${level.code}`);
+
+      return res.status(200).json(adminResponse({ level }));
+    } catch (error) {
+      console.error('[Admin] updateLevel error:', error);
+      return res.status(500).json({ success: false, error: 'Failed to update level.' });
+    }
+  }
+
+  public static async deleteLevel(req: AuthenticatedRequest, res: Response) {
+    try {
+      const { id } = req.params;
+
+      const level = await prisma.level.delete({
+        where: { id },
+      });
+
+      await AdminController.logAction(req, 'DELETE_LEVEL', 'LEVEL', id, `Deleted level ${level.code}`);
+
+      return res.status(200).json(adminResponse({ message: 'Level deleted.' }));
+    } catch (error) {
+      console.error('[Admin] deleteLevel error:', error);
+      return res.status(500).json({ success: false, error: 'Failed to delete level.' });
+    }
+  }
+
+  public static async createModule(req: AuthenticatedRequest, res: Response) {
+    try {
+      const { levelId, title, description, orderIndex } = req.body;
+      if (!levelId || !title) {
+        return res.status(400).json({ success: false, error: 'levelId and title are required.' });
+      }
+
+      const levelModule = await prisma.module.create({
+        data: {
+          levelId,
+          title,
+          description: description || '',
+          orderIndex: Number(orderIndex || 0),
+        },
+      });
+
+      await AdminController.logAction(req, 'CREATE_MODULE', 'MODULE', levelModule.id, `Created module "${title}" under level ${levelId}`);
+
+      return res.status(201).json(adminResponse({ module: levelModule }));
+    } catch (error) {
+      console.error('[Admin] createModule error:', error);
+      return res.status(500).json({ success: false, error: 'Failed to create module.' });
+    }
+  }
+
+  public static async updateModule(req: AuthenticatedRequest, res: Response) {
+    try {
+      const { id } = req.params;
+      const { title, description, orderIndex } = req.body;
+
+      const levelModule = await prisma.module.update({
+        where: { id },
+        data: {
+          title,
+          description,
+          orderIndex: orderIndex !== undefined ? Number(orderIndex) : undefined,
+        },
+      });
+
+      await AdminController.logAction(req, 'UPDATE_MODULE', 'MODULE', levelModule.id, `Updated module "${title}"`);
+
+      return res.status(200).json(adminResponse({ module: levelModule }));
+    } catch (error) {
+      console.error('[Admin] updateModule error:', error);
+      return res.status(500).json({ success: false, error: 'Failed to update module.' });
+    }
+  }
+
+  public static async deleteModule(req: AuthenticatedRequest, res: Response) {
+    try {
+      const { id } = req.params;
+
+      const levelModule = await prisma.module.delete({
+        where: { id },
+      });
+
+      await AdminController.logAction(req, 'DELETE_MODULE', 'MODULE', id, `Deleted module "${levelModule.title}"`);
+
+      return res.status(200).json(adminResponse({ message: 'Module deleted.' }));
+    } catch (error) {
+      console.error('[Admin] deleteModule error:', error);
+      return res.status(500).json({ success: false, error: 'Failed to delete module.' });
+    }
+  }
+
+  public static async createLesson(req: AuthenticatedRequest, res: Response) {
+    try {
+      const { moduleId, title, description, orderIndex, content } = req.body;
+      if (!moduleId || !title) {
+        return res.status(400).json({ success: false, error: 'moduleId and title are required.' });
+      }
+
+      let parsedContent = content || {};
+      if (typeof content === 'string') {
+        try {
+          parsedContent = JSON.parse(content);
+        } catch {
+          parsedContent = { text: content };
+        }
+      }
+
+      const lesson = await prisma.lesson.create({
+        data: {
+          moduleId,
+          title,
+          description: description || '',
+          orderIndex: Number(orderIndex || 0),
+          content: parsedContent,
+        },
+      });
+
+      await AdminController.logAction(req, 'CREATE_LESSON', 'LESSON', lesson.id, `Created lesson "${title}" under module ${moduleId}`);
+
+      return res.status(201).json(adminResponse({ lesson }));
+    } catch (error) {
+      console.error('[Admin] createLesson error:', error);
+      return res.status(500).json({ success: false, error: 'Failed to create lesson.' });
+    }
+  }
+
+  public static async updateLesson(req: AuthenticatedRequest, res: Response) {
+    try {
+      const { id } = req.params;
+      const { title, description, orderIndex, content } = req.body;
+
+      let parsedContent = undefined;
+      if (content !== undefined) {
+        if (typeof content === 'string') {
+          try {
+            parsedContent = JSON.parse(content);
+          } catch {
+            parsedContent = { text: content };
+          }
+        } else {
+          parsedContent = content;
+        }
+      }
+
+      const lesson = await prisma.lesson.update({
+        where: { id },
+        data: {
+          title,
+          description,
+          orderIndex: orderIndex !== undefined ? Number(orderIndex) : undefined,
+          content: parsedContent,
+        },
+      });
+
+      await AdminController.logAction(req, 'UPDATE_LESSON', 'LESSON', lesson.id, `Updated lesson "${title}"`);
+
+      return res.status(200).json(adminResponse({ lesson }));
+    } catch (error) {
+      console.error('[Admin] updateLesson error:', error);
+      return res.status(500).json({ success: false, error: 'Failed to update lesson.' });
+    }
+  }
+
+  public static async deleteLesson(req: AuthenticatedRequest, res: Response) {
+    try {
+      const { id } = req.params;
+
+      const lesson = await prisma.lesson.delete({
+        where: { id },
+      });
+
+      await AdminController.logAction(req, 'DELETE_LESSON', 'LESSON', id, `Deleted lesson "${lesson.title}"`);
+
+      return res.status(200).json(adminResponse({ message: 'Lesson deleted.' }));
+    } catch (error) {
+      console.error('[Admin] deleteLesson error:', error);
+      return res.status(500).json({ success: false, error: 'Failed to delete lesson.' });
+    }
+  }
 }
 

@@ -49,17 +49,29 @@ export default function AccountPage() {
     queryFn: () => api.get('/auth/profile').then(r => r.data.user),
   });
 
-  const subTier = profile?.subscriptionTier || 'free';
-  const isPremium = subTier.toLowerCase() === 'premium';
+  const subTier = profile?.subscriptionTier || 'FREE';
+  const PLAN_NAMES: Record<string, string> = {
+    FREE: 'Free Plan',
+    BASIC: 'Basique (Basic)',
+    PREMIUM: 'Premium Membership',
+    PRO: 'Professionnel (Pro)',
+  };
+  const PLAN_PRICES: Record<string, string> = {
+    FREE: '0€',
+    BASIC: '19€',
+    PREMIUM: '39€',
+    PRO: '79€',
+  };
+  const isPremium = subTier !== 'FREE';
   
   const subscription = {
-    planName: isPremium ? "Premium Membership" : "Free Plan",
+    planName: PLAN_NAMES[subTier] || 'Free Plan',
     period: "Monthly",
     status: isPremium ? "Active" : "Free tier",
     nextBillingDate: profile?.subActiveUntil 
       ? new Date(profile.subActiveUntil).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
       : "N/A",
-    price: isPremium ? "29€" : "0€",
+    price: PLAN_PRICES[subTier] || '0€',
   };
 
   const completedLessons = profile?.progress?.filter((p: any) => p.isCompleted) || [];

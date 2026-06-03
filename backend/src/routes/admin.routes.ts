@@ -63,6 +63,18 @@ router.patch('/settings', AdminController.updateSettings as any);
 router.get('/academy', AdminController.getAcademy as any);
 router.get('/academy/lessons/:id', AdminController.getLessonDetail as any);
 
+router.post('/academy/levels', AdminController.createLevel as any);
+router.patch('/academy/levels/:id', AdminController.updateLevel as any);
+router.delete('/academy/levels/:id', AdminController.deleteLevel as any);
+
+router.post('/academy/modules', AdminController.createModule as any);
+router.patch('/academy/modules/:id', AdminController.updateModule as any);
+router.delete('/academy/modules/:id', AdminController.deleteModule as any);
+
+router.post('/academy/lessons', AdminController.createLesson as any);
+router.patch('/academy/lessons/:id', AdminController.updateLesson as any);
+router.delete('/academy/lessons/:id', AdminController.deleteLesson as any);
+
 // ─── Sections ────────────────────────────────────────────────────────────────
 router.post('/exams/:examId/sections', AdminController.createSection as any);
 router.patch('/sections/:id', AdminController.updateSection as any);

@@ -210,4 +210,49 @@ Comment puis-je vous aider aujourd'hui ? Voulez-vous qu'on révise la différenc
       return res.status(500).json({ error: 'Failed to process tutoring request.' });
     }
   }
+
+  /**
+   * Transcribe an audio blob uploaded from the browser's MediaRecorder fallback.
+   * Returns only the French transcript — no scoring. Used when SpeechRecognition
+   * is unavailable (e.g. Firefox) so the speaking answers are stored as text, not blob URLs.
+   */
+  public static async uploadAndTranscribe(req: AuthenticatedRequest, res: Response) {
+    try {
+      if (!req.file) {
+        return res.status(400).json({ error: 'Audio file is required for transcription.' });
+      }
+      if (!req.user) return res.status(401).json({ error: 'Unauthorized' });
+
+      const audioFilePath = req.file.path;
+
+      // Transcribe via Whisper
+      const transcript = await WhisperService.transcribeAudio(audioFilePath);
+
+      // Clean up temp file
+      try {
+        fs.unlinkSync(audioFilePath);
+      } catch (err) {
+        console.error('Failed to delete temp audio file:', err);
+      }
+
+      if (!transcript) {
+        return res.status(422).json({ error: 'Audio transcription failed. Please try recording again.' });
+      }
+
+      // Log minimal usage
+      await prisma.aIUsageLog.create({
+        data: {
+          userId: req.user.id,
+          service: 'whisper_transcript_only',
+          inputToken: 100,
+          outputToken: 0,
+        }
+      });
+
+      return res.status(200).json({ transcript });
+    } catch (error) {
+      console.error('Upload and transcribe error:', error);
+      return res.status(500).json({ error: 'Transcription service failed.' });
+    }
+  }
 }
