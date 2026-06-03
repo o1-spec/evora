@@ -1,13 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import api from '@/lib/api';
 import { AdminBadge } from '@/components/admin/AdminBadge';
 import { AdminPagination } from '@/components/admin/AdminPagination';
 import { ConfirmModal } from '@/components/admin/ConfirmModal';
 import { toast } from '@/components/admin/Toast';
-import { Plus, Edit2, Trash2, Search, Eye } from 'lucide-react';
+import { Plus, Edit2, Trash2, Search, Eye, X, HelpCircle } from 'lucide-react';
 
 async function fetchQuestions(page: number, search: string, examId: string) {
   const params = new URLSearchParams({ page: String(page), limit: '25' });
@@ -134,46 +135,64 @@ export default function AdminQuestionsPage() {
       </div>
 
       {/* Create / Edit Modal */}
-      {formOpen && (
+      {formOpen && typeof window !== 'undefined' && createPortal(
         <dialog open className="admin-modal" onClose={() => { setFormOpen(false); setEditTarget(null); }}>
           <div className="admin-modal-content" style={{ minWidth: 460 }}>
+            <div className="admin-modal-header">
+              <div className="admin-modal-icon-wrap" style={{ background: 'rgba(139, 92, 246, 0.15)' }}>
+                <HelpCircle size={20} style={{ color: '#8b5cf6' }} />
+              </div>
+              <button className="admin-modal-close" onClick={() => { setFormOpen(false); setEditTarget(null); }}>
+                <X size={18} />
+              </button>
+            </div>
             <h3 className="admin-modal-title">{editTarget ? 'Edit Question' : 'New Question'}</h3>
+            
             <div className="admin-form-group" style={{ marginTop: 16 }}>
               <label className="admin-label">Question Text</label>
-              <textarea className="admin-textarea" rows={3} value={form.text} onChange={(e) => setForm(f => ({ ...f, text: e.target.value }))} placeholder="Enter question text…" />
+              <textarea className="admin-textarea" style={{ width: '100%' }} rows={3} value={form.text} onChange={(e) => setForm(f => ({ ...f, text: e.target.value }))} placeholder="Enter question text…" />
             </div>
-            <div className="admin-form-group" style={{ marginTop: 12 }}>
+            <div className="admin-form-group">
               <label className="admin-label">Options (JSON array)</label>
-              <textarea className="admin-textarea" rows={2} value={form.options} onChange={(e) => setForm(f => ({ ...f, options: e.target.value }))} placeholder='["Option A", "Option B", "Option C", "Option D"]' style={{ fontFamily: 'monospace', fontSize: 12 }} />
+              <textarea className="admin-textarea" style={{ width: '100%', fontFamily: 'monospace', fontSize: 12 }} rows={2} value={form.options} onChange={(e) => setForm(f => ({ ...f, options: e.target.value }))} placeholder='["Option A", "Option B", "Option C", "Option D"]' />
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginTop: 12 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
               <div className="admin-form-group">
                 <label className="admin-label">Correct Key</label>
-                <input className="admin-input" value={form.correctKey} onChange={(e) => setForm(f => ({ ...f, correctKey: e.target.value }))} placeholder="A / exact text" />
+                <input className="admin-input" style={{ width: '100%' }} value={form.correctKey} onChange={(e) => setForm(f => ({ ...f, correctKey: e.target.value }))} placeholder="A / exact text" />
               </div>
               <div className="admin-form-group">
                 <label className="admin-label">Max Score</label>
-                <input type="number" className="admin-input" value={form.maxScore} onChange={(e) => setForm(f => ({ ...f, maxScore: Number(e.target.value) }))} />
+                <input type="number" className="admin-input" style={{ width: '100%' }} value={form.maxScore} onChange={(e) => setForm(f => ({ ...f, maxScore: Number(e.target.value) }))} />
               </div>
             </div>
-            <div className="admin-form-group" style={{ marginTop: 12 }}>
+            <div className="admin-form-group">
               <label className="admin-label">Audio URL (optional)</label>
-              <input className="admin-input" value={form.audioUrl} onChange={(e) => setForm(f => ({ ...f, audioUrl: e.target.value }))} placeholder="https://…" />
+              <input className="admin-input" style={{ width: '100%' }} value={form.audioUrl} onChange={(e) => setForm(f => ({ ...f, audioUrl: e.target.value }))} placeholder="https://…" />
             </div>
-            <div className="admin-modal-actions" style={{ marginTop: 20 }}>
-              <button className="admin-btn-ghost" onClick={() => { setFormOpen(false); setEditTarget(null); }}>Cancel</button>
-              <button className="admin-btn-confirm" style={{ background: '#3b82f6' }} disabled={saveMutation.isPending} onClick={() => saveMutation.mutate(form)}>
+            <div className="admin-modal-actions" style={{ marginTop: 24 }}>
+              <button className="admin-btn-secondary" onClick={() => { setFormOpen(false); setEditTarget(null); }}>Cancel</button>
+              <button className="admin-btn-primary" disabled={saveMutation.isPending} onClick={() => saveMutation.mutate(form)}>
                 {saveMutation.isPending ? 'Saving…' : (editTarget ? 'Save Changes' : 'Create')}
               </button>
             </div>
           </div>
-        </dialog>
+        </dialog>,
+        document.body
       )}
 
       {/* Preview Modal */}
-      {preview && (
+      {preview && typeof window !== 'undefined' && createPortal(
         <dialog open className="admin-modal" onClose={() => setPreview(null)}>
           <div className="admin-modal-content" style={{ minWidth: 420 }}>
+            <div className="admin-modal-header">
+              <div className="admin-modal-icon-wrap" style={{ background: 'rgba(139, 92, 246, 0.15)' }}>
+                <Eye size={20} style={{ color: '#8b5cf6' }} />
+              </div>
+              <button className="admin-modal-close" onClick={() => setPreview(null)}>
+                <X size={18} />
+              </button>
+            </div>
             <h3 className="admin-modal-title">Question Preview</h3>
             <div style={{ background: '#0f1729', borderRadius: 12, padding: '20px', marginTop: 16 }}>
               <p style={{ color: '#e2e8f0', lineHeight: 1.7, fontSize: 15 }}>{preview.text}</p>
@@ -193,11 +212,12 @@ export default function AdminQuestionsPage() {
                 </div>
               )}
             </div>
-            <div className="admin-modal-actions" style={{ marginTop: 16 }}>
-              <button className="admin-btn-ghost" onClick={() => setPreview(null)}>Close</button>
+            <div className="admin-modal-actions" style={{ marginTop: 24 }}>
+              <button className="admin-btn-secondary" style={{ width: '100%', justifyContent: 'center' }} onClick={() => setPreview(null)}>Close</button>
             </div>
           </div>
-        </dialog>
+        </dialog>,
+        document.body
       )}
 
       <ConfirmModal isOpen={!!deleteTarget} title="Delete Question" message="Permanently delete this question?" confirmLabel="Delete" variant="danger" loading={deleteMutation.isPending} onConfirm={() => deleteTarget && deleteMutation.mutate(deleteTarget.id)} onCancel={() => setDeleteTarget(null)} />

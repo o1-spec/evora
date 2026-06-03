@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useAuthStore } from '@/store/useAuthStore';
+import { ConfirmModal } from '@/components/admin/ConfirmModal';
 import {
   LayoutDashboard, Users, CreditCard, BookOpen, FileQuestion,
   GraduationCap, ClipboardList, MessageSquare, Activity,
@@ -28,10 +29,25 @@ export function AdminSidebar() {
   const pathname = usePathname();
   const { user, logout } = useAuthStore();
   const [collapsed, setCollapsed] = useState(false);
+  const [showLogoutConfirm, setShowLogoutConfirm] = useState(false);
+  const [loggingOut, setLoggingOut] = useState(false);
 
   const isActive = (href: string, exact?: boolean) => {
     if (exact) return pathname === href;
     return pathname.startsWith(href);
+  };
+
+  const handleLogout = async () => {
+    setLoggingOut(true);
+    try {
+      await logout();
+      setShowLogoutConfirm(false);
+      window.location.href = '/';
+    } catch (err) {
+      console.error('Logout failed:', err);
+    } finally {
+      setLoggingOut(false);
+    }
   };
 
   return (
@@ -84,13 +100,25 @@ export function AdminSidebar() {
         )}
         <button
           className="admin-sidebar-logout"
-          onClick={logout}
+          onClick={() => setShowLogoutConfirm(true)}
           title="Logout"
         >
           <LogOut size={16} />
           {!collapsed && <span>Logout</span>}
         </button>
       </div>
+
+      <ConfirmModal
+        isOpen={showLogoutConfirm}
+        title="Logout of Évora Admin?"
+        message="Are you sure you want to log out of the administration panel? You will be redirected to the home page."
+        confirmLabel="Logout"
+        cancelLabel="Stay logged in"
+        variant="danger"
+        loading={loggingOut}
+        onConfirm={handleLogout}
+        onCancel={() => setShowLogoutConfirm(false)}
+      />
     </aside>
   );
 }

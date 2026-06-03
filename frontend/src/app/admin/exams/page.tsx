@@ -1,12 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import api from '@/lib/api';
 import { AdminPagination } from '@/components/admin/AdminPagination';
 import { ConfirmModal } from '@/components/admin/ConfirmModal';
 import { toast } from '@/components/admin/Toast';
-import { Plus, Edit2, Trash2, ChevronRight, BookOpen } from 'lucide-react';
+import { Plus, Edit2, Trash2, ChevronRight, BookOpen, X } from 'lucide-react';
 
 async function fetchExams(page: number) {
   const { data } = await api.get(`/admin/exams?page=${page}&limit=20`);
@@ -94,26 +95,35 @@ export default function AdminExamsPage() {
       {data?.pagination && <div style={{ marginTop: 24 }}><AdminPagination page={data.pagination.page} pages={data.pagination.pages} total={data.pagination.total} onPageChange={setPage} /></div>}
 
       {/* Create/Edit Modal */}
-      {(formOpen || editTarget) && (
+      {(formOpen || editTarget) && typeof window !== 'undefined' && createPortal(
         <dialog open className="admin-modal" onClose={() => { setFormOpen(false); setEditTarget(null); }}>
           <div className="admin-modal-content">
+            <div className="admin-modal-header">
+              <div className="admin-modal-icon-wrap" style={{ background: 'rgba(139, 92, 246, 0.15)' }}>
+                <BookOpen size={20} style={{ color: '#8b5cf6' }} />
+              </div>
+              <button className="admin-modal-close" onClick={() => { setFormOpen(false); setEditTarget(null); }}>
+                <X size={18} />
+              </button>
+            </div>
             <h3 className="admin-modal-title">{editTarget ? 'Edit Exam' : 'New Exam'}</h3>
+            
             <div className="admin-form-group" style={{ marginTop: 16 }}>
               <label className="admin-label">Title</label>
-              <input className="admin-input" value={form.title} onChange={(e) => setForm(f => ({ ...f, title: e.target.value }))} placeholder="TCF Canada — Simulation #1" />
+              <input className="admin-input" style={{ width: '100%' }} value={form.title} onChange={(e) => setForm(f => ({ ...f, title: e.target.value }))} placeholder="TCF Canada — Simulation #1" />
             </div>
-            <div className="admin-form-group" style={{ marginTop: 12 }}>
+            <div className="admin-form-group">
               <label className="admin-label">Description</label>
-              <textarea className="admin-textarea" rows={3} value={form.description} onChange={(e) => setForm(f => ({ ...f, description: e.target.value }))} placeholder="Full simulation covering all 4 sections…" />
+              <textarea className="admin-textarea" style={{ width: '100%' }} rows={3} value={form.description} onChange={(e) => setForm(f => ({ ...f, description: e.target.value }))} placeholder="Full simulation covering all 4 sections…" />
             </div>
-            <label className="admin-checkbox-label" style={{ marginTop: 12 }}>
+            <label className="admin-checkbox-label" style={{ marginTop: 12, display: 'flex', alignItems: 'center', gap: 8, cursor: 'pointer', fontSize: 13, color: '#94a3b8' }}>
               <input type="checkbox" checked={form.isOfficial} onChange={(e) => setForm(f => ({ ...f, isOfficial: e.target.checked }))} />
               Mark as Official
             </label>
-            <div className="admin-modal-actions" style={{ marginTop: 20 }}>
-              <button className="admin-btn-ghost" onClick={() => { setFormOpen(false); setEditTarget(null); }}>Cancel</button>
+            <div className="admin-modal-actions" style={{ marginTop: 24 }}>
+              <button className="admin-btn-secondary" onClick={() => { setFormOpen(false); setEditTarget(null); }}>Cancel</button>
               <button
-                className="admin-btn-confirm" style={{ background: '#3b82f6' }}
+                className="admin-btn-primary"
                 disabled={createMutation.isPending || updateMutation.isPending}
                 onClick={() => editTarget
                   ? updateMutation.mutate({ id: editTarget.id, ...form })
@@ -124,7 +134,8 @@ export default function AdminExamsPage() {
               </button>
             </div>
           </div>
-        </dialog>
+        </dialog>,
+        document.body
       )}
 
       <ConfirmModal

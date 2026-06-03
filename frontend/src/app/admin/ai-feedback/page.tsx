@@ -1,11 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import api from '@/lib/api';
 import { AdminBadge } from '@/components/admin/AdminBadge';
 import { AdminPagination } from '@/components/admin/AdminPagination';
-import { MessageSquare, Check, Eye } from 'lucide-react';
+import { MessageSquare, Check, Eye, X, Sparkles } from 'lucide-react';
 import { toast } from '@/components/admin/Toast';
 
 async function fetchAiFeedback(page: number) {
@@ -139,15 +140,20 @@ export default function AdminAiFeedbackPage() {
       </div>
 
       {/* Detail Drawer */}
-      {detail && (
+      {detail && typeof window !== 'undefined' && createPortal(
         <dialog open className="admin-modal" onClose={() => setDetail(null)}>
           <div className="admin-modal-content" style={{ minWidth: 520, maxHeight: '80vh', overflowY: 'auto' }}>
-            <div style={{ display: 'flex', justifyContent: 'between', alignItems: 'center', marginBottom: 16 }}>
-              <h3 className="admin-modal-title" style={{ margin: 0 }}>AI Feedback Detail</h3>
-              <button className="admin-modal-close" onClick={() => setDetail(null)}>✕</button>
+            <div className="admin-modal-header">
+              <div className="admin-modal-icon-wrap" style={{ background: 'rgba(139, 92, 246, 0.15)' }}>
+                <Sparkles size={20} style={{ color: '#8b5cf6' }} />
+              </div>
+              <button className="admin-modal-close" onClick={() => setDetail(null)}>
+                <X size={18} />
+              </button>
             </div>
+            <h3 className="admin-modal-title">AI Feedback Detail</h3>
             
-            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16 }}>
+            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 16, alignItems: 'center' }}>
               <AdminBadge value={detail.sectionType} variant="section" />
               <span style={{
                 color: detail.overallScore >= 75 ? '#10b981' : detail.overallScore >= 55 ? '#f97316' : '#ef4444',
@@ -205,7 +211,8 @@ export default function AdminAiFeedbackPage() {
               </pre>
             </details>
 
-            <div className="admin-modal-actions">
+            <div className="admin-modal-actions" style={{ marginTop: 24 }}>
+              <button className="admin-btn-secondary" onClick={() => setDetail(null)}>Close</button>
               <button
                 className="admin-btn-primary"
                 onClick={() => handleToggleReview(detail)}
@@ -215,10 +222,10 @@ export default function AdminAiFeedbackPage() {
                 <Check size={14} />
                 <span>{detail.isReviewed ? 'Mark Pending' : 'Mark Reviewed'}</span>
               </button>
-              <button className="admin-btn-ghost" onClick={() => setDetail(null)}>Close</button>
             </div>
           </div>
-        </dialog>
+        </dialog>,
+        document.body
       )}
     </div>
   );

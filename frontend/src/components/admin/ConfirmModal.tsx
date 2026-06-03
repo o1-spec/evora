@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { X, AlertTriangle } from 'lucide-react';
 
 interface ConfirmModalProps {
@@ -27,10 +28,11 @@ export function ConfirmModal({
   }, [isOpen]);
 
   if (!isOpen) return null;
+  if (typeof window === 'undefined') return null;
 
   const confirmBg = variant === 'danger' ? '#ef4444' : variant === 'warning' ? '#f97316' : '#3b82f6';
 
-  return (
+  return createPortal(
     <dialog
       ref={dialogRef}
       className="admin-modal"
@@ -61,6 +63,7 @@ export function ConfirmModal({
           </button>
         </div>
       </div>
-    </dialog>
+    </dialog>,
+    document.body
   );
 }

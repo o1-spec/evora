@@ -68,7 +68,7 @@ export default function AdminAiUsagePage() {
       )}
 
       {/* Filters */}
-      <div className="admin-filters">
+      <div className="admin-filters" style={{ paddingBottom: '20px' }}>
         <select className="admin-select" value={service} onChange={(e) => { setService(e.target.value); setPage(1); }}>
           <option value="">All Services</option>
           {Object.keys(SERVICE_LABELS).map(s => <option key={s} value={s}>{SERVICE_LABELS[s]}</option>)}

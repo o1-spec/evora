@@ -1,12 +1,14 @@
 'use client';
 
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import api from '@/lib/api';
 import { AdminBadge } from '@/components/admin/AdminBadge';
 import { AdminPagination } from '@/components/admin/AdminPagination';
 import { toast } from '@/components/admin/Toast';
-import { CreditCard, Calendar, Plus } from 'lucide-react';
+import { CreditCard, Calendar, Plus, X, ChevronDown } from 'lucide-react';
+import { ConfirmModal } from '@/components/admin/ConfirmModal';
 
 const TIERS = ['', 'FREE', 'BASIC', 'PREMIUM', 'PRO'];
 
@@ -24,6 +26,7 @@ export default function AdminSubscriptionsPage() {
   const [editTarget, setEditTarget] = useState<any>(null);
   const [newTier, setNewTier] = useState('');
   const [extendDays, setExtendDays] = useState(30);
+  const [cancelTarget, setCancelTarget] = useState<{ id: string; email: string } | null>(null);
 
   const { data, isLoading } = useQuery({
     queryKey: ['admin-subscriptions', page, tier],
@@ -49,7 +52,7 @@ export default function AdminSubscriptionsPage() {
       </div>
 
       {/* Filters */}
-      <div className="admin-filters">
+      <div className="admin-filters" style={{ paddingBottom: '20px' }}>
         <select className="admin-select" value={tier} onChange={(e) => { setTier(e.target.value); setPage(1); }}>
           <option value="">All Plans</option>
           {TIERS.filter(Boolean).map(t => <option key={t} value={t}>{t}</option>)}
@@ -117,17 +120,39 @@ export default function AdminSubscriptionsPage() {
       </div>
 
       {/* Edit Modal */}
-      {editTarget && (
+      {editTarget && typeof window !== 'undefined' && createPortal(
         <dialog open className="admin-modal" onClose={() => setEditTarget(null)}>
           <div className="admin-modal-content" style={{ minWidth: 340 }}>
+            <div className="admin-modal-header">
+              <div className="admin-modal-icon-wrap" style={{ background: 'rgba(139, 92, 246, 0.15)' }}>
+                <CreditCard size={20} style={{ color: '#8b5cf6' }} />
+              </div>
+              <button className="admin-modal-close" onClick={() => setEditTarget(null)}>
+                <X size={18} />
+              </button>
+            </div>
             <h3 className="admin-modal-title">Edit Subscription</h3>
-            <p className="admin-modal-message">{editTarget.email}</p>
+            <p className="admin-modal-message">
+              Manage tier and extension for <strong>{editTarget.email}</strong>
+            </p>
 
-            <div className="admin-form-group" style={{ marginTop: 16 }}>
+            <div className="admin-form-group">
               <label className="admin-label">Change Plan</label>
-              <select className="admin-select" style={{ width: '100%' }} value={newTier} onChange={(e) => setNewTier(e.target.value)}>
-                {TIERS.filter(Boolean).map(t => <option key={t} value={t}>{t}</option>)}
-              </select>
+              <div style={{ position: 'relative' }}>
+                <select
+                  className="admin-select"
+                  style={{ width: '100%', paddingRight: 36, appearance: 'none', WebkitAppearance: 'none' }}
+                  value={newTier}
+                  onChange={(e) => setNewTier(e.target.value)}
+                >
+                  {TIERS.filter(Boolean).map(t => (
+                    <option key={t} value={t} style={{ background: '#111827', color: '#f1f5f9' }}>
+                      {t}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown size={16} style={{ position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)', color: '#94a3b8', pointerEvents: 'none' }} />
+              </div>
             </div>
 
             <div className="admin-form-group" style={{ marginTop: 12 }}>
@@ -135,35 +160,54 @@ export default function AdminSubscriptionsPage() {
               <input
                 type="number" min={1} max={365}
                 className="admin-input"
+                style={{ width: '100%' }}
                 value={extendDays}
                 onChange={(e) => setExtendDays(Number(e.target.value))}
               />
             </div>
 
-            <div className="admin-modal-actions" style={{ marginTop: 20, flexDirection: 'column', gap: 8 }}>
-              <div style={{ display: 'flex', gap: 8 }}>
-                <button className="admin-btn-ghost" onClick={() => setEditTarget(null)}>Cancel</button>
+            <div className="admin-modal-actions" style={{ marginTop: 24, display: 'flex', flexDirection: 'column', gap: 10 }}>
+              <div style={{ display: 'flex', gap: 10, width: '100%' }}>
+                <button className="admin-btn-secondary" style={{ flex: 1, justifyContent: 'center' }} onClick={() => setEditTarget(null)}>Cancel</button>
                 <button
-                  className="admin-btn-confirm"
-                  style={{ background: '#3b82f6', flex: 1 }}
+                  className="admin-btn-primary"
+                  style={{ flex: 1, justifyContent: 'center' }}
                   disabled={updateMutation.isPending}
                   onClick={() => updateMutation.mutate({ userId: editTarget.id, tier: newTier, extendDays })}
                 >
-                  <Plus size={14} /> {updateMutation.isPending ? 'Saving…' : 'Save Changes'}
+                  {updateMutation.isPending ? 'Saving…' : 'Save Changes'}
                 </button>
               </div>
               <button
-                className="admin-btn-confirm"
-                style={{ background: '#ef4444', width: '100%' }}
+                className="admin-btn-danger"
+                style={{ width: '100%', justifyContent: 'center' }}
                 disabled={updateMutation.isPending}
-                onClick={() => updateMutation.mutate({ userId: editTarget.id, cancel: true })}
+                onClick={() => setCancelTarget({ id: editTarget.id, email: editTarget.email })}
               >
                 Cancel Subscription
               </button>
             </div>
           </div>
-        </dialog>
+        </dialog>,
+        document.body
       )}
+
+      {/* Cancel Confirmation */}
+      <ConfirmModal
+        isOpen={!!cancelTarget}
+        title="Cancel Subscription"
+        message={`Are you sure you want to cancel the subscription for ${cancelTarget?.email}? They will lose premium benefits immediately.`}
+        confirmLabel="Cancel Subscription"
+        variant="danger"
+        loading={updateMutation.isPending}
+        onConfirm={async () => {
+          if (cancelTarget) {
+            await updateMutation.mutateAsync({ userId: cancelTarget.id, cancel: true });
+            setCancelTarget(null);
+          }
+        }}
+        onCancel={() => setCancelTarget(null)}
+      />
     </div>
   );
 }

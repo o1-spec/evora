@@ -1,11 +1,12 @@
 'use client';
 
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import { useQuery } from '@tanstack/react-query';
 import api from '@/lib/api';
 import { AdminBadge } from '@/components/admin/AdminBadge';
 import { AdminPagination } from '@/components/admin/AdminPagination';
-import { ClipboardList, User } from 'lucide-react';
+import { ClipboardList, User, X } from 'lucide-react';
 
 async function fetchAttempts(page: number, userId: string, examId: string) {
   const params = new URLSearchParams({ page: String(page), limit: '20' });
@@ -92,9 +93,17 @@ export default function AdminAttemptsPage() {
       </div>
 
       {/* Detail Drawer */}
-      {detail && (
+      {detail && typeof window !== 'undefined' && createPortal(
         <dialog open className="admin-modal" onClose={() => setDetail(null)}>
           <div className="admin-modal-content" style={{ minWidth: 520, maxHeight: '80vh', overflowY: 'auto' }}>
+            <div className="admin-modal-header">
+              <div className="admin-modal-icon-wrap" style={{ background: 'rgba(139, 92, 246, 0.15)' }}>
+                <ClipboardList size={20} style={{ color: '#8b5cf6' }} />
+              </div>
+              <button className="admin-modal-close" onClick={() => setDetail(null)}>
+                <X size={18} />
+              </button>
+            </div>
             <h3 className="admin-modal-title">Attempt Detail</h3>
             {!detailData ? (
               <div className="skeleton" style={{ height: 200, marginTop: 16, borderRadius: 12 }} />
@@ -102,36 +111,36 @@ export default function AdminAttemptsPage() {
               <>
                 <div style={{ display: 'flex', gap: 12, marginTop: 16 }}>
                   <div style={{ flex: 1, background: '#0f1729', borderRadius: 12, padding: 16 }}>
-                    <div className="admin-table-secondary">Student</div>
-                    <div className="admin-table-primary">{detailData.attempt?.user?.email}</div>
+                    <div className="admin-table-secondary" style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#64748b' }}>Student</div>
+                    <div className="admin-table-primary" style={{ marginTop: 4 }}>{detailData.attempt?.user?.email}</div>
                   </div>
                   <div style={{ flex: 1, background: '#0f1729', borderRadius: 12, padding: 16 }}>
-                    <div className="admin-table-secondary">CLB Level</div>
-                    <div style={{ color: '#67e8f9', fontWeight: 700, fontSize: 20 }}>{detailData.attempt?.clbLevel || '—'}</div>
+                    <div className="admin-table-secondary" style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#64748b' }}>CLB Level</div>
+                    <div style={{ color: '#67e8f9', fontWeight: 700, fontSize: 20, marginTop: 4 }}>{detailData.attempt?.clbLevel || '—'}</div>
                   </div>
                   <div style={{ flex: 1, background: '#0f1729', borderRadius: 12, padding: 16 }}>
-                    <div className="admin-table-secondary">Score</div>
-                    <div style={{ color: '#86efac', fontWeight: 700, fontSize: 20 }}>{detailData.attempt?.rawScore != null ? `${detailData.attempt.rawScore.toFixed(1)}%` : '—'}</div>
+                    <div className="admin-table-secondary" style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#64748b' }}>Score</div>
+                    <div style={{ color: '#86efac', fontWeight: 700, fontSize: 20, marginTop: 4 }}>{detailData.attempt?.rawScore != null ? `${detailData.attempt.rawScore.toFixed(1)}%` : '—'}</div>
                   </div>
                 </div>
 
-                <h4 style={{ color: '#94a3b8', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', marginTop: 20, marginBottom: 12 }}>AI Feedback</h4>
+                <h4 style={{ color: '#94a3b8', fontSize: 12, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', marginTop: 24, marginBottom: 12 }}>AI Feedback</h4>
                 {detailData.attempt?.feedbacks?.map((fb: any) => (
                   <div key={fb.id} style={{ background: '#0f1729', borderRadius: 12, padding: 16, marginBottom: 10 }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8, alignItems: 'center' }}>
                       <AdminBadge value={fb.sectionType} variant="section" />
                       <span style={{ color: '#86efac', fontWeight: 700 }}>{fb.overallScore.toFixed(1)}%</span>
                     </div>
-                    <p style={{ color: '#94a3b8', fontSize: 13, marginBottom: 8 }}>{fb.comments}</p>
+                    <p style={{ color: '#cbd5e1', fontSize: 13, marginBottom: 8, lineHeight: 1.5 }}>{fb.comments}</p>
                     {fb.strengths?.length > 0 && (
-                      <div style={{ fontSize: 12 }}>
-                        <span style={{ color: '#22c55e' }}>✓ </span>
+                      <div style={{ fontSize: 12, color: '#a7f3d0' }}>
+                        <span style={{ color: '#10b981', fontWeight: 'bold' }}>✓ </span>
                         {(fb.strengths as string[]).join(' · ')}
                       </div>
                     )}
                     {fb.weaknesses?.length > 0 && (
-                      <div style={{ fontSize: 12, marginTop: 4 }}>
-                        <span style={{ color: '#ef4444' }}>✕ </span>
+                      <div style={{ fontSize: 12, marginTop: 4, color: '#fca5a5' }}>
+                        <span style={{ color: '#f43f5e', fontWeight: 'bold' }}>✕ </span>
                         {(fb.weaknesses as string[]).join(' · ')}
                       </div>
                     )}
@@ -139,11 +148,12 @@ export default function AdminAttemptsPage() {
                 ))}
               </>
             )}
-            <div className="admin-modal-actions" style={{ marginTop: 20 }}>
-              <button className="admin-btn-ghost" onClick={() => setDetail(null)}>Close</button>
+            <div className="admin-modal-actions" style={{ marginTop: 24 }}>
+              <button className="admin-btn-secondary" style={{ width: '100%', justifyContent: 'center' }} onClick={() => setDetail(null)}>Close</button>
             </div>
           </div>
-        </dialog>
+        </dialog>,
+        document.body
       )}
     </div>
   );

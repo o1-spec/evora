@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import api from '@/lib/api';
 import { AdminBadge } from '@/components/admin/AdminBadge';
@@ -8,7 +9,7 @@ import { AdminPagination } from '@/components/admin/AdminPagination';
 import { ConfirmModal } from '@/components/admin/ConfirmModal';
 import { toast } from '@/components/admin/Toast';
 import { useAuthStore } from '@/store/useAuthStore';
-import { Search, UserX, UserCheck, Trash2, ChevronDown } from 'lucide-react';
+import { Search, UserX, UserCheck, Trash2, ChevronDown, X, Shield } from 'lucide-react';
 
 const ROLES = ['', 'STUDENT', 'INSTRUCTOR', 'ADMIN', 'SUPER_ADMIN'];
 const TIERS = ['', 'FREE', 'BASIC', 'PREMIUM', 'PRO'];
@@ -235,26 +236,47 @@ export default function AdminUsersPage() {
       </div>
 
       {/* Change Role Modal */}
-      {roleTarget && (
+      {roleTarget && typeof window !== 'undefined' && createPortal(
         <dialog open className="admin-modal" onClose={() => setRoleTarget(null)}>
           <div className="admin-modal-content">
-            <h3 className="admin-modal-title">Change Role</h3>
+            <div className="admin-modal-header">
+              <div className="admin-modal-icon-wrap" style={{ background: 'rgba(139, 92, 246, 0.15)' }}>
+                <Shield size={20} style={{ color: '#8b5cf6' }} />
+              </div>
+              <button className="admin-modal-close" onClick={() => setRoleTarget(null)}>
+                <X size={18} />
+              </button>
+            </div>
+            <h3 className="admin-modal-title">Change User Role</h3>
             <p className="admin-modal-message">
-              Changing role for <strong>{roleTarget.email}</strong>
+              Update system permissions for <strong>{roleTarget.email}</strong>. This changes their access level immediately.
             </p>
-            <select
-              className="admin-select"
-              style={{ width: '100%', marginTop: 12 }}
-              value={newRole}
-              onChange={(e) => setNewRole(e.target.value)}
-            >
-              {ROLES.filter(Boolean).map(r => <option key={r} value={r}>{r}</option>)}
-            </select>
-            <div className="admin-modal-actions" style={{ marginTop: 20 }}>
+            
+            <div style={{ marginTop: 16, marginBottom: 20 }}>
+              <label style={{ display: 'block', fontSize: 11, fontWeight: 700, color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 6 }}>
+                Select Role
+              </label>
+              <div style={{ position: 'relative' }}>
+                <select
+                  className="admin-select"
+                  style={{ width: '100%', paddingRight: 36, appearance: 'none', WebkitAppearance: 'none' }}
+                  value={newRole}
+                  onChange={(e) => setNewRole(e.target.value)}
+                >
+                  {ROLES.filter(Boolean).map(r => (
+                    <option key={r} value={r} style={{ background: '#111827', color: '#f1f5f9' }}>
+                      {r.replace('_', ' ')}
+                    </option>
+                  ))}
+                </select>
+                <ChevronDown size={16} style={{ position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)', color: '#94a3b8', pointerEvents: 'none' }} />
+              </div>
+            </div>
+
+            <div className="admin-modal-actions">
               <button className="admin-btn-ghost" onClick={() => setRoleTarget(null)}>Cancel</button>
               <button
-                className="admin-btn-confirm"
-                style={{ background: '#3b82f6' }}
+                className="admin-btn-primary"
                 disabled={roleMutation.isPending}
                 onClick={() => roleMutation.mutate({ id: roleTarget.id, role: newRole })}
               >
@@ -262,7 +284,8 @@ export default function AdminUsersPage() {
               </button>
             </div>
           </div>
-        </dialog>
+        </dialog>,
+        document.body
       )}
 
       {/* Suspend Confirmation */}
