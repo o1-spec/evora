@@ -330,9 +330,11 @@ export default function LoginPage() {
                   justifyContent: 'center'
                 }}
               >
-                {isLoading ? <Loader2 size={18} className="animate-spin" /> : (
+                {isLoading ? (
+                  <Loader2 size={18} className="animate-spin" />
+                ) : (
                   <>
-                    Sign In
+                    <span>Sign In</span>
                     <ArrowRight size={15} style={{ marginLeft: '0.35rem' }} />
                   </>
                 )}

@@ -470,9 +470,11 @@ export default function RegisterPage() {
                   justifyContent: 'center'
                 }}
               >
-                {isLoading ? <Loader2 size={18} className="animate-spin" /> : (
+                {isLoading ? (
+                  <Loader2 size={18} className="animate-spin" />
+                ) : (
                   <>
-                    Create Account
+                    <span>Create Account</span>
                     <ArrowRight size={15} style={{ marginLeft: '0.35rem' }} />
                   </>
                 )}
