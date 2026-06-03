@@ -52,11 +52,23 @@ export default function AdminSubscriptionsPage() {
       </div>
 
       {/* Filters */}
-      <div className="admin-filters" style={{ paddingBottom: '20px' }}>
-        <select className="admin-select" value={tier} onChange={(e) => { setTier(e.target.value); setPage(1); }}>
-          <option value="">All Plans</option>
-          {TIERS.filter(Boolean).map(t => <option key={t} value={t}>{t}</option>)}
-        </select>
+      <div className="admin-filters">
+        <div style={{ position: 'relative', minWidth: 160 }}>
+          <select
+            className="admin-select"
+            style={{ width: '100%', paddingRight: 36, appearance: 'none', WebkitAppearance: 'none' }}
+            value={tier}
+            onChange={(e) => { setTier(e.target.value); setPage(1); }}
+          >
+            <option value="" style={{ background: '#111827', color: '#f1f5f9' }}>All Plans</option>
+            {TIERS.filter(Boolean).map(t => (
+              <option key={t} value={t} style={{ background: '#111827', color: '#f1f5f9' }}>
+                {t}
+              </option>
+            ))}
+          </select>
+          <ChevronDown size={16} style={{ position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)', color: '#94a3b8', pointerEvents: 'none' }} />
+        </div>
       </div>
 
       <div className="admin-card" style={{ padding: 0, overflow: 'hidden' }}>

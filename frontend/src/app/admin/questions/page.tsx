@@ -8,7 +8,7 @@ import { AdminBadge } from '@/components/admin/AdminBadge';
 import { AdminPagination } from '@/components/admin/AdminPagination';
 import { ConfirmModal } from '@/components/admin/ConfirmModal';
 import { toast } from '@/components/admin/Toast';
-import { Plus, Edit2, Trash2, Search, Eye, X, HelpCircle } from 'lucide-react';
+import { Plus, Edit2, Trash2, Search, Eye, X, HelpCircle, ChevronDown } from 'lucide-react';
 
 async function fetchQuestions(page: number, search: string, examId: string) {
   const params = new URLSearchParams({ page: String(page), limit: '25' });
@@ -79,10 +79,22 @@ export default function AdminQuestionsPage() {
           <Search size={16} className="admin-search-icon" />
           <input type="text" placeholder="Search questions…" className="admin-search-input" value={search} onChange={(e) => setSearch(e.target.value)} />
         </div>
-        <select className="admin-select" value={examId} onChange={(e) => { setExamId(e.target.value); setPage(1); }}>
-          <option value="">All Exams</option>
-          {examsData?.exams?.map((e: any) => <option key={e.id} value={e.id}>{e.title}</option>)}
-        </select>
+        <div style={{ position: 'relative', minWidth: 180 }}>
+          <select
+            className="admin-select"
+            style={{ width: '100%', paddingRight: 36, appearance: 'none', WebkitAppearance: 'none' }}
+            value={examId}
+            onChange={(e) => { setExamId(e.target.value); setPage(1); }}
+          >
+            <option value="" style={{ background: '#111827', color: '#f1f5f9' }}>All Exams</option>
+            {examsData?.exams?.map((e: any) => (
+              <option key={e.id} value={e.id} style={{ background: '#111827', color: '#f1f5f9' }}>
+                {e.title}
+              </option>
+            ))}
+          </select>
+          <ChevronDown size={16} style={{ position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)', color: '#94a3b8', pointerEvents: 'none' }} />
+        </div>
       </div>
 
       <div className="admin-card" style={{ padding: 0, overflow: 'hidden' }}>
@@ -147,7 +159,7 @@ export default function AdminQuestionsPage() {
               </button>
             </div>
             <h3 className="admin-modal-title">{editTarget ? 'Edit Question' : 'New Question'}</h3>
-            
+
             <div className="admin-form-group" style={{ marginTop: 16 }}>
               <label className="admin-label">Question Text</label>
               <textarea className="admin-textarea" style={{ width: '100%' }} rows={3} value={form.text} onChange={(e) => setForm(f => ({ ...f, text: e.target.value }))} placeholder="Enter question text…" />

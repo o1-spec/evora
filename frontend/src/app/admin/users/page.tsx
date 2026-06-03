@@ -98,27 +98,50 @@ export default function AdminUsersPage() {
       </div>
 
       {/* Filters */}
-      <div className="admin-card" style={{ marginBottom: 20, padding: '16px 20px' }}>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12, alignItems: 'center' }}>
-          <div style={{ position: 'relative', flex: 1, minWidth: 260 }}>
-            <Search size={16} style={{ position: 'absolute', left: 12, top: '50%', transform: 'translateY(-50%)', color: '#64748b' }} />
-            <input
-              type="text"
-              placeholder="Search by name or email…"
-              className="admin-input"
-              style={{ width: '100%', paddingLeft: 36 }}
-              value={search}
-              onChange={(e) => handleSearchChange(e.target.value)}
-            />
-          </div>
-          <select className="admin-select" value={role} onChange={(e) => { setRole(e.target.value); setPage(1); }} style={{ minWidth: 140 }}>
-            <option value="">All Roles</option>
-            {ROLES.filter(Boolean).map(r => <option key={r} value={r}>{r}</option>)}
+      <div className="admin-filters">
+        <div className="admin-search-wrap">
+          <Search size={16} className="admin-search-icon" />
+          <input
+            type="text"
+            placeholder="Search by name or email…"
+            className="admin-search-input"
+            value={search}
+            onChange={(e) => handleSearchChange(e.target.value)}
+          />
+        </div>
+        
+        <div style={{ position: 'relative', minWidth: 140 }}>
+          <select
+            className="admin-select"
+            style={{ width: '100%', paddingRight: 36, appearance: 'none', WebkitAppearance: 'none' }}
+            value={role}
+            onChange={(e) => { setRole(e.target.value); setPage(1); }}
+          >
+            <option value="" style={{ background: '#111827', color: '#f1f5f9' }}>All Roles</option>
+            {ROLES.filter(Boolean).map(r => (
+              <option key={r} value={r} style={{ background: '#111827', color: '#f1f5f9' }}>
+                {r}
+              </option>
+            ))}
           </select>
-          <select className="admin-select" value={tier} onChange={(e) => { setTier(e.target.value); setPage(1); }} style={{ minWidth: 140 }}>
-            <option value="">All Plans</option>
-            {TIERS.filter(Boolean).map(t => <option key={t} value={t}>{t}</option>)}
+          <ChevronDown size={16} style={{ position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)', color: '#94a3b8', pointerEvents: 'none' }} />
+        </div>
+
+        <div style={{ position: 'relative', minWidth: 140 }}>
+          <select
+            className="admin-select"
+            style={{ width: '100%', paddingRight: 36, appearance: 'none', WebkitAppearance: 'none' }}
+            value={tier}
+            onChange={(e) => { setTier(e.target.value); setPage(1); }}
+          >
+            <option value="" style={{ background: '#111827', color: '#f1f5f9' }}>All Plans</option>
+            {TIERS.filter(Boolean).map(t => (
+              <option key={t} value={t} style={{ background: '#111827', color: '#f1f5f9' }}>
+                {t}
+              </option>
+            ))}
           </select>
+          <ChevronDown size={16} style={{ position: 'absolute', right: 12, top: '50%', transform: 'translateY(-50%)', color: '#94a3b8', pointerEvents: 'none' }} />
         </div>
       </div>
 
