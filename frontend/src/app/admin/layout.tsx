@@ -21,6 +21,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     }
   }, [isAuthenticated, user, router]);
 
+  useEffect(() => {
+    document.documentElement.classList.add('admin-theme');
+    return () => {
+      document.documentElement.classList.remove('admin-theme');
+    };
+  }, []);
+
   if (!isAuthenticated || (user && !['ADMIN', 'SUPER_ADMIN'].includes(user.role))) {
     return (
       <div className="admin-loading-screen">

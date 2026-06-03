@@ -134,7 +134,7 @@ export default function AdminSubscriptionsPage() {
       {/* Edit Modal */}
       {editTarget && typeof window !== 'undefined' && createPortal(
         <dialog open className="admin-modal" onClose={() => setEditTarget(null)}>
-          <div className="admin-modal-content" style={{ minWidth: 340 }}>
+          <div className="admin-modal-content" style={{ width: '100%', maxWidth: 340 }}>
             <div className="admin-modal-header">
               <div className="admin-modal-icon-wrap" style={{ background: 'rgba(139, 92, 246, 0.15)' }}>
                 <CreditCard size={20} style={{ color: '#8b5cf6' }} />

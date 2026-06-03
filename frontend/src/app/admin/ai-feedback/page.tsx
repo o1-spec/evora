@@ -142,7 +142,7 @@ export default function AdminAiFeedbackPage() {
       {/* Detail Drawer */}
       {detail && typeof window !== 'undefined' && createPortal(
         <dialog open className="admin-modal" onClose={() => setDetail(null)}>
-          <div className="admin-modal-content" style={{ minWidth: 520, maxHeight: '80vh', overflowY: 'auto' }}>
+          <div className="admin-modal-content" style={{ width: '100%', maxWidth: 520, maxHeight: '80vh', overflowY: 'auto' }}>
             <div className="admin-modal-header">
               <div className="admin-modal-icon-wrap" style={{ background: 'rgba(139, 92, 246, 0.15)' }}>
                 <Sparkles size={20} style={{ color: '#8b5cf6' }} />

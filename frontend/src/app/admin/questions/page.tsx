@@ -51,9 +51,18 @@ export default function AdminQuestionsPage() {
   });
 
   const saveMutation = useMutation({
-    mutationFn: (payload: any) => editTarget
-      ? api.patch(`/admin/questions/${editTarget.id}`, payload)
-      : api.post('/admin/questions', { ...payload, options: JSON.parse(payload.options || '[]') }),
+    mutationFn: (payload: any) => {
+      let parsedOptions = [];
+      try {
+        parsedOptions = JSON.parse(payload.options || '[]');
+      } catch (err) {
+        parsedOptions = [];
+      }
+      const formattedPayload = { ...payload, options: parsedOptions };
+      return editTarget
+        ? api.patch(`/admin/questions/${editTarget.id}`, formattedPayload)
+        : api.post('/admin/questions', formattedPayload);
+    },
     onSuccess: () => {
       toast.success(editTarget ? 'Question updated.' : 'Question created.');
       queryClient.invalidateQueries({ queryKey: ['admin-questions'] });
@@ -149,7 +158,7 @@ export default function AdminQuestionsPage() {
       {/* Create / Edit Modal */}
       {formOpen && typeof window !== 'undefined' && createPortal(
         <dialog open className="admin-modal" onClose={() => { setFormOpen(false); setEditTarget(null); }}>
-          <div className="admin-modal-content" style={{ minWidth: 460 }}>
+          <div className="admin-modal-content" style={{ width: '100%', maxWidth: 460 }}>
             <div className="admin-modal-header">
               <div className="admin-modal-icon-wrap" style={{ background: 'rgba(139, 92, 246, 0.15)' }}>
                 <HelpCircle size={20} style={{ color: '#8b5cf6' }} />
@@ -196,7 +205,7 @@ export default function AdminQuestionsPage() {
       {/* Preview Modal */}
       {preview && typeof window !== 'undefined' && createPortal(
         <dialog open className="admin-modal" onClose={() => setPreview(null)}>
-          <div className="admin-modal-content" style={{ minWidth: 420 }}>
+          <div className="admin-modal-content" style={{ width: '100%', maxWidth: 420 }}>
             <div className="admin-modal-header">
               <div className="admin-modal-icon-wrap" style={{ background: 'rgba(139, 92, 246, 0.15)' }}>
                 <Eye size={20} style={{ color: '#8b5cf6' }} />
