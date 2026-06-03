@@ -149,29 +149,8 @@ export default function HeroSection() {
                 {user && ["ADMIN", "SUPER_ADMIN"].includes(user.role) && (
                   <Link
                     href="/admin"
-                    // style={{
-                    //   display: "inline-flex",
-                    //   alignItems: "center",
-                    //   gap: "0.35rem",
-                    //   padding: "0.4rem 0.75rem",
-                    //   fontSize: "0.825rem",
-                    //   fontWeight: 600,
-                    //   color: "hsl(var(--primary))",
-                    //   backgroundColor: "rgba(139, 92, 246, 0.08)",
-                    //   borderRadius: "0.375rem",
-                    //   textDecoration: "none",
-                    //   marginRight: "0.25rem",
-                    //   whiteSpace: "nowrap",
-                    //   transition: "all 0.15s ease",
-                    // }}
                     className="btn-primary"
                     style={{ padding: "0.875rem 2.25rem", fontSize: "1rem" }}
-                    onMouseOver={(e) => {
-                      e.currentTarget.style.backgroundColor = "rgba(139, 92, 246, 0.15)";
-                    }}
-                    onMouseOut={(e) => {
-                      e.currentTarget.style.backgroundColor = "rgba(139, 92, 246, 0.08)";
-                    }}
                   >
                     Admin Panel
                   </Link>
