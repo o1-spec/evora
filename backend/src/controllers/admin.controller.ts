@@ -10,6 +10,9 @@ export class AdminController {
 
   public static async getDashboardStats(req: AuthenticatedRequest, res: Response) {
     try {
+      const sevenDaysAgo = new Date();
+      sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+
       const [
         totalUsers,
         totalStudents,
@@ -20,6 +23,9 @@ export class AdminController {
         activeSubscriptions,
         recentUsers,
         recentAttempts,
+        newUsers7Days,
+        aiLogs7Days,
+        attempts7Days,
       ] = await Promise.all([
         prisma.user.count(),
         prisma.user.count({ where: { role: Role.STUDENT } }),
@@ -41,7 +47,49 @@ export class AdminController {
             exam: { select: { title: true } },
           },
         }),
+        prisma.user.findMany({
+          where: { createdAt: { gte: sevenDaysAgo } },
+          select: { createdAt: true, subscriptionTier: true },
+        }),
+        prisma.aIUsageLog.findMany({
+          where: { timestamp: { gte: sevenDaysAgo } },
+          select: { timestamp: true, costUSD: true },
+        }),
+        prisma.examAttempt.findMany({
+          where: { startedAt: { gte: sevenDaysAgo } },
+          select: { startedAt: true },
+        }),
       ]);
+
+      const signupTrends: { date: string; count: number; premium: number }[] = [];
+      const aiCostTrends: { date: string; cost: number }[] = [];
+      const attemptTrends: { date: string; count: number }[] = [];
+
+      for (let i = 6; i >= 0; i--) {
+        const d = new Date();
+        d.setDate(d.getDate() - i);
+        const dayStr = d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short' });
+
+        const dayUsers = newUsers7Days.filter((u: any) => {
+          const uDate = new Date(u.createdAt);
+          return uDate.toDateString() === d.toDateString();
+        });
+        const premiumUsers = dayUsers.filter((u: any) => u.subscriptionTier !== 'FREE').length;
+
+        const dayAiCost = aiLogs7Days.filter((l: any) => {
+          const lDate = new Date(l.timestamp);
+          return lDate.toDateString() === d.toDateString();
+        }).reduce((acc: number, curr: any) => acc + curr.costUSD, 0);
+
+        const dayAttempts = attempts7Days.filter((a: any) => {
+          const aDate = new Date(a.startedAt);
+          return aDate.toDateString() === d.toDateString();
+        }).length;
+
+        signupTrends.push({ date: dayStr, count: dayUsers.length, premium: premiumUsers });
+        aiCostTrends.push({ date: dayStr, cost: Number(dayAiCost.toFixed(4)) });
+        attemptTrends.push({ date: dayStr, count: dayAttempts });
+      }
 
       return res.status(200).json(adminResponse({
         stats: {
@@ -55,6 +103,11 @@ export class AdminController {
         },
         recentUsers,
         recentAttempts,
+        trends: {
+          signupTrends,
+          aiCostTrends,
+          attemptTrends,
+        },
       }));
     } catch (error) {
       console.error('[Admin] getDashboardStats error:', error);
@@ -917,6 +970,214 @@ export class AdminController {
     } catch (error) {
       console.error('[Admin] importQuestions error:', error);
       return res.status(500).json({ success: false, error: 'Failed to import TCF questions.' });
+    }
+  }
+
+  // ─── SECTIONS CRUD ──────────────────────────────────────────────────────────
+
+  public static async createSection(req: AuthenticatedRequest, res: Response) {
+    try {
+      const { examId } = req.params;
+      const { type, durationMin, orderIndex } = req.body;
+
+      if (!type || durationMin === undefined) {
+        return res.status(400).json({ success: false, error: 'type and durationMin are required.' });
+      }
+
+      const section = await prisma.tcfSection.create({
+        data: {
+          examId,
+          type,
+          durationMin: Number(durationMin),
+          orderIndex: Number(orderIndex || 0),
+        },
+      });
+
+      await AdminController.logAction(
+        req,
+        'CREATE_SECTION',
+        'SECTION',
+        section.id,
+        `Created ${type} section under exam ${examId}`
+      );
+
+      return res.status(201).json(adminResponse({ section }));
+    } catch (error) {
+      console.error('[Admin] createSection error:', error);
+      return res.status(500).json({ success: false, error: 'Failed to create section.' });
+    }
+  }
+
+  public static async updateSection(req: AuthenticatedRequest, res: Response) {
+    try {
+      const { id } = req.params;
+      const { type, durationMin, orderIndex } = req.body;
+
+      const section = await prisma.tcfSection.update({
+        where: { id },
+        data: {
+          type,
+          durationMin: durationMin !== undefined ? Number(durationMin) : undefined,
+          orderIndex: orderIndex !== undefined ? Number(orderIndex) : undefined,
+        },
+      });
+
+      await AdminController.logAction(
+        req,
+        'UPDATE_SECTION',
+        'SECTION',
+        section.id,
+        `Updated details for section ${id}`
+      );
+
+      return res.status(200).json(adminResponse({ section }));
+    } catch (error) {
+      console.error('[Admin] updateSection error:', error);
+      return res.status(500).json({ success: false, error: 'Failed to update section.' });
+    }
+  }
+
+  public static async deleteSection(req: AuthenticatedRequest, res: Response) {
+    try {
+      const { id } = req.params;
+
+      const section = await prisma.tcfSection.delete({
+        where: { id },
+      });
+
+      await AdminController.logAction(
+        req,
+        'DELETE_SECTION',
+        'SECTION',
+        id,
+        `Deleted section ${section.type} (${id})`
+      );
+
+      return res.status(200).json(adminResponse({ message: 'Section deleted.' }));
+    } catch (error) {
+      console.error('[Admin] deleteSection error:', error);
+      return res.status(500).json({ success: false, error: 'Failed to delete section.' });
+    }
+  }
+
+  // ─── EXERCISES CRUD ─────────────────────────────────────────────────────────
+
+  public static async createExercise(req: AuthenticatedRequest, res: Response) {
+    try {
+      const { lessonId } = req.params;
+      const { type, question, options, correctKey, audioUrl, points } = req.body;
+
+      if (!type || !question || !correctKey) {
+        return res.status(400).json({ success: false, error: 'type, question, and correctKey are required.' });
+      }
+
+      let parsedOptions = null;
+      if (options) {
+        if (Array.isArray(options)) {
+          parsedOptions = options;
+        } else if (typeof options === 'string') {
+          try {
+            parsedOptions = JSON.parse(options);
+          } catch {
+            parsedOptions = options.split('|').map((o: string) => o.trim());
+          }
+        }
+      }
+
+      const exercise = await prisma.exercise.create({
+        data: {
+          lessonId,
+          type,
+          question,
+          options: parsedOptions ? parsedOptions : undefined,
+          correctKey,
+          audioUrl,
+          points: points !== undefined ? Number(points) : 10,
+        },
+      });
+
+      await AdminController.logAction(
+        req,
+        'CREATE_EXERCISE',
+        'EXERCISE',
+        exercise.id,
+        `Created ${type} exercise under lesson ${lessonId}`
+      );
+
+      return res.status(201).json(adminResponse({ exercise }));
+    } catch (error) {
+      console.error('[Admin] createExercise error:', error);
+      return res.status(500).json({ success: false, error: 'Failed to create exercise.' });
+    }
+  }
+
+  public static async updateExercise(req: AuthenticatedRequest, res: Response) {
+    try {
+      const { id } = req.params;
+      const { type, question, options, correctKey, audioUrl, points } = req.body;
+
+      let parsedOptions = undefined;
+      if (options !== undefined) {
+        if (Array.isArray(options)) {
+          parsedOptions = options;
+        } else if (typeof options === 'string') {
+          try {
+            parsedOptions = JSON.parse(options);
+          } catch {
+            parsedOptions = options.split('|').map((o: string) => o.trim());
+          }
+        } else if (options === null) {
+          parsedOptions = null;
+        }
+      }
+
+      const exercise = await prisma.exercise.update({
+        where: { id },
+        data: {
+          type,
+          question,
+          options: parsedOptions,
+          correctKey,
+          audioUrl,
+          points: points !== undefined ? Number(points) : undefined,
+        },
+      });
+
+      await AdminController.logAction(
+        req,
+        'UPDATE_EXERCISE',
+        'EXERCISE',
+        exercise.id,
+        `Updated exercise ${id}`
+      );
+
+      return res.status(200).json(adminResponse({ exercise }));
+    } catch (error) {
+      console.error('[Admin] updateExercise error:', error);
+      return res.status(500).json({ success: false, error: 'Failed to update exercise.' });
+    }
+  }
+
+  public static async deleteExercise(req: AuthenticatedRequest, res: Response) {
+    try {
+      const { id } = req.params;
+
+      await prisma.exercise.delete({
+        where: { id },
+      });
+
+      await AdminController.logAction(
+        req,
+        'DELETE_EXERCISE',
+        'EXERCISE',
+        id,
+        `Deleted exercise ${id}`
+      );
+
+      return res.status(200).json(adminResponse({ message: 'Exercise deleted.' }));
+    } catch (error) {
+      console.error('[Admin] deleteExercise error:', error);
+      return res.status(500).json({ success: false, error: 'Failed to delete exercise.' });
     }
   }
 }

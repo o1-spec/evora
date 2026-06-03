@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import api from '@/lib/api';
 import { StatCard } from '@/components/admin/StatCard';
 import { AdminBadge } from '@/components/admin/AdminBadge';
+import { DashboardChart } from '@/components/admin/DashboardChart';
 import {
   Users, GraduationCap, Shield, ClipboardList, Activity,
   CreditCard, CheckCircle, BookOpen,
@@ -57,7 +58,7 @@ export default function AdminDashboard() {
     </div>
   );
 
-  const { stats, recentUsers, recentAttempts } = data;
+  const { stats, recentUsers, recentAttempts, trends } = data;
 
   return (
     <div className="admin-page">
@@ -80,6 +81,40 @@ export default function AdminDashboard() {
         <StatCard title="AI Evaluations" value={stats.totalAiCalls} icon={Activity} color="purple" />
         <StatCard title="TCF Exams" value={stats.totalAttempts} icon={BookOpen} color="blue" />
       </div>
+
+      {/* Charts */}
+      {trends && (
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+          gap: 20,
+          marginTop: 24,
+          marginBottom: 24
+        }}>
+          <DashboardChart
+            title="User Signups (7d)"
+            data={trends.signupTrends.map((t: any) => ({ label: t.date, value: t.count }))}
+            type="line"
+            color="#3b82f6"
+            suffix=" users"
+          />
+          <DashboardChart
+            title="AI Costs (7d)"
+            data={trends.aiCostTrends.map((t: any) => ({ label: t.date, value: t.cost }))}
+            type="bar"
+            color="#a855f7"
+            prefix="$"
+            suffix=" USD"
+          />
+          <DashboardChart
+            title="Exam Attempts (7d)"
+            data={trends.attemptTrends.map((t: any) => ({ label: t.date, value: t.count }))}
+            type="line"
+            color="#10b981"
+            suffix=" tests"
+          />
+        </div>
+      )}
 
       {/* Recent Activity */}
       <div className="admin-two-col">

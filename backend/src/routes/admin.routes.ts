@@ -63,4 +63,14 @@ router.patch('/settings', AdminController.updateSettings as any);
 router.get('/academy', AdminController.getAcademy as any);
 router.get('/academy/lessons/:id', AdminController.getLessonDetail as any);
 
+// ─── Sections ────────────────────────────────────────────────────────────────
+router.post('/exams/:examId/sections', AdminController.createSection as any);
+router.patch('/sections/:id', AdminController.updateSection as any);
+router.delete('/sections/:id', AdminController.deleteSection as any);
+
+// ─── Exercises ───────────────────────────────────────────────────────────────
+router.post('/lessons/:lessonId/exercises', AdminController.createExercise as any);
+router.patch('/exercises/:id', AdminController.updateExercise as any);
+router.delete('/exercises/:id', AdminController.deleteExercise as any);
+
 export default router;
