@@ -287,6 +287,22 @@ export default function AcademyPage() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('evora_academy_track');
+      if (saved === 'tcf' || saved === 'french') {
+        setActiveTrack(saved as 'tcf' | 'french');
+      }
+    }
+  }, []);
+
+  const handleTrackChange = (track: 'tcf' | 'french') => {
+    setActiveTrack(track);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('evora_academy_track', track);
+    }
+  };
+
+  useEffect(() => {
     async function loadProgress() {
       try {
         const { data } = await api.get('/learning/progress/academy');
@@ -369,7 +385,7 @@ export default function AcademyPage() {
           return (
             <button
               key={tab.key}
-              onClick={() => setActiveTrack(tab.key as 'tcf' | 'french')}
+              onClick={() => handleTrackChange(tab.key as 'tcf' | 'french')}
               style={{
                 display: 'flex',
                 alignItems: 'center',

@@ -13,6 +13,7 @@ export default function LessonPage() {
   const [activeTab, setActiveTab] = useState<'content' | 'exercises'>('content');
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [results, setResults] = useState<Record<string, any>>({});
+  const [checkingId, setCheckingId] = useState<string | null>(null);
 
   const { data: lesson, isLoading } = useQuery({
     queryKey: ['lesson', lessonId],
@@ -23,9 +24,15 @@ export default function LessonPage() {
   const submitMutation = useMutation({
     mutationFn: ({ exerciseId, answer }: { exerciseId: string; answer: string }) =>
       api.post(`/learning/exercises/${exerciseId}/submit`, { answer }).then(r => r.data),
+    onMutate: (vars) => {
+      setCheckingId(vars.exerciseId);
+    },
     onSuccess: (data, vars) => {
       setResults(prev => ({ ...prev, [vars.exerciseId]: data }));
     },
+    onSettled: () => {
+      setCheckingId(null);
+    }
   });
 
   const content = lesson?.content as any;
@@ -36,8 +43,8 @@ export default function LessonPage() {
   ];
 
   return (
-    <div style={{ maxWidth: 780, margin: '0 auto' }}>
-      <button onClick={() => window.history.back()} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'hsl(var(--text-secondary))', background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '0.9rem', marginBottom: '1.5rem', fontWeight: 500 }}>
+    <div style={{ maxWidth: 780, margin: '0 auto', paddingBottom: '4rem' }}>
+      <button onClick={() => window.history.back()} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', color: 'hsl(var(--text-secondary))', background: 'transparent', border: 'none', cursor: 'pointer', fontSize: '0.9rem', marginBottom: '1.5rem', fontWeight: 600 }}>
         <ArrowLeft size={16} /> Back
       </button>
 
@@ -121,8 +128,11 @@ export default function LessonPage() {
                 )}
                 {lesson.exercises?.map((ex: any, i: number) => {
                   const result = results[ex.id];
+                  const isCurrentChecking = checkingId === ex.id;
+                  const isAnyChecking = checkingId !== null;
+
                   return (
-                    <div key={ex.id} className="card" style={{ padding: '2rem' }}>
+                    <div key={ex.id} className="card" style={{ padding: '2rem', border: '1px solid hsl(var(--border))' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
                         <span className="badge badge-primary">Exercise {i + 1}</span>
                         <span style={{ fontSize: '0.8rem', color: 'hsl(var(--text-secondary))', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600 }}>
@@ -131,7 +141,7 @@ export default function LessonPage() {
                         <span style={{ marginLeft: 'auto', fontSize: '0.85rem', color: 'hsl(var(--primary))', fontWeight: 600 }}>{ex.points} pts</span>
                       </div>
 
-                      <p style={{ fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '1.5rem', color: 'hsl(var(--text-primary))', fontWeight: 500 }}>{ex.question}</p>
+                      <p style={{ fontSize: '1.05rem', lineHeight: 1.7, marginBottom: '1.5rem', color: 'hsl(var(--text-primary))', fontWeight: 600 }}>{ex.question}</p>
 
                       {ex.type === 'MULTIPLE_CHOICE' && (() => {
                         let parsedOptions: string[] = [];
@@ -171,8 +181,18 @@ export default function LessonPage() {
                         <textarea value={answers[ex.id] || ''} onChange={e => setAnswers(p => ({ ...p, [ex.id]: e.target.value }))}
                           placeholder="Type your answer here..."
                           rows={ex.type === 'WRITING' ? 5 : 2}
-                          className="input-field"
-                          style={{ resize: 'vertical' }} />
+                          style={{
+                            width: '100%',
+                            padding: '1rem 1.25rem',
+                            borderRadius: '0.75rem',
+                            border: '1px solid hsl(var(--border))',
+                            backgroundColor: 'white',
+                            fontSize: '0.95rem',
+                            fontFamily: 'inherit',
+                            outline: 'none',
+                            transition: 'all 0.2s',
+                            resize: 'vertical'
+                          }} />
                       )}
 
                       {ex.type === 'SPEAKING' && (
@@ -188,23 +208,57 @@ export default function LessonPage() {
                       )}
 
                       {result && (
-                          <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
-                            className="mt-6 p-4 rounded-xl flex flex-col sm:flex-row items-start gap-3"
-                            style={{ backgroundColor: result.isCorrect ? 'hsl(142, 71%, 95%)' : 'hsl(0, 84%, 95%)', border: `1px solid ${result.isCorrect ? 'hsl(142, 71%, 45%, 0.3)' : 'hsl(0, 84%, 60%, 0.3)'}` }}>
-                          {result.isCorrect ? <CheckCircle size={20} color="hsl(142, 71%, 45%)" style={{ flexShrink: 0, marginTop: 2 }} /> : <XCircle size={20} color="hsl(0, 84%, 60%)" style={{ flexShrink: 0, marginTop: 2 }} />}
-                          <div>
-                            <div style={{ fontWeight: 600, fontSize: '0.9rem', color: result.isCorrect ? 'hsl(142, 71%, 40%)' : 'hsl(0, 84%, 50%)', marginBottom: '0.25rem' }}>
+                        <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }}
+                          style={{
+                            marginTop: '1.5rem',
+                            padding: '1.25rem 1.5rem',
+                            borderRadius: '0.75rem',
+                            display: 'flex',
+                            alignItems: 'flex-start',
+                            gap: '0.75rem',
+                            backgroundColor: result.isCorrect ? 'rgba(16, 185, 129, 0.08)' : 'rgba(239, 68, 68, 0.08)',
+                            border: `1px solid ${result.isCorrect ? 'rgba(16, 185, 129, 0.25)' : 'rgba(239, 68, 68, 0.25)'}`
+                          }}>
+                          {result.isCorrect ? (
+                            <CheckCircle size={20} color="#10b981" style={{ flexShrink: 0, marginTop: '0.1rem' }} />
+                          ) : (
+                            <XCircle size={20} color="#ef4444" style={{ flexShrink: 0, marginTop: '0.1rem' }} />
+                          )}
+                          <div style={{ flex: 1 }}>
+                            <div style={{
+                              fontWeight: 700,
+                              fontSize: '0.95rem',
+                              color: result.isCorrect ? '#065f46' : '#991b1b',
+                              marginBottom: '0.35rem'
+                            }}>
                               {result.isCorrect ? `✓ Correct! +${result.pointsEarned} points` : '✗ Incorrect'}
                             </div>
-                            <div style={{ fontSize: '0.85rem', color: 'hsl(var(--text-secondary))', lineHeight: 1.5 }}>{result.explanation}</div>
+                            <div style={{
+                              fontSize: '0.9rem',
+                              color: result.isCorrect ? '#047857' : '#b91c1c',
+                              lineHeight: 1.5,
+                              fontWeight: 500
+                            }}>
+                              {result.explanation}
+                            </div>
                           </div>
                         </motion.div>
                       )}
 
                       {ex.type !== 'SPEAKING' && (
-                        <button onClick={() => submitMutation.mutate({ exerciseId: ex.id, answer: answers[ex.id] || '' })}
-                          disabled={!answers[ex.id] || submitMutation.isPending} className="btn-primary" style={{ marginTop: '1.5rem', padding: '0.75rem 1.5rem', fontSize: '0.9rem' }}>
-                          {submitMutation.isPending ? 'Checking...' : 'Check Answer'}
+                        <button
+                          onClick={() => submitMutation.mutate({ exerciseId: ex.id, answer: answers[ex.id] || '' })}
+                          disabled={!answers[ex.id] || isAnyChecking}
+                          className="btn-primary"
+                          style={{
+                            marginTop: '1.5rem',
+                            padding: '0.75rem 1.75rem',
+                            fontSize: '0.9rem',
+                            opacity: (!answers[ex.id] || isAnyChecking) ? 0.6 : 1,
+                            cursor: (!answers[ex.id] || isAnyChecking) ? 'not-allowed' : 'pointer'
+                          }}
+                        >
+                          {isCurrentChecking ? 'Checking...' : 'Check Answer'}
                         </button>
                       )}
                     </div>
