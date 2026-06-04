@@ -198,8 +198,18 @@ function SkillCard({ skill, bandColor }: { skill: typeof TCF_BANDS[0]['skills'][
 function ModuleCard({ mod, levelColor, levelCode }: { mod: { label: string; icon: any; count: number; done: number }; levelColor: string; levelCode: string }) {
   const Icon = mod.icon;
   const pct = mod.count > 0 ? Math.round((mod.done / mod.count) * 100) : 0;
+
+  // Determine query parameter based on label
+  let tabParam = 'all';
+  const lbl = mod.label.toLowerCase();
+  if (lbl.includes('vocab')) tabParam = 'vocabulary';
+  else if (lbl.includes('gramm')) tabParam = 'grammar';
+  else if (lbl.includes('dialog') || lbl.includes('convers')) tabParam = 'dialogues';
+  else if (lbl.includes('écri') || lbl.includes('text')) tabParam = 'writing';
+  else if (lbl.includes('débat') || lbl.includes('oral') || lbl.includes('speech')) tabParam = 'speaking';
+
   return (
-    <Link href={`/dashboard/academy/${levelCode.toLowerCase()}`} style={{ textDecoration: 'none' }}>
+    <Link href={`/dashboard/academy/${levelCode.toLowerCase()}?tab=${tabParam}`} style={{ textDecoration: 'none' }}>
       <div
         className="card"
         style={{
