@@ -271,7 +271,7 @@ html.admin-theme::-webkit-scrollbar-thumb:hover {
   .dashboard-main {
     padding: 2rem;
     padding-top: 2rem;
-    padding-left: calc(280px + 2rem) !important;
+    padding-left: calc(240px + 2rem) !important;
   }
 }
 

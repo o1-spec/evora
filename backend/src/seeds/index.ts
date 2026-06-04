@@ -2,6 +2,7 @@ import { prisma } from "../services/db.service";
 import { ExerciseType, ExamSectionType } from "@prisma/client";
 import * as fs from "fs";
 import * as path from "path";
+import { getAcademyContent } from "./academy_data";
 
 async function seed() {
   console.log("🌱 Starting Database Seeding...");
@@ -17,198 +18,67 @@ async function seed() {
     await prisma.lesson.deleteMany();
     await prisma.module.deleteMany();
 
-    // 1. Seed French Learning Levels
-    console.log(" - Seeding Learning Levels...");
-    const a1Level = await prisma.level.upsert({
-      where: { code: "A1" },
-      update: {},
-      create: {
-        code: "A1",
-        name: "Débutant (A1)",
-        description:
-          "Pour les personnes n'ayant aucune connaissance préalable de la langue française.",
-      },
-    });
+    // 1. Seed French Learning Levels, Modules, Lessons, and Exercises
+    console.log(" - Seeding Learning Academy (Levels, Modules, Lessons, Exercises)...");
+    const academyContent = getAcademyContent();
 
-    const b2Level = await prisma.level.upsert({
-      where: { code: "B2" },
-      update: {},
-      create: {
-        code: "B2",
-        name: "Intermédiaire Avancé (B2)",
-        description:
-          "Pour les personnes capables de comprendre les idées principales de textes complexes et d'argumenter de façon fluide.",
-      },
-    });
-
-    // 2. Seed Modules for A1 and B2
-    console.log(" - Seeding Learning Modules...");
-    const a1Module = await prisma.module.create({
-      data: {
-        levelId: a1Level.id,
-        title: "Premiers pas en français",
-        description:
-          "Apprendre à saluer, se présenter et poser des questions de base.",
-        orderIndex: 1,
-      },
-    });
-
-    const b2Module = await prisma.module.create({
-      data: {
-        levelId: b2Level.id,
-        title: "Argumenter et Débattre",
-        description:
-          "S'exprimer sur des sujets d'actualité et exprimer son opinion sur l'immigration au Canada.",
-        orderIndex: 1,
-      },
-    });
-
-    // 3. Seed Lessons
-    console.log(" - Seeding Lessons...");
-
-    // A1 Lesson 1
-    const a1Lesson1 = await prisma.lesson.create({
-      data: {
-        moduleId: a1Module.id,
-        title: "Salutations et Présentation",
-        description:
-          "Apprendre à dire bonjour, au revoir et à se présenter simplement.",
-        orderIndex: 1,
-        content: {
-          vocabulary: [
-            {
-              french: "Bonjour",
-              english: "Hello / Good morning",
-              audio: "/static/audio/bonjour.mp3",
-            },
-            {
-              french: "S'appeler",
-              english: "To be named",
-              audio: "/static/audio/sappeler.mp3",
-            },
-            {
-              french: "Enchanté",
-              english: "Nice to meet you",
-              audio: "/static/audio/enchante.mp3",
-            },
-            {
-              french: "Comment ça va ?",
-              english: "How is it going?",
-              audio: "/static/audio/comment_ca_va.mp3",
-            },
-          ],
-          grammar: {
-            title: "Le verbe S'appeler au Présent",
-            text: "Pour se présenter, on utilise le verbe pronominal s'appeler :\n- Je m'appelle (I am named)\n- Tu t'appelles (You are named)\n- Il/Elle s'appelle (He/She is named)",
-          },
-          reading:
-            "### Dialogue de présentation\n\n**Thomas** : Bonjour ! Comment tu t'appelles ?\n\n**Sarah** : Bonjour ! Je m'appelle Sarah. Et toi ?\n\n**Thomas** : Je m'appelle Thomas. Enchanté Sarah ! Comment ça va ?\n\n**Sarah** : Ça va très bien, merci ! Et toi ?",
+    for (const lvlSeed of academyContent) {
+      console.log(`   * Seeding Level ${lvlSeed.code}...`);
+      const level = await prisma.level.upsert({
+        where: { code: lvlSeed.code },
+        update: {
+          name: lvlSeed.name,
+          description: lvlSeed.description,
         },
-      },
-    });
-
-    // B2 Lesson 1
-    const b2Lesson1 = await prisma.lesson.create({
-      data: {
-        moduleId: b2Module.id,
-        title: "L'Immigration et l'Intégration au Canada",
-        description:
-          "Comprendre et débattre des enjeux liés à l'immigration francophone au Canada.",
-        orderIndex: 1,
-        content: {
-          vocabulary: [
-            {
-              french: "L'intégration",
-              english: "Integration / adaptation",
-              audio: "/static/audio/integration.mp3",
-            },
-            {
-              french: "Le marché de l'emploi",
-              english: "The job market",
-              audio: "/static/audio/marche_emploi.mp3",
-            },
-            {
-              french: "Un atout linguistique",
-              english: "A linguistic asset",
-              audio: "/static/audio/atout.mp3",
-            },
-            {
-              french: "Favoriser la diversité",
-              english: "To promote diversity",
-              audio: "/static/audio/favoriser.mp3",
-            },
-          ],
-          grammar: {
-            title:
-              "Le Subjonctif Présent pour exprimer l'obligation ou la nécessité",
-            text: "Pour exprimer une nécessité courante lors des épreuves d'opinion :\n- Il faut que + subjonctif\nExemple : *Il faut que le gouvernement soutienne* l'intégration des nouveaux arrivants.\nFormes courantes : *que je fasse*, *que tu sois*, *qu'il ait*.",
-          },
-          reading:
-            "### L'apport culturel de l'immigration\n\nL'immigration au Canada, particulièrement dans les provinces francophones comme le Québec ou pour les communautés francophones hors Québec, constitue un levier démographique et économique indispensable. De nombreux experts soulignent qu'il est capital que les nouveaux résidents reçoivent des cours linguistiques approfondis pour s'insérer rapidement sur le marché du travail.",
+        create: {
+          code: lvlSeed.code,
+          name: lvlSeed.name,
+          description: lvlSeed.description,
         },
-      },
-    });
+      });
 
-    // 4. Seed Lesson Exercises
-    console.log(" - Seeding Lesson Exercises...");
+      for (let modIdx = 0; modIdx < lvlSeed.modules.length; modIdx++) {
+        const modSeed = lvlSeed.modules[modIdx];
+        const module = await prisma.module.create({
+          data: {
+            levelId: level.id,
+            title: modSeed.title,
+            description: modSeed.description,
+            orderIndex: modIdx + 1,
+          },
+        });
 
-    // A1 Exercises
-    await prisma.exercise.create({
-      data: {
-        lessonId: a1Lesson1.id,
-        type: ExerciseType.MULTIPLE_CHOICE,
-        question: "Choisissez la bonne forme : 'Je ___ Sarah.'",
-        options: ["appelle", "m'appelle", "t'appelles", "s'appelle"],
-        correctKey: "m'appelle",
-        points: 10,
-      },
-    });
+        for (let lesIdx = 0; lesIdx < modSeed.lessons.length; lesIdx++) {
+          const lesSeed = modSeed.lessons[lesIdx];
+          const lesson = await prisma.lesson.create({
+            data: {
+              moduleId: module.id,
+              title: lesSeed.title,
+              description: lesSeed.description,
+              orderIndex: lesIdx + 1,
+              content: {
+                vocabulary: lesSeed.vocabulary,
+                grammar: lesSeed.grammar,
+                reading: lesSeed.reading,
+              },
+            },
+          });
 
-    await prisma.exercise.create({
-      data: {
-        lessonId: a1Lesson1.id,
-        type: ExerciseType.FILL_IN_THE_BLANK,
-        question:
-          "Complétez la salutation : '___ ! Enchanté de vous rencontrer.'",
-        correctKey: "Bonjour",
-        points: 10,
-      },
-    });
-
-    await prisma.exercise.create({
-      data: {
-        lessonId: a1Lesson1.id,
-        type: ExerciseType.SPEAKING,
-        question:
-          "Présentez-vous à haute voix en disant votre prénom (ex: Bonjour, je m'appelle Pierre).",
-        correctKey: "Je m'appelle",
-        points: 20,
-      },
-    });
-
-    // B2 Exercises
-    await prisma.exercise.create({
-      data: {
-        lessonId: b2Lesson1.id,
-        type: ExerciseType.MULTIPLE_CHOICE,
-        question:
-          "Complétez avec la bonne conjugaison : 'Il faut que vous ___ des efforts pour vous intégrer.'",
-        options: ["faites", "fassiez", "faisiez", "fassent"],
-        correctKey: "fassiez",
-        points: 10,
-      },
-    });
-
-    await prisma.exercise.create({
-      data: {
-        lessonId: b2Lesson1.id,
-        type: ExerciseType.WRITING,
-        question:
-          "Exprimez votre avis en 50 mots sur la question : 'Selon vous, l'apprentissage du français est-il obligatoire pour s'intégrer au Canada ?'",
-        correctKey: "avis obligatoire integration",
-        points: 20,
-      },
-    });
+          for (const exSeed of lesSeed.exercises) {
+            await prisma.exercise.create({
+              data: {
+                lessonId: lesson.id,
+                type: exSeed.type,
+                question: exSeed.question,
+                options: exSeed.options,
+                correctKey: exSeed.correctKey,
+                points: exSeed.points,
+              },
+            });
+          }
+        }
+      }
+    }
 
     // 5. Seed a Complete Simulated TCF Canada Practice Exam
     console.log(" - Seeding TCF Canada Practice Exam Simulator...");
@@ -390,8 +260,12 @@ async function seed() {
       // One transaction per series to avoid DB timeout on large datasets
       let seededCount = 0;
       for (let seriesId = 1; seriesId <= 40; seriesId++) {
-        const wTasks = writtenTasks.filter((t: any) => t.seriesId === seriesId);
-        const oTasks = oralTasks.filter((t: any) => t.seriesId === seriesId);
+        // Main tasks: TCF Canada official format = 2 writing + 2 speaking tasks
+        const wTasks = writtenTasks.filter((t: any) => t.seriesId === seriesId && t.taskNumber <= 2);
+        const oTasks = oralTasks.filter((t: any) => t.seriesId === seriesId && t.taskNumber <= 2);
+        // Bonus tasks (task 3) — shown after completing the main section
+        const wBonus = writtenTasks.filter((t: any) => t.seriesId === seriesId && t.taskNumber === 3);
+        const oBonus = oralTasks.filter((t: any) => t.seriesId === seriesId && t.taskNumber === 3);
         const rQuestions = readingQuestions.filter(
           (q: any) => q.seriesId === seriesId,
         );
@@ -513,6 +387,61 @@ async function seed() {
           }
         }
 
+        // ── Bonus sections (task 3 only, shown as optional challenge) ──
+        if (wBonus.length > 0) {
+          const bonusWritingSec = await prisma.tcfSection.create({
+            data: {
+              examId: exam.id,
+              type: ExamSectionType.WRITING,
+              durationMin: 30,
+              orderIndex: 5,
+            },
+          });
+          for (const t of wBonus) {
+            questionData.push({
+              sectionId: bonusWritingSec.id,
+              text: `### 🌟 BONUS : TÂCHE ${t.taskNumber} (${t.difficulty}) : ${t.title}\n\n${t.prompt}\n\n**Conseil :** ${t.contextAdvice}\n\n*${t.minWords}–${t.maxWords} mots.*`,
+              correctKey: `bonus_writing_series_${seriesId}_task_${t.taskNumber}`,
+              orderIndex: t.taskNumber,
+              options: {
+                minWords: t.minWords,
+                maxWords: t.maxWords,
+                points: t.points,
+                title: t.title,
+                contextAdvice: t.contextAdvice,
+                isBonus: true,
+              },
+            });
+          }
+        }
+
+        if (oBonus.length > 0) {
+          const bonusSpeakingSec = await prisma.tcfSection.create({
+            data: {
+              examId: exam.id,
+              type: ExamSectionType.SPEAKING,
+              durationMin: 8,
+              orderIndex: 6,
+            },
+          });
+          for (const t of oBonus) {
+            questionData.push({
+              sectionId: bonusSpeakingSec.id,
+              text: `### 🌟 BONUS : TÂCHE ${t.taskNumber} (${t.difficulty}) : ${t.title}\n\n${t.prompt}\n\n**Conseil :** ${t.contextAdvice}\n\n*${t.minDurationSec}s–${t.maxDurationSec}s.*`,
+              correctKey: `bonus_speaking_series_${seriesId}_task_${t.taskNumber}`,
+              orderIndex: t.taskNumber,
+              options: {
+                minDurationSec: t.minDurationSec,
+                maxDurationSec: t.maxDurationSec,
+                points: t.points,
+                title: t.title,
+                contextAdvice: t.contextAdvice,
+                isBonus: true,
+              },
+            });
+          }
+        }
+
         if (questionData.length > 0) {
           for (let i = 0; i < questionData.length; i += 25) {
             await prisma.tcfQuestion.createMany({
@@ -523,7 +452,8 @@ async function seed() {
 
         seededCount++;
         console.log(
-          `  ✅ Series #${seriesId} (L:${lQuestions.length} R:${rQuestions.length} W:${wTasks.length} S:${oTasks.length})`,
+          `  ✅ Series #${seriesId} (L:${lQuestions.length} R:${rQuestions.length} W:${wTasks.length} S:${oTasks.length} | Bonus W:${wBonus.length} S:${oBonus.length})`,
+
         );
       }
       console.log(`🎉 Successfully seeded all Training Exams!`);

@@ -243,26 +243,38 @@ function SkillCard({ skill, bandColor }: { skill: typeof TCF_BANDS[0]['skills'][
   );
 }
 
-function ModuleCard({ mod, levelColor }: { mod: typeof FRENCH_LEVELS[0]['modules'][0]; levelColor: string }) {
+function ModuleCard({ mod, levelColor, levelCode }: { mod: typeof FRENCH_LEVELS[0]['modules'][0]; levelColor: string; levelCode: string }) {
   const Icon = mod.icon;
   const pct = mod.count > 0 ? Math.round((mod.done / mod.count) * 100) : 0;
   return (
-    <div
-      className="card"
-      style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.75rem', height: '100%' }}
-    >
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-        <div style={{ width: 34, height: 34, borderRadius: 8, backgroundColor: `${levelColor}18`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <Icon size={17} color={levelColor} />
+    <Link href={`/dashboard/academy/${levelCode.toLowerCase()}`} style={{ textDecoration: 'none' }}>
+      <div
+        className="card"
+        style={{
+          padding: '1.25rem',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '0.75rem',
+          height: '100%',
+          cursor: 'pointer',
+          transition: 'transform 0.15s, box-shadow 0.2s',
+        }}
+        onMouseOver={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-2px)'; }}
+        onMouseOut={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <div style={{ width: 34, height: 34, borderRadius: 8, backgroundColor: `${levelColor}18`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Icon size={17} color={levelColor} />
+          </div>
+          <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'hsl(var(--text-primary))' }}>{mod.label}</span>
         </div>
-        <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'hsl(var(--text-primary))' }}>{mod.label}</span>
+        <ProgressBar value={pct} color={levelColor} />
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem' }}>
+          <span style={{ color: 'hsl(var(--text-muted))' }}>{mod.done}/{mod.count} leçons</span>
+          <span style={{ fontWeight: 700, color: levelColor }}>{pct}%</span>
+        </div>
       </div>
-      <ProgressBar value={pct} color={levelColor} />
-      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem' }}>
-        <span style={{ color: 'hsl(var(--text-muted))' }}>{mod.done}/{mod.count} leçons</span>
-        <span style={{ fontWeight: 700, color: levelColor }}>{pct}%</span>
-      </div>
-    </div>
+    </Link>
   );
 }
 
@@ -281,22 +293,13 @@ export default function AcademyPage() {
         
         // 1. Update TCF Bands state dynamically based on API responses
         setTcfBands(prev => prev.map(band => {
-          if (band.id === 'beginner' && data.beginner) {
+          const apiBand = data[band.id];
+          if (apiBand) {
             return {
               ...band,
-              progress: data.beginner.progress,
+              progress: apiBand.progress,
               skills: band.skills.map(skill => {
-                const apiSkill = data.beginner.skills.find((s: any) => s.label === skill.label);
-                return apiSkill ? { ...skill, done: apiSkill.done, exercises: apiSkill.exercises } : skill;
-              })
-            };
-          }
-          if (band.id === 'intermediate' && data.intermediate) {
-            return {
-              ...band,
-              progress: data.intermediate.progress,
-              skills: band.skills.map(skill => {
-                const apiSkill = data.intermediate.skills.find((s: any) => s.label === skill.label);
+                const apiSkill = apiBand.skills.find((s: any) => s.label === skill.label);
                 return apiSkill ? { ...skill, done: apiSkill.done, exercises: apiSkill.exercises } : skill;
               })
             };
@@ -538,61 +541,67 @@ export default function AcademyPage() {
                   transition={{ delay: li * 0.08 }}
                 >
                   {/* Level Header */}
-                  <div
-                    style={{
-                      backgroundColor: level.bgColor,
-                      border: `1px solid ${level.borderColor}`,
-                      borderRadius: '1rem',
-                      padding: '1.25rem 1.5rem',
-                      marginBottom: '1rem',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      flexWrap: 'wrap',
-                      gap: '1rem',
-                    }}
-                  >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                      <div style={{
-                        width: 48, height: 48, borderRadius: 12,
-                        backgroundColor: `${level.color}18`,
-                        border: `2px solid ${level.borderColor}`,
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        fontFamily: 'Outfit,sans-serif', fontWeight: 900, fontSize: '1rem', color: level.color,
-                        flexShrink: 0,
-                      }}>
-                        {level.code}
-                      </div>
-                      <div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                          <h2 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.1rem', fontWeight: 800, color: 'hsl(var(--text-primary))' }}>
-                            {level.emoji} {level.title}
-                          </h2>
-                          {level.recommended && (
-                            <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.1)', padding: '0.15rem 0.5rem', borderRadius: 999 }}>
-                              ★ TCF Target Level
-                            </span>
-                          )}
+                  <Link href={`/dashboard/academy/${level.code.toLowerCase()}`} style={{ textDecoration: 'none' }}>
+                    <div
+                      style={{
+                        backgroundColor: level.bgColor,
+                        border: `1px solid ${level.borderColor}`,
+                        borderRadius: '1rem',
+                        padding: '1.25rem 1.5rem',
+                        marginBottom: '1rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        flexWrap: 'wrap',
+                        gap: '1rem',
+                        cursor: 'pointer',
+                        transition: 'transform 0.15s, box-shadow 0.2s',
+                      }}
+                      onMouseOver={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-1px)'; }}
+                      onMouseOut={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                        <div style={{
+                          width: 48, height: 48, borderRadius: 12,
+                          backgroundColor: `${level.color}18`,
+                          border: `2px solid ${level.borderColor}`,
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          fontFamily: 'Outfit,sans-serif', fontWeight: 900, fontSize: '1rem', color: level.color,
+                          flexShrink: 0,
+                        }}>
+                          {level.code}
                         </div>
-                        <p style={{ fontSize: '0.8rem', color: 'hsl(var(--text-secondary))', marginTop: '0.2rem', maxWidth: '520px' }}>
-                          {level.desc}
-                        </p>
+                        <div>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                            <h2 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.1rem', fontWeight: 800, color: 'hsl(var(--text-primary))' }}>
+                              {level.emoji} {level.title}
+                            </h2>
+                            {level.recommended && (
+                              <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.1)', padding: '0.15rem 0.5rem', borderRadius: 999 }}>
+                                ★ TCF Target Level
+                              </span>
+                            )}
+                          </div>
+                          <p style={{ fontSize: '0.8rem', color: 'hsl(var(--text-secondary))', marginTop: '0.2rem', maxWidth: '520px' }}>
+                            {level.desc}
+                          </p>
+                        </div>
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.3rem', minWidth: '110px' }}>
+                        <span style={{ fontSize: '0.75rem', fontWeight: 700, color: level.color }}>
+                          {level.progress > 0 ? `${level.progress}% complete` : 'Not started'}
+                        </span>
+                        <div style={{ width: '110px' }}>
+                          <ProgressBar value={level.progress} color={level.color} />
+                        </div>
                       </div>
                     </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.3rem', minWidth: '110px' }}>
-                      <span style={{ fontSize: '0.75rem', fontWeight: 700, color: level.color }}>
-                        {level.progress > 0 ? `${level.progress}% complete` : 'Not started'}
-                      </span>
-                      <div style={{ width: '110px' }}>
-                        <ProgressBar value={level.progress} color={level.color} />
-                      </div>
-                    </div>
-                  </div>
+                  </Link>
 
                   {/* Module Cards Grid */}
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '1rem' }}>
                     {level.modules.map(mod => (
-                      <ModuleCard key={mod.label} mod={mod} levelColor={level.color} />
+                      <ModuleCard key={mod.label} mod={mod} levelColor={level.color} levelCode={level.code} />
                     ))}
                   </div>
                 </motion.div>

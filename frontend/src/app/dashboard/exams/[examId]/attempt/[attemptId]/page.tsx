@@ -263,6 +263,11 @@ export default function ExamAttemptPage() {
 
   const section = exam?.sections?.[currentSectionIndex];
   const isLastSection = exam ? currentSectionIndex === exam.sections.length - 1 : false;
+  // A bonus section is any section with orderIndex >= 5 (task 3 extras)
+  const isBonusSection = section?.orderIndex >= 5;
+  // The last REQUIRED section is the last one with orderIndex <= 4
+  const lastRequiredIdx = exam ? [...(exam.sections || [])].reduce((last: number, s: any, idx: number) => s.orderIndex <= 4 ? idx : last, -1) : -1;
+  const isLastRequiredSection = currentSectionIndex === lastRequiredIdx;
 
   const handleNextOrSubmit = () => {
     if (timerRef.current) clearInterval(timerRef.current);
@@ -431,6 +436,37 @@ export default function ExamAttemptPage() {
       {section && (
         <AnimatePresence mode="wait">
           <motion.div key={currentSectionIndex} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }}>
+            {/* Bonus Section Banner */}
+            {isBonusSection && (
+              <div style={{
+                marginBottom: '1.75rem',
+                padding: '1.25rem 1.5rem',
+                borderRadius: '1rem',
+                background: 'linear-gradient(135deg, rgba(245,158,11,0.08) 0%, rgba(217,119,6,0.04) 100%)',
+                border: '1.5px solid rgba(245,158,11,0.3)',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '1rem',
+                flexWrap: 'wrap'
+              }}>
+                <div style={{ fontSize: '2rem', lineHeight: 1 }}>🌟</div>
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontFamily: 'Outfit,sans-serif', fontWeight: 800, fontSize: '1.05rem', color: '#92400e', marginBottom: '0.2rem' }}>
+                    Bonus Challenge Unlocked!
+                  </div>
+                  <div style={{ fontSize: '0.875rem', color: '#78350f', lineHeight: 1.5 }}>
+                    You&apos;ve completed the official TCF tasks. This is an <strong>optional advanced challenge</strong> (C1–C2 level). It&apos;s not graded separately — tackle it to push your limits or skip it to submit.
+                  </div>
+                </div>
+                <span style={{
+                  fontSize: '0.7rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.06em',
+                  color: '#92400e', backgroundColor: 'rgba(245,158,11,0.15)',
+                  padding: '0.35rem 0.85rem', borderRadius: '999px',
+                  border: '1px solid rgba(245,158,11,0.25)', flexShrink: 0
+                }}>Optional</span>
+              </div>
+            )}
+
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '2.25rem', marginTop: '1rem' }}>
               {(() => { const Icon = SECTION_ICONS[section.type] || FileText; return <Icon size={24} color={colors.primary} />; })()}
               <h2 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.5rem', fontWeight: 800, color: 'hsl(var(--text-primary))' }}>
@@ -756,32 +792,52 @@ export default function ExamAttemptPage() {
               })}
             </div>
 
-            {/* Navigation */}
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', marginTop: '2.5rem', gap: '1rem' }}>
-              {!isSectionComplete() && !isLastSection && (
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', marginTop: '2.5rem', gap: '1rem' }}>
+              {!isSectionComplete() && !isLastSection && !isBonusSection && (
                 <div style={{ fontSize: '0.85rem', color: 'hsl(var(--text-secondary))', fontWeight: 500, padding: '0.75rem 1rem', backgroundColor: 'hsl(var(--bg-base))', borderRadius: '0.75rem', border: '1px solid hsl(var(--border))' }}>
                   ⚠️ Please answer all questions before proceeding
                 </div>
               )}
-              <button onClick={() => {
-                if (isSectionComplete()) {
-                  markSectionComplete(currentSectionIndex);
-                  handleNextOrSubmit();
-                }
-              }} 
-              disabled={submitMutation.isPending || (!isLastSection && !isSectionComplete())}
-                className={!isLastSection && !isSectionComplete() ? 'btn-secondary' : 'btn-primary'} 
-                style={{ 
-                  display: 'flex', 
-                  alignItems: 'center', 
-                  gap: '0.5rem', 
-                  padding: '0.875rem 1.5rem', 
-                  fontSize: '0.95rem',
-                  opacity: (!isLastSection && !isSectionComplete()) ? 0.5 : 1,
-                  cursor: (!isLastSection && !isSectionComplete()) ? 'not-allowed' : 'pointer'
-                }}>
-                {submitMutation.isPending ? 'Submitting...' : isLastSection ? <><Send size={18} /> Submit Exam</> : <>Next Section <ChevronRight size={18} /></>}
-              </button>
+              <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+                {/* Skip button for bonus sections */}
+                {isBonusSection && (
+                  <button
+                    onClick={() => {
+                      if (timerRef.current) clearInterval(timerRef.current);
+                      if (isLastSection) submitMutation.mutate();
+                      else nextSection();
+                    }}
+                    style={{
+                      display: 'flex', alignItems: 'center', gap: '0.4rem',
+                      padding: '0.875rem 1.25rem', fontSize: '0.9rem', fontWeight: 600,
+                      borderRadius: '0.75rem', border: '1px solid hsl(var(--border))',
+                      background: 'transparent', color: 'hsl(var(--text-secondary))', cursor: 'pointer'
+                    }}
+                  >
+                    {isLastSection ? 'Skip & Submit' : 'Skip Bonus →'}
+                  </button>
+                )}
+                <button onClick={() => {
+                  if (isBonusSection || isSectionComplete()) {
+                    markSectionComplete(currentSectionIndex);
+                    handleNextOrSubmit();
+                  }
+                }}
+                disabled={submitMutation.isPending || (!isLastSection && !isSectionComplete() && !isBonusSection)}
+                  className={(!isLastSection && !isSectionComplete() && !isBonusSection) ? 'btn-secondary' : 'btn-primary'}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '0.5rem',
+                    padding: '0.875rem 1.5rem',
+                    fontSize: '0.95rem',
+                    opacity: (!isLastSection && !isSectionComplete() && !isBonusSection) ? 0.5 : 1,
+                    cursor: (!isLastSection && !isSectionComplete() && !isBonusSection) ? 'not-allowed' : 'pointer',
+                    ...(isBonusSection ? { background: 'linear-gradient(135deg, #f59e0b, #d97706)', boxShadow: '0 8px 20px -4px rgba(245,158,11,0.4)' } : {})
+                  }}>
+                  {submitMutation.isPending ? 'Submitting...' : isLastSection ? <><Send size={18} /> <span>Submit Exam</span></> : <><span>Next Section</span><ChevronRight size={18} /></>}
+                </button>
+              </div>
             </div>
           </motion.div>
         </AnimatePresence>
