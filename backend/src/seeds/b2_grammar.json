@@ -1,0 +1,1178 @@
+[
+  {
+    "title": "Subjunctive and Logical Connections",
+    "description": "Master the present and past subjunctive, alongside advanced logical connectors to refine your arguments.",
+    "lessons": [
+      {
+        "title": "Le subjonctif présent",
+        "description": "Forming and using the present subjunctive to express necessity, doubt, and emotions.",
+        "vocabulary": [
+          {
+            "french": "il faut que",
+            "english": "it is necessary that"
+          },
+          {
+            "french": "bien que",
+            "english": "although"
+          },
+          {
+            "french": "je doute que",
+            "english": "I doubt that"
+          },
+          {
+            "french": "il est essentiel que",
+            "english": "it is essential that"
+          },
+          {
+            "french": "je suis heureux que",
+            "english": "I am happy that"
+          },
+          {
+            "french": "une nécessité",
+            "english": "necessity"
+          },
+          {
+            "french": "un doute",
+            "english": "doubt"
+          },
+          {
+            "french": "une émotion",
+            "english": "emotion"
+          },
+          {
+            "french": "exiger que",
+            "english": "to require that"
+          },
+          {
+            "french": "souhaiter que",
+            "english": "to wish that"
+          }
+        ],
+        "grammar": {
+          "title": "Using the present subjunctive",
+          "text": "The present subjunctive is used after expressions of necessity, doubt, emotion, desire, and judgment. It is usually introduced by que. Example: Il faut que tu viennes. (You must come.) Je doute qu'il soit prêt. (I doubt that he is ready.) The subjunctive forms are often built from the third-person plural stem of the present tense: ils parlent → que je parle, que nous parlions."
+        },
+        "reading": "Il est essentiel que les citoyens participent à la vie démocratique. Bien que certaines décisions soient contestées, il faut que le dialogue continue. Je doute que toutes les solutions soient parfaites, mais je suis heureux que les discussions progressent. Les experts souhaitent que des réformes soient mises en œuvre rapidement.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression requires the subjunctive?",
+            "options": [
+              "Il faut que",
+              "Je sais que",
+              "Il est certain que",
+              "Je constate que"
+            ],
+            "correctKey": "Il faut que"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct sentence.",
+            "options": [
+              "Il faut que tu viennes.",
+              "Il faut que tu viens.",
+              "Il faut que tu viendras.",
+              "Il faut que tu es venu."
+            ],
+            "correctKey": "Il faut que tu viennes."
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which feeling commonly triggers the subjunctive?",
+            "options": [
+              "une émotion",
+              "un fait certain",
+              "une date",
+              "une mesure"
+            ],
+            "correctKey": "une émotion"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Il faut que vous *** votre opinion lors du débat.",
+            "correctKey": "défendiez"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je doute qu'il *** prêt pour la réunion.",
+            "correctKey": "soit"
+          }
+        ]
+      },
+      {
+        "title": "Les connecteurs logiques avancés",
+        "description": "Using sophisticated linking words (néanmoins, par conséquent, bien que, en outre) to build clear arguments.",
+        "vocabulary": [
+          {
+            "french": "néanmoins",
+            "english": "nevertheless"
+          },
+          {
+            "french": "par conséquent",
+            "english": "consequently"
+          },
+          {
+            "french": "en outre",
+            "english": "furthermore"
+          },
+          {
+            "french": "toutefois",
+            "english": "however"
+          },
+          {
+            "french": "ainsi",
+            "english": "thus"
+          },
+          {
+            "french": "en revanche",
+            "english": "on the other hand"
+          },
+          {
+            "french": "dès lors",
+            "english": "therefore"
+          },
+          {
+            "french": "bien que",
+            "english": "although"
+          },
+          {
+            "french": "de surcroît",
+            "english": "moreover"
+          },
+          {
+            "french": "cependant",
+            "english": "however"
+          }
+        ],
+        "grammar": {
+          "title": "Building advanced arguments with connectors",
+          "text": "Advanced connectors help organize ideas logically. Use par conséquent, ainsi, and dès lors for consequence. Use néanmoins, toutefois, and cependant for contrast. Use en outre and de surcroît to add information. Example: Les résultats sont encourageants; néanmoins, des efforts restent nécessaires. (The results are encouraging; nevertheless, further efforts are needed.)"
+        },
+        "reading": "Les investissements dans les énergies renouvelables augmentent. Par conséquent, plusieurs pays réduisent progressivement leur dépendance aux combustibles fossiles. Néanmoins, les défis financiers demeurent importants. En outre, la coopération internationale joue un rôle déterminant. Ainsi, les objectifs climatiques deviennent plus accessibles.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector expresses consequence?",
+            "options": [
+              "par conséquent",
+              "néanmoins",
+              "cependant",
+              "toutefois"
+            ],
+            "correctKey": "par conséquent"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector introduces additional information?",
+            "options": [
+              "en outre",
+              "cependant",
+              "néanmoins",
+              "bien que"
+            ],
+            "correctKey": "en outre"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the connector expressing contrast.",
+            "options": [
+              "néanmoins",
+              "ainsi",
+              "dès lors",
+              "par conséquent"
+            ],
+            "correctKey": "néanmoins"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les coûts ont diminué ; ***, le projet est devenu rentable.",
+            "correctKey": "par conséquent"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les progrès sont réels ; ***, des défis subsistent.",
+            "correctKey": "néanmoins"
+          }
+        ]
+      },
+      {
+        "title": "Le subjonctif passé",
+        "description": "Forming and using the past subjunctive to express regrets or completed actions in a subjective context.",
+        "vocabulary": [
+          {
+            "french": "regretter que",
+            "english": "to regret that"
+          },
+          {
+            "french": "être surpris que",
+            "english": "to be surprised that"
+          },
+          {
+            "french": "avoir participé",
+            "english": "to have participated"
+          },
+          {
+            "french": "être venu",
+            "english": "to have come"
+          },
+          {
+            "french": "avant que",
+            "english": "before"
+          },
+          {
+            "french": "après que",
+            "english": "after"
+          },
+          {
+            "french": "une action accomplie",
+            "english": "completed action"
+          },
+          {
+            "french": "un reproche",
+            "english": "reproach"
+          },
+          {
+            "french": "une appréciation",
+            "english": "assessment"
+          },
+          {
+            "french": "une réaction",
+            "english": "reaction"
+          }
+        ],
+        "grammar": {
+          "title": "Using the past subjunctive",
+          "text": "The past subjunctive expresses a completed action viewed through necessity, emotion, doubt, or judgment. It is formed with the subjunctive of avoir or être + past participle. Example: Je suis heureux que tu aies réussi. (I am happy that you succeeded.) Nous regrettons qu'il soit parti si tôt. (We regret that he left so early.)"
+        },
+        "reading": "Les organisateurs sont satisfaits que les participants aient contribué activement aux échanges. Certains regrettent toutefois que plusieurs experts ne soient pas venus. Je suis surpris que le projet ait obtenu autant de soutien. Ces réactions montrent l'importance de l'événement pour la communauté.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "How is the past subjunctive formed?",
+            "options": [
+              "subjunctive auxiliary + past participle",
+              "imparfait + infinitive",
+              "future stem + endings",
+              "present tense only"
+            ],
+            "correctKey": "subjunctive auxiliary + past participle"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct sentence.",
+            "options": [
+              "Je suis heureux que tu aies réussi.",
+              "Je suis heureux que tu as réussi.",
+              "Je suis heureux que tu avais réussi.",
+              "Je suis heureux que tu réussiras."
+            ],
+            "correctKey": "Je suis heureux que tu aies réussi."
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression often introduces the past subjunctive?",
+            "options": [
+              "regretter que",
+              "je sais que",
+              "il est évident que",
+              "je constate que"
+            ],
+            "correctKey": "regretter que"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Nous regrettons qu'il *** parti si tôt.",
+            "correctKey": "soit"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je suis heureux que vous *** réussi cet examen.",
+            "correctKey": "ayez"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Sentence Structures and Passive Voice",
+    "description": "Structure complex sentences, use the passive voice, and report past speech in formal contexts.",
+    "lessons": [
+      {
+        "title": "La voix passive",
+        "description": "Forming and using the passive voice (être + past participle + par) to change sentence focus.",
+        "vocabulary": [
+          {
+            "french": "être rédigé",
+            "english": "to be written"
+          },
+          {
+            "french": "être approuvé",
+            "english": "to be approved"
+          },
+          {
+            "french": "une procédure",
+            "english": "procedure"
+          },
+          {
+            "french": "un rapport",
+            "english": "report"
+          },
+          {
+            "french": "une décision",
+            "english": "decision"
+          },
+          {
+            "french": "être adopté",
+            "english": "to be adopted"
+          },
+          {
+            "french": "une mesure",
+            "english": "measure"
+          },
+          {
+            "french": "une réforme",
+            "english": "reform"
+          },
+          {
+            "french": "être mis en œuvre",
+            "english": "to be implemented"
+          },
+          {
+            "french": "une autorité compétente",
+            "english": "competent authority"
+          }
+        ],
+        "grammar": {
+          "title": "Forming the passive voice",
+          "text": "The passive voice is formed with être + past participle. The past participle agrees with the subject. The agent may be introduced by par. Example: Le rapport a été rédigé par les experts. (The report was written by the experts.) The passive voice focuses attention on the action or result rather than the agent."
+        },
+        "reading": "Une nouvelle réforme a été adoptée par le Parlement. Les mesures nécessaires seront mises en œuvre au cours des prochains mois. Un rapport détaillé a été rédigé par une autorité compétente. Ces décisions ont été approuvées après plusieurs consultations publiques.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which sentence is in the passive voice?",
+            "options": [
+              "Le rapport a été rédigé par les experts.",
+              "Les experts ont rédigé le rapport.",
+              "Les experts rédigent le rapport.",
+              "Les experts rédigeront le rapport."
+            ],
+            "correctKey": "Le rapport a été rédigé par les experts."
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What auxiliary is used in the passive voice?",
+            "options": [
+              "être",
+              "avoir",
+              "aller",
+              "faire"
+            ],
+            "correctKey": "être"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the purpose of the passive voice?",
+            "options": [
+              "to focus on the action or result",
+              "to express future plans",
+              "to ask questions",
+              "to give commands"
+            ],
+            "correctKey": "to focus on the action or result"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La décision a été *** par le conseil d'administration.",
+            "correctKey": "approuvée"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La réforme sera *** en œuvre l'année prochaine.",
+            "correctKey": "mise"
+          }
+        ]
+      },
+      {
+        "title": "Le discours rapporté au passé",
+        "description": "Reporting spoken words when the main reporting verb is in the past (changes in tenses like present -> imperfect, future -> conditional).",
+        "vocabulary": [
+          {
+            "french": "affirmer que",
+            "english": "to state that"
+          },
+          {
+            "french": "déclarer que",
+            "english": "to declare that"
+          },
+          {
+            "french": "annoncer que",
+            "english": "to announce that"
+          },
+          {
+            "french": "prétendre que",
+            "english": "to claim that"
+          },
+          {
+            "french": "une citation",
+            "english": "quotation"
+          },
+          {
+            "french": "un témoignage",
+            "english": "testimony"
+          },
+          {
+            "french": "une déclaration",
+            "english": "statement"
+          },
+          {
+            "french": "le conditionnel",
+            "english": "conditional tense"
+          },
+          {
+            "french": "l'imparfait",
+            "english": "imperfect tense"
+          },
+          {
+            "french": "un changement de temps",
+            "english": "tense shift"
+          }
+        ],
+        "grammar": {
+          "title": "Tense changes in reported speech",
+          "text": "When the reporting verb is in the past, tenses often shift. Present becomes imparfait, future becomes conditional, and passé composé often becomes plus-que-parfait. Example: Il dit : « Je travaille. » → Il a dit qu'il travaillait. (He said that he was working.) Elle dit : « Je viendrai. » → Elle a dit qu'elle viendrait. (She said that she would come.)"
+        },
+        "reading": "Lors de son intervention, le ministre a déclaré que les réformes produiraient des résultats positifs. Il a également affirmé que l'économie progressait régulièrement. Plusieurs observateurs ont toutefois indiqué que certaines prévisions étaient trop optimistes. Ces déclarations ont été largement commentées par les médias.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does the present tense usually become in reported speech after a past reporting verb?",
+            "options": [
+              "imparfait",
+              "futur simple",
+              "impératif",
+              "subjonctif présent"
+            ],
+            "correctKey": "imparfait"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct transformation: Elle a dit : « Je viendrai. »",
+            "options": [
+              "Elle a dit qu'elle viendrait.",
+              "Elle a dit qu'elle vient.",
+              "Elle a dit qu'elle viendra.",
+              "Elle a dit qu'elle soit venue."
+            ],
+            "correctKey": "Elle a dit qu'elle viendrait."
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which tense often replaces the future in reported speech?",
+            "options": [
+              "conditionnel",
+              "imparfait",
+              "présent",
+              "passé simple"
+            ],
+            "correctKey": "conditionnel"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Il a affirmé que l'économie *** régulièrement.",
+            "correctKey": "progressait"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Elle a dit qu'elle *** le lendemain.",
+            "correctKey": "viendrait"
+          }
+        ]
+      },
+      {
+        "title": "Les structures de phrases complexes",
+        "description": "Combining multiple clauses using coordinate and subordinate structures.",
+        "vocabulary": [
+          {
+            "french": "une proposition principale",
+            "english": "main clause"
+          },
+          {
+            "french": "une proposition subordonnée",
+            "english": "subordinate clause"
+          },
+          {
+            "french": "puisque",
+            "english": "since"
+          },
+          {
+            "french": "tandis que",
+            "english": "whereas"
+          },
+          {
+            "french": "afin que",
+            "english": "so that"
+          },
+          {
+            "french": "alors que",
+            "english": "while/whereas"
+          },
+          {
+            "french": "du fait que",
+            "english": "due to the fact that"
+          },
+          {
+            "french": "dans la mesure où",
+            "english": "insofar as"
+          },
+          {
+            "french": "une coordination",
+            "english": "coordination"
+          },
+          {
+            "french": "une hiérarchisation des idées",
+            "english": "hierarchy of ideas"
+          }
+        ],
+        "grammar": {
+          "title": "Building complex sentences",
+          "text": "Complex sentences combine main and subordinate clauses to express cause, consequence, contrast, purpose, or condition. Example: Puisque les résultats sont positifs, le projet sera poursuivi. (Since the results are positive, the project will continue.) Nous investissons davantage afin que les objectifs soient atteints. (We are investing more so that the objectives are achieved.)"
+        },
+        "reading": "Puisque les ressources disponibles sont limitées, les responsables doivent établir des priorités. Tandis que certains projets progressent rapidement, d'autres nécessitent davantage de financement. Les décisions sont prises afin que les objectifs stratégiques soient atteints. Cette hiérarchisation des idées permet une gestion plus efficace.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector expresses purpose?",
+            "options": [
+              "afin que",
+              "puisque",
+              "tandis que",
+              "alors que"
+            ],
+            "correctKey": "afin que"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector introduces a cause?",
+            "options": [
+              "puisque",
+              "afin que",
+              "tandis que",
+              "alors que"
+            ],
+            "correctKey": "puisque"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the role of a subordinate clause?",
+            "options": [
+              "to add dependent information",
+              "to replace the subject",
+              "to create passive voice",
+              "to express only future actions"
+            ],
+            "correctKey": "to add dependent information"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Nous investissons davantage *** les objectifs soient atteints.",
+            "correctKey": "afin que"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "*** les ressources sont limitées, il faut établir des priorités.",
+            "correctKey": "Puisque"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Conditional, Hypotheses and Pronouns",
+    "description": "Express regrets, complex conditions, and replace nouns using relative pronouns.",
+    "lessons": [
+      {
+        "title": "Le conditionnel passé",
+        "description": "Forming and using the past conditional to express regrets and unfulfilled past hypotheses.",
+        "vocabulary": [
+          {
+            "french": "un regret",
+            "english": "regret"
+          },
+          {
+            "french": "une occasion manquée",
+            "english": "missed opportunity"
+          },
+          {
+            "french": "j'aurais dû",
+            "english": "I should have"
+          },
+          {
+            "french": "j'aurais pu",
+            "english": "I could have"
+          },
+          {
+            "french": "une hypothèse",
+            "english": "hypothesis"
+          },
+          {
+            "french": "une conséquence",
+            "english": "consequence"
+          },
+          {
+            "french": "un choix",
+            "english": "choice"
+          },
+          {
+            "french": "agir différemment",
+            "english": "to act differently"
+          },
+          {
+            "french": "tirer une leçon",
+            "english": "to learn a lesson"
+          },
+          {
+            "french": "une erreur passée",
+            "english": "past mistake"
+          }
+        ],
+        "grammar": {
+          "title": "Using the past conditional",
+          "text": "The past conditional is formed with the conditional of avoir or être + past participle. It expresses regrets, reproaches, or unrealized possibilities. Example: J'aurais accepté l'offre si j'avais eu plus d'informations. (I would have accepted the offer if I had had more information.) Tu aurais dû me prévenir. (You should have informed me.)"
+        },
+        "reading": "Après l'échec du projet, plusieurs responsables ont reconnu qu'ils auraient pu mieux anticiper les risques. Certains ont déclaré qu'ils auraient dû consulter davantage d'experts avant de prendre une décision. Avec plus de temps, l'équipe aurait probablement obtenu de meilleurs résultats. Cette expérience leur a permis de tirer une leçon importante.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "How is the past conditional formed?",
+            "options": [
+              "conditional auxiliary + past participle",
+              "imparfait + infinitive",
+              "future stem + present endings",
+              "subjunctive only"
+            ],
+            "correctKey": "conditional auxiliary + past participle"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct sentence.",
+            "options": [
+              "J'aurais accepté cette proposition.",
+              "J'accepterais cette proposition hier.",
+              "J'accepte cette proposition demain.",
+              "J'avais accepté cette proposition demain."
+            ],
+            "correctKey": "J'aurais accepté cette proposition."
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does the past conditional often express?",
+            "options": [
+              "regret or unrealized possibility",
+              "certainty",
+              "direct command",
+              "habit"
+            ],
+            "correctKey": "regret or unrealized possibility"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Si j'avais su, j'*** agi différemment.",
+            "correctKey": "aurais"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Tu *** dû vérifier les informations avant de décider.",
+            "correctKey": "aurais"
+          }
+        ]
+      },
+      {
+        "title": "Les pronoms relatifs composés",
+        "description": "Connecting clauses using compound relative pronouns (auquel, avec laquelle, pour lesquels).",
+        "vocabulary": [
+          {
+            "french": "auquel",
+            "english": "to which"
+          },
+          {
+            "french": "à laquelle",
+            "english": "to which (feminine)"
+          },
+          {
+            "french": "auxquels",
+            "english": "to which (plural masculine)"
+          },
+          {
+            "french": "auxquelles",
+            "english": "to which (plural feminine)"
+          },
+          {
+            "french": "avec lequel",
+            "english": "with which"
+          },
+          {
+            "french": "pour laquelle",
+            "english": "for which"
+          },
+          {
+            "french": "grâce auquel",
+            "english": "thanks to which"
+          },
+          {
+            "french": "un antécédent",
+            "english": "antecedent"
+          },
+          {
+            "french": "une référence",
+            "english": "reference"
+          },
+          {
+            "french": "une relation grammaticale",
+            "english": "grammatical relationship"
+          }
+        ],
+        "grammar": {
+          "title": "Using compound relative pronouns",
+          "text": "Compound relative pronouns replace nouns after prepositions such as à, avec, sur, pour, and dans. Example: Voici le projet auquel je participe. (Here is the project in which I participate.) C'est l'entreprise avec laquelle nous collaborons. (It is the company with which we collaborate.) They avoid repetition and create more sophisticated sentences."
+        },
+        "reading": "L'organisation avec laquelle nous travaillons soutient plusieurs projets internationaux. Le programme auquel les étudiants participent favorise la mobilité académique. Les initiatives grâce auxquelles de nombreux jeunes acquièrent de l'expérience sont particulièrement appréciées. Ces partenariats renforcent la coopération entre les institutions.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct pronoun: Voici le projet ___ je participe.",
+            "options": [
+              "auquel",
+              "dont",
+              "qui",
+              "que"
+            ],
+            "correctKey": "auquel"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which pronoun means 'with which' for a feminine noun?",
+            "options": [
+              "avec laquelle",
+              "avec lequel",
+              "auxquels",
+              "auquel"
+            ],
+            "correctKey": "avec laquelle"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Why are compound relative pronouns used?",
+            "options": [
+              "to avoid repetition after prepositions",
+              "to form the passive voice",
+              "to express future actions",
+              "to ask questions"
+            ],
+            "correctKey": "to avoid repetition after prepositions"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "C'est l'entreprise avec *** nous collaborons depuis plusieurs années.",
+            "correctKey": "laquelle"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le programme *** les étudiants participent est très sélectif.",
+            "correctKey": "auquel"
+          }
+        ]
+      },
+      {
+        "title": "L'hypothèse et la condition complexe",
+        "description": "Structuring sentences with complex conditions using 'si' clauses and advanced connectors (à condition que, au cas où).",
+        "vocabulary": [
+          {
+            "french": "à condition que",
+            "english": "provided that"
+          },
+          {
+            "french": "au cas où",
+            "english": "in case"
+          },
+          {
+            "french": "dans l'hypothèse où",
+            "english": "in the event that"
+          },
+          {
+            "french": "à moins que",
+            "english": "unless"
+          },
+          {
+            "french": "une éventualité",
+            "english": "possibility/eventuality"
+          },
+          {
+            "french": "une prévision",
+            "english": "forecast"
+          },
+          {
+            "french": "une condition préalable",
+            "english": "prerequisite"
+          },
+          {
+            "french": "anticiper",
+            "english": "to anticipate"
+          },
+          {
+            "french": "un scénario",
+            "english": "scenario"
+          },
+          {
+            "french": "une incertitude",
+            "english": "uncertainty"
+          }
+        ],
+        "grammar": {
+          "title": "Advanced conditional structures",
+          "text": "Complex conditions often use connectors beyond simple si clauses. Use à condition que and à moins que with the subjunctive. Example: Nous accepterons l'accord à condition qu'il soit respecté. (We will accept the agreement provided that it is respected.) Use au cas où with the conditional: Prenez votre passeport au cas où vous devriez voyager. (Take your passport in case you need to travel.)"
+        },
+        "reading": "Les autorités mettront en œuvre le nouveau plan à condition que les ressources nécessaires soient disponibles. Au cas où les conditions économiques se détérioreraient, des mesures supplémentaires seraient envisagées. Dans l'hypothèse où la situation évoluerait rapidement, les décideurs devraient adapter leur stratégie. Ces scénarios illustrent l'incertitude actuelle.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector requires the subjunctive?",
+            "options": [
+              "à condition que",
+              "au cas où",
+              "si",
+              "ensuite"
+            ],
+            "correctKey": "à condition que"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector means 'in case'?",
+            "options": [
+              "au cas où",
+              "à moins que",
+              "à condition que",
+              "bien que"
+            ],
+            "correctKey": "au cas où"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct sentence.",
+            "options": [
+              "Nous viendrons à condition qu'il soit disponible.",
+              "Nous viendrons à condition qu'il est disponible.",
+              "Nous viendrons à condition qu'il sera disponible.",
+              "Nous viendrons à condition qu'il était disponible."
+            ],
+            "correctKey": "Nous viendrons à condition qu'il soit disponible."
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Nous signerons l'accord *** qu'il soit respecté.",
+            "correctKey": "à condition"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Prenez des documents supplémentaires *** où ils seraient demandés.",
+            "correctKey": "au cas"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Participles, Clauses and Pronouns",
+    "description": "Master present participles, express purpose and concession, and handle double pronoun placement.",
+    "lessons": [
+      {
+        "title": "L'expression du but et de la concession",
+        "description": "Expressing goals (afin que, dans le but de) and compromise (bien que, malgré).",
+        "vocabulary": [
+          {
+            "french": "afin que",
+            "english": "so that"
+          },
+          {
+            "french": "dans le but de",
+            "english": "for the purpose of"
+          },
+          {
+            "french": "bien que",
+            "english": "although"
+          },
+          {
+            "french": "malgré",
+            "english": "despite"
+          },
+          {
+            "french": "un objectif",
+            "english": "objective"
+          },
+          {
+            "french": "une concession",
+            "english": "concession"
+          },
+          {
+            "french": "une contrainte",
+            "english": "constraint"
+          },
+          {
+            "french": "atteindre un résultat",
+            "english": "to achieve a result"
+          },
+          {
+            "french": "surmonter",
+            "english": "to overcome"
+          },
+          {
+            "french": "une difficulté",
+            "english": "difficulty"
+          }
+        ],
+        "grammar": {
+          "title": "Expressing purpose and concession",
+          "text": "Use afin que + subjunctive or dans le but de + infinitive to express purpose. Example: Nous investissons davantage afin que le projet réussisse. (We invest more so that the project succeeds.) Use bien que + subjunctive and malgré + noun to express concession. Example: Bien qu'il soit difficile, ce projet avance. (Although it is difficult, this project is progressing.)"
+        },
+        "reading": "L'entreprise développe de nouveaux outils afin que les équipes travaillent plus efficacement. Dans le but de réduire les coûts, plusieurs processus ont été automatisés. Bien que certaines difficultés persistent, les résultats sont encourageants. Malgré les contraintes budgétaires, les objectifs devraient être atteints.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector expresses purpose?",
+            "options": [
+              "afin que",
+              "bien que",
+              "malgré",
+              "cependant"
+            ],
+            "correctKey": "afin que"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector is followed by a noun?",
+            "options": [
+              "malgré",
+              "bien que",
+              "afin que",
+              "à condition que"
+            ],
+            "correctKey": "malgré"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct sentence.",
+            "options": [
+              "Bien qu'il soit fatigué, il continue.",
+              "Bien qu'il est fatigué, il continue.",
+              "Bien qu'il sera fatigué, il continue.",
+              "Bien qu'il était fatigué, il continue."
+            ],
+            "correctKey": "Bien qu'il soit fatigué, il continue."
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Nous agissons *** que les objectifs soient atteints.",
+            "correctKey": "afin"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "*** les difficultés, le projet progresse.",
+            "correctKey": "Malgré"
+          }
+        ]
+      },
+      {
+        "title": "Les participes présents et adjectifs verbaux",
+        "description": "Using present participles and verbal adjectives to describe actions or characteristics.",
+        "vocabulary": [
+          {
+            "french": "un participe présent",
+            "english": "present participle"
+          },
+          {
+            "french": "un adjectif verbal",
+            "english": "verbal adjective"
+          },
+          {
+            "french": "étant donné",
+            "english": "given"
+          },
+          {
+            "french": "concernant",
+            "english": "concerning"
+          },
+          {
+            "french": "convaincant",
+            "english": "convincing"
+          },
+          {
+            "french": "fatigant",
+            "english": "tiring"
+          },
+          {
+            "french": "une caractéristique",
+            "english": "characteristic"
+          },
+          {
+            "french": "une action simultanée",
+            "english": "simultaneous action"
+          },
+          {
+            "french": "une description",
+            "english": "description"
+          },
+          {
+            "french": "un contexte",
+            "english": "context"
+          }
+        ],
+        "grammar": {
+          "title": "Present participles vs verbal adjectives",
+          "text": "The present participle expresses a simultaneous action and is invariable. Example: En travaillant régulièrement, il progresse. (By working regularly, he improves.) A verbal adjective describes a noun and agrees in gender and number. Example: Une présentation convaincante. (A convincing presentation.)"
+        },
+        "reading": "Concernant le nouveau projet, plusieurs analyses sont en cours. Les experts travaillent en évaluant les risques potentiels. Une stratégie convaincante a été présentée lors de la réunion. Étant donné les contraintes actuelles, les responsables privilégient une approche progressive.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the main difference between a present participle and a verbal adjective?",
+            "options": [
+              "the adjective agrees with the noun",
+              "the participle expresses the future",
+              "the adjective never changes",
+              "the participle is always passive"
+            ],
+            "correctKey": "the adjective agrees with the noun"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which word is a verbal adjective?",
+            "options": [
+              "convaincante",
+              "évaluant",
+              "étant",
+              "concernant"
+            ],
+            "correctKey": "convaincante"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which form expresses a simultaneous action?",
+            "options": [
+              "present participle",
+              "future tense",
+              "conditional",
+              "passive voice"
+            ],
+            "correctKey": "present participle"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une présentation *** a convaincu les investisseurs.",
+            "correctKey": "convaincante"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les experts travaillent en *** les risques.",
+            "correctKey": "évaluant"
+          }
+        ]
+      },
+      {
+        "title": "Le double pronominal",
+        "description": "Placing double pronouns (le lui, y en, me les) correctly in statements, negatives, and imperatives.",
+        "vocabulary": [
+          {
+            "french": "le lui",
+            "english": "it to him/her"
+          },
+          {
+            "french": "la leur",
+            "english": "it to them"
+          },
+          {
+            "french": "me les",
+            "english": "them to me"
+          },
+          {
+            "french": "y en",
+            "english": "there/of them"
+          },
+          {
+            "french": "un pronom complément",
+            "english": "object pronoun"
+          },
+          {
+            "french": "un ordre des pronoms",
+            "english": "pronoun order"
+          },
+          {
+            "french": "une phrase négative",
+            "english": "negative sentence"
+          },
+          {
+            "french": "un impératif",
+            "english": "imperative"
+          },
+          {
+            "french": "une substitution",
+            "english": "replacement"
+          },
+          {
+            "french": "une construction grammaticale",
+            "english": "grammatical structure"
+          }
+        ],
+        "grammar": {
+          "title": "Double pronoun placement",
+          "text": "In statements, object pronouns come before the verb in a specific order: me/te/se/nous/vous + le/la/les + lui/leur + y + en. Example: Je le lui donne. (I give it to him.) In negative sentences: Je ne le lui donne pas. In affirmative imperatives, pronouns follow the verb: Donnez-le-lui ! (Give it to him!)"
+        },
+        "reading": "Lors de la réunion, le responsable a présenté le rapport aux membres du comité. Plus tard, il le leur a envoyé par courriel. Certains documents manquaient, mais il leur en a transmis une copie supplémentaire. Grâce à cette organisation, chacun a pu consulter les informations nécessaires à temps.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct sentence.",
+            "options": [
+              "Je le lui donne.",
+              "Je lui le donne.",
+              "Je donne lui le.",
+              "Je le donne lui."
+            ],
+            "correctKey": "Je le lui donne."
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "How are pronouns placed in an affirmative imperative?",
+            "options": [
+              "after the verb",
+              "before the verb",
+              "at the end of the sentence only",
+              "after the subject"
+            ],
+            "correctKey": "after the verb"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct negative sentence.",
+            "options": [
+              "Je ne le lui donne pas.",
+              "Je le ne lui donne pas.",
+              "Je ne donne le lui pas.",
+              "Je lui ne le donne pas."
+            ],
+            "correctKey": "Je ne le lui donne pas."
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je *** donne immédiatement.",
+            "correctKey": "le lui"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Envoyez-*** dès que possible !",
+            "correctKey": "le-lui"
+          }
+        ]
+      }
+    ]
+  }
+]

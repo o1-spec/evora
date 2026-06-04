@@ -1,0 +1,968 @@
+[
+  {
+    "title": "Littérature",
+    "description": "Analyse textuelle fine des grands courants littéraires français.",
+    "lessons": [
+      {
+        "title": "L'évolution du roman au XXe siècle",
+        "description": "Analyzing narration shifts, structural stream-of-consciousness, and modern narrative forms.",
+        "vocabulary": [
+          {
+            "french": "le flux de conscience",
+            "english": "stream of consciousness"
+          },
+          {
+            "french": "la focalisation interne",
+            "english": "internal focalization"
+          },
+          {
+            "french": "la fragmentation narrative",
+            "english": "narrative fragmentation"
+          },
+          {
+            "french": "un narrateur non fiable",
+            "english": "unreliable narrator"
+          },
+          {
+            "french": "la polyphonie romanesque",
+            "english": "novelistic polyphony"
+          },
+          {
+            "french": "une temporalité éclatée",
+            "english": "fragmented temporality"
+          },
+          {
+            "french": "l'introspection",
+            "english": "introspection"
+          },
+          {
+            "french": "la déconstruction du récit",
+            "english": "deconstruction of narrative"
+          },
+          {
+            "french": "une subjectivité exacerbée",
+            "english": "heightened subjectivity"
+          },
+          {
+            "french": "le Nouveau Roman",
+            "english": "the New Novel"
+          }
+        ],
+        "grammar": {
+          "title": "Narrative fragmentation and free indirect discourse",
+          "text": "Modern novels often blur the boundaries between narrator and character through free indirect discourse. Example: 'Il avançait dans la rue. Pourquoi continuer ?' The question belongs to the character's thoughts but is presented without quotation marks. This technique reinforces subjectivity and psychological depth."
+        },
+        "reading": "Au XXe siècle, le roman abandonne souvent la linéarité classique. La fragmentation narrative et le flux de conscience traduisent une subjectivité exacerbée. Le narrateur non fiable remet en question la stabilité du récit, tandis que la temporalité éclatée brouille les repères chronologiques. Cette déconstruction du récit reflète les incertitudes du monde moderne.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which technique reflects a character's inner thoughts without quotation marks?",
+            "options": [
+              "le discours indirect libre",
+              "la comparaison",
+              "la personnification",
+              "le chiasme"
+            ],
+            "correctKey": "le discours indirect libre"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What characteristic defines many twentieth-century novels according to the text?",
+            "options": [
+              "la fragmentation narrative",
+              "l'unité absolue du récit",
+              "la versification régulière",
+              "la structure théâtrale"
+            ],
+            "correctKey": "la fragmentation narrative"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does the unreliable narrator challenge?",
+            "options": [
+              "the stability of the narrative",
+              "the existence of characters",
+              "the use of language",
+              "the poetic form"
+            ],
+            "correctKey": "the stability of the narrative"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La fragmentation narrative et le flux de *** traduisent une subjectivité exacerbée.",
+            "correctKey": "conscience"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le narrateur non fiable remet en question la stabilité du ***.",
+            "correctKey": "récit"
+          }
+        ]
+      },
+      {
+        "title": "L'analyse des textes classiques français",
+        "description": "Studying classical texts from Corneille, Racine, Molière, and La Fontaine.",
+        "vocabulary": [
+          {
+            "french": "la bienséance",
+            "english": "decorum"
+          },
+          {
+            "french": "la vraisemblance",
+            "english": "verisimilitude"
+          },
+          {
+            "french": "la règle des trois unités",
+            "english": "rule of the three unities"
+          },
+          {
+            "french": "la tirade",
+            "english": "extended speech"
+          },
+          {
+            "french": "une maxime morale",
+            "english": "moral maxim"
+          },
+          {
+            "french": "le conflit tragique",
+            "english": "tragic conflict"
+          },
+          {
+            "french": "la satire sociale",
+            "english": "social satire"
+          },
+          {
+            "french": "la catharsis",
+            "english": "catharsis"
+          },
+          {
+            "french": "l'alexandrin",
+            "english": "alexandrine verse"
+          },
+          {
+            "french": "une portée didactique",
+            "english": "didactic purpose"
+          }
+        ],
+        "grammar": {
+          "title": "Classical rhetoric and balanced syntax",
+          "text": "Classical French literature values symmetry, clarity, and rhetorical balance. Antithesis and parallel structures are common. Example: 'Je l'aimais inconstant, qu'aurais-je fait fidèle ?' The opposition strengthens the dramatic effect while preserving stylistic elegance."
+        },
+        "reading": "Les auteurs classiques recherchent l'équilibre entre émotion et raison. Chez Racine, le conflit tragique naît de passions irréconciliables. Molière privilégie la satire sociale afin de corriger les mœurs par le rire. Quant à La Fontaine, ses fables associent une portée didactique à une remarquable finesse stylistique. L'ensemble demeure soumis aux exigences de la bienséance et de la vraisemblance.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which author is associated with social satire in the passage?",
+            "options": [
+              "Molière",
+              "Racine",
+              "Corneille",
+              "Proust"
+            ],
+            "correctKey": "Molière"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What principle governs classical literature according to the text?",
+            "options": [
+              "la bienséance et la vraisemblance",
+              "la fragmentation narrative",
+              "le surréalisme",
+              "l'écriture automatique"
+            ],
+            "correctKey": "la bienséance et la vraisemblance"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the primary function of La Fontaine's fables?",
+            "options": [
+              "une portée didactique",
+              "une expérimentation linguistique",
+              "une dénonciation politique directe",
+              "une autobiographie"
+            ],
+            "correctKey": "une portée didactique"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Molière privilégie la satire *** afin de corriger les mœurs.",
+            "correctKey": "sociale"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les auteurs classiques respectent la *** et la vraisemblance.",
+            "correctKey": "bienséance"
+          }
+        ]
+      },
+      {
+        "title": "La poésie moderne et le surréalisme",
+        "description": "Exploring surrealist imagery, automatic writing, and modern poetic prose.",
+        "vocabulary": [
+          {
+            "french": "l'écriture automatique",
+            "english": "automatic writing"
+          },
+          {
+            "french": "une image onirique",
+            "english": "dreamlike image"
+          },
+          {
+            "french": "l'association libre",
+            "english": "free association"
+          },
+          {
+            "french": "un imaginaire débridé",
+            "english": "unrestrained imagination"
+          },
+          {
+            "french": "la subversion poétique",
+            "english": "poetic subversion"
+          },
+          {
+            "french": "le merveilleux",
+            "english": "the marvelous"
+          },
+          {
+            "french": "une métaphore fulgurante",
+            "english": "striking metaphor"
+          },
+          {
+            "french": "l'inconscient",
+            "english": "the unconscious"
+          },
+          {
+            "french": "une rupture esthétique",
+            "english": "aesthetic rupture"
+          },
+          {
+            "french": "la poésie en prose",
+            "english": "prose poetry"
+          }
+        ],
+        "grammar": {
+          "title": "Surrealist imagery and unexpected associations",
+          "text": "Surrealist writing often relies on unexpected juxtapositions. Example: 'La montre dévore le silence des étoiles.' The image does not follow logical reasoning but creates emotional and symbolic resonance. Such metaphors seek to access the unconscious mind."
+        },
+        "reading": "Le surréalisme rompt avec les contraintes rationnelles afin de libérer l'inconscient. Grâce à l'écriture automatique, le poète favorise l'émergence d'images oniriques et d'associations imprévues. Cette subversion poétique produit une rupture esthétique profonde. La poésie en prose devient alors le lieu privilégié d'un imaginaire débridé où le merveilleux s'invite dans le quotidien.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the purpose of automatic writing?",
+            "options": [
+              "libérer l'inconscient",
+              "respecter les règles classiques",
+              "imiter le théâtre",
+              "renforcer la logique rationnelle"
+            ],
+            "correctKey": "libérer l'inconscient"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What kind of imagery characterizes surrealism?",
+            "options": [
+              "des images oniriques",
+              "des descriptions scientifiques",
+              "des arguments juridiques",
+              "des chroniques historiques"
+            ],
+            "correctKey": "des images oniriques"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does surrealism seek to challenge?",
+            "options": [
+              "rational constraints",
+              "poetic language",
+              "imagination",
+              "symbolism"
+            ],
+            "correctKey": "rational constraints"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le surréalisme cherche à libérer l'***.",
+            "correctKey": "inconscient"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Cette subversion poétique produit une rupture *** profonde.",
+            "correctKey": "esthétique"
+          }
+        ]
+      },
+      {
+        "title": "Le théâtre de l'absurde",
+        "description": "Analyzing Beckett, Ionesco, existential pointlessness, and tragicomedy.",
+        "vocabulary": [
+          {
+            "french": "l'absurdité de la condition humaine",
+            "english": "absurdity of the human condition"
+          },
+          {
+            "french": "une parole circulaire",
+            "english": "circular speech"
+          },
+          {
+            "french": "la vacuité existentielle",
+            "english": "existential emptiness"
+          },
+          {
+            "french": "un dialogue disloqué",
+            "english": "disjointed dialogue"
+          },
+          {
+            "french": "une tragicomédie",
+            "english": "tragicomedy"
+          },
+          {
+            "french": "l'incommunicabilité",
+            "english": "failure of communication"
+          },
+          {
+            "french": "une attente interminable",
+            "english": "endless waiting"
+          },
+          {
+            "french": "le non-sens",
+            "english": "nonsense"
+          },
+          {
+            "french": "une dérision métaphysique",
+            "english": "metaphysical mockery"
+          },
+          {
+            "french": "une rupture dramaturgique",
+            "english": "dramaturgical rupture"
+          }
+        ],
+        "grammar": {
+          "title": "Repetition and breakdown of communication",
+          "text": "The Theatre of the Absurd frequently uses repetition, contradictions, and circular dialogue to illustrate communication failure. Example: 'Nous partons ? — Allons-y. (Ils ne bougent pas.)' The contrast between speech and action reveals existential paralysis."
+        },
+        "reading": "Chez Beckett et Ionesco, le dialogue cesse souvent de transmettre un sens stable. La parole circulaire souligne l'incommunicabilité des personnages, tandis que l'attente interminable devient une métaphore de la condition humaine. Le non-sens et la dérision métaphysique dominent la scène. Cette rupture dramaturgique transforme profondément les codes du théâtre traditionnel.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does circular speech emphasize?",
+            "options": [
+              "l'incommunicabilité",
+              "la clarté du message",
+              "la progression de l'action",
+              "la résolution du conflit"
+            ],
+            "correctKey": "l'incommunicabilité"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What becomes a metaphor for the human condition?",
+            "options": [
+              "une attente interminable",
+              "une victoire héroïque",
+              "une intrigue amoureuse",
+              "un voyage initiatique"
+            ],
+            "correctKey": "une attente interminable"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which authors are associated with the Theatre of the Absurd?",
+            "options": [
+              "Beckett et Ionesco",
+              "Racine et Corneille",
+              "Hugo et Zola",
+              "Voltaire et Diderot"
+            ],
+            "correctKey": "Beckett et Ionesco"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La parole circulaire souligne l'*** des personnages.",
+            "correctKey": "incommunicabilité"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le non-sens et la dérision *** dominent la scène.",
+            "correctKey": "métaphysique"
+          }
+        ]
+      },
+      {
+        "title": "L'existentialisme littéraire",
+        "description": "Examining Sartre, Beauvoir, Camus, absolute freedom, and commitment.",
+        "vocabulary": [
+          {
+            "french": "la liberté absolue",
+            "english": "absolute freedom"
+          },
+          {
+            "french": "l'engagement",
+            "english": "commitment"
+          },
+          {
+            "french": "l'absurde",
+            "english": "the absurd"
+          },
+          {
+            "french": "la responsabilité individuelle",
+            "english": "individual responsibility"
+          },
+          {
+            "french": "une conscience réflexive",
+            "english": "reflective consciousness"
+          },
+          {
+            "french": "l'aliénation",
+            "english": "alienation"
+          },
+          {
+            "french": "un choix authentique",
+            "english": "authentic choice"
+          },
+          {
+            "french": "la condition humaine",
+            "english": "human condition"
+          },
+          {
+            "french": "une révolte lucide",
+            "english": "lucid revolt"
+          },
+          {
+            "french": "l'existence précède l'essence",
+            "english": "existence precedes essence"
+          }
+        ],
+        "grammar": {
+          "title": "Philosophical assertion and conceptual abstraction",
+          "text": "Existentialist texts often formulate abstract concepts through assertive structures. Example: 'L'existence précède l'essence.' Such concise statements condense complex philosophical ideas into memorable formulations. The style tends toward conceptual precision and argumentative clarity."
+        },
+        "reading": "L'existentialisme affirme que l'individu est radicalement libre et responsable de ses choix. Chez Sartre, l'existence précède l'essence, ce qui signifie que l'être humain se définit par ses actes. Camus insiste davantage sur l'absurde et sur la nécessité d'une révolte lucide. L'engagement devient alors une réponse à la condition humaine et à ses contradictions fondamentales.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does Sartre's formula suggest?",
+            "options": [
+              "Human beings define themselves through their actions",
+              "Essence determines existence",
+              "Freedom is impossible",
+              "Society controls all choices"
+            ],
+            "correctKey": "Human beings define themselves through their actions"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which concept is particularly associated with Camus in the passage?",
+            "options": [
+              "une révolte lucide",
+              "la règle des trois unités",
+              "l'écriture automatique",
+              "la polyphonie romanesque"
+            ],
+            "correctKey": "une révolte lucide"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What role does commitment play in existentialism?",
+            "options": [
+              "A response to the human condition",
+              "A rejection of freedom",
+              "A poetic ornament",
+              "A theatrical convention"
+            ],
+            "correctKey": "A response to the human condition"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'existence précède l'***.",
+            "correctKey": "essence"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'individu est libre et responsable de ses ***.",
+            "correctKey": "choix"
+          }
+        ]
+      },
+      {
+        "title": "Le nouveau roman et l'écriture expérimentale",
+        "description": "Analyzing objectal description, flat writing style, and character deconstruction.",
+        "vocabulary": [
+          {
+            "french": "la description objectale",
+            "english": "object-centered description"
+          },
+          {
+            "french": "l'écriture blanche",
+            "english": "flat writing style"
+          },
+          {
+            "french": "la déconstruction du personnage",
+            "english": "character deconstruction"
+          },
+          {
+            "french": "l'effacement psychologique",
+            "english": "psychological erasure"
+          },
+          {
+            "french": "la neutralité énonciative",
+            "english": "enunciative neutrality"
+          },
+          {
+            "french": "une matérialité du monde",
+            "english": "materiality of the world"
+          },
+          {
+            "french": "la fragmentation perceptive",
+            "english": "perceptual fragmentation"
+          },
+          {
+            "french": "une focalisation mouvante",
+            "english": "shifting focalization"
+          },
+          {
+            "french": "l'antiroman",
+            "english": "anti-novel"
+          },
+          {
+            "french": "la désubjectivation",
+            "english": "desubjectivization"
+          }
+        ],
+        "grammar": {
+          "title": "Objectal description and narrative depersonalization",
+          "text": "The Nouveau Roman minimizes traditional characterization and emphasizes objects. Sentences often accumulate precise observations without psychological commentary. Example: 'La table était rectangulaire, lisse, dépourvue d'ornement.' The focus shifts from character motivation to material perception."
+        },
+        "reading": "Dans le Nouveau Roman, la description objectale supplante souvent l'analyse psychologique. L'écriture blanche privilégie une neutralité énonciative qui réduit la présence du narrateur. Les personnages semblent parfois dissous dans la matérialité du monde. Cette déconstruction du personnage transforme profondément la lecture et remet en cause les conventions de l'antiroman.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What replaces psychological analysis in the passage?",
+            "options": [
+              "la description objectale",
+              "la poésie lyrique",
+              "la satire politique",
+              "la narration épique"
+            ],
+            "correctKey": "la description objectale"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What characterizes écriture blanche?",
+            "options": [
+              "une neutralité énonciative",
+              "une forte émotion",
+              "un ton héroïque",
+              "une rhétorique classique"
+            ],
+            "correctKey": "une neutralité énonciative"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is challenged by the antiroman?",
+            "options": [
+              "traditional novel conventions",
+              "grammar rules",
+              "poetry",
+              "theater"
+            ],
+            "correctKey": "traditional novel conventions"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'écriture blanche privilégie une neutralité ***.",
+            "correctKey": "énonciative"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Cette déconstruction du *** transforme profondément la lecture.",
+            "correctKey": "personnage"
+          }
+        ]
+      },
+      {
+        "title": "La critique littéraire contemporaine",
+        "description": "Exploring structuralism, semiotics, deconstruction, and literary theories.",
+        "vocabulary": [
+          {
+            "french": "le structuralisme",
+            "english": "structuralism"
+          },
+          {
+            "french": "la sémiotique",
+            "english": "semiotics"
+          },
+          {
+            "french": "la déconstruction",
+            "english": "deconstruction"
+          },
+          {
+            "french": "un système de signes",
+            "english": "system of signs"
+          },
+          {
+            "french": "l'intertextualité",
+            "english": "intertextuality"
+          },
+          {
+            "french": "une lecture herméneutique",
+            "english": "hermeneutic reading"
+          },
+          {
+            "french": "le signifiant",
+            "english": "signifier"
+          },
+          {
+            "french": "le signifié",
+            "english": "signified"
+          },
+          {
+            "french": "la textualité",
+            "english": "textuality"
+          },
+          {
+            "french": "une pluralité interprétative",
+            "english": "interpretive plurality"
+          }
+        ],
+        "grammar": {
+          "title": "Metalinguistic discourse in literary criticism",
+          "text": "Contemporary criticism frequently uses abstract nouns and nominal structures. Example: 'La textualité du récit révèle une pluralité interprétative.' Such formulations prioritize conceptual precision over narrative description."
+        },
+        "reading": "La critique littéraire contemporaine s'intéresse moins à l'auteur qu'aux mécanismes du texte. Le structuralisme analyse les relations entre les éléments d'un système de signes. La sémiotique étudie le fonctionnement du signifiant et du signifié. Quant à la déconstruction, elle met en évidence les tensions internes du discours et favorise une pluralité interprétative.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does structuralism primarily analyze?",
+            "options": [
+              "relations within a system of signs",
+              "author biographies",
+              "historical events",
+              "metrical patterns"
+            ],
+            "correctKey": "relations within a system of signs"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which discipline studies signifiers and signifieds?",
+            "options": [
+              "la sémiotique",
+              "la tragédie",
+              "la prosodie",
+              "la narratologie classique"
+            ],
+            "correctKey": "la sémiotique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does deconstruction reveal?",
+            "options": [
+              "internal tensions of discourse",
+              "a single meaning",
+              "historical facts",
+              "phonetic laws"
+            ],
+            "correctKey": "internal tensions of discourse"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La critique moderne analyse les mécanismes du ***.",
+            "correctKey": "texte"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La *** étudie le fonctionnement du signifiant et du signifié.",
+            "correctKey": "sémiotique"
+          }
+        ]
+      },
+      {
+        "title": "La littérature francophone mondiale",
+        "description": "Studying post-colonial French literature, hybridity, and identity in francophone spaces.",
+        "vocabulary": [
+          {
+            "french": "l'hybridité culturelle",
+            "english": "cultural hybridity"
+          },
+          {
+            "french": "la créolisation",
+            "english": "creolization"
+          },
+          {
+            "french": "un héritage colonial",
+            "english": "colonial legacy"
+          },
+          {
+            "french": "la réappropriation identitaire",
+            "english": "identity reclamation"
+          },
+          {
+            "french": "une voix subalterne",
+            "english": "subaltern voice"
+          },
+          {
+            "french": "la mémoire diasporique",
+            "english": "diasporic memory"
+          },
+          {
+            "french": "le métissage linguistique",
+            "english": "linguistic mixing"
+          },
+          {
+            "french": "une poétique de l'entre-deux",
+            "english": "poetics of in-betweenness"
+          },
+          {
+            "french": "la décolonisation culturelle",
+            "english": "cultural decolonization"
+          },
+          {
+            "french": "une identité plurielle",
+            "english": "plural identity"
+          }
+        ],
+        "grammar": {
+          "title": "Hybrid discourse and multiple identities",
+          "text": "Francophone literature often combines different linguistic and cultural references. Writers may alternate registers or incorporate local expressions. Example: 'Son identité se construit entre héritage colonial et réappropriation culturelle.' Such structures highlight plurality and hybridity."
+        },
+        "reading": "La littérature francophone mondiale interroge fréquemment les conséquences de l'histoire coloniale. L'hybridité culturelle et le métissage linguistique y occupent une place centrale. Les auteurs mettent en scène des identités plurielles qui se construisent entre plusieurs espaces symboliques. Cette poétique de l'entre-deux contribue à une réflexion profonde sur la mémoire diasporique et la décolonisation culturelle.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is central in francophone world literature according to the passage?",
+            "options": [
+              "cultural hybridity and linguistic mixing",
+              "strict linguistic purity",
+              "classical tragedy",
+              "scientific realism"
+            ],
+            "correctKey": "cultural hybridity and linguistic mixing"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does the poetics of in-betweenness explore?",
+            "options": [
+              "multiple cultural spaces",
+              "mathematics",
+              "military history",
+              "formal logic"
+            ],
+            "correctKey": "multiple cultural spaces"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which historical factor is often examined?",
+            "options": [
+              "colonial history",
+              "industrialization",
+              "medieval warfare",
+              "astronomy"
+            ],
+            "correctKey": "colonial history"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'*** culturelle occupe une place centrale dans ces œuvres.",
+            "correctKey": "hybridité"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Cette poétique de l'*** contribue à une réflexion profonde.",
+            "correctKey": "entre-deux"
+          }
+        ]
+      },
+      {
+        "title": "L'art du portrait et de la description",
+        "description": "Analyzing psychological portraits, physiognomy, and descriptive pauses in novels.",
+        "vocabulary": [
+          {
+            "french": "le portrait psychologique",
+            "english": "psychological portrait"
+          },
+          {
+            "french": "la physionomie",
+            "english": "physiognomy"
+          },
+          {
+            "french": "une pause descriptive",
+            "english": "descriptive pause"
+          },
+          {
+            "french": "la caractérisation indirecte",
+            "english": "indirect characterization"
+          },
+          {
+            "french": "un détail révélateur",
+            "english": "revealing detail"
+          },
+          {
+            "french": "la profondeur introspective",
+            "english": "introspective depth"
+          },
+          {
+            "french": "un regard pénétrant",
+            "english": "penetrating gaze"
+          },
+          {
+            "french": "la typification",
+            "english": "typification"
+          },
+          {
+            "french": "une notation minutieuse",
+            "english": "meticulous notation"
+          },
+          {
+            "french": "le portrait moral",
+            "english": "moral portrait"
+          }
+        ],
+        "grammar": {
+          "title": "Descriptive expansion and characterization",
+          "text": "Novelists often suspend narrative progression to develop a descriptive pause. Through detailed observation, physical traits become indicators of moral or psychological qualities. Example: 'Son regard fixe trahissait une inquiétude persistante.'"
+        },
+        "reading": "Le portrait littéraire ne se limite pas à l'apparence physique. Grâce à une caractérisation indirecte et à des détails révélateurs, l'auteur suggère la complexité intérieure du personnage. La pause descriptive ralentit le récit afin de favoriser l'observation. La physionomie devient alors un moyen privilégié d'accéder au portrait moral et à la profondeur introspective.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does a descriptive pause do?",
+            "options": [
+              "slows the narrative for observation",
+              "accelerates the action",
+              "creates rhyme",
+              "changes genre"
+            ],
+            "correctKey": "slows the narrative for observation"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What can physiognomy reveal in literature?",
+            "options": [
+              "moral and psychological traits",
+              "scientific laws",
+              "historical dates",
+              "grammatical rules"
+            ],
+            "correctKey": "moral and psychological traits"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What helps reveal a character's inner complexity?",
+            "options": [
+              "revealing details",
+              "battle scenes",
+              "verse structure",
+              "comic relief"
+            ],
+            "correctKey": "revealing details"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La pause *** ralentit le récit afin de favoriser l'observation.",
+            "correctKey": "descriptive"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La *** devient un moyen privilégié d'accéder au portrait moral.",
+            "correctKey": "physionomie"
+          }
+        ]
+      },
+      {
+        "title": "L'analyse des figures de style complexes",
+        "description": "Mastering catachresis, synchysis, chiasmus, hyperbaton, and hypallage.",
+        "vocabulary": [
+          {
+            "french": "la catachrèse",
+            "english": "catachresis"
+          },
+          {
+            "french": "la synchyse",
+            "english": "synchysis"
+          },
+          {
+            "french": "le chiasme",
+            "english": "chiasmus"
+          },
+          {
+            "french": "l'hyperbate",
+            "english": "hyperbaton"
+          },
+          {
+            "french": "l'hypallage",
+            "english": "hypallage"
+          },
+          {
+            "french": "une permutation syntaxique",
+            "english": "syntactic permutation"
+          },
+          {
+            "french": "une tension rhétorique",
+            "english": "rhetorical tension"
+          },
+          {
+            "french": "un effet de dislocation",
+            "english": "effect of dislocation"
+          },
+          {
+            "french": "la transposition sémantique",
+            "english": "semantic transposition"
+          },
+          {
+            "french": "une sophistication stylistique",
+            "english": "stylistic sophistication"
+          }
+        ],
+        "grammar": {
+          "title": "Advanced rhetorical displacement",
+          "text": "Complex figures of speech often rely on displacement. A hypallage transfers a quality from its logical referent to another word. Example: 'Il traversa une nuit inquiète.' The adjective actually describes the person, not the night. Such devices enrich literary ambiguity and stylistic sophistication."
+        },
+        "reading": "Les figures de style complexes reposent souvent sur des déplacements syntaxiques ou sémantiques. Le chiasme organise les termes selon une structure croisée, tandis que l'hyperbate rompt l'ordre attendu de la phrase. L'hypallage et la catachrèse produisent des effets de sens inattendus. Ces procédés témoignent d'une sophistication stylistique qui exige une lecture particulièrement attentive.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which figure uses a crossed structure?",
+            "options": [
+              "le chiasme",
+              "la métaphore",
+              "la litote",
+              "l'ellipse"
+            ],
+            "correctKey": "le chiasme"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does hyperbaton do?",
+            "options": [
+              "breaks the expected sentence order",
+              "creates rhyme",
+              "shortens the text",
+              "removes adjectives"
+            ],
+            "correctKey": "breaks the expected sentence order"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is required to appreciate these figures fully?",
+            "options": [
+              "careful reading",
+              "historical research only",
+              "memorization only",
+              "translation only"
+            ],
+            "correctKey": "careful reading"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le *** organise les termes selon une structure croisée.",
+            "correctKey": "chiasme"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Ces procédés témoignent d'une sophistication ***.",
+            "correctKey": "stylistique"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,872 @@
+[
+  {
+    "title": "Pronouns and Key Verbs",
+    "description": "Learn the core French subject pronouns and the essential verbs être and avoir in the present tense.",
+    "lessons": [
+      {
+        "title": "Subject Pronouns",
+        "description": "Learn how to use French subject pronouns to refer to yourself, other people, and groups.",
+        "vocabulary": [
+          { "french": "je", "english": "I" },
+          { "french": "tu", "english": "you informal singular" },
+          { "french": "il", "english": "he / it masculine" },
+          { "french": "elle", "english": "she / it feminine" },
+          { "french": "nous", "english": "we" },
+          { "french": "vous", "english": "you formal / you plural" },
+          { "french": "ils", "english": "they masculine / mixed group" },
+          { "french": "elles", "english": "they feminine" },
+          { "french": "ami", "english": "friend masculine" },
+          { "french": "étudiante", "english": "female student" }
+        ],
+        "grammar": {
+          "title": "French Subject Pronouns",
+          "text": "French subject pronouns are used before verbs to show who is doing the action. Use je for I, tu for informal you, il for he, elle for she, nous for we, vous for formal or plural you, ils for masculine or mixed they, and elles for feminine they. In French, subject pronouns are usually required before conjugated verbs."
+        },
+        "reading": "Je suis étudiant. Tu es mon ami. Elle est française. Nous sommes dans la classe. Vous êtes professeur. Ils sont contents.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which French subject pronoun means 'we'?",
+            "options": ["je", "tu", "nous", "ils"],
+            "correctKey": "nous",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which pronoun is used for a group of only females?",
+            "options": ["ils", "elles", "nous", "vous"],
+            "correctKey": "elles",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "*** suis étudiant.",
+            "correctKey": "Je",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "*** êtes professeur.",
+            "correctKey": "Vous",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'tu' mean?",
+            "options": ["I", "you informal singular", "we", "they"],
+            "correctKey": "you informal singular",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Present Tense of Être",
+        "description": "Learn how to conjugate and use être to describe identity, nationality, profession, and basic states.",
+        "vocabulary": [
+          { "french": "être", "english": "to be" },
+          { "french": "suis", "english": "am" },
+          { "french": "es", "english": "are informal singular" },
+          { "french": "est", "english": "is" },
+          { "french": "sommes", "english": "are for we" },
+          { "french": "êtes", "english": "are formal / plural" },
+          { "french": "sont", "english": "are for they" },
+          { "french": "français", "english": "French masculine" },
+          { "french": "content", "english": "happy masculine" },
+          { "french": "professeur", "english": "teacher" }
+        ],
+        "grammar": {
+          "title": "Conjugating Être",
+          "text": "Être means 'to be'. It is irregular and very important. The present tense forms are: je suis, tu es, il/elle est, nous sommes, vous êtes, ils/elles sont. Use être to say who someone is, where someone is from, or how someone feels."
+        },
+        "reading": "Bonjour, je suis Marc. Je suis étudiant. Ma sœur est professeure. Nous sommes français. Vous êtes très gentil. Ils sont contents aujourd'hui.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct form: Je ___ étudiant.",
+            "options": ["suis", "es", "est", "sommes"],
+            "correctKey": "suis",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which is the correct form of être with 'vous'?",
+            "options": ["suis", "êtes", "sont", "est"],
+            "correctKey": "êtes",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Elle *** française.",
+            "correctKey": "est",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Nous *** dans la classe.",
+            "correctKey": "sommes",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'ils sont contents' mean?",
+            "options": ["They are happy", "We are happy", "He is happy", "You are happy"],
+            "correctKey": "They are happy",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Present Tense of Avoir",
+        "description": "Learn how to use avoir to talk about possession, age, and common expressions.",
+        "vocabulary": [
+          { "french": "avoir", "english": "to have" },
+          { "french": "ai", "english": "have for je" },
+          { "french": "as", "english": "have for tu" },
+          { "french": "a", "english": "has" },
+          { "french": "avons", "english": "have for nous" },
+          { "french": "avez", "english": "have for vous" },
+          { "french": "ont", "english": "have for ils / elles" },
+          { "french": "un livre", "english": "a book" },
+          { "french": "une voiture", "english": "a car" },
+          { "french": "ans", "english": "years old" }
+        ],
+        "grammar": {
+          "title": "Conjugating Avoir",
+          "text": "Avoir means 'to have'. The present tense forms are: j'ai, tu as, il/elle a, nous avons, vous avez, ils/elles ont. In French, age is expressed with avoir, not être. Say 'J'ai vingt ans' for 'I am twenty years old'."
+        },
+        "reading": "J'ai un livre. Tu as un stylo. Elle a une voiture. Nous avons une maison. Vous avez vingt ans. Ils ont deux chiens.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct form: J'___ un livre.",
+            "options": ["ai", "as", "a", "avons"],
+            "correctKey": "ai",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which sentence correctly means 'I am twenty years old'?",
+            "options": ["Je suis vingt ans", "J'ai vingt ans", "Je vais vingt ans", "Je parle vingt ans"],
+            "correctKey": "J'ai vingt ans",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Nous *** une maison.",
+            "correctKey": "avons",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Ils *** deux chiens.",
+            "correctKey": "ont",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'avoir' mean?",
+            "options": ["to be", "to go", "to have", "to speak"],
+            "correctKey": "to have",
+            "points": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Regular Verbs and Simple Sentences",
+    "description": "Learn how to conjugate regular -ER verbs, build simple affirmative sentences, and introduce the near future with aller.",
+    "lessons": [
+      {
+        "title": "Regular -ER Verbs in the Present",
+        "description": "Learn the most common French verb pattern using verbs like manger, parler, and habiter.",
+        "vocabulary": [
+          { "french": "manger", "english": "to eat" },
+          { "french": "parler", "english": "to speak" },
+          { "french": "habiter", "english": "to live" },
+          { "french": "aimer", "english": "to like / to love" },
+          { "french": "écouter", "english": "to listen" },
+          { "french": "regarder", "english": "to watch" },
+          { "french": "travailler", "english": "to work" },
+          { "french": "étudier", "english": "to study" },
+          { "french": "jouer", "english": "to play" },
+          { "french": "chanter", "english": "to sing" }
+        ],
+        "grammar": {
+          "title": "Present Tense of Regular -ER Verbs",
+          "text": "To conjugate a regular -ER verb in the present tense, remove -er from the infinitive and add the correct ending: je -e, tu -es, il/elle -e, nous -ons, vous -ez, ils/elles -ent. Example: parler becomes je parle, tu parles, il parle, nous parlons, vous parlez, ils parlent."
+        },
+        "reading": "Je parle français. Tu écoutes la musique. Elle habite à Paris. Nous étudions le français. Vous travaillez beaucoup. Ils jouent au football.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct form: Je ___ français.",
+            "options": ["parle", "parles", "parlons", "parlez"],
+            "correctKey": "parle",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the correct form with 'nous'?",
+            "options": ["nous mange", "nous manges", "nous mangeons", "nous mangez"],
+            "correctKey": "nous mangeons",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Tu *** la musique.",
+            "correctKey": "écoutes",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Ils *** au football.",
+            "correctKey": "jouent",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which verb means 'to live'?",
+            "options": ["parler", "habiter", "manger", "jouer"],
+            "correctKey": "habiter",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Forming Basic Affirmative Sentences",
+        "description": "Learn how to build simple French sentences using subject, verb, and object order.",
+        "vocabulary": [
+          { "french": "le livre", "english": "the book" },
+          { "french": "la musique", "english": "the music" },
+          { "french": "le café", "english": "the coffee" },
+          { "french": "une phrase", "english": "a sentence" },
+          { "french": "un ami", "english": "a friend" },
+          { "french": "une école", "english": "a school" },
+          { "french": "le français", "english": "French language" },
+          { "french": "la maison", "english": "the house" },
+          { "french": "un stylo", "english": "a pen" },
+          { "french": "une pomme", "english": "an apple" }
+        ],
+        "grammar": {
+          "title": "Subject + Verb + Object",
+          "text": "A basic affirmative sentence in French usually follows the order Subject + Verb + Object. For example: 'Je mange une pomme' means 'I eat an apple'. The subject tells who acts, the verb tells the action, and the object receives the action."
+        },
+        "reading": "Je mange une pomme. Tu regardes un film. Elle écoute la musique. Nous aimons le français. Ils habitent une grande maison.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which sentence follows Subject + Verb + Object order?",
+            "options": ["Mange je pomme", "Je mange une pomme", "Une pomme je mange", "Mange une pomme je"],
+            "correctKey": "Je mange une pomme",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "In 'Elle écoute la musique', what is the verb?",
+            "options": ["Elle", "écoute", "la", "musique"],
+            "correctKey": "écoute",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je *** le français.",
+            "correctKey": "parle",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Tu regardes *** film.",
+            "correctKey": "un",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'Nous aimons le français' mean?",
+            "options": ["We like French", "They like French", "You like French", "I like French"],
+            "correctKey": "We like French",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "The Verb Aller and Intro to Futur Proche",
+        "description": "Learn how to use aller to say where someone is going and to form the near future.",
+        "vocabulary": [
+          { "french": "aller", "english": "to go" },
+          { "french": "vais", "english": "go / am going for je" },
+          { "french": "vas", "english": "go / are going for tu" },
+          { "french": "va", "english": "goes / is going" },
+          { "french": "allons", "english": "go / are going for nous" },
+          { "french": "allez", "english": "go / are going for vous" },
+          { "french": "vont", "english": "go / are going for ils / elles" },
+          { "french": "demain", "english": "tomorrow" },
+          { "french": "l'école", "english": "school" },
+          { "french": "le marché", "english": "the market" }
+        ],
+        "grammar": {
+          "title": "Aller and the Near Future",
+          "text": "Aller means 'to go'. Its present forms are: je vais, tu vas, il/elle va, nous allons, vous allez, ils/elles vont. To form the near future, use aller + infinitive. Example: 'Je vais étudier' means 'I am going to study'."
+        },
+        "reading": "Je vais à l'école. Tu vas au marché. Elle va à Paris. Nous allons manger. Vous allez étudier. Ils vont jouer demain.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct form: Je ___ à l'école.",
+            "options": ["vais", "vas", "va", "vont"],
+            "correctKey": "vais",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which sentence uses the near future?",
+            "options": ["Je parle français", "Je vais parler français", "Je suis français", "J'ai un livre"],
+            "correctKey": "Je vais parler français",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Nous *** au marché.",
+            "correctKey": "allons",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Ils *** jouer demain.",
+            "correctKey": "vont",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'Je vais étudier' mean?",
+            "options": ["I study", "I studied", "I am going to study", "I do not study"],
+            "correctKey": "I am going to study",
+            "points": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Articles and Nouns",
+    "description": "Learn how French nouns work with definite articles, indefinite articles, gender, and plural forms.",
+    "lessons": [
+      {
+        "title": "Definite Articles and Gender of Nouns",
+        "description": "Learn how to use le, la, l', and les with masculine, feminine, vowel-starting, and plural nouns.",
+        "vocabulary": [
+          { "french": "le garçon", "english": "the boy" },
+          { "french": "la fille", "english": "the girl" },
+          { "french": "l'homme", "english": "the man" },
+          { "french": "l'école", "english": "the school" },
+          { "french": "les enfants", "english": "the children" },
+          { "french": "le livre", "english": "the book" },
+          { "french": "la table", "english": "the table" },
+          { "french": "le chien", "english": "the dog" },
+          { "french": "la voiture", "english": "the car" },
+          { "french": "les maisons", "english": "the houses" }
+        ],
+        "grammar": {
+          "title": "Le, La, L', Les",
+          "text": "Definite articles mean 'the'. Use le before masculine singular nouns, la before feminine singular nouns, l' before singular nouns beginning with a vowel or silent h, and les before plural nouns. French nouns have grammatical gender, so each noun is masculine or feminine."
+        },
+        "reading": "Le garçon regarde la voiture. La fille aime l'école. L'homme lit le livre. Les enfants jouent dans les maisons.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which article is used before a masculine singular noun?",
+            "options": ["le", "la", "les", "des"],
+            "correctKey": "le",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase means 'the school'?",
+            "options": ["le école", "la école", "l'école", "les école"],
+            "correctKey": "l'école",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "*** fille parle français.",
+            "correctKey": "La",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "*** enfants jouent.",
+            "correctKey": "Les",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'les maisons' mean?",
+            "options": ["the house", "a house", "the houses", "some houses"],
+            "correctKey": "the houses",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Indefinite Articles",
+        "description": "Learn how to use un, une, and des to mean a, an, or some.",
+        "vocabulary": [
+          { "french": "un livre", "english": "a book" },
+          { "french": "une table", "english": "a table" },
+          { "french": "des stylos", "english": "some pens" },
+          { "french": "un chien", "english": "a dog" },
+          { "french": "une maison", "english": "a house" },
+          { "french": "des amis", "english": "some friends" },
+          { "french": "un café", "english": "a coffee" },
+          { "french": "une pomme", "english": "an apple" },
+          { "french": "des livres", "english": "some books" },
+          { "french": "une chaise", "english": "a chair" }
+        ],
+        "grammar": {
+          "title": "Un, Une, Des",
+          "text": "Indefinite articles are used for non-specific nouns. Use un before masculine singular nouns, une before feminine singular nouns, and des before plural nouns. They usually mean a, an, or some in English."
+        },
+        "reading": "J'ai un livre et une pomme. Tu as une chaise. Elle a un chien. Nous avons des amis and des stylos.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which article is used before a feminine singular noun?",
+            "options": ["un", "une", "des", "les"],
+            "correctKey": "une",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'des livres' mean?",
+            "options": ["a book", "the book", "some books", "the books"],
+            "correctKey": "some books",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "J'ai *** livre.",
+            "correctKey": "un",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Elle a *** maison.",
+            "correctKey": "une",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase means 'some friends'?",
+            "options": ["un ami", "une amie", "des amis", "les amis"],
+            "correctKey": "des amis",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Plural of Nouns",
+        "description": "Learn how to form plural nouns in French, including common regular and irregular patterns.",
+        "vocabulary": [
+          { "french": "un livre", "english": "a book" },
+          { "french": "des livres", "english": "books" },
+          { "french": "une maison", "english": "a house" },
+          { "french": "des maisons", "english": "houses" },
+          { "french": "un animal", "english": "an animal" },
+          { "french": "des animaux", "english": "animals" },
+          { "french": "un journal", "english": "a newspaper" },
+          { "french": "des journaux", "english": "newspapers" },
+          { "french": "un enfant", "english": "a child" },
+          { "french": "des enfants", "english": "children" }
+        ],
+        "grammar": {
+          "title": "Making Nouns Plural",
+          "text": "Most French nouns become plural by adding -s, but the final -s is usually not pronounced. Example: un livre becomes des livres. Some nouns ending in -al change to -aux, such as un animal to des animaux. Some nouns ending in -eau also take -x, such as un tableau to des tableaux."
+        },
+        "reading": "Dans la classe, il y a des livres, des stylos et des enfants. Dans la ville, il y a des maisons, des journaux et des animaux.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the plural of 'un livre'?",
+            "options": ["des livre", "des livres", "une livres", "les livre"],
+            "correctKey": "des livres",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the plural of 'un animal'?",
+            "options": ["des animals", "des animales", "des animaux", "des animau"],
+            "correctKey": "des animaux",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "une maison, des ***",
+            "correctKey": "maisons",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "un journal, des ***",
+            "correctKey": "journaux",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which statement is true about most French plural nouns?",
+            "options": ["They add -s", "They add -ing", "They never change", "They always add -e"],
+            "correctKey": "They add -s",
+            "points": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Negation and Questions",
+    "description": "Learn how to make negative sentences and ask simple questions in everyday French.",
+    "lessons": [
+      {
+        "title": "Simple Negation",
+        "description": "Learn how to use ne...pas to make sentences negative.",
+        "vocabulary": [
+          { "french": "ne", "english": "negative marker before verb" },
+          { "french": "pas", "english": "not" },
+          { "french": "aimer", "english": "to like" },
+          { "french": "parler", "english": "to speak" },
+          { "french": "manger", "english": "to eat" },
+          { "french": "travailler", "english": "to work" },
+          { "french": "étudier", "english": "to study" },
+          { "french": "le thé", "english": "tea" },
+          { "french": "le café", "english": "coffee" },
+          { "french": "aujourd'hui", "english": "today" }
+        ],
+        "grammar": {
+          "title": "Using Ne...Pas",
+          "text": "To make a simple sentence negative in French, place ne before the conjugated verb and pas after it. Example: Je parle français becomes Je ne parle pas français. Before a vowel, ne becomes n': Elle aime le café becomes Elle n'aime pas le café."
+        },
+        "reading": "Je ne parle pas espagnol. Tu ne manges pas le pain. Elle n'aime pas le café. Nous ne travaillons pas aujourd'hui.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which sentence correctly means 'I do not speak French'?",
+            "options": ["Je parle pas ne français", "Je ne parle pas français", "Je pas parle français", "Ne je parle français pas"],
+            "correctKey": "Je ne parle pas français",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What happens to 'ne' before a vowel?",
+            "options": ["It becomes n'", "It becomes le", "It becomes pas", "It disappears completely"],
+            "correctKey": "It becomes n'",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je ne mange *** le pain.",
+            "correctKey": "pas",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Elle *** aime pas le café.",
+            "correctKey": "n'",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'Nous ne travaillons pas aujourd'hui' mean?",
+            "options": ["We work today", "We do not work today", "They do not work today", "You work today"],
+            "correctKey": "We do not work today",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Asking Yes or No Questions",
+        "description": "Learn three beginner-friendly ways to ask yes or no questions in French.",
+        "vocabulary": [
+          { "french": "est-ce que", "english": "question phrase" },
+          { "french": "oui", "english": "yes" },
+          { "french": "non", "english": "no" },
+          { "french": "parles-tu", "english": "do you speak inversion" },
+          { "french": "tu parles", "english": "you speak" },
+          { "french": "vous aimez", "english": "you like" },
+          { "french": "il habite", "english": "he lives" },
+          { "french": "elle travaille", "english": "she works" },
+          { "french": "français", "english": "French" },
+          { "french": "ici", "english": "here" }
+        ],
+        "grammar": {
+          "title": "Yes or No Questions",
+          "text": "French yes or no questions can be formed in three common ways: by raising intonation, using est-ce que before a statement, or using inversion. Examples: Tu parles français ? Est-ce que tu parles français ? Parles-tu français ?"
+        },
+        "reading": "- Est-ce que tu parles français ?\n- Oui, je parle français.\n- Tu habites ici ?\n- Non, j'habite à Lyon.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase is commonly used to start a yes/no question?",
+            "options": ["merci", "est-ce que", "au revoir", "parce que"],
+            "correctKey": "est-ce que",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which question uses inversion?",
+            "options": ["Tu parles français ?", "Est-ce que tu parles français ?", "Parles-tu français ?", "Tu français parles ?"],
+            "correctKey": "Parles-tu français ?",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "*** tu aimes le café ?",
+            "correctKey": "Est-ce que",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "***, je parle français.",
+            "correctKey": "Oui",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'Tu habites ici ?' mean?",
+            "options": ["Do you live here?", "Do you work here?", "Are you French?", "Do you like French?"],
+            "correctKey": "Do you live here?",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Question Words",
+        "description": "Learn basic French question words for asking about people, things, places, time, reasons, and manner.",
+        "vocabulary": [
+          { "french": "qui", "english": "who" },
+          { "french": "quoi", "english": "what" },
+          { "french": "où", "english": "where" },
+          { "french": "quand", "english": "when" },
+          { "french": "pourquoi", "english": "why" },
+          { "french": "comment", "english": "how" },
+          { "french": "combien", "english": "how much / how many" },
+          { "french": "quel", "english": "which / what masculine" },
+          { "french": "quelle", "english": "which / what feminine" },
+          { "french": "parce que", "english": "because" }
+        ],
+        "grammar": {
+          "title": "Using Basic Question Words",
+          "text": "Question words help ask for specific information. Use qui for who, quoi for what, où for where, quand for when, pourquoi for why, comment for how, and combien for how much or how many. They can appear at the beginning of questions, often with est-ce que."
+        },
+        "reading": "- Où habites-tu ?\n- J'habite à Paris.\n- Comment tu t'appelles ?\n- Je m'appelle Lina.\n- Pourquoi tu étudies le français ?\n- Parce que j'aime la langue.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which word means 'where'?",
+            "options": ["qui", "où", "quand", "comment"],
+            "correctKey": "où",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which question word means 'why'?",
+            "options": ["pourquoi", "quoi", "combien", "quel"],
+            "correctKey": "pourquoi",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "*** habites-tu ?",
+            "correctKey": "Où",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "*** tu t'appelles ?",
+            "correctKey": "Comment",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'parce que' mean?",
+            "options": ["where", "when", "because", "how"],
+            "correctKey": "because",
+            "points": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Description and Possession",
+    "description": "Learn how to show ownership, point to things, and describe nouns using basic adjective agreement.",
+    "lessons": [
+      {
+        "title": "Possessive Adjectives",
+        "description": "Learn how to use mon, ma, mes, ton, ta, tes, son, sa, and ses to express possession.",
+        "vocabulary": [
+          { "french": "mon", "english": "my masculine singular" },
+          { "french": "ma", "english": "my feminine singular" },
+          { "french": "mes", "english": "my plural" },
+          { "french": "ton", "english": "your masculine singular" },
+          { "french": "ta", "english": "your feminine singular" },
+          { "french": "tes", "english": "your plural" },
+          { "french": "son", "english": "his / her masculine singular" },
+          { "french": "sa", "english": "his / her feminine singular" },
+          { "french": "ses", "english": "his / her plural" },
+          { "french": "famille", "english": "family" }
+        ],
+        "grammar": {
+          "title": "Mon, Ma, Mes and Other Possessives",
+          "text": "French possessive adjectives agree with the noun being possessed, not with the owner. Use mon, ton, son before masculine singular nouns; ma, ta, sa before feminine singular nouns; and mes, tes, ses before plural nouns. Example: mon père, ma mère, mes parents."
+        },
+        "reading": "Voici ma famille. Mon père s'appelle Alain. Ma mère s'appelle Sophie. Mes frères sont étudiants. Ton ami est gentil. Sa sœur habite ici.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which possessive adjective means 'my' before a feminine singular noun?",
+            "options": ["mon", "ma", "mes", "ton"],
+            "correctKey": "ma",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase means 'my parents'?",
+            "options": ["mon parents", "ma parents", "mes parents", "ton parents"],
+            "correctKey": "mes parents",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "*** père est professeur.",
+            "correctKey": "Mon",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "*** mère est gentille.",
+            "correctKey": "Ma",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'ses amis' mean?",
+            "options": ["my friends", "your friends", "his / her friends", "our friends"],
+            "correctKey": "his / her friends",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Basic Demonstrative Adjectives",
+        "description": "Learn how to use ce, cette, and ces to mean this, that, these, or those.",
+        "vocabulary": [
+          { "french": "ce", "english": "this / that masculine singular" },
+          { "french": "cette", "english": "this / that feminine singular" },
+          { "french": "ces", "english": "these / those plural" },
+          { "french": "ce livre", "english": "this book" },
+          { "french": "cette table", "english": "this table" },
+          { "french": "ces enfants", "english": "these children" },
+          { "french": "ce garçon", "english": "this boy" },
+          { "french": "cette fille", "english": "this girl" },
+          { "french": "ces maisons", "english": "these houses" },
+          { "french": "objet", "english": "object" }
+        ],
+        "grammar": {
+          "title": "Ce, Cette, Ces",
+          "text": "Demonstrative adjectives point to people or things. Use ce before masculine singular nouns, cette before feminine singular nouns, and ces before plural nouns. They can mean this, that, these, or those depending on context. Example: ce livre, cette maison, ces amis."
+        },
+        "reading": "Ce livre est intéressant. Cette table est petite. Ces enfants sont contents. Cette maison est grande. Ce garçon parle français.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which demonstrative adjective is used before a feminine singular noun?",
+            "options": ["ce", "cette", "ces", "des"],
+            "correctKey": "cette",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase means 'these children'?",
+            "options": ["ce enfant", "cette enfant", "ces enfants", "les enfant"],
+            "correctKey": "ces enfants",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "*** livre est intéressant.",
+            "correctKey": "Ce",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "*** maison est grande.",
+            "correctKey": "Cette",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'ces maisons' mean?",
+            "options": ["this house", "that house", "these houses", "a house"],
+            "correctKey": "these houses",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Adjective Agreement",
+        "description": "Learn how basic adjectives change according to the gender and number of the noun they describe.",
+        "vocabulary": [
+          { "french": "grand", "english": "big / tall masculine" },
+          { "french": "grande", "english": "big / tall feminine" },
+          { "french": "petit", "english": "small masculine" },
+          { "french": "petite", "english": "small feminine" },
+          { "french": "français", "english": "French masculine" },
+          { "french": "française", "english": "French feminine" },
+          { "french": "content", "english": "happy masculine" },
+          { "french": "contente", "english": "happy feminine" },
+          { "french": "nouveau", "english": "new masculine" },
+          { "french": "nouvelle", "english": "new feminine" }
+        ],
+        "grammar": {
+          "title": "Gender and Number Agreement of Adjectives",
+          "text": "French adjectives usually agree with the noun they describe. Many feminine adjectives add -e, and plural adjectives often add -s. Example: un petit garçon, une petite fille, des petits garçons, des petites filles. Some adjectives have irregular feminine forms, such as nouveau becoming nouvelle."
+        },
+        "reading": "Paul est grand. Marie est grande. Le garçon est petit. La fille est petite. Mes amis sont contents. Mes sœurs sont contentes.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct feminine form of 'petit'.",
+            "options": ["petite", "petits", "petites", "petit"],
+            "correctKey": "petite",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase is correct?",
+            "options": ["une garçon petit", "une fille petite", "un fille petit", "la garçon petite"],
+            "correctKey": "une fille petite",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Marie est ***.",
+            "correctKey": "grande",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les filles sont ***.",
+            "correctKey": "contentes",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the feminine form of 'nouveau'?",
+            "options": ["nouveaue", "nouvelle", "nouveaux", "nouvels"],
+            "correctKey": "nouvelle",
+            "points": 10
+          }
+        ]
+      }
+    ]
+  }
+]

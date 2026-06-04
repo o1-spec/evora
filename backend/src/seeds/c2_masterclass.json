@@ -1,0 +1,497 @@
+[
+  {
+    "title": "Masterclass",
+    "description": "Sujets d'évaluation de niveau agrégation ou traduction d'élite.",
+    "lessons": [
+      {
+        "title": "Rédaction d'un éditorial de presse",
+        "description": "Analyzing advanced press editorials, headlines, and critical op-eds.",
+        "vocabulary": [
+          { "french": "la ligne éditoriale", "english": "editorial stance" },
+          { "french": "un angle d'analyse", "english": "analytical angle" },
+          { "french": "une prise de position", "english": "stance" },
+          { "french": "un parti pris", "english": "bias" },
+          {
+            "french": "la mise en perspective",
+            "english": "contextualization"
+          },
+          { "french": "une tribune", "english": "op-ed" },
+          {
+            "french": "une formule percutante",
+            "english": "striking formulation"
+          },
+          { "french": "le traitement médiatique", "english": "media coverage" },
+          { "french": "une analyse critique", "english": "critical analysis" },
+          {
+            "french": "la portée argumentative",
+            "english": "argumentative scope"
+          }
+        ],
+        "grammar": {
+          "title": "Constructing a persuasive editorial",
+          "text": "Elite editorials often begin with a strong thesis, develop contextual evidence, acknowledge objections, and conclude with a clear position. Example: 'Si les faits semblent établis, leur interprétation demeure sujette à débat.'"
+        },
+        "reading": "L'éditorial ne se contente pas d'informer : il interprète les faits et en évalue les conséquences. La force de sa démonstration repose sur une mise en perspective rigoureuse. Toutefois, une prise de position crédible exige également la reconnaissance des objections possibles. C'est à cette condition que l'analyse critique acquiert une véritable portée argumentative.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What distinguishes an editorial from simple reporting?",
+            "options": [
+              "It interprets and evaluates facts",
+              "It only presents statistics",
+              "It avoids argumentation",
+              "It reproduces documents"
+            ],
+            "correctKey": "It interprets and evaluates facts"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What gives credibility to the editorial?",
+            "options": [
+              "Recognizing possible objections",
+              "Ignoring opposing views",
+              "Using emotional language only",
+              "Repeating headlines"
+            ],
+            "correctKey": "Recognizing possible objections"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which concept strengthens the demonstration?",
+            "options": [
+              "une mise en perspective rigoureuse",
+              "une anecdote isolée",
+              "une généralisation hâtive",
+              "une répétition mécanique"
+            ],
+            "correctKey": "une mise en perspective rigoureuse"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La force de sa démonstration repose sur une mise en *** rigoureuse.",
+            "correctKey": "perspective"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'analyse critique acquiert une véritable portée ***.",
+            "correctKey": "argumentative"
+          }
+        ]
+      },
+      {
+        "title": "Discours politique argumenté",
+        "description": "Examining political speech rhetoric, stylistic pauses, and demagogic criticism.",
+        "vocabulary": [
+          {
+            "french": "la rhétorique politique",
+            "english": "political rhetoric"
+          },
+          {
+            "french": "une promesse électorale",
+            "english": "electoral promise"
+          },
+          { "french": "la démagogie", "english": "demagoguery" },
+          {
+            "french": "une stratégie persuasive",
+            "english": "persuasive strategy"
+          },
+          { "french": "un appel au peuple", "english": "appeal to the people" },
+          {
+            "french": "la légitimité démocratique",
+            "english": "democratic legitimacy"
+          },
+          {
+            "french": "une formule mobilisatrice",
+            "english": "mobilizing formula"
+          },
+          { "french": "la polarisation", "english": "polarization" },
+          { "french": "un discours fédérateur", "english": "unifying speech" },
+          {
+            "french": "la crédibilité politique",
+            "english": "political credibility"
+          }
+        ],
+        "grammar": {
+          "title": "Rhetorical progression in political speeches",
+          "text": "Political speeches frequently move from diagnosis to proposal and finally to mobilization. Example: 'Nous constatons cette difficulté; nous proposons cette réforme; nous appelons chacun à agir.'"
+        },
+        "reading": "Le discours politique vise simultanément à convaincre et à mobiliser. Sa puissance réside souvent dans sa capacité à transformer un diagnostic collectif en projet commun. Toutefois, lorsque la simplification excessive remplace l'analyse, le risque de démagogie apparaît. La crédibilité politique dépend alors de l'équilibre entre ambition et réalisme.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is a major risk mentioned in the text?",
+            "options": [
+              "Demagoguery",
+              "Neutrality",
+              "Objectivity",
+              "Academic rigor"
+            ],
+            "correctKey": "Demagoguery"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What must political rhetoric balance?",
+            "options": [
+              "Ambition and realism",
+              "Emotion and silence",
+              "Tradition and grammar",
+              "Media and literature"
+            ],
+            "correctKey": "Ambition and realism"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does political speech seek to do?",
+            "options": [
+              "Convince and mobilize",
+              "Entertain only",
+              "Avoid action",
+              "Reject persuasion"
+            ],
+            "correctKey": "Convince and mobilize"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le risque de *** apparaît lorsque la simplification remplace l'analyse.",
+            "correctKey": "démagogie"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La crédibilité politique dépend de l'équilibre entre ambition et ***.",
+            "correctKey": "réalisme"
+          }
+        ]
+      },
+      {
+        "title": "Synthèse de documents philosophiques complexes",
+        "description": "Learning how to synthesize ideas from different philosophical essays.",
+        "vocabulary": [
+          { "french": "une problématique", "english": "research question" },
+          {
+            "french": "une convergence conceptuelle",
+            "english": "conceptual convergence"
+          },
+          {
+            "french": "une divergence théorique",
+            "english": "theoretical divergence"
+          },
+          { "french": "la dialectique", "english": "dialectics" },
+          { "french": "une thèse centrale", "english": "central thesis" },
+          {
+            "french": "une synthèse critique",
+            "english": "critical synthesis"
+          },
+          {
+            "french": "une articulation logique",
+            "english": "logical articulation"
+          },
+          { "french": "un présupposé", "english": "assumption" },
+          {
+            "french": "un cadre conceptuel",
+            "english": "conceptual framework"
+          },
+          {
+            "french": "la cohérence argumentative",
+            "english": "argumentative coherence"
+          }
+        ],
+        "grammar": {
+          "title": "Synthesizing without juxtaposing",
+          "text": "A synthesis must integrate ideas rather than summarize documents separately. Example: 'Bien que les auteurs divergent sur les moyens, ils convergent quant à la finalité recherchée.'"
+        },
+        "reading": "La synthèse philosophique exige davantage qu'un simple résumé des textes étudiés. Elle suppose l'identification des convergences conceptuelles et des divergences théoriques. Le candidat doit ensuite construire une problématique capable d'intégrer ces tensions. Une synthèse critique réussie révèle ainsi la cohérence profonde d'un débat intellectuel.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What must be identified first?",
+            "options": [
+              "Convergences and divergences",
+              "Dates and biographies",
+              "Statistics",
+              "Footnotes"
+            ],
+            "correctKey": "Convergences and divergences"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does a successful synthesis reveal?",
+            "options": [
+              "The deeper coherence of a debate",
+              "The longest quotation",
+              "The author's personality",
+              "The publication date"
+            ],
+            "correctKey": "The deeper coherence of a debate"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What should the candidate construct?",
+            "options": [
+              "A unifying problematique",
+              "A bibliography",
+              "A chronology",
+              "A translation"
+            ],
+            "correctKey": "A unifying problematique"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La synthèse philosophique exige davantage qu'un simple ***.",
+            "correctKey": "résumé"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une synthèse critique réussie révèle la cohérence profonde d'un débat ***.",
+            "correctKey": "intellectuel"
+          }
+        ]
+      },
+      {
+        "title": "Rédaction d'une dissertation littéraire",
+        "description": "Mastering the traditional French literary dissertation structure and transition formulas.",
+        "vocabulary": [
+          { "french": "une problématisation", "english": "problem framing" },
+          { "french": "un plan dialectique", "english": "dialectical plan" },
+          { "french": "une transition", "english": "transition" },
+          { "french": "une démonstration", "english": "demonstration" },
+          {
+            "french": "une référence textuelle",
+            "english": "textual reference"
+          },
+          { "french": "une ouverture", "english": "opening conclusion" },
+          { "french": "une lecture critique", "english": "critical reading" },
+          { "french": "un argument étayé", "english": "supported argument" },
+          {
+            "french": "la progression logique",
+            "english": "logical progression"
+          },
+          {
+            "french": "une conclusion nuancée",
+            "english": "nuanced conclusion"
+          }
+        ],
+        "grammar": {
+          "title": "Building a dissertation argument",
+          "text": "Each section should answer part of the problem before leading naturally to the next. Example: 'Après avoir examiné cette première hypothèse, il convient désormais d'en mesurer les limites.'"
+        },
+        "reading": "La dissertation littéraire repose sur une problématisation rigoureuse du sujet. Les arguments doivent être étayés par des références textuelles précises et organisés selon une progression logique. Les transitions assurent l'unité de la démonstration. Enfin, une conclusion nuancée récapitule les acquis tout en proposant une ouverture pertinente.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What ensures the unity of the demonstration?",
+            "options": [
+              "Transitions",
+              "Footnotes",
+              "Quotations only",
+              "Examples only"
+            ],
+            "correctKey": "Transitions"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "How should arguments be supported?",
+            "options": [
+              "By precise textual references",
+              "By intuition alone",
+              "By anecdotes",
+              "By repetition"
+            ],
+            "correctKey": "By precise textual references"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What characterizes the conclusion?",
+            "options": [
+              "Nuance and opening",
+              "Aggression",
+              "Ambiguity",
+              "Digression"
+            ],
+            "correctKey": "Nuance and opening"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les arguments doivent être étayés par des références *** précises.",
+            "correctKey": "textuelles"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une conclusion *** récapitule les acquis.",
+            "correctKey": "nuancée"
+          }
+        ]
+      },
+      {
+        "title": "Évaluation critique d'une politique publique canadienne",
+        "description": "Analyzing policy documents, cost-benefit critiques, and institutional reviews.",
+        "vocabulary": [
+          { "french": "une politique publique", "english": "public policy" },
+          {
+            "french": "une analyse coûts-avantages",
+            "english": "cost-benefit analysis"
+          },
+          {
+            "french": "une évaluation institutionnelle",
+            "english": "institutional evaluation"
+          },
+          {
+            "french": "une mesure réglementaire",
+            "english": "regulatory measure"
+          },
+          { "french": "la reddition de comptes", "english": "accountability" },
+          {
+            "french": "un indicateur de performance",
+            "english": "performance indicator"
+          },
+          {
+            "french": "une efficacité opérationnelle",
+            "english": "operational efficiency"
+          },
+          { "french": "un impact budgétaire", "english": "budgetary impact" },
+          {
+            "french": "une gouvernance publique",
+            "english": "public governance"
+          },
+          {
+            "french": "une recommandation stratégique",
+            "english": "strategic recommendation"
+          }
+        ],
+        "grammar": {
+          "title": "Evaluative and evidence-based language",
+          "text": "Policy analysis requires evidence-based claims. Example: 'Les résultats observés suggèrent une amélioration modérée, bien que certains indicateurs demeurent préoccupants.'"
+        },
+        "reading": "L'évaluation d'une politique publique repose sur des critères explicites de performance et d'efficacité. Une analyse coûts-avantages permet de mesurer les effets attendus et les conséquences imprévues. Toutefois, la réussite d'une réforme dépend également de sa mise en œuvre institutionnelle. Toute recommandation stratégique doit donc s'appuyer sur des données vérifiables.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What helps measure expected and unexpected effects?",
+            "options": [
+              "A cost-benefit analysis",
+              "A literary review",
+              "A speech",
+              "A survey alone"
+            ],
+            "correctKey": "A cost-benefit analysis"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "On what should recommendations rely?",
+            "options": [
+              "Verifiable data",
+              "Personal preference",
+              "Political loyalty",
+              "Emotion"
+            ],
+            "correctKey": "Verifiable data"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What also determines the success of a reform?",
+            "options": [
+              "Institutional implementation",
+              "Advertising",
+              "Translation",
+              "Symbolism"
+            ],
+            "correctKey": "Institutional implementation"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'évaluation repose sur des critères explicites de performance et d'***.",
+            "correctKey": "efficacité"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Toute recommandation stratégique doit s'appuyer sur des données ***.",
+            "correctKey": "vérifiables"
+          }
+        ]
+      },
+      {
+        "title": "Expression orale spontanée face à un jury académique",
+        "description": "Preparing for high-level jury defenses, handling critical remarks, and speaking with precision.",
+        "vocabulary": [
+          { "french": "une soutenance", "english": "defense" },
+          { "french": "une objection", "english": "objection" },
+          {
+            "french": "la rigueur conceptuelle",
+            "english": "conceptual rigor"
+          },
+          { "french": "une reformulation", "english": "reformulation" },
+          {
+            "french": "une réponse circonstanciée",
+            "english": "detailed response"
+          },
+          {
+            "french": "la précision terminologique",
+            "english": "terminological precision"
+          },
+          {
+            "french": "un raisonnement structuré",
+            "english": "structured reasoning"
+          },
+          { "french": "la maîtrise oratoire", "english": "oratorical mastery" },
+          {
+            "french": "une question déstabilisante",
+            "english": "challenging question"
+          },
+          {
+            "french": "la clarté expositive",
+            "english": "clarity of exposition"
+          }
+        ],
+        "grammar": {
+          "title": "Handling objections academically",
+          "text": "A strong defense acknowledges criticism before responding. Example: 'Votre remarque est pertinente; toutefois, les données recueillies permettent de nuancer cette interprétation.'"
+        },
+        "reading": "Face à un jury académique, la maîtrise oratoire ne suffit pas. Le candidat doit démontrer une rigueur conceptuelle constante et répondre avec précision aux objections formulées. Une reformulation adéquate permet souvent de clarifier les enjeux d'une question complexe. La qualité de la soutenance repose ainsi sur l'équilibre entre assurance et humilité intellectuelle.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What must the candidate demonstrate constantly?",
+            "options": [
+              "Conceptual rigor",
+              "Humor",
+              "Improvisation",
+              "Authority"
+            ],
+            "correctKey": "Conceptual rigor"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What can help clarify a complex question?",
+            "options": [
+              "Appropriate reformulation",
+              "Avoidance",
+              "Silence",
+              "Digression"
+            ],
+            "correctKey": "Appropriate reformulation"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What balance is required in a defense?",
+            "options": [
+              "Confidence and intellectual humility",
+              "Speed and emotion",
+              "Authority and silence",
+              "Tradition and innovation"
+            ],
+            "correctKey": "Confidence and intellectual humility"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une *** adéquate permet souvent de clarifier les enjeux.",
+            "correctKey": "reformulation"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La qualité de la soutenance repose sur l'équilibre entre assurance et humilité ***.",
+            "correctKey": "intellectuelle"
+          }
+        ]
+      }
+    ]
+  }
+]

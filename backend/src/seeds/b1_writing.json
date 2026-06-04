@@ -1,0 +1,400 @@
+[
+  {
+    "title": "Formal and Argumentative Writing",
+    "description": "Write formal emails, job applications, and structure arguments expressing agreement or disagreement.",
+    "lessons": [
+      {
+        "title": "Exprimer son accord ou désaccord",
+        "description": "Structuring an opinion statement or forum post expressing agreement or disagreement.",
+        "vocabulary": [
+          { "french": "à mon avis", "english": "in my opinion" },
+          { "french": "je suis d'accord avec", "english": "I agree with" },
+          {
+            "french": "je ne partage pas cet avis",
+            "english": "I do not share this opinion"
+          },
+          { "french": "cependant", "english": "however" },
+          { "french": "en revanche", "english": "on the other hand" },
+          { "french": "d'une part", "english": "on the one hand" },
+          { "french": "d'autre part", "english": "on the other hand" },
+          { "french": "un argument", "english": "an argument" },
+          { "french": "il me semble que", "english": "it seems to me that" },
+          { "french": "pour conclure", "english": "to conclude" }
+        ],
+        "grammar": {
+          "title": "Structuring agreement and disagreement",
+          "text": "To write a clear opinion, begin with your position, then add reasons and examples. Use je suis d'accord avec to agree and je ne partage pas cet avis to disagree. Example: Je suis d'accord avec cette idée, car elle protège l'environnement. (I agree with this idea because it protects the environment.) Use cependant or en revanche to introduce contrast."
+        },
+        "reading": "À mon avis, les jeunes devraient participer davantage aux projets locaux. Je suis d'accord avec cette idée, car cela développe la responsabilité. Cependant, il faut aussi respecter leur temps libre. D'une part, l'engagement social est utile. D'autre part, les études restent importantes. Pour conclure, il faut trouver un équilibre.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase expresses agreement?",
+            "options": [
+              "je suis d'accord avec",
+              "je ne partage pas cet avis",
+              "en revanche",
+              "pour conclure"
+            ],
+            "correctKey": "je suis d'accord avec"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector introduces contrast?",
+            "options": [
+              "cependant",
+              "pour conclure",
+              "à mon avis",
+              "d'une part"
+            ],
+            "correctKey": "cependant"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the purpose of « pour conclure »?",
+            "options": [
+              "to end an argument",
+              "to give an address",
+              "to ask a question",
+              "to introduce a quote"
+            ],
+            "correctKey": "to end an argument"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "***, les jeunes devraient participer aux projets locaux.",
+            "correctKey": "À mon avis"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je ne partage pas cet ***, car la situation est plus compliquée.",
+            "correctKey": "avis"
+          }
+        ]
+      },
+      {
+        "title": "Lettre de motivation simple",
+        "description": "Writing a simple cover letter for a job or internship application using formal layouts.",
+        "vocabulary": [
+          { "french": "Madame, Monsieur", "english": "Dear Sir or Madam" },
+          {
+            "french": "je vous écris afin de",
+            "english": "I am writing to you in order to"
+          },
+          { "french": "poser ma candidature", "english": "to apply" },
+          { "french": "un stage", "english": "internship" },
+          { "french": "un poste", "english": "position" },
+          { "french": "mes compétences", "english": "my skills" },
+          { "french": "mon expérience", "english": "my experience" },
+          {
+            "french": "je serais ravi de",
+            "english": "I would be delighted to"
+          },
+          { "french": "un entretien", "english": "interview" },
+          { "french": "Veuillez agréer", "english": "Please accept" }
+        ],
+        "grammar": {
+          "title": "Formal cover letter formulas",
+          "text": "A simple French cover letter uses formal opening and closing expressions. Start with Madame, Monsieur. Use je vous écris afin de + infinitive to state your purpose. Example: Je vous écris afin de poser ma candidature pour un stage. (I am writing to apply for an internship.) End politely with Veuillez agréer, Madame, Monsieur, mes salutations distinguées."
+        },
+        "reading": "Madame, Monsieur,\nJe vous écris afin de poser ma candidature pour un stage dans votre entreprise. Mes compétences en communication et mon expérience associative peuvent être utiles à votre équipe. Je suis motivé et sérieux. Je serais ravi de vous rencontrer lors d'un entretien. Veuillez agréer, Madame, Monsieur, mes salutations distinguées.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which opening is appropriate for a formal cover letter?",
+            "options": [
+              "Madame, Monsieur",
+              "Salut mon ami",
+              "Coucou",
+              "À plus tard"
+            ],
+            "correctKey": "Madame, Monsieur"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « poser ma candidature » mean?",
+            "options": ["to apply", "to complain", "to travel", "to resign"],
+            "correctKey": "to apply"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase is used to request or mention an interview politely?",
+            "options": [
+              "Je serais ravi de vous rencontrer lors d'un entretien.",
+              "Je ne veux pas vous parler.",
+              "Je regarde un film.",
+              "Je suis arrivé hier."
+            ],
+            "correctKey": "Je serais ravi de vous rencontrer lors d'un entretien."
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je vous écris *** de poser ma candidature pour un stage.",
+            "correctKey": "afin"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je serais ravi de vous rencontrer lors d'un ***.",
+            "correctKey": "entretien"
+          }
+        ]
+      },
+      {
+        "title": "Écrire un e-mail de réclamation",
+        "description": "Writing a formal complaint email to a company regarding a service or delivery issue.",
+        "vocabulary": [
+          { "french": "une réclamation", "english": "complaint" },
+          { "french": "un service client", "english": "customer service" },
+          { "french": "une livraison", "english": "delivery" },
+          { "french": "un retard", "english": "delay" },
+          { "french": "un produit abîmé", "english": "damaged product" },
+          { "french": "je vous prie de", "english": "I kindly ask you to" },
+          { "french": "rembourser", "english": "to refund" },
+          { "french": "remplacer", "english": "to replace" },
+          {
+            "french": "dans les plus brefs délais",
+            "english": "as soon as possible"
+          },
+          { "french": "cordialement", "english": "sincerely/best regards" }
+        ],
+        "grammar": {
+          "title": "Polite complaint requests with je vous prie de",
+          "text": "In a formal complaint email, explain the problem clearly and request a solution politely. Use je vous prie de + infinitive. Example: Je vous prie de remplacer le produit abîmé. (I kindly ask you to replace the damaged product.) You can also use dans les plus brefs délais to request quick action."
+        },
+        "reading": "Madame, Monsieur,\nJe vous écris afin de faire une réclamation concernant ma livraison. Le colis est arrivé avec trois jours de retard et le produit était abîmé. Je vous prie de le remplacer ou de me rembourser dans les plus brefs délais. Merci de votre compréhension. Cordialement, Sophie Martin.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the purpose of the email?",
+            "options": [
+              "faire une réclamation",
+              "poser une candidature",
+              "raconter un voyage",
+              "donner une recette"
+            ],
+            "correctKey": "faire une réclamation"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What problem is mentioned?",
+            "options": [
+              "Le produit était abîmé.",
+              "Le stage était intéressant.",
+              "Le voyage était magnifique.",
+              "Le film était captivant."
+            ],
+            "correctKey": "Le produit était abîmé."
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase is formal and polite?",
+            "options": [
+              "Je vous prie de",
+              "Donne-moi vite",
+              "Salut",
+              "Tu dois faire ça"
+            ],
+            "correctKey": "Je vous prie de"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je vous écris afin de faire une *** concernant ma livraison.",
+            "correctKey": "réclamation"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je vous prie de me rembourser dans les plus brefs ***.",
+            "correctKey": "délais"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Narrative and Descriptive Writing",
+    "description": "Draft opinion articles, childhood memoirs, and travel descriptions using rich past tenses.",
+    "lessons": [
+      {
+        "title": "Rédiger un court article d'opinion",
+        "description": "Drafting a short opinion piece or blog entry on a modern societal topic.",
+        "vocabulary": [
+          { "french": "un article d'opinion", "english": "opinion article" },
+          { "french": "un sujet de société", "english": "social issue" },
+          { "french": "selon moi", "english": "in my opinion" },
+          { "french": "il est essentiel de", "english": "it is essential to" },
+          { "french": "sensibiliser", "english": "to raise awareness" },
+          { "french": "les citoyens", "english": "citizens" },
+          { "french": "un exemple concret", "english": "concrete example" },
+          { "french": "de plus", "english": "moreover" },
+          { "french": "néanmoins", "english": "nevertheless" },
+          { "french": "en conclusion", "english": "in conclusion" }
+        ],
+        "grammar": {
+          "title": "Organizing an opinion article with connectors",
+          "text": "A short opinion article should have a clear introduction, arguments, examples, and a conclusion. Use selon moi to introduce your view, de plus to add an argument, néanmoins to show contrast, and en conclusion to finish. Example: Selon moi, il est essentiel de sensibiliser les citoyens. (In my opinion, it is essential to raise citizens' awareness.)"
+        },
+        "reading": "Selon moi, la protection de l'environnement est un sujet de société important. Il est essentiel de sensibiliser les citoyens dès l'école. De plus, les villes doivent proposer des solutions concrètes, comme plus d'espaces verts. Néanmoins, chacun doit aussi changer ses habitudes. En conclusion, l'action collective est nécessaire.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector adds another argument?",
+            "options": ["de plus", "néanmoins", "en conclusion", "selon moi"],
+            "correctKey": "de plus"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « néanmoins » express?",
+            "options": ["contrast", "cause", "time", "ownership"],
+            "correctKey": "contrast"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase introduces a conclusion?",
+            "options": [
+              "en conclusion",
+              "un exemple concret",
+              "selon moi",
+              "de plus"
+            ],
+            "correctKey": "en conclusion"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "***, la protection de l'environnement est importante.",
+            "correctKey": "Selon moi"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Il est essentiel de *** les citoyens dès l'école.",
+            "correctKey": "sensibiliser"
+          }
+        ]
+      },
+      {
+        "title": "Raconter un souvenir d'enfance",
+        "description": "Narrating a childhood memory using both the Passé Composé and the Imparfait.",
+        "vocabulary": [
+          { "french": "un souvenir d'enfance", "english": "childhood memory" },
+          { "french": "quand j'étais petit", "english": "when I was little" },
+          { "french": "à cette époque", "english": "at that time" },
+          { "french": "d'habitude", "english": "usually" },
+          { "french": "un été", "english": "one summer" },
+          { "french": "soudain", "english": "suddenly" },
+          { "french": "je me souviens de", "english": "I remember" },
+          { "french": "rendre visite à", "english": "to visit someone" },
+          { "french": "jouer dehors", "english": "to play outside" },
+          {
+            "french": "une journée inoubliable",
+            "english": "an unforgettable day"
+          }
+        ],
+        "grammar": {
+          "title": "Mixing passé composé and imparfait in narration",
+          "text": "Use the imparfait for descriptions, habits, and background situations. Example: Quand j'étais petit, je jouais dehors. (When I was little, I used to play outside.) Use the passé composé for completed events. Example: Un jour, j'ai rencontré un nouvel ami. (One day, I met a new friend.) Together, they make a story clearer."
+        },
+        "reading": "Je me souviens d'un été chez mes grands-parents. Quand j'étais petit, je jouais dehors tous les après-midis. À cette époque, le village était calme et les voisins étaient gentils. Un jour, j'ai trouvé un petit chien perdu près de la maison. Nous l'avons aidé, et cette journée est restée inoubliable.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which tense is used for past habits?",
+            "options": [
+              "l'imparfait",
+              "le futur simple",
+              "le conditionnel",
+              "l'impératif"
+            ],
+            "correctKey": "l'imparfait"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which sentence describes a completed event?",
+            "options": [
+              "J'ai trouvé un petit chien.",
+              "Le village était calme.",
+              "Je jouais dehors.",
+              "Les voisins étaient gentils."
+            ],
+            "correctKey": "J'ai trouvé un petit chien."
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « une journée inoubliable » mean?",
+            "options": [
+              "an unforgettable day",
+              "a boring day",
+              "a school day",
+              "a rainy day"
+            ],
+            "correctKey": "an unforgettable day"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Quand j'étais petit, je *** dehors tous les après-midis.",
+            "correctKey": "jouais"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Un jour, j'*** un petit chien perdu près de la maison.",
+            "correctKey": "ai trouvé"
+          }
+        ]
+      },
+      {
+        "title": "Décrire un voyage récent",
+        "description": "Describing a recent travel experience, itinerary, and personal impressions.",
+        "vocabulary": [
+          { "french": "un voyage récent", "english": "recent trip" },
+          { "french": "un itinéraire", "english": "itinerary" },
+          { "french": "une destination", "english": "destination" },
+          { "french": "un séjour", "english": "stay/trip" },
+          { "french": "visiter un monument", "english": "to visit a monument" },
+          { "french": "découvrir", "english": "to discover" },
+          { "french": "prendre des photos", "english": "to take photos" },
+          { "french": "une impression", "english": "impression" },
+          { "french": "magnifique", "english": "magnificent" },
+          { "french": "recommander", "english": "to recommend" }
+        ],
+        "grammar": {
+          "title": "Describing travel with passé composé and adjectives",
+          "text": "Use the passé composé to describe completed travel activities. Example: J'ai visité un monument célèbre. (I visited a famous monument.) Use adjectives to give impressions, and make them agree with the noun. Example: La ville était magnifique. (The city was magnificent.) Le séjour était intéressant. (The stay was interesting.)"
+        },
+        "reading": "Le mois dernier, j'ai fait un voyage récent à Lyon. Mon itinéraire était simple : j'ai visité un monument, puis j'ai découvert un vieux quartier. J'ai pris beaucoup de photos parce que la ville était magnifique. Ce séjour m'a laissé une très bonne impression. Je recommande cette destination aux amateurs de culture.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Where did the writer travel?",
+            "options": ["à Lyon", "à Paris", "à Marseille", "à Bordeaux"],
+            "correctKey": "à Lyon"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which activity is mentioned in the text?",
+            "options": [
+              "prendre des photos",
+              "faire une réclamation",
+              "écrire un CV",
+              "passer un entretien"
+            ],
+            "correctKey": "prendre des photos"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which adjective describes the city?",
+            "options": ["magnifique", "défectueuse", "bruyante", "obligatoire"],
+            "correctKey": "magnifique"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Mon *** était simple : j'ai visité un monument.",
+            "correctKey": "itinéraire"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je *** cette destination aux amateurs de culture.",
+            "correctKey": "recommande"
+          }
+        ]
+      }
+    ]
+  }
+]

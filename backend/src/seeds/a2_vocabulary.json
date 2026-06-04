@@ -1,0 +1,947 @@
+[
+  {
+    "title": "Around Town and Travel",
+    "description": "Learn vocabulary for public transport, directions, hotel bookings, and tourist services.",
+    "lessons": [
+      {
+        "title": "Public Transport",
+        "description": "Buying train/metro tickets, schedules, and transit vocabulary.",
+        "vocabulary": [
+          {
+            "french": "La gare",
+            "english": "The train station"
+          },
+          {
+            "french": "Le métro",
+            "english": "The metro/subway"
+          },
+          {
+            "french": "L'heure de départ",
+            "english": "Departure time"
+          },
+          {
+            "french": "La carte d'accès",
+            "english": "Access card"
+          },
+          {
+            "french": "Le billet",
+            "english": "Ticket"
+          },
+          {
+            "french": "L'itinéraire",
+            "english": "Route/itinerary"
+          },
+          {
+            "french": "La correspondance",
+            "english": "Transfer/connection"
+          },
+          {
+            "french": "Le trajet",
+            "english": "Journey/trip"
+          },
+          {
+            "french": "L'arrêt",
+            "english": "Stop"
+          },
+          {
+            "french": "La ligne",
+            "english": "Line/route"
+          }
+        ],
+        "grammar": {
+          "title": "Using the Verb 'Prendre'",
+          "text": "To talk about buying tickets or accessing public transport, we use the verb 'prendre'. For example: Je prends un billet de métro. (I buy a metro ticket.) Note that in A2 level, we focus on the present tense for this verb."
+        },
+        "reading": "Dialogue:\n\nMarie : Bonjour, madame. Je voudrais acheter un billet pour Paris.\nFemme au guichet : Désolée, monsieur. L'heure de départ est à 10h00. Vous devez vous rendre à la gare avant.\nMarie : Merci, je comprends.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le nom du lieu où les gens prennent le métro?",
+            "options": [
+              "La gare",
+              "Le métro",
+              "L'hôtel",
+              "La bibliothèque"
+            ],
+            "correctKey": "Le métro",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est l'heure de départ du train?",
+            "options": [
+              "9h00",
+              "10h00",
+              "11h00",
+              "12h00"
+            ],
+            "correctKey": "10h00",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que je dois faire pour prendre le métro?",
+            "options": [
+              "Prendre un billet",
+              "Rester à la gare",
+              "Se rendre au métro",
+              "Faire une correspondance"
+            ],
+            "correctKey": "Prendre un billet",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voudrais acheter un ***, s'il vous plaît.",
+            "correctKey": "billet",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'heure de *** est à 10h00.",
+            "correctKey": "arrivée",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Asking and Giving Directions",
+        "description": "Navigating streets, landmarks, and spatial prepositions.",
+        "vocabulary": [
+          {
+            "french": "gauche",
+            "english": "left"
+          },
+          {
+            "french": "droite",
+            "english": "right"
+          },
+          {
+            "french": "devant",
+            "english": "in front of"
+          },
+          {
+            "french": "derrière",
+            "english": "behind"
+          },
+          {
+            "french": "à gauche",
+            "english": "to the left"
+          },
+          {
+            "french": "à droite",
+            "english": "to the right"
+          },
+          {
+            "french": "tourner à gauche/droite",
+            "english": "turn left/right"
+          },
+          {
+            "french": "aller tout droit",
+            "english": "go straight on"
+          },
+          {
+            "french": "prendre à gauche/droite",
+            "english": "take a left/right turn"
+          },
+          {
+            "french": "tourner à l'épingle",
+            "english": "turn around the corner"
+          }
+        ],
+        "grammar": {
+          "title": "Spatial Prepositions and Directions",
+          "text": "In French, spatial prepositions are used to indicate location or direction. For example: 'Je suis devant la gare.' (I am in front of the train station.) or 'La bibliothèque est à gauche de l'hôtel.' (The library is to the left of the hotel.)"
+        },
+        "reading": "Dialogue\n\n[object Object],[object Object]",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Où suis-je si je suis devant la bibliothèque?",
+            "options": [
+              "À gauche de l'hôtel",
+              "Derrière le parc",
+              "Devant la cathédrale",
+              "À droite du musée"
+            ],
+            "correctKey": "À gauche de l'hôtel",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que je fais si je veux aller au musée?",
+            "options": [
+              "Prendre à gauche et tourner à droite",
+              "Aller tout droit et tourner à l'épingle",
+              "Prendre à droite et tourner à gauche",
+              "Tourner autour de la place"
+            ],
+            "correctKey": "Prendre à gauche et tourner à droite",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que 'à gauche' signifie?",
+            "options": [
+              "En face",
+              "Derrière",
+              "À côté",
+              "Au-dessus"
+            ],
+            "correctKey": "En face",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je suis ***, je veux aller au parc.",
+            "correctKey": "devant",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Pour aller à l'hôtel, il faut prendre la rue *** et tourner à droite.",
+            "correctKey": "gauche",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "At the Hotel",
+        "description": "Checking in, room amenities, and basic lodging services.",
+        "vocabulary": [
+          {
+            "french": "Chambre",
+            "english": "Room"
+          },
+          {
+            "french": "Lit",
+            "english": "Bed"
+          },
+          {
+            "french": "Salle de bain",
+            "english": "Bathroom"
+          },
+          {
+            "french": "Réception",
+            "english": "Reception Desk"
+          },
+          {
+            "french": "Clé",
+            "english": "Key"
+          },
+          {
+            "french": "Étage",
+            "english": "Floor"
+          },
+          {
+            "french": "Ascenseur",
+            "english": "Elevator"
+          },
+          {
+            "french": "Chambre de luxe",
+            "english": "Luxury Room"
+          },
+          {
+            "french": "Paiement à l'arrivée",
+            "english": "Pay on Arrival"
+          },
+          {
+            "french": "Petit déjeuner inclus",
+            "english": "Breakfast Included"
+          }
+        ],
+        "grammar": {
+          "title": "Using the Present Tense for Future Actions",
+          "text": "In French, we often use the present tense to talk about future actions. For example: 'Je vais prendre un café' (I'm going to have a coffee) or 'Elle va se coucher' (She's going to go to bed). This is because in French, the present tense can be used to express habits, routines, and future plans."
+        },
+        "reading": "Dialogue: Checking In\n\nRéceptionniste : Bonjour, pouvez-vous me donner votre nom et votre chambre ?\nHôtelier : Je m'appelle Dupont. J'ai réservé une chambre de luxe.\nRéceptionniste : Bien sûr, Monsieur Dupont. Voici vos clés.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est l'équipement standard dans les chambres d'un hôtel ?",
+            "options": [
+              "Lit",
+              "Salle de bain",
+              "Réception",
+              "Ascenseur"
+            ],
+            "correctKey": "Lit",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Comment s'appelle le personnel qui travaille à la réception d'un hôtel ?",
+            "options": [
+              "Hôtelier",
+              "Réceptionniste",
+              "Portier",
+              "Chef de cuisine"
+            ],
+            "correctKey": "Réceptionniste",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le type de chambre qui inclut un petit déjeuner ?",
+            "options": [
+              "Chambre simple",
+              "Chambre double",
+              "Chambre de luxe",
+              "Petit hôtel"
+            ],
+            "correctKey": "Chambre de luxe",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je vais prendre une chambre avec un ***, car je veux être en haut.",
+            "correctKey": "ascenseur",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La réception de l'hôtel est située à l'*** du bâtiment.",
+            "correctKey": "étage",
+            "points": 10,
+            "options": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Shopping and Daily Routines",
+    "description": "Learn food items, supermarket shopping, clothing sizes, and describing daily habits.",
+    "lessons": [
+      {
+        "title": "At the Supermarket",
+        "description": "Groceries, quantities, food items, and checkout vocabulary.",
+        "vocabulary": [
+          {
+            "french": "épicerie",
+            "english": "grocery store"
+          },
+          {
+            "french": "produit",
+            "english": "product"
+          },
+          {
+            "french": "quantité",
+            "english": "quantity"
+          },
+          {
+            "french": "pain complet",
+            "english": "whole wheat bread"
+          },
+          {
+            "french": "carottes",
+            "english": "carrots"
+          },
+          {
+            "french": "boîte",
+            "english": "box"
+          },
+          {
+            "french": "bouteille d'eau",
+            "english": "water bottle"
+          },
+          {
+            "french": "caisse",
+            "english": "checkout"
+          },
+          {
+            "french": "payer",
+            "english": "to pay"
+          },
+          {
+            "french": "reçu",
+            "english": "receipt"
+          }
+        ],
+        "grammar": {
+          "title": "Using Quantité and Nombre",
+          "text": "When shopping, you use 'quantité' to ask for the quantity of something. For example: 'Combien de pain complet voulez-vous?' (How much whole wheat bread do you want?) If someone asks how many items you have, you say 'Je n'ai que trois carottes.' (I only have three carrots.)"
+        },
+        "reading": "Céline : Bonjour, je voudrais acheter du pain complet et des carottes. Combien ça coûte ? Vendeur : C'est 2 euros pour le pain et 1 euro pour les carottes. Céline : D'accord, je vais prendre deux boîtes de carottes.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est l'endroit où vous achetez des produits alimentaires ?",
+            "options": [
+              "Épicerie",
+              "Supermarché",
+              "Boulangerie",
+              "Librairie"
+            ],
+            "correctKey": "Épicerie",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la quantité de carottes que vous voulez acheter ?",
+            "options": [
+              "Deux boîtes",
+              "Trois boîtes",
+              "Une boîte",
+              "Aucune"
+            ],
+            "correctKey": "Deux boîtes",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Combien ça coûte pour le pain complet ?",
+            "options": [
+              "1 euro",
+              "2 euros",
+              "3 euros",
+              "5 euros"
+            ],
+            "correctKey": "1 euro",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voudrais acheter ***, s'il vous plaît.",
+            "correctKey": "deux boîtes de carottes",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le prix du pain complet est de ***, euros.",
+            "correctKey": "2",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Shopping for Clothes",
+        "description": "Sizes, colors, material descriptions, and payment vocabulary.",
+        "vocabulary": [
+          {
+            "french": "chemise",
+            "english": "shirt"
+          },
+          {
+            "french": "pantalon",
+            "english": "trousers"
+          },
+          {
+            "french": "chaussure",
+            "english": "shoe"
+          },
+          {
+            "french": "couleur",
+            "english": "color"
+          },
+          {
+            "french": "tissu",
+            "english": "material"
+          },
+          {
+            "french": "taille",
+            "english": "size"
+          },
+          {
+            "french": "grandeur",
+            "english": "large size"
+          },
+          {
+            "french": "petite taille",
+            "english": "small size"
+          },
+          {
+            "french": "payer",
+            "english": "to pay"
+          },
+          {
+            "french": "reçu",
+            "english": "receipt"
+          }
+        ],
+        "grammar": {
+          "title": "Describing Clothing Sizes",
+          "text": "In French, you can describe clothing sizes using the words 'taille' (size) and 'grandeur' or 'petite taille' for large and small sizes respectively. For example: 'Je porte une taille 38.' (I wear a size 38.)"
+        },
+        "reading": "Madame Dupont entre dans le magasin et demande à la vendeuse : 'Pouvez-vous me montrer les chemises en grandeur ?' La vendeuse répond : 'Oui, nous avons des chemises de toutes les tailles.' Madame Dupont choisit une chemise bleue et dit : 'Je vais payer avec ma carte.' La vendeuse lui donne un reçu.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la taille de cette chemise ?",
+            "options": [
+              "Grandeur",
+              "Petite taille",
+              "Taille 38",
+              "Couleur"
+            ],
+            "correctKey": "Taille 38",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que la vendeuse a donné à Madame Dupont ?",
+            "options": [
+              "Une chemise bleue",
+              "Un pantalon noir",
+              "Un reçu",
+              "Un tissu"
+            ],
+            "correctKey": "Un reçu",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que Madame Dupont a demandé à la vendeuse ?",
+            "options": [
+              "Pouvez-vous me montrer les pantalons en grandeur ?",
+              "Pouvez-vous me montrer les chemises en petite taille ?",
+              "Pouvez-vous me montrer les chemises en grandeur ?",
+              "Pouvez-vous me montrer les chaussures en couleur ?"
+            ],
+            "correctKey": "Pouvez-vous me montrer les chemises en grandeur ?",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je porte une ***, 38.",
+            "correctKey": "taille",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La vendeuse m'a donné un ***.",
+            "correctKey": "reçu",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Daily Habits",
+        "description": "Reflexive actions, morning routines, chores, and household terms.",
+        "vocabulary": [
+          {
+            "french": "Le petit déjeuner",
+            "english": "Breakfast"
+          },
+          {
+            "french": "Faire la lessive",
+            "english": "Do the laundry"
+          },
+          {
+            "french": "Prendre un bain",
+            "english": "Take a bath"
+          },
+          {
+            "french": "Nettoyer la maison",
+            "english": "Clean the house"
+          },
+          {
+            "french": "Faire les courses",
+            "english": "Do the shopping"
+          },
+          {
+            "french": "Manger à midi",
+            "english": "Have lunch"
+          },
+          {
+            "french": "Prendre le thé",
+            "english": "Take tea"
+          },
+          {
+            "french": "Faire la vaisselle",
+            "english": "Do the dishes"
+          },
+          {
+            "french": "Sortir pour marcher",
+            "english": "Go out for a walk"
+          },
+          {
+            "french": "Se coucher tôt",
+            "english": "Go to bed early"
+          }
+        ],
+        "grammar": {
+          "title": "Reflexive Verbs in Daily Habits",
+          "text": "In French, reflexive verbs are used when the subject of the sentence performs an action on itself. For example: 'Je me lève à 7 heures' (I get up at 7 am), or 'Elle se dresse pour faire la cuisine' (She gets up to cook). Reflexive verbs are formed by adding -me, -te, -se, -nous, -vous, or -les to the end of the verb. For example: 'Je me lave les mains' (I wash my hands), 'Tu te habilles pour aller au travail' (You get dressed to go to work)."
+        },
+        "reading": "Maman : Bonjour, comment ça va ? Fille : Ça va bien, merci. Maman : Tu as fait la lessive hier ? Fille : Oui, j'ai nettoyé la maison aussi. Maman : C'est bien ! Prends un bain et mange à midi avec moi.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le moment où on se lève ?",
+            "options": [
+              "Le petit déjeuner",
+              "Manger à midi",
+              "Prendre un bain",
+              "Se coucher tôt"
+            ],
+            "correctKey": "Le petit déjeuner",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que faire la lessive signifie ?",
+            "options": [
+              "Faire les courses",
+              "Nettoyer la maison",
+              "Faire la vaisselle",
+              "Laver les vêtements"
+            ],
+            "correctKey": "Laver les vêtements",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est l'action que fait Maman dans le dialogue ?",
+            "options": [
+              "Faire la vaisselle",
+              "Nettoyer la maison",
+              "Prendre un bain",
+              "Manger à midi"
+            ],
+            "correctKey": "Manger à midi",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je me *** les mains avant de manger.",
+            "correctKey": "lave",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Maman dit à la fille de prendre un ***.",
+            "correctKey": "bain",
+            "points": 10,
+            "options": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Workplace and Leisure",
+    "description": "Learn vocabulary for jobs, workplace items, sports, hobbies, and weekend getaways.",
+    "lessons": [
+      {
+        "title": "At the Office",
+        "description": "Office supplies, jobs, daily tasks, and meeting vocabulary.",
+        "vocabulary": [
+          {
+            "french": "Secrétaire",
+            "english": "Secretary"
+          },
+          {
+            "french": "Ordinateur",
+            "english": "Computer"
+          },
+          {
+            "french": "Réunion",
+            "english": "Meeting"
+          },
+          {
+            "french": "Présentation",
+            "english": "Presentation"
+          },
+          {
+            "french": "Tâche quotidienne",
+            "english": "Daily task"
+          },
+          {
+            "french": "Stapleur",
+            "english": "Stapler"
+          },
+          {
+            "french": "Fichier",
+            "english": "File"
+          },
+          {
+            "french": "Collaborer",
+            "english": "To collaborate"
+          },
+          {
+            "french": "Calendrier",
+            "english": "Calendar"
+          },
+          {
+            "french": "Rapport",
+            "english": "Report"
+          }
+        ],
+        "grammar": {
+          "title": "L'impératif du présent",
+          "text": "L'impératif du présent est utilisé pour donner des ordres ou des conseils. Il se forme en ajoutant -e à l'infinitif de la conjugaison du verbe, sauf pour les verbes qui finissent par -er, où on ajoute juste -e. Par exemple : 'Écrivez votre nom.' (Écrire est un verbe qui finit par -er) ou 'Faites votre travail.'"
+        },
+        "reading": "Une réunion à l'office\n\nLors de la réunion, le directeur a présenté les objectifs du trimestre. Le secrétaire a distribué les fichiers et le calendrier. Nous devons collaborer pour terminer nos tâches quotidiennes.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est l'outil utilisé pour fixer des documents ?",
+            "options": [
+              "Ordinateur",
+              "Stapleur",
+              "Fichier",
+              "Calendrier"
+            ],
+            "correctKey": "Stapleur",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le but d'une réunion ?",
+            "options": [
+              "Prendre un café",
+              "Faire des tâches quotidiennes",
+              "Présenter les objectifs du trimestre",
+              "Collaborer"
+            ],
+            "correctKey": "Présenter les objectifs du trimestre",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le document que le secrétaire a distribué ?",
+            "options": [
+              "Ordinateur",
+              "Fichier",
+              "Calendrier",
+              "Rapport"
+            ],
+            "correctKey": "Fichier",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le directeur a donné une *** de l'objectif du trimestre.",
+            "correctKey": "présentation",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Nous devons collaborer pour terminer nos *** quotidiennes.",
+            "correctKey": "tâches",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Sports and Hobbies",
+        "description": "Talking about physical activities, games, instruments, and pastimes.",
+        "vocabulary": [
+          {
+            "french": "le sport",
+            "english": "the sport"
+          },
+          {
+            "french": "faire du ski",
+            "english": "to go skiing"
+          },
+          {
+            "french": "la musique",
+            "english": "music"
+          },
+          {
+            "french": "jouer de la guitare",
+            "english": "to play the guitar"
+          },
+          {
+            "french": "le foot",
+            "english": "soccer"
+          },
+          {
+            "french": "aller au cinéma",
+            "english": "to go to the cinema"
+          },
+          {
+            "french": "faire du vélo",
+            "english": "to cycle"
+          },
+          {
+            "french": "le tennis",
+            "english": "tennis"
+          },
+          {
+            "french": "lire un livre",
+            "english": "to read a book"
+          },
+          {
+            "french": "faire du patin à roulettes",
+            "english": "to roller skate"
+          }
+        ],
+        "grammar": {
+          "title": "Using the Present Tense with Regular Verbs",
+          "text": "In French, we use the present tense to talk about actions that are happening now. For regular verbs, you add -e at the end for the first person singular (I), and no ending for the other persons.\n\nExamples:\n* Je fais du sport (I do sports)\n* Tu joues au foot (You play soccer)\n* Il fait de la musique (He makes music)"
+        },
+        "reading": "Pierre : Bonjour, comment allez-vous ?\nMarie : Je vais bien, merci. Et vous ?\nPierre : Je fais du sport tous les jours.\nMarie : Ah, je faisais du vélo hier, mais il pleuvait trop.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le sport préféré de Pierre ?",
+            "options": [
+              "le foot",
+              "le tennis",
+              "faire du ski",
+              "faire du vélo"
+            ],
+            "correctKey": "le foot",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que Marie faisait hier ?",
+            "options": [
+              "elle allait au cinéma",
+              "elle jouait de la guitare",
+              "elle faisait du vélo",
+              "elle lisait un livre"
+            ],
+            "correctKey": "elle faisait du vélo",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que Pierre fait tous les jours ?",
+            "options": [
+              "il joue de la guitare",
+              "il fait du ski",
+              "il fait du sport",
+              "il lit un livre"
+            ],
+            "correctKey": "il fait du sport",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je *** du vélo tous les dimanches.",
+            "correctKey": "fais",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Marie *** de la musique tous les soirs.",
+            "correctKey": "fait",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Weekend Getaways",
+        "description": "Planning outdoor activities, excursions, and travel destinations.",
+        "vocabulary": [
+          {
+            "french": "Sortir",
+            "english": "To go out"
+          },
+          {
+            "french": "Week-end",
+            "english": "Weekend"
+          },
+          {
+            "french": "Pique-nique",
+            "english": "Picnic"
+          },
+          {
+            "french": "Plage",
+            "english": "Beach"
+          },
+          {
+            "french": "Montagne",
+            "english": "Mountain"
+          },
+          {
+            "french": "Randonnée",
+            "english": "Hike"
+          },
+          {
+            "french": "Voyage",
+            "english": "Trip"
+          },
+          {
+            "french": "Destination",
+            "english": "Destination"
+          },
+          {
+            "french": "Activité",
+            "english": "Activity"
+          },
+          {
+            "french": "Sortir de chez soi",
+            "english": "To go out of one's house"
+          }
+        ],
+        "grammar": {
+          "title": "Using the Subjunctive Mood with 'aller'",
+          "text": "In French, when we talk about going to do something in the future, we use the subjunctive mood. For example: Je vais faire du ski demain. (I am going skiing tomorrow.) or J'irai à la plage si le temps est beau. (I will go to the beach if the weather is nice.)"
+        },
+        "reading": "Planning a Weekend Getaway\n\nLisez ce dialogue entre deux amis qui planifient un week-end en montagne.\n\nSébastien : Je vais faire du ski demain. Tu veux venir avec moi ?\n\nMarie : Oui, mais je préfère aller à la plage si le temps est beau. Quelle est ta destination préférée pour ce week-end ?\n\nSébastien : J'ai pensé à la montagne, nous pouvons faire une randonnée et profiter de la vue.\n\nMarie : C'est une bonne idée ! Je vais vérifier les météo avant de décider.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le mot qui signifie 'hike' en français ?",
+            "options": [
+              "Randonnée",
+              "Pique-nique",
+              "Plage",
+              "Voyage"
+            ],
+            "correctKey": "Randonnée",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est l'activité que préfère Marie pour le week-end ?",
+            "options": [
+              "Faire du ski",
+              "Aller à la plage",
+              "Faire une randonnée",
+              "Voyager"
+            ],
+            "correctKey": "Aller à la plage",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la destination préférée de Sébastien pour le week-end ?",
+            "options": [
+              "La montagne",
+              "La plage",
+              "Le ski",
+              "La randonnée"
+            ],
+            "correctKey": "La montagne",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je vais faire du *** demain.",
+            "correctKey": "ski",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Marie préfère aller à la *** si le temps est beau.",
+            "correctKey": "plage",
+            "points": 10,
+            "options": null
+          }
+        ]
+      }
+    ]
+  }
+]

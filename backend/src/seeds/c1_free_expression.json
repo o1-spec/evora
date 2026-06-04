@@ -1,0 +1,1268 @@
+[
+  {
+    "title": "Environnement, Langue et Société",
+    "description": "Pratiquez l'argumentation orale sur la taxation environnementale, l'usage de l'anglais au travail, les voitures en ville et le vote électronique.",
+    "lessons": [
+      {
+        "title": "Faut-il taxer les produits polluants ?",
+        "description": "Débat oral sur la fiscalité écologique et son impact social.",
+        "vocabulary": [
+          {
+            "french": "une taxe environnementale",
+            "english": "environmental tax"
+          },
+          {
+            "french": "un produit polluant",
+            "english": "polluting product"
+          },
+          {
+            "french": "la fiscalité écologique",
+            "english": "green taxation"
+          },
+          {
+            "french": "le pouvoir d'achat",
+            "english": "purchasing power"
+          },
+          {
+            "french": "une mesure incitative",
+            "english": "incentive measure"
+          },
+          {
+            "french": "le principe du pollueur-payeur",
+            "english": "polluter-pays principle"
+          },
+          {
+            "french": "une transition juste",
+            "english": "fair transition"
+          },
+          {
+            "french": "réduire les émissions",
+            "english": "to reduce emissions"
+          },
+          {
+            "french": "un impact social",
+            "english": "social impact"
+          },
+          {
+            "french": "compenser les ménages modestes",
+            "english": "to compensate low-income households"
+          }
+        ],
+        "grammar": {
+          "title": "Defending an opinion with cause and concession",
+          "text": "In oral debate, combine a clear opinion with a cause and a concession. Use je soutiens cette mesure parce que... to defend a position, and certes... mais... to show nuance. Example: Je soutiens cette mesure parce qu'elle réduit les émissions. Certes, elle peut coûter cher, mais elle encourage des choix plus responsables."
+        },
+        "reading": "Camille : Je soutiens cette mesure parce qu'elle applique le principe du pollueur-payeur.\nNassim : Certes, mais une taxe environnementale peut réduire le pouvoir d'achat.\nCamille : C'est vrai, toutefois on peut compenser les ménages modestes.\nNassim : Je préfère des mesures incitatives plutôt que des sanctions.\nCamille : Pourtant, sans fiscalité écologique, les habitudes changent trop lentement.\nNassim : D'accord, à condition que la transition soit juste.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What principle does Camille defend?",
+            "options": [
+              "le principe du pollueur-payeur",
+              "le droit à la déconnexion",
+              "la liberté de la presse",
+              "la semaine de 4 jours"
+            ],
+            "correctKey": "le principe du pollueur-payeur"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What concern does Nassim mention?",
+            "options": [
+              "le pouvoir d'achat",
+              "le vote électronique",
+              "la diversité linguistique",
+              "les quotas professionnels"
+            ],
+            "correctKey": "le pouvoir d'achat"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase introduces concession?",
+            "options": [
+              "Certes, mais",
+              "Parce que",
+              "À condition que",
+              "Je soutiens"
+            ],
+            "correctKey": "Certes, mais"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je soutiens cette mesure *** elle applique le principe du pollueur-payeur.",
+            "correctKey": "parce qu'"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une taxe environnementale peut réduire le pouvoir d'***.",
+            "correctKey": "achat"
+          }
+        ]
+      },
+      {
+        "title": "L'anglais doit-il être la seule langue de travail internationale ?",
+        "description": "Débat oral sur le multilinguisme professionnel et la diversité linguistique.",
+        "vocabulary": [
+          {
+            "french": "le multilinguisme professionnel",
+            "english": "professional multilingualism"
+          },
+          {
+            "french": "une langue véhiculaire",
+            "english": "lingua franca"
+          },
+          {
+            "french": "la diversité linguistique",
+            "english": "linguistic diversity"
+          },
+          {
+            "french": "un échange international",
+            "english": "international exchange"
+          },
+          {
+            "french": "l'efficacité communicationnelle",
+            "english": "communication efficiency"
+          },
+          {
+            "french": "une compétence interculturelle",
+            "english": "intercultural skill"
+          },
+          {
+            "french": "une domination linguistique",
+            "english": "linguistic dominance"
+          },
+          {
+            "french": "favoriser l'inclusion",
+            "english": "to promote inclusion"
+          },
+          {
+            "french": "un malentendu culturel",
+            "english": "cultural misunderstanding"
+          },
+          {
+            "french": "valoriser les langues locales",
+            "english": "to value local languages"
+          }
+        ],
+        "grammar": {
+          "title": "Comparing advantages with d'une part... d'autre part",
+          "text": "Use d'une part... d'autre part to present two sides of a debate. Example: D'une part, l'anglais facilite les échanges internationaux. D'autre part, le multilinguisme protège la diversité linguistique. This structure helps sound balanced and organized."
+        },
+        "reading": "Élise : D'une part, l'anglais facilite les échanges internationaux et l'efficacité communicationnelle.\nKarim : D'autre part, imposer une seule langue peut créer une domination linguistique.\nÉlise : Je comprends, mais une langue véhiculaire évite beaucoup de malentendus.\nKarim : Oui, cependant le multilinguisme professionnel favorise l'inclusion.\nÉlise : Il faudrait donc former les salariés aux compétences interculturelles.\nKarim : Exactement, tout en valorisant les langues locales.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What advantage of English does Élise mention?",
+            "options": [
+              "faciliter les échanges internationaux",
+              "supprimer les langues locales",
+              "réduire les compétences interculturelles",
+              "augmenter les conflits"
+            ],
+            "correctKey": "faciliter les échanges internationaux"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does Karim defend?",
+            "options": [
+              "le multilinguisme professionnel",
+              "la domination linguistique",
+              "la taxation écologique",
+              "le vote obligatoire"
+            ],
+            "correctKey": "le multilinguisme professionnel"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which structure balances two sides of an argument?",
+            "options": [
+              "d'une part... d'autre part",
+              "tout à coup",
+              "avant-hier",
+              "sans doute uniquement"
+            ],
+            "correctKey": "d'une part... d'autre part"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'anglais facilite les échanges ***.",
+            "correctKey": "internationaux"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le multilinguisme professionnel favorise l'***.",
+            "correctKey": "inclusion"
+          }
+        ]
+      },
+      {
+        "title": "Pour ou contre l'interdiction des voitures en ville ?",
+        "description": "Débat oral sur les mobilités douces, la pollution urbaine et l'aménagement des villes.",
+        "vocabulary": [
+          {
+            "french": "interdire les voitures",
+            "english": "to ban cars"
+          },
+          {
+            "french": "la pollution urbaine",
+            "english": "urban pollution"
+          },
+          {
+            "french": "les mobilités douces",
+            "english": "soft mobility"
+          },
+          {
+            "french": "une zone piétonne",
+            "english": "pedestrian zone"
+          },
+          {
+            "french": "les transports en commun",
+            "english": "public transportation"
+          },
+          {
+            "french": "un embouteillage",
+            "english": "traffic jam"
+          },
+          {
+            "french": "l'aménagement urbain",
+            "english": "urban planning"
+          },
+          {
+            "french": "une piste cyclable",
+            "english": "bike lane"
+          },
+          {
+            "french": "l'accessibilité",
+            "english": "accessibility"
+          },
+          {
+            "french": "une mesure progressive",
+            "english": "gradual measure"
+          }
+        ],
+        "grammar": {
+          "title": "Expressing opposition politely with je reconnais que... néanmoins",
+          "text": "In a debate, use je reconnais que... néanmoins to acknowledge the other side before disagreeing. Example: Je reconnais que la voiture est pratique, néanmoins elle aggrave la pollution urbaine. This sounds more diplomatic than direct contradiction."
+        },
+        "reading": "Lina : Je suis pour l'interdiction des voitures car la pollution urbaine devient insupportable.\nMarc : Je reconnais que c'est un problème, néanmoins tout le monde n'a pas accès aux transports en commun.\nLina : On pourrait créer plus de pistes cyclables et de zones piétonnes.\nMarc : Oui, mais l'accessibilité doit rester une priorité.\nLina : Alors commençons par une mesure progressive.\nMarc : Là, je suis d'accord, surtout si l'aménagement urbain suit.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Why does Lina support banning cars?",
+            "options": [
+              "la pollution urbaine devient insupportable",
+              "les voitures sont gratuites",
+              "les transports sont inutiles",
+              "les villes manquent de bruit"
+            ],
+            "correctKey": "la pollution urbaine devient insupportable"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What concern does Marc raise?",
+            "options": [
+              "l'accessibilité aux transports en commun",
+              "la liberté de la presse",
+              "la diversité professionnelle",
+              "la télémédecine"
+            ],
+            "correctKey": "l'accessibilité aux transports en commun"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase politely recognizes another argument before disagreeing?",
+            "options": [
+              "Je reconnais que... néanmoins",
+              "Je refuse absolument",
+              "Tu as tort",
+              "C'est impossible"
+            ],
+            "correctKey": "Je reconnais que... néanmoins"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "On pourrait créer plus de pistes ***.",
+            "correctKey": "cyclables"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Commençons par une mesure ***.",
+            "correctKey": "progressive"
+          }
+        ]
+      },
+      {
+        "title": "Le vote électronique est-il l'avenir ?",
+        "description": "Débat oral sur la sécurité démocratique, l'accessibilité et la participation électorale.",
+        "vocabulary": [
+          {
+            "french": "le vote électronique",
+            "english": "electronic voting"
+          },
+          {
+            "french": "la participation électorale",
+            "english": "voter turnout/electoral participation"
+          },
+          {
+            "french": "la sécurité démocratique",
+            "english": "democratic security"
+          },
+          {
+            "french": "un risque de fraude",
+            "english": "risk of fraud"
+          },
+          {
+            "french": "la confidentialité du vote",
+            "english": "vote confidentiality"
+          },
+          {
+            "french": "l'accessibilité numérique",
+            "english": "digital accessibility"
+          },
+          {
+            "french": "une procédure électorale",
+            "english": "electoral procedure"
+          },
+          {
+            "french": "un système fiable",
+            "english": "reliable system"
+          },
+          {
+            "french": "renforcer la confiance",
+            "english": "to strengthen trust"
+          },
+          {
+            "french": "une fracture numérique",
+            "english": "digital divide"
+          }
+        ],
+        "grammar": {
+          "title": "Expressing condition with à condition que",
+          "text": "Use à condition que + subjunctive to express a necessary condition. Example: Le vote électronique peut être utile à condition que le système soit fiable. This structure is useful for nuanced debate because it accepts an idea only under certain conditions."
+        },
+        "reading": "Sophie : Le vote électronique pourrait augmenter la participation électorale.\nThomas : Peut-être, mais il existe un risque de fraude et de fracture numérique.\nSophie : Je suis d'accord, à condition que le système soit fiable et contrôlé.\nThomas : Il faut aussi garantir la confidentialité du vote.\nSophie : Oui, la sécurité démocratique doit rester prioritaire.\nThomas : Dans ce cas, il pourrait renforcer la confiance des citoyens.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What benefit of electronic voting is mentioned?",
+            "options": [
+              "augmenter la participation électorale",
+              "supprimer la confidentialité",
+              "réduire la démocratie",
+              "interdire les élections"
+            ],
+            "correctKey": "augmenter la participation électorale"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What risk does Thomas mention?",
+            "options": [
+              "un risque de fraude",
+              "une taxe écologique",
+              "une pénurie de professeurs",
+              "une baisse du tourisme"
+            ],
+            "correctKey": "un risque de fraude"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression introduces a necessary condition?",
+            "options": [
+              "à condition que",
+              "par hasard",
+              "d'abord",
+              "malgré tout"
+            ],
+            "correctKey": "à condition que"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Il faut garantir la confidentialité du ***.",
+            "correctKey": "vote"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le système doit être fiable et ***.",
+            "correctKey": "contrôlé"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Technologie, Travail et Droits Sociaux",
+    "description": "Débattez à l'oral sur l'intelligence artificielle en éducation, le congé paternité, les quotas de diversité et la semaine de 4 jours.",
+    "lessons": [
+      {
+        "title": "L'IA va-t-elle remplacer les professeurs ?",
+        "description": "Débat oral sur le rôle de la technologie et des relations humaines dans l'enseignement.",
+        "vocabulary": [
+          {
+            "french": "l'intelligence artificielle",
+            "english": "artificial intelligence"
+          },
+          {
+            "french": "un accompagnement personnalisé",
+            "english": "personalized support"
+          },
+          {
+            "french": "la relation humaine",
+            "english": "human relationship"
+          },
+          {
+            "french": "un outil pédagogique",
+            "english": "teaching tool"
+          },
+          {
+            "french": "l'esprit critique",
+            "english": "critical thinking"
+          },
+          {
+            "french": "l'automatisation de l'apprentissage",
+            "english": "learning automation"
+          },
+          {
+            "french": "un enseignant irremplaçable",
+            "english": "irreplaceable teacher"
+          },
+          {
+            "french": "adapter le rythme",
+            "english": "to adapt the pace"
+          },
+          {
+            "french": "un risque de dépendance",
+            "english": "risk of dependence"
+          },
+          {
+            "french": "l'éthique éducative",
+            "english": "educational ethics"
+          }
+        ],
+        "grammar": {
+          "title": "Nuancing predictions with il est peu probable que",
+          "text": "Use il est peu probable que + subjunctive to express a cautious prediction. Example: Il est peu probable que l'IA remplace totalement les professeurs. Use il est possible que + subjunctive for possibility: Il est possible qu'elle transforme leur rôle."
+        },
+        "reading": "Amina : L'IA peut adapter le rythme de chaque élève et offrir un accompagnement personnalisé.\nJulien : C'est utile, mais il est peu probable qu'elle remplace la relation humaine.\nAmina : Je la vois plutôt comme un outil pédagogique.\nJulien : Oui, à condition qu'on développe aussi l'esprit critique.\nAmina : Il faut éviter un risque de dépendance.\nJulien : Exactement, l'éthique éducative doit guider son usage.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "How does Amina view AI?",
+            "options": [
+              "comme un outil pédagogique",
+              "comme un professeur humain",
+              "comme une loi électorale",
+              "comme une taxe"
+            ],
+            "correctKey": "comme un outil pédagogique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does Julien think AI cannot replace?",
+            "options": [
+              "la relation humaine",
+              "la fiscalité écologique",
+              "les voitures",
+              "les quotas"
+            ],
+            "correctKey": "la relation humaine"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression gives a cautious prediction?",
+            "options": [
+              "il est peu probable que",
+              "je suis certain que",
+              "sans aucun doute",
+              "il est évident que"
+            ],
+            "correctKey": "il est peu probable que"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'IA peut offrir un accompagnement ***.",
+            "correctKey": "personnalisé"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Il faut développer l'esprit ***.",
+            "correctKey": "critique"
+          }
+        ]
+      },
+      {
+        "title": "Le congé paternité doit-il être obligatoire ?",
+        "description": "Débat oral sur l'égalité parentale, le partage des tâches familiales et la législation.",
+        "vocabulary": [
+          {
+            "french": "le congé paternité",
+            "english": "paternity leave"
+          },
+          {
+            "french": "l'égalité parentale",
+            "english": "parental equality"
+          },
+          {
+            "french": "le partage des tâches",
+            "english": "sharing of tasks"
+          },
+          {
+            "french": "une obligation légale",
+            "english": "legal obligation"
+          },
+          {
+            "french": "un nouveau-né",
+            "english": "newborn"
+          },
+          {
+            "french": "le lien familial",
+            "english": "family bond"
+          },
+          {
+            "french": "la carrière professionnelle",
+            "english": "professional career"
+          },
+          {
+            "french": "une norme sociale",
+            "english": "social norm"
+          },
+          {
+            "french": "soutenir les familles",
+            "english": "to support families"
+          },
+          {
+            "french": "réduire les inégalités",
+            "english": "to reduce inequalities"
+          }
+        ],
+        "grammar": {
+          "title": "Arguing with il faudrait que + subjunctive",
+          "text": "Use il faudrait que + subjunctive to make a strong but polite recommendation. Example: Il faudrait que les entreprises soutiennent mieux les jeunes parents. This is useful in debates about laws and social rights."
+        },
+        "reading": "Noémie : Le congé paternité devrait être obligatoire pour renforcer l'égalité parentale.\nDavid : Je comprends, mais une obligation légale peut être difficile pour les petites entreprises.\nNoémie : Il faudrait que l'État soutienne mieux les employeurs.\nDavid : C'est vrai, surtout si cela réduit les inégalités.\nNoémie : Le partage des tâches commence dès l'arrivée du nouveau-né.\nDavid : Et cela peut aussi renforcer le lien familial.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Why does Noémie support mandatory paternity leave?",
+            "options": [
+              "pour renforcer l'égalité parentale",
+              "pour réduire les écoles",
+              "pour augmenter les embouteillages",
+              "pour supprimer les familles"
+            ],
+            "correctKey": "pour renforcer l'égalité parentale"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What concern does David mention?",
+            "options": [
+              "la difficulté pour les petites entreprises",
+              "la pollution urbaine",
+              "la fraude électorale",
+              "la langue française"
+            ],
+            "correctKey": "la difficulté pour les petites entreprises"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which structure gives a strong but polite recommendation?",
+            "options": [
+              "Il faudrait que",
+              "Il est interdit de",
+              "Tout à coup",
+              "Je n'ai jamais"
+            ],
+            "correctKey": "Il faudrait que"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le partage des tâches commence dès l'arrivée du ***.",
+            "correctKey": "nouveau-né"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Cela peut renforcer le lien ***.",
+            "correctKey": "familial"
+          }
+        ]
+      },
+      {
+        "title": "Faut-il imposer des quotas de diversité ?",
+        "description": "Débat oral sur la discrimination positive, la représentation équitable et le mérite professionnel.",
+        "vocabulary": [
+          {
+            "french": "un quota de diversité",
+            "english": "diversity quota"
+          },
+          {
+            "french": "la discrimination positive",
+            "english": "affirmative action"
+          },
+          {
+            "french": "la représentation équitable",
+            "english": "fair representation"
+          },
+          {
+            "french": "le mérite professionnel",
+            "english": "professional merit"
+          },
+          {
+            "french": "l'égalité des chances",
+            "english": "equal opportunity"
+          },
+          {
+            "french": "un biais de recrutement",
+            "english": "recruitment bias"
+          },
+          {
+            "french": "une politique inclusive",
+            "english": "inclusive policy"
+          },
+          {
+            "french": "corriger les inégalités",
+            "english": "to correct inequalities"
+          },
+          {
+            "french": "une mesure controversée",
+            "english": "controversial measure"
+          },
+          {
+            "french": "la transparence des critères",
+            "english": "transparency of criteria"
+          }
+        ],
+        "grammar": {
+          "title": "Expressing reservation with je crains que + subjunctive",
+          "text": "Use je crains que + subjunctive to express concern or reservation. Example: Je crains que les quotas soient mal compris. You can then add a condition: Ils peuvent être utiles si les critères restent transparents."
+        },
+        "reading": "Rania : Les quotas de diversité peuvent corriger les inégalités et améliorer la représentation équitable.\nPaul : Je crains qu'ils soient perçus comme une remise en cause du mérite professionnel.\nRania : Pourtant, les biais de recrutement existent encore.\nPaul : D'accord, mais il faut garantir la transparence des critères.\nRania : Une politique inclusive ne doit pas opposer diversité et compétence.\nPaul : Alors, cette mesure peut être utile si elle est bien expliquée.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does Rania say quotas can improve?",
+            "options": [
+              "la représentation équitable",
+              "la pollution urbaine",
+              "le vote électronique",
+              "la cuisine locale"
+            ],
+            "correctKey": "la représentation équitable"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What concern does Paul express?",
+            "options": [
+              "une remise en cause du mérite professionnel",
+              "une hausse des transports",
+              "une baisse des impôts",
+              "un manque de professeurs"
+            ],
+            "correctKey": "une remise en cause du mérite professionnel"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression shows concern and often takes the subjunctive?",
+            "options": [
+              "Je crains que",
+              "Je sais que",
+              "Il est clair que",
+              "Je constate que"
+            ],
+            "correctKey": "Je crains que"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les biais de *** existent encore.",
+            "correctKey": "recrutement"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Il faut garantir la transparence des ***.",
+            "correctKey": "critères"
+          }
+        ]
+      },
+      {
+        "title": "La semaine de 4 jours est-elle viable ?",
+        "description": "Débat oral sur l'équilibre de vie, la productivité et la réorganisation des entreprises.",
+        "vocabulary": [
+          {
+            "french": "la semaine de quatre jours",
+            "english": "four-day week"
+          },
+          {
+            "french": "l'équilibre de vie",
+            "english": "work-life balance"
+          },
+          {
+            "french": "la productivité",
+            "english": "productivity"
+          },
+          {
+            "french": "la charge de travail",
+            "english": "workload"
+          },
+          {
+            "french": "la réorganisation interne",
+            "english": "internal reorganization"
+          },
+          {
+            "french": "un gain d'efficacité",
+            "english": "efficiency gain"
+          },
+          {
+            "french": "prévenir l'épuisement professionnel",
+            "english": "to prevent burnout"
+          },
+          {
+            "french": "une expérimentation",
+            "english": "trial/experiment"
+          },
+          {
+            "french": "maintenir les salaires",
+            "english": "to maintain salaries"
+          },
+          {
+            "french": "un modèle viable",
+            "english": "viable model"
+          }
+        ],
+        "grammar": {
+          "title": "Evaluating feasibility with à condition de + infinitive",
+          "text": "Use à condition de + infinitive when the subject is the same in both clauses. Example: La semaine de quatre jours peut fonctionner à condition de réorganiser le travail. Use à condition que + subjunctive when the subject changes: Elle peut fonctionner à condition que les équipes soient bien préparées."
+        },
+        "reading": "Hugo : La semaine de quatre jours peut améliorer l'équilibre de vie et prévenir l'épuisement professionnel.\nMaëlle : Oui, mais elle risque d'augmenter la charge de travail sur quatre jours.\nHugo : Elle peut être viable à condition de réorganiser les priorités.\nMaëlle : Il faut aussi maintenir les salaires pour éviter une injustice sociale.\nHugo : Certaines entreprises observent déjà un gain d'efficacité.\nMaëlle : Alors, une expérimentation progressive me semble raisonnable.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What benefit does Hugo mention?",
+            "options": [
+              "améliorer l'équilibre de vie",
+              "augmenter la pollution",
+              "réduire les droits sociaux",
+              "supprimer les salaires"
+            ],
+            "correctKey": "améliorer l'équilibre de vie"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What risk does Maëlle mention?",
+            "options": [
+              "augmenter la charge de travail",
+              "réduire les transports",
+              "affaiblir les langues locales",
+              "supprimer les élections"
+            ],
+            "correctKey": "augmenter la charge de travail"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which structure expresses a condition with the same subject?",
+            "options": [
+              "à condition de",
+              "bien que",
+              "malgré",
+              "cependant"
+            ],
+            "correctKey": "à condition de"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Elle peut être viable à condition de réorganiser les ***.",
+            "correctKey": "priorités"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Il faut maintenir les *** pour éviter une injustice sociale.",
+            "correctKey": "salaires"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Culture, Économie et Avenir",
+    "description": "S'exprimer à l'oral sur l'art engagé, la mondialisation linguistique, l'érosion des identités, le transhumanisme et la régulation éthique du capitalisme.",
+    "lessons": [
+      {
+        "title": "L'art doit-il être nécessairement politique ?",
+        "description": "Exposé oral sur l'art engagé, l'esthétique pure et le rôle de l'artiste dans la cité.",
+        "vocabulary": [
+          {
+            "french": "l'art engagé",
+            "english": "committed art"
+          },
+          {
+            "french": "l'esthétique pure",
+            "english": "pure aesthetics"
+          },
+          {
+            "french": "la fonction sociale de l'art",
+            "english": "the social function of art"
+          },
+          {
+            "french": "une prise de position",
+            "english": "a stance"
+          },
+          {
+            "french": "la liberté créatrice",
+            "english": "creative freedom"
+          },
+          {
+            "french": "un message implicite",
+            "english": "an implicit message"
+          },
+          {
+            "french": "une œuvre contestataire",
+            "english": "a protest work"
+          },
+          {
+            "french": "le rôle de l'artiste",
+            "english": "the role of the artist"
+          },
+          {
+            "french": "à première vue",
+            "english": "at first glance"
+          },
+          {
+            "french": "force est de constater",
+            "english": "it must be acknowledged"
+          }
+        ],
+        "grammar": {
+          "title": "Structuring a balanced oral thesis",
+          "text": "At C1 level, present a thesis, an antithesis, and a nuanced conclusion. Use expressions such as 'À première vue', 'Cependant', and 'Force est de constater'. Example: 'À première vue, l'art devrait rester indépendant. Cependant, de nombreuses œuvres influencent le débat public. Force est de constater que l'art possède souvent une dimension politique.'"
+        },
+        "reading": "À première vue, l'art devrait être libre de toute finalité politique. Cependant, de nombreuses œuvres contestataires ont profondément influencé les sociétés. Force est de constater que l'art reflète souvent les tensions de son époque. Pour autant, réduire toute création à un message idéologique me semble excessif. L'art engagé et l'esthétique pure peuvent donc coexister sans contradiction majeure.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What position does the speaker adopt?",
+            "options": [
+              "A nuanced position recognizing both perspectives",
+              "Art must always be political",
+              "Art should never influence society",
+              "Politics and art are unrelated"
+            ],
+            "correctKey": "A nuanced position recognizing both perspectives"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression introduces a counterargument?",
+            "options": [
+              "Cependant",
+              "À première vue",
+              "Pour conclure",
+              "D'abord"
+            ],
+            "correctKey": "Cependant"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'force est de constater' signal?",
+            "options": [
+              "An observation that seems undeniable",
+              "A personal anecdote",
+              "A future prediction",
+              "A direct command"
+            ],
+            "correctKey": "An observation that seems undeniable"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "*** est de constater que l'art reflète souvent les tensions de son époque.",
+            "correctKey": "Force"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'art *** et l'esthétique pure peuvent coexister.",
+            "correctKey": "engagé"
+          }
+        ]
+      },
+      {
+        "title": "Quel avenir pour le multilinguisme ?",
+        "description": "Exposé oral sur l'importance du pluralisme linguistique face aux langues mondiales dominantes.",
+        "vocabulary": [
+          {
+            "french": "le pluralisme linguistique",
+            "english": "linguistic pluralism"
+          },
+          {
+            "french": "une langue dominante",
+            "english": "dominant language"
+          },
+          {
+            "french": "la diversité culturelle",
+            "english": "cultural diversity"
+          },
+          {
+            "french": "une langue minoritaire",
+            "english": "minority language"
+          },
+          {
+            "french": "la transmission intergénérationnelle",
+            "english": "intergenerational transmission"
+          },
+          {
+            "french": "un patrimoine immatériel",
+            "english": "intangible heritage"
+          },
+          {
+            "french": "la standardisation linguistique",
+            "english": "linguistic standardization"
+          },
+          {
+            "french": "un vecteur d'identité",
+            "english": "identity marker"
+          },
+          {
+            "french": "en revanche",
+            "english": "on the other hand"
+          },
+          {
+            "french": "à long terme",
+            "english": "in the long term"
+          }
+        ],
+        "grammar": {
+          "title": "Presenting contrasting perspectives",
+          "text": "Use connectors such as 'D'une part', 'D'autre part', and 'En revanche' to compare perspectives. Example: 'D'une part, une langue dominante facilite les échanges. D'autre part, elle peut fragiliser les langues minoritaires.' This structure is common in advanced oral presentations."
+        },
+        "reading": "D'une part, les langues dominantes facilitent les échanges économiques et scientifiques. D'autre part, elles peuvent accélérer la disparition de certaines langues minoritaires. En revanche, les technologies numériques offrent de nouveaux outils de transmission intergénérationnelle. À long terme, le défi consiste à concilier efficacité communicationnelle et diversité culturelle. Le pluralisme linguistique demeure ainsi un enjeu majeur.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What challenge is highlighted in the monologue?",
+            "options": [
+              "Balancing communication efficiency and cultural diversity",
+              "Replacing all minority languages",
+              "Reducing international exchanges",
+              "Eliminating technology"
+            ],
+            "correctKey": "Balancing communication efficiency and cultural diversity"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector introduces contrast?",
+            "options": [
+              "En revanche",
+              "D'une part",
+              "Ainsi",
+              "D'abord"
+            ],
+            "correctKey": "En revanche"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What can help preserve minority languages according to the speaker?",
+            "options": [
+              "Digital technologies",
+              "Political isolation",
+              "Trade restrictions",
+              "Language bans"
+            ],
+            "correctKey": "Digital technologies"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le *** linguistique demeure un enjeu majeur.",
+            "correctKey": "pluralisme"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les technologies numériques offrent de nouveaux outils de transmission ***.",
+            "correctKey": "intergénérationnelle"
+          }
+        ]
+      },
+      {
+        "title": "La mondialisation efface-t-elle les identités ?",
+        "description": "Exposé oral sur l'uniformisation culturelle, la résistance locale et le métissage culturel.",
+        "vocabulary": [
+          {
+            "french": "l'uniformisation culturelle",
+            "english": "cultural homogenization"
+          },
+          {
+            "french": "une identité locale",
+            "english": "local identity"
+          },
+          {
+            "french": "le métissage culturel",
+            "english": "cultural mixing"
+          },
+          {
+            "french": "une influence transnationale",
+            "english": "transnational influence"
+          },
+          {
+            "french": "une résistance culturelle",
+            "english": "cultural resistance"
+          },
+          {
+            "french": "un héritage collectif",
+            "english": "collective heritage"
+          },
+          {
+            "french": "une hybridation",
+            "english": "hybridization"
+          },
+          {
+            "french": "un enracinement",
+            "english": "rootedness"
+          },
+          {
+            "french": "de surcroît",
+            "english": "moreover"
+          },
+          {
+            "french": "dans une certaine mesure",
+            "english": "to a certain extent"
+          }
+        ],
+        "grammar": {
+          "title": "Qualifying claims in oral argumentation",
+          "text": "C1 speakers avoid absolute statements by using qualifiers such as 'dans une certaine mesure', 'il semble que', and 'on pourrait soutenir que'. Example: 'Dans une certaine mesure, la mondialisation transforme les identités, mais elle ne les efface pas totalement.'"
+        },
+        "reading": "On pourrait soutenir que la mondialisation favorise une certaine uniformisation culturelle. Toutefois, les identités locales continuent de se réinventer à travers le métissage culturel. Dans une certaine mesure, les influences transnationales modifient les habitudes collectives. De surcroît, de nombreuses communautés développent des formes de résistance culturelle. L'enjeu réside donc dans l'équilibre entre ouverture et enracinement.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the speaker's overall conclusion?",
+            "options": [
+              "Globalization transforms identities without completely erasing them",
+              "Globalization destroys all identities",
+              "Globalization has no cultural impact",
+              "Local cultures never change"
+            ],
+            "correctKey": "Globalization transforms identities without completely erasing them"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase softens a claim?",
+            "options": [
+              "Dans une certaine mesure",
+              "Il est certain que",
+              "Sans aucun doute",
+              "Absolument"
+            ],
+            "correctKey": "Dans une certaine mesure"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What helps identities survive according to the monologue?",
+            "options": [
+              "Cultural resistance",
+              "Political isolation",
+              "Economic decline",
+              "Language prohibition"
+            ],
+            "correctKey": "Cultural resistance"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le *** culturel permet souvent aux identités de se réinventer.",
+            "correctKey": "métissage"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "De nombreuses communautés développent une résistance ***.",
+            "correctKey": "culturelle"
+          }
+        ]
+      },
+      {
+        "title": "L'humanité survivra-t-elle à ses propres technologies ?",
+        "description": "Exposé oral sur les risques existentiels, le transhumanisme et le contrôle des innovations.",
+        "vocabulary": [
+          {
+            "french": "un risque existentiel",
+            "english": "existential risk"
+          },
+          {
+            "french": "le transhumanisme",
+            "english": "transhumanism"
+          },
+          {
+            "french": "une innovation disruptive",
+            "english": "disruptive innovation"
+          },
+          {
+            "french": "la gouvernance technologique",
+            "english": "technological governance"
+          },
+          {
+            "french": "un progrès scientifique",
+            "english": "scientific progress"
+          },
+          {
+            "french": "une dérive potentielle",
+            "english": "potential misuse"
+          },
+          {
+            "french": "la responsabilité collective",
+            "english": "collective responsibility"
+          },
+          {
+            "french": "un cadre réglementaire",
+            "english": "regulatory framework"
+          },
+          {
+            "french": "à cet égard",
+            "english": "in this respect"
+          },
+          {
+            "french": "il convient de",
+            "english": "it is appropriate to"
+          }
+        ],
+        "grammar": {
+          "title": "Presenting risks and solutions",
+          "text": "A strong C1 oral presentation often identifies a problem before proposing solutions. Use expressions such as 'Il convient de', 'À cet égard', and 'Dès lors'. Example: 'À cet égard, il convient de renforcer la gouvernance technologique afin de limiter les dérives potentielles.'"
+        },
+        "reading": "Les progrès scientifiques offrent des perspectives considérables pour l'humanité. Cependant, certaines innovations disruptives soulèvent des risques existentiels. À cet égard, le transhumanisme suscite autant d'espoirs que d'inquiétudes. Il convient donc de mettre en place un cadre réglementaire adapté. La responsabilité collective demeure essentielle pour orienter le progrès technologique.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does the speaker recommend?",
+            "options": [
+              "Establishing an appropriate regulatory framework",
+              "Stopping all innovation",
+              "Rejecting science completely",
+              "Eliminating technology"
+            ],
+            "correctKey": "Establishing an appropriate regulatory framework"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What topic generates both hope and concern?",
+            "options": [
+              "Le transhumanisme",
+              "La gastronomie",
+              "Le tourisme",
+              "La littérature"
+            ],
+            "correctKey": "Le transhumanisme"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression introduces a recommendation?",
+            "options": [
+              "Il convient de",
+              "À première vue",
+              "Peut-être",
+              "Autrefois"
+            ],
+            "correctKey": "Il convient de"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le *** suscite autant d'espoirs que d'inquiétudes.",
+            "correctKey": "transhumanisme"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La responsabilité *** demeure essentielle.",
+            "correctKey": "collective"
+          }
+        ]
+      },
+      {
+        "title": "L'éthique peut-elle réguler le capitalisme ?",
+        "description": "Exposé oral sur la responsabilité sociétale des entreprises, la régulation étatique et le profit.",
+        "vocabulary": [
+          {
+            "french": "la responsabilité sociétale",
+            "english": "corporate social responsibility"
+          },
+          {
+            "french": "la régulation étatique",
+            "english": "state regulation"
+          },
+          {
+            "french": "la maximisation du profit",
+            "english": "profit maximization"
+          },
+          {
+            "french": "une externalité négative",
+            "english": "negative externality"
+          },
+          {
+            "french": "un développement durable",
+            "english": "sustainable development"
+          },
+          {
+            "french": "une gouvernance responsable",
+            "english": "responsible governance"
+          },
+          {
+            "french": "une contrainte réglementaire",
+            "english": "regulatory constraint"
+          },
+          {
+            "french": "un intérêt général",
+            "english": "public interest"
+          },
+          {
+            "french": "en définitive",
+            "english": "ultimately"
+          },
+          {
+            "french": "pour autant",
+            "english": "however"
+          }
+        ],
+        "grammar": {
+          "title": "Concluding with a nuanced synthesis",
+          "text": "To conclude a C1 oral presentation, summarize both perspectives before presenting a balanced judgment. Use connectors such as 'En définitive', 'Pour autant', and 'Il apparaît que'. Example: 'En définitive, le profit reste nécessaire. Pour autant, il apparaît qu'une gouvernance responsable est indispensable.'"
+        },
+        "reading": "Certains considèrent que la recherche du profit demeure le moteur principal de l'innovation économique. D'autres estiment que la responsabilité sociétale devrait occuper une place centrale dans les stratégies d'entreprise. Pour autant, ces deux objectifs ne sont pas forcément incompatibles. En définitive, une gouvernance responsable peut contribuer à concilier intérêt général et performance économique. L'éthique apparaît ainsi comme un cadre de régulation complémentaire.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What conclusion does the speaker reach?",
+            "options": [
+              "Ethics and profit can be reconciled through responsible governance",
+              "Profit and ethics are always incompatible",
+              "Only profit matters",
+              "Regulation should disappear"
+            ],
+            "correctKey": "Ethics and profit can be reconciled through responsible governance"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector is used to conclude the presentation?",
+            "options": [
+              "En définitive",
+              "D'abord",
+              "Hier",
+              "Peut-être"
+            ],
+            "correctKey": "En définitive"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What role does ethics play according to the monologue?",
+            "options": [
+              "A complementary regulatory framework",
+              "A replacement for all laws",
+              "An obstacle to innovation",
+              "A temporary trend"
+            ],
+            "correctKey": "A complementary regulatory framework"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une gouvernance *** peut concilier intérêt général et performance économique.",
+            "correctKey": "responsable"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La responsabilité *** devrait occuper une place centrale dans les stratégies d'entreprise.",
+            "correctKey": "sociétale"
+          }
+        ]
+      }
+    ]
+  }
+]

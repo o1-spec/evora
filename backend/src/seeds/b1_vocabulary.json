@@ -1,0 +1,1178 @@
+[
+  {
+    "title": "Society, Volunteering and Media",
+    "description": "Explore B1 vocabulary relating to daily life in society, news media, information channels, and community volunteering.",
+    "lessons": [
+      {
+        "title": "La vie en société",
+        "description": "Understanding community relations, social rules, and civic responsibilities.",
+        "vocabulary": [
+          {
+            "french": "la citoyenneté",
+            "english": "citizenship"
+          },
+          {
+            "french": "le respect des règles",
+            "english": "respect for rules"
+          },
+          {
+            "french": "la responsabilité",
+            "english": "responsibility"
+          },
+          {
+            "french": "la solidarité",
+            "english": "solidarity"
+          },
+          {
+            "french": "la communauté",
+            "english": "community"
+          },
+          {
+            "french": "le voisinage",
+            "english": "neighborhood"
+          },
+          {
+            "french": "les droits",
+            "english": "rights"
+          },
+          {
+            "french": "les devoirs",
+            "english": "duties"
+          },
+          {
+            "french": "participer à",
+            "english": "to participate in"
+          },
+          {
+            "french": "s'intégrer",
+            "english": "to integrate"
+          }
+        ],
+        "grammar": {
+          "title": "Using devoir and pouvoir to express obligation and permission",
+          "text": "In French, devoir expresses obligation and pouvoir expresses permission or ability. Example: Je dois respecter les règles. (I must respect the rules.) Nous pouvons participer aux activités du quartier. (We can participate in neighborhood activities.) You can use these verbs before another verb in the infinitive form."
+        },
+        "reading": "Dans une société moderne, chaque citoyen a des droits et des devoirs. Il est important de respecter les règles et de montrer de la solidarité envers les autres. Dans mon voisinage, les habitants participent souvent à des projets communautaires. Cela aide les nouveaux arrivants à s'intégrer et renforce la communauté.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « la solidarité » mean?",
+            "options": [
+              "solidarity",
+              "competition",
+              "freedom",
+              "security"
+            ],
+            "correctKey": "solidarity"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel mot signifie « neighborhood » ?",
+            "options": [
+              "la communauté",
+              "le voisinage",
+              "la citoyenneté",
+              "la responsabilité"
+            ],
+            "correctKey": "le voisinage"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Complete: Nous ___ respecter les règles de la société.",
+            "options": [
+              "devons",
+              "pouvons",
+              "avons",
+              "sommes"
+            ],
+            "correctKey": "devons"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Chaque citoyen a des droits et des ***.",
+            "correctKey": "devoirs"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les habitants aiment *** aux projets communautaires.",
+            "correctKey": "participer"
+          }
+        ]
+      },
+      {
+        "title": "Les médias et l'information",
+        "description": "Discussing journalism, fake news, social networks, and print/digital press.",
+        "vocabulary": [
+          {
+            "french": "les médias",
+            "english": "media"
+          },
+          {
+            "french": "un journaliste",
+            "english": "journalist"
+          },
+          {
+            "french": "une information fiable",
+            "english": "reliable information"
+          },
+          {
+            "french": "une fausse information",
+            "english": "fake news"
+          },
+          {
+            "french": "les réseaux sociaux",
+            "english": "social networks"
+          },
+          {
+            "french": "un article",
+            "english": "article"
+          },
+          {
+            "french": "une source",
+            "english": "source"
+          },
+          {
+            "french": "vérifier",
+            "english": "to verify"
+          },
+          {
+            "french": "publier",
+            "english": "to publish"
+          },
+          {
+            "french": "l'actualité",
+            "english": "current affairs"
+          }
+        ],
+        "grammar": {
+          "title": "Using the present tense to discuss news and information",
+          "text": "The present tense is often used to talk about news and facts. Example: Le journaliste publie un article. (The journalist publishes an article.) Nous vérifions les informations avant de les partager. (We verify information before sharing it.) Regular verbs follow standard present-tense conjugation patterns."
+        },
+        "reading": "Aujourd'hui, les médias jouent un rôle important dans notre vie. Les journalistes publient des articles sur l'actualité. Cependant, il faut vérifier les sources avant de partager une information sur les réseaux sociaux. Certaines fausses informations circulent rapidement et peuvent créer de la confusion.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is « une fausse information »?",
+            "options": [
+              "a source",
+              "fake news",
+              "an article",
+              "a newspaper"
+            ],
+            "correctKey": "fake news"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel professionnel écrit souvent des articles ?",
+            "options": [
+              "un médecin",
+              "un journaliste",
+              "un étudiant",
+              "un voisin"
+            ],
+            "correctKey": "un journaliste"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Pourquoi faut-il vérifier une source ?",
+            "options": [
+              "Pour éviter les fausses informations",
+              "Pour publier plus vite",
+              "Pour gagner de l'argent",
+              "Pour écrire un livre"
+            ],
+            "correctKey": "Pour éviter les fausses informations"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Nous devons *** les informations avant de les partager.",
+            "correctKey": "vérifier"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les *** sociaux sont très populaires aujourd'hui.",
+            "correctKey": "réseaux"
+          }
+        ]
+      },
+      {
+        "title": "Le bénévolat et l'engagement",
+        "description": "Vocabulary for volunteering, non-profit associations, and social engagement.",
+        "vocabulary": [
+          {
+            "french": "le bénévolat",
+            "english": "volunteering"
+          },
+          {
+            "french": "un bénévole",
+            "english": "volunteer"
+          },
+          {
+            "french": "une association",
+            "english": "association"
+          },
+          {
+            "french": "une organisation caritative",
+            "english": "charity organization"
+          },
+          {
+            "french": "s'engager",
+            "english": "to get involved"
+          },
+          {
+            "french": "aider les autres",
+            "english": "to help others"
+          },
+          {
+            "french": "une collecte de fonds",
+            "english": "fundraising campaign"
+          },
+          {
+            "french": "un projet social",
+            "english": "social project"
+          },
+          {
+            "french": "la participation",
+            "english": "participation"
+          },
+          {
+            "french": "le soutien",
+            "english": "support"
+          }
+        ],
+        "grammar": {
+          "title": "Using infinitive verbs after aimer, vouloir, and décider de",
+          "text": "Many French expressions are followed by an infinitive verb. Example: J'aime aider les autres. (I like helping others.) Nous voulons participer à un projet social. (We want to participate in a social project.) Elle a décidé de s'engager dans une association. (She decided to get involved in an association.)"
+        },
+        "reading": "De nombreuses personnes font du bénévolat pour aider les autres. Un bénévole peut participer à un projet social ou à une collecte de fonds. Les associations recherchent souvent du soutien pour leurs activités. S'engager dans une organisation caritative permet de contribuer positivement à la société.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « un bénévole » mean?",
+            "options": [
+              "employee",
+              "volunteer",
+              "journalist",
+              "teacher"
+            ],
+            "correctKey": "volunteer"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel mot désigne une charity organization ?",
+            "options": [
+              "une association",
+              "une organisation caritative",
+              "un projet social",
+              "une source"
+            ],
+            "correctKey": "une organisation caritative"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Complete: Nous voulons ___ à une collecte de fonds.",
+            "options": [
+              "participer",
+              "publier",
+              "vérifier",
+              "respecter"
+            ],
+            "correctKey": "participer"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le *** permet d'aider les autres sans être payé.",
+            "correctKey": "bénévolat"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une association a besoin de *** pour continuer ses activités.",
+            "correctKey": "soutien"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Work, Education and Technology",
+    "description": "Learn vocabulary for workplace duties, school and university systems, and modern digital technologies.",
+    "lessons": [
+      {
+        "title": "Le monde du travail",
+        "description": "Job hunting, contracts, careers, office routines, and remote work.",
+        "vocabulary": [
+          {
+            "french": "un entretien d'embauche",
+            "english": "job interview"
+          },
+          {
+            "french": "un contrat",
+            "english": "contract"
+          },
+          {
+            "french": "un employeur",
+            "english": "employer"
+          },
+          {
+            "french": "un employé",
+            "english": "employee"
+          },
+          {
+            "french": "le télétravail",
+            "english": "remote work"
+          },
+          {
+            "french": "un salaire",
+            "english": "salary"
+          },
+          {
+            "french": "un poste",
+            "english": "position"
+          },
+          {
+            "french": "une candidature",
+            "english": "application"
+          },
+          {
+            "french": "les horaires de travail",
+            "english": "working hours"
+          },
+          {
+            "french": "évoluer dans sa carrière",
+            "english": "to progress in one's career"
+          }
+        ],
+        "grammar": {
+          "title": "Using the futur proche for career plans",
+          "text": "The futur proche is used to talk about near-future plans. It is formed with aller + infinitive. Example: Je vais envoyer ma candidature demain. (I am going to send my application tomorrow.) Nous allons commencer un nouveau poste. (We are going to start a new position.) This structure is common when discussing work and career goals."
+        },
+        "reading": "Marie cherche un nouveau poste dans une entreprise internationale. Elle a envoyé sa candidature et va passer un entretien d'embauche la semaine prochaine. Son objectif est d'obtenir un contrat avec un bon salaire. Elle apprécie aussi le télétravail car il offre plus de flexibilité dans les horaires de travail.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « un entretien d'embauche » mean?",
+            "options": [
+              "salary",
+              "job interview",
+              "contract",
+              "promotion"
+            ],
+            "correctKey": "job interview"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel mot signifie « remote work » ?",
+            "options": [
+              "un salaire",
+              "un poste",
+              "le télétravail",
+              "une candidature"
+            ],
+            "correctKey": "le télétravail"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Complete: Je vais ___ ma candidature demain.",
+            "options": [
+              "envoyer",
+              "recevoir",
+              "oublier",
+              "annuler"
+            ],
+            "correctKey": "envoyer"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Il a signé un nouveau *** avec son employeur.",
+            "correctKey": "contrat"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Mon *** est versé à la fin de chaque mois.",
+            "correctKey": "salaire"
+          }
+        ]
+      },
+      {
+        "title": "Le système éducatif",
+        "description": "French schools, universities, exams, grading, and student life.",
+        "vocabulary": [
+          {
+            "french": "une université",
+            "english": "university"
+          },
+          {
+            "french": "un étudiant",
+            "english": "student"
+          },
+          {
+            "french": "un examen",
+            "english": "exam"
+          },
+          {
+            "french": "une note",
+            "english": "grade"
+          },
+          {
+            "french": "un diplôme",
+            "english": "degree"
+          },
+          {
+            "french": "une matière",
+            "english": "subject"
+          },
+          {
+            "french": "une bourse",
+            "english": "scholarship"
+          },
+          {
+            "french": "réviser",
+            "english": "to revise"
+          },
+          {
+            "french": "un semestre",
+            "english": "semester"
+          },
+          {
+            "french": "la vie étudiante",
+            "english": "student life"
+          }
+        ],
+        "grammar": {
+          "title": "Using réussir à and échouer à",
+          "text": "Use réussir à + infinitive to express success and échouer à + infinitive to express failure. Example: Elle a réussi à obtenir son diplôme. (She succeeded in getting her degree.) Il a échoué à passer son examen. (He failed to pass his exam.) These expressions are common when talking about studies and academic results."
+        },
+        "reading": "Paul est étudiant à l'université depuis deux ans. Ce semestre, il suit plusieurs matières intéressantes. Il révise chaque soir pour préparer ses examens. Grâce à son travail régulier, il obtient de bonnes notes. Il espère recevoir son diplôme l'année prochaine et profiter pleinement de la vie étudiante.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « une bourse » mean?",
+            "options": [
+              "scholarship",
+              "exam",
+              "subject",
+              "semester"
+            ],
+            "correctKey": "scholarship"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel document reçoit-on à la fin des études ?",
+            "options": [
+              "une note",
+              "une matière",
+              "un diplôme",
+              "une bourse"
+            ],
+            "correctKey": "un diplôme"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Complete: Elle a réussi à ___ son examen.",
+            "options": [
+              "passer",
+              "oublier",
+              "annuler",
+              "éviter"
+            ],
+            "correctKey": "passer"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je dois *** pour réussir mon examen.",
+            "correctKey": "réviser"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Chaque *** dure plusieurs mois à l'université.",
+            "correctKey": "semestre"
+          }
+        ]
+      },
+      {
+        "title": "Les nouvelles technologies",
+        "description": "Discussing computers, mobile devices, AI, internet safety, and cybersecurity.",
+        "vocabulary": [
+          {
+            "french": "l'intelligence artificielle",
+            "english": "artificial intelligence"
+          },
+          {
+            "french": "un mot de passe",
+            "english": "password"
+          },
+          {
+            "french": "la cybersécurité",
+            "english": "cybersecurity"
+          },
+          {
+            "french": "un appareil mobile",
+            "english": "mobile device"
+          },
+          {
+            "french": "un logiciel",
+            "english": "software"
+          },
+          {
+            "french": "une application",
+            "english": "application"
+          },
+          {
+            "french": "les données personnelles",
+            "english": "personal data"
+          },
+          {
+            "french": "naviguer sur Internet",
+            "english": "to browse the Internet"
+          },
+          {
+            "french": "une cyberattaque",
+            "english": "cyberattack"
+          },
+          {
+            "french": "protéger",
+            "english": "to protect"
+          }
+        ],
+        "grammar": {
+          "title": "Using il faut to express necessity",
+          "text": "Il faut is used to express necessity or obligation. It is followed by an infinitive verb. Example: Il faut protéger ses données personnelles. (You must protect your personal data.) Il faut utiliser un mot de passe sécurisé. (You must use a secure password.) This structure is very common when giving technology and safety advice."
+        },
+        "reading": "Aujourd'hui, l'intelligence artificielle est présente dans de nombreuses applications. Cependant, il faut rester prudent sur Internet. Les utilisateurs doivent protéger leurs données personnelles avec un mot de passe sécurisé. La cybersécurité est essentielle pour éviter les cyberattaques et garantir une utilisation sûre des appareils mobiles et des logiciels.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « la cybersécurité » refer to?",
+            "options": [
+              "online shopping",
+              "cybersecurity",
+              "social media",
+              "mobile devices"
+            ],
+            "correctKey": "cybersecurity"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel élément protège l'accès à un compte ?",
+            "options": [
+              "une application",
+              "un logiciel",
+              "un mot de passe",
+              "une cyberattaque"
+            ],
+            "correctKey": "un mot de passe"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Complete: Il faut ___ ses données personnelles.",
+            "options": [
+              "protéger",
+              "supprimer",
+              "ignorer",
+              "partager"
+            ],
+            "correctKey": "protéger"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une *** peut compromettre la sécurité d'une entreprise.",
+            "correctKey": "cyberattaque"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'*** artificielle transforme de nombreux secteurs.",
+            "correctKey": "intelligence"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Culture, Gastronomy and Diversity",
+    "description": "Enrich your vocabulary with French arts, cultural diversity, and the world-famous French gastronomy.",
+    "lessons": [
+      {
+        "title": "Les arts et la culture",
+        "description": "Cinema, literature, museums, painting, and theater.",
+        "vocabulary": [
+          {
+            "french": "une œuvre d'art",
+            "english": "work of art"
+          },
+          {
+            "french": "un musée",
+            "english": "museum"
+          },
+          {
+            "french": "une exposition",
+            "english": "exhibition"
+          },
+          {
+            "french": "un peintre",
+            "english": "painter"
+          },
+          {
+            "french": "un roman",
+            "english": "novel"
+          },
+          {
+            "french": "un auteur",
+            "english": "author"
+          },
+          {
+            "french": "une pièce de théâtre",
+            "english": "play"
+          },
+          {
+            "french": "un spectateur",
+            "english": "spectator"
+          },
+          {
+            "french": "le patrimoine culturel",
+            "english": "cultural heritage"
+          },
+          {
+            "french": "apprécier",
+            "english": "to appreciate"
+          }
+        ],
+        "grammar": {
+          "title": "Using relative pronouns qui and que",
+          "text": "French uses qui and que to connect ideas. Use qui as the subject of the second clause and que as the object. Example: C'est un musée qui attire beaucoup de visiteurs. (It is a museum that attracts many visitors.) Voici le roman que j'ai lu. (Here is the novel that I read.) These pronouns help describe works of art, authors, and cultural places."
+        },
+        "reading": "Le week-end dernier, j'ai visité un musée qui présentait une exposition de peinture moderne. J'ai découvert plusieurs œuvres d'art créées par un peintre célèbre. Ensuite, j'ai assisté à une pièce de théâtre avec de nombreux spectateurs. Ces activités permettent d'apprécier le patrimoine culturel et de mieux comprendre l'histoire d'un pays.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « une œuvre d'art » mean?",
+            "options": [
+              "work of art",
+              "museum",
+              "novel",
+              "audience"
+            ],
+            "correctKey": "work of art"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel lieu présente souvent des expositions ?",
+            "options": [
+              "un roman",
+              "un musée",
+              "un auteur",
+              "un spectateur"
+            ],
+            "correctKey": "un musée"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Complete: C'est un musée ___ attire beaucoup de visiteurs.",
+            "options": [
+              "qui",
+              "que",
+              "où",
+              "dont"
+            ],
+            "correctKey": "qui"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Victor Hugo est un célèbre *** français.",
+            "correctKey": "auteur"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Nous avons vu une magnifique *** de théâtre hier soir.",
+            "correctKey": "pièce"
+          }
+        ]
+      },
+      {
+        "title": "La gastronomie française",
+        "description": "Cuisine, restaurant terms, local specialties, cooking verbs, and meals.",
+        "vocabulary": [
+          {
+            "french": "un plat",
+            "english": "dish"
+          },
+          {
+            "french": "une spécialité régionale",
+            "english": "regional specialty"
+          },
+          {
+            "french": "une recette",
+            "english": "recipe"
+          },
+          {
+            "french": "un restaurant",
+            "english": "restaurant"
+          },
+          {
+            "french": "le menu",
+            "english": "menu"
+          },
+          {
+            "french": "goûter",
+            "english": "to taste"
+          },
+          {
+            "french": "préparer",
+            "english": "to prepare"
+          },
+          {
+            "french": "cuire",
+            "english": "to cook"
+          },
+          {
+            "french": "un dessert",
+            "english": "dessert"
+          },
+          {
+            "french": "les produits locaux",
+            "english": "local products"
+          }
+        ],
+        "grammar": {
+          "title": "Using the imperative for cooking instructions",
+          "text": "The imperative is used to give instructions or commands. Example: Goûtez cette spécialité régionale ! (Taste this regional specialty!) Préparez les ingrédients avant de cuire le plat. (Prepare the ingredients before cooking the dish.) The imperative is common in recipes and cooking advice."
+        },
+        "reading": "La gastronomie française est connue dans le monde entier. Dans un restaurant traditionnel, les clients consultent le menu avant de choisir un plat. Beaucoup de recettes utilisent des produits locaux de qualité. Après avoir préparé et cuit le repas, on peut goûter une spécialité régionale et terminer avec un délicieux dessert.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « une recette » mean?",
+            "options": [
+              "menu",
+              "recipe",
+              "dessert",
+              "restaurant"
+            ],
+            "correctKey": "recipe"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel document présente les plats dans un restaurant ?",
+            "options": [
+              "une recette",
+              "un dessert",
+              "le menu",
+              "un produit local"
+            ],
+            "correctKey": "le menu"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Complete: ___ les ingrédients avant de cuisiner.",
+            "options": [
+              "Préparez",
+              "Prépare",
+              "Préparons",
+              "Préparer"
+            ],
+            "correctKey": "Préparez"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "J'aime commander un *** traditionnel au restaurant.",
+            "correctKey": "plat"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Cette *** régionale attire de nombreux touristes.",
+            "correctKey": "spécialité"
+          }
+        ]
+      },
+      {
+        "title": "La diversité culturelle",
+        "description": "Immigration, cultural exchanges, traditions, and national identity.",
+        "vocabulary": [
+          {
+            "french": "la diversité culturelle",
+            "english": "cultural diversity"
+          },
+          {
+            "french": "l'immigration",
+            "english": "immigration"
+          },
+          {
+            "french": "une tradition",
+            "english": "tradition"
+          },
+          {
+            "french": "un échange culturel",
+            "english": "cultural exchange"
+          },
+          {
+            "french": "l'identité nationale",
+            "english": "national identity"
+          },
+          {
+            "french": "une communauté",
+            "english": "community"
+          },
+          {
+            "french": "la tolérance",
+            "english": "tolerance"
+          },
+          {
+            "french": "s'adapter",
+            "english": "to adapt"
+          },
+          {
+            "french": "partager",
+            "english": "to share"
+          },
+          {
+            "french": "le multiculturalisme",
+            "english": "multiculturalism"
+          }
+        ],
+        "grammar": {
+          "title": "Using pour + infinitive to express purpose",
+          "text": "Use pour + infinitive to explain the purpose of an action. Example: Nous organisons un échange culturel pour découvrir d'autres traditions. (We organize a cultural exchange to discover other traditions.) Il faut dialoguer pour renforcer la tolérance. (We must dialogue to strengthen tolerance.) This structure is useful when discussing diversity and social integration."
+        },
+        "reading": "Dans de nombreux pays, la diversité culturelle fait partie de la vie quotidienne. L'immigration contribue à la richesse des communautés et favorise les échanges culturels. Les habitants partagent leurs traditions et apprennent à s'adapter à de nouvelles situations. La tolérance et le multiculturalisme permettent de renforcer l'identité nationale tout en respectant les différences.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « la tolérance » mean?",
+            "options": [
+              "competition",
+              "tolerance",
+              "identity",
+              "migration"
+            ],
+            "correctKey": "tolerance"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel terme désigne le fait de vivre avec plusieurs cultures ?",
+            "options": [
+              "l'immigration",
+              "une tradition",
+              "le multiculturalisme",
+              "une communauté"
+            ],
+            "correctKey": "le multiculturalisme"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Complete: Nous participons à un échange culturel ___ découvrir d'autres traditions.",
+            "options": [
+              "pour",
+              "avec",
+              "sans",
+              "chez"
+            ],
+            "correctKey": "pour"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Chaque pays possède sa propre *** nationale.",
+            "correctKey": "identité"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les nouveaux arrivants doivent parfois *** à une culture différente.",
+            "correctKey": "s'adapter"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Environment and Lifestyle",
+    "description": "Discuss environmental issues, eco-friendly shopping, and modern digital leisure/hobbies.",
+    "lessons": [
+      {
+        "title": "La protection de la planète",
+        "description": "Climate change, recycling, renewable energy, and nature.",
+        "vocabulary": [
+          {
+            "french": "le changement climatique",
+            "english": "climate change"
+          },
+          {
+            "french": "le recyclage",
+            "english": "recycling"
+          },
+          {
+            "french": "les déchets",
+            "english": "waste"
+          },
+          {
+            "french": "l'énergie renouvelable",
+            "english": "renewable energy"
+          },
+          {
+            "french": "la biodiversité",
+            "english": "biodiversity"
+          },
+          {
+            "french": "la pollution",
+            "english": "pollution"
+          },
+          {
+            "french": "protéger l'environnement",
+            "english": "to protect the environment"
+          },
+          {
+            "french": "une ressource naturelle",
+            "english": "natural resource"
+          },
+          {
+            "french": "réduire",
+            "english": "to reduce"
+          },
+          {
+            "french": "un espace vert",
+            "english": "green space"
+          }
+        ],
+        "grammar": {
+          "title": "Using il est important de + infinitive",
+          "text": "French often uses il est important de + infinitive to express necessity or advice. Example: Il est important de recycler les déchets. (It is important to recycle waste.) Il est important de protéger l'environnement. (It is important to protect the environment.) This structure is useful when discussing environmental actions and responsibilities."
+        },
+        "reading": "Le changement climatique est un défi mondial. Pour protéger l'environnement, il est important de réduire la pollution et de recycler les déchets. De nombreux pays investissent dans l'énergie renouvelable afin de préserver les ressources naturelles. La biodiversité et les espaces verts jouent également un rôle essentiel dans la qualité de vie.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « l'énergie renouvelable » mean?",
+            "options": [
+              "renewable energy",
+              "natural resource",
+              "pollution",
+              "green space"
+            ],
+            "correctKey": "renewable energy"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel mot signifie « waste » ?",
+            "options": [
+              "la biodiversité",
+              "les déchets",
+              "la pollution",
+              "le recyclage"
+            ],
+            "correctKey": "les déchets"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Complete: Il est important de ___ les déchets.",
+            "options": [
+              "recycler",
+              "ignorer",
+              "jeter",
+              "acheter"
+            ],
+            "correctKey": "recycler"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le *** est un problème qui affecte toute la planète.",
+            "correctKey": "changement climatique"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le recyclage permet de réduire les *** plastiques.",
+            "correctKey": "déchets"
+          }
+        ]
+      },
+      {
+        "title": "La consommation responsable",
+        "description": "Eco-friendly products, local shopping, food waste, and recycling.",
+        "vocabulary": [
+          {
+            "french": "un produit écologique",
+            "english": "eco-friendly product"
+          },
+          {
+            "french": "consommer local",
+            "english": "to buy local"
+          },
+          {
+            "french": "le gaspillage alimentaire",
+            "english": "food waste"
+          },
+          {
+            "french": "un emballage recyclable",
+            "english": "recyclable packaging"
+          },
+          {
+            "french": "un marché local",
+            "english": "local market"
+          },
+          {
+            "french": "réutiliser",
+            "english": "to reuse"
+          },
+          {
+            "french": "trier les déchets",
+            "english": "to sort waste"
+          },
+          {
+            "french": "durable",
+            "english": "sustainable"
+          },
+          {
+            "french": "un consommateur",
+            "english": "consumer"
+          },
+          {
+            "french": "faire attention à",
+            "english": "to pay attention to"
+          }
+        ],
+        "grammar": {
+          "title": "Using afin de + infinitive to express purpose",
+          "text": "Afin de + infinitive is used to explain the purpose of an action. Example: Nous achetons des produits locaux afin de soutenir les agriculteurs. (We buy local products in order to support farmers.) Elle réutilise ses sacs afin de réduire les déchets. (She reuses her bags in order to reduce waste.)"
+        },
+        "reading": "De plus en plus de consommateurs choisissent des produits écologiques et durables. Ils préfèrent consommer local en achetant dans un marché local. Afin de limiter le gaspillage alimentaire, certaines familles planifient leurs repas à l'avance. Elles réutilisent aussi les emballages recyclables et trient les déchets chaque semaine.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « le gaspillage alimentaire » mean?",
+            "options": [
+              "food waste",
+              "recycling",
+              "shopping center",
+              "consumer rights"
+            ],
+            "correctKey": "food waste"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Où peut-on souvent acheter des produits locaux ?",
+            "options": [
+              "un marché local",
+              "une école",
+              "un cinéma",
+              "un musée"
+            ],
+            "correctKey": "un marché local"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Complete: Nous consommons local afin de ___ les producteurs.",
+            "options": [
+              "soutenir",
+              "ignorer",
+              "éviter",
+              "remplacer"
+            ],
+            "correctKey": "soutenir"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Un *** choisit souvent des produits respectueux de l'environnement.",
+            "correctKey": "consommateur"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Il faut *** les déchets avant de les recycler.",
+            "correctKey": "trier"
+          }
+        ]
+      },
+      {
+        "title": "Les loisirs numériques",
+        "description": "Video games, streaming services, online hobbies, and screen-time discussion.",
+        "vocabulary": [
+          {
+            "french": "un jeu vidéo",
+            "english": "video game"
+          },
+          {
+            "french": "une plateforme de streaming",
+            "english": "streaming platform"
+          },
+          {
+            "french": "un écran",
+            "english": "screen"
+          },
+          {
+            "french": "le temps d'écran",
+            "english": "screen time"
+          },
+          {
+            "french": "une communauté en ligne",
+            "english": "online community"
+          },
+          {
+            "french": "regarder une série",
+            "english": "to watch a series"
+          },
+          {
+            "french": "diffuser",
+            "english": "to stream/broadcast"
+          },
+          {
+            "french": "un passe-temps",
+            "english": "hobby"
+          },
+          {
+            "french": "se connecter",
+            "english": "to log in"
+          },
+          {
+            "french": "équilibrer",
+            "english": "to balance"
+          }
+        ],
+        "grammar": {
+          "title": "Using trop and assez with leisure activities",
+          "text": "Trop means 'too much' and assez means 'enough' or 'quite'. Example: Je passe trop de temps devant un écran. (I spend too much time in front of a screen.) J'ai assez de temps pour mes loisirs. (I have enough time for my hobbies.) These expressions are useful when discussing healthy digital habits."
+        },
+        "reading": "Les loisirs numériques occupent une place importante dans la vie de nombreux jeunes. Certains jouent à des jeux vidéo, tandis que d'autres regardent une série sur une plateforme de streaming. Cependant, il est important d'équilibrer le temps d'écran avec d'autres activités. Participer à une communauté en ligne peut être enrichissant, à condition de l'utiliser avec modération.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « une plateforme de streaming » mean?",
+            "options": [
+              "streaming platform",
+              "video game",
+              "online course",
+              "mobile phone"
+            ],
+            "correctKey": "streaming platform"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel mot désigne le temps passé devant les appareils numériques ?",
+            "options": [
+              "un passe-temps",
+              "un écran",
+              "le temps d'écran",
+              "une série"
+            ],
+            "correctKey": "le temps d'écran"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Complete: Je passe ___ de temps devant mon écran.",
+            "options": [
+              "trop",
+              "assez",
+              "jamais",
+              "souvent"
+            ],
+            "correctKey": "trop"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Mon *** préféré est de regarder des documentaires en ligne.",
+            "correctKey": "passe-temps"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Il faut *** les loisirs numériques avec les activités sportives.",
+            "correctKey": "équilibrer"
+          }
+        ]
+      }
+    ]
+  }
+]

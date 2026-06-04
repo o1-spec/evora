@@ -1,0 +1,776 @@
+[
+  {
+    "title": "Débats experts",
+    "description": "Prise de parole spontanée face à des contradicteurs sur des thèmes philosophiques.",
+    "lessons": [
+      {
+        "title": "La crise de l'universalisme républicain",
+        "description": "Exposé oral sur l'idéal républicain, le pluralisme et les contestations identitaires.",
+        "vocabulary": [
+          {
+            "french": "l'universalisme républicain",
+            "english": "republican universalism"
+          },
+          {
+            "french": "le pluralisme culturel",
+            "english": "cultural pluralism"
+          },
+          {
+            "french": "une revendication identitaire",
+            "english": "identity claim"
+          },
+          {
+            "french": "la cohésion civique",
+            "english": "civic cohesion"
+          },
+          {
+            "french": "l'intégration républicaine",
+            "english": "republican integration"
+          },
+          {
+            "french": "une fragmentation sociale",
+            "english": "social fragmentation"
+          },
+          {
+            "french": "la reconnaissance symbolique",
+            "english": "symbolic recognition"
+          },
+          {
+            "french": "un particularisme",
+            "english": "particularism"
+          },
+          {
+            "french": "à bien des égards",
+            "english": "in many respects"
+          },
+          {
+            "french": "force est de constater",
+            "english": "it must be acknowledged"
+          }
+        ],
+        "grammar": {
+          "title": "Nuanced concession in oral debate",
+          "text": "At C2 level, balanced argumentation often combines concession and qualification. Use structures such as 'Certes..., toutefois...' or 'Force est de constater que...'. Example: 'Certes, l'universalisme favorise l'égalité juridique ; toutefois, certaines revendications identitaires révèlent ses limites pratiques.'"
+        },
+        "reading": "À bien des égards, l'universalisme républicain demeure un idéal de cohésion civique. Certes, il ambitionne de dépasser les appartenances particulières au profit d'une citoyenneté commune. Toutefois, les revendications identitaires contemporaines soulignent les tensions entre égalité abstraite et reconnaissance symbolique. Force est de constater que le débat oppose moins deux principes incompatibles qu'il n'interroge leur articulation concrète dans une société pluraliste.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What tension is highlighted in the monologue?",
+            "options": [
+              "Between abstract equality and symbolic recognition",
+              "Between science and religion",
+              "Between urban and rural life",
+              "Between literature and philosophy"
+            ],
+            "correctKey": "Between abstract equality and symbolic recognition"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression introduces a concession?",
+            "options": [
+              "Certes",
+              "Ainsi",
+              "Par conséquent",
+              "Désormais"
+            ],
+            "correctKey": "Certes"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What remains an ideal of civic cohesion according to the text?",
+            "options": [
+              "l'universalisme républicain",
+              "le particularisme",
+              "la fragmentation sociale",
+              "la mondialisation"
+            ],
+            "correctKey": "l'universalisme républicain"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'universalisme républicain demeure un idéal de cohésion ***.",
+            "correctKey": "civique"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les revendications *** contemporaines soulignent certaines tensions.",
+            "correctKey": "identitaires"
+          }
+        ]
+      },
+      {
+        "title": "L'avenir de l'État-nation face à la mondialisation",
+        "description": "Exposé oral sur la souveraineté, la délocalisation et la gouvernance globale.",
+        "vocabulary": [
+          {
+            "french": "la souveraineté nationale",
+            "english": "national sovereignty"
+          },
+          {
+            "french": "la gouvernance mondiale",
+            "english": "global governance"
+          },
+          {
+            "french": "une interdépendance économique",
+            "english": "economic interdependence"
+          },
+          {
+            "french": "la délocalisation",
+            "english": "offshoring"
+          },
+          {
+            "french": "une autorité supranationale",
+            "english": "supranational authority"
+          },
+          {
+            "french": "la compétitivité internationale",
+            "english": "international competitiveness"
+          },
+          {
+            "french": "un cadre réglementaire",
+            "english": "regulatory framework"
+          },
+          {
+            "french": "la résilience étatique",
+            "english": "state resilience"
+          },
+          {
+            "french": "en l'occurrence",
+            "english": "in this case"
+          },
+          {
+            "french": "à l'échelle planétaire",
+            "english": "on a global scale"
+          }
+        ],
+        "grammar": {
+          "title": "Dialectical development in geopolitical debates",
+          "text": "A sophisticated oral presentation should move from a thesis to its limitations and finally to a synthesis. Example: 'La mondialisation affaiblit certaines prérogatives étatiques. Néanmoins, l'État demeure un acteur essentiel. Dès lors, il convient d'envisager une souveraineté redéfinie plutôt qu'abolie.'"
+        },
+        "reading": "À l'échelle planétaire, les flux économiques remettent en question certains attributs traditionnels de la souveraineté nationale. Les délocalisations et l'interdépendance économique réduisent parfois la marge de manœuvre des gouvernements. Néanmoins, la résilience étatique demeure manifeste lors des crises majeures. En l'occurrence, l'enjeu réside moins dans la disparition de l'État-nation que dans sa capacité à s'adapter à une gouvernance mondiale plus complexe.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What challenge national sovereignty according to the text?",
+            "options": [
+              "Offshoring and economic interdependence",
+              "Poetry and theater",
+              "Tourism and gastronomy",
+              "Education and medicine"
+            ],
+            "correctKey": "Offshoring and economic interdependence"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What remains evident during major crises?",
+            "options": [
+              "la résilience étatique",
+              "la disparition de l'État",
+              "la fin des frontières",
+              "la neutralité économique"
+            ],
+            "correctKey": "la résilience étatique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the main issue identified by the speaker?",
+            "options": [
+              "The adaptation of the nation-state",
+              "The abolition of all governments",
+              "The end of sovereignty",
+              "The decline of democracy"
+            ],
+            "correctKey": "The adaptation of the nation-state"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les délocalisations et l'*** économique réduisent parfois la marge de manœuvre des gouvernements.",
+            "correctKey": "interdépendance"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La *** étatique demeure manifeste lors des crises majeures.",
+            "correctKey": "résilience"
+          }
+        ]
+      },
+      {
+        "title": "Éthique et transhumanisme : jusqu'où aller ?",
+        "description": "Exposé oral sur l'amélioration humaine, la bioéthique et l'essence de la condition humaine.",
+        "vocabulary": [
+          {
+            "french": "le transhumanisme",
+            "english": "transhumanism"
+          },
+          {
+            "french": "l'amélioration humaine",
+            "english": "human enhancement"
+          },
+          {
+            "french": "la bioéthique",
+            "english": "bioethics"
+          },
+          {
+            "french": "une modification génétique",
+            "english": "genetic modification"
+          },
+          {
+            "french": "la condition humaine",
+            "english": "human condition"
+          },
+          {
+            "french": "un risque existentiel",
+            "english": "existential risk"
+          },
+          {
+            "french": "une innovation disruptive",
+            "english": "disruptive innovation"
+          },
+          {
+            "french": "la dignité humaine",
+            "english": "human dignity"
+          },
+          {
+            "french": "à supposer que",
+            "english": "assuming that"
+          },
+          {
+            "french": "en dernière analyse",
+            "english": "ultimately"
+          }
+        ],
+        "grammar": {
+          "title": "Hypothetical reasoning and philosophical speculation",
+          "text": "C2 debates frequently use hypothetical structures. Expressions such as 'À supposer que', 'Quand bien même', and 'En dernière analyse' allow speakers to explore consequences before reaching a conclusion. Example: 'À supposer que la technologie élimine certaines maladies, faudrait-il pour autant modifier l'être humain sans limite ?'"
+        },
+        "reading": "Le transhumanisme promet d'accroître les capacités humaines grâce aux avancées technologiques. À supposer que ces innovations deviennent accessibles à grande échelle, elles soulèveraient néanmoins des interrogations bioéthiques majeures. Certains y voient une extension légitime de la liberté individuelle, tandis que d'autres redoutent une remise en cause de la dignité humaine. En dernière analyse, le débat porte sur la définition même de la condition humaine.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What major concern accompanies human enhancement?",
+            "options": [
+              "Bioethical questions",
+              "Linguistic diversity",
+              "Tourism development",
+              "Art criticism"
+            ],
+            "correctKey": "Bioethical questions"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does the debate ultimately concern?",
+            "options": [
+              "The definition of the human condition",
+              "Tax policy",
+              "Electoral systems",
+              "Literary genres"
+            ],
+            "correctKey": "The definition of the human condition"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression introduces a hypothesis?",
+            "options": [
+              "À supposer que",
+              "En revanche",
+              "D'ailleurs",
+              "Ainsi"
+            ],
+            "correctKey": "À supposer que"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le débat porte sur la définition même de la condition ***.",
+            "correctKey": "humaine"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Certains redoutent une remise en cause de la dignité ***.",
+            "correctKey": "humaine"
+          }
+        ]
+      },
+      {
+        "title": "Le rôle de l'intellectuel dans la société moderne",
+        "description": "Exposé oral sur le devoir de réserve, l'engagement politique et le pouvoir de la parole.",
+        "vocabulary": [
+          {
+            "french": "l'engagement intellectuel",
+            "english": "intellectual engagement"
+          },
+          {
+            "french": "le devoir de réserve",
+            "english": "duty of restraint"
+          },
+          {
+            "french": "une prise de position publique",
+            "english": "public stance"
+          },
+          {
+            "french": "l'autorité morale",
+            "english": "moral authority"
+          },
+          {
+            "french": "un contre-pouvoir",
+            "english": "counterpower"
+          },
+          {
+            "french": "la responsabilité civique",
+            "english": "civic responsibility"
+          },
+          {
+            "french": "la légitimité du discours",
+            "english": "legitimacy of discourse"
+          },
+          {
+            "french": "une influence médiatique",
+            "english": "media influence"
+          },
+          {
+            "french": "en définitive",
+            "english": "ultimately"
+          },
+          {
+            "french": "à plus forte raison",
+            "english": "all the more so"
+          }
+        ],
+        "grammar": {
+          "title": "Balancing commitment and critical distance",
+          "text": "Expert oral presentations often weigh opposing duties before reaching a synthesis. Example: 'L'intellectuel doit préserver son indépendance critique. Toutefois, lorsqu'une injustice se manifeste, son silence peut devenir problématique.' This structure highlights complexity rather than certainty."
+        },
+        "reading": "La figure de l'intellectuel oscille entre devoir de réserve et engagement public. Certains estiment que son autorité morale l'oblige à intervenir dans les débats collectifs. D'autres considèrent qu'une trop grande proximité avec le pouvoir compromet son indépendance critique. En définitive, sa légitimité repose sans doute sur sa capacité à conjuguer responsabilité civique et liberté de jugement.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Between which two responsibilities does the intellectual oscillate?",
+            "options": [
+              "Duty of restraint and public engagement",
+              "Science and religion",
+              "Economics and art",
+              "Local and global governance"
+            ],
+            "correctKey": "Duty of restraint and public engagement"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What could compromise critical independence according to the text?",
+            "options": [
+              "Excessive proximity to power",
+              "Reading literature",
+              "Academic research",
+              "Public speaking"
+            ],
+            "correctKey": "Excessive proximity to power"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "On what does the intellectual's legitimacy ultimately rest?",
+            "options": [
+              "The ability to combine civic responsibility and freedom of judgment",
+              "Political office",
+              "Economic success",
+              "Technological expertise"
+            ],
+            "correctKey": "The ability to combine civic responsibility and freedom of judgment"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Sa légitimité repose sur sa capacité à conjuguer responsabilité *** et liberté de jugement.",
+            "correctKey": "civique"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une trop grande proximité avec le pouvoir compromet son indépendance ***.",
+            "correctKey": "critique"
+          }
+        ]
+      },
+      {
+        "title": "Décroissance ou croissance verte : le grand débat",
+        "description": "Exposé oral sur la transition écologique, la sobriété heureuse et le productivisme.",
+        "vocabulary": [
+          {
+            "french": "la décroissance",
+            "english": "degrowth"
+          },
+          {
+            "french": "la croissance verte",
+            "english": "green growth"
+          },
+          {
+            "french": "la sobriété heureuse",
+            "english": "voluntary simplicity"
+          },
+          {
+            "french": "le productivisme",
+            "english": "productivism"
+          },
+          {
+            "french": "l'empreinte écologique",
+            "english": "ecological footprint"
+          },
+          {
+            "french": "la transition systémique",
+            "english": "systemic transition"
+          },
+          {
+            "french": "une externalité environnementale",
+            "english": "environmental externality"
+          },
+          {
+            "french": "la soutenabilité",
+            "english": "sustainability"
+          },
+          {
+            "french": "à première vue",
+            "english": "at first glance"
+          },
+          {
+            "french": "en dernière instance",
+            "english": "ultimately"
+          }
+        ],
+        "grammar": {
+          "title": "Dialectical opposition and synthesis",
+          "text": "In C2 debates, oppose two models before proposing a synthesis. Use connectors such as 'D'une part... d'autre part...', 'Certes...', and 'En dernière instance...'. Example: 'Certes, la croissance verte promet l'innovation ; néanmoins, ses limites invitent à réfléchir à la sobriété.'"
+        },
+        "reading": "À première vue, la croissance verte semble concilier prospérité économique et préservation de l'environnement. D'une part, elle mise sur l'innovation technologique pour réduire l'empreinte écologique. D'autre part, les partisans de la décroissance dénoncent la logique productiviste qu'ils jugent incompatible avec les limites planétaires. En dernière instance, le débat interroge notre conception même du progrès et de la soutenabilité.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What do supporters of degrowth criticize?",
+            "options": [
+              "la logique productiviste",
+              "la biodiversité",
+              "la sobriété heureuse",
+              "la transition écologique"
+            ],
+            "correctKey": "la logique productiviste"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does green growth rely on?",
+            "options": [
+              "l'innovation technologique",
+              "la réduction démographique",
+              "l'autarcie économique",
+              "la suppression du commerce"
+            ],
+            "correctKey": "l'innovation technologique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does the debate ultimately question?",
+            "options": [
+              "our conception of progress and sustainability",
+              "the existence of technology",
+              "the role of literature",
+              "the legitimacy of democracy"
+            ],
+            "correctKey": "our conception of progress and sustainability"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La croissance verte semble concilier prospérité économique et préservation de l'***.",
+            "correctKey": "environnement"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le débat interroge notre conception même du progrès et de la ***.",
+            "correctKey": "soutenabilité"
+          }
+        ]
+      },
+      {
+        "title": "L'hégémonie culturelle à l'ère numérique",
+        "description": "Exposé oral sur la domination technologique, les algorithmes et l'impérialisme culturel.",
+        "vocabulary": [
+          {
+            "french": "l'hégémonie culturelle",
+            "english": "cultural hegemony"
+          },
+          {
+            "french": "l'impérialisme culturel",
+            "english": "cultural imperialism"
+          },
+          {
+            "french": "une plateforme dominante",
+            "english": "dominant platform"
+          },
+          {
+            "french": "la recommandation algorithmique",
+            "english": "algorithmic recommendation"
+          },
+          {
+            "french": "la standardisation culturelle",
+            "english": "cultural standardization"
+          },
+          {
+            "french": "une asymétrie informationnelle",
+            "english": "informational asymmetry"
+          },
+          {
+            "french": "la diversité culturelle",
+            "english": "cultural diversity"
+          },
+          {
+            "french": "un écosystème numérique",
+            "english": "digital ecosystem"
+          },
+          {
+            "french": "à cet égard",
+            "english": "in this regard"
+          },
+          {
+            "french": "il n'en demeure pas moins que",
+            "english": "it nevertheless remains true that"
+          }
+        ],
+        "grammar": {
+          "title": "Nuanced rebuttal in critical discourse",
+          "text": "Advanced debates often acknowledge an argument before limiting its scope. Use structures like 'Il est vrai que... cependant...' or 'Il n'en demeure pas moins que...'. Example: 'Il est vrai que les plateformes facilitent l'accès à la culture ; il n'en demeure pas moins qu'elles tendent à uniformiser certaines pratiques.'"
+        },
+        "reading": "L'hégémonie culturelle à l'ère numérique ne résulte pas uniquement de la puissance économique. Les plateformes dominantes façonnent également les préférences à travers la recommandation algorithmique. À cet égard, certains dénoncent une standardisation culturelle croissante. Il n'en demeure pas moins que ces outils favorisent aussi une circulation inédite des œuvres et des idées à l'échelle mondiale.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "How do dominant platforms shape preferences?",
+            "options": [
+              "through algorithmic recommendation",
+              "through constitutional reform",
+              "through military intervention",
+              "through demographic change"
+            ],
+            "correctKey": "through algorithmic recommendation"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What concern do some critics raise?",
+            "options": [
+              "une standardisation culturelle croissante",
+              "une baisse de l'éducation",
+              "une disparition des livres",
+              "une crise monétaire"
+            ],
+            "correctKey": "une standardisation culturelle croissante"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What positive effect is also mentioned?",
+            "options": [
+              "global circulation of ideas and works",
+              "elimination of technology",
+              "reduction of languages",
+              "end of globalization"
+            ],
+            "correctKey": "global circulation of ideas and works"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les plateformes dominantes façonnent les préférences à travers la recommandation ***.",
+            "correctKey": "algorithmique"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Ces outils favorisent une circulation inédite des œuvres et des idées à l'échelle ***.",
+            "correctKey": "mondiale"
+          }
+        ]
+      },
+      {
+        "title": "Économie de marché et justice distributive",
+        "description": "Exposé oral sur la répartition des richesses, l'équité sociale et le libre-échange.",
+        "vocabulary": [
+          {
+            "french": "la justice distributive",
+            "english": "distributive justice"
+          },
+          {
+            "french": "la répartition des richesses",
+            "english": "distribution of wealth"
+          },
+          {
+            "french": "le libre-échange",
+            "english": "free trade"
+          },
+          {
+            "french": "l'équité sociale",
+            "english": "social equity"
+          },
+          {
+            "french": "une inégalité structurelle",
+            "english": "structural inequality"
+          },
+          {
+            "french": "la mobilité sociale",
+            "english": "social mobility"
+          },
+          {
+            "french": "la redistribution fiscale",
+            "english": "fiscal redistribution"
+          },
+          {
+            "french": "l'efficience économique",
+            "english": "economic efficiency"
+          },
+          {
+            "french": "de surcroît",
+            "english": "moreover"
+          },
+          {
+            "french": "en contrepartie",
+            "english": "in return"
+          }
+        ],
+        "grammar": {
+          "title": "Balancing efficiency and fairness",
+          "text": "C2 economic debates often compare competing values. Use structures such as 'Si... en revanche...' and 'En contrepartie...'. Example: 'Le libre-échange favorise l'efficience économique ; en contrepartie, il peut accentuer certaines inégalités structurelles.'"
+        },
+        "reading": "Les défenseurs de l'économie de marché soulignent son efficacité dans l'allocation des ressources et la création de richesse. De surcroît, le libre-échange stimule souvent l'innovation et la compétitivité. Toutefois, les critiques rappellent que certaines inégalités structurelles persistent malgré la croissance. La question centrale demeure celle de l'équilibre entre efficience économique et justice distributive.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What do supporters of the market economy emphasize?",
+            "options": [
+              "its efficiency in allocating resources",
+              "its opposition to innovation",
+              "its cultural neutrality",
+              "its rejection of trade"
+            ],
+            "correctKey": "its efficiency in allocating resources"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What can free trade stimulate according to the text?",
+            "options": [
+              "innovation and competitiveness",
+              "inflation only",
+              "bureaucracy",
+              "social immobility"
+            ],
+            "correctKey": "innovation and competitiveness"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the central question of the debate?",
+            "options": [
+              "the balance between efficiency and distributive justice",
+              "the future of literature",
+              "the role of religion",
+              "the decline of cities"
+            ],
+            "correctKey": "the balance between efficiency and distributive justice"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le libre-échange stimule souvent l'innovation et la ***.",
+            "correctKey": "compétitivité"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Certaines inégalités *** persistent malgré la croissance.",
+            "correctKey": "structurelles"
+          }
+        ]
+      },
+      {
+        "title": "La science est-elle le seul chemin vers la vérité ?",
+        "description": "Exposé oral sur le rationalisme, l'épistémologie et les autres modes de connaissance.",
+        "vocabulary": [
+          {
+            "french": "le rationalisme",
+            "english": "rationalism"
+          },
+          {
+            "french": "l'épistémologie",
+            "english": "epistemology"
+          },
+          {
+            "french": "une connaissance empirique",
+            "english": "empirical knowledge"
+          },
+          {
+            "french": "un paradigme scientifique",
+            "english": "scientific paradigm"
+          },
+          {
+            "french": "la vérifiabilité",
+            "english": "verifiability"
+          },
+          {
+            "french": "une vérité subjective",
+            "english": "subjective truth"
+          },
+          {
+            "french": "l'intuition philosophique",
+            "english": "philosophical intuition"
+          },
+          {
+            "french": "un mode de connaissance",
+            "english": "mode of knowledge"
+          },
+          {
+            "french": "à cet effet",
+            "english": "for this purpose"
+          },
+          {
+            "french": "quoi qu'il en soit",
+            "english": "be that as it may"
+          }
+        ],
+        "grammar": {
+          "title": "Contrasting epistemological positions",
+          "text": "Advanced philosophical debates require presenting competing frameworks fairly. Use expressions such as 'Selon cette perspective...', 'À l'inverse...', and 'Quoi qu'il en soit...'. Example: 'Selon le rationalisme, la raison constitue le fondement du savoir. À l'inverse, d'autres traditions valorisent l'expérience vécue.'"
+        },
+        "reading": "Le rationalisme accorde à la raison un rôle privilégié dans l'accès à la vérité. Les sciences modernes reposent sur la vérifiabilité et l'observation empirique afin d'établir des connaissances fiables. Toutefois, certains philosophes soutiennent que l'art, l'intuition ou l'expérience existentielle révèlent également des formes de vérité. Quoi qu'il en soit, l'épistémologie contemporaine tend à reconnaître la pluralité des modes de connaissance.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "On what do modern sciences rely?",
+            "options": [
+              "verifiability and empirical observation",
+              "tradition alone",
+              "intuition only",
+              "authority figures"
+            ],
+            "correctKey": "verifiability and empirical observation"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What do some philosophers argue?",
+            "options": [
+              "that art and intuition can reveal forms of truth",
+              "that science should be abolished",
+              "that reason is useless",
+              "that knowledge is impossible"
+            ],
+            "correctKey": "that art and intuition can reveal forms of truth"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does contemporary epistemology tend to recognize?",
+            "options": [
+              "a plurality of modes of knowledge",
+              "a single path to truth",
+              "the supremacy of intuition",
+              "the rejection of science"
+            ],
+            "correctKey": "a plurality of modes of knowledge"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les sciences modernes reposent sur la *** et l'observation empirique.",
+            "correctKey": "vérifiabilité"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'épistémologie contemporaine tend à reconnaître la pluralité des modes de ***.",
+            "correctKey": "connaissance"
+          }
+        ]
+      }
+    ]
+  }
+]

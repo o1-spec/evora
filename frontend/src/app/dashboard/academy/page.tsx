@@ -205,8 +205,11 @@ function ModuleCard({ mod, levelColor, levelCode }: { mod: { label: string; icon
   if (lbl.includes('vocab')) tabParam = 'vocabulary';
   else if (lbl.includes('gramm')) tabParam = 'grammar';
   else if (lbl.includes('dialog') || lbl.includes('convers')) tabParam = 'dialogues';
-  else if (lbl.includes('écri') || lbl.includes('text')) tabParam = 'writing';
+  else if (lbl.includes('écri') || lbl.includes('text') || lbl.includes('writing')) tabParam = 'writing';
   else if (lbl.includes('débat') || lbl.includes('oral') || lbl.includes('speech')) tabParam = 'speaking';
+  else if (lbl.includes('literat') || lbl.includes('littérat')) tabParam = 'literature';
+  else if (lbl.includes('stylist')) tabParam = 'stylistic';
+  else if (lbl.includes('masterclass')) tabParam = 'masterclass';
 
   return (
     <Link href={`/dashboard/academy/${levelCode.toLowerCase()}?tab=${tabParam}`} style={{ textDecoration: 'none' }}>
@@ -300,36 +303,70 @@ export default function AcademyPage() {
             };
 
             const vocabModules = apiLevel.modules.filter((m: any) => m.label.toLowerCase().includes('vocab'));
-            const otherModules = apiLevel.modules.filter((m: any) => !m.label.toLowerCase().includes('vocab'));
+            const grammarModules = apiLevel.modules.filter((m: any) => m.label.toLowerCase().includes('gramm'));
+            const dialogueModules = apiLevel.modules.filter((m: any) => m.label.toLowerCase().includes('dialog') || m.label.toLowerCase().includes('convers'));
+            const writingModules = apiLevel.modules.filter((m: any) => m.label.toLowerCase().includes('écri') || m.label.toLowerCase().includes('text') || m.label.toLowerCase().includes('writing'));
+            const speakingModules = apiLevel.modules.filter((m: any) => m.label.toLowerCase().includes('débat') || m.label.toLowerCase().includes('oral') || m.label.toLowerCase().includes('speech'));
+
+            const groupedLabels = new Set();
+            vocabModules.forEach((m: any) => groupedLabels.add(m.label));
+            grammarModules.forEach((m: any) => groupedLabels.add(m.label));
+            dialogueModules.forEach((m: any) => groupedLabels.add(m.label));
+            writingModules.forEach((m: any) => groupedLabels.add(m.label));
+            speakingModules.forEach((m: any) => groupedLabels.add(m.label));
+
+            const otherModules = apiLevel.modules.filter((m: any) => !groupedLabels.has(m.label));
 
             const modules: any[] = [];
 
+            // Vocabulary group
             if (vocabModules.length > 0) {
               const totalCount = vocabModules.reduce((sum: number, m: any) => sum + m.count, 0);
               const totalDone = vocabModules.reduce((sum: number, m: any) => sum + m.done, 0);
               const hasFrenchVocab = vocabModules.some((m: any) => m.label.toLowerCase().includes('vocabulaire'));
               const label = hasFrenchVocab ? 'Vocabulaire' : 'Vocabulary';
+              modules.push({ label, icon: Layers, count: totalCount, done: totalDone });
+            }
 
-              modules.push({
-                label,
-                icon: Layers,
-                count: totalCount,
-                done: totalDone
-              });
+            // Grammar group
+            if (grammarModules.length > 0) {
+              const totalCount = grammarModules.reduce((sum: number, m: any) => sum + m.count, 0);
+              const totalDone = grammarModules.reduce((sum: number, m: any) => sum + m.done, 0);
+              const hasFrenchGramm = grammarModules.some((m: any) => m.label.toLowerCase().includes('grammaire'));
+              const label = hasFrenchGramm ? 'Grammaire' : 'Grammar';
+              modules.push({ label, icon: BookOpen, count: totalCount, done: totalDone });
+            }
+
+            // Dialogue group
+            if (dialogueModules.length > 0) {
+              const totalCount = dialogueModules.reduce((sum: number, m: any) => sum + m.count, 0);
+              const totalDone = dialogueModules.reduce((sum: number, m: any) => sum + m.done, 0);
+              const label = 'Dialogues';
+              modules.push({ label, icon: MessageSquare, count: totalCount, done: totalDone });
+            }
+
+            // Writing group
+            if (writingModules.length > 0) {
+              const totalCount = writingModules.reduce((sum: number, m: any) => sum + m.count, 0);
+              const totalDone = writingModules.reduce((sum: number, m: any) => sum + m.done, 0);
+              const hasFrenchWriting = writingModules.some((m: any) => m.label.toLowerCase().includes('écri'));
+              const label = hasFrenchWriting ? 'Écriture' : 'Writing';
+              modules.push({ label, icon: PenTool, count: totalCount, done: totalDone });
+            }
+
+            // Speaking group
+            if (speakingModules.length > 0) {
+              const totalCount = speakingModules.reduce((sum: number, m: any) => sum + m.count, 0);
+              const totalDone = speakingModules.reduce((sum: number, m: any) => sum + m.done, 0);
+              const hasFrenchSpeaking = speakingModules.some((m: any) => m.label.toLowerCase().includes('débat') || m.label.toLowerCase().includes('oral'));
+              const label = hasFrenchSpeaking ? 'Expression Orale' : 'Speaking';
+              modules.push({ label, icon: Mic, count: totalCount, done: totalDone });
             }
 
             otherModules.forEach((m: any) => {
-              let icon = BookOpen;
-              const lbl = m.label.toLowerCase();
-              if (lbl.includes('gramm')) icon = BookOpen;
-              else if (lbl.includes('dialog') || lbl.includes('convers')) icon = MessageSquare;
-              else if (lbl.includes('écri') || lbl.includes('text')) icon = PenTool;
-              else if (lbl.includes('débat') || lbl.includes('oral') || lbl.includes('speech')) icon = Mic;
-              else icon = Star;
-
               modules.push({
                 label: m.label,
-                icon,
+                icon: Star,
                 count: m.count,
                 done: m.done
               });

@@ -1,0 +1,947 @@
+[
+  {
+    "title": "Travel and Hospitality",
+    "description": "Practice Elementary dialogue scenarios for booking tickets, hotel interactions, and transit.",
+    "lessons": [
+      {
+        "title": "Booking a Train Ticket",
+        "description": "Interaction at the ticket booth or information desk.",
+        "vocabulary": [
+          {
+            "french": "Billet",
+            "english": "Ticket"
+          },
+          {
+            "french": "Train",
+            "english": "Train"
+          },
+          {
+            "french": "Quel est le prix du billet?",
+            "english": "How much is the ticket?"
+          },
+          {
+            "french": "Je voudrais un billet pour Paris.",
+            "english": "I would like a ticket to Paris."
+          },
+          {
+            "french": "Combien de temps faut-il pour arriver à Paris?",
+            "english": "How long does it take to get to Paris?"
+          },
+          {
+            "french": "Il y a des sièges réservés dans le train.",
+            "english": "There are reserved seats in the train."
+          },
+          {
+            "french": "Je m'appelle Marie, je suis en vacances.",
+            "english": "My name is Marie, I'm on vacation."
+          },
+          {
+            "french": "Pouvez-vous me donner un billet avec un siège réservé?",
+            "english": "Can you give me a ticket with a reserved seat?"
+          },
+          {
+            "french": "Oui, c'est 50 euros.",
+            "english": "Yes, it's 50 euros."
+          },
+          {
+            "french": "Je vais prendre ce billet, merci.",
+            "english": "I'll take this ticket, thank you."
+          }
+        ],
+        "grammar": {
+          "title": "Imparfait et Futur Simpel",
+          "text": "L'imparfait est utilisé pour les actions qui se passent dans le passé, tandis que le futur simple est utilisé pour les actions qui se passent dans le présent ou l'avenir. Exemples : J'étais en train de prendre le train (passé) / Je vais prendre le train (futur)."
+        },
+        "reading": "Marie: Bonjour, je voudrais un billet pour Paris.\nVendeur: Quel est le prix du billet?\nMarie: Je ne sais pas, combien ça coûte ?\nVendeur: Il y a des sièges réservés dans le train. C'est 50 euros.\nMarie: Je vais prendre ce billet, merci.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le prix du billet?",
+            "options": [
+              "20 euros",
+              "50 euros",
+              "10 euros",
+              "30 euros"
+            ],
+            "correctKey": "50 euros",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voudrais un billet pour ***.",
+            "correctKey": "Paris",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Combien de temps faut-il pour arriver à Paris?",
+            "options": [
+              "1 heure",
+              "2 heures",
+              "3 heures",
+              "4 heures"
+            ],
+            "correctKey": "2 heures",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Pouvez-vous me donner un billet avec un *** réservé ?",
+            "correctKey": "siège",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Comment s'appelle la personne qui achète le billet?",
+            "options": [
+              "Le vendeur",
+              "Marie",
+              "Le conducteur",
+              "L'employé"
+            ],
+            "correctKey": "Marie",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Hotel Check-in",
+        "description": "Arriving at the hotel lobby, confirming a booking, and requesting amenities.",
+        "vocabulary": [
+          {
+            "french": "Bonjour",
+            "english": "Hello"
+          },
+          {
+            "french": "Pouvez-vous m'aider?",
+            "english": "Can you help me?"
+          },
+          {
+            "french": "Je voudrais réserver une chambre.",
+            "english": "I would like to book a room."
+          },
+          {
+            "french": "Combien ça coûte?",
+            "english": "How much does it cost?"
+          },
+          {
+            "french": "J'ai réservé en ligne.",
+            "english": "I booked online."
+          },
+          {
+            "french": "Mon nom est Smith. Je suis là pour la réserve numéro 345.",
+            "english": "My name is Smith. I'm here for reservation number 345."
+          },
+          {
+            "french": "Bien sûr, monsieur/madame Smith. Votre chambre est prête.",
+            "english": "Of course, Mr./Mrs. Smith. Your room is ready."
+          },
+          {
+            "french": "Pouvez-vous me donner une carte de la ville?",
+            "english": "Can you give me a map of the city?"
+          },
+          {
+            "french": "Où est le restaurant le plus proche?",
+            "english": "Where is the nearest restaurant?"
+          },
+          {
+            "french": "Merci beaucoup. Au revoir.",
+            "english": "Thank you very much. Goodbye."
+          }
+        ],
+        "grammar": {
+          "title": "Using Formal and Informal You",
+          "text": "In French, there are two forms of 'you': formal (vous) and informal (tu). When speaking to someone older or in a position of authority, use the formal form. For example: 'Pouvez-vous m'aider?' (Can you help me?) is formal, while 'Tu peux m'aider?' is informal."
+        },
+        "reading": "Dialogue: Hotel Check-in\n\nClient: Bonjour.\nVendeur: Puis-je vous aider?\nClient: Je voudrais réserver une chambre. J'ai réservé en ligne.\nVendeur: Bien sûr, monsieur/madame Smith. Votre chambre est prête. Voici votre clé.\nClient: Merci beaucoup. Pouvez-vous me donner une carte de la ville?\nVendeur: Oui, bien sûr.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que le client demande au vendeur?",
+            "options": [
+              "Il demande un restaurant proche.",
+              "Il demande une chambre.",
+              "Il demande de l'aide pour réserver une chambre.",
+              "Il demande une carte de la ville."
+            ],
+            "correctKey": "Il demande un restaurant proche.",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le client dit au vendeur : 'Je voudrais *** une chambre.'",
+            "correctKey": "réserver",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que le vendeur donne au client?",
+            "options": [
+              "Une carte de la ville.",
+              "Un restaurant proche.",
+              "La clé de la chambre.",
+              "Une réservation en ligne."
+            ],
+            "correctKey": "Une carte de la ville.",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le vendeur dit au client : 'Votre chambre est ***.'",
+            "correctKey": "prête",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que le client remercie le vendeur?",
+            "options": [
+              "La clé de la chambre.",
+              "L'aide pour réserver une chambre.",
+              "Le restaurant proche.",
+              "La carte de la ville."
+            ],
+            "correctKey": "La clé de la chambre.",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "At the Tourist Information Office",
+        "description": "Asking for maps, event recommendations, and city attractions.",
+        "vocabulary": [
+          {
+            "french": "Bureau d'informations touristiques",
+            "english": "Tourist Information Office"
+          },
+          {
+            "french": "Carte de la ville",
+            "english": "City Map"
+          },
+          {
+            "french": "Festival de musique",
+            "english": "Music Festival"
+          },
+          {
+            "french": "Musée d'art",
+            "english": "Art Museum"
+          },
+          {
+            "french": "Panneau indicateur",
+            "english": "Signpost"
+          },
+          {
+            "french": "Quoi de neuf à la ville?",
+            "english": "What's new in the city?"
+          },
+          {
+            "french": "Recommandation",
+            "english": "Recommendation"
+          },
+          {
+            "french": "Rue principale",
+            "english": "Main Street"
+          },
+          {
+            "french": "Site historique",
+            "english": "Historical Site"
+          },
+          {
+            "french": "Visite guidée",
+            "english": "Guided Tour"
+          }
+        ],
+        "grammar": {
+          "title": "Asking for Recommendations",
+          "text": "When asking for recommendations, use the phrase 'Qu'est-ce que vous recommandez?' (What do you recommend?) or 'Pouvez-vous me donner une recommandation?' (Can you give me a recommendation?). For example: 'Je suis à la recherche d'un bon restaurant. Qu'est-ce que vous recommandez?' (I'm looking for a good restaurant. What do you recommend?)."
+        },
+        "reading": "Client : Bonjour, je voudrais une carte de la ville.\nVendeur : Oui, bien sûr ! Voici une carte détaillée de la ville. Vous pouvez également demander des recommandations pour les festivals et les musées.\nClient : Qu'est-ce que vous recommandez pour ce weekend?\nVendeur : Il y a un festival de musique qui se tient à proximité, et le musée d'art est ouvert jusqu'à 18h.\nClient : Merci beaucoup !\nVendeur : De rien ! Bonne journée !",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que vous recommandez pour ce weekend?",
+            "options": [
+              "Je voudrais aller au cinéma.",
+              "Il y a un festival de musique qui se tient à proximité.",
+              "Le musée d'art est ouvert jusqu'à 18h.",
+              "Je suis à la recherche d'un bon restaurant."
+            ],
+            "correctKey": "Il y a un festival de musique qui se tient à proximité.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que vous pouvez me donner pour trouver ma voie?",
+            "options": [
+              "Une carte détaillée de la ville.",
+              "Un panneau indicateur.",
+              "Un site historique.",
+              "Une visite guidée."
+            ],
+            "correctKey": "Une carte détaillée de la ville.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que vous recommandez pour les familles?",
+            "options": [
+              "Un festival de musique.",
+              "Un musée d'art.",
+              "Un site historique.",
+              "Une visite guidée."
+            ],
+            "correctKey": "Une visite guidée.",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je suis à la recherche d'un bon restaurant. Qu'est-ce que vous ***?",
+            "correctKey": "recommandez",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Pouvez-vous me donner une *** pour les familles?",
+            "correctKey": "recommandation",
+            "points": 10,
+            "options": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Socializing and Dining",
+    "description": "Practice dialogues for making dinner plans, dining out, and hobby discussions.",
+    "lessons": [
+      {
+        "title": "Inviting a Friend to Dinner",
+        "description": "A phone or messaging conversation planning a dinner date.",
+        "vocabulary": [
+          {
+            "french": "Inviter quelqu'un à dîner",
+            "english": "To invite someone for dinner"
+          },
+          {
+            "french": "Quand est-ce que tu veux manger?",
+            "english": "When do you want to eat?"
+          },
+          {
+            "french": "Je suis libre demain soir.",
+            "english": "I'm free tomorrow evening."
+          },
+          {
+            "french": "J'aimerais bien aller au restaurant avec toi.",
+            "english": "I'd like to go to the restaurant with you."
+          },
+          {
+            "french": "Qu'est-ce que tu veux manger?",
+            "english": "What do you want to eat?"
+          },
+          {
+            "french": "Je t'appellerai demain pour confirmer les détails.",
+            "english": "I'll call you tomorrow to confirm the details."
+          },
+          {
+            "french": "Quelle heure est-ce que tu préfères?",
+            "english": "What time do you prefer?"
+          },
+          {
+            "french": "Je serais ravi de te rencontrer à 19 heures.",
+            "english": "I'd be delighted to meet you at 7 pm."
+          },
+          {
+            "french": "J'ai faim, je voudrais quelque chose de rapide.",
+            "english": "I'm hungry, I'd like something quick."
+          },
+          {
+            "french": "C'est un peu tard pour manger au restaurant, n'est-ce pas?",
+            "english": "It's a bit late to eat at the restaurant, isn't it?"
+          }
+        ],
+        "grammar": {
+          "title": "Using the Future Tense (Imparfait) in Invitations",
+          "text": "In French, when inviting someone to do something in the future, we often use the imparfait tense. For example: 'Je vais manger au restaurant avec toi demain soir.' (I'm going to eat at the restaurant with you tomorrow evening.)"
+        },
+        "reading": "Client : Bonjour, je voulais savoir si tu veux manger avec moi demain soir.\nVendeur : Oui, je suis libre. Quelle heure est-ce que tu préfères ?\nClient : Je serais ravi de te rencontrer à 19 heures au restaurant.\nVendeur : C'est parfait ! Je t'appellerai demain pour confirmer les détails.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle heure est-ce que le client préfère manger ?",
+            "options": [
+              "19 heures",
+              "20 heures",
+              "21 heures",
+              "22 heures"
+            ],
+            "correctKey": "19 heures",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je suis libre demain soir et je voudrais manger avec toi au restaurant à ***.",
+            "correctKey": "19 heures",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que le client dit qu'il veut faire ?",
+            "options": [
+              "Manger au restaurant",
+              "Faire du shopping",
+              "Regarder un film",
+              "Aller au parc"
+            ],
+            "correctKey": "Manger au restaurant",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que le vendeur dit qu'il fera demain ?",
+            "options": [
+              "Appeler le client pour confirmer les détails",
+              "Envoyer un message au client",
+              "Rappeler le client",
+              "Demander à son ami de rappeler le client"
+            ],
+            "correctKey": "Appeler le client pour confirmer les détails",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je t'appellerai demain pour ***, les détails.",
+            "correctKey": "confirmer",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Ordering a Multi-course Meal",
+        "description": "Interaction with waitstaff, selecting appetizers, mains, and desserts.",
+        "vocabulary": [
+          {
+            "french": "Commander",
+            "english": "To order"
+          },
+          {
+            "french": "Appétit",
+            "english": "Appetizer"
+          },
+          {
+            "french": "Plat principal",
+            "english": "Main course"
+          },
+          {
+            "french": "Dessert",
+            "english": "Dessert"
+          },
+          {
+            "french": "L'addition, s'il vous plaît?",
+            "english": "The bill, please?"
+          },
+          {
+            "french": "Un café, merci.",
+            "english": "A coffee, thank you."
+          },
+          {
+            "french": "Je voudrais...",
+            "english": "I would like..."
+          },
+          {
+            "french": "Qu'est-ce que vous recommandez?",
+            "english": "What do you recommend?"
+          },
+          {
+            "french": "L'eau, merci.",
+            "english": "Water, thank you."
+          },
+          {
+            "french": "La carte, s'il vous plaît.",
+            "english": "The menu, please."
+          }
+        ],
+        "grammar": {
+          "title": "Imparfait et Futur Proche dans les dialogues",
+          "text": "Lorsque nous discutons de nos plans pour le futur, on utilise souvent l'imparfait (passé simple) pour parler des actions qui se sont passées avant le moment où nous parlons. Mais lorsque nous parlons de nos plans pour le futur, on utilise le futur proche (le présent du subjonctif). Par exemple: 'Je voulais aller au cinéma hier soir, mais je n'ai pas pu.' (imparfait) vs 'Je veux aller au cinéma ce soir.' (futur proche)"
+        },
+        "reading": "Client : Bonsoir, je voudrais commander une carte. \n Vendeur : Bien sûr, nous avons des plats du jour qui sont très bons. Qu'est-ce que vous recommandez? Client : Je ne sais pas... Qu'est-ce que vous me recommandez? Vendeur : Notre plat principal est le poulet grillé avec des légumes. Et pour l'appétit, nous avons des croquettes de poisson qui sont délicieuses.\n Client : D'accord, je vais prendre ça. \n Vendeur : Très bien, et pour boire? \n Client : Un café, merci.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que le client veut commander?",
+            "options": [
+              "Une bière",
+              "Un plat du jour",
+              "La carte",
+              "L'addition"
+            ],
+            "correctKey": "La carte",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le vendeur recommande le poulet grillé avec des légumes comme ***,",
+            "correctKey": "plat principal",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que le client prend pour boire?",
+            "options": [
+              "Un thé",
+              "Un café",
+              "L'eau",
+              "Une bière"
+            ],
+            "correctKey": "Un café",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le vendeur dit au client de prendre des ***, pour l'appétit.",
+            "correctKey": "croquettes de poisson",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que le client veut savoir?",
+            "options": [
+              "La carte",
+              "L'addition",
+              "Le menu",
+              "Ce qu'il recommande"
+            ],
+            "correctKey": "Ce qu'il recommande",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Talking about Your Weekend",
+        "description": "Sharing excursion experiences and talking about leisure activities.",
+        "vocabulary": [
+          {
+            "french": "week-end",
+            "english": "weekend"
+          },
+          {
+            "french": "faire du vélo",
+            "english": "go cycling"
+          },
+          {
+            "french": "aller au parc",
+            "english": "go to the park"
+          },
+          {
+            "french": "passer la journée à la maison",
+            "english": "spend the day at home"
+          },
+          {
+            "french": "faire du shopping",
+            "english": "go shopping"
+          },
+          {
+            "french": "aller au cinéma",
+            "english": "go to the movies"
+          },
+          {
+            "french": "jouer aux cartes",
+            "english": "play cards"
+          },
+          {
+            "french": "écouter de la musique",
+            "english": "listen to music"
+          },
+          {
+            "french": "faire du sport",
+            "english": "do sports"
+          },
+          {
+            "french": "aller à la plage",
+            "english": "go to the beach"
+          }
+        ],
+        "grammar": {
+          "title": "Using the Present Perfect Tense for Recent Actions",
+          "text": "The present perfect tense is used to talk about actions that happened recently, but not necessarily at a specific time. For example: \"J'ai fait du vélo hier\" (I went cycling yesterday). The verb 'avoir' (to have) is used with the past participle of the main verb."
+        },
+        "reading": "Client : Bonjour ! Comment as passé votre week-end ?\nVendeur : J'ai fait du vélo et j'ai été au parc avec mes amis. Et vous, qu'avez-vous fait ?\nClient : Moi, je suis allée faire du shopping avec ma sœur.\nVendeur : Ah, c'est sympa ! Je voulais aller au cinéma, mais j'ai finalement décidé de rester à la maison et d'écouter de la musique.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le verbe utilisé pour parler du week-end passé ?",
+            "options": [
+              "avoir",
+              "faire",
+              "aller",
+              "être"
+            ],
+            "correctKey": "avoir",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "J'ai *** du vélo hier.",
+            "correctKey": "fait",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que le client a fait avec sa sœur ?",
+            "options": [
+              "Elle est allée au parc.",
+              "Elle est allée faire du shopping.",
+              "Elle est allée au cinéma.",
+              "Elle est restée à la maison."
+            ],
+            "correctKey": "Elle est allée faire du shopping.",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voulais *** au cinéma, mais j'ai décidé de rester à la maison.",
+            "correctKey": "aller",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que le vendeur a fait avec ses amis ?",
+            "options": [
+              "Il est allé faire du shopping.",
+              "Il est allé au parc.",
+              "Il est resté à la maison.",
+              "Il est allé au cinéma."
+            ],
+            "correctKey": "Il est allé au parc.",
+            "points": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Services and Shopping",
+    "description": "Practice dialogues for shopping returns, supermarket checkouts, and local bakery visits.",
+    "lessons": [
+      {
+        "title": "Reporting Lost Luggage",
+        "description": "Interaction with airport services describing a lost bag.",
+        "vocabulary": [
+          {
+            "french": "bagage perdu",
+            "english": "lost luggage"
+          },
+          {
+            "french": "déclarer",
+            "english": "to declare"
+          },
+          {
+            "french": "comptoir de bagages",
+            "english": "luggage counter"
+          },
+          {
+            "french": "numéro de vol",
+            "english": "flight number"
+          },
+          {
+            "french": "date et heure d'arrivée",
+            "english": "arrival date and time"
+          },
+          {
+            "french": "dossier de bagage",
+            "english": "luggage tag"
+          },
+          {
+            "french": "porter à ma connaissance",
+            "english": "to bring to my attention"
+          },
+          {
+            "french": "assistance client",
+            "english": "customer service"
+          },
+          {
+            "french": "déposer un dossier de plainte",
+            "english": "to file a complaint"
+          },
+          {
+            "french": "suivi de bagage",
+            "english": "luggage tracking"
+          }
+        ],
+        "grammar": {
+          "title": "Using the Present Tense to Describe Actions in the Past",
+          "text": "In French, we use the present tense to describe actions that happened in the past when they are still relevant today. For example: 'J'ai déclaré mon bagage perdu' (I declared my lost luggage). This is because the action of declaring the lost luggage is still important for resolving the issue."
+        },
+        "reading": "Client : Bonjour, je voudrais déclarer mon bagage perdu.\n Vendeur : Pouvez-vous me donner votre numéro de vol et la date et heure d'arrivée ?\n Client : Oui, c'est le vol AF123, arrivé hier à 10h00. \n Vendeur : Désolé, nous ne l'avons pas encore retrouvé. Pouvez-vous me donner votre dossier de bagage ?\n Client : Oui, voici.\n Vendeur : Merci. Je vais porter cela à ma connaissance et vous contacterez dès que possible.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que le client veut faire ?",
+            "options": [
+              "Récupérer son bagage",
+              "Déclarer son bagage perdu",
+              "Faire une plainte",
+              "Obtenir un billet de transport"
+            ],
+            "correctKey": "Récupérer son bagage",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que le vendeur demande au client ?",
+            "options": [
+              "Son numéro de vol et la date d'arrivée",
+              "Son dossier de bagage",
+              "Ses coordonnées personnelles",
+              "Un document d'identité"
+            ],
+            "correctKey": "Son numéro de vol et la date d'arrivée",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que le vendeur va faire avec le dossier de bagage ?",
+            "options": [
+              "Le garder en stock",
+              "Le retourner au client",
+              "Le porter à la connaissance de son supérieur",
+              "Le jeter"
+            ],
+            "correctKey": "Le garder en stock",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voudrais *** mon bagage perdu.",
+            "correctKey": "déclarer",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le client a donné à l'assistant son dossier de ***.",
+            "correctKey": "bagage",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Returning a Clothing Item",
+        "description": "Requesting a refund or exchange at a boutique.",
+        "vocabulary": [
+          {
+            "french": "retourner",
+            "english": "to return"
+          },
+          {
+            "french": "un article",
+            "english": "an item"
+          },
+          {
+            "french": "une commande",
+            "english": "a purchase"
+          },
+          {
+            "french": "un remboursement",
+            "english": "a refund"
+          },
+          {
+            "french": "une échange",
+            "english": "an exchange"
+          },
+          {
+            "french": "le prix",
+            "english": "the price"
+          },
+          {
+            "french": "la facture",
+            "english": "the bill"
+          },
+          {
+            "french": "le vendeur",
+            "english": "the salesperson"
+          },
+          {
+            "french": "une raison de retour",
+            "english": "a reason for return"
+          },
+          {
+            "french": "satisfaire",
+            "english": "to satisfy"
+          }
+        ],
+        "grammar": {
+          "title": "Using the verb 'retourner' in the present tense",
+          "text": "To form the present tense of 'retourner', we use the infinitive form 'retourner' and add -e for the first person singular, -es for the second person singular, and -ent for the third person singular. For example: Je retourne l'article (I return the item), Tu retournes l'article (You return the item), Il/Elle/On retourne l'article (He/She/It returns the item)."
+        },
+        "reading": "Client : Excusez-moi, je voudrais retourner ce pantalon. \n Vendeur : Quelle est la raison de votre retour ? Client : Le pantalon ne convient pas. Vendeur : Je peux vous donner un remboursement ou échanger l'article. Client : Je préfère un remboursement, s'il vous plaît.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Pourquoi veut le client retourner l'article ?",
+            "options": [
+              "Le prix est trop cher.",
+              "L'article ne convient pas.",
+              "La facture est incorrecte.",
+              "Le vendeur n'est pas sympa."
+            ],
+            "correctKey": "Le prix est trop cher.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que le vendeur propose au client ?",
+            "options": [
+              "Un remboursement ou une échange.",
+              "Une réduction sur l'article suivant.",
+              "Un nouveau pantalon de la même taille.",
+              "Une invitation à un événement."
+            ],
+            "correctKey": "Un remboursement ou une échange.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que le client choisit ?",
+            "options": [
+              "Un remboursement.",
+              "Une échange.",
+              "Les deux options.",
+              "Rien."
+            ],
+            "correctKey": "Un remboursement.",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voudrais *** ce chandail car il ne convient pas.",
+            "correctKey": "retourner",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le vendeur peut me donner un *** ou une échange.",
+            "correctKey": "remboursement",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Shopping at the local Boulangerie",
+        "description": "Ordering artisanal bread, pastries, and completing a cash transaction.",
+        "vocabulary": [
+          {
+            "french": "Boulangerie",
+            "english": "bakery"
+          },
+          {
+            "french": "Pain de campagne",
+            "english": "country bread"
+          },
+          {
+            "french": "Croissant",
+            "english": "croissant"
+          },
+          {
+            "french": "Baguette",
+            "english": "baguette"
+          },
+          {
+            "french": "Pain complet",
+            "english": "whole wheat bread"
+          },
+          {
+            "french": "Frais",
+            "english": "fresh"
+          },
+          {
+            "french": "Manger",
+            "english": "to eat"
+          },
+          {
+            "french": "Boisson chaude",
+            "english": "hot drink"
+          },
+          {
+            "french": "Prix",
+            "english": "price"
+          },
+          {
+            "french": "Merci",
+            "english": "thank you"
+          }
+        ],
+        "grammar": {
+          "title": "Using the Verb 'Avoir' in the Present Tense",
+          "text": "In French, we use the verb 'avoir' (to have) to talk about things that are true for us now. For example: \"J'ai un pain de campagne\" means \"I have a country bread.\" We can also ask questions using 'avoir': \"Avez-vous du pain complet?\" means \"Do you have whole wheat bread?\""
+        },
+        "reading": "Client: Bonjour, j'aimerais acheter une baguette et un croissant.\nVendeur: Bien sûr, c'est combien ?\nClient: Je veux payer avec mon carton.\nVendeur: D'accord, voilà votre changement.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does the client want to buy?",
+            "options": [
+              "A baguette and a croissant",
+              "A country bread and a whole wheat bread",
+              "A hot drink and a pastry",
+              "Nothing, they just want to talk"
+            ],
+            "correctKey": "A baguette and a croissant",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "How does the client pay?",
+            "options": [
+              "With cash",
+              "With credit card",
+              "With their carton",
+              "They don't pay, it's free"
+            ],
+            "correctKey": "With their carton",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does the vendor say to the client?",
+            "options": [
+              "I don't have any bread",
+              "That will be 5 euros, please",
+              "Bien sûr, c'est combien ?",
+              "You're welcome"
+            ],
+            "correctKey": "Bien sûr, c'est combien ?",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je veux acheter une baguette et un ***, s'il vous plaît.",
+            "correctKey": "croissant",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le prix du pain de campagne est de 2,50 €. Je vais payer avec mon ***.",
+            "correctKey": "carton",
+            "points": 10,
+            "options": null
+          }
+        ]
+      }
+    ]
+  }
+]

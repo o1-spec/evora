@@ -1,0 +1,395 @@
+[
+  {
+    "title": "Short Messages and Personal Notes",
+    "description": "Learn how to write simple A1-level personal messages, postcards, and basic form information using clear everyday French.",
+    "lessons": [
+      {
+        "title": "Writing a Text Message / SMS",
+        "description": "Learn how to write a short casual message to invite a friend and confirm simple plans.",
+        "vocabulary": [
+          { "french": "Salut", "english": "Hi" },
+          { "french": "Ça va ?", "english": "How are you?" },
+          { "french": "Tu veux... ?", "english": "Do you want to...?" },
+          { "french": "venir", "english": "to come" },
+          { "french": "avec moi", "english": "with me" },
+          { "french": "ce soir", "english": "this evening" },
+          { "french": "demain", "english": "tomorrow" },
+          { "french": "d'accord", "english": "okay / agreed" },
+          { "french": "à bientôt", "english": "see you soon" },
+          { "french": "bisous", "english": "kisses / informal goodbye" }
+        ],
+        "grammar": {
+          "title": "Casual Message Structure",
+          "text": "A short informal French message usually begins with a friendly greeting like 'Salut', followed by a simple question or invitation. Use short sentences and finish with a casual closing such as 'À bientôt' or 'Bisous' when writing to a close friend."
+        },
+        "reading": "Salut Emma ! Ça va ? Tu veux venir au cinéma avec moi ce soir ? Le film commence à 18h. Réponds-moi vite. À bientôt ! Lucas",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which greeting is suitable for a casual SMS to a friend?",
+            "options": ["Madame", "Salut", "Cordialement", "Monsieur"],
+            "correctKey": "Salut",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is Lucas inviting Emma to do?",
+            "options": [
+              "go to school",
+              "go to the cinema",
+              "eat dinner",
+              "visit a museum"
+            ],
+            "correctKey": "go to the cinema",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Salut Emma ! *** va ?",
+            "correctKey": "Ça",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Tu veux venir au cinéma avec *** ?",
+            "correctKey": "moi",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which closing is informal and friendly?",
+            "options": ["Veuillez agréer", "Cordialement", "Bisous", "Madame"],
+            "correctKey": "Bisous",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Writing a Holiday Postcard",
+        "description": "Learn how to write a simple postcard describing the weather, location, activities, and greetings.",
+        "vocabulary": [
+          { "french": "Cher / Chère", "english": "Dear" },
+          { "french": "Je suis à...", "english": "I am in / at..." },
+          { "french": "il fait beau", "english": "the weather is nice" },
+          { "french": "il fait chaud", "english": "it is hot" },
+          { "french": "la plage", "english": "the beach" },
+          { "french": "la ville", "english": "the city" },
+          { "french": "je visite", "english": "I visit / I am visiting" },
+          { "french": "je mange", "english": "I eat / I am eating" },
+          { "french": "à bientôt", "english": "see you soon" },
+          { "french": "amitiés", "english": "best wishes / regards" }
+        ],
+        "grammar": {
+          "title": "Simple Postcard Format",
+          "text": "A postcard usually starts with 'Cher' or 'Chère' plus the person's name. Then write where you are, describe the weather, mention one or two activities, and finish with a short closing such as 'À bientôt' or 'Amitiés'."
+        },
+        "reading": "Chère Léa,\nJe suis à Nice avec ma famille. Il fait beau et chaud. Le matin, je vais à la plage. L'après-midi, je visite la ville. C'est très agréable.\nÀ bientôt,\nSophie",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Where is Sophie?",
+            "options": ["Paris", "Nice", "Lyon", "Montréal"],
+            "correctKey": "Nice",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase describes good weather?",
+            "options": [
+              "Il fait beau",
+              "Je suis à Nice",
+              "À bientôt",
+              "Je visite"
+            ],
+            "correctKey": "Il fait beau",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Chère *** ,",
+            "correctKey": "Léa",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le matin, je vais à la ***.",
+            "correctKey": "plage",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which closing is appropriate for a postcard?",
+            "options": [
+              "À bientôt",
+              "Objet :",
+              "Monsieur le Directeur",
+              "Signature obligatoire"
+            ],
+            "correctKey": "À bientôt",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Filling Out Forms",
+        "description": "Learn how to understand and complete basic French forms with personal information.",
+        "vocabulary": [
+          { "french": "Nom", "english": "Surname / last name" },
+          { "french": "Prénom", "english": "First name" },
+          { "french": "Adresse", "english": "Address" },
+          { "french": "Ville", "english": "City" },
+          { "french": "Pays", "english": "Country" },
+          { "french": "Nationalité", "english": "Nationality" },
+          { "french": "Date de naissance", "english": "Date of birth" },
+          { "french": "Téléphone", "english": "Phone" },
+          { "french": "Courriel", "english": "Email" },
+          { "french": "Signature", "english": "Signature" }
+        ],
+        "grammar": {
+          "title": "Capital Letters and Form Labels",
+          "text": "French forms often use short labels such as 'Nom', 'Prénom', and 'Adresse'. Write names and places with capital letters. Dates in French are often written in the order day, month, year, for example: 12/04/2001."
+        },
+        "reading": "Nom : Martin\nPrénom : Clara\nDate de naissance : 12/04/2001\nNationalité : française\nAdresse : 15 rue Victor Hugo\nVille : Paris\nPays : France\nCourriel : [clara.martin@email.com](mailto:clara.martin@email.com)",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'Prénom' mean?",
+            "options": ["Surname", "First name", "Address", "Country"],
+            "correctKey": "First name",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which label asks for email?",
+            "options": ["Adresse", "Courriel", "Pays", "Signature"],
+            "correctKey": "Courriel",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "*** : Martin",
+            "correctKey": "Nom",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Date de *** : 12/04/2001",
+            "correctKey": "naissance",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "In the sample form, what is Clara's city?",
+            "options": ["Nice", "Paris", "France", "Lyon"],
+            "correctKey": "Paris",
+            "points": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Formal and Everyday Correspondence",
+    "description": "Learn how to write simple polite emails, thank-you notes, and invitations for everyday situations.",
+    "lessons": [
+      {
+        "title": "Writing a Polite Email",
+        "description": "Learn how to write a short formal email asking for information about a class or hotel.",
+        "vocabulary": [
+          { "french": "Bonjour Madame", "english": "Hello Madam" },
+          { "french": "Bonjour Monsieur", "english": "Hello Sir" },
+          { "french": "Je voudrais", "english": "I would like" },
+          { "french": "des informations", "english": "some information" },
+          { "french": "un cours", "english": "a class / course" },
+          { "french": "une chambre", "english": "a room" },
+          { "french": "disponible", "english": "available" },
+          { "french": "s'il vous plaît", "english": "please" },
+          { "french": "merci", "english": "thank you" },
+          { "french": "cordialement", "english": "kind regards" }
+        ],
+        "grammar": {
+          "title": "Polite Email Structure",
+          "text": "A polite French email begins with 'Bonjour Madame' or 'Bonjour Monsieur'. State your request clearly with 'Je voudrais...' or 'Je cherche...'. End with 'Merci' and a polite closing such as 'Cordialement'."
+        },
+        "reading": "Bonjour Madame,\nJe voudrais des informations sur le cours de français A1. Est-ce que le cours est disponible le samedi ? Merci beaucoup.\nCordialement,\nAdam Bello",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which opening is polite for a formal email?",
+            "options": ["Salut !", "Bonjour Madame", "Bisous", "À plus"],
+            "correctKey": "Bonjour Madame",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What information does Adam ask for?",
+            "options": [
+              "a hotel room",
+              "a French A1 class",
+              "a train ticket",
+              "a restaurant menu"
+            ],
+            "correctKey": "a French A1 class",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voudrais des *** sur le cours de français A1.",
+            "correctKey": "informations",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "***,\nAdam Bello",
+            "correctKey": "Cordialement",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which closing is best for a polite email?",
+            "options": ["Cordialement", "Bisous", "Salut", "À plus"],
+            "correctKey": "Cordialement",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Writing a Thank-You Note",
+        "description": "Learn how to write a short message thanking someone for a dinner, gift, or kind action.",
+        "vocabulary": [
+          { "french": "Merci beaucoup", "english": "Thank you very much" },
+          { "french": "pour", "english": "for" },
+          { "french": "le dîner", "english": "the dinner" },
+          { "french": "le cadeau", "english": "the gift" },
+          { "french": "c'était", "english": "it was" },
+          { "french": "très bon", "english": "very good" },
+          { "french": "très gentil", "english": "very kind" },
+          { "french": "j'ai aimé", "english": "I liked / I enjoyed" },
+          { "french": "à bientôt", "english": "see you soon" },
+          { "french": "avec amitié", "english": "with friendship" }
+        ],
+        "grammar": {
+          "title": "Thanking Someone Clearly",
+          "text": "To thank someone in French, use 'Merci pour...' followed by the thing or action. Example: 'Merci pour le cadeau.' You can add a short positive sentence like 'C'était très gentil' or 'J'ai beaucoup aimé le dîner'."
+        },
+        "reading": "Chère Marie,\nMerci beaucoup pour le dîner. C'était très bon et très agréable. J'ai aimé le gâteau au chocolat. Tu es très gentille.\nÀ bientôt,\nNora",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is Nora thanking Marie for?",
+            "options": ["a gift", "a dinner", "a class", "a postcard"],
+            "correctKey": "a dinner",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase means 'Thank you very much'?",
+            "options": [
+              "À bientôt",
+              "Merci beaucoup",
+              "C'était bon",
+              "Avec amitié"
+            ],
+            "correctKey": "Merci beaucoup",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Merci beaucoup *** le dîner.",
+            "correctKey": "pour",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "C'était très ***.",
+            "correctKey": "bon",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which sentence is appropriate in a thank-you note?",
+            "options": [
+              "Je ne peux pas venir",
+              "Merci pour le cadeau",
+              "Où est la pharmacie ?",
+              "Nom : Martin"
+            ],
+            "correctKey": "Merci pour le cadeau",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Writing an Invitation",
+        "description": "Learn how to write a simple invitation to a birthday party, dinner, or small event.",
+        "vocabulary": [
+          { "french": "Je t'invite", "english": "I invite you informal" },
+          { "french": "mon anniversaire", "english": "my birthday" },
+          { "french": "un dîner", "english": "a dinner" },
+          { "french": "une fête", "english": "a party" },
+          { "french": "chez moi", "english": "at my place" },
+          { "french": "samedi", "english": "Saturday" },
+          { "french": "à 18h", "english": "at 6 p.m." },
+          { "french": "viens", "english": "come informal" },
+          { "french": "réponds-moi", "english": "reply to me" },
+          { "french": "j'espère te voir", "english": "I hope to see you" }
+        ],
+        "grammar": {
+          "title": "Basic Invitation Format",
+          "text": "A simple invitation should include the event, the date, the time, and the place. Use 'Je t'invite...' for a friend. Use 'chez moi' to say 'at my place'. You can finish with 'Réponds-moi' or 'J'espère te voir'."
+        },
+        "reading": "Salut Karim,\nJe t'invite à mon anniversaire samedi à 18h chez moi. Il y a de la musique, des gâteaux et des amis. Viens avec ta sœur si tu veux. Réponds-moi vite !\nÀ bientôt,\nLina",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What event is Lina inviting Karim to?",
+            "options": [
+              "a French class",
+              "her birthday",
+              "a hotel",
+              "a market"
+            ],
+            "correctKey": "her birthday",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "When is the event?",
+            "options": [
+              "Sunday at noon",
+              "Saturday at 18h",
+              "Friday at 8h",
+              "Monday at 10h"
+            ],
+            "correctKey": "Saturday at 18h",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je t'invite à mon ***.",
+            "correctKey": "anniversaire",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "samedi à 18h chez ***.",
+            "correctKey": "moi",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which information should an invitation include?",
+            "options": [
+              "only the sender's age",
+              "event, date, time, and place",
+              "only the weather",
+              "only the surname"
+            ],
+            "correctKey": "event, date, time, and place",
+            "points": 10
+          }
+        ]
+      }
+    ]
+  }
+]

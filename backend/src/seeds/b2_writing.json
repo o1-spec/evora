@@ -1,0 +1,1178 @@
+[
+  {
+    "title": "Society, Work and Integration",
+    "description": "Read and analyze argumentative texts on francophone immigration, workplace AI, and professional diversity.",
+    "lessons": [
+      {
+        "title": "L'immigration francophone hors Québec",
+        "description": "Exploring francophone minority communities and integration issues across Canada.",
+        "vocabulary": [
+          {
+            "french": "une communauté francophone minoritaire",
+            "english": "francophone minority community"
+          },
+          {
+            "french": "l'intégration sociale",
+            "english": "social integration"
+          },
+          {
+            "french": "la vitalité linguistique",
+            "english": "linguistic vitality"
+          },
+          {
+            "french": "un nouvel arrivant",
+            "english": "newcomer"
+          },
+          {
+            "french": "l'accès aux services",
+            "english": "access to services"
+          },
+          {
+            "french": "un parcours d'installation",
+            "english": "settlement pathway"
+          },
+          {
+            "french": "la cohésion communautaire",
+            "english": "community cohesion"
+          },
+          {
+            "french": "un réseau d'accueil",
+            "english": "reception/support network"
+          },
+          {
+            "french": "favoriser l'inclusion",
+            "english": "to promote inclusion"
+          },
+          {
+            "french": "préserver la langue",
+            "english": "to preserve the language"
+          }
+        ],
+        "grammar": {
+          "title": "Structuring an argumentative paragraph with concession and consequence",
+          "text": "In B2 writing, combine concession and consequence to create a balanced argument. Use bien que to introduce a limitation and par conséquent to show a result. Example: Bien que l'installation soit difficile, les réseaux d'accueil facilitent l'intégration. (Although settlement is difficult, support networks facilitate integration.) Par conséquent, la communauté devient plus dynamique. (Consequently, the community becomes more dynamic.)"
+        },
+        "reading": "L'immigration francophone hors Québec représente un enjeu majeur pour la vitalité linguistique du Canada. Bien que les nouveaux arrivants rencontrent parfois des obstacles liés à l'emploi et à l'accès aux services, leur présence renforce les communautés francophones minoritaires. Les réseaux d'accueil jouent donc un rôle essentiel dans le parcours d'installation. Par conséquent, favoriser l'inclusion permet aussi de préserver la langue française.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the main issue discussed in the text?",
+            "options": [
+              "la vitalité linguistique des communautés francophones",
+              "la cuisine traditionnelle française",
+              "les élections municipales",
+              "les transports urbains"
+            ],
+            "correctKey": "la vitalité linguistique des communautés francophones"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector introduces concession?",
+            "options": [
+              "bien que",
+              "par conséquent",
+              "donc",
+              "ainsi"
+            ],
+            "correctKey": "bien que"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What role do support networks play?",
+            "options": [
+              "Ils facilitent le parcours d'installation.",
+              "Ils remplacent les écoles.",
+              "Ils diminuent la diversité.",
+              "Ils organisent les élections."
+            ],
+            "correctKey": "Ils facilitent le parcours d'installation."
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'immigration francophone hors Québec représente un enjeu majeur pour la *** linguistique.",
+            "correctKey": "vitalité"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Favoriser l'*** permet aussi de préserver la langue française.",
+            "correctKey": "inclusion"
+          }
+        ]
+      },
+      {
+        "title": "L'intelligence artificielle au travail",
+        "description": "Discussing automation, ethics, and changes in the modern office.",
+        "vocabulary": [
+          {
+            "french": "l'automatisation des tâches",
+            "english": "task automation"
+          },
+          {
+            "french": "l'éthique numérique",
+            "english": "digital ethics"
+          },
+          {
+            "french": "un algorithme décisionnel",
+            "english": "decision-making algorithm"
+          },
+          {
+            "french": "la productivité",
+            "english": "productivity"
+          },
+          {
+            "french": "la surveillance au travail",
+            "english": "workplace surveillance"
+          },
+          {
+            "french": "les compétences humaines",
+            "english": "human skills"
+          },
+          {
+            "french": "la transformation professionnelle",
+            "english": "professional transformation"
+          },
+          {
+            "french": "un risque de biais",
+            "english": "risk of bias"
+          },
+          {
+            "french": "un outil collaboratif",
+            "english": "collaborative tool"
+          },
+          {
+            "french": "encadrer l'usage de",
+            "english": "to regulate the use of"
+          }
+        ],
+        "grammar": {
+          "title": "Expressing nuance with certes... mais",
+          "text": "Use certes... mais to recognize one side of an argument before presenting a limitation. Example: Certes, l'intelligence artificielle améliore la productivité, mais elle soulève des questions éthiques. (Admittedly, AI improves productivity, but it raises ethical questions.) This structure is useful in balanced argumentative writing."
+        },
+        "reading": "Certes, l'intelligence artificielle transforme le monde du travail en automatisant certaines tâches répétitives. Elle peut améliorer la productivité et soutenir les équipes grâce à des outils collaboratifs. Cependant, les algorithmes décisionnels peuvent créer des risques de biais. Il est donc nécessaire d'encadrer leur usage afin de protéger les compétences humaines et l'éthique numérique.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What benefit of AI is mentioned in the text?",
+            "options": [
+              "améliorer la productivité",
+              "supprimer toutes les professions",
+              "réduire la langue française",
+              "remplacer les lois"
+            ],
+            "correctKey": "améliorer la productivité"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which risk is linked to decision-making algorithms?",
+            "options": [
+              "un risque de biais",
+              "un manque de transport",
+              "une baisse de biodiversité",
+              "une panne de chauffage"
+            ],
+            "correctKey": "un risque de biais"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « certes... mais » help express?",
+            "options": [
+              "a nuanced argument",
+              "a direct order",
+              "a past memory",
+              "a recipe instruction"
+            ],
+            "correctKey": "a nuanced argument"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'intelligence artificielle transforme le monde du travail en automatisant certaines *** répétitives.",
+            "correctKey": "tâches"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Il est nécessaire d'encadrer leur usage afin de protéger l'*** numérique.",
+            "correctKey": "éthique"
+          }
+        ]
+      },
+      {
+        "title": "La diversité en milieu professionnel",
+        "description": "Analyzing inclusion, representation, and intercultural communication in companies.",
+        "vocabulary": [
+          {
+            "french": "la diversité professionnelle",
+            "english": "professional diversity"
+          },
+          {
+            "french": "l'inclusion en entreprise",
+            "english": "workplace inclusion"
+          },
+          {
+            "french": "la représentation équitable",
+            "english": "fair representation"
+          },
+          {
+            "french": "la communication interculturelle",
+            "english": "intercultural communication"
+          },
+          {
+            "french": "un climat de confiance",
+            "english": "climate of trust"
+          },
+          {
+            "french": "lutter contre les discriminations",
+            "english": "to fight discrimination"
+          },
+          {
+            "french": "une politique inclusive",
+            "english": "inclusive policy"
+          },
+          {
+            "french": "valoriser les différences",
+            "english": "to value differences"
+          },
+          {
+            "french": "un sentiment d'appartenance",
+            "english": "sense of belonging"
+          },
+          {
+            "french": "une culture organisationnelle",
+            "english": "organizational culture"
+          }
+        ],
+        "grammar": {
+          "title": "Using relative clauses to add precision",
+          "text": "Relative clauses help make arguments more precise. Use qui for the subject and que for the object. Example: Une entreprise qui valorise les différences attire davantage de talents. (A company that values differences attracts more talent.) Les mesures que la direction adopte peuvent renforcer l'inclusion. (The measures that management adopts can strengthen inclusion.)"
+        },
+        "reading": "La diversité professionnelle ne se limite pas à la présence de profils variés. Une politique inclusive doit créer un climat de confiance qui favorise la communication interculturelle. Les entreprises qui valorisent les différences renforcent souvent le sentiment d'appartenance des employés. En revanche, sans représentation équitable, les discours sur l'inclusion risquent de rester symboliques.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "According to the text, what should an inclusive policy create?",
+            "options": [
+              "un climat de confiance",
+              "une crise financière",
+              "un conflit juridique",
+              "une campagne électorale"
+            ],
+            "correctKey": "un climat de confiance"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase means 'sense of belonging'?",
+            "options": [
+              "un sentiment d'appartenance",
+              "une politique inclusive",
+              "une culture organisationnelle",
+              "la représentation équitable"
+            ],
+            "correctKey": "un sentiment d'appartenance"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "In « les entreprises qui valorisent les différences », what is « qui »?",
+            "options": [
+              "a relative pronoun used as subject",
+              "a possessive pronoun",
+              "a consequence connector",
+              "a past participle"
+            ],
+            "correctKey": "a relative pronoun used as subject"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une politique inclusive doit créer un climat de ***.",
+            "correctKey": "confiance"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les entreprises qui valorisent les différences renforcent le sentiment d'***.",
+            "correctKey": "appartenance"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Environment, Education and Health",
+    "description": "Study texts dealing with green energy, modern schooling challenges, and telemedicine.",
+    "lessons": [
+      {
+        "title": "La transition énergétique au Canada",
+        "description": "Discussing sustainable development, carbon footprint, and renewable energy policies.",
+        "vocabulary": [
+          {
+            "french": "la transition énergétique",
+            "english": "energy transition"
+          },
+          {
+            "french": "le développement durable",
+            "english": "sustainable development"
+          },
+          {
+            "french": "l'empreinte carbone",
+            "english": "carbon footprint"
+          },
+          {
+            "french": "les énergies renouvelables",
+            "english": "renewable energies"
+          },
+          {
+            "french": "une politique environnementale",
+            "english": "environmental policy"
+          },
+          {
+            "french": "la réduction des émissions",
+            "english": "emissions reduction"
+          },
+          {
+            "french": "un investissement vert",
+            "english": "green investment"
+          },
+          {
+            "french": "la dépendance aux combustibles fossiles",
+            "english": "dependence on fossil fuels"
+          },
+          {
+            "french": "une modification des habitudes",
+            "english": "change in habits"
+          },
+          {
+            "french": "atteindre la neutralité carbone",
+            "english": "to achieve carbon neutrality"
+          }
+        ],
+        "grammar": {
+          "title": "Expressing purpose with afin de and dans le but de",
+          "text": "Use afin de + infinitive and dans le but de + infinitive to express the purpose of an action. Example: Le gouvernement investit dans les énergies renouvelables afin de réduire les émissions. (The government invests in renewable energy in order to reduce emissions.) Dans le but d'atteindre la neutralité carbone, il faut modifier nos habitudes. (In order to achieve carbon neutrality, we must change our habits.)"
+        },
+        "reading": "La transition énergétique au Canada exige une modification de nos habitudes de consommation. Dans le but de réduire l'empreinte carbone, les provinces investissent davantage dans les énergies renouvelables. Toutefois, la dépendance aux combustibles fossiles reste un obstacle important. Une politique environnementale efficace doit donc combiner investissement vert, innovation et justice sociale.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does the energy transition require according to the text?",
+            "options": [
+              "une modification de nos habitudes de consommation",
+              "une réduction des écoles",
+              "une augmentation des déchets",
+              "une fermeture des hôpitaux"
+            ],
+            "correctKey": "une modification de nos habitudes de consommation"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase expresses purpose?",
+            "options": [
+              "dans le but de",
+              "toutefois",
+              "donc",
+              "en revanche"
+            ],
+            "correctKey": "dans le but de"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What remains an important obstacle?",
+            "options": [
+              "la dépendance aux combustibles fossiles",
+              "la télémédecine",
+              "la pédagogie active",
+              "la diversité linguistique"
+            ],
+            "correctKey": "la dépendance aux combustibles fossiles"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La transition exige une *** de nos habitudes.",
+            "correctKey": "modification"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les provinces investissent davantage dans les énergies ***.",
+            "correctKey": "renouvelables"
+          }
+        ]
+      },
+      {
+        "title": "Les défis de l'éducation moderne",
+        "description": "Examining pedagogy, technology in classrooms, and student well-being.",
+        "vocabulary": [
+          {
+            "french": "la pédagogie active",
+            "english": "active pedagogy"
+          },
+          {
+            "french": "le bien-être des élèves",
+            "english": "student well-being"
+          },
+          {
+            "french": "l'apprentissage numérique",
+            "english": "digital learning"
+          },
+          {
+            "french": "les inégalités scolaires",
+            "english": "educational inequalities"
+          },
+          {
+            "french": "un outil pédagogique",
+            "english": "teaching tool"
+          },
+          {
+            "french": "l'esprit critique",
+            "english": "critical thinking"
+          },
+          {
+            "french": "l'accompagnement personnalisé",
+            "english": "personalized support"
+          },
+          {
+            "french": "la réussite scolaire",
+            "english": "academic success"
+          },
+          {
+            "french": "un décrochage scolaire",
+            "english": "school dropout"
+          },
+          {
+            "french": "adapter les méthodes",
+            "english": "to adapt methods"
+          }
+        ],
+        "grammar": {
+          "title": "Using cause and consequence to analyze problems",
+          "text": "To analyze educational issues, use cause and consequence connectors. Parce que and en raison de introduce causes, while donc and par conséquent introduce results. Example: En raison des inégalités scolaires, certains élèves ont besoin d'un accompagnement personnalisé. (Because of educational inequalities, some students need personalized support.)"
+        },
+        "reading": "L'éducation moderne ne peut plus se limiter à la transmission de connaissances. En raison des inégalités scolaires, l'accompagnement personnalisé devient essentiel pour favoriser la réussite scolaire. L'apprentissage numérique offre de nouveaux outils pédagogiques, mais il exige aussi un développement de l'esprit critique. Par conséquent, les enseignants doivent adapter leurs méthodes sans négliger le bien-être des élèves.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Why is personalized support important?",
+            "options": [
+              "en raison des inégalités scolaires",
+              "à cause des voyages touristiques",
+              "grâce aux restaurants",
+              "malgré les films historiques"
+            ],
+            "correctKey": "en raison des inégalités scolaires"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What must digital learning also develop?",
+            "options": [
+              "l'esprit critique",
+              "la dette publique",
+              "la mobilité urbaine",
+              "la cuisine locale"
+            ],
+            "correctKey": "l'esprit critique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector introduces consequence?",
+            "options": [
+              "par conséquent",
+              "en raison de",
+              "parce que",
+              "bien que"
+            ],
+            "correctKey": "par conséquent"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'accompagnement personnalisé favorise la réussite ***.",
+            "correctKey": "scolaire"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les enseignants doivent adapter leurs *** sans négliger le bien-être des élèves.",
+            "correctKey": "méthodes"
+          }
+        ]
+      },
+      {
+        "title": "La télémédecine en zone rurale",
+        "description": "Analyzing healthcare access, digital health services, and remote medical treatment.",
+        "vocabulary": [
+          {
+            "french": "la télémédecine",
+            "english": "telemedicine"
+          },
+          {
+            "french": "une zone rurale",
+            "english": "rural area"
+          },
+          {
+            "french": "l'accès aux soins",
+            "english": "access to healthcare"
+          },
+          {
+            "french": "une consultation à distance",
+            "english": "remote consultation"
+          },
+          {
+            "french": "un dossier médical numérique",
+            "english": "digital medical record"
+          },
+          {
+            "french": "la confidentialité des données",
+            "english": "data confidentiality"
+          },
+          {
+            "french": "un suivi médical",
+            "english": "medical follow-up"
+          },
+          {
+            "french": "un désert médical",
+            "english": "medical desert/underserved area"
+          },
+          {
+            "french": "un professionnel de santé",
+            "english": "healthcare professional"
+          },
+          {
+            "french": "réduire les déplacements",
+            "english": "to reduce travel"
+          }
+        ],
+        "grammar": {
+          "title": "Balancing advantages and limitations with d'une part... d'autre part",
+          "text": "Use d'une part... d'autre part to present two sides of an argument. Example: D'une part, la télémédecine facilite l'accès aux soins. D'autre part, elle pose des questions sur la confidentialité des données. (On the one hand, telemedicine facilitates access to care. On the other hand, it raises questions about data confidentiality.)"
+        },
+        "reading": "Dans les zones rurales, la télémédecine peut améliorer l'accès aux soins, surtout lorsqu'il existe un désert médical. D'une part, la consultation à distance réduit les déplacements et facilite le suivi médical. D'autre part, l'utilisation d'un dossier médical numérique exige une protection stricte de la confidentialité des données. La technologie doit donc compléter, et non remplacer, les professionnels de santé.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What problem can telemedicine help address in rural areas?",
+            "options": [
+              "un désert médical",
+              "une crise géopolitique",
+              "un retard de livraison",
+              "un conflit de voisinage"
+            ],
+            "correctKey": "un désert médical"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is one advantage of remote consultation?",
+            "options": [
+              "réduire les déplacements",
+              "augmenter les files d'attente",
+              "supprimer les médecins",
+              "limiter les soins"
+            ],
+            "correctKey": "réduire les déplacements"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression presents two sides of an argument?",
+            "options": [
+              "d'une part... d'autre part",
+              "par conséquent seulement",
+              "tout à coup",
+              "afin de"
+            ],
+            "correctKey": "d'une part... d'autre part"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La consultation à distance facilite le suivi ***.",
+            "correctKey": "médical"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le dossier médical numérique exige la confidentialité des ***.",
+            "correctKey": "données"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Economy, Media and Rights",
+    "description": "Analyze essays on circular economy models, press freedom, and work-life balance.",
+    "lessons": [
+      {
+        "title": "L'économie circulaire en Europe",
+        "description": "Waste reduction, product recycling, and sustainable manufacturing.",
+        "vocabulary": [
+          {
+            "french": "l'économie circulaire",
+            "english": "circular economy"
+          },
+          {
+            "french": "la réduction des déchets",
+            "english": "waste reduction"
+          },
+          {
+            "french": "le recyclage des produits",
+            "english": "product recycling"
+          },
+          {
+            "french": "la réutilisation des ressources",
+            "english": "resource reuse"
+          },
+          {
+            "french": "une production durable",
+            "english": "sustainable production"
+          },
+          {
+            "french": "un modèle économique",
+            "english": "economic model"
+          },
+          {
+            "french": "la consommation responsable",
+            "english": "responsible consumption"
+          },
+          {
+            "french": "un cycle de vie",
+            "english": "life cycle"
+          },
+          {
+            "french": "la valorisation des matières",
+            "english": "material recovery"
+          },
+          {
+            "french": "préserver les ressources",
+            "english": "to preserve resources"
+          }
+        ],
+        "grammar": {
+          "title": "Using cause-and-effect structures in argumentative texts",
+          "text": "To explain economic processes, combine causes and consequences using expressions such as grâce à, en raison de, par conséquent, and ainsi. Example: Grâce au recyclage, les entreprises utilisent moins de matières premières. (Thanks to recycling, companies use fewer raw materials.) Par conséquent, leur impact environnemental diminue. (As a result, their environmental impact decreases.)"
+        },
+        "reading": "L'économie circulaire vise à limiter le gaspillage en favorisant la réutilisation des ressources et le recyclage des produits. Grâce à ce modèle économique, les entreprises peuvent réduire leur consommation de matières premières. Par conséquent, la production devient plus durable. Toutefois, cette transition exige des investissements importants ainsi qu'une modification des habitudes de consommation.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the main objective of the circular economy?",
+            "options": [
+              "limiter le gaspillage",
+              "augmenter les déchets",
+              "réduire le recyclage",
+              "encourager la pollution"
+            ],
+            "correctKey": "limiter le gaspillage"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector expresses consequence?",
+            "options": [
+              "par conséquent",
+              "grâce à",
+              "en raison de",
+              "bien que"
+            ],
+            "correctKey": "par conséquent"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does circular economy encourage?",
+            "options": [
+              "la réutilisation des ressources",
+              "la fermeture des entreprises",
+              "la réduction des salaires",
+              "la suppression des transports"
+            ],
+            "correctKey": "la réutilisation des ressources"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'économie circulaire favorise la réduction des ***.",
+            "correctKey": "déchets"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Cette transition exige une modification des habitudes de ***.",
+            "correctKey": "consommation"
+          }
+        ]
+      },
+      {
+        "title": "La liberté de la presse à l'ère numérique",
+        "description": "Press independence, fake news, and reporting rights.",
+        "vocabulary": [
+          {
+            "french": "la liberté de la presse",
+            "english": "freedom of the press"
+          },
+          {
+            "french": "une information vérifiée",
+            "english": "verified information"
+          },
+          {
+            "french": "une fausse information",
+            "english": "fake news"
+          },
+          {
+            "french": "l'indépendance éditoriale",
+            "english": "editorial independence"
+          },
+          {
+            "french": "une source fiable",
+            "english": "reliable source"
+          },
+          {
+            "french": "le droit d'informer",
+            "english": "right to inform"
+          },
+          {
+            "french": "la désinformation",
+            "english": "disinformation"
+          },
+          {
+            "french": "un média numérique",
+            "english": "digital media outlet"
+          },
+          {
+            "french": "la transparence journalistique",
+            "english": "journalistic transparency"
+          },
+          {
+            "french": "l'esprit critique",
+            "english": "critical thinking"
+          }
+        ],
+        "grammar": {
+          "title": "Contrasting viewpoints with cependant and néanmoins",
+          "text": "When discussing media issues, contrast different perspectives using cependant and néanmoins. Example: Les médias numériques diffusent l'information rapidement; cependant, ils peuvent aussi propager de fausses informations. (Digital media spread information quickly; however, they can also spread fake news.)"
+        },
+        "reading": "À l'ère numérique, la liberté de la presse demeure essentielle au fonctionnement démocratique. Les médias numériques permettent un accès rapide à l'information. Cependant, la désinformation et les fausses informations circulent également plus facilement. C'est pourquoi l'esprit critique et la vérification des sources fiables jouent un rôle fondamental dans la société contemporaine.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What challenge is highlighted in the text?",
+            "options": [
+              "la désinformation",
+              "la biodiversité",
+              "la mobilité urbaine",
+              "la télémédecine"
+            ],
+            "correctKey": "la désinformation"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression refers to fake news?",
+            "options": [
+              "une fausse information",
+              "une source fiable",
+              "un média numérique",
+              "un droit d'informer"
+            ],
+            "correctKey": "une fausse information"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector introduces contrast?",
+            "options": [
+              "cependant",
+              "ainsi",
+              "par conséquent",
+              "grâce à"
+            ],
+            "correctKey": "cependant"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La liberté de la *** demeure essentielle au fonctionnement démocratique.",
+            "correctKey": "presse"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'*** critique aide à évaluer les informations en ligne.",
+            "correctKey": "esprit"
+          }
+        ]
+      },
+      {
+        "title": "Le télétravail et l'équilibre de vie",
+        "description": "Work-life balance, remote work legislation, and mental health.",
+        "vocabulary": [
+          {
+            "french": "le télétravail",
+            "english": "remote work"
+          },
+          {
+            "french": "l'équilibre de vie",
+            "english": "work-life balance"
+          },
+          {
+            "french": "la santé mentale",
+            "english": "mental health"
+          },
+          {
+            "french": "la flexibilité professionnelle",
+            "english": "work flexibility"
+          },
+          {
+            "french": "un cadre juridique",
+            "english": "legal framework"
+          },
+          {
+            "french": "le droit à la déconnexion",
+            "english": "right to disconnect"
+          },
+          {
+            "french": "la productivité individuelle",
+            "english": "individual productivity"
+          },
+          {
+            "french": "l'isolement professionnel",
+            "english": "professional isolation"
+          },
+          {
+            "french": "un environnement de travail",
+            "english": "work environment"
+          },
+          {
+            "french": "prévenir l'épuisement",
+            "english": "to prevent burnout"
+          }
+        ],
+        "grammar": {
+          "title": "Presenting advantages and disadvantages",
+          "text": "Use d'une part... d'autre part to balance arguments. Example: D'une part, le télétravail améliore la flexibilité professionnelle. D'autre part, il peut favoriser l'isolement professionnel. (On the one hand, remote work improves flexibility. On the other hand, it can increase isolation.)"
+        },
+        "reading": "Le télétravail s'est fortement développé ces dernières années. D'une part, il offre une plus grande flexibilité professionnelle et peut améliorer l'équilibre de vie. D'autre part, il risque d'accentuer l'isolement professionnel et de brouiller la frontière entre vie privée et travail. Un cadre juridique clair et le droit à la déconnexion peuvent contribuer à préserver la santé mentale.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is one benefit of remote work mentioned in the text?",
+            "options": [
+              "une plus grande flexibilité professionnelle",
+              "une réduction de la santé mentale",
+              "une augmentation des déplacements",
+              "une baisse de productivité"
+            ],
+            "correctKey": "une plus grande flexibilité professionnelle"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What risk is associated with remote work?",
+            "options": [
+              "l'isolement professionnel",
+              "la déforestation",
+              "la désinformation",
+              "la surpopulation"
+            ],
+            "correctKey": "l'isolement professionnel"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which structure presents two sides of an argument?",
+            "options": [
+              "d'une part... d'autre part",
+              "par conséquent",
+              "grâce à",
+              "ainsi"
+            ],
+            "correctKey": "d'une part... d'autre part"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le télétravail peut améliorer l'*** de vie.",
+            "correctKey": "équilibre"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le droit à la déconnexion contribue à préserver la santé ***.",
+            "correctKey": "mentale"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Culture, Language and Tourism",
+    "description": "Examine texts discussing language evolution, mass tourism impacts, and urban street art.",
+    "lessons": [
+      {
+        "title": "L'évolution de la langue française",
+        "description": "Linguistic changes, neologisms, and language protection.",
+        "vocabulary": [
+          {
+            "french": "un néologisme",
+            "english": "neologism"
+          },
+          {
+            "french": "l'évolution linguistique",
+            "english": "linguistic evolution"
+          },
+          {
+            "french": "la protection de la langue",
+            "english": "language protection"
+          },
+          {
+            "french": "un emprunt lexical",
+            "english": "loanword"
+          },
+          {
+            "french": "une norme linguistique",
+            "english": "language standard"
+          },
+          {
+            "french": "un usage courant",
+            "english": "common usage"
+          },
+          {
+            "french": "l'enrichissement du vocabulaire",
+            "english": "vocabulary enrichment"
+          },
+          {
+            "french": "une influence culturelle",
+            "english": "cultural influence"
+          },
+          {
+            "french": "la francophonie",
+            "english": "French-speaking world"
+          },
+          {
+            "french": "préserver le patrimoine linguistique",
+            "english": "to preserve linguistic heritage"
+          }
+        ],
+        "grammar": {
+          "title": "Expressing evolution and change over time",
+          "text": "To describe language evolution, use expressions such as au fil du temps, progressivement, and sous l'influence de. Example: La langue française évolue au fil du temps sous l'influence des échanges culturels. (The French language evolves over time under the influence of cultural exchanges.)"
+        },
+        "reading": "La langue française a toujours évolué au fil du temps. Les néologismes et les emprunts lexicaux témoignent des transformations de la société moderne. Certains considèrent que ces changements enrichissent le vocabulaire, tandis que d'autres souhaitent renforcer la protection de la langue. L'enjeu consiste à préserver le patrimoine linguistique tout en acceptant l'évolution naturelle des usages.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is a neologism?",
+            "options": [
+              "a newly created word",
+              "an old manuscript",
+              "a legal document",
+              "a tourism policy"
+            ],
+            "correctKey": "a newly created word"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What do loanwords reflect according to the text?",
+            "options": [
+              "social transformations",
+              "medical progress",
+              "urban planning",
+              "energy transition"
+            ],
+            "correctKey": "social transformations"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression refers to gradual change?",
+            "options": [
+              "au fil du temps",
+              "par conséquent",
+              "néanmoins",
+              "en revanche"
+            ],
+            "correctKey": "au fil du temps"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les *** témoignent des transformations de la société moderne.",
+            "correctKey": "néologismes"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Il faut préserver le patrimoine ***.",
+            "correctKey": "linguistique"
+          }
+        ]
+      },
+      {
+        "title": "L'impact du tourisme de masse",
+        "description": "Environmental degradation, overcrowding, and sustainable alternatives.",
+        "vocabulary": [
+          {
+            "french": "le tourisme de masse",
+            "english": "mass tourism"
+          },
+          {
+            "french": "la dégradation environnementale",
+            "english": "environmental degradation"
+          },
+          {
+            "french": "la surfréquentation",
+            "english": "overcrowding"
+          },
+          {
+            "french": "la biodiversité locale",
+            "english": "local biodiversity"
+          },
+          {
+            "french": "une destination touristique",
+            "english": "tourist destination"
+          },
+          {
+            "french": "le développement durable",
+            "english": "sustainable development"
+          },
+          {
+            "french": "une alternative responsable",
+            "english": "responsible alternative"
+          },
+          {
+            "french": "la pression sur les infrastructures",
+            "english": "pressure on infrastructure"
+          },
+          {
+            "french": "un impact écologique",
+            "english": "ecological impact"
+          },
+          {
+            "french": "limiter les flux touristiques",
+            "english": "to limit tourist flows"
+          }
+        ],
+        "grammar": {
+          "title": "Developing balanced arguments with while/whereas",
+          "text": "Use tandis que and alors que to compare contrasting realities. Example: Le tourisme soutient l'économie locale, tandis que la surfréquentation peut nuire à l'environnement. (Tourism supports the local economy, whereas overcrowding can harm the environment.)"
+        },
+        "reading": "Le tourisme de masse constitue une source importante de revenus pour de nombreuses régions. Cependant, la surfréquentation peut entraîner une dégradation environnementale et exercer une forte pression sur les infrastructures. Alors que certains acteurs privilégient la croissance du secteur, d'autres défendent des alternatives responsables fondées sur le développement durable. L'objectif est de réduire l'impact écologique tout en maintenant l'activité économique.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What negative effect is mentioned in the text?",
+            "options": [
+              "la dégradation environnementale",
+              "la réussite scolaire",
+              "la coopération internationale",
+              "la productivité individuelle"
+            ],
+            "correctKey": "la dégradation environnementale"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What do some stakeholders support?",
+            "options": [
+              "des alternatives responsables",
+              "une augmentation des déchets",
+              "la fermeture des sites culturels",
+              "la suppression des transports publics"
+            ],
+            "correctKey": "des alternatives responsables"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector compares contrasting realities?",
+            "options": [
+              "alors que",
+              "ainsi",
+              "par conséquent",
+              "grâce à"
+            ],
+            "correctKey": "alors que"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le tourisme de masse nuit à la *** locale.",
+            "correctKey": "biodiversité"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La *** peut exercer une forte pression sur les infrastructures.",
+            "correctKey": "surfréquentation"
+          }
+        ]
+      },
+      {
+        "title": "L'art urbain et la culture populaire",
+        "description": "Street art history, public space aesthetics, and pop culture trends.",
+        "vocabulary": [
+          {
+            "french": "l'art urbain",
+            "english": "urban art"
+          },
+          {
+            "french": "une fresque murale",
+            "english": "mural"
+          },
+          {
+            "french": "l'espace public",
+            "english": "public space"
+          },
+          {
+            "french": "une expression artistique",
+            "english": "artistic expression"
+          },
+          {
+            "french": "la culture populaire",
+            "english": "popular culture"
+          },
+          {
+            "french": "un mouvement culturel",
+            "english": "cultural movement"
+          },
+          {
+            "french": "une identité urbaine",
+            "english": "urban identity"
+          },
+          {
+            "french": "l'appropriation de l'espace",
+            "english": "appropriation of space"
+          },
+          {
+            "french": "une œuvre éphémère",
+            "english": "ephemeral work"
+          },
+          {
+            "french": "susciter le débat",
+            "english": "to spark debate"
+          }
+        ],
+        "grammar": {
+          "title": "Expressing opinion with justification",
+          "text": "To express and justify opinions, use structures such as selon moi, à mon avis, and en effet. Example: Selon moi, l'art urbain enrichit l'espace public. En effet, il permet aux artistes d'exprimer leur vision de la société. (In my opinion, urban art enriches public space. Indeed, it allows artists to express their vision of society.)"
+        },
+        "reading": "L'art urbain occupe aujourd'hui une place importante dans la culture populaire. Certaines fresques murales sont devenues de véritables symboles d'identité urbaine. Selon leurs défenseurs, ces œuvres enrichissent l'espace public et favorisent l'expression artistique. Toutefois, certaines créations éphémères suscitent encore le débat sur l'utilisation de l'espace commun.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What can murals become according to the text?",
+            "options": [
+              "des symboles d'identité urbaine",
+              "des documents juridiques",
+              "des programmes scolaires",
+              "des infrastructures énergétiques"
+            ],
+            "correctKey": "des symboles d'identité urbaine"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does urban art promote?",
+            "options": [
+              "l'expression artistique",
+              "la déforestation",
+              "la désinformation",
+              "la dette publique"
+            ],
+            "correctKey": "l'expression artistique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression introduces a personal opinion?",
+            "options": [
+              "selon moi",
+              "par conséquent",
+              "cependant",
+              "ainsi"
+            ],
+            "correctKey": "selon moi"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'art urbain occupe aujourd'hui une place importante dans la culture ***.",
+            "correctKey": "populaire"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Certaines créations éphémères suscitent encore le ***.",
+            "correctKey": "débat"
+          }
+        ]
+      }
+    ]
+  }
+]

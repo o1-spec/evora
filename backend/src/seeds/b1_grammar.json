@@ -1,0 +1,986 @@
+[
+  {
+    "title": "Past Tenses",
+    "description": "Master intermediate past tenses including the Imparfait, comparing past actions, and using the gerund.",
+    "lessons": [
+      {
+        "title": "L'imparfait de l'indicatif",
+        "description": "Forming and using the imperfect tense for descriptions and habits in the past.",
+        "vocabulary": [
+          {
+            "french": "autrefois",
+            "english": "in the past"
+          },
+          {
+            "french": "quand j'étais jeune",
+            "english": "when I was young"
+          },
+          {
+            "french": "souvent",
+            "english": "often"
+          },
+          {
+            "french": "d'habitude",
+            "english": "usually"
+          },
+          {
+            "french": "à l'époque",
+            "english": "at the time"
+          },
+          {
+            "french": "une habitude",
+            "english": "a habit"
+          },
+          {
+            "french": "un souvenir",
+            "english": "a memory"
+          },
+          {
+            "french": "passer du temps",
+            "english": "to spend time"
+          },
+          {
+            "french": "jouer dehors",
+            "english": "to play outside"
+          },
+          {
+            "french": "raconter",
+            "english": "to tell"
+          }
+        ],
+        "grammar": {
+          "title": "Forming and using the imparfait",
+          "text": "The imparfait describes past habits, repeated actions, background situations, and descriptions. To form it, take the nous form of the present tense, remove -ons, and add: -ais, -ais, -ait, -ions, -iez, -aient. Example: nous parlons → je parlais. Quand j'étais jeune, je jouais dehors. (When I was young, I used to play outside.) Il faisait beau. (The weather was nice.)"
+        },
+        "reading": "Quand j'étais jeune, je passais beaucoup de temps chez mes grands-parents. À l'époque, nous jouions souvent dehors avec les voisins. Ma grand-mère racontait des histoires le soir. D'habitude, toute la famille mangeait ensemble. Ces souvenirs étaient simples, mais très importants pour moi.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which sentence correctly uses the imparfait?",
+            "options": [
+              "Je jouais dehors tous les jours.",
+              "Je joué dehors tous les jours.",
+              "Je jouer dehors tous les jours.",
+              "Je joue dehors hier."
+            ],
+            "correctKey": "Je jouais dehors tous les jours."
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the imparfait form of « nous finissons » with « je »?",
+            "options": [
+              "je finissais",
+              "je finissait",
+              "je finissions",
+              "je finisais"
+            ],
+            "correctKey": "je finissais"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "When do we commonly use the imparfait?",
+            "options": [
+              "For past habits and descriptions",
+              "Only for future plans",
+              "Only for commands",
+              "Only for completed one-time actions"
+            ],
+            "correctKey": "For past habits and descriptions"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Quand j'étais petit, je *** souvent dehors.",
+            "correctKey": "jouais"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "À l'époque, ma grand-mère *** beaucoup d'histoires.",
+            "correctKey": "racontait"
+          }
+        ]
+      },
+      {
+        "title": "Passé Composé vs Imparfait",
+        "description": "Distinguishing completed actions in the past from background descriptions and ongoing habits.",
+        "vocabulary": [
+          {
+            "french": "soudain",
+            "english": "suddenly"
+          },
+          {
+            "french": "pendant que",
+            "english": "while"
+          },
+          {
+            "french": "hier soir",
+            "english": "last night"
+          },
+          {
+            "french": "tout à coup",
+            "english": "all of a sudden"
+          },
+          {
+            "french": "un événement",
+            "english": "an event"
+          },
+          {
+            "french": "une action terminée",
+            "english": "a completed action"
+          },
+          {
+            "french": "une description",
+            "english": "a description"
+          },
+          {
+            "french": "un bruit",
+            "english": "a noise"
+          },
+          {
+            "french": "entrer",
+            "english": "to enter"
+          },
+          {
+            "french": "sonner",
+            "english": "to ring"
+          }
+        ],
+        "grammar": {
+          "title": "Choosing between passé composé and imparfait",
+          "text": "Use the passé composé for completed actions or events that happened at a specific moment. Example: Hier, j'ai reçu un appel. (Yesterday, I received a call.) Use the imparfait for background descriptions, habits, or ongoing actions. Example: Il pleuvait et je regardais la télévision. (It was raining and I was watching TV.) Often, the imparfait sets the scene, while the passé composé interrupts it: Je lisais quand le téléphone a sonné. (I was reading when the phone rang.)"
+        },
+        "reading": "Hier soir, je regardais un film quand le téléphone a sonné. Il faisait froid et la maison était silencieuse. Soudain, j'ai entendu un bruit dans le jardin. Pendant que je cherchais mes clés, mon frère est entré dans le salon. Finalement, nous avons compris que c'était le chat du voisin.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the best sentence: « I was studying when my friend arrived. »",
+            "options": [
+              "J'étudiais quand mon ami est arrivé.",
+              "J'ai étudié quand mon ami arrivait.",
+              "J'étudie quand mon ami est arrivé.",
+              "J'étudiais quand mon ami arrivait soudain."
+            ],
+            "correctKey": "J'étudiais quand mon ami est arrivé."
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "In « Il faisait froid », why is the imparfait used?",
+            "options": [
+              "It describes background conditions",
+              "It shows a completed action",
+              "It gives a command",
+              "It describes a future plan"
+            ],
+            "correctKey": "It describes background conditions"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression often introduces a sudden completed action?",
+            "options": [
+              "tout à coup",
+              "d'habitude",
+              "autrefois",
+              "chaque été"
+            ],
+            "correctKey": "tout à coup"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Pendant que je *** la vaisselle, le téléphone a sonné.",
+            "correctKey": "faisais"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Soudain, quelqu'un *** dans la pièce.",
+            "correctKey": "est entré"
+          }
+        ]
+      },
+      {
+        "title": "Le gérondif",
+        "description": "Expressing simultaneous actions in the past or present (en + present participle).",
+        "vocabulary": [
+          {
+            "french": "en marchant",
+            "english": "while walking"
+          },
+          {
+            "french": "en écoutant",
+            "english": "while listening"
+          },
+          {
+            "french": "en travaillant",
+            "english": "while working"
+          },
+          {
+            "french": "en lisant",
+            "english": "while reading"
+          },
+          {
+            "french": "en faisant attention",
+            "english": "by being careful"
+          },
+          {
+            "french": "simultanément",
+            "english": "simultaneously"
+          },
+          {
+            "french": "améliorer",
+            "english": "to improve"
+          },
+          {
+            "french": "éviter",
+            "english": "to avoid"
+          },
+          {
+            "french": "réussir",
+            "english": "to succeed"
+          },
+          {
+            "french": "prendre des notes",
+            "english": "to take notes"
+          }
+        ],
+        "grammar": {
+          "title": "Using the gerund: en + present participle",
+          "text": "The French gerund is formed with en + present participle. To form the present participle, take the nous form of the present tense, remove -ons, and add -ant: nous parlons → parlant, en parlant. It expresses actions happening at the same time or the way something is done. Example: Il étudie en écoutant de la musique. (He studies while listening to music.) En travaillant régulièrement, tu progresseras. (By working regularly, you will improve.)"
+        },
+        "reading": "En préparant mes examens, j'ai appris à mieux organiser mon temps. Je révisais souvent en prenant des notes dans mon cahier. En écoutant des podcasts en français, j'améliorais ma compréhension orale. Il faut aussi faire attention en utilisant Internet pour éviter les fausses informations.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "How do you form the gerund in French?",
+            "options": [
+              "en + present participle",
+              "avoir + past participle",
+              "aller + infinitive",
+              "être + adjective"
+            ],
+            "correctKey": "en + present participle"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « en lisant » mean?",
+            "options": [
+              "while reading",
+              "after reading",
+              "to read",
+              "read!"
+            ],
+            "correctKey": "while reading"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct gerund form of « faire ».",
+            "options": [
+              "en faisant",
+              "en fait",
+              "en fais",
+              "en faire"
+            ],
+            "correctKey": "en faisant"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "J'apprends beaucoup *** des articles en français.",
+            "correctKey": "en lisant"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Elle révise *** des notes détaillées.",
+            "correctKey": "en prenant"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Future and Conditional Tenses",
+    "description": "Express future plans, projections, hypotheses, and polite requests.",
+    "lessons": [
+      {
+        "title": "Le futur simple",
+        "description": "Forming the simple future to discuss projects, predictions, and plans.",
+        "vocabulary": [
+          {
+            "french": "demain",
+            "english": "tomorrow"
+          },
+          {
+            "french": "l'année prochaine",
+            "english": "next year"
+          },
+          {
+            "french": "un projet",
+            "english": "a project"
+          },
+          {
+            "french": "un objectif",
+            "english": "a goal"
+          },
+          {
+            "french": "prévoir",
+            "english": "to plan"
+          },
+          {
+            "french": "réussir",
+            "english": "to succeed"
+          },
+          {
+            "french": "voyager",
+            "english": "to travel"
+          },
+          {
+            "french": "commencer",
+            "english": "to begin"
+          },
+          {
+            "french": "améliorer",
+            "english": "to improve"
+          },
+          {
+            "french": "plus tard",
+            "english": "later"
+          }
+        ],
+        "grammar": {
+          "title": "Forming and using the futur simple",
+          "text": "The futur simple is used for future plans, predictions, and promises. For regular verbs, use the infinitive as the stem and add: -ai, -as, -a, -ons, -ez, -ont. Example: Je voyagerai demain. (I will travel tomorrow.) Nous commencerons un nouveau projet. (We will begin a new project.) Some verbs have irregular stems: être → ser-, avoir → aur-, faire → fer-, aller → ir-."
+        },
+        "reading": "L'année prochaine, je commencerai un nouveau projet à l'université. Je travaillerai plus régulièrement pour améliorer mes résultats. Mes amis voyageront peut-être pendant les vacances, mais moi, je resterai concentré sur mes objectifs. Plus tard, je réussirai grâce à mes efforts.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the futur simple form of « voyager » with « je »?",
+            "options": [
+              "je voyagerai",
+              "je voyagerais",
+              "je voyageais",
+              "je vais voyager"
+            ],
+            "correctKey": "je voyagerai"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct future form: Nous ___ un nouveau projet.",
+            "options": [
+              "commencerons",
+              "commencions",
+              "commencerions",
+              "commencé"
+            ],
+            "correctKey": "commencerons"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which verb has the irregular future stem « ser- »?",
+            "options": [
+              "être",
+              "avoir",
+              "faire",
+              "aller"
+            ],
+            "correctKey": "être"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Demain, je *** mes devoirs plus tôt.",
+            "correctKey": "ferai"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'année prochaine, nous *** en France.",
+            "correctKey": "voyagerons"
+          }
+        ]
+      },
+      {
+        "title": "Le conditionnel présent",
+        "description": "Forming the present conditional to express wishes, hypotheses, and polite requests.",
+        "vocabulary": [
+          {
+            "french": "j'aimerais",
+            "english": "I would like"
+          },
+          {
+            "french": "je voudrais",
+            "english": "I would like"
+          },
+          {
+            "french": "pourriez-vous",
+            "english": "could you"
+          },
+          {
+            "french": "une hypothèse",
+            "english": "a hypothesis"
+          },
+          {
+            "french": "un souhait",
+            "english": "a wish"
+          },
+          {
+            "french": "à votre place",
+            "english": "in your place"
+          },
+          {
+            "french": "ce serait",
+            "english": "it would be"
+          },
+          {
+            "french": "avoir besoin de",
+            "english": "to need"
+          },
+          {
+            "french": "proposer",
+            "english": "to suggest"
+          },
+          {
+            "french": "conseiller",
+            "english": "to advise"
+          }
+        ],
+        "grammar": {
+          "title": "Forming and using the conditionnel présent",
+          "text": "The conditionnel présent is used for polite requests, wishes, advice, and hypothetical situations. It uses the same stem as the futur simple plus imparfait endings: -ais, -ais, -ait, -ions, -iez, -aient. Example: Je voudrais un café. (I would like a coffee.) À ta place, je parlerais au professeur. (In your place, I would speak to the teacher.) Pourriez-vous m'aider ? (Could you help me?)"
+        },
+        "reading": "J'aimerais travailler dans une organisation internationale plus tard. Si j'avais plus de temps, je suivrais aussi des cours du soir. À ta place, je préparerais un bon CV et je demanderais conseil à un professeur. Ce serait une bonne façon de mieux organiser ton projet professionnel.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « je voudrais » express?",
+            "options": [
+              "a polite request or wish",
+              "a completed past action",
+              "a command",
+              "a habit in the past"
+            ],
+            "correctKey": "a polite request or wish"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct conditional form: À ta place, je ___ plus souvent.",
+            "options": [
+              "réviserais",
+              "réviserai",
+              "révisais",
+              "révise"
+            ],
+            "correctKey": "réviserais"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which ending is used for « nous » in the conditionnel présent?",
+            "options": [
+              "-ions",
+              "-ons",
+              "-ez",
+              "-aient"
+            ],
+            "correctKey": "-ions"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Bonjour, je *** parler au responsable, s'il vous plaît.",
+            "correctKey": "voudrais"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "À votre place, nous *** cette solution.",
+            "correctKey": "proposerions"
+          }
+        ]
+      },
+      {
+        "title": "Les pronoms possessifs",
+        "description": "Replacing nouns with possessive pronouns (le mien, la tienne, les leurs) to show ownership.",
+        "vocabulary": [
+          {
+            "french": "le mien",
+            "english": "mine, masculine singular"
+          },
+          {
+            "french": "la mienne",
+            "english": "mine, feminine singular"
+          },
+          {
+            "french": "les miens",
+            "english": "mine, masculine plural"
+          },
+          {
+            "french": "le tien",
+            "english": "yours, masculine singular informal"
+          },
+          {
+            "french": "la tienne",
+            "english": "yours, feminine singular informal"
+          },
+          {
+            "french": "le sien",
+            "english": "his/hers, masculine singular"
+          },
+          {
+            "french": "la nôtre",
+            "english": "ours, feminine singular"
+          },
+          {
+            "french": "les vôtres",
+            "english": "yours, plural/formal"
+          },
+          {
+            "french": "les leurs",
+            "english": "theirs"
+          },
+          {
+            "french": "appartenir à",
+            "english": "to belong to"
+          }
+        ],
+        "grammar": {
+          "title": "Using possessive pronouns",
+          "text": "Possessive pronouns replace a noun and show ownership. They agree with the thing possessed, not the owner. Examples: C'est mon livre → C'est le mien. (It is my book → It is mine.) C'est ta voiture → C'est la tienne. (It is your car → It is yours.) Ce sont leurs sacs → Ce sont les leurs. (They are their bags → They are theirs.) Remember to use the definite article: le, la, les."
+        },
+        "reading": "Dans la salle de classe, plusieurs étudiants ont oublié leurs affaires. Ce cahier est le mien, mais cette calculatrice est la tienne. Les sacs près de la porte sont les leurs. Notre salle est grande, mais la vôtre est plus moderne. Il est important de savoir à qui appartiennent les objets.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Replace « mon livre » with the correct possessive pronoun.",
+            "options": [
+              "le mien",
+              "la mienne",
+              "les miens",
+              "le tien"
+            ],
+            "correctKey": "le mien"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which possessive pronoun agrees with « voiture »?",
+            "options": [
+              "la tienne",
+              "le tien",
+              "les tiens",
+              "le vôtre"
+            ],
+            "correctKey": "la tienne"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « les leurs » mean?",
+            "options": [
+              "theirs",
+              "ours",
+              "mine",
+              "yours"
+            ],
+            "correctKey": "theirs"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Ce stylo est à moi. C'est ***.",
+            "correctKey": "le mien"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Cette maison est à eux. C'est ***.",
+            "correctKey": "la leur"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Pronouns and Subordinates",
+    "description": "Connect sentences fluently using relative pronouns and construct complex subordinate clauses.",
+    "lessons": [
+      {
+        "title": "Les pronoms relatifs simples",
+        "description": "Connecting clauses using qui, que, où, and dont.",
+        "vocabulary": [
+          {
+            "french": "un pronom relatif",
+            "english": "relative pronoun"
+          },
+          {
+            "french": "une phrase complexe",
+            "english": "complex sentence"
+          },
+          {
+            "french": "relier",
+            "english": "to connect"
+          },
+          {
+            "french": "une information",
+            "english": "information"
+          },
+          {
+            "french": "un lieu",
+            "english": "place"
+          },
+          {
+            "french": "un moment",
+            "english": "moment"
+          },
+          {
+            "french": "parler de",
+            "english": "to talk about"
+          },
+          {
+            "french": "un collègue",
+            "english": "colleague"
+          },
+          {
+            "french": "une ville",
+            "english": "city"
+          },
+          {
+            "french": "un souvenir",
+            "english": "memory"
+          }
+        ],
+        "grammar": {
+          "title": "Using qui, que, où and dont",
+          "text": "Relative pronouns connect two clauses and avoid repetition. Use qui for the subject: Voici l'étudiant qui parle. (Here is the student who is speaking.) Use que for the direct object: Voici le livre que je lis. (Here is the book that I am reading.) Use où for places and times: C'est la ville où je suis né. (It is the city where I was born.) Use dont after verbs or expressions with de: C'est l'ami dont je t'ai parlé. (It is the friend I told you about.)"
+        },
+        "reading": "J'ai rencontré un collègue qui travaille dans une entreprise internationale. Il m'a recommandé un livre que beaucoup de professionnels lisent. Nous avons parlé d'une ville où il a vécu plusieurs années. Il m'a aussi raconté un souvenir dont il est très fier.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct relative pronoun: C'est l'homme ___ travaille avec moi.",
+            "options": [
+              "qui",
+              "que",
+              "où",
+              "dont"
+            ],
+            "correctKey": "qui"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which relative pronoun replaces a direct object?",
+            "options": [
+              "qui",
+              "que",
+              "où",
+              "dont"
+            ],
+            "correctKey": "que"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct sentence.",
+            "options": [
+              "C'est le livre que je lis.",
+              "C'est le livre qui je lis.",
+              "C'est le livre dont je lis.",
+              "C'est le livre où je lis."
+            ],
+            "correctKey": "C'est le livre que je lis."
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "C'est l'ami *** je t'ai parlé hier.",
+            "correctKey": "dont"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Voici la ville *** je suis né.",
+            "correctKey": "où"
+          }
+        ]
+      },
+      {
+        "title": "Les propositions subordonnées",
+        "description": "Expressing time, condition, and concession clauses (quand, si, bien que).",
+        "vocabulary": [
+          {
+            "french": "une condition",
+            "english": "a condition"
+          },
+          {
+            "french": "une concession",
+            "english": "a concession"
+          },
+          {
+            "french": "une circonstance",
+            "english": "a circumstance"
+          },
+          {
+            "french": "quand",
+            "english": "when"
+          },
+          {
+            "french": "si",
+            "english": "if"
+          },
+          {
+            "french": "bien que",
+            "english": "although"
+          },
+          {
+            "french": "prévoir",
+            "english": "to plan"
+          },
+          {
+            "french": "continuer",
+            "english": "to continue"
+          },
+          {
+            "french": "réussir",
+            "english": "to succeed"
+          },
+          {
+            "french": "attendre",
+            "english": "to wait"
+          }
+        ],
+        "grammar": {
+          "title": "Using subordinate clauses with quand, si, and bien que",
+          "text": "Subordinate clauses add information about time, condition, or concession. Use quand for time: Quand j'arrive, je téléphone. (When I arrive, I call.) Use si for conditions: Si tu étudies, tu réussiras. (If you study, you will succeed.) Use bien que for concession and it is followed by the subjunctive: Bien qu'il soit fatigué, il continue à travailler. (Although he is tired, he continues to work.)"
+        },
+        "reading": "Quand je termine mes cours, je vais souvent à la bibliothèque. Si j'ai un examen important, j'étudie davantage. Bien que le travail soit parfois difficile, je continue à faire des efforts. Ces habitudes m'aident à réussir et à atteindre mes objectifs.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which conjunction expresses a condition?",
+            "options": [
+              "quand",
+              "si",
+              "bien que",
+              "où"
+            ],
+            "correctKey": "si"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct sentence.",
+            "options": [
+              "Si tu travailles, tu réussiras.",
+              "Quand tu travailles, tu réussiras toujours.",
+              "Bien que tu travailles, tu réussiras demain.",
+              "Où tu travailles, tu réussiras."
+            ],
+            "correctKey": "Si tu travailles, tu réussiras."
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « bien que » express?",
+            "options": [
+              "time",
+              "condition",
+              "concession",
+              "location"
+            ],
+            "correctKey": "concession"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "*** j'arrive à la maison, je me repose.",
+            "correctKey": "Quand"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "*** il soit malade, il vient au travail.",
+            "correctKey": "Bien que"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Speech and Connectors",
+    "description": "Use logical connectors to argue opinions and report speech in the present tense.",
+    "lessons": [
+      {
+        "title": "Les expressions de cause et conséquence",
+        "description": "Using parce que, car, comme, donc, and c'est pourquoi to structure arguments.",
+        "vocabulary": [
+          {
+            "french": "une cause",
+            "english": "a cause"
+          },
+          {
+            "french": "une conséquence",
+            "english": "a consequence"
+          },
+          {
+            "french": "une opinion",
+            "english": "an opinion"
+          },
+          {
+            "french": "un argument",
+            "english": "an argument"
+          },
+          {
+            "french": "parce que",
+            "english": "because"
+          },
+          {
+            "french": "car",
+            "english": "because/since"
+          },
+          {
+            "french": "comme",
+            "english": "since/as"
+          },
+          {
+            "french": "donc",
+            "english": "therefore"
+          },
+          {
+            "french": "c'est pourquoi",
+            "english": "that is why"
+          },
+          {
+            "french": "expliquer",
+            "english": "to explain"
+          }
+        ],
+        "grammar": {
+          "title": "Expressing cause and consequence",
+          "text": "Use parce que, car, and comme to express cause. Example: Je reste à la maison parce qu'il pleut. (I stay home because it is raining.) Comme il pleut, je reste à la maison. (Since it is raining, I stay home.) Use donc and c'est pourquoi to express consequence. Example: Il pleut, donc je reste à la maison. (It is raining, therefore I stay home.) Il pleut, c'est pourquoi je reste à la maison. (It is raining, that is why I stay home.)"
+        },
+        "reading": "Comme les transports étaient en grève, beaucoup d'employés sont arrivés en retard. Ils ont dû expliquer la situation parce que leurs responsables étaient inquiets. La circulation était difficile, donc plusieurs réunions ont commencé plus tard. C'est pourquoi l'entreprise a décidé d'autoriser le télétravail ce jour-là.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector expresses consequence?",
+            "options": [
+              "parce que",
+              "car",
+              "donc",
+              "comme"
+            ],
+            "correctKey": "donc"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the best connector: Je suis fatigué, ___ je vais dormir tôt.",
+            "options": [
+              "parce que",
+              "car",
+              "donc",
+              "comme"
+            ],
+            "correctKey": "donc"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector is usually placed at the beginning of a sentence to express cause?",
+            "options": [
+              "comme",
+              "donc",
+              "c'est pourquoi",
+              "alors"
+            ],
+            "correctKey": "comme"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je suis absent *** je suis malade.",
+            "correctKey": "parce que"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Il a beaucoup travaillé, *** il a réussi son examen.",
+            "correctKey": "donc"
+          }
+        ]
+      },
+      {
+        "title": "Le discours rapporté au présent",
+        "description": "Reporting what someone says using declarative verbs (dire que, demander si, affirmer que).",
+        "vocabulary": [
+          {
+            "french": "dire que",
+            "english": "to say that"
+          },
+          {
+            "french": "demander si",
+            "english": "to ask whether"
+          },
+          {
+            "french": "affirmer que",
+            "english": "to state that"
+          },
+          {
+            "french": "expliquer que",
+            "english": "to explain that"
+          },
+          {
+            "french": "répondre que",
+            "english": "to answer that"
+          },
+          {
+            "french": "une déclaration",
+            "english": "a statement"
+          },
+          {
+            "french": "une question",
+            "english": "a question"
+          },
+          {
+            "french": "rapporter",
+            "english": "to report"
+          },
+          {
+            "french": "un témoignage",
+            "english": "a testimony"
+          },
+          {
+            "french": "une information",
+            "english": "information"
+          }
+        ],
+        "grammar": {
+          "title": "Reported speech in the present tense",
+          "text": "To report speech in the present tense, use verbs such as dire que, affirmer que, expliquer que, and demander si. The tense usually remains unchanged when the reporting verb is in the present. Example: Paul dit : « Je suis prêt. » → Paul dit qu'il est prêt. (Paul says that he is ready.) Marie demande : « Tu viens ? » → Marie demande si tu viens. (Marie asks whether you are coming.)"
+        },
+        "reading": "Le directeur affirme que l'entreprise se développe rapidement. Un employé explique qu'il travaille sur un nouveau projet. Une journaliste demande si les résultats sont satisfaisants. Le directeur répond que l'équipe est motivée et qu'elle atteint ses objectifs.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Transform: Paul dit : « Je suis content. »",
+            "options": [
+              "Paul dit qu'il est content.",
+              "Paul dit si il est content.",
+              "Paul dit dont il est content.",
+              "Paul dit où il est content."
+            ],
+            "correctKey": "Paul dit qu'il est content."
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression reports a yes/no question?",
+            "options": [
+              "dire que",
+              "affirmer que",
+              "demander si",
+              "expliquer que"
+            ],
+            "correctKey": "demander si"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct sentence.",
+            "options": [
+              "Elle explique qu'elle travaille ici.",
+              "Elle explique si elle travaille ici.",
+              "Elle explique dont elle travaille ici.",
+              "Elle explique où elle travaille ici."
+            ],
+            "correctKey": "Elle explique qu'elle travaille ici."
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le professeur dit *** les devoirs sont importants.",
+            "correctKey": "que"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Il demande *** nous sommes disponibles demain.",
+            "correctKey": "si"
+          }
+        ]
+      }
+    ]
+  }
+]

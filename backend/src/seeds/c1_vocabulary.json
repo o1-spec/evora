@@ -1,0 +1,1370 @@
+[
+  {
+    "title": "Academic, Philosophical and Linguistic Discourse",
+    "description": "Master advanced vocabulary relating to academic registry, abstract philosophical thoughts, cultural debates, and linguistic semantics.",
+    "lessons": [
+      {
+        "title": "Le discours académique",
+        "description": "Formulating hypotheses, synthesis, academic references, and formal argumentation vocabulary.",
+        "vocabulary": [
+          {
+            "french": "une problématique",
+            "english": "research question"
+          },
+          {
+            "french": "une hypothèse de travail",
+            "english": "working hypothesis"
+          },
+          {
+            "french": "une synthèse critique",
+            "english": "critical synthesis"
+          },
+          {
+            "french": "un cadre théorique",
+            "english": "theoretical framework"
+          },
+          {
+            "french": "une méthodologie rigoureuse",
+            "english": "rigorous methodology"
+          },
+          {
+            "french": "une recension des écrits",
+            "english": "literature review"
+          },
+          {
+            "french": "étayer une thèse",
+            "english": "to support a thesis"
+          },
+          {
+            "french": "une démonstration probante",
+            "english": "convincing demonstration"
+          },
+          {
+            "french": "une référence bibliographique",
+            "english": "bibliographic reference"
+          },
+          {
+            "french": "une validité empirique",
+            "english": "empirical validity"
+          }
+        ],
+        "grammar": {
+          "title": "Academic hedging and epistemic nuance",
+          "text": "In academic French, certainty is often moderated through hedging. Expressions such as il semble que, il convient de supposer que, and il est plausible que introduce nuanced claims. Example: Il semble que cette hypothèse soit corroborée par les données. (It appears that this hypothesis is supported by the data.) This style avoids overgeneralization and strengthens academic credibility."
+        },
+        "reading": "Toute recherche rigoureuse repose sur une problématique clairement définie ainsi qu'un cadre théorique cohérent. L'auteur formule une hypothèse de travail dont la validité empirique est examinée à travers une méthodologie rigoureuse. Une recension des écrits permet ensuite d'étayer la thèse développée. La démonstration se conclut par une synthèse critique des résultats obtenus.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What supports the thesis in the text?",
+            "options": [
+              "une recension des écrits",
+              "une campagne publicitaire",
+              "une enquête policière",
+              "une œuvre d'art"
+            ],
+            "correctKey": "une recension des écrits"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which term refers to a research question?",
+            "options": [
+              "une problématique",
+              "une concession",
+              "une anecdote",
+              "une préface"
+            ],
+            "correctKey": "une problématique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the purpose of academic hedging?",
+            "options": [
+              "to express nuanced claims",
+              "to give direct orders",
+              "to simplify grammar",
+              "to avoid evidence"
+            ],
+            "correctKey": "to express nuanced claims"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Ce mémoire universitaire propose une *** critique des données.",
+            "correctKey": "synthèse"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'auteur formule une *** de travail avant l'analyse.",
+            "correctKey": "hypothèse"
+          }
+        ]
+      },
+      {
+        "title": "Les concepts abstraits",
+        "description": "Discussing abstract ideas, existential questions, and high-level theoretical concepts.",
+        "vocabulary": [
+          {
+            "french": "la contingence",
+            "english": "contingency"
+          },
+          {
+            "french": "la transcendance",
+            "english": "transcendence"
+          },
+          {
+            "french": "l'altérité",
+            "english": "otherness"
+          },
+          {
+            "french": "la subjectivité",
+            "english": "subjectivity"
+          },
+          {
+            "french": "une ontologie",
+            "english": "ontology"
+          },
+          {
+            "french": "le déterminisme",
+            "english": "determinism"
+          },
+          {
+            "french": "une dialectique",
+            "english": "dialectic"
+          },
+          {
+            "french": "la finitude",
+            "english": "finitude"
+          },
+          {
+            "french": "une essence",
+            "english": "essence"
+          },
+          {
+            "french": "le libre arbitre",
+            "english": "free will"
+          }
+        ],
+        "grammar": {
+          "title": "Abstract nominalization in philosophical discourse",
+          "text": "C1 philosophical writing often relies on nominalization to discuss ideas as concepts. Example: La subjectivité influence notre perception du réel. (Subjectivity influences our perception of reality.) Nominal forms such as transcendance, altérité, and contingence create a more abstract and analytical style."
+        },
+        "reading": "Les débats philosophiques contemporains interrogent la tension entre déterminisme et libre arbitre. Certains penseurs considèrent que la subjectivité façonne notre rapport à l'altérité, tandis que d'autres privilégient une approche fondée sur l'ontologie. La réflexion sur la contingence et la finitude humaine demeure au cœur de nombreuses théories existentielles.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which opposition is discussed in the text?",
+            "options": [
+              "déterminisme et libre arbitre",
+              "langue et littérature",
+              "science et sport",
+              "ville et campagne"
+            ],
+            "correctKey": "déterminisme et libre arbitre"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'altérité' refer to?",
+            "options": [
+              "otherness",
+              "certainty",
+              "economic growth",
+              "art criticism"
+            ],
+            "correctKey": "otherness"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Why are nominalizations used in philosophical discourse?",
+            "options": [
+              "to discuss abstract concepts",
+              "to shorten sentences only",
+              "to avoid analysis",
+              "to indicate chronology"
+            ],
+            "correctKey": "to discuss abstract concepts"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La réflexion sur la *** humaine demeure centrale dans l'existentialisme.",
+            "correctKey": "finitude"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le *** oppose parfois la liberté individuelle.",
+            "correctKey": "déterminisme"
+          }
+        ]
+      },
+      {
+        "title": "Le discours culturel et philosophique",
+        "description": "Vocabulary for cultural critique, philosophical movements, and ethical currents.",
+        "vocabulary": [
+          {
+            "french": "un courant de pensée",
+            "english": "school of thought"
+          },
+          {
+            "french": "une critique culturelle",
+            "english": "cultural critique"
+          },
+          {
+            "french": "un paradigme",
+            "english": "paradigm"
+          },
+          {
+            "french": "l'utilitarisme",
+            "english": "utilitarianism"
+          },
+          {
+            "french": "l'humanisme",
+            "english": "humanism"
+          },
+          {
+            "french": "une posture éthique",
+            "english": "ethical stance"
+          },
+          {
+            "french": "une remise en question",
+            "english": "questioning/reassessment"
+          },
+          {
+            "french": "une conception du monde",
+            "english": "worldview"
+          },
+          {
+            "french": "un héritage intellectuel",
+            "english": "intellectual heritage"
+          },
+          {
+            "french": "une réflexion normative",
+            "english": "normative reflection"
+          }
+        ],
+        "grammar": {
+          "title": "Evaluative language in cultural criticism",
+          "text": "Cultural criticism often uses evaluative structures such as il convient de souligner que, force est de constater que, and il serait réducteur de. Example: Il serait réducteur de considérer ce mouvement comme homogène. (It would be reductive to consider this movement homogeneous.)"
+        },
+        "reading": "La critique culturelle contemporaine s'appuie sur divers courants de pensée afin d'analyser les transformations sociales. Certains auteurs revendiquent un héritage intellectuel humaniste, tandis que d'autres privilégient une réflexion normative inspirée de l'utilitarisme. Cette diversité de paradigmes nourrit une remise en question permanente des conceptions du monde dominantes.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What nourishes the reassessment of dominant worldviews?",
+            "options": [
+              "la diversité des paradigmes",
+              "la météo",
+              "la fiscalité",
+              "les transports"
+            ],
+            "correctKey": "la diversité des paradigmes"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which term refers to a school of thought?",
+            "options": [
+              "un courant de pensée",
+              "une hypothèse",
+              "une méthode",
+              "une statistique"
+            ],
+            "correctKey": "un courant de pensée"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'il serait réducteur de' express?",
+            "options": [
+              "a critical evaluation",
+              "a command",
+              "a factual certainty",
+              "a chronological sequence"
+            ],
+            "correctKey": "a critical evaluation"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Cette diversité de *** nourrit le débat intellectuel.",
+            "correctKey": "paradigmes"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'*** intellectuel influence encore de nombreux penseurs.",
+            "correctKey": "héritage"
+          }
+        ]
+      },
+      {
+        "title": "La sémantique et linguistique",
+        "description": "Discussing linguistic variation, language mechanics, semantics, and philology.",
+        "vocabulary": [
+          {
+            "french": "la polysémie",
+            "english": "polysemy"
+          },
+          {
+            "french": "une variation diatopique",
+            "english": "regional variation"
+          },
+          {
+            "french": "un champ lexical",
+            "english": "lexical field"
+          },
+          {
+            "french": "une unité morphologique",
+            "english": "morphological unit"
+          },
+          {
+            "french": "la pragmatique",
+            "english": "pragmatics"
+          },
+          {
+            "french": "un signifiant",
+            "english": "signifier"
+          },
+          {
+            "french": "un signifié",
+            "english": "signified"
+          },
+          {
+            "french": "la philologie",
+            "english": "philology"
+          },
+          {
+            "french": "une évolution diachronique",
+            "english": "diachronic evolution"
+          },
+          {
+            "french": "une ambiguïté sémantique",
+            "english": "semantic ambiguity"
+          }
+        ],
+        "grammar": {
+          "title": "Precision through linguistic terminology",
+          "text": "Advanced linguistic discourse relies on highly specific terminology. Example: La polysémie d'un terme peut engendrer une ambiguïté sémantique. (The polysemy of a term can create semantic ambiguity.) Such vocabulary allows precise discussion of language mechanisms."
+        },
+        "reading": "La linguistique moderne étudie aussi bien les variations diatopiques que les évolutions diachroniques des langues. La distinction entre signifiant et signifié demeure fondamentale dans l'analyse sémantique. Par ailleurs, la pragmatique s'intéresse aux conditions d'interprétation des énoncés. Ces approches complètent les recherches menées en philologie.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which distinction is fundamental in semantic analysis?",
+            "options": [
+              "signifiant et signifié",
+              "cause et conséquence",
+              "temps et espace",
+              "forme et couleur"
+            ],
+            "correctKey": "signifiant et signifié"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What studies the interpretation of utterances?",
+            "options": [
+              "la pragmatique",
+              "la géologie",
+              "la botanique",
+              "la comptabilité"
+            ],
+            "correctKey": "la pragmatique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What can create semantic ambiguity?",
+            "options": [
+              "la polysémie",
+              "la ponctualité",
+              "la gravité",
+              "la fiscalité"
+            ],
+            "correctKey": "la polysémie"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La *** d'un terme peut entraîner plusieurs interprétations.",
+            "correctKey": "polysémie"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La *** étudie les textes et langues anciennes.",
+            "correctKey": "philologie"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Sociology, Organization and Art Criticism",
+    "description": "Discuss sociological mutations, organizational sociology, aesthetic art criticism, and modern anthropology.",
+    "lessons": [
+      {
+        "title": "Les mutations sociologiques",
+        "description": "Analyzing demographic shifts, class dynamics, social mobility, and lifestyle evolutions.",
+        "vocabulary": [
+          {
+            "french": "une mobilité sociale",
+            "english": "social mobility"
+          },
+          {
+            "french": "une recomposition démographique",
+            "english": "demographic reshaping"
+          },
+          {
+            "french": "la stratification sociale",
+            "english": "social stratification"
+          },
+          {
+            "french": "une mutation sociétale",
+            "english": "societal change"
+          },
+          {
+            "french": "un capital culturel",
+            "english": "cultural capital"
+          },
+          {
+            "french": "une fracture générationnelle",
+            "english": "generational divide"
+          },
+          {
+            "french": "un mode de vie émergent",
+            "english": "emerging lifestyle"
+          },
+          {
+            "french": "une cohorte",
+            "english": "cohort"
+          },
+          {
+            "french": "une dynamique collective",
+            "english": "collective dynamic"
+          },
+          {
+            "french": "un indicateur démographique",
+            "english": "demographic indicator"
+          }
+        ],
+        "grammar": {
+          "title": "Sociological generalization with caution",
+          "text": "Sociological discourse often combines general observations with caution. Example: Les données semblent indiquer une progression de la mobilité sociale. (The data seem to indicate an increase in social mobility.) This avoids overstatement while maintaining analytical rigor."
+        },
+        "reading": "Les mutations sociologiques observées au cours des dernières décennies ont profondément transformé les dynamiques collectives. La recomposition démographique et l'évolution des modes de vie émergents modifient les formes de stratification sociale. Certains chercheurs soulignent toutefois que la mobilité sociale demeure inégalement répartie selon les cohortes et le capital culturel disponible.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What affects social stratification according to the text?",
+            "options": [
+              "la recomposition démographique",
+              "la météo",
+              "la gastronomie",
+              "la peinture"
+            ],
+            "correctKey": "la recomposition démographique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is une cohorte?",
+            "options": [
+              "a demographic group",
+              "a legal document",
+              "a museum",
+              "a political speech"
+            ],
+            "correctKey": "a demographic group"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Why use 'semblent indiquer'?",
+            "options": [
+              "to express caution",
+              "to issue an order",
+              "to simplify grammar",
+              "to show certainty"
+            ],
+            "correctKey": "to express caution"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La *** sociale demeure inégalement répartie.",
+            "correctKey": "mobilité"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le *** culturel influence souvent les trajectoires individuelles.",
+            "correctKey": "capital"
+          }
+        ]
+      },
+      {
+        "title": "La sociologie des organisations",
+        "description": "Vocabulary for hierarchy, corporate structure, power relations, and institutional behavior.",
+        "vocabulary": [
+          {
+            "french": "une structure hiérarchique",
+            "english": "hierarchical structure"
+          },
+          {
+            "french": "un pouvoir décisionnel",
+            "english": "decision-making power"
+          },
+          {
+            "french": "une culture organisationnelle",
+            "english": "organizational culture"
+          },
+          {
+            "french": "une gouvernance institutionnelle",
+            "english": "institutional governance"
+          },
+          {
+            "french": "une logique bureaucratique",
+            "english": "bureaucratic logic"
+          },
+          {
+            "french": "un acteur organisationnel",
+            "english": "organizational actor"
+          },
+          {
+            "french": "une chaîne de commandement",
+            "english": "chain of command"
+          },
+          {
+            "french": "une régulation interne",
+            "english": "internal regulation"
+          },
+          {
+            "french": "un conflit de pouvoir",
+            "english": "power conflict"
+          },
+          {
+            "french": "une légitimité institutionnelle",
+            "english": "institutional legitimacy"
+          }
+        ],
+        "grammar": {
+          "title": "Describing systems and relationships",
+          "text": "Organizational sociology often uses relational structures. Example: La chaîne de commandement à travers laquelle circulent les décisions influence la gouvernance institutionnelle. Complex noun groups help describe systems precisely."
+        },
+        "reading": "La sociologie des organisations analyse les interactions entre les acteurs organisationnels et les structures hiérarchiques. Les conflits de pouvoir peuvent remettre en question la légitimité institutionnelle d'une organisation. Toutefois, une culture organisationnelle forte contribue souvent à stabiliser les mécanismes de régulation interne.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What can challenge institutional legitimacy?",
+            "options": [
+              "les conflits de pouvoir",
+              "les vacances",
+              "la météo",
+              "les transports"
+            ],
+            "correctKey": "les conflits de pouvoir"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What often stabilizes internal regulation?",
+            "options": [
+              "une culture organisationnelle forte",
+              "une exposition artistique",
+              "une langue étrangère",
+              "une recette"
+            ],
+            "correctKey": "une culture organisationnelle forte"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is analyzed in organizational sociology?",
+            "options": [
+              "interactions between actors and structures",
+              "volcanic activity",
+              "astronomy",
+              "sports performance"
+            ],
+            "correctKey": "interactions between actors and structures"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une forte culture *** peut renforcer la cohésion interne.",
+            "correctKey": "organisationnelle"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La *** de commandement organise la circulation des décisions.",
+            "correctKey": "chaîne"
+          }
+        ]
+      },
+      {
+        "title": "L'esthétique et la critique d'art",
+        "description": "Discussing aesthetic values, art reviews, artistic movements, and visual analysis.",
+        "vocabulary": [
+          {
+            "french": "une composition picturale",
+            "english": "pictorial composition"
+          },
+          {
+            "french": "une esthétique contemporaine",
+            "english": "contemporary aesthetics"
+          },
+          {
+            "french": "un courant artistique",
+            "english": "artistic movement"
+          },
+          {
+            "french": "une lecture visuelle",
+            "english": "visual interpretation"
+          },
+          {
+            "french": "une symbolique",
+            "english": "symbolism"
+          },
+          {
+            "french": "une rupture esthétique",
+            "english": "aesthetic break"
+          },
+          {
+            "french": "une démarche créative",
+            "english": "creative approach"
+          },
+          {
+            "french": "un jugement critique",
+            "english": "critical judgment"
+          },
+          {
+            "french": "une perspective formelle",
+            "english": "formal perspective"
+          },
+          {
+            "french": "une réception du public",
+            "english": "public reception"
+          }
+        ],
+        "grammar": {
+          "title": "Evaluative nuance in art criticism",
+          "text": "Art criticism often balances description and evaluation. Example: Cette œuvre se distingue par une composition picturale audacieuse, bien que sa réception du public demeure contrastée. Such structures allow sophisticated critique."
+        },
+        "reading": "Cette exposition met en lumière un courant artistique caractérisé par une rupture esthétique marquée. La composition picturale de plusieurs œuvres témoigne d'une démarche créative originale. Si certains critiques saluent leur symbolique complexe, d'autres soulignent les limites de leur réception auprès du grand public.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What characterizes the artistic movement in the text?",
+            "options": [
+              "une rupture esthétique",
+              "une théorie économique",
+              "une réforme juridique",
+              "une méthode scientifique"
+            ],
+            "correctKey": "une rupture esthétique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What do some critics praise?",
+            "options": [
+              "une symbolique complexe",
+              "une fiscalité innovante",
+              "une enquête policière",
+              "une loi électorale"
+            ],
+            "correctKey": "une symbolique complexe"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does art criticism balance?",
+            "options": [
+              "description and evaluation",
+              "sports and politics",
+              "law and medicine",
+              "grammar and finance"
+            ],
+            "correctKey": "description and evaluation"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La composition *** de l'œuvre attire immédiatement le regard.",
+            "correctKey": "picturale"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La *** du public demeure contrastée.",
+            "correctKey": "réception"
+          }
+        ]
+      },
+      {
+        "title": "L'anthropologie moderne",
+        "description": "Examining human evolution, rituals, cultural practices, and ethnographic methods.",
+        "vocabulary": [
+          {
+            "french": "une enquête ethnographique",
+            "english": "ethnographic study"
+          },
+          {
+            "french": "un rite de passage",
+            "english": "rite of passage"
+          },
+          {
+            "french": "une pratique culturelle",
+            "english": "cultural practice"
+          },
+          {
+            "french": "une observation participante",
+            "english": "participant observation"
+          },
+          {
+            "french": "une transmission intergénérationnelle",
+            "english": "intergenerational transmission"
+          },
+          {
+            "french": "une identité collective",
+            "english": "collective identity"
+          },
+          {
+            "french": "une diversité culturelle",
+            "english": "cultural diversity"
+          },
+          {
+            "french": "un terrain d'étude",
+            "english": "field site"
+          },
+          {
+            "french": "une représentation symbolique",
+            "english": "symbolic representation"
+          },
+          {
+            "french": "une évolution humaine",
+            "english": "human evolution"
+          }
+        ],
+        "grammar": {
+          "title": "Describing cultural practices objectively",
+          "text": "Anthropological discourse emphasizes neutral observation. Example: L'enquête ethnographique met en évidence une pratique culturelle transmise de génération en génération. Objective descriptions avoid value judgments and focus on evidence."
+        },
+        "reading": "L'anthropologie moderne s'intéresse aux mécanismes de transmission intergénérationnelle des pratiques culturelles. Grâce à l'observation participante menée sur le terrain d'étude, les chercheurs peuvent mieux comprendre les représentations symboliques qui structurent l'identité collective. Ces analyses contribuent à une meilleure compréhension de la diversité culturelle humaine.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which method is mentioned in the text?",
+            "options": [
+              "l'observation participante",
+              "la comptabilité analytique",
+              "la programmation",
+              "la photographie aérienne"
+            ],
+            "correctKey": "l'observation participante"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What helps structure collective identity?",
+            "options": [
+              "les représentations symboliques",
+              "les impôts",
+              "les transports",
+              "les élections"
+            ],
+            "correctKey": "les représentations symboliques"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the goal of objective anthropological description?",
+            "options": [
+              "focus on evidence",
+              "promote personal opinions",
+              "judge cultures",
+              "simplify history"
+            ],
+            "correctKey": "focus on evidence"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'*** ethnographique constitue une méthode centrale en anthropologie.",
+            "correctKey": "enquête"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les chercheurs analysent les pratiques transmises de façon ***.",
+            "correctKey": "intergénérationnelle"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Geopolitics, Law and Science",
+    "description": "Enrich your vocabulary with international relations, global law systems, and scientific epistemology.",
+    "lessons": [
+      {
+        "title": "La géopolitique et relations internationales",
+        "description": "Geopolitical alliances, conflicts, international treaties, diplomacy, and global affairs.",
+        "vocabulary": [
+          {
+            "french": "la souveraineté nationale",
+            "english": "national sovereignty"
+          },
+          {
+            "french": "un rapport de force",
+            "english": "balance of power"
+          },
+          {
+            "french": "une alliance stratégique",
+            "english": "strategic alliance"
+          },
+          {
+            "french": "un traité multilatéral",
+            "english": "multilateral treaty"
+          },
+          {
+            "french": "la diplomatie préventive",
+            "english": "preventive diplomacy"
+          },
+          {
+            "french": "une zone d'influence",
+            "english": "sphere of influence"
+          },
+          {
+            "french": "un conflit frontalier",
+            "english": "border conflict"
+          },
+          {
+            "french": "la sécurité collective",
+            "english": "collective security"
+          },
+          {
+            "french": "un acteur étatique",
+            "english": "state actor"
+          },
+          {
+            "french": "une médiation internationale",
+            "english": "international mediation"
+          }
+        ],
+        "grammar": {
+          "title": "Nuancing geopolitical analysis with concession and restriction",
+          "text": "In C1 geopolitical discourse, arguments are often nuanced with expressions such as bien que, quoique, toutefois, and dans la mesure où. Example: Bien que la souveraineté nationale demeure centrale, la sécurité collective impose parfois une coopération renforcée. (Although national sovereignty remains central, collective security sometimes requires stronger cooperation.) These structures help avoid simplistic claims."
+        },
+        "reading": "La géopolitique contemporaine repose sur des rapports de force complexes entre acteurs étatiques et organisations internationales. Bien que la souveraineté nationale demeure un principe central, les traités multilatéraux redéfinissent les marges de coopération. Dans certaines zones d'influence, la diplomatie préventive vise à éviter l'escalade des conflits frontaliers. La médiation internationale devient ainsi un outil essentiel de sécurité collective.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « un rapport de force » mean?",
+            "options": [
+              "balance of power",
+              "cultural heritage",
+              "legal testimony",
+              "scientific proof"
+            ],
+            "correctKey": "balance of power"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase refers to cooperation between several states?",
+            "options": [
+              "un traité multilatéral",
+              "un conflit frontalier",
+              "une zone d'influence",
+              "un acteur étatique"
+            ],
+            "correctKey": "un traité multilatéral"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector introduces concession?",
+            "options": [
+              "bien que",
+              "ainsi",
+              "par conséquent",
+              "grâce à"
+            ],
+            "correctKey": "bien que"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La souveraineté nationale est un concept clé des relations ***.",
+            "correctKey": "internationales"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La diplomatie préventive vise à éviter l'*** des conflits.",
+            "correctKey": "escalade"
+          }
+        ]
+      },
+      {
+        "title": "L'épistémologie et sciences",
+        "description": "Epistemology, scientific methodology, academic research, and theories of knowledge.",
+        "vocabulary": [
+          {
+            "french": "l'épistémologie",
+            "english": "epistemology"
+          },
+          {
+            "french": "un paradigme scientifique",
+            "english": "scientific paradigm"
+          },
+          {
+            "french": "une réfutabilité",
+            "english": "falsifiability"
+          },
+          {
+            "french": "une démarche empirique",
+            "english": "empirical approach"
+          },
+          {
+            "french": "un postulat théorique",
+            "english": "theoretical postulate"
+          },
+          {
+            "french": "une preuve expérimentale",
+            "english": "experimental proof"
+          },
+          {
+            "french": "un biais méthodologique",
+            "english": "methodological bias"
+          },
+          {
+            "french": "la production du savoir",
+            "english": "production of knowledge"
+          },
+          {
+            "french": "une validation scientifique",
+            "english": "scientific validation"
+          },
+          {
+            "french": "une hypothèse falsifiable",
+            "english": "falsifiable hypothesis"
+          }
+        ],
+        "grammar": {
+          "title": "Expressing scientific caution and epistemic distance",
+          "text": "Scientific discourse often uses cautious expressions to separate observation from certainty. Use il semblerait que, il est plausible que, or les données suggèrent que. Example: Les données suggèrent que l'hypothèse est falsifiable. (The data suggest that the hypothesis is falsifiable.) This avoids overstating conclusions."
+        },
+        "reading": "L'épistémologie interroge les conditions de production du savoir et les critères de validation scientifique. Une hypothèse falsifiable doit pouvoir être confrontée à une preuve expérimentale. Toutefois, tout paradigme scientifique peut être influencé par des biais méthodologiques. C'est pourquoi la démarche empirique exige une vigilance constante face aux postulats théoriques implicites.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does epistemology study?",
+            "options": [
+              "the conditions of knowledge production",
+              "the rules of urban planning",
+              "the history of cuisine",
+              "the structure of elections"
+            ],
+            "correctKey": "the conditions of knowledge production"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which term means 'falsifiability'?",
+            "options": [
+              "une réfutabilité",
+              "une médiation",
+              "une coutume",
+              "une jurisprudence"
+            ],
+            "correctKey": "une réfutabilité"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Why use cautious expressions in scientific writing?",
+            "options": [
+              "to avoid overstating conclusions",
+              "to remove evidence",
+              "to make commands",
+              "to simplify vocabulary"
+            ],
+            "correctKey": "to avoid overstating conclusions"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une hypothèse scientifique doit être *** pour être testée.",
+            "correctKey": "falsifiable"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Un biais *** peut fausser les résultats d'une recherche.",
+            "correctKey": "méthodologique"
+          }
+        ]
+      },
+      {
+        "title": "Le droit international",
+        "description": "Legal frameworks, human rights, international courts, and legal terminology.",
+        "vocabulary": [
+          {
+            "french": "le droit international public",
+            "english": "public international law"
+          },
+          {
+            "french": "une juridiction internationale",
+            "english": "international jurisdiction"
+          },
+          {
+            "french": "un crime contre l'humanité",
+            "english": "crime against humanity"
+          },
+          {
+            "french": "la responsabilité étatique",
+            "english": "state responsibility"
+          },
+          {
+            "french": "une convention internationale",
+            "english": "international convention"
+          },
+          {
+            "french": "le droit humanitaire",
+            "english": "humanitarian law"
+          },
+          {
+            "french": "une violation des droits humains",
+            "english": "human rights violation"
+          },
+          {
+            "french": "une compétence juridictionnelle",
+            "english": "jurisdictional competence"
+          },
+          {
+            "french": "une procédure contentieuse",
+            "english": "litigation procedure"
+          },
+          {
+            "french": "une jurisprudence internationale",
+            "english": "international case law"
+          }
+        ],
+        "grammar": {
+          "title": "Using passive and nominal structures in legal discourse",
+          "text": "Legal French often favors passive and nominal structures to emphasize procedures and principles. Example: Une violation des droits humains a été constatée par la juridiction internationale. (A human rights violation was established by the international court.) Nominal expressions such as responsabilité étatique and compétence juridictionnelle create a formal legal register."
+        },
+        "reading": "Le droit international public encadre les relations juridiques entre États et organisations internationales. Lorsqu'une violation des droits humains est constatée, une juridiction internationale peut examiner la responsabilité étatique. La jurisprudence internationale contribue alors à préciser la compétence juridictionnelle et l'application des conventions internationales. Le droit humanitaire demeure central en période de conflit armé.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « une juridiction internationale » refer to?",
+            "options": [
+              "international jurisdiction or court",
+              "scientific method",
+              "economic policy",
+              "cultural festival"
+            ],
+            "correctKey": "international jurisdiction or court"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which field is central during armed conflict?",
+            "options": [
+              "le droit humanitaire",
+              "la philologie",
+              "l'urbanisme",
+              "la gastronomie"
+            ],
+            "correctKey": "le droit humanitaire"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which structure is common in legal French?",
+            "options": [
+              "passive and nominal structures",
+              "informal slang",
+              "imperative commands only",
+              "short personal anecdotes"
+            ],
+            "correctKey": "passive and nominal structures"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une *** internationale peut examiner la responsabilité d'un État.",
+            "correctKey": "juridiction"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le droit international protège contre les violations des droits ***.",
+            "correctKey": "humains"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Specialization, Ethics and Heritage",
+    "description": "Master highly specialized terminology, bioethics debates, and world heritage preservation.",
+    "lessons": [
+      {
+        "title": "La terminologie spécialisée",
+        "description": "Nuanced jargon used in business, administration, and public policies.",
+        "vocabulary": [
+          {
+            "french": "un référentiel normatif",
+            "english": "normative framework"
+          },
+          {
+            "french": "une gouvernance transversale",
+            "english": "cross-functional governance"
+          },
+          {
+            "french": "un dispositif réglementaire",
+            "english": "regulatory mechanism"
+          },
+          {
+            "french": "une feuille de route stratégique",
+            "english": "strategic roadmap"
+          },
+          {
+            "french": "un indicateur de performance",
+            "english": "performance indicator"
+          },
+          {
+            "french": "une partie prenante",
+            "english": "stakeholder"
+          },
+          {
+            "french": "la conformité administrative",
+            "english": "administrative compliance"
+          },
+          {
+            "french": "un arbitrage budgétaire",
+            "english": "budgetary arbitration"
+          },
+          {
+            "french": "une mise en conformité",
+            "english": "compliance process"
+          },
+          {
+            "french": "un levier opérationnel",
+            "english": "operational lever"
+          }
+        ],
+        "grammar": {
+          "title": "Decoding specialized nominal groups",
+          "text": "Specialized French often uses dense nominal groups such as dispositif réglementaire or feuille de route stratégique. The head noun carries the main meaning, while adjectives and complements specify function. Example: Un indicateur de performance mesure l'efficacité d'une politique publique. (A performance indicator measures the effectiveness of a public policy.)"
+        },
+        "reading": "Dans l'administration publique, la mise en conformité dépend souvent d'un dispositif réglementaire précis. Les parties prenantes doivent suivre une feuille de route stratégique afin de respecter le référentiel normatif. Les indicateurs de performance servent ensuite à évaluer les leviers opérationnels mobilisés. Toutefois, chaque arbitrage budgétaire peut modifier les priorités initiales.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « une partie prenante » mean?",
+            "options": [
+              "stakeholder",
+              "court witness",
+              "medical patient",
+              "ancient text"
+            ],
+            "correctKey": "stakeholder"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which term refers to a strategic roadmap?",
+            "options": [
+              "une feuille de route stratégique",
+              "un crime contre l'humanité",
+              "une preuve expérimentale",
+              "un rite de passage"
+            ],
+            "correctKey": "une feuille de route stratégique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "In specialized nominal groups, what carries the main meaning?",
+            "options": [
+              "the head noun",
+              "the comma",
+              "the final verb",
+              "the article only"
+            ],
+            "correctKey": "the head noun"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Un indicateur de *** permet d'évaluer l'efficacité d'une mesure.",
+            "correctKey": "performance"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La mise en *** garantit le respect des règles administratives.",
+            "correctKey": "conformité"
+          }
+        ]
+      },
+      {
+        "title": "L'éthique et la bioéthique",
+        "description": "Discussing moral dilemmas, biomedical research, ethics committees, and medical rights.",
+        "vocabulary": [
+          {
+            "french": "un dilemme moral",
+            "english": "moral dilemma"
+          },
+          {
+            "french": "la bioéthique",
+            "english": "bioethics"
+          },
+          {
+            "french": "un consentement éclairé",
+            "english": "informed consent"
+          },
+          {
+            "french": "un comité d'éthique",
+            "english": "ethics committee"
+          },
+          {
+            "french": "la dignité humaine",
+            "english": "human dignity"
+          },
+          {
+            "french": "une expérimentation biomédicale",
+            "english": "biomedical experimentation"
+          },
+          {
+            "french": "le principe de précaution",
+            "english": "precautionary principle"
+          },
+          {
+            "french": "l'autonomie du patient",
+            "english": "patient autonomy"
+          },
+          {
+            "french": "une décision thérapeutique",
+            "english": "therapeutic decision"
+          },
+          {
+            "french": "une responsabilité déontologique",
+            "english": "professional ethical responsibility"
+          }
+        ],
+        "grammar": {
+          "title": "Arguing ethically with obligation and precaution",
+          "text": "Bioethical debate often combines obligation and caution. Use il importe que + subjunctive and il convient de + infinitive. Example: Il importe que le consentement éclairé soit respecté. (It is important that informed consent be respected.) Il convient d'appliquer le principe de précaution. (It is appropriate to apply the precautionary principle.)"
+        },
+        "reading": "La bioéthique examine les dilemmes moraux liés aux progrès de la recherche biomédicale. Avant toute expérimentation, le consentement éclairé doit garantir l'autonomie du patient et le respect de la dignité humaine. Le comité d'éthique évalue les risques au regard du principe de précaution. Ainsi, la décision thérapeutique ne peut être séparée de la responsabilité déontologique des professionnels de santé.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What protects patient autonomy before experimentation?",
+            "options": [
+              "un consentement éclairé",
+              "un traité multilatéral",
+              "un indicateur budgétaire",
+              "une zone d'influence"
+            ],
+            "correctKey": "un consentement éclairé"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which body evaluates biomedical risks?",
+            "options": [
+              "un comité d'éthique",
+              "un tribunal fiscal",
+              "une alliance militaire",
+              "un musée national"
+            ],
+            "correctKey": "un comité d'éthique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which structure often takes the subjunctive?",
+            "options": [
+              "Il importe que",
+              "Il est certain que",
+              "Il constate que",
+              "Il prouve que"
+            ],
+            "correctKey": "Il importe que"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La bioéthique examine les dilemmes *** liés aux progrès médicaux.",
+            "correctKey": "moraux"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le consentement éclairé protège l'autonomie du ***.",
+            "correctKey": "patient"
+          }
+        ]
+      },
+      {
+        "title": "Le patrimoine mondial",
+        "description": "Preserving architectural, natural, and intangible cultural heritage.",
+        "vocabulary": [
+          {
+            "french": "le patrimoine mondial",
+            "english": "world heritage"
+          },
+          {
+            "french": "un site classé",
+            "english": "listed site"
+          },
+          {
+            "french": "le patrimoine immatériel",
+            "english": "intangible heritage"
+          },
+          {
+            "french": "la conservation préventive",
+            "english": "preventive conservation"
+          },
+          {
+            "french": "une restauration patrimoniale",
+            "english": "heritage restoration"
+          },
+          {
+            "french": "une valeur universelle exceptionnelle",
+            "english": "outstanding universal value"
+          },
+          {
+            "french": "la transmission culturelle",
+            "english": "cultural transmission"
+          },
+          {
+            "french": "une menace anthropique",
+            "english": "human-made threat"
+          },
+          {
+            "french": "un écosystème fragile",
+            "english": "fragile ecosystem"
+          },
+          {
+            "french": "une politique de sauvegarde",
+            "english": "safeguarding policy"
+          }
+        ],
+        "grammar": {
+          "title": "Expressing preservation and threat in heritage discourse",
+          "text": "Heritage discourse often uses structures such as être menacé par, contribuer à, and viser à + infinitive. Example: Ce site classé est menacé par une pression touristique excessive. (This listed site is threatened by excessive tourist pressure.) Une politique de sauvegarde vise à préserver la valeur universelle exceptionnelle du lieu. (A safeguarding policy aims to preserve the site's outstanding universal value.)"
+        },
+        "reading": "Le patrimoine mondial ne se limite pas aux monuments historiques : il comprend aussi le patrimoine immatériel et les écosystèmes fragiles. Un site classé peut être menacé par des pressions touristiques ou des menaces anthropiques. La conservation préventive et la restauration patrimoniale visent à préserver sa valeur universelle exceptionnelle. La transmission culturelle demeure enfin essentielle pour les générations futures.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « patrimoine immatériel » refer to?",
+            "options": [
+              "intangible heritage",
+              "financial capital",
+              "legal punishment",
+              "scientific proof"
+            ],
+            "correctKey": "intangible heritage"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What can threaten a listed site?",
+            "options": [
+              "des menaces anthropiques",
+              "une preuve expérimentale",
+              "un comité d'éthique",
+              "une hypothèse falsifiable"
+            ],
+            "correctKey": "des menaces anthropiques"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which structure expresses a preservation objective?",
+            "options": [
+              "viser à préserver",
+              "s'opposer à rire",
+              "venir de manger",
+              "aller au hasard"
+            ],
+            "correctKey": "viser à préserver"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Un site classé possède parfois une valeur universelle ***.",
+            "correctKey": "exceptionnelle"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La conservation *** permet de limiter les dégradations futures.",
+            "correctKey": "préventive"
+          }
+        ]
+      }
+    ]
+  }
+]

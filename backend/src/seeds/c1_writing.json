@@ -1,0 +1,622 @@
+[
+  {
+    "title": "Identity, Culture and Language",
+    "description": "Read and analyze academic essays on multiculturalism, mass media influence, philosophy in modern education, and linguistic globalization.",
+    "lessons": [
+      {
+        "title": "L'impact du multiculturalisme sur l'identité nationale",
+        "description": "Exploring integration models, pluralism, and cultural synthesis.",
+        "vocabulary": [
+          {
+            "french": "le pluralisme culturel",
+            "english": "cultural pluralism"
+          },
+          { "french": "la cohésion sociale", "english": "social cohesion" },
+          {
+            "french": "une identité collective",
+            "english": "collective identity"
+          },
+          {
+            "french": "une synthèse culturelle",
+            "english": "cultural synthesis"
+          },
+          { "french": "l'intégration civique", "english": "civic integration" },
+          {
+            "french": "une diversité constitutive",
+            "english": "constitutive diversity"
+          },
+          {
+            "french": "un modèle assimilationniste",
+            "english": "assimilationist model"
+          },
+          {
+            "french": "une appartenance commune",
+            "english": "shared belonging"
+          },
+          {
+            "french": "la reconnaissance mutuelle",
+            "english": "mutual recognition"
+          },
+          { "french": "un patrimoine commun", "english": "shared heritage" }
+        ],
+        "grammar": {
+          "title": "Balancing opposing viewpoints in academic essays",
+          "text": "C1 argumentative writing often balances contrasting perspectives through concessive structures such as certes... mais, bien que, toutefois, and néanmoins. Example: Bien que le multiculturalisme favorise la diversité, certains craignent un affaiblissement de l'identité nationale. This structure allows nuanced analysis rather than simplistic conclusions."
+        },
+        "reading": "Le multiculturalisme est souvent présenté comme un facteur d'enrichissement collectif. Bien qu'il favorise la reconnaissance mutuelle et la diversité constitutive d'une société, certains observateurs redoutent une fragmentation de l'appartenance commune. Toutefois, plusieurs études suggèrent que la cohésion sociale dépend moins de l'homogénéité culturelle que de l'intégration civique. Ainsi, une synthèse culturelle peut émerger sans effacer le patrimoine commun.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is presented as the key factor for social cohesion in the text?",
+            "options": [
+              "l'intégration civique",
+              "l'homogénéité culturelle",
+              "la centralisation politique",
+              "la croissance démographique"
+            ],
+            "correctKey": "l'intégration civique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression introduces concession?",
+            "options": ["Bien que", "Ainsi", "Par conséquent", "En effet"],
+            "correctKey": "Bien que"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What concern do some observers express?",
+            "options": [
+              "une fragmentation de l'appartenance commune",
+              "une pénurie énergétique",
+              "une baisse des exportations",
+              "une réforme judiciaire"
+            ],
+            "correctKey": "une fragmentation de l'appartenance commune"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le multiculturalisme favorise la reconnaissance mutuelle et la *** constitutive d'une société.",
+            "correctKey": "diversité"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une *** culturelle peut émerger sans effacer le patrimoine commun.",
+            "correctKey": "synthèse"
+          }
+        ]
+      },
+      {
+        "title": "L'impact culturel des médias de masse",
+        "description": "Analyzing media consumption, standardization of culture, and information dissemination.",
+        "vocabulary": [
+          {
+            "french": "la standardisation culturelle",
+            "english": "cultural standardization"
+          },
+          {
+            "french": "la diffusion médiatique",
+            "english": "media dissemination"
+          },
+          {
+            "french": "une consommation de masse",
+            "english": "mass consumption"
+          },
+          {
+            "french": "un imaginaire collectif",
+            "english": "collective imagination"
+          },
+          {
+            "french": "un contenu uniformisé",
+            "english": "standardized content"
+          },
+          {
+            "french": "la circulation de l'information",
+            "english": "information circulation"
+          },
+          {
+            "french": "une influence normative",
+            "english": "normative influence"
+          },
+          { "french": "un paysage médiatique", "english": "media landscape" },
+          {
+            "french": "une réception critique",
+            "english": "critical reception"
+          },
+          { "french": "un vecteur culturel", "english": "cultural vector" }
+        ],
+        "grammar": {
+          "title": "Using cause and consequence in analytical writing",
+          "text": "Academic texts frequently link ideas through causal and consequential structures. Example: Les médias diffusent des contenus à grande échelle ; par conséquent, ils influencent les représentations collectives. Such connectors strengthen logical coherence and analytical depth."
+        },
+        "reading": "Les médias de masse jouent un rôle central dans la circulation de l'information et des représentations culturelles. Leur capacité de diffusion favorise l'émergence d'un imaginaire collectif partagé. Toutefois, certains chercheurs dénoncent une standardisation culturelle croissante, due à la répétition de contenus uniformisés. Une réception critique demeure donc essentielle afin de préserver la diversité des points de vue.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What concern is raised by some researchers?",
+            "options": [
+              "la standardisation culturelle",
+              "la désertification rurale",
+              "la pénurie alimentaire",
+              "la fiscalité internationale"
+            ],
+            "correctKey": "la standardisation culturelle"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What creates a shared collective imagination according to the text?",
+            "options": [
+              "la diffusion médiatique",
+              "la politique monétaire",
+              "les infrastructures routières",
+              "la réglementation fiscale"
+            ],
+            "correctKey": "la diffusion médiatique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Why is critical reception important?",
+            "options": [
+              "to preserve diversity of viewpoints",
+              "to reduce access to information",
+              "to standardize culture further",
+              "to eliminate media influence"
+            ],
+            "correctKey": "to preserve diversity of viewpoints"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les médias jouent un rôle central dans la circulation de l'***.",
+            "correctKey": "information"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une réception *** demeure essentielle afin de préserver la diversité des points de vue.",
+            "correctKey": "critique"
+          }
+        ]
+      },
+      {
+        "title": "La place de la philosophie dans l'éducation moderne",
+        "description": "Discussing critical thinking, civic instruction, and academic curriculum values.",
+        "vocabulary": [
+          { "french": "l'esprit critique", "english": "critical thinking" },
+          {
+            "french": "une réflexion éthique",
+            "english": "ethical reflection"
+          },
+          { "french": "la formation citoyenne", "english": "civic education" },
+          {
+            "french": "une démarche réflexive",
+            "english": "reflective approach"
+          },
+          {
+            "french": "un raisonnement argumenté",
+            "english": "reasoned argument"
+          },
+          {
+            "french": "une autonomie intellectuelle",
+            "english": "intellectual autonomy"
+          },
+          {
+            "french": "un questionnement fondamental",
+            "english": "fundamental questioning"
+          },
+          { "french": "la pensée abstraite", "english": "abstract thought" },
+          {
+            "french": "une compétence transversale",
+            "english": "cross-disciplinary skill"
+          },
+          { "french": "un débat rationnel", "english": "rational debate" }
+        ],
+        "grammar": {
+          "title": "Developing nuanced arguments through qualification",
+          "text": "C1 essays often qualify statements rather than making absolute claims. Expressions such as dans une certaine mesure, il convient de souligner que, and force est de constater que help create balanced argumentation. Example: Il convient de souligner que la philosophie ne fournit pas toujours des réponses, mais elle développe l'esprit critique."
+        },
+        "reading": "Dans une société marquée par l'abondance d'informations, la philosophie conserve une fonction essentielle. Elle encourage l'esprit critique, la réflexion éthique et le questionnement fondamental. Plus qu'une simple discipline académique, elle constitue une compétence transversale favorisant l'autonomie intellectuelle. En développant le raisonnement argumenté, elle prépare également les citoyens à participer à un débat rationnel.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does philosophy primarily encourage according to the text?",
+            "options": [
+              "l'esprit critique",
+              "la spécialisation technique exclusive",
+              "la compétition économique",
+              "la conformité sociale"
+            ],
+            "correctKey": "l'esprit critique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase helps qualify an argument?",
+            "options": [
+              "Il convient de souligner que",
+              "Il est certain que",
+              "Sans aucun doute",
+              "Toujours"
+            ],
+            "correctKey": "Il convient de souligner que"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What type of skill is philosophy described as?",
+            "options": [
+              "une compétence transversale",
+              "une compétence sportive",
+              "une compétence administrative",
+              "une compétence commerciale"
+            ],
+            "correctKey": "une compétence transversale"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La philosophie favorise l'*** intellectuelle des individus.",
+            "correctKey": "autonomie"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Elle prépare les citoyens à participer à un débat ***.",
+            "correctKey": "rationnel"
+          }
+        ]
+      },
+      {
+        "title": "Les défis de la mondialisation linguistique",
+        "description": "Understanding the dominance of English, protection of minority languages, and translation dynamics.",
+        "vocabulary": [
+          {
+            "french": "la mondialisation linguistique",
+            "english": "linguistic globalization"
+          },
+          { "french": "une langue dominante", "english": "dominant language" },
+          {
+            "french": "une langue minoritaire",
+            "english": "minority language"
+          },
+          {
+            "french": "la diversité linguistique",
+            "english": "linguistic diversity"
+          },
+          {
+            "french": "une politique de préservation",
+            "english": "preservation policy"
+          },
+          { "french": "un transfert culturel", "english": "cultural transfer" },
+          {
+            "french": "la médiation linguistique",
+            "english": "linguistic mediation"
+          },
+          {
+            "french": "un déséquilibre linguistique",
+            "english": "linguistic imbalance"
+          },
+          {
+            "french": "la traduction interculturelle",
+            "english": "intercultural translation"
+          },
+          {
+            "french": "un patrimoine linguistique",
+            "english": "linguistic heritage"
+          }
+        ],
+        "grammar": {
+          "title": "Contrasting global and local dynamics",
+          "text": "To analyze globalization, C1 writers often oppose global and local realities using structures such as tandis que, alors que, and en revanche. Example: Alors que certaines langues gagnent en influence, d'autres connaissent un recul progressif. These contrasts help reveal complex dynamics."
+        },
+        "reading": "La mondialisation linguistique favorise la diffusion rapide de certaines langues dominantes, notamment dans les domaines économiques et scientifiques. Alors que cette évolution facilite les échanges internationaux, elle peut fragiliser les langues minoritaires. La préservation de la diversité linguistique exige donc des politiques adaptées ainsi qu'une médiation linguistique efficace. La traduction interculturelle joue, à cet égard, un rôle déterminant.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What risk is associated with linguistic globalization?",
+            "options": [
+              "la fragilisation des langues minoritaires",
+              "une augmentation de la biodiversité",
+              "une baisse du commerce",
+              "une réduction des échanges"
+            ],
+            "correctKey": "la fragilisation des langues minoritaires"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector introduces contrast?",
+            "options": ["Alors que", "Ainsi", "Par conséquent", "En effet"],
+            "correctKey": "Alors que"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What plays a decisive role according to the text?",
+            "options": [
+              "la traduction interculturelle",
+              "la fiscalité",
+              "l'urbanisation",
+              "la diplomatie militaire"
+            ],
+            "correctKey": "la traduction interculturelle"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La préservation de la diversité *** exige des politiques adaptées.",
+            "correctKey": "linguistique"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La *** interculturelle joue un rôle déterminant.",
+            "correctKey": "traduction"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Technology, Ethics and Work",
+    "description": "Analyze critical viewpoints on data privacy, generative AI ethics, and post-industrial labor mutations.",
+    "lessons": [
+      {
+        "title": "Les enjeux de la protection des données personnelles",
+        "description": "Evaluating digital surveillance, corporate tracking, and user consent frameworks.",
+        "vocabulary": [
+          {
+            "french": "la protection des données",
+            "english": "data protection"
+          },
+          {
+            "french": "une surveillance numérique",
+            "english": "digital surveillance"
+          },
+          {
+            "french": "un consentement éclairé",
+            "english": "informed consent"
+          },
+          { "french": "une collecte massive", "english": "mass collection" },
+          {
+            "french": "un profilage algorithmique",
+            "english": "algorithmic profiling"
+          },
+          { "french": "la confidentialité", "english": "confidentiality" },
+          {
+            "french": "une traçabilité numérique",
+            "english": "digital traceability"
+          },
+          {
+            "french": "une régulation juridique",
+            "english": "legal regulation"
+          },
+          {
+            "french": "une atteinte à la vie privée",
+            "english": "privacy infringement"
+          },
+          {
+            "french": "une gouvernance des données",
+            "english": "data governance"
+          }
+        ],
+        "grammar": {
+          "title": "Evaluative and critical tone in policy analysis",
+          "text": "Critical essays often combine evidence with evaluation. Expressions such as il convient de s'interroger sur, il serait réducteur de, and force est de constater que help maintain an analytical tone. Example: Force est de constater que la collecte massive de données soulève des questions éthiques majeures."
+        },
+        "reading": "La protection des données personnelles constitue un enjeu majeur des sociétés numériques. La collecte massive d'informations permet une personnalisation accrue des services, mais elle favorise également le profilage algorithmique. Force est de constater que de nombreux utilisateurs ignorent encore l'étendue de la traçabilité numérique dont ils font l'objet. Une régulation juridique efficace demeure donc indispensable.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is one consequence of mass data collection?",
+            "options": [
+              "le profilage algorithmique",
+              "la préservation du patrimoine",
+              "la diminution des échanges",
+              "la neutralité technologique totale"
+            ],
+            "correctKey": "le profilage algorithmique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression introduces critical evaluation?",
+            "options": [
+              "Force est de constater que",
+              "Bonjour",
+              "Peut-être",
+              "Ensuite"
+            ],
+            "correctKey": "Force est de constater que"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What remains indispensable according to the text?",
+            "options": [
+              "une régulation juridique efficace",
+              "une suppression d'internet",
+              "une centralisation mondiale",
+              "une réduction des données scientifiques"
+            ],
+            "correctKey": "une régulation juridique efficace"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La collecte massive d'informations favorise le profilage ***.",
+            "correctKey": "algorithmique"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La protection des données personnelles constitue un *** majeur.",
+            "correctKey": "enjeu"
+          }
+        ]
+      },
+      {
+        "title": "Réflexions sur l'éthique de l'IA générative",
+        "description": "Discussing automated creativity, bias in algorithms, and intellectual property rights.",
+        "vocabulary": [
+          { "french": "l'IA générative", "english": "generative AI" },
+          {
+            "french": "une créativité automatisée",
+            "english": "automated creativity"
+          },
+          { "french": "un biais algorithmique", "english": "algorithmic bias" },
+          {
+            "french": "la propriété intellectuelle",
+            "english": "intellectual property"
+          },
+          {
+            "french": "une responsabilité éthique",
+            "english": "ethical responsibility"
+          },
+          {
+            "french": "une transparence algorithmique",
+            "english": "algorithmic transparency"
+          },
+          {
+            "french": "une production synthétique",
+            "english": "synthetic output"
+          },
+          { "french": "une supervision humaine", "english": "human oversight" },
+          {
+            "french": "un cadre réglementaire",
+            "english": "regulatory framework"
+          },
+          {
+            "french": "une innovation disruptive",
+            "english": "disruptive innovation"
+          }
+        ],
+        "grammar": {
+          "title": "Exploring ethical dilemmas through hypothesis",
+          "text": "C1 discussions of ethics often rely on hypothetical structures. Expressions such as il est légitime de se demander si and on pourrait soutenir que introduce reflection without asserting certainty. Example: On pourrait soutenir que la créativité automatisée remet en question certaines notions traditionnelles de propriété intellectuelle."
+        },
+        "reading": "L'essor de l'IA générative transforme profondément les pratiques créatives. Si cette technologie favorise une production synthétique rapide, elle soulève également des interrogations relatives à la propriété intellectuelle et aux biais algorithmiques. Il est légitime de se demander si les mécanismes actuels de régulation sont suffisants. Une supervision humaine demeure essentielle afin de garantir une responsabilité éthique effective.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What concern is mentioned alongside intellectual property?",
+            "options": [
+              "les biais algorithmiques",
+              "la pollution maritime",
+              "la démographie urbaine",
+              "la fiscalité agricole"
+            ],
+            "correctKey": "les biais algorithmiques"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which structure introduces reflection rather than certainty?",
+            "options": [
+              "Il est légitime de se demander si",
+              "Il est certain que",
+              "Sans aucun doute",
+              "Il est prouvé que"
+            ],
+            "correctKey": "Il est légitime de se demander si"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What remains essential according to the text?",
+            "options": [
+              "une supervision humaine",
+              "une automatisation totale",
+              "une suppression des règles",
+              "une centralisation culturelle"
+            ],
+            "correctKey": "une supervision humaine"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'essor de l'IA générative transforme profondément les pratiques ***.",
+            "correctKey": "créatives"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une *** humaine demeure essentielle afin de garantir une responsabilité éthique.",
+            "correctKey": "supervision"
+          }
+        ]
+      },
+      {
+        "title": "Les transformations du travail dans la société post-industrielle",
+        "description": "Analyzing remote work, platform capitalism, and shift in professional structures.",
+        "vocabulary": [
+          { "french": "le télétravail", "english": "remote work" },
+          {
+            "french": "une plateforme numérique",
+            "english": "digital platform"
+          },
+          {
+            "french": "la flexibilisation du travail",
+            "english": "labor flexibilization"
+          },
+          {
+            "french": "une organisation hybride",
+            "english": "hybrid organization"
+          },
+          {
+            "french": "une mutation professionnelle",
+            "english": "professional transformation"
+          },
+          {
+            "french": "un travailleur indépendant",
+            "english": "independent worker"
+          },
+          { "french": "la précarisation", "english": "precarization" },
+          {
+            "french": "une économie de plateforme",
+            "english": "platform economy"
+          },
+          {
+            "french": "une reconfiguration organisationnelle",
+            "english": "organizational reconfiguration"
+          },
+          {
+            "french": "un modèle post-industriel",
+            "english": "post-industrial model"
+          }
+        ],
+        "grammar": {
+          "title": "Analyzing structural transformations",
+          "text": "When discussing social change, C1 writers frequently use nominalized structures and analytical verbs such as entraîner, favoriser, transformer, and reconfigurer. Example: La flexibilisation du travail entraîne une reconfiguration organisationnelle profonde. Such constructions create an objective academic tone."
+        },
+        "reading": "La société post-industrielle se caractérise par une transformation progressive des structures professionnelles. Le télétravail et l'économie de plateforme favorisent l'émergence d'organisations hybrides ainsi que de nouvelles formes d'activité indépendante. Toutefois, cette flexibilisation du travail peut également accentuer certains phénomènes de précarisation. Ces mutations imposent une reconfiguration organisationnelle durable.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What favors the emergence of hybrid organizations?",
+            "options": [
+              "le télétravail et l'économie de plateforme",
+              "la centralisation administrative",
+              "la réduction démographique",
+              "la fermeture des marchés"
+            ],
+            "correctKey": "le télétravail et l'économie de plateforme"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What potential consequence of labor flexibilization is mentioned?",
+            "options": [
+              "la précarisation",
+              "la stabilité absolue",
+              "la disparition de la technologie",
+              "la réduction de l'éducation"
+            ],
+            "correctKey": "la précarisation"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which tone is created by nominalized structures?",
+            "options": [
+              "an objective academic tone",
+              "a humorous tone",
+              "a poetic tone only",
+              "an informal conversational tone"
+            ],
+            "correctKey": "an objective academic tone"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La société post-industrielle se caractérise par une transformation des structures ***.",
+            "correctKey": "professionnelles"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Ces mutations imposent une reconfiguration *** durable.",
+            "correctKey": "organisationnelle"
+          }
+        ]
+      }
+    ]
+  }
+]

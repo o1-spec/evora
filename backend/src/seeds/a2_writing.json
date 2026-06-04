@@ -1,0 +1,602 @@
+[
+  {
+    "title": "Invitations and Messages",
+    "description": "Write simple A2 notes, invitations, and family messages.",
+    "lessons": [
+      {
+        "title": "Inviting Someone to a Birthday",
+        "description": "Writing a friendly invitation with event details.",
+        "vocabulary": [
+          {
+            "french": "Bonne fête",
+            "english": "Happy birthday"
+          },
+          {
+            "french": "Invitation",
+            "english": "Invitation"
+          },
+          {
+            "french": "Date et heure",
+            "english": "Date and time"
+          },
+          {
+            "french": "Lieu",
+            "english": "Location"
+          },
+          {
+            "french": "Vêtements",
+            "english": "Dress code"
+          },
+          {
+            "french": "Nourriture et boisson",
+            "english": "Food and drink"
+          },
+          {
+            "french": "S'inscrire",
+            "english": "RSVP"
+          },
+          {
+            "french": "Merci de répondre",
+            "english": "Please respond"
+          },
+          {
+            "french": "Je vous attends",
+            "english": "I look forward to seeing you"
+          },
+          {
+            "french": "À bientôt",
+            "english": "See you soon"
+          }
+        ],
+        "grammar": {
+          "title": "L'ordre des mots dans une lettre d'invitation",
+          "text": "Dans une lettre d'invitation, il est important de suivre l'ordre des mots corrects. Voici un exemple : 'Cher(e) [nom], vous êtes cordialement invité(e) à la fête de mon enfant qui aura lieu le [date] à [heure] à [lieu]. Je vous attends ! À bientôt.'"
+        },
+        "reading": "Voici une lettre d'invitation pour un anniversaire :\n\nCher Lucas,\nVous êtes cordialement invité à la fête de mon enfant qui aura lieu le samedi prochain à 15h00 au parc. Je vous attends ! À bientôt.\nCordialement, Marie.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la bonne réponse pour inviter quelqu'un à une fête ?",
+            "options": [
+              "Je vous attends ! À bientôt.",
+              "Merci de répondre.",
+              "Je vous attends, mais pas trop tard.",
+              "S'inscrire, s'il vous plaît."
+            ],
+            "correctKey": "Je vous attends ! À bientôt.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la bonne réponse pour indiquer la date et l'heure d'une fête ?",
+            "options": [
+              "Le dimanche à 14h00.",
+              "Samedi prochain à 15h00.",
+              "Mardi à 18h00.",
+              "Jeudi à 12h00."
+            ],
+            "correctKey": "Samedi prochain à 15h00.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la bonne réponse pour indiquer le lieu d'une fête ?",
+            "options": [
+              "Au parc.",
+              "À la maison.",
+              "Au restaurant.",
+              "Au cinéma."
+            ],
+            "correctKey": "Au parc.",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je vous attends à la fête de mon enfant qui aura lieu le ***, à *** au ***.",
+            "correctKey": "samedi prochain, 15h00, parc",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Merci de répondre à cette invitation pour la fête de mon enfant qui aura lieu le *** à *** au ***.",
+            "correctKey": "samedi prochain, 15h00, parc",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Replying to an Invitation",
+        "description": "Accepting or declining an invitation with short explanations.",
+        "vocabulary": [
+          {
+            "french": "Accepter",
+            "english": "To accept"
+          },
+          {
+            "french": "Refuser",
+            "english": "To decline"
+          },
+          {
+            "french": "Merci d'avance",
+            "english": "Thank you in advance"
+          },
+          {
+            "french": "Je suis désolé(e)",
+            "english": "I'm sorry"
+          },
+          {
+            "french": "J'accepte avec plaisir",
+            "english": "I accept with pleasure"
+          },
+          {
+            "french": "J'ai peur que...",
+            "english": "I fear that..."
+          },
+          {
+            "french": "Je suis ravi(e) de vous voir",
+            "english": "I'm delighted to see you"
+          },
+          {
+            "french": "Je suis désolé(e), je ne peux pas",
+            "english": "I'm sorry, I can't"
+          },
+          {
+            "french": "J'espère que...",
+            "english": "I hope that..."
+          },
+          {
+            "french": "Merci pour l'invitation",
+            "english": "Thank you for the invitation"
+          }
+        ],
+        "grammar": {
+          "title": "Répondre à une invitation",
+          "text": "When responding to an invitation, use phrases like 'J'accepte avec plaisir' or 'Je suis désolé(e), je ne peux pas'. You can also add a brief explanation for your decision. For example: 'J'ai peur que...'"
+        },
+        "reading": "Lettre d'invitation de Pierre à Marie : \n\nCher(e) Marie,\n\nJe vous invite pour le week-end prochain au ski.\n\nMerci d'avance, je suis ravi de vous voir !\n\nCordialement, Pierre.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Comment répondre à une invitation si on ne peut pas y aller ?",
+            "options": [
+              "J'accepte avec plaisir",
+              "Je suis désolé(e), je ne peux pas",
+              "Merci pour l'invitation",
+              "J'ai peur que..."
+            ],
+            "correctKey": "Je suis désolé(e), je ne peux pas",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le mot qui signifie 'To decline' en anglais ?",
+            "options": [
+              "Accepter",
+              "Refuser",
+              "Merci d'avance",
+              "Je suis désolé(e)"
+            ],
+            "correctKey": "Refuser",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la phrase qui signifie 'Thank you in advance' en français ?",
+            "options": [
+              "Merci d'avance",
+              "Je suis désolé(e)",
+              "J'ai peur que...",
+              "J'espère que..."
+            ],
+            "correctKey": "Merci d'avance",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Si on accepte une invitation, on peut dire : J'accepte ***, c'est agréable de vous voir.",
+            "correctKey": "avec plaisir",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Si on ne peut pas aller à l'événement, on peut écrire : Je suis désolé(e), je ***, je n'ai pas le temps.",
+            "correctKey": "ne peux pas",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Postcard from a Holiday Trip",
+        "description": "Describing holiday activities, weather, and warm regards.",
+        "vocabulary": [
+          {
+            "french": "Bonjour",
+            "english": "Hello"
+          },
+          {
+            "french": "Merci de votre réponse",
+            "english": "Thank you for your response"
+          },
+          {
+            "french": "Je suis ravi de vous voir",
+            "english": "I'm glad to see you"
+          },
+          {
+            "french": "Pouvez-vous m'aider?",
+            "english": "Can you help me?"
+          },
+          {
+            "french": "J'espère que tout va bien",
+            "english": "I hope everything is fine"
+          },
+          {
+            "french": "Je vous écris de la plage",
+            "english": "I'm writing to you from the beach"
+          },
+          {
+            "french": "La météo est superbe",
+            "english": "The weather is lovely"
+          },
+          {
+            "french": "J'ai visité les monuments locaux",
+            "english": "I visited local landmarks"
+          },
+          {
+            "french": "Je pense à vous",
+            "english": "I'm thinking of you"
+          },
+          {
+            "french": "À bientôt, je t'embrasse",
+            "english": "See you soon, I hug you"
+          }
+        ],
+        "grammar": {
+          "title": "Structure de l'écrit",
+          "text": "Lorsque vous écrivez une lettre ou un e-mail, commencez par votre nom et adresse. Ensuite, utilisez la formule \"Cher(e) [nom]\" pour s'adresser à la personne. N'oubliez pas de signer avec votre nom et date."
+        },
+        "reading": "Bonjour Madame Dupont,\nJe vous écris de la plage. La météo est superbe ! J'ai visité les monuments locaux hier.\nJe pense à vous et espère que tout va bien. À bientôt, je t'embrasse.\nCordialement, Léa\n15 août 2022",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la première chose à faire lors de l'écriture d'une lettre ou d'un e-mail?",
+            "options": [
+              "Utiliser la formule \"Cher(e) [nom]\"",
+              "Commencer par votre nom et adresse",
+              "Finir avec un salutation",
+              "Tout cela"
+            ],
+            "correctKey": "Utiliser la formule \"Cher(e) [nom]\"",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est l'expression pour dire \"Je suis heureux de vous voir\" en français?",
+            "options": [
+              "Je suis ravi de vous voir",
+              "Je suis heureux de vous rencontrer",
+              "Je suis content de vous revoir",
+              "Je suis fâché de vous voir"
+            ],
+            "correctKey": "Je suis ravi de vous voir",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la formule pour s'adresser à une dame?",
+            "options": [
+              "Cher(e) [nom]",
+              "Bonjour Madame",
+              "Merci Monsieur",
+              "Je vous écris"
+            ],
+            "correctKey": "Cher(e) [nom]",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je suis ravi de *** vous voir.",
+            "correctKey": "de",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "J'espère que tout va *** bien.",
+            "correctKey": "va",
+            "points": 10,
+            "options": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Practical Requests and Forms",
+    "description": "Write simple request emails, notes of explanation, and fill out forms.",
+    "lessons": [
+      {
+        "title": "Email to Inquire about a Class",
+        "description": "Requesting schedule, cost, and availability details.",
+        "vocabulary": [
+          {
+            "french": "Bonjour",
+            "english": "Hello"
+          },
+          {
+            "french": "Je m'appelle",
+            "english": "My name is"
+          },
+          {
+            "french": "Pouvez-vous me dire...",
+            "english": "Can you tell me..."
+          },
+          {
+            "french": "Combien ça coûte?",
+            "english": "How much does it cost?"
+          },
+          {
+            "french": "Quels sont les horaires de cours?",
+            "english": "What are the class hours?"
+          },
+          {
+            "french": "Y a-t-il des places disponibles?",
+            "english": "Are there any available spots?"
+          },
+          {
+            "french": "Je voudrais savoir...",
+            "english": "I would like to know..."
+          },
+          {
+            "french": "Merci d'avance",
+            "english": "Thank you in advance"
+          },
+          {
+            "french": "Bien sûr, je serai là",
+            "english": "Of course, I will be there"
+          },
+          {
+            "french": "Je vous remercie de votre réponse",
+            "english": "I thank you for your response"
+          }
+        ],
+        "grammar": {
+          "title": "Ordre des phrases dans une lettre ou un email",
+          "text": "Lorsque nous écrivons une lettre ou un email, il est important d'organiser nos idées de manière logique. Voici l'ordre classique : salutation (Bonjour), présentation (Je m'appelle), demande (Pouvez-vous me dire...), conclusion (Merci d'avance)."
+        },
+        "reading": "Voici un exemple d'email pour demander des informations sur une classe :\n\nBonjour,\nJe m'appelle Sophie et je suis intéressée par votre cours de français. Pouvez-vous me dire les horaires de cours et combien ça coûte? Je voudrais savoir si il y a encore des places disponibles.\nMerci d'avance pour votre réponse.\nCordialement, Sophie",
+        "exercises": [
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voudrais *** informations.",
+            "correctKey": "des",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voudrais *** informations.",
+            "correctKey": "des",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voudrais *** informations.",
+            "correctKey": "des",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voudrais *** informations.",
+            "correctKey": "des",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voudrais *** informations.",
+            "correctKey": "des",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Writing a Simple Explanation Note",
+        "description": "Explaining absence from school or work due to illness.",
+        "vocabulary": [
+          {
+            "french": "Bonjour",
+            "english": "Hello"
+          },
+          {
+            "french": "Madame/Monsieur",
+            "english": "Mrs./Mr."
+          },
+          {
+            "french": "Je suis désolé(e)",
+            "english": "I am sorry"
+          },
+          {
+            "french": "J'ai mal à la tête",
+            "english": "I have a headache"
+          },
+          {
+            "french": "Je ne peux pas venir au travail/school aujourd'hui",
+            "english": "I cannot come to work/school today"
+          },
+          {
+            "french": "Pouvez-vous me pardonner?",
+            "english": "Can you excuse me?"
+          },
+          {
+            "french": "J'ai besoin de prendre un jour de repos",
+            "english": "I need to take a day off"
+          },
+          {
+            "french": "Je vous remercie d'avance",
+            "english": "Thank you in advance"
+          },
+          {
+            "french": "S'il vous plaît, répondez-moi dès que possible",
+            "english": "Please answer me as soon as possible"
+          },
+          {
+            "french": "Cordialement",
+            "english": "Best regards"
+          }
+        ],
+        "grammar": {
+          "title": "Introduction à la correspondance écrite",
+          "text": "Lorsque nous écrivons une lettre ou un e-mail pour expliquer notre absence, il est important de commencer par dire bonjour et d'exprimer nos excuses. Nous devons également expliquer clairement pourquoi nous ne pouvons pas être présents. Enfin, nous devons terminer par un signe de politesse comme 'Cordialement'. Voici quelques exemples : \n\n Bonjour Madame,\n Je suis désolé(e) mais je ne peux pas venir au travail aujourd'hui car j'ai mal à la tête.\n Cordialement."
+        },
+        "reading": "Bonjour Madame,\n Je vous écris pour expliquer pourquoi je n'ai pas pu venir en classe aujourd'hui. J'ai eu une forte migraine ce matin et je ne voulais pas risquer d'être inconfortable en classe. Je suis désolé(e) de vous causer inconvénient.\n Cordialement, \n [Votre nom]",
+        "exercises": [
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voudrais *** informations.",
+            "correctKey": "des",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voudrais *** informations.",
+            "correctKey": "des",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voudrais *** informations.",
+            "correctKey": "des",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voudrais *** informations.",
+            "correctKey": "des",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voudrais *** informations.",
+            "correctKey": "des",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Filling out a Gym Registration Form",
+        "description": "Understanding personal data fields and completing registration details.",
+        "vocabulary": [
+          {
+            "french": "Nom",
+            "english": "Name"
+          },
+          {
+            "french": "Prénom",
+            "english": "First Name"
+          },
+          {
+            "french": "Adresse postale",
+            "english": "Postal Address"
+          },
+          {
+            "french": "Numéro de téléphone",
+            "english": "Phone Number"
+          },
+          {
+            "french": "Date de naissance",
+            "english": "Date of Birth"
+          },
+          {
+            "french": "Code postal",
+            "english": "Zip Code"
+          },
+          {
+            "french": "Type d'abonnement",
+            "english": "Subscription Type"
+          },
+          {
+            "french": "Durée de l'abonnement",
+            "english": "Duration of Subscription"
+          },
+          {
+            "french": "Paiement annuel",
+            "english": "Annual Payment"
+          },
+          {
+            "french": "Remarques",
+            "english": "Comments"
+          }
+        ],
+        "grammar": {
+          "title": "Layout d'une demande de renseignements (Request for Information Layout)",
+          "text": "Quand vous écrivez une demande de renseignements, assurez-vous que votre lettre ou email comporte les éléments suivants : votre nom et adresse postale, la raison pour laquelle vous envoyez cette demande, et vos coordonnées. Par exemple : 'Cher Monsieur/Madame, Je m'appelle [Nom] et je suis résident de [Ville]. J'aimerais savoir si il y a des places disponibles dans votre club de sport.'"
+        },
+        "reading": "Voici un exemple d'email pour s'inscrire à un club de sport : \n\nBonjour, \nJe m'appelle Sophie Dupont et je suis intéressée par l'inscription à votre club de sport. Je donne ci-dessous mes coordonnées.\nNom : Sophie Dupont\nPrénom : Sophie\nAdresse postale : 12 rue des Lilas, 75001 Paris\nNuméro de téléphone : 06 32 43 21 45\nDate de naissance : 23/02/1990\nCode postal : 75001\nType d'abonnement : Annuel\nDurée de l'abonnement : 12 mois\nPaiement annuel : Oui\nRemarques : Je suis intéressée par les cours de yoga.\nCordialement,\nSophie Dupont",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le nom du propriétaire de la voiture ?",
+            "options": [
+              "Pierre Dupont",
+              "Jean-Pierre Martin",
+              "Jacques Moreau",
+              "Michel Lefebvre"
+            ],
+            "correctKey": "Pierre Dupont",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la raison pour laquelle Sophie Dupont s'inscrit au club de sport ?",
+            "options": [
+              "Pour faire du yoga",
+              "Pour se tenir au courant des actualités sportives",
+              "Pour rencontrer de nouvelles personnes",
+              "Pour améliorer sa condition physique"
+            ],
+            "correctKey": "Pour faire du yoga",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la durée de l'abonnement choisi par Sophie Dupont ?",
+            "options": [
+              "6 mois",
+              "12 mois",
+              "18 mois",
+              "2 ans"
+            ],
+            "correctKey": "12 mois",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je m'appelle *** et je suis intéressé par l'inscription à votre club de sport.",
+            "correctKey": "fais",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "J'ai besoin d'une adresse postale pour vous contacter. Voici la mienne : *** 12 rue des Lilas, 75001 Paris.",
+            "correctKey": "donne",
+            "points": 10,
+            "options": null
+          }
+        ]
+      }
+    ]
+  }
+]

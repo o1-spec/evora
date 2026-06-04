@@ -51,6 +51,20 @@ export default function AcademyLevelPage() {
       </div>
     );
   }
+  const isC2 = codeKey === 'c2';
+  const tabs = isC2 ? [
+    { id: 'all', label: 'All Modules' },
+    { id: 'literature', label: 'Literature' },
+    { id: 'stylistic', label: 'Stylistics' },
+    { id: 'speaking', label: 'Débats Experts' },
+    { id: 'masterclass', label: 'Masterclass' }
+  ] : [
+    { id: 'all', label: 'All Modules' },
+    { id: 'vocabulary', label: 'Vocabulary' },
+    { id: 'grammar', label: 'Grammar' },
+    { id: 'dialogues', label: 'Dialogues' },
+    { id: 'writing', label: 'Writing' }
+  ];
 
   return (
     <div style={{ maxWidth: 1000, margin: '0 auto', paddingBottom: '4rem' }}>
@@ -128,13 +142,7 @@ export default function AcademyLevelPage() {
         paddingBottom: '0.75rem',
         flexWrap: 'wrap'
       }}>
-        {[
-          { id: 'all', label: 'All Modules' },
-          { id: 'vocabulary', label: 'Vocabulary' },
-          { id: 'grammar', label: 'Grammar' },
-          { id: 'dialogues', label: 'Dialogues' },
-          { id: 'writing', label: 'Writing' }
-        ].map(tab => {
+        {tabs.map(tab => {
           const isActive = activeTab === tab.id;
           return (
             <button
@@ -165,11 +173,19 @@ export default function AcademyLevelPage() {
           ?.filter((mod: any) => {
             if (activeTab === 'all') return true;
             const titleLower = mod.title.toLowerCase();
-            if (activeTab === 'vocabulary') return titleLower.includes('vocab');
-            if (activeTab === 'grammar') return titleLower.includes('gramm');
-            if (activeTab === 'dialogues') return titleLower.includes('dialog') || titleLower.includes('convers');
-            if (activeTab === 'writing') return titleLower.includes('écri') || titleLower.includes('text');
-            return true;
+            if (isC2) {
+              if (activeTab === 'literature') return titleLower.includes('literat') || titleLower.includes('littérat');
+              if (activeTab === 'stylistic') return titleLower.includes('stylist');
+              if (activeTab === 'speaking') return titleLower.includes('débat') || titleLower.includes('oral') || titleLower.includes('speech');
+              if (activeTab === 'masterclass') return titleLower.includes('masterclass');
+              return true;
+            } else {
+              if (activeTab === 'vocabulary') return titleLower.includes('vocab');
+              if (activeTab === 'grammar') return titleLower.includes('gramm');
+              if (activeTab === 'dialogues') return titleLower.includes('dialog') || titleLower.includes('convers');
+              if (activeTab === 'writing') return titleLower.includes('écri') || titleLower.includes('text') || titleLower.includes('writing');
+              return true;
+            }
           })
           .map((mod: any, i: number) => (
             <motion.div
@@ -319,7 +335,7 @@ export default function AcademyLevelPage() {
           if (activeTab === 'vocabulary') return titleLower.includes('vocab');
           if (activeTab === 'grammar') return titleLower.includes('gramm');
           if (activeTab === 'dialogues') return titleLower.includes('dialog') || titleLower.includes('convers');
-          if (activeTab === 'writing') return titleLower.includes('écri') || titleLower.includes('text');
+          if (activeTab === 'writing') return titleLower.includes('écri') || titleLower.includes('text') || titleLower.includes('writing');
           return true;
         }).length === 0 && (
           <div className="card" style={{ padding: '4rem 2rem', textAlign: 'center', color: 'hsl(var(--text-muted))', borderRadius: '1.25rem' }}>

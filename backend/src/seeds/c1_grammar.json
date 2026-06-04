@@ -1,0 +1,1178 @@
+[
+  {
+    "title": "Tenses, Moods and Stylistic Variations",
+    "description": "Master advanced indicative tenses, advanced subjunctive and conditional moods, and literary style variations.",
+    "lessons": [
+      {
+        "title": "Nuances des temps de l'indicatif",
+        "description": "Understanding nuances of past anterior, past historical, and double-compound tenses.",
+        "vocabulary": [
+          {
+            "french": "le passé simple",
+            "english": "literary simple past"
+          },
+          {
+            "french": "le passé antérieur",
+            "english": "past anterior"
+          },
+          {
+            "french": "le passé surcomposé",
+            "english": "double-compound past"
+          },
+          {
+            "french": "une antériorité immédiate",
+            "english": "immediate anteriority"
+          },
+          {
+            "french": "un récit littéraire",
+            "english": "literary narrative"
+          },
+          {
+            "french": "une action achevée",
+            "english": "completed action"
+          },
+          {
+            "french": "sitôt que",
+            "english": "as soon as"
+          },
+          {
+            "french": "à peine... que",
+            "english": "hardly... when"
+          },
+          {
+            "french": "un enchaînement narratif",
+            "english": "narrative sequence"
+          },
+          {
+            "french": "une valeur stylistique",
+            "english": "stylistic value"
+          }
+        ],
+        "grammar": {
+          "title": "Past anterior, simple past and double-compound nuance",
+          "text": "The passé simple is mainly literary and presents completed past actions in a narrative: Il entra dans la salle. (He entered the room.) The passé antérieur expresses an action completed immediately before another past action, often after quand, lorsque, dès que, sitôt que, or à peine... que: Dès qu'il eut terminé, il partit. (As soon as he had finished, he left.) The passé surcomposé appears mostly in spoken or regional French to emphasize completion: Quand j'ai eu fini, je suis parti. (When I had finished, I left.)"
+        },
+        "reading": "À peine eut-il franchi le seuil que le silence se fit dans la salle. Le chercheur exposa alors les conclusions qu'il avait longuement préparées. Sitôt qu'il eut terminé son intervention, plusieurs contradicteurs prirent la parole. Ce bref enchaînement narratif donna au débat une intensité presque théâtrale.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which tense is mainly used in literary narration for completed past actions?",
+            "options": [
+              "le passé simple",
+              "le futur antérieur",
+              "le présent progressif",
+              "le conditionnel passé"
+            ],
+            "correctKey": "le passé simple"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct past anterior sentence.",
+            "options": [
+              "Dès qu'il eut terminé, il partit.",
+              "Dès qu'il a terminé, il partira.",
+              "Dès qu'il terminait, il partit.",
+              "Dès qu'il termine, il part."
+            ],
+            "correctKey": "Dès qu'il eut terminé, il partit."
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does the past anterior usually express?",
+            "options": [
+              "an action completed before another past action",
+              "a future prediction",
+              "a present habit",
+              "a polite request"
+            ],
+            "correctKey": "an action completed before another past action"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "À peine ***-il parlé que l'audience l'interrompit.",
+            "correctKey": "eut"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Sitôt qu'elle *** terminé son discours, les applaudissements éclatèrent.",
+            "correctKey": "eut"
+          }
+        ]
+      },
+      {
+        "title": "L'usage avancé du subjonctif et du conditionnel",
+        "description": "Advanced values of subjunctive (concession, restriction) and conditional (rumours, hypothetical past).",
+        "vocabulary": [
+          {
+            "french": "quoique",
+            "english": "although"
+          },
+          {
+            "french": "pourvu que",
+            "english": "provided that"
+          },
+          {
+            "french": "à supposer que",
+            "english": "assuming that"
+          },
+          {
+            "french": "il se pourrait que",
+            "english": "it could be that"
+          },
+          {
+            "french": "selon certaines sources",
+            "english": "according to some sources"
+          },
+          {
+            "french": "un fait non confirmé",
+            "english": "unconfirmed fact"
+          },
+          {
+            "french": "une hypothèse rétrospective",
+            "english": "retrospective hypothesis"
+          },
+          {
+            "french": "une nuance de réserve",
+            "english": "nuance of caution"
+          },
+          {
+            "french": "une concession implicite",
+            "english": "implicit concession"
+          },
+          {
+            "french": "un conditionnel journalistique",
+            "english": "journalistic conditional"
+          }
+        ],
+        "grammar": {
+          "title": "Subjunctive for uncertainty and conditional for caution",
+          "text": "At C1 level, the subjunctive appears after expressions of concession, restriction, possibility, and uncertainty: Quoique cette réforme soit ambitieuse, elle reste fragile. (Although this reform is ambitious, it remains fragile.) The conditional can indicate unconfirmed information in journalism: Le ministre aurait démissionné. (The minister has reportedly resigned.) It can also express an unreal past hypothesis: Il aurait accepté s'il avait été consulté. (He would have accepted if he had been consulted.)"
+        },
+        "reading": "Quoique la mesure soit présentée comme nécessaire, plusieurs experts doutent qu'elle produise les effets annoncés. Selon certaines sources, le comité aurait envisagé une réforme plus radicale. À supposer que ces informations soient exactes, le gouvernement chercherait à gagner du temps. Cette prudence révèle une forte nuance de réserve dans le débat public.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does the journalistic conditional express in « Le ministre aurait démissionné »?",
+            "options": [
+              "unconfirmed information",
+              "a direct command",
+              "a proven scientific fact",
+              "a present habit"
+            ],
+            "correctKey": "unconfirmed information"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression is followed by the subjunctive?",
+            "options": [
+              "quoique",
+              "parce que",
+              "pendant que",
+              "après que"
+            ],
+            "correctKey": "quoique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the correct sentence.",
+            "options": [
+              "Quoique la mesure soit ambitieuse, elle reste fragile.",
+              "Quoique la mesure est ambitieuse, elle reste fragile.",
+              "Quoique la mesure sera ambitieuse, elle reste fragile.",
+              "Quoique la mesure était ambitieuse, elle reste fragile."
+            ],
+            "correctKey": "Quoique la mesure soit ambitieuse, elle reste fragile."
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Selon certaines sources, le ministre *** démissionné hier soir.",
+            "correctKey": "aurait"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Pourvu que le rapport *** publié à temps, le débat pourra commencer.",
+            "correctKey": "soit"
+          }
+        ]
+      },
+      {
+        "title": "Les variations stylistiques",
+        "description": "Subject-verb inversions, style registers, and narrative perspective shifts.",
+        "vocabulary": [
+          {
+            "french": "une inversion stylistique",
+            "english": "stylistic inversion"
+          },
+          {
+            "french": "un registre soutenu",
+            "english": "formal register"
+          },
+          {
+            "french": "un registre familier",
+            "english": "informal register"
+          },
+          {
+            "french": "une focalisation interne",
+            "english": "internal focalization"
+          },
+          {
+            "french": "une focalisation externe",
+            "english": "external focalization"
+          },
+          {
+            "french": "un narrateur omniscient",
+            "english": "omniscient narrator"
+          },
+          {
+            "french": "une perspective narrative",
+            "english": "narrative perspective"
+          },
+          {
+            "french": "un effet d'emphase",
+            "english": "emphatic effect"
+          },
+          {
+            "french": "un déplacement syntaxique",
+            "english": "syntactic shift"
+          },
+          {
+            "french": "une tournure littéraire",
+            "english": "literary construction"
+          }
+        ],
+        "grammar": {
+          "title": "Inversion and register as stylistic tools",
+          "text": "In formal or literary French, subject-verb inversion can create emphasis or elegance: Rarement une telle décision fut contestée. (Rarely was such a decision contested.) Register also shapes tone: Cela ne me convient guère is formal, while Ça ne me va pas is informal. Narrative perspective shifts depend on focalization: internal focalization follows a character's perception; external focalization describes observable facts only."
+        },
+        "reading": "Rarement vit-on une assemblée aussi divisée. Le narrateur, d'abord extérieur aux événements, adopta peu à peu une focalisation interne afin de révéler les hésitations du personnage principal. Cette inversion stylistique, jointe à un registre soutenu, conféra au récit un effet d'emphase. Ainsi, la perspective narrative devint elle-même un outil d'analyse.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does stylistic inversion often create?",
+            "options": [
+              "an emphatic or literary effect",
+              "a grammatical error only",
+              "a future meaning",
+              "a direct quotation"
+            ],
+            "correctKey": "an emphatic or literary effect"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase belongs to a formal register?",
+            "options": [
+              "Cela ne me convient guère.",
+              "Ça me va pas.",
+              "C'est trop nul.",
+              "T'inquiète."
+            ],
+            "correctKey": "Cela ne me convient guère."
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does internal focalization emphasize?",
+            "options": [
+              "a character's perception",
+              "only external facts",
+              "legal terminology",
+              "scientific measurement"
+            ],
+            "correctKey": "a character's perception"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Rarement ***-on une assemblée aussi divisée.",
+            "correctKey": "vit"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le narrateur adopte une focalisation *** pour suivre les pensées du personnage.",
+            "correctKey": "interne"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Idioms, Rhetoric and Impersonal Structures",
+    "description": "Study high-level idiomatic constructions, figures of speech in argumentation, and complex impersonal expressions.",
+    "lessons": [
+      {
+        "title": "Les constructions idiomatiques de haut niveau",
+        "description": "Sophisticated idiomatic expressions, literary figures, and advanced colloquial registers.",
+        "vocabulary": [
+          {
+            "french": "à bien des égards",
+            "english": "in many respects"
+          },
+          {
+            "french": "mettre en lumière",
+            "english": "to highlight"
+          },
+          {
+            "french": "faire fi de",
+            "english": "to disregard"
+          },
+          {
+            "french": "prendre le contre-pied de",
+            "english": "to take the opposite view of"
+          },
+          {
+            "french": "tenir pour acquis",
+            "english": "to take for granted"
+          },
+          {
+            "french": "aller de soi",
+            "english": "to be self-evident"
+          },
+          {
+            "french": "ne pas être sans rappeler",
+            "english": "to be reminiscent of"
+          },
+          {
+            "french": "faire l'objet de",
+            "english": "to be subject to"
+          },
+          {
+            "french": "mettre à mal",
+            "english": "to undermine"
+          },
+          {
+            "french": "à rebours de",
+            "english": "contrary to/against the grain of"
+          }
+        ],
+        "grammar": {
+          "title": "Using idiomatic constructions for argumentative sophistication",
+          "text": "Advanced idioms allow concise and elegant argumentation. Faire fi de means 'to disregard': Le rapport fait fi des contraintes sociales. (The report disregards social constraints.) Ne pas être sans rappeler is a litotic form meaning 'to be reminiscent of': Cette crise n'est pas sans rappeler celle de 2008. Such constructions create nuance without excessive directness."
+        },
+        "reading": "À bien des égards, cette réforme met en lumière les contradictions du débat public. Ses défenseurs tiennent pour acquis que l'efficacité économique va de soi, tandis que ses opposants prennent le contre-pied de cette logique. Faire fi des conséquences sociales reviendrait pourtant à mettre à mal la confiance institutionnelle.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « faire fi de » mean?",
+            "options": [
+              "to disregard",
+              "to prove",
+              "to celebrate",
+              "to translate"
+            ],
+            "correctKey": "to disregard"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression means 'to take for granted'?",
+            "options": [
+              "tenir pour acquis",
+              "mettre en lumière",
+              "prendre le contre-pied de",
+              "faire l'objet de"
+            ],
+            "correctKey": "tenir pour acquis"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the effect of advanced idiomatic constructions?",
+            "options": [
+              "they add nuance and sophistication",
+              "they remove meaning",
+              "they always make speech informal",
+              "they replace all verbs"
+            ],
+            "correctKey": "they add nuance and sophistication"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Cette étude *** en lumière les contradictions du système.",
+            "correctKey": "met"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Faire *** des conséquences sociales serait irresponsable.",
+            "correctKey": "fi"
+          }
+        ]
+      },
+      {
+        "title": "Les figures de style dans l'argumentation",
+        "description": "Using metaphors, litotes, anaphors, and hyperbole to strengthen essays.",
+        "vocabulary": [
+          {
+            "french": "une métaphore filée",
+            "english": "extended metaphor"
+          },
+          {
+            "french": "une litote",
+            "english": "litotes/understatement"
+          },
+          {
+            "french": "une anaphore rhétorique",
+            "english": "rhetorical anaphora"
+          },
+          {
+            "french": "une hyperbole",
+            "english": "hyperbole"
+          },
+          {
+            "french": "une antithèse",
+            "english": "antithesis"
+          },
+          {
+            "french": "un parallélisme",
+            "english": "parallelism"
+          },
+          {
+            "french": "une gradation",
+            "english": "gradation/climax"
+          },
+          {
+            "french": "un effet persuasif",
+            "english": "persuasive effect"
+          },
+          {
+            "french": "un procédé rhétorique",
+            "english": "rhetorical device"
+          },
+          {
+            "french": "renforcer l'argumentation",
+            "english": "to strengthen argumentation"
+          }
+        ],
+        "grammar": {
+          "title": "Rhetorical devices as argumentative tools",
+          "text": "Figures of speech are not only decorative; they structure persuasion. An anaphora repeats an expression for emphasis: Nous voulons une école juste, nous voulons une école ouverte. A litotes says less to imply more: Ce résultat n'est pas négligeable. (This result is far from negligible.) Metaphors can frame an argument conceptually: La société est à la croisée des chemins. (Society is at a crossroads.)"
+        },
+        "reading": "Dans un essai, une anaphore rhétorique peut donner du rythme à l'argumentation : il faut convaincre, il faut agir, il faut persévérer. La litote, plus subtile, permet d'atténuer l'expression tout en renforçant le jugement. Quant à la métaphore filée, elle transforme une idée abstraite en image durable. Ces procédés rhétoriques produisent un effet persuasif considérable.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which figure repeats an expression for emphasis?",
+            "options": [
+              "une anaphore rhétorique",
+              "une litote",
+              "une hyperbole",
+              "une antithèse"
+            ],
+            "correctKey": "une anaphore rhétorique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does a litotes do?",
+            "options": [
+              "says less to imply more",
+              "exaggerates without limit",
+              "repeats sounds only",
+              "lists dates"
+            ],
+            "correctKey": "says less to imply more"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the main argumentative function of rhetorical devices?",
+            "options": [
+              "to strengthen persuasion",
+              "to avoid structure",
+              "to remove nuance",
+              "to replace evidence entirely"
+            ],
+            "correctKey": "to strengthen persuasion"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "« Ce résultat n'est pas négligeable » est une ***.",
+            "correctKey": "litote"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La répétition « il faut convaincre, il faut agir » constitue une *** rhétorique.",
+            "correctKey": "anaphore"
+          }
+        ]
+      },
+      {
+        "title": "Les tournures impersonnelles complexes",
+        "description": "Impersonal structures (il s'ensuit que, il importe de, il reste à).",
+        "vocabulary": [
+          {
+            "french": "il s'ensuit que",
+            "english": "it follows that"
+          },
+          {
+            "french": "il importe de",
+            "english": "it is important to"
+          },
+          {
+            "french": "il reste à",
+            "english": "it remains to"
+          },
+          {
+            "french": "il n'en demeure pas moins que",
+            "english": "nevertheless, the fact remains that"
+          },
+          {
+            "french": "il convient de",
+            "english": "it is appropriate to"
+          },
+          {
+            "french": "il va sans dire que",
+            "english": "it goes without saying that"
+          },
+          {
+            "french": "il y a lieu de",
+            "english": "there is reason to"
+          },
+          {
+            "french": "il ressort que",
+            "english": "it emerges that"
+          },
+          {
+            "french": "il incombe à",
+            "english": "it is incumbent upon"
+          },
+          {
+            "french": "il apparaît que",
+            "english": "it appears that"
+          }
+        ],
+        "grammar": {
+          "title": "Complex impersonal structures for formal argumentation",
+          "text": "Complex impersonal structures create a formal, objective tone. Il s'ensuit que introduces logical consequence: Les données sont insuffisantes; il s'ensuit que la conclusion reste fragile. (The data are insufficient; it follows that the conclusion remains fragile.) Il importe de and il convient de introduce necessity or recommendation. Il incombe à identifies responsibility: Il incombe aux autorités d'agir. (It is incumbent upon the authorities to act.)"
+        },
+        "reading": "Il ressort de l'analyse que les mesures adoptées demeurent insuffisantes. Il s'ensuit que la stratégie devra être révisée à moyen terme. Il n'en demeure pas moins que certains progrès sont perceptibles. Il importe désormais de clarifier les responsabilités, car il incombe aux institutions de garantir la cohérence de l'action publique.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « il s'ensuit que » express?",
+            "options": [
+              "logical consequence",
+              "personal preference",
+              "direct order",
+              "chronological memory"
+            ],
+            "correctKey": "logical consequence"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which structure identifies responsibility?",
+            "options": [
+              "il incombe à",
+              "il va sans dire que",
+              "il reste à",
+              "il ressort que"
+            ],
+            "correctKey": "il incombe à"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Why are impersonal structures useful in formal writing?",
+            "options": [
+              "they create an objective tone",
+              "they make the text childish",
+              "they remove logical links",
+              "they force informal speech"
+            ],
+            "correctKey": "they create an objective tone"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les données sont insuffisantes ; il *** que la conclusion reste fragile.",
+            "correctKey": "s'ensuit"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Il *** aux institutions de garantir la cohérence de l'action publique.",
+            "correctKey": "incombe"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Participles, Negation and Literary Connectors",
+    "description": "Refine your usage of participles, master the expletive negation 'ne', and use literary transition words.",
+    "lessons": [
+      {
+        "title": "Le participe présent et le gérondif avancés",
+        "description": "Complex structures with present participles and gerunds (expressing cause, time, or opposition).",
+        "vocabulary": [
+          {
+            "french": "le participe présent",
+            "english": "present participle"
+          },
+          {
+            "french": "le gérondif",
+            "english": "gerund"
+          },
+          {
+            "french": "en admettant que",
+            "english": "assuming that"
+          },
+          {
+            "french": "tout en reconnaissant",
+            "english": "while acknowledging"
+          },
+          {
+            "french": "étant donné",
+            "english": "given"
+          },
+          {
+            "french": "s'agissant de",
+            "english": "as regards/concerning"
+          },
+          {
+            "french": "ayant constaté",
+            "english": "having observed"
+          },
+          {
+            "french": "une valeur causale",
+            "english": "causal value"
+          },
+          {
+            "french": "une simultanéité",
+            "english": "simultaneity"
+          },
+          {
+            "french": "une opposition implicite",
+            "english": "implicit opposition"
+          }
+        ],
+        "grammar": {
+          "title": "Advanced uses of present participles and gerunds",
+          "text": "The present participle can express cause, time, or explanation in a condensed style: Ayant constaté l'échec du projet, le comité a révisé sa stratégie. (Having observed the project's failure, the committee revised its strategy.) The gerund, formed with en + present participle, often expresses simultaneity or manner: Il défend son idée en reconnaissant ses limites. (He defends his idea while acknowledging its limits.) At C1 level, these structures help create concise, elegant argumentation."
+        },
+        "reading": "Ayant constaté l'ampleur des inégalités, les chercheurs ont proposé une réforme ambitieuse. Tout en reconnaissant les limites méthodologiques de leur enquête, ils soulignent la cohérence des résultats. S'agissant de l'impact social, plusieurs données demeurent difficiles à interpréter. En croisant les sources, l'équipe parvient toutefois à formuler une conclusion nuancée.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « ayant constaté » express in the reading?",
+            "options": [
+              "a prior observation leading to an action",
+              "a future prediction",
+              "a direct command",
+              "a simple negation"
+            ],
+            "correctKey": "a prior observation leading to an action"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which structure is a gerund?",
+            "options": [
+              "en croisant",
+              "ayant constaté",
+              "étant donné",
+              "s'agissant de"
+            ],
+            "correctKey": "en croisant"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is a common C1 function of participial structures?",
+            "options": [
+              "to create concise and elegant argumentation",
+              "to replace all verbs",
+              "to express only commands",
+              "to avoid logical links"
+            ],
+            "correctKey": "to create concise and elegant argumentation"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "*** constaté l'ampleur du problème, le comité a réagi rapidement.",
+            "correctKey": "Ayant"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Il défend sa position *** reconnaissant ses limites.",
+            "correctKey": "en"
+          }
+        ]
+      },
+      {
+        "title": "Les nuances de la négation (ne explétif)",
+        "description": "The optional, literary 'ne' explétif after verbs of fear, prevention, or comparison.",
+        "vocabulary": [
+          {
+            "french": "le ne explétif",
+            "english": "expletive ne"
+          },
+          {
+            "french": "craindre que",
+            "english": "to fear that"
+          },
+          {
+            "french": "redouter que",
+            "english": "to dread that"
+          },
+          {
+            "french": "empêcher que",
+            "english": "to prevent that"
+          },
+          {
+            "french": "éviter que",
+            "english": "to avoid that"
+          },
+          {
+            "french": "avant que",
+            "english": "before"
+          },
+          {
+            "french": "à moins que",
+            "english": "unless"
+          },
+          {
+            "french": "plus que",
+            "english": "more than"
+          },
+          {
+            "french": "une tournure littéraire",
+            "english": "literary construction"
+          },
+          {
+            "french": "une nuance stylistique",
+            "english": "stylistic nuance"
+          }
+        ],
+        "grammar": {
+          "title": "Using the expletive ne",
+          "text": "The ne explétif is not a true negation. It appears in formal or literary French after expressions of fear, prevention, comparison, and some conjunctions such as avant que and à moins que. Example: Je crains qu'il ne soit trop tard. (I fear that it may be too late.) The meaning is not negative; it does not mean 'is not too late'. It adds a formal stylistic nuance."
+        },
+        "reading": "Je crains que la décision ne soit prise trop rapidement. Les experts redoutent que les conséquences ne dépassent les prévisions initiales. Avant que le débat ne s'achève, plusieurs députés souhaitent proposer des garanties supplémentaires. À moins que le gouvernement ne modifie le texte, l'opposition refusera de le soutenir.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the function of the ne explétif?",
+            "options": [
+              "It adds a formal stylistic nuance without negating the meaning.",
+              "It always creates a negative sentence.",
+              "It replaces the subjunctive.",
+              "It indicates a future action."
+            ],
+            "correctKey": "It adds a formal stylistic nuance without negating the meaning."
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression can trigger the ne explétif?",
+            "options": [
+              "craindre que",
+              "savoir que",
+              "affirmer que",
+              "constater que"
+            ],
+            "correctKey": "craindre que"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Choose the sentence using ne explétif correctly.",
+            "options": [
+              "Je crains qu'il ne soit trop tard.",
+              "Je sais qu'il ne soit trop tard.",
+              "Il affirme qu'il ne soit prêt.",
+              "Je constate qu'il ne vienne."
+            ],
+            "correctKey": "Je crains qu'il ne soit trop tard."
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je crains qu'il ne *** trop tard.",
+            "correctKey": "soit"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Avant que le débat ne s'***, plusieurs élus veulent intervenir.",
+            "correctKey": "achève"
+          }
+        ]
+      },
+      {
+        "title": "Les adverbes de liaison littéraires",
+        "description": "Using literary connector adverbs (certes, partant, nonobstant, d'autant plus que).",
+        "vocabulary": [
+          {
+            "french": "certes",
+            "english": "admittedly/certainly"
+          },
+          {
+            "french": "partant",
+            "english": "therefore/consequently"
+          },
+          {
+            "french": "nonobstant",
+            "english": "notwithstanding"
+          },
+          {
+            "french": "d'autant plus que",
+            "english": "especially since/all the more so because"
+          },
+          {
+            "french": "du reste",
+            "english": "besides/moreover"
+          },
+          {
+            "french": "au demeurant",
+            "english": "incidentally/for that matter"
+          },
+          {
+            "french": "en cela",
+            "english": "in this respect"
+          },
+          {
+            "french": "ce faisant",
+            "english": "in doing so"
+          },
+          {
+            "french": "de surcroît",
+            "english": "moreover"
+          },
+          {
+            "french": "or",
+            "english": "now/yet in argumentation"
+          }
+        ],
+        "grammar": {
+          "title": "Literary connectors and argumentative progression",
+          "text": "Literary connectors create a formal and sophisticated argumentative flow. Certes introduces concession: Certes, la réforme est ambitieuse. Partant introduces consequence: Partant, elle exige des moyens importants. Nonobstant means 'despite' or 'notwithstanding' and belongs to a very formal register: Nonobstant ces objections, le projet demeure pertinent. D'autant plus que strengthens a justification: Cette mesure s'impose, d'autant plus que l'urgence est réelle."
+        },
+        "reading": "Certes, la réforme proposée demeure imparfaite ; nonobstant ses faiblesses, elle répond à une urgence sociale manifeste. Les institutions doivent agir avec cohérence ; partant, elles ne peuvent différer indéfiniment la mise en œuvre des mesures annoncées. Cette exigence est d'autant plus forte que la confiance publique s'érode. Du reste, l'inaction risquerait d'aggraver les tensions existantes.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector introduces a concession?",
+            "options": [
+              "certes",
+              "partant",
+              "d'autant plus que",
+              "ce faisant"
+            ],
+            "correctKey": "certes"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « partant » express?",
+            "options": [
+              "consequence",
+              "direct opposition only",
+              "chronological memory",
+              "personal doubt"
+            ],
+            "correctKey": "consequence"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector belongs to a very formal register and means 'notwithstanding'?",
+            "options": [
+              "nonobstant",
+              "donc",
+              "mais",
+              "puis"
+            ],
+            "correctKey": "nonobstant"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "***, la réforme demeure imparfaite ; elle répond néanmoins à une urgence.",
+            "correctKey": "Certes"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les faits sont établis ; ***, une décision s'impose.",
+            "correctKey": "partant"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Pronominals, Restrictions and Nominal Structures",
+    "description": "Master agreement of pronominal verbs, express complex restrictions, and structure ideas using nominal syntax.",
+    "lessons": [
+      {
+        "title": "L'accord du participe passé avec les pronominaux",
+        "description": "Tricky agreement rules for pronominal verbs (reflexive/reciprocal direct/indirect objects).",
+        "vocabulary": [
+          {
+            "french": "un verbe pronominal",
+            "english": "pronominal verb"
+          },
+          {
+            "french": "un complément d'objet direct",
+            "english": "direct object"
+          },
+          {
+            "french": "un complément d'objet indirect",
+            "english": "indirect object"
+          },
+          {
+            "french": "un accord du participe passé",
+            "english": "past participle agreement"
+          },
+          {
+            "french": "se rendre compte",
+            "english": "to realize"
+          },
+          {
+            "french": "se parler",
+            "english": "to speak to each other"
+          },
+          {
+            "french": "se voir",
+            "english": "to see each other"
+          },
+          {
+            "french": "se succéder",
+            "english": "to follow one another"
+          },
+          {
+            "french": "une règle d'accord",
+            "english": "agreement rule"
+          },
+          {
+            "french": "un pronom réfléchi",
+            "english": "reflexive pronoun"
+          }
+        ],
+        "grammar": {
+          "title": "Agreement with pronominal verbs",
+          "text": "With pronominal verbs, the past participle agrees when the reflexive pronoun is a direct object. Example: Elles se sont vues. (They saw each other.) Here se is direct, so vues agrees. It does not agree when the reflexive pronoun is indirect: Elles se sont parlé. (They spoke to each other.) Some fixed expressions do not agree because the direct object follows or is external: Elles se sont rendu compte de l'erreur. (They realized the mistake.)"
+        },
+        "reading": "Les chercheuses se sont rencontrées lors d'un colloque international. Elles se sont parlé longuement avant de présenter leurs travaux. Plus tard, elles se sont rendu compte que leurs analyses se complétaient. Les hypothèses qu'elles se sont formulées ont ensuite nourri un article commun. Ces échanges se sont succédé pendant plusieurs mois.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which sentence shows correct agreement with a direct reflexive pronoun?",
+            "options": [
+              "Elles se sont vues.",
+              "Elles se sont vu.",
+              "Elles se sont parlées.",
+              "Elles se sont rendu comptees."
+            ],
+            "correctKey": "Elles se sont vues."
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Why is there no agreement in « Elles se sont parlé »?",
+            "options": [
+              "The reflexive pronoun is an indirect object.",
+              "The verb is in the future.",
+              "The subject is singular.",
+              "The sentence is negative."
+            ],
+            "correctKey": "The reflexive pronoun is an indirect object."
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression usually has no agreement in this structure?",
+            "options": [
+              "se rendre compte",
+              "se voir",
+              "se rencontrer",
+              "se reconnaître"
+            ],
+            "correctKey": "se rendre compte"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Elles se sont *** lors du colloque.",
+            "correctKey": "rencontrées"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Elles se sont *** compte de leur erreur.",
+            "correctKey": "rendu"
+          }
+        ]
+      },
+      {
+        "title": "L'expression de la restriction et de l'exclusion",
+        "description": "Using ne... que, hormis, excepté, and sans pour autant.",
+        "vocabulary": [
+          {
+            "french": "ne... que",
+            "english": "only"
+          },
+          {
+            "french": "hormis",
+            "english": "apart from"
+          },
+          {
+            "french": "excepté",
+            "english": "except"
+          },
+          {
+            "french": "à l'exception de",
+            "english": "with the exception of"
+          },
+          {
+            "french": "sans pour autant",
+            "english": "without however"
+          },
+          {
+            "french": "une restriction",
+            "english": "restriction"
+          },
+          {
+            "french": "une exclusion",
+            "english": "exclusion"
+          },
+          {
+            "french": "un cas particulier",
+            "english": "special case"
+          },
+          {
+            "french": "une portée limitée",
+            "english": "limited scope"
+          },
+          {
+            "french": "nuancer une affirmation",
+            "english": "to qualify a statement"
+          }
+        ],
+        "grammar": {
+          "title": "Restriction and exclusion in formal French",
+          "text": "Ne... que means 'only' and is restrictive, not negative: Cette mesure ne concerne que les grandes entreprises. (This measure only concerns large companies.) Hormis, excepté, and à l'exception de introduce exclusions: Hormis quelques cas particuliers, la règle s'applique partout. Sans pour autant allows nuance: La réforme est ambitieuse sans pour autant résoudre tous les problèmes. (The reform is ambitious without, however, solving all problems.)"
+        },
+        "reading": "Cette politique ne vise que les secteurs les plus polluants. Hormis quelques cas particuliers, toutes les entreprises devront publier un rapport environnemental. La mesure renforce la transparence sans pour autant supprimer les difficultés de contrôle. À l'exception des petites structures, les acteurs économiques seront soumis aux mêmes obligations.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « ne... que » mean?",
+            "options": [
+              "only",
+              "never",
+              "not anymore",
+              "no one"
+            ],
+            "correctKey": "only"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression introduces an exclusion?",
+            "options": [
+              "hormis",
+              "partant",
+              "certes",
+              "d'autant plus que"
+            ],
+            "correctKey": "hormis"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « sans pour autant » do in argumentation?",
+            "options": [
+              "It qualifies a statement.",
+              "It creates a direct command.",
+              "It forms a passive verb.",
+              "It marks chronological order only."
+            ],
+            "correctKey": "It qualifies a statement."
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Cette politique ne vise *** les secteurs les plus polluants.",
+            "correctKey": "que"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "*** quelques cas particuliers, la règle s'applique partout.",
+            "correctKey": "Hormis"
+          }
+        ]
+      },
+      {
+        "title": "Les structures nominales complexes",
+        "description": "Nominalization of clauses to achieve a concise, formal, and authoritative writing style.",
+        "vocabulary": [
+          {
+            "french": "la nominalisation",
+            "english": "nominalization"
+          },
+          {
+            "french": "une formulation synthétique",
+            "english": "synthetic/concise formulation"
+          },
+          {
+            "french": "un groupe nominal complexe",
+            "english": "complex noun phrase"
+          },
+          {
+            "french": "la mise en œuvre",
+            "english": "implementation"
+          },
+          {
+            "french": "la prise en compte",
+            "english": "consideration/taking into account"
+          },
+          {
+            "french": "la remise en question",
+            "english": "questioning/reassessment"
+          },
+          {
+            "french": "l'élaboration d'une stratégie",
+            "english": "development of a strategy"
+          },
+          {
+            "french": "l'évaluation des impacts",
+            "english": "impact assessment"
+          },
+          {
+            "french": "la réduction des coûts",
+            "english": "cost reduction"
+          },
+          {
+            "french": "une densité informationnelle",
+            "english": "informational density"
+          }
+        ],
+        "grammar": {
+          "title": "Nominalization for formal and concise style",
+          "text": "Nominalization turns actions or clauses into nouns, making writing more concise and formal. Example: On a mis en œuvre la réforme → La mise en œuvre de la réforme. (The reform was implemented → The implementation of the reform.) It increases informational density, but overuse can make a text heavy. At C1 level, it is useful for academic, administrative, and analytical writing."
+        },
+        "reading": "La mise en œuvre de la réforme exige une prise en compte rigoureuse des contraintes locales. L'évaluation des impacts sociaux précède l'élaboration d'une stratégie de compensation. Cette formulation synthétique renforce la densité informationnelle du texte. Toutefois, une nominalisation excessive peut nuire à la lisibilité de l'analyse.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the effect of nominalization in formal writing?",
+            "options": [
+              "It creates a concise and formal style.",
+              "It always makes texts informal.",
+              "It removes all nouns.",
+              "It prevents argumentation."
+            ],
+            "correctKey": "It creates a concise and formal style."
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase is a nominalized form?",
+            "options": [
+              "la mise en œuvre de la réforme",
+              "on réforme vite",
+              "ils mettent en œuvre",
+              "nous agirons demain"
+            ],
+            "correctKey": "la mise en œuvre de la réforme"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What risk comes with excessive nominalization?",
+            "options": [
+              "reduced readability",
+              "too much dialogue",
+              "incorrect gender agreement only",
+              "loss of all vocabulary"
+            ],
+            "correctKey": "reduced readability"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La *** en œuvre de la réforme exige une analyse préalable.",
+            "correctKey": "mise"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'*** des impacts sociaux précède l'élaboration d'une stratégie.",
+            "correctKey": "évaluation"
+          }
+        ]
+      }
+    ]
+  }
+]

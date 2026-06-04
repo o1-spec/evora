@@ -1,0 +1,776 @@
+[
+  {
+    "title": "Stylistique",
+    "description": "Exercices de style pour adapter le niveau de langue et écrire de façon convaincante.",
+    "lessons": [
+      {
+        "title": "Les registres de langue et les transitions",
+        "description": "Mastering fluid switching between formal, standard, and technical registers.",
+        "vocabulary": [
+          {
+            "french": "le registre soutenu",
+            "english": "formal register"
+          },
+          {
+            "french": "le registre courant",
+            "english": "standard register"
+          },
+          {
+            "french": "le registre spécialisé",
+            "english": "technical register"
+          },
+          {
+            "french": "une transition discursive",
+            "english": "discursive transition"
+          },
+          {
+            "french": "la cohérence énonciative",
+            "english": "enunciative coherence"
+          },
+          {
+            "french": "un marqueur de progression",
+            "english": "progression marker"
+          },
+          {
+            "french": "une reformulation nuancée",
+            "english": "nuanced reformulation"
+          },
+          {
+            "french": "la congruence stylistique",
+            "english": "stylistic congruence"
+          },
+          {
+            "french": "à cet égard",
+            "english": "in this regard"
+          },
+          {
+            "french": "de surcroît",
+            "english": "moreover"
+          }
+        ],
+        "grammar": {
+          "title": "Register shifts and stylistic coherence",
+          "text": "At C2 level, speakers and writers may move between formal, standard, and technical registers while preserving coherence. The transition must feel justified by context. Example: 'Cette hypothèse mérite examen. À cet égard, les données empiriques confirment notre intuition.' The connector ensures a smooth stylistic transition."
+        },
+        "reading": "La maîtrise des registres de langue ne consiste pas à juxtaposer des niveaux d'expression hétérogènes. Elle suppose au contraire une cohérence énonciative permettant d'adapter le discours à son destinataire. À cet égard, les transitions discursives jouent un rôle fondamental. De surcroît, la congruence stylistique renforce la crédibilité de l'argumentation et facilite sa réception.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What strengthens the credibility of the argumentation according to the text?",
+            "options": [
+              "la congruence stylistique",
+              "la répétition systématique",
+              "l'ambiguïté lexicale",
+              "la rupture syntaxique"
+            ],
+            "correctKey": "la congruence stylistique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the purpose of discursive transitions?",
+            "options": [
+              "to ensure coherence and progression",
+              "to eliminate nuance",
+              "to simplify grammar",
+              "to create contradictions"
+            ],
+            "correctKey": "to ensure coherence and progression"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector in the passage introduces an additional argument?",
+            "options": [
+              "De surcroît",
+              "À cet égard",
+              "Auparavant",
+              "Toutefois"
+            ],
+            "correctKey": "De surcroît"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les transitions discursives jouent un rôle ***.",
+            "correctKey": "fondamental"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La congruence stylistique renforce la *** de l'argumentation.",
+            "correctKey": "crédibilité"
+          }
+        ]
+      },
+      {
+        "title": "L'art de la rhétorique et de l'éloquence",
+        "description": "Studying speech structure, persuasive logic, and oral arguments rhythm.",
+        "vocabulary": [
+          {
+            "french": "la captatio benevolentiae",
+            "english": "winning the audience's goodwill"
+          },
+          {
+            "french": "une progression dialectique",
+            "english": "dialectical progression"
+          },
+          {
+            "french": "l'amplification oratoire",
+            "english": "oratorical amplification"
+          },
+          {
+            "french": "la force persuasive",
+            "english": "persuasive force"
+          },
+          {
+            "french": "une période oratoire",
+            "english": "oratorical period"
+          },
+          {
+            "french": "le rythme ternaire",
+            "english": "three-part rhythm"
+          },
+          {
+            "french": "une concession stratégique",
+            "english": "strategic concession"
+          },
+          {
+            "french": "l'art de la réfutation",
+            "english": "art of refutation"
+          },
+          {
+            "french": "une clausule",
+            "english": "rhetorical cadence"
+          },
+          {
+            "french": "la persuasion raisonnée",
+            "english": "reasoned persuasion"
+          }
+        ],
+        "grammar": {
+          "title": "Periodic sentences and rhetorical rhythm",
+          "text": "Advanced rhetoric often relies on periodic sentences that delay the main conclusion until the end. Example: 'Après avoir examiné les faits, évalué les objections et pesé les conséquences, nous devons agir.' This structure creates suspense and emphasis."
+        },
+        "reading": "L'éloquence repose autant sur la logique que sur le rythme. Une captatio benevolentiae efficace prépare l'auditoire à recevoir l'argumentation. La progression dialectique permet ensuite d'examiner les objections avant de les réfuter. Enfin, le rythme ternaire et l'amplification oratoire donnent à la parole une force persuasive durable.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What prepares the audience to receive the argument?",
+            "options": [
+              "la captatio benevolentiae",
+              "la litote",
+              "la prosodie",
+              "la parodie"
+            ],
+            "correctKey": "la captatio benevolentiae"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What gives speech lasting persuasive power?",
+            "options": [
+              "le rythme ternaire et l'amplification oratoire",
+              "la répétition mécanique",
+              "la neutralité absolue",
+              "la fragmentation narrative"
+            ],
+            "correctKey": "le rythme ternaire et l'amplification oratoire"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does dialectical progression allow the speaker to do?",
+            "options": [
+              "examine and refute objections",
+              "avoid all counterarguments",
+              "simplify vocabulary",
+              "eliminate structure"
+            ],
+            "correctKey": "examine and refute objections"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La progression *** permet d'examiner les objections.",
+            "correctKey": "dialectique"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'amplification oratoire donne à la parole une force *** durable.",
+            "correctKey": "persuasive"
+          }
+        ]
+      },
+      {
+        "title": "La structure de l'essai argumentatif expert",
+        "description": "Analyzing advanced essay outlines, thesis statements, and syntheses.",
+        "vocabulary": [
+          {
+            "french": "une problématique",
+            "english": "research question"
+          },
+          {
+            "french": "une thèse directrice",
+            "english": "guiding thesis"
+          },
+          {
+            "french": "une synthèse critique",
+            "english": "critical synthesis"
+          },
+          {
+            "french": "un raisonnement concessif",
+            "english": "concessive reasoning"
+          },
+          {
+            "french": "une démonstration rigoureuse",
+            "english": "rigorous demonstration"
+          },
+          {
+            "french": "la hiérarchisation des arguments",
+            "english": "hierarchization of arguments"
+          },
+          {
+            "french": "une articulation logique",
+            "english": "logical articulation"
+          },
+          {
+            "french": "une perspective dialectique",
+            "english": "dialectical perspective"
+          },
+          {
+            "french": "en définitive",
+            "english": "ultimately"
+          },
+          {
+            "french": "il convient de souligner",
+            "english": "it should be emphasized"
+          }
+        ],
+        "grammar": {
+          "title": "Architecting complex argumentation",
+          "text": "Expert essays progress from a clearly defined problem to a nuanced synthesis. Use connectors to guide the reader: 'Certes', 'Cependant', 'En définitive'. Example: 'Certes, cette position semble convaincante. Cependant, elle présente plusieurs limites. En définitive, une approche nuancée s'impose.'"
+        },
+        "reading": "Un essai argumentatif expert s'organise autour d'une problématique précise. Chaque partie contribue à une démonstration rigoureuse fondée sur la hiérarchisation des arguments. La perspective dialectique permet d'intégrer des points de vue divergents sans sacrifier la cohérence générale. En définitive, la synthèse critique dépasse l'opposition initiale pour proposer une réflexion plus complexe.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the foundation of an expert essay?",
+            "options": [
+              "une problématique précise",
+              "une anecdote personnelle",
+              "une description poétique",
+              "une chronologie exhaustive"
+            ],
+            "correctKey": "une problématique précise"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does the dialectical perspective allow?",
+            "options": [
+              "integrating divergent viewpoints",
+              "avoiding complexity",
+              "removing counterarguments",
+              "simplifying vocabulary"
+            ],
+            "correctKey": "integrating divergent viewpoints"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the role of the critical synthesis?",
+            "options": [
+              "to move beyond the initial opposition",
+              "to repeat previous arguments",
+              "to summarize facts only",
+              "to introduce a new topic"
+            ],
+            "correctKey": "to move beyond the initial opposition"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Chaque partie contribue à une démonstration ***.",
+            "correctKey": "rigoureuse"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La *** critique dépasse l'opposition initiale.",
+            "correctKey": "synthèse"
+          }
+        ]
+      },
+      {
+        "title": "Les subtilités de l'ironie et du sarcasme",
+        "description": "Recognizing litotes, antiphrasis, and subtle critical distance in texts.",
+        "vocabulary": [
+          {
+            "french": "l'antiphrase",
+            "english": "antiphrasis"
+          },
+          {
+            "french": "la litote",
+            "english": "litotes"
+          },
+          {
+            "french": "une distance critique",
+            "english": "critical distance"
+          },
+          {
+            "french": "le sarcasme",
+            "english": "sarcasm"
+          },
+          {
+            "french": "une ironie feutrée",
+            "english": "subtle irony"
+          },
+          {
+            "french": "un décalage énonciatif",
+            "english": "enunciative gap"
+          },
+          {
+            "french": "la double lecture",
+            "english": "double reading"
+          },
+          {
+            "french": "une implication implicite",
+            "english": "implicit implication"
+          },
+          {
+            "french": "une pointe satirique",
+            "english": "satirical sting"
+          },
+          {
+            "french": "un effet de connivence",
+            "english": "effect of complicity"
+          }
+        ],
+        "grammar": {
+          "title": "Irony through semantic reversal",
+          "text": "Irony frequently relies on saying the opposite of what is meant. Example: 'Quelle brillante idée !' after an obvious mistake. The literal meaning is positive, but context reverses the interpretation. Readers infer the true meaning through tone and situation."
+        },
+        "reading": "L'ironie repose souvent sur un décalage entre le sens apparent et l'intention réelle. L'antiphrase constitue l'un de ses procédés les plus fréquents, tandis que la litote suggère davantage qu'elle n'exprime. Cette distance critique invite le lecteur à une double lecture. Lorsqu'elle se radicalise, l'ironie peut évoluer vers un sarcasme dont la pointe satirique devient particulièrement mordante.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What creates irony according to the passage?",
+            "options": [
+              "a gap between apparent meaning and real intention",
+              "a strict literal meaning",
+              "a narrative chronology",
+              "a grammatical inversion"
+            ],
+            "correctKey": "a gap between apparent meaning and real intention"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which figure suggests more than it explicitly states?",
+            "options": [
+              "la litote",
+              "l'hyperbole",
+              "la périphrase",
+              "l'allitération"
+            ],
+            "correctKey": "la litote"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What can irony become when intensified?",
+            "options": [
+              "le sarcasme",
+              "la neutralité",
+              "la narration",
+              "la description"
+            ],
+            "correctKey": "le sarcasme"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Cette distance critique invite le lecteur à une double ***.",
+            "correctKey": "lecture"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'ironie peut évoluer vers un *** particulièrement mordant.",
+            "correctKey": "sarcasme"
+          }
+        ]
+      },
+      {
+        "title": "L'écriture journalistique et éditoriale",
+        "description": "Writing hard-hitting headlines, lead paragraphs, and critical editorial articles.",
+        "vocabulary": [
+          {
+            "french": "un titre accrocheur",
+            "english": "a compelling headline"
+          },
+          {
+            "french": "le chapô",
+            "english": "lead paragraph"
+          },
+          {
+            "french": "une ligne éditoriale",
+            "english": "editorial line"
+          },
+          {
+            "french": "un angle d'attaque",
+            "english": "angle of approach"
+          },
+          {
+            "french": "la hiérarchisation de l'information",
+            "english": "information hierarchy"
+          },
+          {
+            "french": "une enquête approfondie",
+            "english": "in-depth investigation"
+          },
+          {
+            "french": "une tribune d'opinion",
+            "english": "opinion column"
+          },
+          {
+            "french": "un ton incisif",
+            "english": "incisive tone"
+          },
+          {
+            "french": "une mise en perspective",
+            "english": "contextualization"
+          },
+          {
+            "french": "la pertinence médiatique",
+            "english": "media relevance"
+          }
+        ],
+        "grammar": {
+          "title": "Journalistic concision and front-loaded information",
+          "text": "Advanced journalistic writing places the most important information at the beginning. Headlines are concise and impactful, while lead paragraphs summarize key facts. Example: 'Crise énergétique : le gouvernement annonce un plan d'urgence.' The essential information appears immediately."
+        },
+        "reading": "Un éditorial efficace repose sur une ligne éditoriale cohérente et un ton incisif. Dès le chapô, le journaliste établit un angle d'attaque clair afin de capter l'attention du lecteur. La hiérarchisation de l'information permet ensuite de distinguer l'essentiel de l'accessoire. Enfin, une mise en perspective rigoureuse renforce la pertinence médiatique de l'analyse.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the purpose of the chapô?",
+            "options": [
+              "To capture the reader's attention and summarize the topic",
+              "To provide legal references",
+              "To conclude the article",
+              "To list sources only"
+            ],
+            "correctKey": "To capture the reader's attention and summarize the topic"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What strengthens the media relevance of the analysis?",
+            "options": [
+              "une mise en perspective rigoureuse",
+              "une narration fictive",
+              "une rime régulière",
+              "une ambiguïté volontaire"
+            ],
+            "correctKey": "une mise en perspective rigoureuse"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What helps distinguish essential from secondary information?",
+            "options": [
+              "la hiérarchisation de l'information",
+              "la répétition",
+              "la digression",
+              "la paraphrase"
+            ],
+            "correctKey": "la hiérarchisation de l'information"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Dès le ***, le journaliste établit un angle d'attaque clair.",
+            "correctKey": "chapô"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une mise en perspective rigoureuse renforce la pertinence *** de l'analyse.",
+            "correctKey": "médiatique"
+          }
+        ]
+      },
+      {
+        "title": "Les néologismes et l'évolution lexicale",
+        "description": "Analyzing lexical creations, borrowings, and shifts in contemporary usage.",
+        "vocabulary": [
+          {
+            "french": "un néologisme",
+            "english": "neologism"
+          },
+          {
+            "french": "un emprunt linguistique",
+            "english": "linguistic borrowing"
+          },
+          {
+            "french": "la lexicalisation",
+            "english": "lexicalization"
+          },
+          {
+            "french": "une innovation sémantique",
+            "english": "semantic innovation"
+          },
+          {
+            "french": "un glissement de sens",
+            "english": "semantic shift"
+          },
+          {
+            "french": "la productivité lexicale",
+            "english": "lexical productivity"
+          },
+          {
+            "french": "un mot-valise",
+            "english": "portmanteau word"
+          },
+          {
+            "french": "une fréquence d'usage",
+            "english": "frequency of use"
+          },
+          {
+            "french": "la normalisation lexicale",
+            "english": "lexical standardization"
+          },
+          {
+            "french": "une évolution diachronique",
+            "english": "diachronic evolution"
+          }
+        ],
+        "grammar": {
+          "title": "Word formation and semantic evolution",
+          "text": "Languages evolve through borrowing, derivation, compounding, and semantic change. Example: 'Télétravail' emerged through lexical creation and became widespread through usage. At C2 level, understanding how words evolve is essential for stylistic analysis."
+        },
+        "reading": "L'évolution lexicale témoigne du dynamisme des langues. Les néologismes apparaissent souvent pour désigner des réalités inédites, tandis que les emprunts linguistiques traduisent l'influence de contacts culturels. Certains termes connaissent un glissement de sens progressif avant d'être intégrés à la norme. Cette évolution diachronique révèle la remarquable productivité lexicale du français contemporain.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Why do neologisms often appear?",
+            "options": [
+              "To name new realities",
+              "To simplify grammar",
+              "To replace syntax",
+              "To eliminate borrowings"
+            ],
+            "correctKey": "To name new realities"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does a semantic shift involve?",
+            "options": [
+              "A change in meaning",
+              "A change in spelling only",
+              "A change in pronunciation only",
+              "A change in punctuation"
+            ],
+            "correctKey": "A change in meaning"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does the text highlight about French?",
+            "options": [
+              "Its lexical productivity",
+              "Its grammatical rigidity",
+              "Its lack of innovation",
+              "Its isolation"
+            ],
+            "correctKey": "Its lexical productivity"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les *** apparaissent souvent pour désigner des réalités inédites.",
+            "correctKey": "néologismes"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Cette évolution *** révèle la productivité lexicale du français.",
+            "correctKey": "diachronique"
+          }
+        ]
+      },
+      {
+        "title": "L'art de la synthèse et de la concision",
+        "description": "Condensing large reports, eliminating redundancy, and drafting clear summaries.",
+        "vocabulary": [
+          {
+            "french": "une synthèse analytique",
+            "english": "analytical synthesis"
+          },
+          {
+            "french": "la concision rédactionnelle",
+            "english": "writing concision"
+          },
+          {
+            "french": "un élément redondant",
+            "english": "redundant element"
+          },
+          {
+            "french": "la reformulation stratégique",
+            "english": "strategic reformulation"
+          },
+          {
+            "french": "une idée directrice",
+            "english": "guiding idea"
+          },
+          {
+            "french": "un résumé exécutif",
+            "english": "executive summary"
+          },
+          {
+            "french": "la densité informative",
+            "english": "informational density"
+          },
+          {
+            "french": "une hiérarchisation conceptuelle",
+            "english": "conceptual hierarchy"
+          },
+          {
+            "french": "un exposé synthétique",
+            "english": "concise presentation"
+          },
+          {
+            "french": "l'économie du langage",
+            "english": "economy of language"
+          }
+        ],
+        "grammar": {
+          "title": "Compression without loss of meaning",
+          "text": "High-level summaries condense information while preserving key ideas. Remove repetition, combine related points, and prioritize conceptual hierarchy. Example: 'Le rapport souligne trois enjeux majeurs : économiques, sociaux et environnementaux.' Several pages of information may be reduced to one sentence."
+        },
+        "reading": "La synthèse exige davantage qu'une simple réduction quantitative du texte. Elle suppose l'identification d'une idée directrice autour de laquelle s'organisent les informations essentielles. La concision rédactionnelle repose sur l'élimination des éléments redondants et sur une reformulation stratégique. Ainsi, l'économie du langage accroît souvent la densité informative du propos.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is required for effective synthesis?",
+            "options": [
+              "Identifying a guiding idea",
+              "Copying every detail",
+              "Adding examples endlessly",
+              "Increasing redundancy"
+            ],
+            "correctKey": "Identifying a guiding idea"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What increases informational density?",
+            "options": [
+              "l'économie du langage",
+              "les répétitions",
+              "les digressions",
+              "les parenthèses multiples"
+            ],
+            "correctKey": "l'économie du langage"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What should be removed in concise writing?",
+            "options": [
+              "éléments redondants",
+              "arguments clés",
+              "idées principales",
+              "concepts centraux"
+            ],
+            "correctKey": "éléments redondants"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La synthèse suppose l'identification d'une idée ***.",
+            "correctKey": "directrice"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La concision rédactionnelle repose sur l'élimination des éléments ***.",
+            "correctKey": "redondants"
+          }
+        ]
+      },
+      {
+        "title": "Les nuances stylistiques de la correspondance officielle",
+        "description": "Mastering protocol, high-level administrative requests, and polite formulas.",
+        "vocabulary": [
+          {
+            "french": "une formule de courtoisie",
+            "english": "courtesy formula"
+          },
+          {
+            "french": "une requête administrative",
+            "english": "administrative request"
+          },
+          {
+            "french": "un protocole institutionnel",
+            "english": "institutional protocol"
+          },
+          {
+            "french": "une démarche officielle",
+            "english": "official procedure"
+          },
+          {
+            "french": "la déférence",
+            "english": "deference"
+          },
+          {
+            "french": "une tournure atténuative",
+            "english": "mitigating phrasing"
+          },
+          {
+            "french": "un accusé de réception",
+            "english": "acknowledgment of receipt"
+          },
+          {
+            "french": "une instruction de dossier",
+            "english": "file processing"
+          },
+          {
+            "french": "une correspondance formelle",
+            "english": "formal correspondence"
+          },
+          {
+            "french": "la réserve diplomatique",
+            "english": "diplomatic restraint"
+          }
+        ],
+        "grammar": {
+          "title": "Politeness through indirect formulation",
+          "text": "Official correspondence often softens requests through indirect formulations. Example: 'Je vous saurais gré de bien vouloir examiner ce dossier.' Rather than issuing a direct command, the writer uses deference and courtesy to maintain professionalism."
+        },
+        "reading": "La correspondance officielle privilégie la précision et la réserve diplomatique. Toute requête administrative doit respecter les conventions du protocole institutionnel. Les tournures atténuatives permettent d'exprimer une demande sans paraître impératif. Je vous saurais gré de bien vouloir examiner ce dossier dans les meilleurs délais. Une formule de courtoisie adaptée clôt généralement l'échange.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Why are mitigating phrases used in official correspondence?",
+            "options": [
+              "To make requests politely",
+              "To create ambiguity",
+              "To shorten documents",
+              "To add humor"
+            ],
+            "correctKey": "To make requests politely"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What characterizes official correspondence according to the passage?",
+            "options": [
+              "Precision and diplomatic restraint",
+              "Irony and satire",
+              "Poetic imagery",
+              "Narrative suspense"
+            ],
+            "correctKey": "Precision and diplomatic restraint"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What usually closes an official letter?",
+            "options": [
+              "une formule de courtoisie",
+              "une anecdote",
+              "une citation poétique",
+              "une plaisanterie"
+            ],
+            "correctKey": "une formule de courtoisie"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je vous saurais gré de bien vouloir *** ce dossier.",
+            "correctKey": "examiner"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une formule de *** adaptée clôt généralement l'échange.",
+            "correctKey": "courtoisie"
+          }
+        ]
+      }
+    ]
+  }
+]

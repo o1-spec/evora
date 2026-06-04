@@ -1,0 +1,980 @@
+[
+  {
+    "title": "Professional and Academic Discussions",
+    "description": "Practice B1 dialogues for job interviews, university advising, volunteering, and customer complaints.",
+    "lessons": [
+      {
+        "title": "Entretien d'embauche",
+        "description": "Dialogue between a recruiter and candidate discussing experience and qualifications.",
+        "vocabulary": [
+          {
+            "french": "un entretien d'embauche",
+            "english": "job interview"
+          },
+          {
+            "french": "une expérience professionnelle",
+            "english": "professional experience"
+          },
+          {
+            "french": "une compétence",
+            "english": "skill"
+          },
+          {
+            "french": "un poste",
+            "english": "position"
+          },
+          {
+            "french": "être disponible",
+            "english": "to be available"
+          },
+          {
+            "french": "un contrat",
+            "english": "contract"
+          },
+          {
+            "french": "une équipe",
+            "english": "team"
+          },
+          {
+            "french": "une responsabilité",
+            "english": "responsibility"
+          },
+          {
+            "french": "motivé",
+            "english": "motivated"
+          },
+          {
+            "french": "une qualification",
+            "english": "qualification"
+          }
+        ],
+        "grammar": {
+          "title": "Polite self-presentation with je souhaiterais and je suis capable de",
+          "text": "In a job interview, use polite and confident expressions. Je souhaiterais means 'I would like' and is more formal than je veux. Example: Je souhaiterais rejoindre votre équipe. (I would like to join your team.) Use je suis capable de + infinitive to describe ability: Je suis capable de gérer plusieurs responsabilités. (I am able to manage several responsibilities.)"
+        },
+        "reading": "Recruteur : Pouvez-vous me parler de votre expérience professionnelle ?\nCandidate : Oui, j'ai travaillé deux ans dans une petite entreprise.\nRecruteur : Quelles compétences pouvez-vous apporter à notre équipe ?\nCandidate : Je suis organisée, motivée et capable de gérer plusieurs responsabilités.\nRecruteur : Êtes-vous disponible le mois prochain ?\nCandidate : Oui, et je souhaiterais vraiment obtenir ce poste.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the candidate applying for?",
+            "options": [
+              "un poste",
+              "une bourse",
+              "un appartement",
+              "un voyage"
+            ],
+            "correctKey": "un poste"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase is polite for saying 'I would like'?",
+            "options": [
+              "je souhaiterais",
+              "je déteste",
+              "je refuse",
+              "je dois partir"
+            ],
+            "correctKey": "je souhaiterais"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which quality does the candidate mention?",
+            "options": [
+              "motivée",
+              "fatiguée",
+              "en colère",
+              "absente"
+            ],
+            "correctKey": "motivée"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je suis capable de gérer plusieurs ***.",
+            "correctKey": "responsabilités"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je souhaiterais rejoindre votre ***.",
+            "correctKey": "équipe"
+          }
+        ]
+      },
+      {
+        "title": "Choisir une formation universitaire",
+        "description": "Dialogue between a student and academic advisor discussing university majors and study programs.",
+        "vocabulary": [
+          {
+            "french": "une formation",
+            "english": "study program/training"
+          },
+          {
+            "french": "une filière",
+            "english": "academic track/major"
+          },
+          {
+            "french": "un conseiller pédagogique",
+            "english": "academic advisor"
+          },
+          {
+            "french": "un diplôme",
+            "english": "degree"
+          },
+          {
+            "french": "un débouché",
+            "english": "career opportunity"
+          },
+          {
+            "french": "les frais d'inscription",
+            "english": "registration fees"
+          },
+          {
+            "french": "un stage",
+            "english": "internship"
+          },
+          {
+            "french": "une matière principale",
+            "english": "main subject"
+          },
+          {
+            "french": "s'inscrire",
+            "english": "to enroll/register"
+          },
+          {
+            "french": "hésiter entre",
+            "english": "to hesitate between"
+          }
+        ],
+        "grammar": {
+          "title": "Asking for advice with que me conseillez-vous de",
+          "text": "To ask for advice politely, use que me conseillez-vous de + infinitive. Example: Que me conseillez-vous de choisir ? (What do you advise me to choose?) You can also say je vous conseille de + infinitive to give advice: Je vous conseille de choisir une filière avec un stage. (I advise you to choose a track with an internship.)"
+        },
+        "reading": "Étudiant : Bonjour, j'hésite entre deux formations universitaires.\nConseillère : Quelles filières vous intéressent le plus ?\nÉtudiant : L'économie et l'informatique, mais je pense aux débouchés.\nConseillère : Je vous conseille de choisir une formation avec un stage.\nÉtudiant : Les frais d'inscription sont-ils élevés ?\nConseillère : Non, et ce diplôme offre de bonnes opportunités.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Between which two fields is the student hesitating?",
+            "options": [
+              "l'économie et l'informatique",
+              "la médecine et le droit",
+              "le sport et la musique",
+              "la cuisine et le théâtre"
+            ],
+            "correctKey": "l'économie et l'informatique"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « un débouché » mean in this context?",
+            "options": [
+              "career opportunity",
+              "exam room",
+              "student card",
+              "classroom"
+            ],
+            "correctKey": "career opportunity"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase asks for advice politely?",
+            "options": [
+              "Que me conseillez-vous de choisir ?",
+              "Pourquoi partez-vous ?",
+              "Je refuse cette formation.",
+              "Où habitez-vous ?"
+            ],
+            "correctKey": "Que me conseillez-vous de choisir ?"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je vous conseille de choisir une formation avec un ***.",
+            "correctKey": "stage"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "J'hésite entre deux *** universitaires.",
+            "correctKey": "formations"
+          }
+        ]
+      },
+      {
+        "title": "Parler d'une expérience de bénévolat",
+        "description": "Dialogue between two friends sharing their volunteering experiences and social engagement.",
+        "vocabulary": [
+          {
+            "french": "le bénévolat",
+            "english": "volunteering"
+          },
+          {
+            "french": "un bénévole",
+            "english": "volunteer"
+          },
+          {
+            "french": "une association",
+            "english": "association/non-profit"
+          },
+          {
+            "french": "s'engager",
+            "english": "to get involved"
+          },
+          {
+            "french": "aider les autres",
+            "english": "to help others"
+          },
+          {
+            "french": "une collecte de fonds",
+            "english": "fundraising campaign"
+          },
+          {
+            "french": "une action sociale",
+            "english": "social action"
+          },
+          {
+            "french": "le soutien",
+            "english": "support"
+          },
+          {
+            "french": "participer à",
+            "english": "to participate in"
+          },
+          {
+            "french": "être utile",
+            "english": "to be useful"
+          }
+        ],
+        "grammar": {
+          "title": "Talking about experience with j'ai déjà and je n'ai jamais",
+          "text": "Use j'ai déjà + past participle to say you have already done something. Example: J'ai déjà participé à une collecte de fonds. (I have already participated in a fundraising campaign.) Use je n'ai jamais + past participle to say you have never done something: Je n'ai jamais travaillé dans une association. (I have never worked in an association.)"
+        },
+        "reading": "Nadia : Tu as déjà fait du bénévolat ?\nLucas : Oui, j'ai participé à une collecte de fonds pour une association.\nNadia : C'était difficile ?\nLucas : Un peu, mais j'ai aimé aider les autres.\nNadia : Moi, je n'ai jamais essayé, mais je voudrais m'engager.\nLucas : Tu devrais venir samedi, ton soutien serait utile.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What did Lucas participate in?",
+            "options": [
+              "une collecte de fonds",
+              "un entretien d'embauche",
+              "un examen final",
+              "un voyage scolaire"
+            ],
+            "correctKey": "une collecte de fonds"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does Nadia want to do?",
+            "options": [
+              "s'engager",
+              "acheter un téléphone",
+              "changer de ville",
+              "quitter l'université"
+            ],
+            "correctKey": "s'engager"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase means 'I have never tried'?",
+            "options": [
+              "Je n'ai jamais essayé",
+              "J'ai déjà essayé",
+              "Je vais essayer",
+              "J'essaie souvent"
+            ],
+            "correctKey": "Je n'ai jamais essayé"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "J'ai participé à une collecte de fonds pour une ***.",
+            "correctKey": "association"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "J'ai aimé *** les autres.",
+            "correctKey": "aider"
+          }
+        ]
+      },
+      {
+        "title": "Faire une réclamation client",
+        "description": "Dialogue between a customer and customer service resolving a complaint about a faulty purchase.",
+        "vocabulary": [
+          {
+            "french": "une réclamation",
+            "english": "complaint"
+          },
+          {
+            "french": "un service client",
+            "english": "customer service"
+          },
+          {
+            "french": "un produit défectueux",
+            "english": "faulty product"
+          },
+          {
+            "french": "un remboursement",
+            "english": "refund"
+          },
+          {
+            "french": "un échange",
+            "english": "exchange"
+          },
+          {
+            "french": "une garantie",
+            "english": "warranty"
+          },
+          {
+            "french": "un reçu",
+            "english": "receipt"
+          },
+          {
+            "french": "résoudre un problème",
+            "english": "to solve a problem"
+          },
+          {
+            "french": "être déçu",
+            "english": "to be disappointed"
+          },
+          {
+            "french": "remplacer",
+            "english": "to replace"
+          }
+        ],
+        "grammar": {
+          "title": "Making polite complaints with je voudrais and pourriez-vous",
+          "text": "When making a complaint, use polite expressions to stay respectful. Je voudrais signaler un problème means 'I would like to report a problem.' Pourriez-vous + infinitive means 'Could you...?' Example: Pourriez-vous remplacer ce produit ? (Could you replace this product?)"
+        },
+        "reading": "Client : Bonjour, je voudrais faire une réclamation.\nService client : Bien sûr, quel est le problème ?\nClient : Ce produit est défectueux et je suis déçu.\nService client : Avez-vous le reçu et la garantie ?\nClient : Oui, les voici. Pourriez-vous le remplacer ?\nService client : Nous pouvons proposer un échange ou un remboursement.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What problem does the customer have?",
+            "options": [
+              "Le produit est défectueux.",
+              "Le reçu est gratuit.",
+              "La boutique est fermée.",
+              "Le client a oublié son nom."
+            ],
+            "correctKey": "Le produit est défectueux."
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which document does customer service ask for?",
+            "options": [
+              "un reçu",
+              "un diplôme",
+              "un CV",
+              "un billet de train"
+            ],
+            "correctKey": "un reçu"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What are the two solutions proposed?",
+            "options": [
+              "un échange ou un remboursement",
+              "un stage ou un emploi",
+              "un cours ou un examen",
+              "un appel ou un message"
+            ],
+            "correctKey": "un échange ou un remboursement"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voudrais faire une ***.",
+            "correctKey": "réclamation"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Pourriez-vous le *** ?",
+            "correctKey": "remplacer"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Society, News and Media",
+    "description": "Discuss social networks, current news stories, and handle neighborhood conflicts.",
+    "lessons": [
+      {
+        "title": "Discuter des réseaux sociaux",
+        "description": "Dialogue debating the advantages and disadvantages of screen time and social media.",
+        "vocabulary": [
+          {
+            "french": "les réseaux sociaux",
+            "english": "social networks/social media"
+          },
+          {
+            "french": "le temps d'écran",
+            "english": "screen time"
+          },
+          {
+            "french": "une publication",
+            "english": "post/publication"
+          },
+          {
+            "french": "un avantage",
+            "english": "advantage"
+          },
+          {
+            "french": "un inconvénient",
+            "english": "disadvantage"
+          },
+          {
+            "french": "rester en contact",
+            "english": "to stay in touch"
+          },
+          {
+            "french": "partager du contenu",
+            "english": "to share content"
+          },
+          {
+            "french": "une dépendance",
+            "english": "addiction/dependence"
+          },
+          {
+            "french": "se déconnecter",
+            "english": "to disconnect/log off"
+          },
+          {
+            "french": "limiter",
+            "english": "to limit"
+          }
+        ],
+        "grammar": {
+          "title": "Giving balanced opinions with d'un côté and de l'autre",
+          "text": "To discuss advantages and disadvantages, use d'un côté and de l'autre. Example: D'un côté, les réseaux sociaux permettent de rester en contact. De l'autre, ils peuvent augmenter le temps d'écran. (On one hand, social media helps people stay in touch. On the other hand, it can increase screen time.)"
+        },
+        "reading": "Emma : Tu passes beaucoup de temps sur les réseaux sociaux ?\nRayan : Oui, mais j'essaie de limiter mon temps d'écran.\nEmma : D'un côté, c'est pratique pour rester en contact.\nRayan : De l'autre, certaines personnes développent une dépendance.\nEmma : C'est vrai, il faut parfois se déconnecter.\nRayan : Je préfère partager du contenu utile, pas seulement regarder des publications.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is one advantage of social media mentioned?",
+            "options": [
+              "rester en contact",
+              "perdre son reçu",
+              "passer un examen",
+              "faire une réclamation"
+            ],
+            "correctKey": "rester en contact"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What risk is mentioned in the dialogue?",
+            "options": [
+              "une dépendance",
+              "un diplôme",
+              "une garantie",
+              "un entretien"
+            ],
+            "correctKey": "une dépendance"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression introduces a balanced argument?",
+            "options": [
+              "D'un côté",
+              "Tout à coup",
+              "Hier soir",
+              "Par hasard"
+            ],
+            "correctKey": "D'un côté"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "J'essaie de limiter mon temps d'***.",
+            "correctKey": "écran"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Il faut parfois se *** des réseaux sociaux.",
+            "correctKey": "déconnecter"
+          }
+        ]
+      },
+      {
+        "title": "Débattre d'un fait divers",
+        "description": "Dialogue sharing opinions and discussing a local news event or current interest story.",
+        "vocabulary": [
+          {
+            "french": "un fait divers",
+            "english": "local news story/current interest story"
+          },
+          {
+            "french": "un témoin",
+            "english": "witness"
+          },
+          {
+            "french": "un article",
+            "english": "article"
+          },
+          {
+            "french": "une enquête",
+            "english": "investigation"
+          },
+          {
+            "french": "la sécurité",
+            "english": "safety/security"
+          },
+          {
+            "french": "un quartier",
+            "english": "neighborhood"
+          },
+          {
+            "french": "selon moi",
+            "english": "in my opinion"
+          },
+          {
+            "french": "être inquiet",
+            "english": "to be worried"
+          },
+          {
+            "french": "vérifier les faits",
+            "english": "to check the facts"
+          },
+          {
+            "french": "une source fiable",
+            "english": "reliable source"
+          }
+        ],
+        "grammar": {
+          "title": "Expressing opinion with selon moi and je pense que",
+          "text": "Use selon moi and je pense que to give your opinion clearly. Example: Selon moi, il faut vérifier les faits. (In my opinion, we must check the facts.) Je pense que la sécurité du quartier est importante. (I think that neighborhood safety is important.) These expressions help you debate respectfully."
+        },
+        "reading": "Lina : Tu as lu l'article sur le fait divers dans notre quartier ?\nKarim : Oui, mais je veux vérifier les faits avant de juger.\nLina : Selon moi, la sécurité doit être renforcée.\nKarim : Je comprends, mais l'enquête n'est pas terminée.\nLina : Un témoin a donné des informations importantes.\nKarim : D'accord, mais il faut toujours consulter une source fiable.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does Karim want to do before judging?",
+            "options": [
+              "vérifier les faits",
+              "quitter le quartier",
+              "écrire un roman",
+              "acheter un journal"
+            ],
+            "correctKey": "vérifier les faits"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does Lina think should be strengthened?",
+            "options": [
+              "la sécurité",
+              "la gastronomie",
+              "le cinéma",
+              "le bénévolat"
+            ],
+            "correctKey": "la sécurité"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression means 'in my opinion'?",
+            "options": [
+              "selon moi",
+              "en retard",
+              "tout à coup",
+              "au revoir"
+            ],
+            "correctKey": "selon moi"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Tu as lu l'article sur le fait *** ?",
+            "correctKey": "divers"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Il faut consulter une source ***.",
+            "correctKey": "fiable"
+          }
+        ]
+      },
+      {
+        "title": "Résoudre un conflit de voisinage",
+        "description": "Dialogue between neighbors politely addressing and resolving a noise or common-area dispute.",
+        "vocabulary": [
+          {
+            "french": "un voisin",
+            "english": "neighbor"
+          },
+          {
+            "french": "un conflit",
+            "english": "conflict/dispute"
+          },
+          {
+            "french": "le bruit",
+            "english": "noise"
+          },
+          {
+            "french": "les parties communes",
+            "english": "common areas"
+          },
+          {
+            "french": "une solution",
+            "english": "solution"
+          },
+          {
+            "french": "s'excuser",
+            "english": "to apologize"
+          },
+          {
+            "french": "déranger",
+            "english": "to disturb"
+          },
+          {
+            "french": "un règlement",
+            "english": "rule/regulation"
+          },
+          {
+            "french": "faire attention",
+            "english": "to be careful/pay attention"
+          },
+          {
+            "french": "trouver un compromis",
+            "english": "to find a compromise"
+          }
+        ],
+        "grammar": {
+          "title": "Polite requests with pourriez-vous and ce serait possible de",
+          "text": "To solve a conflict politely, use conditional forms. Pourriez-vous faire moins de bruit ? means 'Could you make less noise?' Ce serait possible de respecter les parties communes ? means 'Would it be possible to respect the common areas?' These forms sound more respectful than direct commands."
+        },
+        "reading": "Mme Bernard : Bonjour, pourriez-vous faire moins de bruit le soir ?\nM. Diallo : Je suis désolé, je ne voulais pas vous déranger.\nMme Bernard : Les enfants dorment tôt, donc c'est difficile.\nM. Diallo : Je comprends. Je vais faire attention après 21 heures.\nMme Bernard : Merci, nous pouvons trouver un compromis.\nM. Diallo : Bien sûr, je respecterai aussi le règlement des parties communes.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the conflict about?",
+            "options": [
+              "le bruit le soir",
+              "un examen",
+              "un produit défectueux",
+              "un article de journal"
+            ],
+            "correctKey": "le bruit le soir"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does M. Diallo promise to do?",
+            "options": [
+              "faire attention après 21 heures",
+              "organiser une fête",
+              "appeler le service client",
+              "vendre son appartement"
+            ],
+            "correctKey": "faire attention après 21 heures"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase is a polite request?",
+            "options": [
+              "Pourriez-vous faire moins de bruit ?",
+              "Fais du bruit !",
+              "Tu dois partir maintenant !",
+              "Je refuse de parler."
+            ],
+            "correctKey": "Pourriez-vous faire moins de bruit ?"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je suis désolé, je ne voulais pas vous ***.",
+            "correctKey": "déranger"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Nous pouvons trouver un ***.",
+            "correctKey": "compromis"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Environment, Lifestyle and Culture",
+    "description": "Discuss eco-friendly projects, recommend books and movies, and share cooking recipes.",
+    "lessons": [
+      {
+        "title": "Proposer un projet écologique",
+        "description": "Dialogue between citizens planning a community garden or recycling initiative.",
+        "vocabulary": [
+          {
+            "french": "un projet écologique",
+            "english": "eco-friendly project"
+          },
+          {
+            "french": "un jardin partagé",
+            "english": "community garden"
+          },
+          {
+            "french": "le recyclage",
+            "english": "recycling"
+          },
+          {
+            "french": "les déchets",
+            "english": "waste"
+          },
+          {
+            "french": "une initiative locale",
+            "english": "local initiative"
+          },
+          {
+            "french": "participer à",
+            "english": "to participate in"
+          },
+          {
+            "french": "protéger l'environnement",
+            "english": "to protect the environment"
+          },
+          {
+            "french": "sensibiliser",
+            "english": "to raise awareness"
+          },
+          {
+            "french": "une réunion de quartier",
+            "english": "neighborhood meeting"
+          },
+          {
+            "french": "réduire la pollution",
+            "english": "to reduce pollution"
+          }
+        ],
+        "grammar": {
+          "title": "Making suggestions with on pourrait and pourquoi ne pas",
+          "text": "To suggest an idea politely in French, use on pourrait + infinitive or pourquoi ne pas + infinitive. Example: On pourrait créer un jardin partagé. (We could create a community garden.) Pourquoi ne pas organiser une réunion de quartier ? (Why not organize a neighborhood meeting?) These forms are useful when planning a project with others."
+        },
+        "reading": "Claire : On pourrait lancer un projet écologique dans le quartier.\nMalik : Bonne idée ! Pourquoi ne pas créer un jardin partagé ?\nClaire : Oui, et nous pourrions aussi sensibiliser les habitants au recyclage.\nMalik : Il faudrait organiser une réunion de quartier.\nClaire : Comme ça, chacun pourra participer à l'initiative locale.\nMalik : Exactement, cela aidera à réduire la pollution.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What project do Claire and Malik suggest?",
+            "options": [
+              "un jardin partagé",
+              "un entretien d'embauche",
+              "une recette de cuisine",
+              "un film policier"
+            ],
+            "correctKey": "un jardin partagé"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « sensibiliser » mean?",
+            "options": [
+              "to raise awareness",
+              "to cook",
+              "to complain",
+              "to travel"
+            ],
+            "correctKey": "to raise awareness"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression is used to make a suggestion?",
+            "options": [
+              "On pourrait",
+              "Je refuse",
+              "Il est interdit",
+              "Je n'ai jamais"
+            ],
+            "correctKey": "On pourrait"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Pourquoi ne pas créer un jardin *** ?",
+            "correctKey": "partagé"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Cela aidera à réduire la ***.",
+            "correctKey": "pollution"
+          }
+        ]
+      },
+      {
+        "title": "Choisir un livre ou un film",
+        "description": "Dialogue between friends sharing recommendations and deciding what to read or watch.",
+        "vocabulary": [
+          {
+            "french": "recommander",
+            "english": "to recommend"
+          },
+          {
+            "french": "un roman",
+            "english": "novel"
+          },
+          {
+            "french": "un film historique",
+            "english": "historical film"
+          },
+          {
+            "french": "une critique",
+            "english": "review"
+          },
+          {
+            "french": "l'intrigue",
+            "english": "plot"
+          },
+          {
+            "french": "un personnage principal",
+            "english": "main character"
+          },
+          {
+            "french": "captivant",
+            "english": "captivating"
+          },
+          {
+            "french": "ennuyeux",
+            "english": "boring"
+          },
+          {
+            "french": "ça vaut la peine",
+            "english": "it is worth it"
+          },
+          {
+            "french": "choisir entre",
+            "english": "to choose between"
+          }
+        ],
+        "grammar": {
+          "title": "Giving opinions with je te conseille de and à mon avis",
+          "text": "To recommend something, use je te conseille de + infinitive. Example: Je te conseille de lire ce roman. (I advise you to read this novel.) To give your opinion, use à mon avis. Example: À mon avis, l'intrigue est captivante. (In my opinion, the plot is captivating.)"
+        },
+        "reading": "Sarah : Tu me conseilles quel livre pour ce week-end ?\nHugo : Je te conseille de lire ce roman, l'intrigue est captivante.\nSarah : J'hésite aussi avec un film historique.\nHugo : À mon avis, le film vaut la peine, mais le roman est plus original.\nSarah : Les critiques sont bonnes ?\nHugo : Oui, surtout pour le personnage principal.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does Hugo recommend first?",
+            "options": [
+              "un roman",
+              "un jardin partagé",
+              "une réclamation",
+              "une formation"
+            ],
+            "correctKey": "un roman"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "How does Hugo describe the plot?",
+            "options": [
+              "captivante",
+              "défectueuse",
+              "bruyante",
+              "locale"
+            ],
+            "correctKey": "captivante"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase gives advice?",
+            "options": [
+              "Je te conseille de lire ce roman.",
+              "Je suis en retard.",
+              "Je fais une réclamation.",
+              "Je trie les déchets."
+            ],
+            "correctKey": "Je te conseille de lire ce roman."
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "À mon avis, le film vaut la ***.",
+            "correctKey": "peine"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les critiques sont bonnes, surtout pour le personnage ***.",
+            "correctKey": "principal"
+          }
+        ]
+      },
+      {
+        "title": "Partager une recette de cuisine",
+        "description": "Dialogue between two people explaining how to prepare a traditional French dish.",
+        "vocabulary": [
+          {
+            "french": "une recette",
+            "english": "recipe"
+          },
+          {
+            "french": "les ingrédients",
+            "english": "ingredients"
+          },
+          {
+            "french": "la farine",
+            "english": "flour"
+          },
+          {
+            "french": "le beurre",
+            "english": "butter"
+          },
+          {
+            "french": "mélanger",
+            "english": "to mix"
+          },
+          {
+            "french": "faire cuire",
+            "english": "to cook/bake"
+          },
+          {
+            "french": "une pâte",
+            "english": "dough/batter"
+          },
+          {
+            "french": "un plat traditionnel",
+            "english": "traditional dish"
+          },
+          {
+            "french": "ajouter",
+            "english": "to add"
+          },
+          {
+            "french": "servir chaud",
+            "english": "to serve hot"
+          }
+        ],
+        "grammar": {
+          "title": "Giving cooking instructions with the imperative",
+          "text": "Use the imperative to give instructions. For vous, regular -er verbs end in -ez: Mélangez les ingrédients. (Mix the ingredients.) Ajoutez le beurre. (Add the butter.) For tu, many -er verbs drop the final -s: Mélange la farine. (Mix the flour.) This form is common in recipes."
+        },
+        "reading": "Élise : Pour cette recette, il faut de la farine, du beurre et des œufs.\nThomas : D'accord, je commence par quoi ?\nÉlise : Mélange la farine avec les œufs, puis ajoute le beurre.\nThomas : La pâte doit être épaisse ?\nÉlise : Oui, ensuite fais cuire le plat pendant trente minutes.\nThomas : Parfait, on le servira chaud ce soir.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What ingredients are mentioned?",
+            "options": [
+              "la farine, le beurre et les œufs",
+              "le riz, le poisson et le citron",
+              "le café, le sucre et le lait",
+              "les pommes, le pain et le fromage"
+            ],
+            "correctKey": "la farine, le beurre et les œufs"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What should Thomas do after mixing the flour and eggs?",
+            "options": [
+              "ajouter le beurre",
+              "lire un roman",
+              "organiser une réunion",
+              "regarder un film"
+            ],
+            "correctKey": "ajouter le beurre"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which sentence uses the imperative?",
+            "options": [
+              "Mélange la farine avec les œufs.",
+              "Je mélange la farine.",
+              "Tu mélanges la farine.",
+              "Nous avons mélangé la farine."
+            ],
+            "correctKey": "Mélange la farine avec les œufs."
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Pour cette ***, il faut de la farine et du beurre.",
+            "correctKey": "recette"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Ensuite, fais *** le plat pendant trente minutes.",
+            "correctKey": "cuire"
+          }
+        ]
+      }
+    ]
+  }
+]

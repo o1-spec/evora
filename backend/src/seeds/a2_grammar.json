@@ -1,0 +1,1577 @@
+[
+  {
+    "title": "Past Tenses",
+    "description": "Learn to describe past events using Passé Composé and Imparfait.",
+    "lessons": [
+      {
+        "title": "Passé Composé with Avoir",
+        "description": "Conjugations, regular and common irregular past participles.",
+        "vocabulary": [
+          {
+            "french": "avoir",
+            "english": "to have"
+          },
+          {
+            "french": "faire",
+            "english": "to do"
+          },
+          {
+            "french": "aller",
+            "english": "to go"
+          },
+          {
+            "french": "manger",
+            "english": "to eat"
+          },
+          {
+            "french": "boire",
+            "english": "to drink"
+          },
+          {
+            "french": "écouter",
+            "english": "to listen to"
+          },
+          {
+            "french": "regarder",
+            "english": "to watch"
+          },
+          {
+            "french": "prendre",
+            "english": "to take"
+          },
+          {
+            "french": "donner",
+            "english": "to give"
+          },
+          {
+            "french": "faire du sport",
+            "english": "to do sports"
+          }
+        ],
+        "grammar": {
+          "title": "Passé Composé avec Avoir",
+          "text": "To form the Passé Composé with avoir, we use the auxiliary verb 'avoir' in the present tense and the past participle of the main verb. For regular verbs, we add -u to the infinitive form to get the past participle. For example: J'ai fait (I did). However, some common irregular past participles should be memorized, such as avoir (to have) -> eu, faire (to do) -> fait."
+        },
+        "reading": "Hier, j'ai fait du sport au parc. Je me suis levé tôt et je suis allé à la salle de sport. Là-bas, j'ai rencontré mon ami Pierre qui faisait du vélo.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la bonne forme du Passé Composé avec avoir pour le verbe 'faire'?",
+            "options": [
+              "J'ai fait",
+              "Je faisais",
+              "Faire",
+              "Faite"
+            ],
+            "correctKey": "J'ai fait",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est l'auxiliaire utilisé pour former le Passé Composé avec avoir?",
+            "options": [
+              "Être",
+              "Avoir",
+              "Faire",
+              "Aller"
+            ],
+            "correctKey": "Avoir",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la bonne forme du past participe pour le verbe 'aller'?",
+            "options": [
+              "Allez",
+              "Allé",
+              "Alla",
+              "Allé"
+            ],
+            "correctKey": "Allé",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Hier, j'ai *** du vélo au parc.",
+            "correctKey": "fait",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je me suis levé tôt et je suis allé *** à la salle de sport.",
+            "correctKey": "à",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Passé Composé with Être",
+        "description": "Conjugations, agreement rules, and Dr & Mrs Vandertramp verbs.",
+        "vocabulary": [
+          {
+            "french": "Passé Composé",
+            "english": "Compound Past"
+          },
+          {
+            "french": "Être",
+            "english": "To Be"
+          },
+          {
+            "french": "avoir",
+            "english": "To Have"
+          },
+          {
+            "french": "pouvoir",
+            "english": "To Be Able To"
+          },
+          {
+            "french": "vouloir",
+            "english": "To Want To"
+          },
+          {
+            "french": "faire",
+            "english": "To Do"
+          },
+          {
+            "french": "aller",
+            "english": "To Go"
+          },
+          {
+            "french": "venir",
+            "english": "To Come"
+          },
+          {
+            "french": "être allé(e)",
+            "english": "to have been"
+          },
+          {
+            "french": "avoir été",
+            "english": "to have been"
+          }
+        ],
+        "grammar": {
+          "title": "Forming the Passé Composé with Être",
+          "text": "To form the Passé Composé with Être, we use the following structure: J'ai été + verb in the infinitive. For example, 'J'ai été à Paris hier.' The subject agrees with être in gender and number."
+        },
+        "reading": "Hier, j'étais à Paris avec mon ami. Nous avons visité le Louvre et nous sommes allés au musée d'Orsay.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la bonne forme du Passé Composé avec Être pour 'Je suis allé(e)'?",
+            "options": [
+              "J'ai été allé",
+              "J'ai été aller",
+              "J'ai allé",
+              "J'ai été"
+            ],
+            "correctKey": "J'ai été",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la bonne forme du Passé Composé avec Être pour 'Nous sommes venus'?",
+            "options": [
+              "Nous avons été venus",
+              "Nous sommes venus",
+              "Nous avons venu",
+              "Nous avons été"
+            ],
+            "correctKey": "Nous sommes venus",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la bonne forme du Passé Composé avec Être pour 'Elle a été à Londres'?",
+            "options": [
+              "Elle a été allée",
+              "Elle a été aller",
+              "Elle a allé(e)",
+              "Elle a été"
+            ],
+            "correctKey": "Elle a été",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je *** à Paris hier avec mon frère.",
+            "correctKey": "suis allé",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Nous *** au musée d'Orsay avant de rentrer chez nous.",
+            "correctKey": "sommes allés",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Passé Composé vs Imparfait",
+        "description": "Distinguishing completed actions in the past from background descriptions.",
+        "vocabulary": [
+          {
+            "french": "passé composé",
+            "english": "compound past tense"
+          },
+          {
+            "french": "imparfait",
+            "english": "imperfect tense"
+          },
+          {
+            "french": "avoir fait",
+            "english": "to have done"
+          },
+          {
+            "french": "être allé(e)",
+            "english": "to have gone (m/f)"
+          },
+          {
+            "french": "faire",
+            "english": "to do/to make"
+          },
+          {
+            "french": "aller",
+            "english": "to go"
+          },
+          {
+            "french": "pouvoir",
+            "english": "to be able to"
+          },
+          {
+            "french": "vouloir",
+            "english": "to want to"
+          },
+          {
+            "french": "devoir",
+            "english": "to have to"
+          },
+          {
+            "french": "aller faire",
+            "english": "to go and do"
+          }
+        ],
+        "grammar": {
+          "title": "Passé Composé vs Imparfait: Distinguishing Completed Actions from Background Descriptions",
+          "text": "To describe past events, we use either the Passé Composé or the Imparfait. The Passé Composé is used for completed actions in the past, while the Imparfait describes background activities or states of being that occurred during a period of time in the past.\n\nExamples:\n- J'ai mangé un sandwich hier soir (I ate a sandwich last night - Passé Composé)\n- Je faisais mes devoirs pendant les vacances (I was doing my homework during the holidays - Imparfait)"
+        },
+        "reading": "Lily : J'ai fait une excursion au parc hier. J'ai vu des oiseaux et je me suis assise sur un banc.\nTom : Ah, c'était super ! Moi, j'étais en train de faire mes devoirs pendant que tu étais au parc.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel temps est utilisé pour décrire une action complétée dans le passé ?",
+            "options": [
+              "Passé Composé",
+              "Imparfait",
+              "Futur Simple",
+              "Conditionnel Présent"
+            ],
+            "correctKey": "Passé Composé",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel temps est utilisé pour décrire un état de choses qui se passait pendant une période du passé ?",
+            "options": [
+              "Passé Simple",
+              "Imparfait",
+              "Futur Antérieur",
+              "Plus-Que-Parfait"
+            ],
+            "correctKey": "Imparfait",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel verbe est utilisé avec le Passé Composé pour exprimer une action complétée dans le passé ?",
+            "options": [
+              "Avoir",
+              "Être",
+              "Faire",
+              "Pouvoir"
+            ],
+            "correctKey": "Avoir",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je *** au cinéma hier soir.",
+            "correctKey": "suis allée",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Lily *** une excursion au parc hier.",
+            "correctKey": "a fait",
+            "points": 10,
+            "options": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Future and Conditional Tenses",
+    "description": "Express future plans, projections, and polite requests.",
+    "lessons": [
+      {
+        "title": "Futur Proche",
+        "description": "Using aller + infinitive to express immediate future plans.",
+        "vocabulary": [
+          {
+            "french": "aller",
+            "english": "to go"
+          },
+          {
+            "french": "demain",
+            "english": "tomorrow"
+          },
+          {
+            "french": "dans une heure",
+            "english": "in an hour"
+          },
+          {
+            "french": "à midi",
+            "english": "at noon"
+          },
+          {
+            "french": "le weekend",
+            "english": "the weekend"
+          },
+          {
+            "french": "la prochaine semaine",
+            "english": "next week"
+          },
+          {
+            "french": "à 8 heures",
+            "english": "at 8 o'clock"
+          },
+          {
+            "french": "le matin",
+            "english": "in the morning"
+          },
+          {
+            "french": "l'après-midi",
+            "english": "in the afternoon"
+          },
+          {
+            "french": "prochainement",
+            "english": "soon"
+          }
+        ],
+        "grammar": {
+          "title": "Futur Proche avec Aller + Infinitif",
+          "text": "Pour exprimer des plans ou projets futurs, on utilise souvent le futur proche avec aller et l'infinitif. Par exemple: 'Je vais manger au restaurant ce soir.' ou 'Elle va partir demain pour la plage.'"
+        },
+        "reading": "Lisez cette conversation :\n\nSamantha : Qu'est-ce que tu fais après tes études ?\nAlexandre : Je vais aller à Paris pour un stage.\nSamantha : C'est super ! Quand vas-tu partir ?\nAlexandre : Dans une semaine, je pars pour trois mois.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que tu fais après tes études ?",
+            "options": [
+              "Je vais aller au cinéma.",
+              "Je vais manger un sandwich.",
+              "Je vais aller à Paris pour un stage.",
+              "Je vais faire mes devoirs."
+            ],
+            "correctKey": "Je vais aller au cinéma.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quand vas-tu partir ?",
+            "options": [
+              "Demain, je pars.",
+              "Dans une heure, je pars.",
+              "Dans une semaine, je pars.",
+              "Je ne pars pas."
+            ],
+            "correctKey": "Demain, je pars.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que tu fais après tes études ?",
+            "options": [
+              "Je vais aller au parc.",
+              "Je vais manger un sandwich.",
+              "Je vais faire mes devoirs.",
+              "Je vais aller à Paris pour un stage."
+            ],
+            "correctKey": "Je vais aller au parc.",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je *** au cinéma ce soir.",
+            "correctKey": "vais",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Elle *** partir demain pour la plage.",
+            "correctKey": "va",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Futur Simple",
+        "description": "Conjugations, stems of common irregular verbs, and future events.",
+        "vocabulary": [
+          {
+            "french": "le futur",
+            "english": "the future"
+          },
+          {
+            "french": "aller faire",
+            "english": "to go and do"
+          },
+          {
+            "french": "manger",
+            "english": "to eat"
+          },
+          {
+            "french": "boire",
+            "english": "to drink"
+          },
+          {
+            "french": "étudier",
+            "english": "to study"
+          },
+          {
+            "french": "travailler",
+            "english": "to work"
+          },
+          {
+            "french": "aller au cinéma",
+            "english": "to go to the cinema"
+          },
+          {
+            "french": "faire du sport",
+            "english": "to do sports"
+          },
+          {
+            "french": "passer son permis",
+            "english": "to pass a driving test"
+          },
+          {
+            "french": "apprendre un langage",
+            "english": "to learn a language"
+          }
+        ],
+        "grammar": {
+          "title": "Le Futur Simple: Conjugation and Usage",
+          "text": "The Future Simple tense is used to express future actions or events. It's formed by adding the suffix -ai, -as, -a, -ons, -ez, -ent to the stem of the verb. For example, je vais (I am going), tu vas (you are going), il va (he/she/it is going). Regular verbs follow this pattern: -er verbs add -rai, -ras, -ra, -rons, -rez, -ront; -ir and -re verbs change the stem before adding the suffix. For irregular verbs like aller (to go) and faire (to do), we need to memorize their future forms."
+        },
+        "reading": "Dialogue: Plans for the Weekend\n\nAurélie : Qu'est-ce que tu vas faire ce week-end ?\nLéo : Je vais aller au cinéma avec mes amis. Nous allons voir un film d'action.\nAurélie : C'est super ! Moi, je vais passer mon permis de conduire.\nLéo : Félicitations ! Tu vas être une conductrice très brave.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que tu vas faire ce soir ?",
+            "options": [
+              "Je vais aller au cinéma.",
+              "Je vais manger un sandwich.",
+              "Je vais faire du sport.",
+              "Je vais étudier."
+            ],
+            "correctKey": "Je vais aller au cinéma.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que tu vas faire demain ?",
+            "options": [
+              "Je vais boire un café.",
+              "Je vais travailler.",
+              "Je vais apprendre un langage.",
+              "Je vais aller au parc."
+            ],
+            "correctKey": "Je vais apprendre un langage.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que tu vas faire après ton permis de conduire ?",
+            "options": [
+              "Je vais manger un sandwich.",
+              "Je vais aller au cinéma.",
+              "Je vais faire du sport.",
+              "Je vais étudier."
+            ],
+            "correctKey": "Je vais manger un sandwich.",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je *** de la plage ce week-end.",
+            "correctKey": "vais",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Tu *** passer ton permis de conduire bientôt.",
+            "correctKey": "vas",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Conditionnel Présent",
+        "description": "Polite expressions using vouloir, aimer, and basic conditional requests.",
+        "vocabulary": [
+          {
+            "french": "vouloir",
+            "english": "to want"
+          },
+          {
+            "french": "aimer",
+            "english": "to like"
+          },
+          {
+            "french": "faire",
+            "english": "to do"
+          },
+          {
+            "french": "aller",
+            "english": "to go"
+          },
+          {
+            "french": "prendre",
+            "english": "to take"
+          },
+          {
+            "french": "dire",
+            "english": "to say"
+          },
+          {
+            "french": "faire plaisir",
+            "english": "to please"
+          },
+          {
+            "french": "s'il vous plaît",
+            "english": "please"
+          },
+          {
+            "french": "d'accord",
+            "english": "okay"
+          },
+          {
+            "french": "merci",
+            "english": "thank you"
+          }
+        ],
+        "grammar": {
+          "title": "Conditionnel Présent: Polite Expressions and Requests",
+          "text": "The Conditionnel Présent is used to express polite requests or future plans. It's formed by combining the auxiliary verb 'aller' with the infinitive of the main verb, or using 'vouloir' + infinitive for more formal expressions. For example: \"Je vais faire mes devoirs\" (I'm going to do my homework) or \"Je voudrais un café, s'il vous plaît\" (I would like a coffee, please)."
+        },
+        "reading": "Dialogue:\n\nMarine : Je vais aller au cinéma ce soir.\nLéo : C'est super ! Quand est-ce que tu vas partir ?\nMarine : À 6 heures. Tu veux venir avec moi ?",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la bonne façon de dire 'Je voudrais un sandwich'?",
+            "options": [
+              "Je vais prendre un sandwich.",
+              "Je voudrais un sandwich, s'il vous plaît.",
+              "J'aime un sandwich.",
+              "Je fais plaisir à manger un sandwich."
+            ],
+            "correctKey": "Je voudrais un sandwich, s'il vous plaît.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le conditionnel présent pour 'aller au parc'?",
+            "options": [
+              "Je vais aller au parc.",
+              "Je suis allé au parc.",
+              "Je vais être au parc.",
+              "Je voudrais aller au parc."
+            ],
+            "correctKey": "Je voudrais aller au parc.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Comment demander à quelqu'un de faire quelque chose pour toi?",
+            "options": [
+              "Dis-lui que tu veux qu'il fasse.",
+              "Demande-lui s'il peut faire cela.",
+              "Dit-lui que c'est une bonne idée.",
+              "Dis-lui que tu vas le faire toi-même."
+            ],
+            "correctKey": "Demande-lui s'il peut faire cela.",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voudrais un café, ***.",
+            "correctKey": "s'il vous plaît",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je vais ***, demain.",
+            "correctKey": "aller au parc",
+            "points": 10,
+            "options": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Pronouns and Prepositions",
+    "description": "Avoid repetition with object pronouns and navigate geographic prepositions.",
+    "lessons": [
+      {
+        "title": "Direct Object Pronouns (COD)",
+        "description": "Replacing nouns with le, la, l', les in simple sentences.",
+        "vocabulary": [
+          {
+            "french": "le",
+            "english": "the"
+          },
+          {
+            "french": "la",
+            "english": "the (feminine)"
+          },
+          {
+            "french": "l'",
+            "english": "the (masculine, singular, before a vowel or 'h')"
+          },
+          {
+            "french": "les",
+            "english": "the (plural, masculine and feminine)"
+          },
+          {
+            "french": "manger",
+            "english": "to eat"
+          },
+          {
+            "french": "boire",
+            "english": "to drink"
+          },
+          {
+            "french": "faire",
+            "english": "to do/to make"
+          },
+          {
+            "french": "aller",
+            "english": "to go"
+          },
+          {
+            "french": "venir",
+            "english": "to come"
+          },
+          {
+            "french": "prendre",
+            "english": "to take"
+          }
+        ],
+        "grammar": {
+          "title": "Direct Object Pronouns (COD) with le, la, l', les",
+          "text": "In French, when the direct object of a verb is a noun or pronoun, it can be replaced by a direct object pronoun. For example: 'Je mangerai une pomme.' instead of 'Je mangerai la pomme.' The direct object pronouns are le (masculine singular), la (feminine singular), l' (masculine singular before a vowel or 'h'), les (plural, masculine and feminine)."
+        },
+        "reading": "J'ai besoin de prendre un café. Je vais prendre un café à la cafétéria.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que je fais avec le livre?",
+            "options": [
+              "Je lis le livre.",
+              "Je mets le livre sur la table.",
+              "Je prends le livre.",
+              "Je jette le livre."
+            ],
+            "correctKey": "Je lis le livre.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que je fais avec l'eau?",
+            "options": [
+              "J'ai bu de l'eau.",
+              "J'ai pris de l'eau.",
+              "J'ai fait de l'eau.",
+              "J'ai mangé de l'eau."
+            ],
+            "correctKey": "J'ai bu de l'eau.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que je fais avec le pain?",
+            "options": [
+              "Je mange du pain.",
+              "Je prends du pain.",
+              "Je mets du pain sur la table.",
+              "Je jette du pain."
+            ],
+            "correctKey": "Je mange du pain.",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je vais prendre un café à la cafétéria. Je vais *** de l'argent.",
+            "correctKey": "prends",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "J'ai besoin de prendre un taxi. Je vais *** un taxi.",
+            "correctKey": "prends",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Indirect Object Pronouns (COI)",
+        "description": "Replacing people with lui, leur in sentences with à.",
+        "vocabulary": [
+          {
+            "french": "lui",
+            "english": "him"
+          },
+          {
+            "french": "leur",
+            "english": "them"
+          },
+          {
+            "french": "à",
+            "english": "to"
+          },
+          {
+            "french": "le livre",
+            "english": "the book"
+          },
+          {
+            "french": "la maison",
+            "english": "the house"
+          },
+          {
+            "french": "l'école",
+            "english": "school"
+          },
+          {
+            "french": "le parc",
+            "english": "the park"
+          },
+          {
+            "french": "les amis",
+            "english": "friends"
+          },
+          {
+            "french": "la mère",
+            "english": "mother"
+          },
+          {
+            "french": "le père",
+            "english": "father"
+          }
+        ],
+        "grammar": {
+          "title": "Indirect Object Pronouns (COI) with à",
+          "text": "In French, when we want to indicate the indirect object of a verb, we use pronouns like 'lui' or 'leur'. However, when the indirect object is a person or people, we can also use the preposition 'à' followed by the pronoun. For example: 'Je donne le livre à lui.' (I give the book to him.) or 'Je m'adresse à eux.' (I'm talking to them.)"
+        },
+        "reading": "Dialogue: Demande d'aide\n\nA : Pouvez-vous m'aider ? B : Oui, bien sûr. Qu'est-ce que vous voulez faire ? A : Je voudrais aller au parc. B : D'accord, je vais avec toi.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le sens de 'Je m'adresse à eux.'?",
+            "options": [
+              "Je les regarde.",
+              "Je leur parle.",
+              "Je suis avec eux.",
+              "Je leur donne quelque chose."
+            ],
+            "correctKey": "Je les regarde.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le sens de 'Je donne le livre à lui.'?",
+            "options": [
+              "Je prends le livre.",
+              "Je donne le livre à quelqu'un.",
+              "Je regarde le livre.",
+              "Je mets le livre sur la table."
+            ],
+            "correctKey": "Je prends le livre.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le sens de 'Je vais avec toi.'?",
+            "options": [
+              "Je vais seul.",
+              "Je vais avec quelqu'un d'autre.",
+              "Je suis déjà là.",
+              "Je ne veux pas aller."
+            ],
+            "correctKey": "Je vais seul.",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je donne le livre ***.",
+            "correctKey": "à lui",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je vais avec ***.",
+            "correctKey": "toi",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Geographic Prepositions",
+        "description": "Prepositions used with cities and countries (en, au, aux, à).",
+        "vocabulary": [
+          {
+            "french": "en",
+            "english": "in"
+          },
+          {
+            "french": "au",
+            "english": "to"
+          },
+          {
+            "french": "aux",
+            "english": "to the"
+          },
+          {
+            "french": "à",
+            "english": "at, to"
+          },
+          {
+            "french": "Paris",
+            "english": "Paris"
+          },
+          {
+            "french": "Londres",
+            "english": "London"
+          },
+          {
+            "french": "New York",
+            "english": "New York"
+          },
+          {
+            "french": "le centre-ville",
+            "english": "the city center"
+          },
+          {
+            "french": "la gare",
+            "english": "the train station"
+          },
+          {
+            "french": "l'hôtel",
+            "english": "the hotel"
+          }
+        ],
+        "grammar": {
+          "title": "Geographic Prepositions",
+          "text": "When talking about cities and countries, we use the prepositions en, au, aux, and à. For example: Je vais en France (I'm going to France), Nous sommes à Paris (We are in Paris). Note that when using the preposition à with a city, it can mean both 'at' and 'to'."
+        },
+        "reading": "Lorsque je suis allée à Londres, j'ai visité le centre-ville. J'ai marché jusqu'à la gare et pris un train pour New York. Ensuite, je suis allée au musée dans l'hôtel.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la préposition correcte à utiliser avec Paris?",
+            "options": [
+              "en",
+              "au",
+              "aux",
+              "à"
+            ],
+            "correctKey": "à",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Où vas-tu ce week-end?",
+            "options": [
+              "En France",
+              "Au Canada",
+              "Aux États-Unis",
+              "À Londres"
+            ],
+            "correctKey": "À Londres",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la préposition correcte à utiliser avec un pays?",
+            "options": [
+              "en",
+              "au",
+              "aux",
+              "à"
+            ],
+            "correctKey": "en",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je vais *** en France.",
+            "correctKey": "aller",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Nous sommes *** à Paris.",
+            "correctKey": "à",
+            "points": 10,
+            "options": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Adjectives and Comparisons",
+    "description": "Describe items and people using comparisons and descriptor agreement.",
+    "lessons": [
+      {
+        "title": "Comparatives and Superlatives",
+        "description": "Using plus/moins/aussi... que and superlatives (le plus, la plus).",
+        "vocabulary": [
+          {
+            "french": "grand",
+            "english": "tall"
+          },
+          {
+            "french": "petit",
+            "english": "small"
+          },
+          {
+            "french": "beau",
+            "english": "beautiful"
+          },
+          {
+            "french": "lourd",
+            "english": "heavy"
+          },
+          {
+            "french": "léger",
+            "english": "light"
+          },
+          {
+            "french": "rapide",
+            "english": "fast"
+          },
+          {
+            "french": "lent",
+            "english": "slow"
+          },
+          {
+            "french": "facile",
+            "english": "easy"
+          },
+          {
+            "french": "difficile",
+            "english": "hard"
+          },
+          {
+            "french": "intéressant",
+            "english": "interesting"
+          }
+        ],
+        "grammar": {
+          "title": "Comparatives and Superlatives with Plus/Minus/Aussi... que",
+          "text": "To compare two things in French, we use the word 'plus' for more or 'moins' for less. For example: \"C'est plus grand que moi\" (It's taller than me) or \"Il est moins intelligent que mon frère\" (He is less intelligent than my brother). To make a comparison with someone else, we can say \"Aussi... que\", like this: \"Je suis aussi fatigué que toi\" (I am as tired as you). For the superlative form, we use 'le plus' for more and 'la moins' for less, followed by the noun. For example: \"C'est le plus beau paysage de la montagne\" (It's the most beautiful landscape of the mountain) or \"Il est la moins intelligent des élèves\" (He is the least intelligent student)."
+        },
+        "reading": "Dialogue\n\nA: 'Tu es plus rapide que moi.'\nB: 'Oui, je suis aussi rapide que mon frère, mais il est le plus rapide de tous.'\nA: 'C'est vrai, je suis moins fort que lui.'",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel adjectif est utilisé pour décrire quelque chose qui est très grand?",
+            "options": [
+              "grand",
+              "petit",
+              "beau",
+              "lourd"
+            ],
+            "correctKey": "grand",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je suis *** de la course à pied.",
+            "correctKey": "rapide",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est la forme superlative de l'adjectif 'grand'?",
+            "options": [
+              "le plus grand",
+              "la moins grande",
+              "plus grand",
+              "moins grande"
+            ],
+            "correctKey": "le plus grand",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "C'est *** beau que la mer.",
+            "correctKey": "le plus",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle est l'adjectif utilisé pour décrire quelque chose qui est moins lourd?",
+            "options": [
+              "lourd",
+              "léger",
+              "grand",
+              "petit"
+            ],
+            "correctKey": "léger",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Placement of Adjectives",
+        "description": "Understanding rules for BAGS adjectives and adjectives placed after nouns.",
+        "vocabulary": [
+          {
+            "french": "grand",
+            "english": "big"
+          },
+          {
+            "french": "petit",
+            "english": "small"
+          },
+          {
+            "french": "beau",
+            "english": "beautiful"
+          },
+          {
+            "french": "joli",
+            "english": "pretty"
+          },
+          {
+            "french": "vieux",
+            "english": "old"
+          },
+          {
+            "french": "nouveau",
+            "english": "new"
+          },
+          {
+            "french": "lourd",
+            "english": "heavy"
+          },
+          {
+            "french": "léger",
+            "english": "light"
+          },
+          {
+            "french": "long",
+            "english": "long"
+          },
+          {
+            "french": "court",
+            "english": "short"
+          }
+        ],
+        "grammar": {
+          "title": "Placement of Adjectives",
+          "text": "In French, adjectives can be placed before or after the noun they describe. There are some exceptions with BAGS (Beau, Aimable, Généreux, Simple) adjectives which must always come after the noun. For example: 'Je suis un grand chien.' (I am a big dog.) but 'Elle est une belle femme.' (She is a beautiful woman.)."
+        },
+        "reading": "Lisez le dialogue suivant : \n\nSœur : Tu es beau ce matin !\nFrère : Merci, j'ai fait du sport hier.\nSœur : Ah, c'est bien ! Alors tu es en forme.\nFrère : Oui, je suis prêt pour la journée.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le bon placement de l'adjectif 'grand' dans cette phrase ?",
+            "options": [
+              "Je suis un grand.",
+              "Je suis grand.",
+              "Un grand est moi.",
+              "Moi, je suis grand."
+            ],
+            "correctKey": "Je suis grand.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le bon placement de l'adjectif 'belle' dans cette phrase ?",
+            "options": [
+              "Elle est une belle.",
+              "Une belle est elle.",
+              "Elle est belle.",
+              "Belle est-elle."
+            ],
+            "correctKey": "Elle est belle.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le bon placement de l'adjectif 'vieux' dans cette phrase ?",
+            "options": [
+              "Il est un vieux.",
+              "Un vieux est-il.",
+              "Vieux est-il.",
+              "Il est vieux."
+            ],
+            "correctKey": "Il est vieux.",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La femme est *** et jolie.",
+            "correctKey": "belle",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le chien est *** et intelligent.",
+            "correctKey": "grand",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Adjective Agreement",
+        "description": "Singular, plural, masculine, and feminine forms of standard adjectives.",
+        "vocabulary": [
+          {
+            "french": "grand",
+            "english": "big"
+          },
+          {
+            "french": "petit",
+            "english": "small"
+          },
+          {
+            "french": "beau",
+            "english": "beautiful"
+          },
+          {
+            "french": "bon",
+            "english": "good"
+          },
+          {
+            "french": "mieux",
+            "english": "better"
+          },
+          {
+            "french": "peu",
+            "english": "little"
+          },
+          {
+            "french": "assez",
+            "english": "enough"
+          },
+          {
+            "french": "très",
+            "english": "very"
+          },
+          {
+            "french": "fort",
+            "english": "strong"
+          },
+          {
+            "french": "faible",
+            "english": "weak"
+          }
+        ],
+        "grammar": {
+          "title": "L'accord des adjectifs (Adjective Agreement)",
+          "text": "When describing something, we need to agree the adjective with its noun in terms of number (singular or plural) and gender (masculine or feminine). For example: <i>le grand livre</i> (the big book), <i>les grands livres</i> (the big books), <i>la belle femme</i> (the beautiful woman), but <i>la belle femme est plus jolie que moi</i> (the beautiful woman is more beautiful than me)."
+        },
+        "reading": "L&#39;aventure de Pierre et Marie. Ils ont rencontré un grand chien qui leur a offert un beau collier.Pierre dit : « C&#39;est un très beau collier ! »",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le pluriel de l&#39;adjectif « grand » ?",
+            "options": [
+              "grand",
+              "grands",
+              "les grands",
+              "le grand"
+            ],
+            "correctKey": "grands",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le féminin de l&#39;adjectif « beau » ?",
+            "options": [
+              "beau",
+              "belle",
+              "les beaux",
+              "le beau"
+            ],
+            "correctKey": "belle",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quel est le masculin du pluriel de l&#39;adjectif « faible » ?",
+            "options": [
+              "faible",
+              "les faibles",
+              "le faible",
+              "les forts"
+            ],
+            "correctKey": "les faibles",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La femme est très ***, elle a un sourire si doux.",
+            "correctKey": "belle",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le chien est ***, il court vite.",
+            "correctKey": "fort",
+            "points": 10,
+            "options": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Negatives and Questions",
+    "description": "Construct advanced questions and complex negative structures.",
+    "lessons": [
+      {
+        "title": "Complex Negation",
+        "description": "Using ne... plus, ne... jamais, ne... rien, ne... personne.",
+        "vocabulary": [
+          {
+            "french": "ne",
+            "english": "not"
+          },
+          {
+            "french": "plus",
+            "english": "any"
+          },
+          {
+            "french": "jamais",
+            "english": "ever"
+          },
+          {
+            "french": "rien",
+            "english": "nothing"
+          },
+          {
+            "french": "personne",
+            "english": "no one"
+          },
+          {
+            "french": "aucun",
+            "english": "any"
+          },
+          {
+            "french": "jamais",
+            "english": "ever"
+          },
+          {
+            "french": "rien",
+            "english": "nothing"
+          },
+          {
+            "french": "personne",
+            "english": "no one"
+          },
+          {
+            "french": "aucune chose",
+            "english": "anything"
+          }
+        ],
+        "grammar": {
+          "title": "Complex Negation with Ne...",
+          "text": "To form complex negatives, we use ne... plus, ne... jamais, ne... rien, and ne... personne. These structures are used to express that something is not true or has never happened. For example: Je n'ai jamais vu Paris. (I have never seen Paris.)"
+        },
+        "reading": "Lettre de Marie\n\nBonjour,\nJe ne suis pas allée au cinéma hier soir. J'avais promis à mon ami que je serais là, mais je n'ai jamais vu ce film et je n'ai pas voulu le voir.\nJe vous écris pour vous dire que je vais aller demain.\nCordialement,\nMarie",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que Marie a fait hier soir?",
+            "options": [
+              "Je suis allée au cinéma.",
+              "J'ai vu le film.",
+              "Je n'ai pas voulu aller au cinéma.",
+              "Je ne suis pas allée au cinéma."
+            ],
+            "correctKey": "Je ne suis pas allée au cinéma.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Qu'est-ce que Marie a promis à son ami?",
+            "options": [
+              "D'aller au cinéma.",
+              "De voir le film.",
+              "De ne pas aller au cinéma.",
+              "De ne pas vouloir aller au cinéma."
+            ],
+            "correctKey": "D'aller au cinéma.",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Pourquoi Marie n'a-t-elle pas vu le film?",
+            "options": [
+              "Parce qu'elle ne voulait pas le voir.",
+              "Parce que c'était trop long.",
+              "Parce qu'elle avait autre chose à faire.",
+              "Parce qu'elle était malade."
+            ],
+            "correctKey": "Parce qu'elle ne voulait pas le voir.",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je n'ai jamais *** du vélo.",
+            "correctKey": "fait",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Il ne m'a *** de réponse.",
+            "correctKey": "donné",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Inversion Questions",
+        "description": "Asking formal questions by inverting verbs and pronouns.",
+        "vocabulary": [
+          {
+            "french": "Quelle heure est-il?",
+            "english": "What time is it?"
+          },
+          {
+            "french": "Je m'appelle",
+            "english": "My name is"
+          },
+          {
+            "french": "Comment ça va?",
+            "english": "How are you?"
+          },
+          {
+            "french": "Je suis fatigué.",
+            "english": "I am tired."
+          },
+          {
+            "french": "J'ai faim.",
+            "english": "I'm hungry."
+          },
+          {
+            "french": "Qu'est-ce que vous faites?",
+            "english": "What are you doing?"
+          },
+          {
+            "french": "Je suis étudiant.",
+            "english": "I am a student."
+          },
+          {
+            "french": "Où est la bibliothèque?",
+            "english": "Where is the library?"
+          },
+          {
+            "french": "Quelle est ta couleur préférée?",
+            "english": "What's your favorite color?"
+          },
+          {
+            "french": "Je voudrais une bière, s'il vous plaît.",
+            "english": "I would like a beer, please."
+          }
+        ],
+        "grammar": {
+          "title": "L'inversion des questions",
+          "text": "Pour poser des questions formelles en français, on inverse le verbe et le sujet. Par exemple : 'Quelle heure est-il?' (Question) - 'Il est trois heures.' (Réponse). Lorsque nous voulons demander quelque chose à quelqu'un, nous utilisons souvent 'Vous' comme sujet, par exemple : 'Comment ça va-t-il?' ou 'Qu'est-ce que vous faites ce soir?'"
+        },
+        "reading": "Dialogue:\n\nA: Bonjour, madame. Comment ça va?\nB: Ça va bien, merci. Et vous ?\nA: Je vais bien, merci. Quelle heure est-il ?\nB: Il est trois heures.\nA: Ah, je suis en retard !",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle question suivante est correcte pour demander à quelqu'un son nom ?",
+            "options": [
+              "Comment ça va-tu?",
+              "Qu'est-ce que tu fais?",
+              "Qui es-tu?",
+              "Quel est ton nom?"
+            ],
+            "correctKey": "Qui es-tu?",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle question suivante est correcte pour demander à quelqu'un ce qu'il fait ?",
+            "options": [
+              "Qu'est-ce que tu fais?",
+              "Comment ça va-tu?",
+              "Qui es-tu?",
+              "Quel est ton nom?"
+            ],
+            "correctKey": "Qu'est-ce que tu fais?",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Quelle question suivante est correcte pour demander à quelqu'un l'heure ?",
+            "options": [
+              "Comment ça va-tu?",
+              "Qu'est-ce que tu fais?",
+              "Qui es-tu?",
+              "Quelle heure est-il?"
+            ],
+            "correctKey": "Quelle heure est-il?",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je voudrais savoir ***, s'il vous plaît.",
+            "correctKey": "comment ça va",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Qu'est-ce que tu fais ***, ce soir ?",
+            "correctKey": "ce",
+            "points": 10,
+            "options": null
+          }
+        ]
+      },
+      {
+        "title": "Questions with Est-ce que",
+        "description": "Standard question formation using est-ce que, qui, quoi, and comment.",
+        "vocabulary": [
+          {
+            "french": "est-ce que",
+            "english": "is it that"
+          },
+          {
+            "french": "qui",
+            "english": "who"
+          },
+          {
+            "french": "quoi",
+            "english": "what"
+          },
+          {
+            "french": "comment",
+            "english": "how"
+          },
+          {
+            "french": "n'est-ce pas",
+            "english": "isn't it"
+          },
+          {
+            "french": "ne...",
+            "english": "not..."
+          },
+          {
+            "french": "pas",
+            "english": "not"
+          },
+          {
+            "french": "rien",
+            "english": "nothing"
+          },
+          {
+            "french": "jamais",
+            "english": "never"
+          },
+          {
+            "french": "aucun",
+            "english": "none"
+          }
+        ],
+        "grammar": {
+          "title": "Forming Questions with Est-ce que",
+          "text": "To form a question in French, we can use the phrase 'est-ce que' followed by the subject and then the verb. For example: \"Est-ce que tu vas au parc?\" (Are you going to the park?) or \"Est-ce qu'il est fatigué?\" (Is he tired?). We can also ask for more information with words like 'qui', 'quoi', and 'comment'. For example: \"Qui est venu hier?\" (Who came yesterday?), \"Qu'est-ce que tu as mangé pour déjeuner?\" (What did you eat for lunch?), or \"Comment t'appelles-tu?\" (How do you call yourself?)."
+        },
+        "reading": "Dialogue: \n\nA: Est-ce que vous allez au cinéma ce soir?\nB: Oui, je vais voir un film avec mes amis.\nA: Qu'est-ce que le film s'appelle?\nB: Il s'appelle \"Le Seigneur des Anneaux\". \nA: Comment est-ce que tu as entendu parler de ça?",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Form a question with 'est-ce que' and the verb 'aller'.",
+            "options": [
+              "Est-ce que je vais au parc?",
+              "Je vais au parc.",
+              "Tu vas au parc, n'est-ce pas?",
+              "Il est allé au parc."
+            ],
+            "correctKey": "Est-ce que je vais au parc?",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Form a question with 'qui' and the verb 'venir'.",
+            "options": [
+              "Qui est venu hier?",
+              "Je suis venu hier.",
+              "Tu es venu hier.",
+              "Il n'est pas venu hier."
+            ],
+            "correctKey": "Qui est venu hier?",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Form a question with 'quoi' and the verb 'manger'.",
+            "options": [
+              "Qu'est-ce que tu as mangé pour déjeuner?",
+              "Je n'ai pas mangé pour déjeuner.",
+              "Tu as mangé quelque chose.",
+              "Il a mangé tout le temps."
+            ],
+            "correctKey": "Qu'est-ce que tu as mangé pour déjeuner?",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Je ne *** pas de café ce matin.",
+            "correctKey": "bois",
+            "points": 10,
+            "options": null
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Est-ce que tu vas *** au parc?",
+            "correctKey": "aller",
+            "points": 10,
+            "options": null
+          }
+        ]
+      }
+    ]
+  }
+]

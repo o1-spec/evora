@@ -1,0 +1,1370 @@
+[
+  {
+    "title": "Society, Politics and Justice",
+    "description": "Explore advanced vocabulary for discussing immigration, politics, judicial systems, and intercultural relations in a Francophone context.",
+    "lessons": [
+      {
+        "title": "L'immigration et l'intégration",
+        "description": "Discussing immigration pathways, integration challenges, and social cohesion.",
+        "vocabulary": [
+          {
+            "french": "un demandeur d'asile",
+            "english": "asylum seeker"
+          },
+          {
+            "french": "un permis de séjour",
+            "english": "residence permit"
+          },
+          {
+            "french": "l'intégration sociale",
+            "english": "social integration"
+          },
+          {
+            "french": "la cohésion sociale",
+            "english": "social cohesion"
+          },
+          {
+            "french": "l'insertion professionnelle",
+            "english": "workforce integration"
+          },
+          {
+            "french": "une politique migratoire",
+            "english": "migration policy"
+          },
+          {
+            "french": "les nouveaux arrivants",
+            "english": "newcomers"
+          },
+          {
+            "french": "la diversité culturelle",
+            "english": "cultural diversity"
+          },
+          {
+            "french": "l'inclusion",
+            "english": "inclusion"
+          },
+          {
+            "french": "une barrière linguistique",
+            "english": "language barrier"
+          }
+        ],
+        "grammar": {
+          "title": "Expressing cause and consequence in social issues",
+          "text": "At B2 level, use connectors such as en raison de, grâce à, par conséquent, and ainsi to explain social phenomena. Example: En raison des barrières linguistiques, certains migrants rencontrent des difficultés. (Because of language barriers, some migrants face difficulties.) Grâce à des programmes d'inclusion, leur intégration s'améliore. (Thanks to inclusion programs, their integration improves.)"
+        },
+        "reading": "Dans plusieurs pays francophones, les nouveaux arrivants doivent surmonter des barrières linguistiques et administratives. L'intégration sociale dépend souvent de l'accès à l'emploi et à l'éducation. Grâce à des politiques migratoires adaptées, l'inclusion peut être renforcée. Ainsi, la cohésion sociale bénéficie d'une meilleure participation de tous les citoyens.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « la cohésion sociale » refer to?",
+            "options": [
+              "social cohesion",
+              "political campaign",
+              "legal dispute",
+              "economic crisis"
+            ],
+            "correctKey": "social cohesion"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which term means 'residence permit'?",
+            "options": [
+              "un permis de séjour",
+              "une audience",
+              "un scrutin",
+              "une plainte"
+            ],
+            "correctKey": "un permis de séjour"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector expresses a positive cause?",
+            "options": [
+              "grâce à",
+              "par conséquent",
+              "ainsi",
+              "cependant"
+            ],
+            "correctKey": "grâce à"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'intégration des nouveaux arrivants favorise la *** sociale.",
+            "correctKey": "cohésion"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une *** linguistique peut ralentir l'intégration.",
+            "correctKey": "barrière"
+          }
+        ]
+      },
+      {
+        "title": "La politique et les institutions",
+        "description": "Understanding political systems, elections, and civic duties.",
+        "vocabulary": [
+          {
+            "french": "une assemblée législative",
+            "english": "legislative assembly"
+          },
+          {
+            "french": "un scrutin",
+            "english": "election ballot"
+          },
+          {
+            "french": "un mandat",
+            "english": "term of office"
+          },
+          {
+            "french": "la participation citoyenne",
+            "english": "civic participation"
+          },
+          {
+            "french": "une réforme",
+            "english": "reform"
+          },
+          {
+            "french": "un parti politique",
+            "english": "political party"
+          },
+          {
+            "french": "la gouvernance",
+            "english": "governance"
+          },
+          {
+            "french": "un électeur",
+            "english": "voter"
+          },
+          {
+            "french": "le pouvoir exécutif",
+            "english": "executive branch"
+          },
+          {
+            "french": "le pouvoir législatif",
+            "english": "legislative branch"
+          }
+        ],
+        "grammar": {
+          "title": "Using impersonal expressions to discuss politics",
+          "text": "Formal political discussions often use impersonal expressions such as il est essentiel que, il convient de, and il est nécessaire de. Example: Il est essentiel que les électeurs participent au scrutin. (It is essential that voters participate in the election.) Il convient de respecter les institutions démocratiques. (It is appropriate to respect democratic institutions.)"
+        },
+        "reading": "Dans une démocratie, la participation citoyenne joue un rôle fondamental. Les électeurs choisissent leurs représentants lors d'un scrutin. Une assemblée législative examine les réformes proposées par le pouvoir exécutif. Une gouvernance efficace repose sur la transparence et le respect des institutions.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is « un scrutin »?",
+            "options": [
+              "election ballot",
+              "court hearing",
+              "tax policy",
+              "citizenship certificate"
+            ],
+            "correctKey": "election ballot"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Who participates in elections?",
+            "options": [
+              "un électeur",
+              "un juge",
+              "un avocat",
+              "un témoin"
+            ],
+            "correctKey": "un électeur"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression introduces a formal recommendation?",
+            "options": [
+              "Il convient de",
+              "À mon avis",
+              "Peut-être",
+              "Par hasard"
+            ],
+            "correctKey": "Il convient de"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La participation *** est essentielle dans une démocratie.",
+            "correctKey": "citoyenne"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une *** peut modifier le fonctionnement des institutions.",
+            "correctKey": "réforme"
+          }
+        ]
+      },
+      {
+        "title": "Le système judiciaire",
+        "description": "Navigating laws, court systems, trials, and legal terminology.",
+        "vocabulary": [
+          {
+            "french": "un tribunal",
+            "english": "court"
+          },
+          {
+            "french": "une audience",
+            "english": "hearing"
+          },
+          {
+            "french": "un avocat",
+            "english": "lawyer"
+          },
+          {
+            "french": "un juge",
+            "english": "judge"
+          },
+          {
+            "french": "une infraction",
+            "english": "offense"
+          },
+          {
+            "french": "une peine",
+            "english": "sentence"
+          },
+          {
+            "french": "un témoignage",
+            "english": "testimony"
+          },
+          {
+            "french": "la présomption d'innocence",
+            "english": "presumption of innocence"
+          },
+          {
+            "french": "une plainte",
+            "english": "complaint/legal complaint"
+          },
+          {
+            "french": "le code pénal",
+            "english": "criminal code"
+          }
+        ],
+        "grammar": {
+          "title": "Using passive structures in legal contexts",
+          "text": "Legal language frequently uses the passive voice to emphasize actions rather than people. Example: La plainte a été déposée hier. (The complaint was filed yesterday.) Le suspect a été entendu par le juge. (The suspect was questioned by the judge.) Passive structures are common in judicial reporting."
+        },
+        "reading": "Lors d'une audience devant le tribunal, le juge examine les témoignages et les preuves. La présomption d'innocence doit être respectée tout au long de la procédure. Si une infraction est établie, une peine peut être prononcée conformément au code pénal. Les avocats jouent un rôle essentiel dans la défense des parties concernées.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « la présomption d'innocence » mean?",
+            "options": [
+              "presumption of innocence",
+              "legal complaint",
+              "criminal code",
+              "court order"
+            ],
+            "correctKey": "presumption of innocence"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Who examines evidence during a hearing?",
+            "options": [
+              "un juge",
+              "un électeur",
+              "un journaliste",
+              "un ministre"
+            ],
+            "correctKey": "un juge"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which sentence is in the passive voice?",
+            "options": [
+              "La plainte a été déposée hier.",
+              "L'avocat prépare sa défense.",
+              "Le juge écoute les témoins.",
+              "Les citoyens votent."
+            ],
+            "correctKey": "La plainte a été déposée hier."
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'affaire est examinée devant un ***.",
+            "correctKey": "tribunal"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'avocat a présenté un *** important pendant le procès.",
+            "correctKey": "témoignage"
+          }
+        ]
+      },
+      {
+        "title": "Les relations interculturelles",
+        "description": "Exploring cultural exchanges, diversity, integration, and community living.",
+        "vocabulary": [
+          {
+            "french": "le vivre-ensemble",
+            "english": "living together/social harmony"
+          },
+          {
+            "french": "une identité culturelle",
+            "english": "cultural identity"
+          },
+          {
+            "french": "un échange interculturel",
+            "english": "intercultural exchange"
+          },
+          {
+            "french": "la tolérance",
+            "english": "tolerance"
+          },
+          {
+            "french": "le multiculturalisme",
+            "english": "multiculturalism"
+          },
+          {
+            "french": "une communauté d'accueil",
+            "english": "host community"
+          },
+          {
+            "french": "la compréhension mutuelle",
+            "english": "mutual understanding"
+          },
+          {
+            "french": "un préjugé",
+            "english": "prejudice"
+          },
+          {
+            "french": "la médiation",
+            "english": "mediation"
+          },
+          {
+            "french": "le dialogue interculturel",
+            "english": "intercultural dialogue"
+          }
+        ],
+        "grammar": {
+          "title": "Nuancing opinions with advanced connectors",
+          "text": "At B2 level, nuanced opinions are expressed using connectors such as toutefois, néanmoins, tandis que, and bien que. Example: Le multiculturalisme enrichit la société; néanmoins, certains défis subsistent. (Multiculturalism enriches society; nevertheless, some challenges remain.) Bien que les différences existent, le dialogue interculturel favorise la compréhension mutuelle. (Although differences exist, intercultural dialogue promotes mutual understanding.)"
+        },
+        "reading": "Dans les sociétés contemporaines, le vivre-ensemble repose sur la compréhension mutuelle et le respect des différences. Les échanges interculturels permettent de réduire les préjugés et de renforcer la tolérance. Toutefois, des tensions peuvent parfois apparaître. C'est pourquoi le dialogue interculturel et la médiation demeurent essentiels au sein des communautés d'accueil.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the purpose of intercultural dialogue?",
+            "options": [
+              "promote mutual understanding",
+              "organize elections",
+              "issue legal sentences",
+              "grant permits"
+            ],
+            "correctKey": "promote mutual understanding"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « un préjugé » mean?",
+            "options": [
+              "prejudice",
+              "testimony",
+              "reform",
+              "governance"
+            ],
+            "correctKey": "prejudice"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which connector introduces a nuanced contrast?",
+            "options": [
+              "néanmoins",
+              "grâce à",
+              "ainsi",
+              "par conséquent"
+            ],
+            "correctKey": "néanmoins"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le dialogue interculturel favorise la compréhension ***.",
+            "correctKey": "mutuelle"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La *** aide à résoudre certains conflits entre groupes.",
+            "correctKey": "médiation"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Business, Economy and Employment",
+    "description": "Master professional terminology related to the business world, macroeconomic finance, job hunting in Canada, and entrepreneurship.",
+    "lessons": [
+      {
+        "title": "Le monde des affaires",
+        "description": "Corporate structures, business negotiations, and management.",
+        "vocabulary": [
+          {
+            "french": "une fusion-acquisition",
+            "english": "merger and acquisition"
+          },
+          {
+            "french": "un conseil d'administration",
+            "english": "board of directors"
+          },
+          {
+            "french": "une stratégie d'entreprise",
+            "english": "business strategy"
+          },
+          {
+            "french": "une négociation commerciale",
+            "english": "business negotiation"
+          },
+          {
+            "french": "la gestion des risques",
+            "english": "risk management"
+          },
+          {
+            "french": "une filiale",
+            "english": "subsidiary"
+          },
+          {
+            "french": "un dirigeant",
+            "english": "executive"
+          },
+          {
+            "french": "la rentabilité",
+            "english": "profitability"
+          },
+          {
+            "french": "un partenariat stratégique",
+            "english": "strategic partnership"
+          },
+          {
+            "french": "la gouvernance d'entreprise",
+            "english": "corporate governance"
+          }
+        ],
+        "grammar": {
+          "title": "Using formal business collocations",
+          "text": "At B2 level, business communication relies heavily on collocations. For example: améliorer la rentabilité (improve profitability), conclure un partenariat stratégique (enter into a strategic partnership), and mettre en œuvre une stratégie (implement a strategy). Using precise collocations makes professional communication more natural and credible."
+        },
+        "reading": "Dans un environnement concurrentiel, les dirigeants doivent élaborer une stratégie d'entreprise efficace. La gouvernance d'entreprise joue un rôle essentiel dans la prise de décision. Lors d'une négociation commerciale, les parties cherchent souvent à conclure un partenariat stratégique. Une bonne gestion des risques contribue également à améliorer la rentabilité à long terme.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « une filiale » mean?",
+            "options": [
+              "subsidiary",
+              "investment fund",
+              "shareholder",
+              "court hearing"
+            ],
+            "correctKey": "subsidiary"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which term refers to a company's profit performance?",
+            "options": [
+              "la rentabilité",
+              "la fusion-acquisition",
+              "la gouvernance",
+              "la filiale"
+            ],
+            "correctKey": "la rentabilité"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression is a common business collocation?",
+            "options": [
+              "améliorer la rentabilité",
+              "manger la rentabilité",
+              "conduire la rentabilité",
+              "écouter la rentabilité"
+            ],
+            "correctKey": "améliorer la rentabilité"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le conseil d'administration supervise la *** d'entreprise.",
+            "correctKey": "gouvernance"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une bonne gestion des risques améliore la *** à long terme.",
+            "correctKey": "rentabilité"
+          }
+        ]
+      },
+      {
+        "title": "L'économie et la finance",
+        "description": "Global market trends, investments, inflation, and public finance.",
+        "vocabulary": [
+          {
+            "french": "l'inflation",
+            "english": "inflation"
+          },
+          {
+            "french": "la croissance économique",
+            "english": "economic growth"
+          },
+          {
+            "french": "un portefeuille d'investissement",
+            "english": "investment portfolio"
+          },
+          {
+            "french": "les marchés financiers",
+            "english": "financial markets"
+          },
+          {
+            "french": "un taux d'intérêt",
+            "english": "interest rate"
+          },
+          {
+            "french": "la dette publique",
+            "english": "public debt"
+          },
+          {
+            "french": "une politique budgétaire",
+            "english": "fiscal policy"
+          },
+          {
+            "french": "la volatilité",
+            "english": "volatility"
+          },
+          {
+            "french": "un actif financier",
+            "english": "financial asset"
+          },
+          {
+            "french": "la diversification",
+            "english": "diversification"
+          }
+        ],
+        "grammar": {
+          "title": "Expressing economic trends and evolution",
+          "text": "Economic discussions often use verbs such as augmenter, diminuer, fluctuer, progresser, and ralentir. Example: L'inflation a augmenté cette année. (Inflation increased this year.) Les marchés financiers fluctuent en fonction des conditions économiques. (Financial markets fluctuate according to economic conditions.)"
+        },
+        "reading": "L'économie mondiale est influencée par l'évolution des taux d'intérêt et de l'inflation. Afin de réduire les risques, de nombreux investisseurs privilégient la diversification de leur portefeuille d'investissement. Cependant, la volatilité des marchés financiers demeure une préoccupation importante. Les gouvernements ajustent également leur politique budgétaire pour soutenir la croissance économique.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is « la diversification » in finance?",
+            "options": [
+              "spreading investments across assets",
+              "raising taxes",
+              "merging companies",
+              "issuing passports"
+            ],
+            "correctKey": "spreading investments across assets"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which factor often influences borrowing costs?",
+            "options": [
+              "un taux d'intérêt",
+              "une audience",
+              "un mandat",
+              "un témoignage"
+            ],
+            "correctKey": "un taux d'intérêt"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which verb is commonly used to describe economic changes?",
+            "options": [
+              "fluctuer",
+              "dessiner",
+              "chanter",
+              "cuisiner"
+            ],
+            "correctKey": "fluctuer"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La *** permet souvent de réduire le risque d'investissement.",
+            "correctKey": "diversification"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'augmentation des prix est appelée ***.",
+            "correctKey": "inflation"
+          }
+        ]
+      },
+      {
+        "title": "Le marché de l'emploi au Canada",
+        "description": "Specific employment procedures, interviews, job market dynamics, and regional details in Canada.",
+        "vocabulary": [
+          {
+            "french": "le marché du travail",
+            "english": "labour market"
+          },
+          {
+            "french": "une pénurie de main-d'œuvre",
+            "english": "labour shortage"
+          },
+          {
+            "french": "les compétences transférables",
+            "english": "transferable skills"
+          },
+          {
+            "french": "une offre d'emploi",
+            "english": "job posting"
+          },
+          {
+            "french": "un permis de travail",
+            "english": "work permit"
+          },
+          {
+            "french": "la reconnaissance des diplômes",
+            "english": "credential recognition"
+          },
+          {
+            "french": "un réseau professionnel",
+            "english": "professional network"
+          },
+          {
+            "french": "une entrevue d'embauche",
+            "english": "job interview"
+          },
+          {
+            "french": "la mobilité professionnelle",
+            "english": "professional mobility"
+          },
+          {
+            "french": "un candidat qualifié",
+            "english": "qualified candidate"
+          }
+        ],
+        "grammar": {
+          "title": "Using formal employment vocabulary in Canada",
+          "text": "Canadian employment discussions often use specific terminology such as permis de travail, reconnaissance des diplômes, and compétences transférables. Example: Les compétences transférables facilitent l'intégration professionnelle. (Transferable skills facilitate professional integration.) La reconnaissance des diplômes peut prendre du temps. (Credential recognition may take time.)"
+        },
+        "reading": "Le marché du travail canadien présente des opportunités dans plusieurs secteurs en croissance. Toutefois, certaines régions connaissent une pénurie de main-d'œuvre. Les nouveaux arrivants doivent parfois obtenir la reconnaissance de leurs diplômes avant d'accéder à certaines professions. Développer un réseau professionnel et valoriser ses compétences transférables peut faciliter l'accès à une entrevue d'embauche.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « une pénurie de main-d'œuvre » mean?",
+            "options": [
+              "labour shortage",
+              "economic recession",
+              "salary increase",
+              "business merger"
+            ],
+            "correctKey": "labour shortage"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which document allows many newcomers to work legally in Canada?",
+            "options": [
+              "un permis de travail",
+              "une plainte",
+              "un scrutin",
+              "un mandat"
+            ],
+            "correctKey": "un permis de travail"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What can help newcomers find employment opportunities?",
+            "options": [
+              "un réseau professionnel",
+              "une audience",
+              "un tribunal",
+              "une peine"
+            ],
+            "correctKey": "un réseau professionnel"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "De nombreux immigrants choisissent le Canada pour ses opportunités sur le *** du travail.",
+            "correctKey": "marché"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les *** transférables sont valorisées par de nombreux employeurs.",
+            "correctKey": "compétences"
+          }
+        ]
+      },
+      {
+        "title": "L'entrepreneuriat",
+        "description": "Starting a business, startup terminology, funding, and innovation.",
+        "vocabulary": [
+          {
+            "french": "une start-up",
+            "english": "startup"
+          },
+          {
+            "french": "une levée de fonds",
+            "english": "fundraising round"
+          },
+          {
+            "french": "un modèle d'affaires",
+            "english": "business model"
+          },
+          {
+            "french": "un investisseur providentiel",
+            "english": "angel investor"
+          },
+          {
+            "french": "l'innovation",
+            "english": "innovation"
+          },
+          {
+            "french": "un incubateur",
+            "english": "business incubator"
+          },
+          {
+            "french": "une étude de marché",
+            "english": "market research"
+          },
+          {
+            "french": "la propriété intellectuelle",
+            "english": "intellectual property"
+          },
+          {
+            "french": "un avantage concurrentiel",
+            "english": "competitive advantage"
+          },
+          {
+            "french": "la croissance rapide",
+            "english": "rapid growth"
+          }
+        ],
+        "grammar": {
+          "title": "Explaining objectives and business strategy",
+          "text": "Entrepreneurship often requires expressing objectives and strategic goals. Use structures such as afin de + infinitive and dans le but de + infinitive. Example: L'entreprise réalise une étude de marché afin d'identifier les besoins des clients. (The company conducts market research in order to identify customer needs.)"
+        },
+        "reading": "Avant de lancer une start-up, les entrepreneurs réalisent généralement une étude de marché afin de valider leur modèle d'affaires. Ils peuvent rejoindre un incubateur pour bénéficier d'un accompagnement spécialisé. Une levée de fonds permet souvent d'accélérer la croissance rapide de l'entreprise. L'innovation et la propriété intellectuelle constituent également des avantages concurrentiels majeurs.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is « une levée de fonds »?",
+            "options": [
+              "fundraising round",
+              "court hearing",
+              "job interview",
+              "tax return"
+            ],
+            "correctKey": "fundraising round"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is the role of an incubator?",
+            "options": [
+              "support startups",
+              "issue legal sentences",
+              "organize elections",
+              "manage courts"
+            ],
+            "correctKey": "support startups"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which structure expresses purpose?",
+            "options": [
+              "afin de",
+              "néanmoins",
+              "cependant",
+              "toutefois"
+            ],
+            "correctKey": "afin de"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une *** de marché aide à comprendre les besoins des clients.",
+            "correctKey": "étude"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'*** est souvent essentielle au succès d'une start-up.",
+            "correctKey": "innovation"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "News, Media and Communication",
+    "description": "Discuss global affairs, media channels, professional communication strategies, and the global Francophone community.",
+    "lessons": [
+      {
+        "title": "La communication professionnelle",
+        "description": "Workplace interactions, presentations, emails, and professional negotiations.",
+        "vocabulary": [
+          {
+            "french": "une prise de parole",
+            "english": "public speaking/intervention"
+          },
+          {
+            "french": "une présentation stratégique",
+            "english": "strategic presentation"
+          },
+          {
+            "french": "un compte rendu",
+            "english": "meeting report"
+          },
+          {
+            "french": "une négociation",
+            "english": "negotiation"
+          },
+          {
+            "french": "un interlocuteur",
+            "english": "counterpart/interlocutor"
+          },
+          {
+            "french": "un courriel professionnel",
+            "english": "professional email"
+          },
+          {
+            "french": "la communication interne",
+            "english": "internal communication"
+          },
+          {
+            "french": "un retour constructif",
+            "english": "constructive feedback"
+          },
+          {
+            "french": "la gestion des conflits",
+            "english": "conflict management"
+          },
+          {
+            "french": "une réunion de travail",
+            "english": "work meeting"
+          }
+        ],
+        "grammar": {
+          "title": "Using formal register in professional communication",
+          "text": "Professional French often uses formal structures and precise vocabulary. For example: Je vous remercie pour votre retour. (Thank you for your feedback.) Nous souhaiterions organiser une réunion de travail. (We would like to organize a work meeting.) Formal language helps maintain professionalism and clarity."
+        },
+        "reading": "Dans une entreprise internationale, la communication interne joue un rôle essentiel. Les responsables préparent souvent une présentation stratégique avant une réunion de travail. Après chaque projet, un compte rendu est partagé avec les interlocuteurs concernés. Un retour constructif permet d'améliorer la collaboration et de renforcer la gestion des conflits.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « un compte rendu » mean?",
+            "options": [
+              "meeting report",
+              "employment contract",
+              "court ruling",
+              "investment fund"
+            ],
+            "correctKey": "meeting report"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression refers to feedback intended to help improvement?",
+            "options": [
+              "un retour constructif",
+              "une négociation",
+              "une présentation stratégique",
+              "un interlocuteur"
+            ],
+            "correctKey": "un retour constructif"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Why is formal language important in professional communication?",
+            "options": [
+              "It maintains professionalism and clarity",
+              "It replaces all meetings",
+              "It avoids written communication",
+              "It reduces productivity"
+            ],
+            "correctKey": "It maintains professionalism and clarity"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Après la réunion, un *** rendu a été envoyé à tous les participants.",
+            "correctKey": "compte"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La communication *** facilite le partage d'informations dans l'entreprise.",
+            "correctKey": "interne"
+          }
+        ]
+      },
+      {
+        "title": "Les actualités internationales",
+        "description": "Understanding global news, reports, geopolitical events, and conflicts.",
+        "vocabulary": [
+          {
+            "french": "un reportage",
+            "english": "news report"
+          },
+          {
+            "french": "une crise géopolitique",
+            "english": "geopolitical crisis"
+          },
+          {
+            "french": "un conflit armé",
+            "english": "armed conflict"
+          },
+          {
+            "french": "une organisation internationale",
+            "english": "international organization"
+          },
+          {
+            "french": "une déclaration officielle",
+            "english": "official statement"
+          },
+          {
+            "french": "les affaires étrangères",
+            "english": "foreign affairs"
+          },
+          {
+            "french": "une mission diplomatique",
+            "english": "diplomatic mission"
+          },
+          {
+            "french": "un correspondant",
+            "english": "foreign correspondent"
+          },
+          {
+            "french": "une couverture médiatique",
+            "english": "media coverage"
+          },
+          {
+            "french": "les actualités internationales",
+            "english": "international news"
+          }
+        ],
+        "grammar": {
+          "title": "Reporting information with neutral journalistic language",
+          "text": "Journalistic French often uses neutral expressions such as selon les autorités, d'après un communiqué, and il a été annoncé que. Example: Selon les autorités, la situation reste stable. (According to authorities, the situation remains stable.) D'après un communiqué officiel, des discussions sont en cours. (According to an official statement, discussions are ongoing.)"
+        },
+        "reading": "Les actualités internationales sont souvent dominées par des crises géopolitiques et des négociations diplomatiques. Les correspondants sur le terrain assurent une couverture médiatique des événements majeurs. D'après une déclaration officielle, une organisation internationale pourrait intervenir afin de faciliter le dialogue. Les affaires étrangères demeurent au cœur des débats mondiaux.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « une crise géopolitique » refer to?",
+            "options": [
+              "a geopolitical crisis",
+              "a business merger",
+              "a legal complaint",
+              "a university reform"
+            ],
+            "correctKey": "a geopolitical crisis"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Who reports from foreign locations for the media?",
+            "options": [
+              "un correspondant",
+              "un électeur",
+              "un avocat",
+              "un entrepreneur"
+            ],
+            "correctKey": "un correspondant"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which expression is commonly used in neutral journalistic reporting?",
+            "options": [
+              "Selon les autorités",
+              "Je suis certain",
+              "À mon avis seulement",
+              "Sans aucun doute"
+            ],
+            "correctKey": "Selon les autorités"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Ce journaliste est spécialisé dans le reportage des *** internationales.",
+            "correctKey": "actualités"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une *** officielle a été publiée après la réunion diplomatique.",
+            "correctKey": "déclaration"
+          }
+        ]
+      },
+      {
+        "title": "La francophonie dans le monde",
+        "description": "The geographic, cultural, and political role of the French-speaking world.",
+        "vocabulary": [
+          {
+            "french": "la Francophonie",
+            "english": "the French-speaking world"
+          },
+          {
+            "french": "un espace francophone",
+            "english": "French-speaking area"
+          },
+          {
+            "french": "la coopération internationale",
+            "english": "international cooperation"
+          },
+          {
+            "french": "le rayonnement culturel",
+            "english": "cultural influence"
+          },
+          {
+            "french": "une langue officielle",
+            "english": "official language"
+          },
+          {
+            "french": "un héritage culturel",
+            "english": "cultural heritage"
+          },
+          {
+            "french": "la diversité linguistique",
+            "english": "linguistic diversity"
+          },
+          {
+            "french": "une communauté francophone",
+            "english": "French-speaking community"
+          },
+          {
+            "french": "les échanges culturels",
+            "english": "cultural exchanges"
+          },
+          {
+            "french": "une organisation multilatérale",
+            "english": "multilateral organization"
+          }
+        ],
+        "grammar": {
+          "title": "Expressing influence and impact with contribuer à and permettre de",
+          "text": "To discuss the role of the Francophone world, use structures such as contribuer à + noun/infinitive and permettre de + infinitive. Example: La Francophonie contribue à la coopération internationale. (The Francophone world contributes to international cooperation.) Les échanges culturels permettent de renforcer les liens entre les peuples. (Cultural exchanges make it possible to strengthen ties between peoples.)"
+        },
+        "reading": "La Francophonie rassemble des pays répartis sur plusieurs continents. Elle contribue au rayonnement culturel de la langue française et favorise la coopération internationale. Les échanges culturels renforcent les liens entre les communautés francophones. Grâce à la diversité linguistique et à un riche héritage culturel, l'espace francophone occupe une place importante sur la scène mondiale.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is « le rayonnement culturel »?",
+            "options": [
+              "cultural influence",
+              "economic recession",
+              "legal procedure",
+              "electoral campaign"
+            ],
+            "correctKey": "cultural influence"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What do cultural exchanges help strengthen?",
+            "options": [
+              "ties between communities",
+              "inflation",
+              "court systems",
+              "stock markets"
+            ],
+            "correctKey": "ties between communities"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which structure expresses contribution or impact?",
+            "options": [
+              "contribuer à",
+              "avoir peur de",
+              "venir de",
+              "parler de"
+            ],
+            "correctKey": "contribuer à"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La *** contribue au rayonnement culturel de la langue française.",
+            "correctKey": "Francophonie"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La diversité *** est une richesse du monde francophone.",
+            "correctKey": "linguistique"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Science, Technology and Environment",
+    "description": "Discuss global ecological concerns, scientific progress, and smart cities of the future.",
+    "lessons": [
+      {
+        "title": "Les enjeux environnementaux globaux",
+        "description": "Climate change, renewable energies, biodiversity, and global environmental pacts.",
+        "vocabulary": [
+          {
+            "french": "le réchauffement climatique",
+            "english": "global warming"
+          },
+          {
+            "french": "la transition énergétique",
+            "english": "energy transition"
+          },
+          {
+            "french": "les énergies renouvelables",
+            "english": "renewable energies"
+          },
+          {
+            "french": "la biodiversité",
+            "english": "biodiversity"
+          },
+          {
+            "french": "une empreinte carbone",
+            "english": "carbon footprint"
+          },
+          {
+            "french": "un accord environnemental",
+            "english": "environmental agreement"
+          },
+          {
+            "french": "la déforestation",
+            "english": "deforestation"
+          },
+          {
+            "french": "la neutralité carbone",
+            "english": "carbon neutrality"
+          },
+          {
+            "french": "les émissions de gaz à effet de serre",
+            "english": "greenhouse gas emissions"
+          },
+          {
+            "french": "la résilience écologique",
+            "english": "ecological resilience"
+          }
+        ],
+        "grammar": {
+          "title": "Expressing objectives and environmental consequences",
+          "text": "At B2 level, environmental discussions often use structures such as afin de + infinitive, dans le but de + infinitive, and entraîner + noun. Example: Les gouvernements investissent dans les énergies renouvelables afin de réduire les émissions. (Governments invest in renewable energy to reduce emissions.) La déforestation entraîne une perte de biodiversité. (Deforestation causes a loss of biodiversity.)"
+        },
+        "reading": "Face au réchauffement climatique, de nombreux pays accélèrent leur transition énergétique. Les accords environnementaux internationaux visent à réduire les émissions de gaz à effet de serre et à atteindre la neutralité carbone. Toutefois, la déforestation continue de menacer la biodiversité. Renforcer la résilience écologique demeure un objectif majeur pour les décennies à venir.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « la neutralité carbone » mean?",
+            "options": [
+              "carbon neutrality",
+              "renewable energy",
+              "forest conservation",
+              "urban planning"
+            ],
+            "correctKey": "carbon neutrality"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which factor directly threatens biodiversity according to the text?",
+            "options": [
+              "la déforestation",
+              "la gouvernance",
+              "la mondialisation",
+              "la diplomatie"
+            ],
+            "correctKey": "la déforestation"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which structure expresses purpose?",
+            "options": [
+              "afin de",
+              "cependant",
+              "néanmoins",
+              "toutefois"
+            ],
+            "correctKey": "afin de"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Les pays cherchent à réduire leur *** carbone grâce aux énergies renouvelables.",
+            "correctKey": "empreinte"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Le *** climatique représente un défi mondial majeur.",
+            "correctKey": "réchauffement"
+          }
+        ]
+      },
+      {
+        "title": "Les innovations scientifiques",
+        "description": "Advanced research, medical progress, space exploration, and emerging tech.",
+        "vocabulary": [
+          {
+            "french": "une avancée scientifique",
+            "english": "scientific breakthrough"
+          },
+          {
+            "french": "la recherche fondamentale",
+            "english": "fundamental research"
+          },
+          {
+            "french": "une innovation de rupture",
+            "english": "disruptive innovation"
+          },
+          {
+            "french": "l'intelligence artificielle",
+            "english": "artificial intelligence"
+          },
+          {
+            "french": "une mission spatiale",
+            "english": "space mission"
+          },
+          {
+            "french": "le génie génétique",
+            "english": "genetic engineering"
+          },
+          {
+            "french": "une découverte médicale",
+            "english": "medical discovery"
+          },
+          {
+            "french": "la robotique avancée",
+            "english": "advanced robotics"
+          },
+          {
+            "french": "un laboratoire de recherche",
+            "english": "research laboratory"
+          },
+          {
+            "french": "une technologie émergente",
+            "english": "emerging technology"
+          }
+        ],
+        "grammar": {
+          "title": "Describing scientific progress with passive and impersonal forms",
+          "text": "Scientific writing frequently uses passive and impersonal constructions. Example: Une nouvelle technologie a été développée dans un laboratoire de recherche. (A new technology was developed in a research laboratory.) Il a été démontré que cette innovation améliore les performances. (It has been demonstrated that this innovation improves performance.)"
+        },
+        "reading": "Les innovations scientifiques transforment profondément la société contemporaine. Grâce à la recherche fondamentale, de nouvelles découvertes médicales voient régulièrement le jour. L'intelligence artificielle, la robotique avancée et le génie génétique ouvrent des perspectives inédites. Par ailleurs, plusieurs missions spatiales explorent de nouvelles frontières technologiques et scientifiques.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does « une innovation de rupture » refer to?",
+            "options": [
+              "disruptive innovation",
+              "environmental agreement",
+              "political reform",
+              "employment contract"
+            ],
+            "correctKey": "disruptive innovation"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which field is associated with space exploration?",
+            "options": [
+              "une mission spatiale",
+              "une audience",
+              "un scrutin",
+              "une négociation"
+            ],
+            "correctKey": "une mission spatiale"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which sentence uses a passive construction?",
+            "options": [
+              "Une nouvelle technologie a été développée.",
+              "Les chercheurs développent une technologie.",
+              "Les ingénieurs innovent.",
+              "Les étudiants étudient."
+            ],
+            "correctKey": "Une nouvelle technologie a été développée."
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "L'*** artificielle transforme de nombreux secteurs économiques.",
+            "correctKey": "intelligence"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Une importante *** médicale a été annoncée cette année.",
+            "correctKey": "découverte"
+          }
+        ]
+      },
+      {
+        "title": "L'urbanisme et la ville intelligente",
+        "description": "Smart infrastructure, urban planning, ecological architecture, and city transit.",
+        "vocabulary": [
+          {
+            "french": "une ville intelligente",
+            "english": "smart city"
+          },
+          {
+            "french": "l'urbanisme durable",
+            "english": "sustainable urban planning"
+          },
+          {
+            "french": "une infrastructure connectée",
+            "english": "connected infrastructure"
+          },
+          {
+            "french": "la mobilité urbaine",
+            "english": "urban mobility"
+          },
+          {
+            "french": "les transports en commun",
+            "english": "public transportation"
+          },
+          {
+            "french": "un bâtiment à haute efficacité énergétique",
+            "english": "energy-efficient building"
+          },
+          {
+            "french": "la gestion intelligente des ressources",
+            "english": "smart resource management"
+          },
+          {
+            "french": "un réseau de capteurs",
+            "english": "sensor network"
+          },
+          {
+            "french": "un écoquartier",
+            "english": "eco-district"
+          },
+          {
+            "french": "la planification urbaine",
+            "english": "urban planning"
+          }
+        ],
+        "grammar": {
+          "title": "Expressing functionality and purpose in urban planning",
+          "text": "Urban planning discussions often use structures such as permettre de + infinitive and être conçu pour + infinitive. Example: Les réseaux de capteurs permettent d'optimiser la circulation. (Sensor networks make it possible to optimize traffic.) Cet écoquartier est conçu pour réduire la consommation énergétique. (This eco-district is designed to reduce energy consumption.)"
+        },
+        "reading": "La ville intelligente repose sur l'intégration de technologies numériques dans les infrastructures urbaines. Les réseaux de capteurs facilitent la gestion intelligente des ressources et améliorent la mobilité urbaine. Les écoquartiers privilégient l'urbanisme durable et les bâtiments à haute efficacité énergétique. Ces initiatives visent à rendre les villes plus résilientes et plus agréables à vivre.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is an « écoquartier »?",
+            "options": [
+              "eco-district",
+              "research laboratory",
+              "political institution",
+              "court system"
+            ],
+            "correctKey": "eco-district"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What helps optimize traffic flow in a smart city?",
+            "options": [
+              "un réseau de capteurs",
+              "une mission spatiale",
+              "une réforme judiciaire",
+              "un portefeuille d'investissement"
+            ],
+            "correctKey": "un réseau de capteurs"
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which structure expresses functionality or purpose?",
+            "options": [
+              "permettre de",
+              "néanmoins",
+              "par conséquent",
+              "cependant"
+            ],
+            "correctKey": "permettre de"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La ville de demain s'appuie sur le concept de la ville ***.",
+            "correctKey": "intelligente"
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "La *** urbaine vise à organiser efficacement le développement des villes.",
+            "correctKey": "planification"
+          }
+        ]
+      }
+    ]
+  }
+]
