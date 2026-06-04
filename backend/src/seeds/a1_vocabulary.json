@@ -1,0 +1,524 @@
+[
+  {
+    "title": "Everyday Essentials",
+    "description": "Learn the basic words and expressions needed to greet people, count, describe simple objects, and participate in first everyday interactions in French.",
+    "lessons": [
+      {
+        "title": "Greetings and Introductions",
+        "description": "Learn how to greet people, say goodbye, ask how someone is, and introduce yourself politely.",
+        "vocabulary": [
+          { "french": "Bonjour", "english": "Hello / Good morning" },
+          { "french": "Bonsoir", "english": "Good evening" },
+          { "french": "Salut", "english": "Hi / Bye" },
+          { "french": "Au revoir", "english": "Goodbye" },
+          { "french": "À bientôt", "english": "See you soon" },
+          { "french": "Merci", "english": "Thank you" },
+          { "french": "S'il vous plaît", "english": "Please" },
+          { "french": "Comment ça va ?", "english": "How are you?" },
+          { "french": "Je m'appelle...", "english": "My name is..." },
+          { "french": "Enchanté(e)", "english": "Nice to meet you" }
+        ],
+        "grammar": {
+          "title": "Using Formal and Informal Greetings",
+          "text": "Use 'Bonjour' in polite or formal situations and 'Salut' with friends or people your age. 'Vous' is formal, while 'tu' is informal. To introduce yourself, say 'Je m'appelle' followed by your name."
+        },
+        "reading": "- Bonjour ! Je m'appelle Marie. Et vous ?\n- Bonjour Marie. Je m'appelle Paul.\n- Enchantée, Paul.\n- Enchanté, Marie. À bientôt !",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "How do you say 'Good morning' in French?",
+            "options": ["Bonsoir", "Bonjour", "Au revoir", "Merci"],
+            "correctKey": "Bonjour",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'Je m'appelle...' mean?",
+            "options": ["I am fine", "My name is...", "Thank you", "See you soon"],
+            "correctKey": "My name is...",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Translate 'Goodbye' to French: '***'",
+            "correctKey": "Au revoir",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Complete the sentence: 'Je ___ Paul.'",
+            "correctKey": "m'appelle",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which word is informal and often used with friends?",
+            "options": ["Salut", "S'il vous plaît", "Enchanté", "Bonsoir"],
+            "correctKey": "Salut",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Numbers 0-100",
+        "description": "Learn how to count from 0 to 100 and use numbers in simple daily situations.",
+        "vocabulary": [
+          { "french": "zéro", "english": "zero" },
+          { "french": "un", "english": "one" },
+          { "french": "deux", "english": "two" },
+          { "french": "trois", "english": "three" },
+          { "french": "quatre", "english": "four" },
+          { "french": "cinq", "english": "five" },
+          { "french": "dix", "english": "ten" },
+          { "french": "vingt", "english": "twenty" },
+          { "french": "cinquante", "english": "fifty" },
+          { "french": "cent", "english": "one hundred" }
+        ],
+        "grammar": {
+          "title": "Counting and Asking Age",
+          "text": "In French, age uses the verb 'avoir'. Say 'J'ai vingt ans' for 'I am twenty years old.' To ask someone's age, say 'Quel âge avez-vous ?' formally or 'Tu as quel âge ?' informally."
+        },
+        "reading": "- Tu as quel âge ?\n- J'ai dix-huit ans. Et toi ?\n- Moi, j'ai vingt ans.\n- Mon frère a quinze ans.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What is 'twenty' in French?",
+            "options": ["dix", "vingt", "trente", "cent"],
+            "correctKey": "vingt",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'cent' mean?",
+            "options": ["ten", "fifty", "one hundred", "five"],
+            "correctKey": "one hundred",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Translate 'three' to French: '***'",
+            "correctKey": "trois",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Complete: 'J'ai vingt ***.'",
+            "correctKey": "ans",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which sentence correctly means 'I am eighteen years old'?",
+            "options": ["Je suis dix-huit ans", "J'ai dix-huit ans", "Je vais dix-huit ans", "Je m'appelle dix-huit"],
+            "correctKey": "J'ai dix-huit ans",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Colors and Adjectives",
+        "description": "Learn basic colors and simple adjectives to describe people, objects, and places.",
+        "vocabulary": [
+          { "french": "rouge", "english": "red" },
+          { "french": "bleu", "english": "blue" },
+          { "french": "vert", "english": "green" },
+          { "french": "jaune", "english": "yellow" },
+          { "french": "noir", "english": "black" },
+          { "french": "blanc", "english": "white" },
+          { "french": "grand", "english": "big / tall" },
+          { "french": "petit", "english": "small / short" },
+          { "french": "beau", "english": "beautiful / handsome" },
+          { "french": "nouveau", "english": "new" }
+        ],
+        "grammar": {
+          "title": "Adjective Agreement",
+          "text": "Most French adjectives change depending on gender and number. For example: 'un sac noir' but 'une robe noire'. Many color adjectives also agree with the noun they describe."
+        },
+        "reading": "J'ai un sac noir et une chemise blanche. Mon frère a un vélo rouge. Ma sœur a une petite chambre bleue. Nous aimons les couleurs.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'rouge' mean?",
+            "options": ["blue", "red", "green", "yellow"],
+            "correctKey": "red",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which French word means 'small'?",
+            "options": ["grand", "petit", "beau", "nouveau"],
+            "correctKey": "petit",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Translate 'blue' to French: '***'",
+            "correctKey": "bleu",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Complete with the feminine form: 'une robe ***' for 'a white dress'.",
+            "correctKey": "blanche",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which sentence means 'a black bag'?",
+            "options": ["un sac noir", "une robe noire", "un vélo rouge", "une chambre bleue"],
+            "correctKey": "un sac noir",
+            "points": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Family and Home",
+    "description": "Learn vocabulary for talking about family members, rooms in the house, clothing, and simple descriptions of home life.",
+    "lessons": [
+      {
+        "title": "Family Members",
+        "description": "Learn how to name family members and describe your family in simple sentences.",
+        "vocabulary": [
+          { "french": "la mère", "english": "mother" },
+          { "french": "le père", "english": "father" },
+          { "french": "les parents", "english": "parents" },
+          { "french": "le frère", "english": "brother" },
+          { "french": "la sœur", "english": "sister" },
+          { "french": "le fils", "english": "son" },
+          { "french": "la fille", "english": "daughter / girl" },
+          { "french": "le grand-père", "english": "grandfather" },
+          { "french": "la grand-mère", "english": "grandmother" },
+          { "french": "la famille", "english": "family" }
+        ],
+        "grammar": {
+          "title": "Possessive Adjectives: Mon, Ma, Mes",
+          "text": "Use 'mon' before a masculine singular noun, 'ma' before a feminine singular noun, and 'mes' before plural nouns. For example: 'mon père', 'ma mère', 'mes parents'."
+        },
+        "reading": "Voici ma famille. Mon père s'appelle Jean et ma mère s'appelle Claire. J'ai un frère et une sœur. Mes grands-parents habitent à Lyon.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'la mère' mean?",
+            "options": ["father", "mother", "sister", "family"],
+            "correctKey": "mother",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which word means 'brother'?",
+            "options": ["la sœur", "le frère", "le père", "la fille"],
+            "correctKey": "le frère",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Translate 'family' to French: '***'",
+            "correctKey": "la famille",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Complete: '___ mère s'appelle Claire.'",
+            "correctKey": "Ma",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which possessive adjective is used for plural nouns?",
+            "options": ["mon", "ma", "mes", "le"],
+            "correctKey": "mes",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Rooms in a House",
+        "description": "Learn the names of common rooms and how to describe where things are in a home.",
+        "vocabulary": [
+          { "french": "la maison", "english": "house" },
+          { "french": "l'appartement", "english": "apartment" },
+          { "french": "la chambre", "english": "bedroom" },
+          { "french": "la cuisine", "english": "kitchen" },
+          { "french": "le salon", "english": "living room" },
+          { "french": "la salle de bains", "english": "bathroom" },
+          { "french": "la salle à manger", "english": "dining room" },
+          { "french": "le jardin", "english": "garden" },
+          { "french": "la porte", "english": "door" },
+          { "french": "la fenêtre", "english": "window" }
+        ],
+        "grammar": {
+          "title": "There Is / There Are: Il y a",
+          "text": "Use 'il y a' to say 'there is' or 'there are'. For example: 'Il y a une cuisine' means 'There is a kitchen.' Use 'dans' to say 'in': 'dans la chambre'."
+        },
+        "reading": "Dans ma maison, il y a une cuisine, un salon, deux chambres et une salle de bains. Ma chambre est petite mais confortable. Il y a une grande fenêtre.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'la cuisine' mean?",
+            "options": ["bedroom", "kitchen", "bathroom", "garden"],
+            "correctKey": "kitchen",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which French word means 'living room'?",
+            "options": ["le salon", "la chambre", "la porte", "la fenêtre"],
+            "correctKey": "le salon",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Translate 'house' to French: '***'",
+            "correctKey": "la maison",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Complete: '*** une cuisine dans la maison.'",
+            "correctKey": "Il y a",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'dans la chambre' mean?",
+            "options": ["near the house", "in the bedroom", "under the table", "with the family"],
+            "correctKey": "in the bedroom",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Clothes",
+        "description": "Learn common clothing vocabulary and how to describe what someone is wearing.",
+        "vocabulary": [
+          { "french": "une chemise", "english": "a shirt" },
+          { "french": "un pantalon", "english": "trousers / pants" },
+          { "french": "une robe", "english": "a dress" },
+          { "french": "une jupe", "english": "a skirt" },
+          { "french": "un manteau", "english": "a coat" },
+          { "french": "des chaussures", "english": "shoes" },
+          { "french": "un chapeau", "english": "a hat" },
+          { "french": "un pull", "english": "a sweater" },
+          { "french": "porter", "english": "to wear" },
+          { "french": "acheter", "english": "to buy" }
+        ],
+        "grammar": {
+          "title": "The Verb Porter",
+          "text": "Use the verb 'porter' to say what someone is wearing. For example: 'Je porte une chemise' means 'I am wearing a shirt.' The present form is: je porte, tu portes, il/elle porte."
+        },
+        "reading": "Aujourd'hui, je porte une chemise blanche, un pantalon noir et des chaussures rouges. Ma sœur porte une robe bleue et un chapeau jaune.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'une robe' mean?",
+            "options": ["a dress", "a coat", "shoes", "a sweater"],
+            "correctKey": "a dress",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which French word means 'shoes'?",
+            "options": ["un pantalon", "des chaussures", "une jupe", "un chapeau"],
+            "correctKey": "des chaussures",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Translate 'a shirt' to French: '***'",
+            "correctKey": "une chemise",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Complete: 'Je ___ une robe bleue.'",
+            "correctKey": "porte",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'porter' mean?",
+            "options": ["to buy", "to wear", "to eat", "to live"],
+            "correctKey": "to wear",
+            "points": 10
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Food and Social Life",
+    "description": "Learn essential vocabulary for food, drinks, hobbies, and basic emotions so you can talk about daily life and simple preferences.",
+    "lessons": [
+      {
+        "title": "Food and Drinks",
+        "description": "Learn common food and drink vocabulary and how to express simple likes and preferences.",
+        "vocabulary": [
+          { "french": "le pain", "english": "bread" },
+          { "french": "le riz", "english": "rice" },
+          { "french": "la viande", "english": "meat" },
+          { "french": "le poisson", "english": "fish" },
+          { "french": "les légumes", "english": "vegetables" },
+          { "french": "les fruits", "english": "fruits" },
+          { "french": "l'eau", "english": "water" },
+          { "french": "le lait", "english": "milk" },
+          { "french": "le café", "english": "coffee" },
+          { "french": "manger", "english": "to eat" }
+        ],
+        "grammar": {
+          "title": "Expressing Likes with Aimer",
+          "text": "Use 'aimer' to talk about likes. Say 'J'aime le pain' for 'I like bread.' Say 'Je n'aime pas le café' for 'I do not like coffee.'"
+        },
+        "reading": "Le matin, je mange du pain et je bois du lait. À midi, je mange du riz avec du poisson et des légumes. J'aime les fruits, mais je n'aime pas le café.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'le pain' mean?",
+            "options": ["rice", "bread", "milk", "fruit"],
+            "correctKey": "bread",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which French word means 'water'?",
+            "options": ["le lait", "l'eau", "le café", "le riz"],
+            "correctKey": "l'eau",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Translate 'to eat' to French: '***'",
+            "correctKey": "manger",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Complete: 'J'___ les fruits.'",
+            "correctKey": "aime",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'Je n'aime pas le café' mean?",
+            "options": ["I like coffee", "I do not like coffee", "I drink coffee", "I buy coffee"],
+            "correctKey": "I do not like coffee",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Hobbies",
+        "description": "Learn common hobbies and how to talk about activities you like doing.",
+        "vocabulary": [
+          { "french": "lire", "english": "to read" },
+          { "french": "écrire", "english": "to write" },
+          { "french": "chanter", "english": "to sing" },
+          { "french": "danser", "english": "to dance" },
+          { "french": "jouer", "english": "to play" },
+          { "french": "regarder un film", "english": "to watch a movie" },
+          { "french": "écouter de la musique", "english": "to listen to music" },
+          { "french": "faire du sport", "english": "to do sports" },
+          { "french": "voyager", "english": "to travel" },
+          { "french": "dessiner", "english": "to draw" }
+        ],
+        "grammar": {
+          "title": "Using J'aime + Infinitive",
+          "text": "To say you like doing an activity, use 'J'aime' followed by the infinitive verb. For example: 'J'aime lire' means 'I like to read.'"
+        },
+        "reading": "Pendant le week-end, j'aime lire, écouter de la musique et regarder un film. Mon ami aime jouer au football. Ma sœur aime chanter et danser.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'lire' mean?",
+            "options": ["to write", "to read", "to sing", "to travel"],
+            "correctKey": "to read",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase means 'to listen to music'?",
+            "options": ["regarder un film", "écouter de la musique", "faire du sport", "dessiner"],
+            "correctKey": "écouter de la musique",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Translate 'to dance' to French: '***'",
+            "correctKey": "danser",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Complete: 'J'aime ___ un film.'",
+            "correctKey": "regarder",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which sentence means 'I like to read'?",
+            "options": ["Je lis aimer", "J'aime lire", "Je lire aime", "J'aime livre"],
+            "correctKey": "J'aime lire",
+            "points": 10
+          }
+        ]
+      },
+      {
+        "title": "Basic Emotions",
+        "description": "Learn how to express simple emotions and describe how you or others feel.",
+        "vocabulary": [
+          { "french": "heureux", "english": "happy" },
+          { "french": "triste", "english": "sad" },
+          { "french": "fatigué", "english": "tired" },
+          { "french": "malade", "english": "sick" },
+          { "french": "content", "english": "pleased / happy" },
+          { "french": "calme", "english": "calm" },
+          { "french": "stressé", "english": "stressed" },
+          { "french": "fâché", "english": "angry" },
+          { "french": "avoir faim", "english": "to be hungry" },
+          { "french": "avoir soif", "english": "to be thirsty" }
+        ],
+        "grammar": {
+          "title": "Using Être and Avoir for Feelings",
+          "text": "Many emotions use 'être': 'Je suis fatigué' means 'I am tired.' Some states use 'avoir': 'J'ai faim' means 'I am hungry' and 'J'ai soif' means 'I am thirsty.'"
+        },
+        "reading": "- Ça va ?\n- Non, je suis fatigué et j'ai faim.\n- Moi, je suis content aujourd'hui.\n- Pourquoi ?\n- Parce que je vais voir ma famille.",
+        "exercises": [
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'triste' mean?",
+            "options": ["happy", "sad", "calm", "hungry"],
+            "correctKey": "sad",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "Which phrase means 'to be hungry'?",
+            "options": ["avoir faim", "avoir soif", "être triste", "être calme"],
+            "correctKey": "avoir faim",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Translate 'tired' to French: '***'",
+            "correctKey": "fatigué",
+            "points": 10
+          },
+          {
+            "type": "FILL_IN_THE_BLANK",
+            "question": "Complete: 'Je ___ content aujourd'hui.'",
+            "correctKey": "suis",
+            "points": 10
+          },
+          {
+            "type": "MULTIPLE_CHOICE",
+            "question": "What does 'J'ai soif' mean?",
+            "options": ["I am tired", "I am thirsty", "I am sad", "I am angry"],
+            "correctKey": "I am thirsty",
+            "points": 10
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -88,107 +88,59 @@ const TCF_BANDS = [
   },
 ];
 
-// ─── COMPREHENSIVE FRENCH DATA ───────────────────────────────────────────────
+// ─── COMPREHENSIVE FRENCH METADATA ──────────────────────────────────────────
 
-const FRENCH_LEVELS = [
-  {
-    code: 'A1',
-    title: 'Débutant',
+const LEVEL_METADATA: Record<string, { title: string; emoji: string; color: string; bgColor: string; borderColor: string; desc: string }> = {
+  a1: {
+    title: 'Beginner',
     emoji: '🌱',
     color: '#ef4444',
-    bgColor: 'rgba(239,68,68,0.06)',
-    borderColor: 'rgba(239,68,68,0.3)',
-    desc: 'Start from zero. Learn greetings, numbers, colours, days, and your first 200 essential words.',
-    progress: 65,
-    modules: [
-      { label: 'Vocabulaire', icon: Layers, count: 8, done: 6 },
-      { label: 'Grammaire', icon: BookOpen, count: 6, done: 4 },
-      { label: 'Dialogues', icon: MessageSquare, count: 6, done: 3 },
-      { label: 'Écriture', icon: PenTool, count: 4, done: 2 },
-    ],
+    bgColor: 'rgba(239, 68, 68, 0.04)',
+    borderColor: 'rgba(239, 68, 68, 0.2)',
+    desc: "Start from zero. Learn greetings, numbers, colors, days, and your first 200 essential words."
   },
-  {
-    code: 'A2',
-    title: 'Élémentaire',
+  a2: {
+    title: 'Elementary',
     emoji: '📖',
     color: '#f97316',
-    bgColor: 'rgba(249,115,22,0.06)',
-    borderColor: 'rgba(249,115,22,0.3)',
-    desc: 'Communicate in familiar everyday situations. Shopping, transport, appointments and short messages.',
-    progress: 40,
-    modules: [
-      { label: 'Vocabulaire', icon: Layers, count: 10, done: 5 },
-      { label: 'Grammaire', icon: BookOpen, count: 8, done: 3 },
-      { label: 'Dialogues', icon: MessageSquare, count: 8, done: 2 },
-      { label: 'Écriture', icon: PenTool, count: 6, done: 2 },
-    ],
+    bgColor: 'rgba(249, 115, 22, 0.04)',
+    borderColor: 'rgba(249, 115, 22, 0.2)',
+    desc: "Communicate in familiar everyday situations. Shopping, transportation, appointments and short messages."
   },
-  {
-    code: 'B1',
-    title: 'Intermédiaire',
+  b1: {
+    title: 'Intermediate',
     emoji: '💬',
     color: '#10b981',
-    bgColor: 'rgba(16,185,129,0.06)',
-    borderColor: 'rgba(16,185,129,0.3)',
-    desc: 'Handle most travel and work situations. Express opinions clearly on familiar topics.',
-    progress: 20,
-    modules: [
-      { label: 'Vocabulaire', icon: Layers, count: 12, done: 2 },
-      { label: 'Grammaire', icon: BookOpen, count: 10, done: 2 },
-      { label: 'Dialogues', icon: MessageSquare, count: 10, done: 1 },
-      { label: 'Écriture', icon: PenTool, count: 8, done: 1 },
-    ],
+    bgColor: 'rgba(16, 185, 129, 0.04)',
+    borderColor: 'rgba(16, 185, 129, 0.2)',
+    desc: "Handle most travel and work situations. Express opinions clearly on familiar topics."
   },
-  {
-    code: 'B2',
-    title: 'Avancé — Cible TCF',
+  b2: {
+    title: 'Advanced — TCF Target',
     emoji: '🎯',
     color: '#3b82f6',
-    bgColor: 'rgba(59,130,246,0.06)',
-    borderColor: 'rgba(59,130,246,0.3)',
-    desc: 'The TCF Canada sweet spot. Complex text comprehension, structured argumentation, professional communication.',
-    progress: 8,
-    recommended: true,
-    modules: [
-      { label: 'Vocabulaire', icon: Layers, count: 14, done: 1 },
-      { label: 'Grammaire', icon: BookOpen, count: 12, done: 0 },
-      { label: 'Textes', icon: FileText, count: 12, done: 1 },
-      { label: 'Débat oral', icon: Mic, count: 8, done: 0 },
-    ],
+    bgColor: 'rgba(59, 130, 246, 0.04)',
+    borderColor: 'rgba(59, 130, 246, 0.2)',
+    desc: "The TCF Canada sweet spot. Complex text comprehension, structured argumentation, professional communication."
   },
-  {
-    code: 'C1',
-    title: 'Autonome',
+  c1: {
+    title: 'Autonomous',
     emoji: '🏅',
     color: '#8b5cf6',
-    bgColor: 'rgba(139,92,246,0.06)',
-    borderColor: 'rgba(139,92,246,0.3)',
-    desc: 'Fluent, spontaneous expression on complex, abstract topics. Academic and professional French mastery.',
-    progress: 0,
-    modules: [
-      { label: 'Vocabulaire', icon: Layers, count: 14, done: 0 },
-      { label: 'Grammaire', icon: BookOpen, count: 12, done: 0 },
-      { label: 'Textes avancés', icon: FileText, count: 14, done: 0 },
-      { label: 'Expression libre', icon: Mic, count: 10, done: 0 },
-    ],
+    bgColor: 'rgba(139, 92, 246, 0.04)',
+    borderColor: 'rgba(139, 92, 246, 0.2)',
+    desc: "Fluent, spontaneous expression on complex, abstract topics. Academic and professional French mastery."
   },
-  {
-    code: 'C2',
-    title: 'Maîtrise',
+  c2: {
+    title: 'Mastery',
     emoji: '⭐',
     color: '#64748b',
-    bgColor: 'rgba(100,116,139,0.06)',
-    borderColor: 'rgba(100,116,139,0.3)',
-    desc: 'Near-native mastery. Understand virtually anything read or heard with effortless precision.',
-    progress: 0,
-    modules: [
-      { label: 'Littérature', icon: BookOpen, count: 10, done: 0 },
-      { label: 'Stylistique', icon: PenTool, count: 8, done: 0 },
-      { label: 'Débats experts', icon: Mic, count: 8, done: 0 },
-      { label: 'Masterclass', icon: Star, count: 6, done: 0 },
-    ],
-  },
-];
+    bgColor: 'rgba(100, 116, 139, 0.04)',
+    borderColor: 'rgba(100, 116, 139, 0.2)',
+    desc: "Near-native mastery. Understand virtually anything read or heard with effortless precision."
+  }
+};
+
 
 // ─── SUB-COMPONENTS ──────────────────────────────────────────────────────────
 
@@ -243,7 +195,7 @@ function SkillCard({ skill, bandColor }: { skill: typeof TCF_BANDS[0]['skills'][
   );
 }
 
-function ModuleCard({ mod, levelColor, levelCode }: { mod: typeof FRENCH_LEVELS[0]['modules'][0]; levelColor: string; levelCode: string }) {
+function ModuleCard({ mod, levelColor, levelCode }: { mod: { label: string; icon: any; count: number; done: number }; levelColor: string; levelCode: string }) {
   const Icon = mod.icon;
   const pct = mod.count > 0 ? Math.round((mod.done / mod.count) * 100) : 0;
   return (
@@ -283,7 +235,7 @@ function ModuleCard({ mod, levelColor, levelCode }: { mod: typeof FRENCH_LEVELS[
 export default function AcademyPage() {
   const [activeTrack, setActiveTrack] = useState<'tcf' | 'french'>('tcf');
   const [tcfBands, setTcfBands] = useState(TCF_BANDS);
-  const [frenchLevels, setFrenchLevels] = useState(FRENCH_LEVELS);
+  const [frenchLevels, setFrenchLevels] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -323,22 +275,71 @@ export default function AcademyPage() {
           return band;
         }));
 
-        // 2. Update Comprehensive French CEFR Levels dynamically based on API responses
-        setFrenchLevels(prev => prev.map(level => {
-          const apiLevel = data[level.code.toLowerCase()];
+        // 2. Build Comprehensive French CEFR Levels dynamically from the API response
+        const activeLevels: any[] = [];
+        ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'].forEach(code => {
+          const apiLevel = data[code];
           if (apiLevel) {
-            return {
-              ...level,
-              progress: apiLevel.progress,
-              modules: level.modules.map(mod => {
-                const apiMod = apiLevel.modules.find((m: any) => m.label === mod.label);
-                return apiMod ? { ...mod, done: apiMod.done, count: apiMod.count } : mod;
-              })
+            const meta = LEVEL_METADATA[code] || {
+              title: code.toUpperCase(),
+              emoji: '📚',
+              color: 'hsl(var(--primary))',
+              bgColor: 'hsl(var(--primary-light))',
+              borderColor: 'hsl(var(--border))',
+              desc: 'General French Course Level.'
             };
-          }
-          return level;
-        }));
 
+            const vocabModules = apiLevel.modules.filter((m: any) => m.label.toLowerCase().includes('vocab'));
+            const otherModules = apiLevel.modules.filter((m: any) => !m.label.toLowerCase().includes('vocab'));
+
+            const modules: any[] = [];
+
+            if (vocabModules.length > 0) {
+              const totalCount = vocabModules.reduce((sum: number, m: any) => sum + m.count, 0);
+              const totalDone = vocabModules.reduce((sum: number, m: any) => sum + m.done, 0);
+              const hasFrenchVocab = vocabModules.some((m: any) => m.label.toLowerCase().includes('vocabulaire'));
+              const label = hasFrenchVocab ? 'Vocabulaire' : 'Vocabulary';
+
+              modules.push({
+                label,
+                icon: Layers,
+                count: totalCount,
+                done: totalDone
+              });
+            }
+
+            otherModules.forEach((m: any) => {
+              let icon = BookOpen;
+              const lbl = m.label.toLowerCase();
+              if (lbl.includes('gramm')) icon = BookOpen;
+              else if (lbl.includes('dialog') || lbl.includes('convers')) icon = MessageSquare;
+              else if (lbl.includes('écri') || lbl.includes('text')) icon = PenTool;
+              else if (lbl.includes('débat') || lbl.includes('oral') || lbl.includes('speech')) icon = Mic;
+              else icon = Star;
+
+              modules.push({
+                label: m.label,
+                icon,
+                count: m.count,
+                done: m.done
+              });
+            });
+
+            activeLevels.push({
+              code: code.toUpperCase(),
+              title: meta.title,
+              emoji: meta.emoji,
+              color: meta.color,
+              bgColor: meta.bgColor,
+              borderColor: meta.borderColor,
+              desc: meta.desc,
+              progress: apiLevel.progress,
+              modules
+            });
+          }
+        });
+
+        setFrenchLevels(activeLevels);
         setIsLoading(false);
       } catch (error) {
         console.error('Failed to load live academy progress:', error);
@@ -549,79 +550,89 @@ export default function AcademyPage() {
 
             {/* CEFR Level Sections */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-              {frenchLevels.map((level, li) => (
-                <motion.div
-                  key={level.code}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: li * 0.08 }}
-                >
-                  {/* Level Header */}
-                  <Link href={`/dashboard/academy/${level.code.toLowerCase()}`} style={{ textDecoration: 'none' }}>
-                    <div
-                      style={{
-                        backgroundColor: level.bgColor,
-                        border: `1px solid ${level.borderColor}`,
-                        borderRadius: '1rem',
-                        padding: '1.25rem 1.5rem',
-                        marginBottom: '1rem',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        flexWrap: 'wrap',
-                        gap: '1rem',
-                        cursor: 'pointer',
-                        transition: 'transform 0.15s, box-shadow 0.2s',
-                      }}
-                      onMouseOver={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-1px)'; }}
-                      onMouseOut={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; }}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                        <div style={{
-                          width: 48, height: 48, borderRadius: 12,
-                          backgroundColor: `${level.color}18`,
-                          border: `2px solid ${level.borderColor}`,
-                          display: 'flex', alignItems: 'center', justifyContent: 'center',
-                          fontFamily: 'Outfit,sans-serif', fontWeight: 900, fontSize: '1rem', color: level.color,
-                          flexShrink: 0,
-                        }}>
-                          {level.code}
-                        </div>
-                        <div>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                            <h2 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.1rem', fontWeight: 800, color: 'hsl(var(--text-primary))' }}>
-                              {level.emoji} {level.title}
-                            </h2>
-                            {level.recommended && (
-                              <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.1)', padding: '0.15rem 0.5rem', borderRadius: 999 }}>
-                                ★ TCF Target Level
-                              </span>
-                            )}
+              {frenchLevels.length === 0 ? (
+                <div className="card" style={{ padding: '3.5rem 2rem', textAlign: 'center', color: 'hsl(var(--text-secondary))', backgroundColor: 'white', border: '1px dashed hsl(var(--border))', borderRadius: '1.25rem' }}>
+                  <BookOpen size={40} color="hsl(var(--text-muted))" style={{ margin: '0 auto 1.25rem', display: 'block', opacity: 0.7 }} />
+                  <div style={{ fontWeight: 800, fontSize: '1.15rem', color: 'hsl(var(--text-primary))', marginBottom: '0.35rem', fontFamily: 'Outfit, sans-serif' }}>No Levels Loaded</div>
+                  <p style={{ fontSize: '0.875rem', color: 'hsl(var(--text-muted))', maxWidth: '440px', margin: '0 auto', lineHeight: 1.5 }}>
+                    The learning database is currently empty. Run the database seed script to populate levels A1 to C2 and start learning step-by-step.
+                  </p>
+                </div>
+              ) : (
+                frenchLevels.map((level, li) => (
+                  <motion.div
+                    key={level.code}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: li * 0.08 }}
+                  >
+                    {/* Level Header */}
+                    <Link href={`/dashboard/academy/${level.code.toLowerCase()}`} style={{ textDecoration: 'none' }}>
+                      <div
+                        style={{
+                          backgroundColor: level.bgColor,
+                          border: `1px solid ${level.borderColor}`,
+                          borderRadius: '1rem',
+                          padding: '1.25rem 1.5rem',
+                          marginBottom: '1rem',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'space-between',
+                          flexWrap: 'wrap',
+                          gap: '1rem',
+                          cursor: 'pointer',
+                          transition: 'transform 0.15s, box-shadow 0.2s',
+                        }}
+                        onMouseOver={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-1px)'; }}
+                        onMouseOut={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; }}
+                      >
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                          <div style={{
+                            width: 48, height: 48, borderRadius: 12,
+                            backgroundColor: `${level.color}18`,
+                            border: `2px solid ${level.borderColor}`,
+                            display: 'flex', alignItems: 'center', justifyContent: 'center',
+                            fontFamily: 'Outfit,sans-serif', fontWeight: 900, fontSize: '1rem', color: level.color,
+                            flexShrink: 0,
+                          }}>
+                            {level.code}
                           </div>
-                          <p style={{ fontSize: '0.8rem', color: 'hsl(var(--text-secondary))', marginTop: '0.2rem', maxWidth: '520px' }}>
-                            {level.desc}
-                          </p>
+                          <div>
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                              <h2 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.1rem', fontWeight: 800, color: 'hsl(var(--text-primary))' }}>
+                                {level.emoji} {level.title}
+                              </h2>
+                              {level.recommended && (
+                                <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.1)', padding: '0.15rem 0.5rem', borderRadius: 999 }}>
+                                  ★ TCF Target Level
+                                </span>
+                              )}
+                            </div>
+                            <p style={{ fontSize: '0.8rem', color: 'hsl(var(--text-secondary))', marginTop: '0.2rem', maxWidth: '520px' }}>
+                              {level.desc}
+                            </p>
+                          </div>
+                        </div>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.3rem', minWidth: '110px' }}>
+                          <span style={{ fontSize: '0.75rem', fontWeight: 700, color: level.color }}>
+                            {level.progress > 0 ? `${level.progress}% complete` : 'Not started'}
+                          </span>
+                          <div style={{ width: '110px' }}>
+                            <ProgressBar value={level.progress} color={level.color} />
+                          </div>
                         </div>
                       </div>
-                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.3rem', minWidth: '110px' }}>
-                        <span style={{ fontSize: '0.75rem', fontWeight: 700, color: level.color }}>
-                          {level.progress > 0 ? `${level.progress}% complete` : 'Not started'}
-                        </span>
-                        <div style={{ width: '110px' }}>
-                          <ProgressBar value={level.progress} color={level.color} />
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
+                    </Link>
 
-                  {/* Module Cards Grid */}
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '1rem' }}>
-                    {level.modules.map(mod => (
-                      <ModuleCard key={mod.label} mod={mod} levelColor={level.color} levelCode={level.code} />
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
+                    {/* Module Cards Grid */}
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '1rem' }}>
+                      {level.modules.map((mod: any) => (
+                        <ModuleCard key={mod.label} mod={mod} levelColor={level.color} levelCode={level.code} />
+                      ))}
+                    </div>
+                  </motion.div>
+                ))
+              )}
             </div>
           </motion.div>
         )}
