@@ -264,6 +264,7 @@ html.admin-theme::-webkit-scrollbar-thumb:hover {
   flex-direction: column;
   padding: 1rem;
   padding-top: 5rem;
+  transition: padding-left 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 @media (min-width: 768px) {
@@ -277,7 +278,7 @@ html.admin-theme::-webkit-scrollbar-thumb:hover {
   .dashboard-main {
     padding: 2rem;
     padding-top: 2rem;
-    padding-left: calc(240px + 2rem) !important;
+    padding-left: calc(var(--sidebar-width, 240px) + 2rem) !important;
   }
 }
 
