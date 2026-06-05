@@ -652,7 +652,68 @@ export default function AcademyPage() {
 
             {/* CEFR Level Sections */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-              {frenchLevels.length === 0 ? (
+              {/* Skeleton loader — shown while API is pending */}
+              {isLoading && Array.from({ length: 6 }).map((_, li) => {
+                const skeletonColors = ['#ef4444','#f97316','#10b981','#3b82f6','#8b5cf6','#64748b'];
+                const col = skeletonColors[li];
+                const moduleCount = 4 + (li % 2); // 4 or 5 skeleton module cards per level
+                return (
+                  <div key={`skel-${li}`}>
+                    {/* Level header skeleton */}
+                    <div
+                      style={{
+                        backgroundColor: `${col}08`,
+                        border: `1px solid ${col}30`,
+                        borderRadius: '1rem',
+                        padding: '1.25rem 1.5rem',
+                        marginBottom: '1rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        gap: '1rem',
+                      }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                        {/* Level code badge skeleton */}
+                        <div style={{
+                          width: 48, height: 48, borderRadius: 12,
+                          background: `${col}25`,
+                          border: `2px solid ${col}40`,
+                          animation: 'pulse 1.5s ease-in-out infinite',
+                          flexShrink: 0,
+                        }} />
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
+                          <div style={{ width: 140, height: 12, borderRadius: 6, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite' }} />
+                          <div style={{ width: 220, height: 9, borderRadius: 6, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite' }} />
+                        </div>
+                      </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.4rem' }}>
+                        <div style={{ width: 70, height: 10, borderRadius: 6, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite' }} />
+                        <div style={{ width: 110, height: 5, borderRadius: 999, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite' }} />
+                      </div>
+                    </div>
+                    {/* Module card skeletons */}
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '1rem' }}>
+                      {Array.from({ length: moduleCount }).map((_, mi) => (
+                        <div key={mi} className="card" style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                            <div style={{ width: 34, height: 34, borderRadius: 8, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite', flexShrink: 0 }} />
+                            <div style={{ width: '65%', height: 10, borderRadius: 6, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite' }} />
+                          </div>
+                          <div style={{ height: 5, borderRadius: 999, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite' }} />
+                          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                            <div style={{ width: 70, height: 9, borderRadius: 6, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite' }} />
+                            <div style={{ width: 28, height: 9, borderRadius: 6, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite' }} />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                );
+              })}
+
+              {/* Genuinely empty — only shown after loading finishes with no data */}
+              {!isLoading && frenchLevels.length === 0 && (
                 <div className="card" style={{ padding: '3.5rem 2rem', textAlign: 'center', color: 'hsl(var(--text-secondary))', backgroundColor: 'white', border: '1px dashed hsl(var(--border))', borderRadius: '1.25rem' }}>
                   <BookOpen size={40} color="hsl(var(--text-muted))" style={{ margin: '0 auto 1.25rem', display: 'block', opacity: 0.7 }} />
                   <div style={{ fontWeight: 800, fontSize: '1.15rem', color: 'hsl(var(--text-primary))', marginBottom: '0.35rem', fontFamily: 'Outfit, sans-serif' }}>No Levels Loaded</div>
@@ -660,81 +721,82 @@ export default function AcademyPage() {
                     The learning database is currently empty. Run the database seed script to populate levels A1 to C2 and start learning step-by-step.
                   </p>
                 </div>
-              ) : (
-                frenchLevels.map((level, li) => (
-                  <motion.div
-                    key={level.code}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: li * 0.08 }}
-                  >
-                    {/* Level Header */}
-                    <Link href={`/dashboard/academy/${level.code.toLowerCase()}`} style={{ textDecoration: 'none' }}>
-                      <div
-                        style={{
-                          backgroundColor: level.bgColor,
-                          border: `1px solid ${level.borderColor}`,
-                          borderRadius: '1rem',
-                          padding: '1.25rem 1.5rem',
-                          marginBottom: '1rem',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'space-between',
-                          flexWrap: 'wrap',
-                          gap: '1rem',
-                          cursor: 'pointer',
-                          transition: 'transform 0.15s, box-shadow 0.2s',
-                        }}
-                        onMouseOver={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-1px)'; }}
-                        onMouseOut={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; }}
-                      >
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                          <div style={{
-                            width: 48, height: 48, borderRadius: 12,
-                            backgroundColor: `${level.color}18`,
-                            border: `2px solid ${level.borderColor}`,
-                            display: 'flex', alignItems: 'center', justifyContent: 'center',
-                            fontFamily: 'Outfit,sans-serif', fontWeight: 900, fontSize: '1rem', color: level.color,
-                            flexShrink: 0,
-                          }}>
-                            {level.code}
-                          </div>
-                          <div>
-                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                              <h2 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.1rem', fontWeight: 800, color: 'hsl(var(--text-primary))' }}>
-                                {level.emoji} {level.title}
-                              </h2>
-                              {level.recommended && (
-                                <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.1)', padding: '0.15rem 0.5rem', borderRadius: 999 }}>
-                                  ★ TCF Target Level
-                                </span>
-                              )}
-                            </div>
-                            <p style={{ fontSize: '0.8rem', color: 'hsl(var(--text-secondary))', marginTop: '0.2rem', maxWidth: '520px' }}>
-                              {level.desc}
-                            </p>
-                          </div>
+              )}
+
+              {/* Real level data — shown once loaded */}
+              {!isLoading && frenchLevels.map((level, li) => (
+                <motion.div
+                  key={level.code}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: li * 0.08 }}
+                >
+                  {/* Level Header */}
+                  <Link href={`/dashboard/academy/${level.code.toLowerCase()}`} style={{ textDecoration: 'none' }}>
+                    <div
+                      style={{
+                        backgroundColor: level.bgColor,
+                        border: `1px solid ${level.borderColor}`,
+                        borderRadius: '1rem',
+                        padding: '1.25rem 1.5rem',
+                        marginBottom: '1rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        flexWrap: 'wrap',
+                        gap: '1rem',
+                        cursor: 'pointer',
+                        transition: 'transform 0.15s, box-shadow 0.2s',
+                      }}
+                      onMouseOver={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-1px)'; }}
+                      onMouseOut={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                        <div style={{
+                          width: 48, height: 48, borderRadius: 12,
+                          backgroundColor: `${level.color}18`,
+                          border: `2px solid ${level.borderColor}`,
+                          display: 'flex', alignItems: 'center', justifyContent: 'center',
+                          fontFamily: 'Outfit,sans-serif', fontWeight: 900, fontSize: '1rem', color: level.color,
+                          flexShrink: 0,
+                        }}>
+                          {level.code}
                         </div>
-                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.3rem', minWidth: '110px' }}>
-                          <span style={{ fontSize: '0.75rem', fontWeight: 700, color: level.color }}>
-                            {level.progress > 0 ? `${level.progress}% complete` : 'Not started'}
-                          </span>
-                          <div style={{ width: '110px' }}>
-                            <ProgressBar value={level.progress} color={level.color} />
+                        <div>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                            <h2 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.1rem', fontWeight: 800, color: 'hsl(var(--text-primary))' }}>
+                              {level.emoji} {level.title}
+                            </h2>
+                            {level.recommended && (
+                              <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.1)', padding: '0.15rem 0.5rem', borderRadius: 999 }}>
+                                ★ TCF Target Level
+                              </span>
+                            )}
                           </div>
+                          <p style={{ fontSize: '0.8rem', color: 'hsl(var(--text-secondary))', marginTop: '0.2rem', maxWidth: '520px' }}>
+                            {level.desc}
+                          </p>
                         </div>
                       </div>
-                    </Link>
-
-                    {/* Module Cards Grid */}
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '1rem' }}>
-                      {level.modules.map((mod: any) => (
-                        <ModuleCard key={mod.label} mod={mod} levelColor={level.color} levelCode={level.code} />
-                      ))}
+                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.3rem', minWidth: '110px' }}>
+                        <span style={{ fontSize: '0.75rem', fontWeight: 700, color: level.color }}>
+                          {level.progress > 0 ? `${level.progress}% complete` : 'Not started'}
+                        </span>
+                        <div style={{ width: '110px' }}>
+                          <ProgressBar value={level.progress} color={level.color} />
+                        </div>
+                      </div>
                     </div>
-                  </motion.div>
-                ))
-              )}
+                  </Link>
+
+                  {/* Module Cards Grid */}
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '1rem' }}>
+                    {level.modules.map((mod: any) => (
+                      <ModuleCard key={mod.label} mod={mod} levelColor={level.color} levelCode={level.code} />
+                    ))}
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </motion.div>
         )}
