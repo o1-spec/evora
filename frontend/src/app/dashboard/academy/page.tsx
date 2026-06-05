@@ -23,12 +23,12 @@ const TCF_BANDS = [
     bgColor: 'rgba(239,68,68,0.06)',
     borderColor: 'rgba(239,68,68,0.3)',
     desc: 'Foundation-level TCF practice. Build confidence with simple texts, short dialogues, and basic writing tasks.',
-    progress: 35,
+    progress: 0,
     skills: [
-      { label: 'Written Expression', sub: 'Expression Écrite', icon: PenTool, href: '/written-expression', exercises: 12, done: 4 },
-      { label: 'Oral Expression', sub: 'Expression Orale', icon: Mic, href: '/oral-expression', exercises: 10, done: 3 },
-      { label: 'Reading Comprehension', sub: 'Compréhension Écrite', icon: BookOpen, href: '/reading-comprehension', exercises: 15, done: 7 },
-      { label: 'Oral Comprehension', sub: 'Compréhension Orale', icon: Headphones, href: '/oral-comprehension', exercises: 12, done: 5 },
+      { label: 'Written Expression', sub: 'Expression Écrite', icon: PenTool, href: '/written-expression', exercises: 0, done: 0 },
+      { label: 'Oral Expression', sub: 'Expression Orale', icon: Mic, href: '/oral-expression', exercises: 0, done: 0 },
+      { label: 'Reading Comprehension', sub: 'Compréhension Écrite', icon: BookOpen, href: '/reading-comprehension', exercises: 0, done: 0 },
+      { label: 'Oral Comprehension', sub: 'Compréhension Orale', icon: Headphones, href: '/oral-comprehension', exercises: 0, done: 0 },
     ],
   },
   {
@@ -41,13 +41,13 @@ const TCF_BANDS = [
     bgColor: 'rgba(249,115,22,0.06)',
     borderColor: 'rgba(249,115,22,0.3)',
     desc: 'The most critical band for Canadian immigration. Target B2 mastery across all four TCF skills for CLB 7.',
-    progress: 60,
+    progress: 0,
     recommended: true,
     skills: [
-      { label: 'Written Expression', sub: 'Expression Écrite', icon: PenTool, href: '/written-expression', exercises: 18, done: 11 },
-      { label: 'Oral Expression', sub: 'Expression Orale', icon: Mic, href: '/oral-expression', exercises: 16, done: 9 },
-      { label: 'Reading Comprehension', sub: 'Compréhension Écrite', icon: BookOpen, href: '/reading-comprehension', exercises: 20, done: 12 },
-      { label: 'Oral Comprehension', sub: 'Compréhension Orale', icon: Headphones, href: '/oral-comprehension', exercises: 18, done: 11 },
+      { label: 'Written Expression', sub: 'Expression Écrite', icon: PenTool, href: '/written-expression', exercises: 0, done: 0 },
+      { label: 'Oral Expression', sub: 'Expression Orale', icon: Mic, href: '/oral-expression', exercises: 0, done: 0 },
+      { label: 'Reading Comprehension', sub: 'Compréhension Écrite', icon: BookOpen, href: '/reading-comprehension', exercises: 0, done: 0 },
+      { label: 'Oral Comprehension', sub: 'Compréhension Orale', icon: Headphones, href: '/oral-comprehension', exercises: 0, done: 0 },
     ],
   },
   {
@@ -60,12 +60,12 @@ const TCF_BANDS = [
     bgColor: 'rgba(59,130,246,0.06)',
     borderColor: 'rgba(59,130,246,0.3)',
     desc: 'Push beyond the immigration threshold. Master complex argumentation, nuanced listening, and advanced editorial writing.',
-    progress: 20,
+    progress: 0,
     skills: [
-      { label: 'Written Expression', sub: 'Expression Écrite', icon: PenTool, href: '/written-expression', exercises: 20, done: 4 },
-      { label: 'Oral Expression', sub: 'Expression Orale', icon: Mic, href: '/oral-expression', exercises: 18, done: 3 },
-      { label: 'Reading Comprehension', sub: 'Compréhension Écrite', icon: BookOpen, href: '/reading-comprehension', exercises: 22, done: 5 },
-      { label: 'Oral Comprehension', sub: 'Compréhension Orale', icon: Headphones, href: '/oral-comprehension', exercises: 20, done: 4 },
+      { label: 'Written Expression', sub: 'Expression Écrite', icon: PenTool, href: '/written-expression', exercises: 0, done: 0 },
+      { label: 'Oral Expression', sub: 'Expression Orale', icon: Mic, href: '/oral-expression', exercises: 0, done: 0 },
+      { label: 'Reading Comprehension', sub: 'Compréhension Écrite', icon: BookOpen, href: '/reading-comprehension', exercises: 0, done: 0 },
+      { label: 'Oral Comprehension', sub: 'Compréhension Orale', icon: Headphones, href: '/oral-comprehension', exercises: 0, done: 0 },
     ],
   },
   {
@@ -78,12 +78,12 @@ const TCF_BANDS = [
     bgColor: 'rgba(139,92,246,0.06)',
     borderColor: 'rgba(139,92,246,0.3)',
     desc: 'Elite-level TCF mastery. Designed for professional-grade French fluency and maximum immigration points.',
-    progress: 5,
+    progress: 0,
     skills: [
-      { label: 'Written Expression', sub: 'Expression Écrite', icon: PenTool, href: '/written-expression', exercises: 22, done: 1 },
-      { label: 'Oral Expression', sub: 'Expression Orale', icon: Mic, href: '/oral-expression', exercises: 20, done: 0 },
-      { label: 'Reading Comprehension', sub: 'Compréhension Écrite', icon: BookOpen, href: '/reading-comprehension', exercises: 24, done: 2 },
-      { label: 'Oral Comprehension', sub: 'Compréhension Orale', icon: Headphones, href: '/oral-comprehension', exercises: 22, done: 0 },
+      { label: 'Written Expression', sub: 'Expression Écrite', icon: PenTool, href: '/written-expression', exercises: 0, done: 0 },
+      { label: 'Oral Expression', sub: 'Expression Orale', icon: Mic, href: '/oral-expression', exercises: 0, done: 0 },
+      { label: 'Reading Comprehension', sub: 'Compréhension Écrite', icon: BookOpen, href: '/reading-comprehension', exercises: 0, done: 0 },
+      { label: 'Oral Comprehension', sub: 'Compréhension Orale', icon: Headphones, href: '/oral-comprehension', exercises: 0, done: 0 },
     ],
   },
 ];
@@ -247,7 +247,8 @@ function ModuleCard({ mod, levelColor, levelCode }: { mod: { label: string; icon
 
 export default function AcademyPage() {
   const [activeTrack, setActiveTrack] = useState<'tcf' | 'french'>('tcf');
-  const [tcfBands, setTcfBands] = useState(TCF_BANDS);
+  // Start with empty — API data fills in; never show hardcoded numbers
+  const [tcfBands, setTcfBands] = useState<typeof TCF_BANDS>([]);
   const [frenchLevels, setFrenchLevels] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -268,6 +269,8 @@ export default function AcademyPage() {
   };
 
   useEffect(() => {
+    // Populate structure from TCF_BANDS immediately so skeleton has correct count
+    setTcfBands(TCF_BANDS);
     async function loadProgress() {
       try {
         const { data } = await api.get('/learning/progress/academy');
@@ -498,7 +501,59 @@ export default function AcademyPage() {
 
             {/* CLB Bands */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-              {tcfBands.map((band, bi) => (
+              {/* Loading skeleton — shown until API data arrives */}
+              {isLoading && tcfBands.map((band) => (
+                <div key={band.id + '-skel'} style={{ opacity: 1 }}>
+                  {/* Band header skeleton */}
+                  <div
+                    style={{
+                      backgroundColor: band.bgColor,
+                      border: `1px solid ${band.borderColor}`,
+                      borderRadius: '1rem',
+                      padding: '1.25rem 1.5rem',
+                      marginBottom: '1rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      gap: '1rem',
+                    }}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                      <span style={{ fontSize: '1.5rem' }}>{band.emoji}</span>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                        <div style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.1rem', fontWeight: 800, color: 'hsl(var(--text-primary))' }}>{band.label}</div>
+                        <div style={{ width: 260, height: 10, borderRadius: 6, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite' }} />
+                      </div>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.4rem' }}>
+                      <div style={{ width: 60, height: 10, borderRadius: 6, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite' }} />
+                      <div style={{ width: 100, height: 5, borderRadius: 999, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite' }} />
+                    </div>
+                  </div>
+                  {/* Skill card skeletons */}
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '1rem' }}>
+                    {band.skills.map((skill) => (
+                      <div key={skill.label} className="card" style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                          <div style={{ width: 34, height: 34, borderRadius: 8, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite' }} />
+                          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                            <div style={{ width: '70%', height: 10, borderRadius: 6, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite' }} />
+                            <div style={{ width: '50%', height: 8, borderRadius: 6, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite' }} />
+                          </div>
+                        </div>
+                        <div style={{ height: 5, borderRadius: 999, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite' }} />
+                        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                          <div style={{ width: 80, height: 9, borderRadius: 6, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite' }} />
+                          <div style={{ width: 28, height: 9, borderRadius: 6, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite' }} />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+
+              {/* Real data bands — shown once loaded */}
+              {!isLoading && tcfBands.map((band, bi) => (
                 <motion.div
                   key={band.id}
                   initial={{ opacity: 0, y: 20 }}
@@ -554,7 +609,7 @@ export default function AcademyPage() {
 
                   {/* Skill Cards Grid */}
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '1rem' }}>
-                    {band.skills.map(skill => (
+                    {band.skills.map((skill) => (
                       <SkillCard key={skill.label} skill={skill} bandColor={band.color} />
                     ))}
                   </div>
