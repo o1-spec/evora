@@ -59,8 +59,8 @@ export default function AccountPage() {
   const PLAN_PRICES: Record<string, string> = {
     FREE: '0€',
     BASIC: '19€',
-    PREMIUM: '39€',
-    PRO: '79€',
+    PREMIUM: '29€',
+    PRO: '59€',
   };
   const isPremium = subTier !== 'FREE';
   

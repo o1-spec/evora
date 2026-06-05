@@ -16,46 +16,40 @@ export class BillingController {
         name: 'Gratuit (Free)',
         price: '0 € / mois',
         features: [
-          '5 évaluations d\'écriture ou de parole par mois',
-          '1 simulation complète d\'examen TCF Canada',
-          'Syllabus de base A1-A2',
-          'Vocabulaire et fiches de révision'
+          'Accès aux modules d\'apprentissage A1 - A2',
+          '1 Test blanc TCF Canada complet',
+          '5 Évaluations d\'Expression Écrite par IA / mois',
+          'Accès au vocabulaire de base (200 mots)',
+          'Suivi de progression standard'
         ],
         limits: StripeService.getTierLimits(SubscriptionTier.FREE)
       },
       {
-        tier: SubscriptionTier.BASIC,
-        name: 'Basique (Basic)',
-        price: '19 € / mois',
-        features: [
-          '30 évaluations d\'écriture ou de parole par mois',
-          '5 simulations complètes d\'examen TCF',
-          'Syllabus complet A1 à B2',
-          'Rapports d\'évaluations de score détaillés'
-        ],
-        limits: StripeService.getTierLimits(SubscriptionTier.BASIC)
-      },
-      {
         tier: SubscriptionTier.PREMIUM,
         name: 'Premium (Premium)',
-        price: '39 € / mois',
+        price: '29 € / mois',
         features: [
-          '100 évaluations d\'écriture ou de parole par mois',
-          '15 simulations d\'examens TCF Canada',
-          'Syllabus complet du niveau A1 à C2',
-          'Accompagnement vocal et corrections phonétiques avancées'
+          'Accès complet de A1 à C2 (Académie complète)',
+          '10 Tests blancs TCF Canada complets simulés',
+          '100 Évaluations d\'Expression Écrite par IA / mois',
+          'Analyse de prononciation par IA (Expression Orale)',
+          'Accès complet au vocabulaire (1 500+ mots)',
+          'Accès aux sujets récents d\'expression orale & écrite',
+          'Garantie de progression CLB'
         ],
         limits: StripeService.getTierLimits(SubscriptionTier.PREMIUM)
       },
       {
         tier: SubscriptionTier.PRO,
         name: 'Professionnel (Pro)',
-        price: '79 € / mois',
+        price: '59 € / mois',
         features: [
-          'Évaluations IA illimitées',
-          'Simulations d\'examens TCF illimitées',
-          'Accès total à l\'académie et tutorat IA en continu',
-          'Priorité sur le traitement des requêtes vocales'
+          'Tests blancs TCF Canada 100% illimités',
+          'Évaluations d\'Expression Écrite & Orale IA illimitées',
+          'Accès complet à la base de données de sujets d\'examens officiels',
+          'Support prioritaire WhatsApp 24h/24 & 7j/7',
+          '1 Session individuelle de révision (30 min) avec un enseignant expert / mois',
+          'Plan de révision ultra-personnalisé'
         ],
         limits: StripeService.getTierLimits(SubscriptionTier.PRO)
       }

@@ -17,7 +17,7 @@ const QUICK_REPLIES = [
   { text: "🇨🇦 Comment valider le CLB 7 ?", key: "clb" }
 ];
 
-export default function ContactCTA() {
+export default function ContactCTA({ minimal = false }: { minimal?: boolean } = {}) {
   // Contact section fields
   const [showBubble, setShowBubble] = useState(true);
   
@@ -122,8 +122,8 @@ export default function ContactCTA() {
 
   return (
     <>
-      {/* Contact Channels Section */}
-      <section id="contact" className="py-16 md:py-20" style={{ backgroundColor: "#ffffff", borderTop: "1px solid hsl(var(--border))" }}>
+      {!minimal && (
+        <section id="contact" className="py-16 md:py-20" style={{ backgroundColor: "#ffffff", borderTop: "1px solid hsl(var(--border))" }}>
         <div className="container-max" style={{ maxWidth: "1000px" }}>
           <div
             style={{
@@ -322,7 +322,8 @@ export default function ContactCTA() {
             </div>
           </div>
         </div>
-      </section>
+        </section>
+      )}
 
       {/* Floating Interactive Chatbot Box (Bottom Right) */}
       <div

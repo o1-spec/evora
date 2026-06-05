@@ -9,6 +9,7 @@ import { BookOpen, FileText, BarChart3, CreditCard, LogOut, Menu, X, Brain, Glob
 import { useAuthStore } from '@/store/useAuthStore';
 import api from '@/lib/api';
 import ConfirmModal from '@/components/portal/ConfirmModal';
+import ContactCTA from '@/components/portal/ContactCTA';
 
 const NAV_LINKS = [
   { href: '/dashboard/academy', label: 'Academy', icon: BookOpen },
@@ -366,6 +367,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         variant="danger"
         loading={signingOut}
       />
+      <ContactCTA minimal />
     </div>
   );
 }
