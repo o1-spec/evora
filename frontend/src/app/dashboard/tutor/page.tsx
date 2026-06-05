@@ -206,7 +206,7 @@ export default function TutorPage() {
         <div style={{ display: 'flex', gap: '0.5rem', flexShrink: 0 }}>
           <button id="mic-btn" onClick={toggleRecording} title="Enregistrer votre voix"
             style={{ width: 40, height: 40, borderRadius: '50%', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: isRecording ? 'hsla(0, 84%, 60%, 0.1)' : 'hsl(var(--bg-base))', color: isRecording ? 'hsl(0, 84%, 60%)' : 'hsl(var(--text-secondary))', transition: 'all 0.2s', flexShrink: 0 }}>
-            {isRecording ? <MicOff size={18} /> : <Mic size={18} />}
+            {isRecording ? <MicOff key="recording" size={18} /> : <Mic key="idle" size={18} />}
           </button>
           <button id="send-btn" onClick={sendMessage} disabled={!input.trim() || isLoading}
             style={{ width: 40, height: 40, borderRadius: '50%', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: input.trim() ? 'hsl(var(--primary))' : 'hsl(var(--bg-base))', color: input.trim() ? 'white' : 'hsl(var(--text-muted))', transition: 'all 0.2s', flexShrink: 0 }}>

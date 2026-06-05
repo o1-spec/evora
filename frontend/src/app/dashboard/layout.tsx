@@ -113,7 +113,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           }}
           title={isCollapsed ? "Expand sidebar" : "Collapse sidebar"}
         >
-          {isCollapsed ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
+          {isCollapsed ? <ChevronRight key="chevron-right" size={14} /> : <ChevronLeft key="chevron-left" size={14} />}
         </button>
 
         <div style={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%', overflow: 'hidden' }}>
@@ -238,7 +238,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               textAlign: 'left'
             }} onMouseOver={e => e.currentTarget.style.backgroundColor = 'hsl(var(--bg-base))'} onMouseOut={e => e.currentTarget.style.backgroundColor = 'transparent'}>
               <LogOut size={18} style={{ flexShrink: 0 }} />
-              {!isCollapsed && 'Sign out'}
+              {!isCollapsed && <span>Sign out</span>}
             </button>
           </motion.div>
         </div>

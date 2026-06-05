@@ -226,7 +226,7 @@ export default function AdminUsersPage() {
                         onClick={() => setSuspendTarget({ id: u.id, email: u.email, isSuspended: u.isSuspended })}
                         disabled={u.role === 'SUPER_ADMIN'}
                       >
-                        {u.isSuspended ? <UserCheck size={14} style={{ color: '#10b981' }} /> : <UserX size={14} style={{ color: '#ef4444' }} />}
+                        {u.isSuspended ? <UserCheck key="suspended" size={14} style={{ color: '#10b981' }} /> : <UserX key="active" size={14} style={{ color: '#ef4444' }} />}
                       </button>
                       {me?.role === 'SUPER_ADMIN' && (
                         <button

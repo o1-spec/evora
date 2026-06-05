@@ -92,7 +92,7 @@ export function AdminSidebar() {
             onClick={() => setCollapsed(!collapsed)}
             aria-label="Toggle sidebar"
           >
-            {collapsed ? <ChevronRight size={16} /> : <ChevronLeft size={16} />}
+            {collapsed ? <ChevronRight key="chevron-right" size={16} /> : <ChevronLeft key="chevron-left" size={16} />}
           </button>
           {/* Mobile Close Button */}
           <button
