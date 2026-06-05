@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
   color: hsl(var(--text-primary));
 }
 
-/* ─── Cards ─── */
+/* Cards */
 .card {
   background: hsl(var(--bg-card));
   border: 1px solid hsl(var(--border));
@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
 }
 
-/* ─── Buttons ─── */
+/* Buttons */
 .btn-primary {
   display: inline-flex;
   align-items: center;
@@ -136,7 +136,7 @@ h1, h2, h3, h4, h5, h6 {
   color: hsl(var(--text-primary));
 }
 
-/* ─── Inputs ─── */
+/* Inputs */
 .input-field {
   width: 100%;
   padding: 0.75rem 1rem;
@@ -156,7 +156,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 0 0 3px hsla(221, 83%, 53%, 0.15);
 }
 
-/* ─── Progress Bars ─── */
+/* Progress Bars */
 .progress-track {
   width: 100%;
   height: 8px;
@@ -172,7 +172,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: width 0.6s cubic-bezier(0.4,0,0.2,1);
 }
 
-/* ─── Scrollbar ─── */
+/* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: hsl(var(--border)); border-radius: 999px; }
@@ -188,7 +188,7 @@ html.admin-theme::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* ─── Container ─── */
+/* Container */
 .container-max {
   width: 100%;
   max-width: 1280px;
@@ -208,7 +208,7 @@ html.admin-theme::-webkit-scrollbar-thumb:hover {
   }
 }
 
-/* ─── Animations ─── */
+/* Animations */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(12px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -233,7 +233,7 @@ html.admin-theme::-webkit-scrollbar-thumb:hover {
 }
 
 
-/* ─── Badge ─── */
+/* Badge */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -248,7 +248,7 @@ html.admin-theme::-webkit-scrollbar-thumb:hover {
 .badge-accent  { background: hsl(var(--accent-light)); color: hsl(var(--accent)); }
 .badge-secondary { background: hsl(var(--bg-base)); color: hsl(var(--text-secondary)); border: 1px solid hsl(var(--border)); }
 
-/* ─── CLB Level Colors ─── */
+/* CLB Level Colors */
 .clb-4  { color: #ef4444; }
 .clb-5  { color: #f97316; }
 .clb-6  { color: #eab308; }
@@ -257,7 +257,7 @@ html.admin-theme::-webkit-scrollbar-thumb:hover {
 .clb-9  { color: #6366f1; }
 .clb-10 { color: #a855f7; }
 
-/* ─── Dashboard Layout ─── */
+/* Dashboard Layout */
 .dashboard-main {
   flex: 1;
   display: flex;
@@ -282,7 +282,7 @@ html.admin-theme::-webkit-scrollbar-thumb:hover {
   }
 }
 
-/* ─── Admin Panel Custom Dark Theme Styles ─── */
+/* Admin Panel Custom Dark Theme Styles */
 .admin-loading-screen {
   position: fixed;
   inset: 0;

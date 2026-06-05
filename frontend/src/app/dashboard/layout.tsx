@@ -68,7 +68,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       } as any}
     >
 
-      {/* ── DESKTOP SIDEBAR ─────────────────────────────────────────────── */}
       <motion.aside
         initial={{ x: -260, opacity: 0, width: 240 }}
         animate={{ x: 0, opacity: 1, width: isCollapsed ? 80 : 240 }}
@@ -79,7 +78,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         }}
         className="hidden lg:flex"
       >
-        {/* Collapse/Expand Toggle Button (placed absolute outside overflow hidden wrapper to avoid clipping) */}
         <button
           onClick={() => {
             const newVal = !isCollapsed;
@@ -117,9 +115,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           {isCollapsed ? <ChevronRight size={14} /> : <ChevronLeft size={14} />}
         </button>
 
-        {/* Inner Content Wrapper (clips text elements during width transition) */}
         <div style={{ display: 'flex', flexDirection: 'column', width: '100%', height: '100%', overflow: 'hidden' }}>
-          {/* Brand */}
           <motion.div
             initial={{ opacity: 0, y: -8 }}
             animate={{ opacity: 1, y: 0 }}
@@ -145,7 +141,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             </Link>
           </motion.div>
 
-          {/* Navigation — staggered links */}
           <nav style={{ flex: 1, padding: isCollapsed ? '1.25rem 0.5rem' : '1.25rem 0.75rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             {NAV_LINKS.map((link, i) => {
               const isActive = pathname.startsWith(link.href);
@@ -179,7 +174,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             })}
           </nav>
 
-          {/* User Card */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -249,7 +243,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </div>
       </motion.aside>
 
-      {/* ── MOBILE HEADER ───────────────────────────────────────────────── */}
       <div style={{
         position: 'fixed', top: 0, left: 0, right: 0, height: '4rem', backgroundColor: 'white', borderBottom: '1px solid hsl(var(--border))',
         alignItems: 'center', justifyContent: 'space-between', padding: '0 1rem', zIndex: 40
@@ -269,12 +262,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </motion.button>
       </div>
 
-      {/* ── MOBILE DRAWER ───────────────────────────────────────────────── */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <div style={{ position: 'fixed', inset: 0, zIndex: 50 }} className="flex lg:hidden">
 
-            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -284,7 +275,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
-            {/* Drawer panel */}
             <motion.div
               initial={{ x: -260 }}
               animate={{ x: 0 }}
@@ -292,7 +282,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
               transition={{ type: 'spring', stiffness: 300, damping: 32 }}
               style={{ position: 'relative', width: 260, backgroundColor: 'white', height: '100%', display: 'flex', flexDirection: 'column', boxShadow: '4px 0 24px rgba(0,0,0,0.12)' }}
             >
-              {/* Drawer header */}
               <div style={{ height: '4rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 1rem', borderBottom: '1px solid hsl(var(--border))' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                   <div style={{ width: 28, height: 28, borderRadius: 6, backgroundColor: 'hsl(var(--primary))', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -309,7 +298,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 </motion.button>
               </div>
 
-              {/* Nav links — staggered */}
               <nav style={{ flex: 1, padding: '1rem', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                 {NAV_LINKS.map((link, i) => {
                   const isActive = pathname.startsWith(link.href);
@@ -339,7 +327,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 })}
               </nav>
 
-              {/* Footer */}
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
@@ -362,14 +349,12 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         )}
       </AnimatePresence>
 
-      {/* ── MAIN CONTENT ────────────────────────────────────────────────── */}
       <main className="dashboard-main">
         <div style={{ maxWidth: 1400, width: '100%', margin: '0 auto', flex: 1 }}>
           {children}
         </div>
       </main>
 
-      {/* SIGN OUT CONFIRMATION MODAL */}
       <ConfirmModal
         open={showSignOutModal}
         onClose={() => setShowSignOutModal(false)}

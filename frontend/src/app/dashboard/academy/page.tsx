@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import api from '@/lib/api';
 
-// ─── TCF PREP DATA ──────────────────────────────────────────────────────────
+
 
 const TCF_BANDS = [
   {
@@ -88,7 +88,7 @@ const TCF_BANDS = [
   },
 ];
 
-// ─── COMPREHENSIVE FRENCH METADATA ──────────────────────────────────────────
+
 
 const LEVEL_METADATA: Record<string, { title: string; emoji: string; color: string; bgColor: string; borderColor: string; desc: string }> = {
   a1: {
@@ -142,7 +142,7 @@ const LEVEL_METADATA: Record<string, { title: string; emoji: string; color: stri
 };
 
 
-// ─── SUB-COMPONENTS ──────────────────────────────────────────────────────────
+
 
 function ProgressBar({ value, color }: { value: number; color: string }) {
   return (
@@ -243,7 +243,7 @@ function ModuleCard({ mod, levelColor, levelCode }: { mod: { label: string; icon
   );
 }
 
-// ─── MAIN PAGE ───────────────────────────────────────────────────────────────
+
 
 export default function AcademyPage() {
   const [activeTrack, setActiveTrack] = useState<'tcf' | 'french'>('tcf');
@@ -269,13 +269,13 @@ export default function AcademyPage() {
   };
 
   useEffect(() => {
-    // Populate structure from TCF_BANDS immediately so skeleton has correct count
+
     setTcfBands(TCF_BANDS);
     async function loadProgress() {
       try {
         const { data } = await api.get('/learning/progress/academy');
         
-        // 1. Update TCF Bands state dynamically based on API responses
+
         setTcfBands(prev => prev.map(band => {
           const apiBand = data[band.id];
           if (apiBand) {
@@ -291,7 +291,7 @@ export default function AcademyPage() {
           return band;
         }));
 
-        // 2. Build Comprehensive French CEFR Levels dynamically from the API response
+
         const activeLevels: any[] = [];
         ['a1', 'a2', 'b1', 'b2', 'c1', 'c2'].forEach(code => {
           const apiLevel = data[code];
@@ -501,10 +501,10 @@ export default function AcademyPage() {
 
             {/* CLB Bands */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-              {/* Loading skeleton — shown until API data arrives */}
+
               {isLoading && tcfBands.map((band) => (
                 <div key={band.id + '-skel'} style={{ opacity: 1 }}>
-                  {/* Band header skeleton */}
+
                   <div
                     style={{
                       backgroundColor: band.bgColor,
@@ -530,7 +530,7 @@ export default function AcademyPage() {
                       <div style={{ width: 100, height: 5, borderRadius: 999, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite' }} />
                     </div>
                   </div>
-                  {/* Skill card skeletons */}
+
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '1rem' }}>
                     {band.skills.map((skill) => (
                       <div key={skill.label} className="card" style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -652,14 +652,14 @@ export default function AcademyPage() {
 
             {/* CEFR Level Sections */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
-              {/* Skeleton loader — shown while API is pending */}
+
               {isLoading && Array.from({ length: 6 }).map((_, li) => {
                 const skeletonColors = ['#ef4444','#f97316','#10b981','#3b82f6','#8b5cf6','#64748b'];
                 const col = skeletonColors[li];
                 const moduleCount = 4 + (li % 2); // 4 or 5 skeleton module cards per level
                 return (
                   <div key={`skel-${li}`}>
-                    {/* Level header skeleton */}
+
                     <div
                       style={{
                         backgroundColor: `${col}08`,
@@ -674,7 +674,7 @@ export default function AcademyPage() {
                       }}
                     >
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                        {/* Level code badge skeleton */}
+
                         <div style={{
                           width: 48, height: 48, borderRadius: 12,
                           background: `${col}25`,
@@ -692,7 +692,7 @@ export default function AcademyPage() {
                         <div style={{ width: 110, height: 5, borderRadius: 999, background: 'hsl(var(--border))', animation: 'pulse 1.5s ease-in-out infinite' }} />
                       </div>
                     </div>
-                    {/* Module card skeletons */}
+
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '1rem' }}>
                       {Array.from({ length: moduleCount }).map((_, mi) => (
                         <div key={mi} className="card" style={{ padding: '1.25rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
