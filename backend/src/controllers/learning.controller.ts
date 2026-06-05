@@ -181,58 +181,147 @@ export class LearningController {
 
   /**
    * Fetch live dynamic progress for TCF Bands and French Levels
+   * TCF band skills are derived from real exam attempt data per section type.
+   * CEFR level cards (A1–C2) come from real UserProgress completions.
    */
   public static async getAcademyProgress(req: AuthenticatedRequest, res: Response) {
     try {
       if (!req.user) return res.status(401).json({ error: 'Unauthorized' });
       const userId = req.user.id;
 
-      // 1. Query TCF exam attempts completed
-      const tcfAttemptsCount = await prisma.examAttempt.count({
-        where: { userId, completedAt: { not: null } }
+      // ─── 1. TCF BAND REAL DATA ────────────────────────────────────────────────
+      // For each skill type, we calculate:
+      //   - exercises (total): total distinct TcfQuestions in that section type across all exams
+      //   - done: total sections of that type covered by the user's completed exam attempts
+
+      // Get all completed exam attempts with their exam sections
+      const completedAttempts = await prisma.examAttempt.findMany({
+        where: { userId, completedAt: { not: null } },
+        include: {
+          exam: {
+            include: {
+              sections: {
+                include: {
+                  questions: { select: { id: true } }
+                }
+              }
+            }
+          },
+          feedbacks: {
+            select: { sectionType: true, overallScore: true }
+          }
+        }
       });
 
-      // Dynamic Beginner Band Progress Metrics
-      const beginnerSkills = [
-        { label: 'Written Expression', sub: 'Expression Écrite', exercises: 12, done: Math.min(12, 4 + (tcfAttemptsCount > 0 ? 1 : 0)) },
-        { label: 'Oral Expression', sub: 'Expression Orale', exercises: 10, done: Math.min(10, 3 + (tcfAttemptsCount > 0 ? 1 : 0)) },
-        { label: 'Reading Comprehension', sub: 'Compréhension Écrite', exercises: 15, done: Math.min(15, 7 + (tcfAttemptsCount > 0 ? 2 : 0)) },
-        { label: 'Oral Comprehension', sub: 'Compréhension Orale', exercises: 12, done: Math.min(12, 5 + (tcfAttemptsCount > 0 ? 1 : 0)) },
-      ];
-      const beginnerTotalDone = beginnerSkills.reduce((sum, s) => sum + s.done, 0);
-      const beginnerProgress = Math.round((beginnerTotalDone / 49) * 100);
+      // Count total available questions per section type across ALL exams (not just attempted)
+      const allExams = await prisma.tcfExam.findMany({
+        include: {
+          sections: {
+            include: {
+              questions: { select: { id: true } }
+            }
+          }
+        }
+      });
 
-      // Dynamic Intermediate Band Progress Metrics
-      const intermediateSkills = [
-        { label: 'Written Expression', sub: 'Expression Écrite', exercises: 18, done: Math.min(18, 11 + (tcfAttemptsCount > 0 ? 2 : 0)) },
-        { label: 'Oral Expression', sub: 'Expression Orale', exercises: 16, done: Math.min(16, 9 + (tcfAttemptsCount > 0 ? 2 : 0)) },
-        { label: 'Reading Comprehension', sub: 'Compréhension Écrite', exercises: 20, done: Math.min(20, 12 + (tcfAttemptsCount > 0 ? 3 : 0)) },
-        { label: 'Oral Comprehension', sub: 'Compréhension Orale', exercises: 18, done: Math.min(18, 11 + (tcfAttemptsCount > 0 ? 2 : 0)) },
-      ];
-      const intermediateTotalDone = intermediateSkills.reduce((sum, s) => sum + s.done, 0);
-      const intermediateProgress = Math.round((intermediateTotalDone / 72) * 100);
+      // Build totals: { WRITING: N, SPEAKING: N, READING: N, LISTENING: N }
+      const totalByType: Record<string, number> = {
+        WRITING: 0, SPEAKING: 0, READING: 0, LISTENING: 0
+      };
+      for (const exam of allExams) {
+        for (const section of exam.sections) {
+          totalByType[section.type] = (totalByType[section.type] || 0) + section.questions.length;
+        }
+      }
 
-      // Dynamic Advanced Band Progress Metrics
-      const advancedSkills = [
-        { label: 'Written Expression', sub: 'Expression Écrite', exercises: 20, done: Math.min(20, 4 + (tcfAttemptsCount > 0 ? 2 : 0)) },
-        { label: 'Oral Expression', sub: 'Expression Orale', exercises: 18, done: Math.min(18, 3 + (tcfAttemptsCount > 0 ? 1 : 0)) },
-        { label: 'Reading Comprehension', sub: 'Compréhension Écrite', exercises: 22, done: Math.min(22, 5 + (tcfAttemptsCount > 0 ? 3 : 0)) },
-        { label: 'Oral Comprehension', sub: 'Compréhension Orale', exercises: 20, done: Math.min(20, 4 + (tcfAttemptsCount > 0 ? 2 : 0)) },
-      ];
-      const advancedTotalDone = advancedSkills.reduce((sum, s) => sum + s.done, 0);
-      const advancedProgress = Math.round((advancedTotalDone / 80) * 100);
+      // Build done counts: questions answered by user (per section type covered in their attempts)
+      const doneByType: Record<string, number> = {
+        WRITING: 0, SPEAKING: 0, READING: 0, LISTENING: 0
+      };
+      for (const attempt of completedAttempts) {
+        for (const section of attempt.exam.sections) {
+          doneByType[section.type] = (doneByType[section.type] || 0) + section.questions.length;
+        }
+      }
 
-      // Dynamic Expert Band Progress Metrics
-      const expertSkills = [
-        { label: 'Written Expression', sub: 'Expression Écrite', exercises: 22, done: Math.min(22, 1 + (tcfAttemptsCount > 0 ? 1 : 0)) },
-        { label: 'Oral Expression', sub: 'Expression Orale', exercises: 20, done: Math.min(20, 0 + (tcfAttemptsCount > 0 ? 1 : 0)) },
-        { label: 'Reading Comprehension', sub: 'Compréhension Écrite', exercises: 24, done: Math.min(24, 2 + (tcfAttemptsCount > 0 ? 2 : 0)) },
-        { label: 'Oral Comprehension', sub: 'Compréhension Orale', exercises: 22, done: Math.min(22, 0 + (tcfAttemptsCount > 0 ? 1 : 0)) },
-      ];
-      const expertTotalDone = expertSkills.reduce((sum, s) => sum + s.done, 0);
-      const expertProgress = Math.round((expertTotalDone / 88) * 100);
+      // Cap done at total (user can't do more than what exists)
+      for (const key of Object.keys(doneByType)) {
+        doneByType[key] = Math.min(doneByType[key], totalByType[key] || 0);
+      }
 
-      // 2. Query level dynamic values from the database
+      // Helper: build skill object for a section type
+      const buildSkill = (label: string, sub: string, type: string) => ({
+        label,
+        sub,
+        exercises: totalByType[type] || 0,
+        done: doneByType[type] || 0
+      });
+
+      // Determine which CLB band the user is in based on their latest attempt clbLevel
+      const latestAttempt = completedAttempts.sort(
+        (a, b) => new Date(b.completedAt!).getTime() - new Date(a.completedAt!).getTime()
+      )[0];
+      const userClbLevel = latestAttempt?.clbLevel ?? null;
+
+      // Build band skills arrays from real data
+      // All four bands share the same pool of TCF questions but we split them
+      // evenly across 4 bands so each band is contextually meaningful
+
+      // Total questions per section: split into 4 bands (25% each)
+      const bandSlice = (total: number, bandIndex: number) => {
+        // bandIndex: 0=beginner, 1=intermediate, 2=advanced, 3=expert
+        const perBand = Math.floor(total / 4) || 1;
+        return perBand;
+      };
+
+      const bandDoneSlice = (total: number, done: number, bandIndex: number) => {
+        const perBand = Math.floor(total / 4) || 1;
+        const cumulativeDone = done;
+        // How many "done" fall within this band's slice?
+        const bandStart = bandIndex * perBand;
+        const bandEnd = bandStart + perBand;
+        return Math.max(0, Math.min(perBand, cumulativeDone - bandStart));
+      };
+
+      const buildBandSkills = (bandIndex: number) => [
+        {
+          label: 'Written Expression',
+          sub: 'Expression Écrite',
+          exercises: bandSlice(totalByType['WRITING'], bandIndex),
+          done: bandDoneSlice(totalByType['WRITING'], doneByType['WRITING'], bandIndex)
+        },
+        {
+          label: 'Oral Expression',
+          sub: 'Expression Orale',
+          exercises: bandSlice(totalByType['SPEAKING'], bandIndex),
+          done: bandDoneSlice(totalByType['SPEAKING'], doneByType['SPEAKING'], bandIndex)
+        },
+        {
+          label: 'Reading Comprehension',
+          sub: 'Compréhension Écrite',
+          exercises: bandSlice(totalByType['READING'], bandIndex),
+          done: bandDoneSlice(totalByType['READING'], doneByType['READING'], bandIndex)
+        },
+        {
+          label: 'Oral Comprehension',
+          sub: 'Compréhension Orale',
+          exercises: bandSlice(totalByType['LISTENING'], bandIndex),
+          done: bandDoneSlice(totalByType['LISTENING'], doneByType['LISTENING'], bandIndex)
+        }
+      ];
+
+      const calcProgress = (skills: { exercises: number; done: number }[]) => {
+        const totalEx = skills.reduce((s, sk) => s + sk.exercises, 0);
+        const totalDn = skills.reduce((s, sk) => s + sk.done, 0);
+        return totalEx > 0 ? Math.round((totalDn / totalEx) * 100) : 0;
+      };
+
+      const beginnerSkills = buildBandSkills(0);
+      const intermediateSkills = buildBandSkills(1);
+      const advancedSkills = buildBandSkills(2);
+      const expertSkills = buildBandSkills(3);
+
+      // ─── 2. CEFR LEVEL REAL DATA (A1–C2) ─────────────────────────────────────
       const dbLevels = await prisma.level.findMany({
         include: {
           modules: {
@@ -255,15 +344,13 @@ export class LearningController {
         const modules = level.modules.map(mod => {
           const count = mod.lessons.length;
           const done = mod.lessons.filter(l => l.progress.length > 0).length;
-          return {
-            label: mod.title,
-            count,
-            done
-          };
+          return { label: mod.title, count, done };
         });
 
         const totalLessons = level.modules.reduce((sum, mod) => sum + mod.lessons.length, 0);
-        const totalDone = level.modules.reduce((sum, mod) => sum + mod.lessons.filter(l => l.progress.length > 0).length, 0);
+        const totalDone = level.modules.reduce(
+          (sum, mod) => sum + mod.lessons.filter(l => l.progress.length > 0).length, 0
+        );
 
         levelsData[level.code.toLowerCase()] = {
           progress: totalLessons > 0 ? Math.round((totalDone / totalLessons) * 100) : 0,
@@ -271,27 +358,15 @@ export class LearningController {
         };
       }
 
-      const responsePayload = {
-        beginner: {
-          progress: beginnerProgress,
-          skills: beginnerSkills
-        },
-        intermediate: {
-          progress: intermediateProgress,
-          skills: intermediateSkills
-        },
-        advanced: {
-          progress: advancedProgress,
-          skills: advancedSkills
-        },
-        expert: {
-          progress: expertProgress,
-          skills: expertSkills
-        },
+      // ─── 3. BUILD RESPONSE ────────────────────────────────────────────────────
+      return res.status(200).json({
+        beginner: { progress: calcProgress(beginnerSkills), skills: beginnerSkills },
+        intermediate: { progress: calcProgress(intermediateSkills), skills: intermediateSkills },
+        advanced: { progress: calcProgress(advancedSkills), skills: advancedSkills },
+        expert: { progress: calcProgress(expertSkills), skills: expertSkills },
         ...levelsData
-      };
+      });
 
-      return res.status(200).json(responsePayload);
     } catch (error) {
       console.error('Get academy progress error:', error);
       return res.status(500).json({ error: 'Failed to retrieve progress indicators.' });
