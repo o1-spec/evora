@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Check, HelpCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import { useAuthStore } from "@/store/useAuthStore";
 
 const PLANS = [
   {
@@ -62,6 +63,15 @@ const PLANS = [
 ];
 
 export default function PricingSection() {
+  const { user } = useAuthStore();
+
+  const getPlanHref = (planName: string) => {
+    if (!user) return "/register";
+    if (planName.toLowerCase().includes("gratuit") || planName.toLowerCase().includes("free")) {
+      return "/dashboard/academy";
+    }
+    return "/dashboard/billing";
+  };
   return (
     <section id="pricing" className="py-16 md:py-24" style={{ backgroundColor: "hsl(var(--bg-base))" }}>
       <div className="container-max">
@@ -251,7 +261,7 @@ export default function PricingSection() {
 
               {/* Call to Action Button */}
               <Link
-                href={plan.href}
+                href={getPlanHref(plan.name)}
                 className={plan.highlight ? "btn-primary" : "btn-secondary"}
                 style={{
                   width: "100%",

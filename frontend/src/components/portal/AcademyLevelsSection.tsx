@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { BookOpen } from "lucide-react";
+import { useAuthStore } from "@/store/useAuthStore";
 
 const LEVELS = [
   {
@@ -61,6 +62,7 @@ const LEVELS = [
 ];
 
 export default function AcademyLevelsSection() {
+  const { user } = useAuthStore();
   return (
     <section id="academy" className="py-16 md:py-24" style={{ backgroundColor: "#ffffff" }}>
       <div className="container-max">
@@ -200,7 +202,7 @@ export default function AcademyLevelsSection() {
                 </span>
 
                 <Link
-                  href={`/register`}
+                  href={user ? `/dashboard/academy/${level.code.toLowerCase()}` : `/register`}
                   style={{
                     fontSize: "0.8rem",
                     fontWeight: 700,

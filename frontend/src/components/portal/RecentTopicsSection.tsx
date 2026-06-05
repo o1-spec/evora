@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { FileText, Mic, Calendar, ArrowRight } from "lucide-react";
+import { useAuthStore } from "@/store/useAuthStore";
 
 const WRITING_TOPICS = [
   {
@@ -46,6 +47,8 @@ const SPEAKING_TOPICS = [
 ];
 
 export default function RecentTopicsSection() {
+  const { isAuthenticated } = useAuthStore();
+
   return (
     <section id="recent-topics" className="py-16 md:py-24" style={{ backgroundColor: "hsl(var(--bg-base))" }}>
       <div className="container-max">
@@ -157,7 +160,7 @@ export default function RecentTopicsSection() {
                     {topic.title}
                   </h4>
                   <Link
-                    href="/register"
+                    href={isAuthenticated ? "/dashboard/academy" : "/register"}
                     style={{
                       fontSize: "0.85rem",
                       fontWeight: 700,
@@ -260,7 +263,7 @@ export default function RecentTopicsSection() {
                     {topic.title}
                   </h4>
                   <Link
-                    href="/register"
+                    href={isAuthenticated ? "/dashboard/academy" : "/register"}
                     style={{
                       fontSize: "0.85rem",
                       fontWeight: 700,
