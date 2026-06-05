@@ -164,6 +164,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/blog" style={{ fontSize: "0.875rem", color: "hsl(var(--text-secondary))", textDecoration: "none" }}>
+                  Blog & Fiches d'astuces
+                </Link>
+              </li>
+              <li>
                 <Link href="#" style={{ fontSize: "0.875rem", color: "hsl(var(--text-secondary))", textDecoration: "none" }}>
                   Conditions d'utilisation
                 </Link>

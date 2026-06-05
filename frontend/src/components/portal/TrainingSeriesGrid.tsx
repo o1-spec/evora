@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { readingQuestions, listeningQuestions, writtenTasks, oralTasks, TcfQuestionData, TcfWrittenTaskData, TcfOralTaskData } from '@/lib/tcfQuestions';
 import api from '@/lib/api';
+import PublicLayout from '@/components/portal/PublicLayout';
 
 interface TrainingSeriesGridProps {
   sectionType: 'READING' | 'WRITING' | 'LISTENING' | 'SPEAKING';
@@ -2916,7 +2917,8 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
 
   // --- RENDER SCREEN 3: SERIES MATRIX DASHBOARD (THE 40 TRAINING SETS CARDS) ---
   return (
-    <div style={{ backgroundColor: 'hsl(var(--bg-base))', minHeight: '100vh', paddingBottom: '6rem' }}>
+    <PublicLayout>
+      <div style={{ backgroundColor: 'hsl(var(--bg-base))', minHeight: '100vh', paddingBottom: '6rem' }}>
       
       {/* Toast Notification Mount */}
       <AnimatePresence>
@@ -3518,6 +3520,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
         )}
       </AnimatePresence>
 
-    </div>
+      </div>
+    </PublicLayout>
   );
 }

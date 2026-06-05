@@ -44,7 +44,7 @@ export default function TopBar() {
             Prices
           </Link>
           <Link
-            href="#"
+            href="/blog"
             style={{ color: "inherit", textDecoration: "none" }}
             onMouseOver={(e) => (e.currentTarget.style.color = "hsl(var(--primary))")}
             onMouseOut={(e) => (e.currentTarget.style.color = "inherit")}
