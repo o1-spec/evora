@@ -28,7 +28,7 @@ function SandboxSuccessContent() {
             subscriptionTier: updatedUser.subscriptionTier,
           };
           useAuthStore.setState({ user: updatedUserObj });
-          localStorage.setItem('user', JSON.stringify(updatedUserObj));
+
         }
 
         setStatus('success');

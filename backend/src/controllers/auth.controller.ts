@@ -16,6 +16,26 @@ const JWT_ACCESS_SECRET = requireEnv('JWT_ACCESS_SECRET');
 const JWT_REFRESH_SECRET = requireEnv('JWT_REFRESH_SECRET');
 const JWT_ACCESS_EXPIRY = process.env.JWT_ACCESS_EXPIRY || '15m';
 const JWT_REFRESH_EXPIRY = process.env.JWT_REFRESH_EXPIRY || '7d';
+const IS_PROD = process.env.NODE_ENV === 'production';
+
+/** Shared cookie options for the httpOnly refresh token cookie */
+const REFRESH_COOKIE_OPTIONS = {
+  httpOnly: true,
+  secure: IS_PROD,                // HTTPS only in production
+  sameSite: IS_PROD ? 'strict' : 'lax',
+  path: '/',
+  maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days in ms
+} as const;
+
+/** Clear the refresh cookie (used on logout / token failure) */
+function clearRefreshCookie(res: Response) {
+  res.clearCookie('refreshToken', {
+    httpOnly: true,
+    secure: IS_PROD,
+    sameSite: IS_PROD ? 'strict' : 'lax',
+    path: '/',
+  });
+}
 
 export class AuthController {
   
@@ -73,10 +93,12 @@ export class AuthController {
       EmailService.sendVerificationEmail(user.email, verificationToken, user.firstName || undefined)
         .catch(err => console.error('[Auth] Failed to send verification email:', err.message));
 
+      // Set httpOnly refresh token cookie — never exposed to JS
+      res.cookie('refreshToken', refreshToken, REFRESH_COOKIE_OPTIONS);
+
       return res.status(201).json({
         message: 'Inscription réussie.',
         accessToken,
-        refreshToken,
         user: {
           id: user.id,
           email: user.email,
@@ -131,10 +153,12 @@ export class AuthController {
         }
       });
 
+      // Set httpOnly refresh token cookie — never exposed to JS
+      res.cookie('refreshToken', refreshToken, REFRESH_COOKIE_OPTIONS);
+
       return res.status(200).json({
         message: 'Connexion réussie.',
         accessToken,
-        refreshToken,
         user: {
           id: user.id,
           email: user.email,
@@ -151,11 +175,12 @@ export class AuthController {
   }
 
   /**
-   * Refresh Token rotation
+   * Refresh Token rotation — reads refreshToken from httpOnly cookie
    */
   public static async refresh(req: Request, res: Response) {
     try {
-      const { refreshToken } = req.body;
+      // Support both cookie (preferred) and legacy body (transitional)
+      const refreshToken: string | undefined = req.cookies?.refreshToken || req.body?.refreshToken;
 
       if (!refreshToken) {
         return res.status(400).json({ error: 'Le refresh token est obligatoire.' });
@@ -169,6 +194,7 @@ export class AuthController {
 
       if (!session || session.expiresAt < new Date()) {
         if (session) await prisma.session.deleteMany({ where: { id: session.id } });
+        clearRefreshCookie(res);
         return res.status(401).json({ error: 'Session invalide ou expirée.' });
       }
 
@@ -178,6 +204,7 @@ export class AuthController {
         decoded = jwt.verify(refreshToken, JWT_REFRESH_SECRET);
       } catch (err) {
         await prisma.session.deleteMany({ where: { id: session.id } });
+        clearRefreshCookie(res);
         return res.status(401).json({ error: 'Refresh token invalide.' });
       }
 
@@ -201,9 +228,19 @@ export class AuthController {
         }
       });
 
+      // Rotate cookie
+      res.cookie('refreshToken', newRefreshToken, REFRESH_COOKIE_OPTIONS);
+
       return res.status(200).json({
         accessToken: newAccessToken,
-        refreshToken: newRefreshToken
+        user: {
+          id: user.id,
+          email: user.email,
+          firstName: user.firstName,
+          lastName: user.lastName,
+          role: user.role,
+          subscriptionTier: user.subscriptionTier
+        }
       });
     } catch (error) {
       console.error('Refresh token error:', error);
@@ -212,14 +249,15 @@ export class AuthController {
   }
 
   /**
-   * Logout user and delete session
+   * Logout user — deletes session and clears cookie
    */
   public static async logout(req: Request, res: Response) {
     try {
-      const { refreshToken } = req.body;
+      const refreshToken: string | undefined = req.cookies?.refreshToken || req.body?.refreshToken;
       if (refreshToken) {
         await prisma.session.deleteMany({ where: { refreshToken } });
       }
+      clearRefreshCookie(res);
       return res.status(200).json({ message: 'Déconnexion réussie.' });
     } catch (error) {
       console.error('Logout error:', error);

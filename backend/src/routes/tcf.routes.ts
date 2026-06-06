@@ -16,4 +16,8 @@ router.post('/attempts/start', checkExamAttemptLimit as any, TcfController.start
 router.post('/attempts/:attemptId/submit', TcfController.submitAttempt as any);
 router.get('/attempts/:attemptId/report', TcfController.getAttemptReport as any);
 
+// Training Series progress tracking
+router.get('/series-progress', TcfController.getSeriesProgress as any);
+router.post('/series-progress', TcfController.saveSeriesProgress as any);
+
 export default router;

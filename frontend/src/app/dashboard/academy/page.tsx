@@ -254,7 +254,8 @@ export default function AcademyPage() {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const saved = localStorage.getItem('evora_academy_track');
+      const match = document.cookie.match(/(?:^|;\s*)evora_academy_track=([^;]*)/);
+      const saved = match ? match[1] : null;
       if (saved === 'tcf' || saved === 'french') {
         setActiveTrack(saved as 'tcf' | 'french');
       }
@@ -264,7 +265,7 @@ export default function AcademyPage() {
   const handleTrackChange = (track: 'tcf' | 'french') => {
     setActiveTrack(track);
     if (typeof window !== 'undefined') {
-      localStorage.setItem('evora_academy_track', track);
+      document.cookie = `evora_academy_track=${track}; max-age=${365 * 24 * 3600}; path=/; SameSite=Lax`;
     }
   };
 

@@ -1,5 +1,6 @@
 import { create } from 'zustand';
 import api from '@/lib/api';
+import axios from 'axios';
 
 interface User {
   id: string;
@@ -15,39 +16,36 @@ interface AuthState {
   accessToken: string | null;
   isLoading: boolean;
   isAuthenticated: boolean;
+  /** Called by api.ts interceptor to update tokens after a silent refresh */
+  setSession: (accessToken: string, user: User) => void;
+  /** Called by api.ts interceptor to wipe session on unrecoverable 401 */
+  clearSession: () => void;
   login: (email: string, password: string) => Promise<void>;
   register: (data: { email: string; password: string; firstName?: string; lastName?: string }) => Promise<void>;
   logout: () => Promise<void>;
-  loadFromStorage: () => void;
+  /** Silently restore session on page load using the httpOnly refresh cookie */
+  restoreSession: () => Promise<void>;
 }
 
-export const useAuthStore = create<AuthState>((set, get) => ({
+export const useAuthStore = create<AuthState>((set) => ({
   user: null,
   accessToken: null,
-  isLoading: false,
+  isLoading: true,
   isAuthenticated: false,
 
-  loadFromStorage: () => {
-    if (typeof window === 'undefined') return;
-    const token = localStorage.getItem('accessToken');
-    const userRaw = localStorage.getItem('user');
-    if (token && userRaw) {
-      try {
-        const user = JSON.parse(userRaw);
-        set({ user, accessToken: token, isAuthenticated: true });
-      } catch {
-        set({ user: null, accessToken: null, isAuthenticated: false });
-      }
-    }
+  setSession: (accessToken, user) => {
+    set({ user, accessToken, isAuthenticated: true });
+  },
+
+  clearSession: () => {
+    set({ user: null, accessToken: null, isAuthenticated: false });
   },
 
   login: async (email, password) => {
     set({ isLoading: true });
     try {
       const { data } = await api.post('/auth/login', { email, password });
-      localStorage.setItem('accessToken', data.accessToken);
-      localStorage.setItem('refreshToken', data.refreshToken);
-      localStorage.setItem('user', JSON.stringify(data.user));
+      // accessToken lives in memory; refreshToken arrived as an httpOnly cookie
       set({ user: data.user, accessToken: data.accessToken, isAuthenticated: true, isLoading: false });
     } catch (err) {
       set({ isLoading: false });
@@ -59,9 +57,6 @@ export const useAuthStore = create<AuthState>((set, get) => ({
     set({ isLoading: true });
     try {
       const { data } = await api.post('/auth/register', payload);
-      localStorage.setItem('accessToken', data.accessToken);
-      localStorage.setItem('refreshToken', data.refreshToken);
-      localStorage.setItem('user', JSON.stringify(data.user));
       set({ user: data.user, accessToken: data.accessToken, isAuthenticated: true, isLoading: false });
     } catch (err) {
       set({ isLoading: false });
@@ -71,18 +66,32 @@ export const useAuthStore = create<AuthState>((set, get) => ({
 
   logout: async () => {
     try {
-      const refreshToken = localStorage.getItem('refreshToken');
-      if (refreshToken) await api.post('/auth/logout', { refreshToken });
+      // Backend will clear the httpOnly cookie and delete the DB session
+      await api.post('/auth/logout');
     } catch { /* silent */ } finally {
-      localStorage.removeItem('accessToken');
-      localStorage.removeItem('refreshToken');
-      localStorage.removeItem('user');
       set({ user: null, accessToken: null, isAuthenticated: false });
+    }
+  },
+
+  restoreSession: async () => {
+    set({ isLoading: true });
+    try {
+      const baseURL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5001/api';
+      // Call refresh directly (no Authorization header needed — cookie is sent automatically)
+      const { data } = await axios.post(
+        `${baseURL}/auth/refresh`,
+        {},
+        { withCredentials: true }
+      );
+      set({ user: data.user, accessToken: data.accessToken, isAuthenticated: true, isLoading: false });
+    } catch {
+      // No valid refresh cookie → user is logged out
+      set({ user: null, accessToken: null, isAuthenticated: false, isLoading: false });
     }
   },
 }));
 
-// Restore session synchronously on client-side boot to prevent redirects
+// On client boot, silently restore session from the refresh cookie
 if (typeof window !== 'undefined') {
-  useAuthStore.getState().loadFromStorage();
+  useAuthStore.getState().restoreSession();
 }

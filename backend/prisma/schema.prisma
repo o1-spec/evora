@@ -64,6 +64,7 @@ model User {
   aiUsageLogs       AIUsageLog[]
   sessions          Session[]
   auditLogs         AdminAuditLog[]
+  seriesProgress    UserSeriesProgress[]
 }
 
 model Session {
@@ -230,5 +231,16 @@ model AdminAuditLog {
   description String
   ipAddress   String?
   createdAt   DateTime @default(now())
+}
+
+model UserSeriesProgress {
+  id          String   @id @default(uuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  sectionType String   // READING, LISTENING, WRITING, SPEAKING
+  seriesId    Int
+  completedAt DateTime @default(now())
+
+  @@unique([userId, sectionType, seriesId])
 }
 

@@ -86,6 +86,32 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
   const [isExamFinished, setIsExamFinished] = useState<boolean>(false);
   const [showNavGrid, setShowNavGrid] = useState<boolean>(false);
 
+  const [completedSeries, setCompletedSeries] = useState<number[]>([]);
+
+  // Load completed series from the database
+  useEffect(() => {
+    if (!user?.id) return;
+    api.get(`/tcf/series-progress?sectionType=${sectionType}`)
+      .then((res) => {
+        const ids: number[] = (res.data?.completedSeries ?? []).map((r: any) => Number(r.seriesId));
+        setCompletedSeries(ids);
+      })
+      .catch((err) => {
+        console.error('Failed to load series progress:', err);
+      });
+  }, [user?.id, sectionType]);
+
+  const saveSeriesCompletion = async (seriesId: number | null) => {
+    if (seriesId === null) return;
+    if (completedSeries.includes(seriesId)) return; // already saved
+    try {
+      await api.post('/tcf/series-progress', { sectionType, seriesId });
+      setCompletedSeries((prev) => [...prev, seriesId]);
+    } catch (err) {
+      console.error('Failed to save series progress:', err);
+    }
+  };
+
   // --- Stateful Written Expression Simulator states ---
   const [wTasks, setWTasks] = useState<TcfWrittenTaskData[]>([]);
   const [currentWTaskIndex, setCurrentWTaskIndex] = useState<number>(0); // 0, 1, 2
@@ -112,9 +138,6 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
 
   // Custom Modals state
   const [activeModal, setActiveModal] = useState<'LEAVE_EXAM' | 'UNLOCK_PREMIUM' | 'ZOOM_POSTER' | null>(null);
-
-  // Timer reference
-  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
   // Real AI evaluation and audio recording states/refs
   const [writingEvaluations, setWritingEvaluations] = useState<Record<number, any>>({});
@@ -149,45 +172,52 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
     }
   }, [sectionType, activeSeriesId]);
 
-  // Handle Speaking-specific preparation and recording timers
+  // Handle Speaking-specific preparation timer
   useEffect(() => {
-    let t: ReturnType<typeof setInterval> | null = null;
-    if (activeSeriesId !== null && !isExamFinished && sectionType === 'SPEAKING') {
-      t = setInterval(() => {
-        if (recordingState === 'PREPARING') {
-          setPrepTimeRemaining(prev => {
-            if (prev <= 1) {
-              setRecordingState('RECORDING');
-              return 0;
-            }
-            return prev - 1;
-          });
-        } else if (recordingState === 'RECORDING') {
-          setRecordTime(prev => prev + 1);
-        }
-      }, 1000);
+    if (activeSeriesId === null || isExamFinished || sectionType !== 'SPEAKING' || recordingState !== 'PREPARING') {
+      return;
     }
-    return () => {
-      if (t) clearInterval(t);
-    };
+    const t = setInterval(() => {
+      setPrepTimeRemaining(prev => {
+        if (prev <= 1) {
+          setTimeout(() => {
+            setRecordingState('RECORDING');
+            setRecordTime(0);
+          }, 0);
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(t);
+  }, [activeSeriesId, isExamFinished, sectionType, recordingState]);
+
+  // Handle Speaking-specific recording timer
+  useEffect(() => {
+    if (activeSeriesId === null || isExamFinished || sectionType !== 'SPEAKING' || recordingState !== 'RECORDING') {
+      return;
+    }
+    const t = setInterval(() => {
+      setRecordTime(prev => prev + 1);
+    }, 1000);
+    return () => clearInterval(t);
   }, [activeSeriesId, isExamFinished, sectionType, recordingState]);
 
   // Handle active countdown ticking
   useEffect(() => {
-    if (activeSeriesId !== null && !isExamFinished) {
-      timerRef.current = setInterval(() => {
-        setTimeRemaining(prev => {
-          if (prev <= 1) {
-            handleFinishExam();
-            return 0;
-          }
-          return prev - 1;
-        });
-      }, 1000);
+    if (activeSeriesId === null || isExamFinished) {
+      return;
     }
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current);
-    };
+    const t = setInterval(() => {
+      setTimeRemaining(prev => {
+        if (prev <= 1) {
+          handleFinishExam();
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    return () => clearInterval(t);
   }, [activeSeriesId, isExamFinished]);
 
   // Format remaining seconds into MM:SS
@@ -197,12 +227,13 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
     return `${mm}:${ss}`;
   };
 
-  // Generate 40 simulated Series
-  const seriesList = Array.from({ length: 40 }, (_, i) => {
+  const seriesCount = (sectionType === 'READING' || sectionType === 'LISTENING') ? 10 : 40;
+  // Generate simulated Series
+  const seriesList = Array.from({ length: seriesCount }, (_, i) => {
     const id = i + 1;
     const isPremiumUser = user?.subscriptionTier && user.subscriptionTier !== 'FREE';
     const isUnlocked = isPremiumUser || id <= 3;
-    const isFinished = id === 1; 
+    const isFinished = completedSeries.includes(id); 
     
     // Dynamic series parameters based on sectionType
     const questionsCount = (sectionType === 'WRITING' || sectionType === 'SPEAKING') ? 3 : 39;
@@ -230,26 +261,26 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
   const handleStartExam = () => {
     setIsLaunching(true);
     setCountdown(3);
+    
+    let currentCountdown = 3;
     const interval = setInterval(() => {
-      setCountdown(prev => {
-        if (prev === null) return null;
-        if (prev <= 1) {
-          clearInterval(interval);
-          setIsLaunching(false);
-          setCountdown(null);
-          setActiveSeriesId(selectedSeries);
-          setSelectedSeries(null);
-          setCurrentQIndex(0);
-          setCurrentWTaskIndex(0);
-          setAnswers({});
-          setWritingAnswers({ 1: '', 2: '', 3: '' });
-          setTimeRemaining(3600); // 60 mins
-          setIsExamFinished(false);
-          triggerToast(`Series ${selectedSeries} TCF Practice Session started!`, 'success');
-          return 0;
-        }
-        return prev - 1;
-      });
+      currentCountdown -= 1;
+      if (currentCountdown <= 0) {
+        clearInterval(interval);
+        setIsLaunching(false);
+        setCountdown(null);
+        setActiveSeriesId(selectedSeries);
+        setSelectedSeries(null);
+        setCurrentQIndex(0);
+        setCurrentWTaskIndex(0);
+        setAnswers({});
+        setWritingAnswers({ 1: '', 2: '', 3: '' });
+        setTimeRemaining(3600); // 60 mins
+        setIsExamFinished(false);
+        triggerToast(`Series ${selectedSeries} TCF Practice Session started!`, 'success');
+      } else {
+        setCountdown(currentCountdown);
+      }
     }, 600);
   };
 
@@ -265,7 +296,6 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
 
   // Grade exam and calculate results
   const handleFinishExam = async () => {
-    if (timerRef.current) clearInterval(timerRef.current);
     setShowNavGrid(false);
 
     if (sectionType === 'WRITING') {
@@ -298,6 +328,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
         setWritingEvaluations(evaluations);
         setIsExamFinished(true);
         triggerToast('Written tasks submitted and graded by AI!', 'success');
+        saveSeriesCompletion(activeSeriesId);
       } catch (err) {
         console.error('Failed to grade writing tasks:', err);
         triggerToast('Failed to evaluate writing tasks. Please check your connection.', 'warning');
@@ -307,6 +338,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
     } else {
       setIsExamFinished(true);
       triggerToast('Answers submitted and graded!', 'success');
+      saveSeriesCompletion(activeSeriesId);
     }
   };
 
@@ -494,7 +526,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
           width: '100%',
           display: 'flex',
           flexDirection: 'column',
-          overflow: 'hidden'
+          overflow: isMobile ? 'auto' : 'hidden'
         }}
       >
         {/* Toast Notification Mount */}
@@ -636,7 +668,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
             flex: 1,
             display: isMobile ? 'flex' : 'grid',
             flexDirection: isMobile ? 'column' : undefined,
-            gridTemplateColumns: isMobile ? undefined : 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: isMobile ? undefined : '1fr 1fr',
             height: isMobile ? 'auto' : 'calc(100vh - 140px)',
             overflow: isMobile ? 'visible' : 'hidden'
           }}
@@ -1085,7 +1117,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
           width: '100%',
           display: 'flex',
           flexDirection: 'column',
-          overflow: 'hidden'
+          overflow: isMobile ? 'auto' : 'hidden'
         }}
       >
         <AnimatePresence>
@@ -1185,7 +1217,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
         <main
           style={{
             flex: 1, display: isMobile ? 'flex' : 'grid', flexDirection: isMobile ? 'column' : undefined,
-            gridTemplateColumns: isMobile ? undefined : 'repeat(auto-fit, minmax(320px, 1fr))',
+            gridTemplateColumns: isMobile ? undefined : '1fr 1fr',
             height: isMobile ? 'auto' : 'calc(100vh - 140px)', overflow: isMobile ? 'visible' : 'hidden'
           }}
         >
@@ -1818,7 +1850,35 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
 
   // --- RENDER SCREEN 1: PROFESSIONAL EXAM SIMULATOR (THE 2-COLUMN STATE PANEL) ---
   if (activeSeriesId !== null && !isExamFinished) {
-    const currentQuestion = questions[currentQIndex];
+    if (!questions || questions.length === 0) {
+      return (
+        <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f8fafc', flexDirection: 'column', gap: '1.5rem' }}>
+          <p style={{ color: 'hsl(var(--text-secondary))', fontWeight: 600 }}>No questions available for this series.</p>
+          <button 
+            className="btn-primary" 
+            onClick={handleRestartTraining}
+            style={{ padding: '0.6rem 1.5rem', borderRadius: '0.5rem', fontSize: '0.85rem' }}
+          >
+            Go Back to Series
+          </button>
+        </div>
+      );
+    }
+    const currentQuestion = questions[currentQIndex] || questions[0];
+    if (!currentQuestion) {
+      return (
+        <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#f8fafc', flexDirection: 'column', gap: '1.5rem' }}>
+          <p style={{ color: 'hsl(var(--text-secondary))', fontWeight: 600 }}>Question not found.</p>
+          <button 
+            className="btn-primary" 
+            onClick={handleRestartTraining}
+            style={{ padding: '0.6rem 1.5rem', borderRadius: '0.5rem', fontSize: '0.85rem' }}
+          >
+            Go Back to Series
+          </button>
+        </div>
+      );
+    }
     const isAnswered = (id: number) => !!answers[id];
     const selectedOption = answers[currentQuestion.id];
     const isLastQ = currentQIndex === questions.length - 1;
@@ -1827,11 +1887,12 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
       <div 
         style={{ 
           backgroundColor: '#f8fafc', 
-          minHeight: '100vh',
+          height: isMobile ? 'auto' : '100vh',
+          minHeight: isMobile ? '100vh' : '0',
           width: '100%',
           display: 'flex',
           flexDirection: 'column',
-          overflow: 'hidden'
+          overflow: isMobile ? 'auto' : 'hidden'
         }}
       >
         {/* Toast Notification Mount */}
@@ -1955,10 +2016,10 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
         <main
           style={{
             flex: 1,
+            minHeight: 0,
             display: isMobile ? 'flex' : 'grid',
             flexDirection: isMobile ? 'column' : undefined,
-            gridTemplateColumns: isMobile ? undefined : 'repeat(auto-fit, minmax(320px, 1fr))',
-            height: isMobile ? 'auto' : 'calc(100vh - 140px)',
+            gridTemplateColumns: isMobile ? undefined : '1fr 1fr',
             overflow: isMobile ? 'visible' : 'hidden'
           }}
         >
@@ -1972,7 +2033,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
               backgroundColor: 'white',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
+              justifyContent: 'flex-start',
               alignItems: 'center',
               position: 'relative',
               width: '100%'
@@ -2089,7 +2150,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
               overflowY: isMobile ? 'visible' : 'auto',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center',
+              justifyContent: 'flex-start',
               width: '100%'
             }}
           >
@@ -2182,6 +2243,92 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
                     </button>
                   );
                 })}
+              </div>
+
+              {/* Question-level navigation helper */}
+              <div 
+                style={{ 
+                  display: 'flex', 
+                  justifyContent: 'space-between', 
+                  marginTop: '2rem', 
+                  gap: '1rem',
+                  borderTop: '1px solid #e2e8f0',
+                  paddingTop: '1.5rem'
+                }}
+              >
+                <button
+                  onClick={() => setCurrentQIndex(prev => Math.max(0, prev - 1))}
+                  disabled={currentQIndex === 0}
+                  style={{
+                    padding: '0.65rem 1.25rem',
+                    borderRadius: '0.6rem',
+                    border: '1.5px solid #cbd5e1',
+                    backgroundColor: 'white',
+                    color: currentQIndex === 0 ? '#94a3b8' : '#475569',
+                    fontWeight: 700,
+                    fontSize: '0.85rem',
+                    cursor: currentQIndex === 0 ? 'not-allowed' : 'pointer',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '0.35rem',
+                    transition: 'all 0.15s ease'
+                  }}
+                  onMouseEnter={(e) => { if (currentQIndex !== 0) e.currentTarget.style.backgroundColor = '#f8fafc'; }}
+                  onMouseLeave={(e) => { if (currentQIndex !== 0) e.currentTarget.style.backgroundColor = 'white'; }}
+                >
+                  <ChevronLeft size={16} />
+                  Previous Question
+                </button>
+
+                {isLastQ ? (
+                  <button
+                    onClick={handleFinishExam}
+                    style={{
+                      padding: '0.65rem 1.5rem',
+                      borderRadius: '0.6rem',
+                      border: 'none',
+                      backgroundColor: '#10b981',
+                      color: 'white',
+                      fontWeight: 700,
+                      fontSize: '0.85rem',
+                      cursor: 'pointer',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.35rem',
+                      boxShadow: '0 4px 6px rgba(16,185,129,0.15)',
+                      transition: 'all 0.15s ease'
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#059669'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#10b981'; }}
+                  >
+                    Finish Practice
+                    <CheckCircle2 size={16} />
+                  </button>
+                ) : (
+                  <button
+                    onClick={() => setCurrentQIndex(prev => Math.min(questions.length - 1, prev + 1))}
+                    style={{
+                      padding: '0.65rem 1.5rem',
+                      borderRadius: '0.6rem',
+                      border: 'none',
+                      backgroundColor: '#2563eb',
+                      color: 'white',
+                      fontWeight: 700,
+                      fontSize: '0.85rem',
+                      cursor: 'pointer',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '0.35rem',
+                      boxShadow: '0 4px 6px rgba(37,99,235,0.15)',
+                      transition: 'all 0.15s ease'
+                    }}
+                    onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#1d4ed8'; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#2563eb'; }}
+                  >
+                    Next Question
+                    <ChevronRight size={16} />
+                  </button>
+                )}
               </div>
             </div>
           </section>
@@ -2449,9 +2596,10 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
                 animate={{ opacity: 1, scale: 1, y: 0 }}
                 exit={{ opacity: 0, scale: 0.95, y: 15 }}
                 style={{
-                  width: '100%', maxWidth: '720px', backgroundColor: 'white',
+                  width: '100%', maxWidth: '720px', maxHeight: '85vh', backgroundColor: 'white',
                   borderRadius: '2rem', padding: '3.5rem 3rem', position: 'relative',
-                  border: '2px solid #3b82f6', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.3)'
+                  border: '2px solid #3b82f6', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.3)',
+                  display: 'flex', flexDirection: 'column', overflow: 'hidden'
                 }}
                 onClick={(e) => e.stopPropagation()}
               >
@@ -2480,7 +2628,7 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
                     fontSize: '1.65rem', color: '#334155', lineHeight: 1.8,
                     fontWeight: 500, fontFamily: 'Georgia, serif', whiteSpace: 'pre-wrap',
                     padding: '2rem', backgroundColor: '#f8fafc', borderRadius: '1.25rem',
-                    border: '1.5px dashed #cbd5e1'
+                    border: '1.5px dashed #cbd5e1', overflowY: 'auto', flex: 1, minHeight: 0
                   }}
                 >
                   {currentQuestion.posterText}

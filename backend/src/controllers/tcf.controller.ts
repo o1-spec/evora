@@ -338,4 +338,64 @@ export class TcfController {
       return res.status(500).json({ error: 'Failed to retrieve exam attempt history.' });
     }
   }
+
+  /**
+   * Get all completed training series IDs for the current user and a section type
+   */
+  public static async getSeriesProgress(req: AuthenticatedRequest, res: Response) {
+    try {
+      if (!req.user) return res.status(401).json({ error: 'Unauthorized' });
+      const userId = req.user.id;
+      const { sectionType } = req.query as { sectionType?: string };
+
+      const where: any = { userId };
+      if (sectionType) where.sectionType = sectionType.toUpperCase();
+
+      const records = await (prisma as any).userSeriesProgress.findMany({
+        where,
+        select: { seriesId: true, sectionType: true, completedAt: true }
+      });
+
+      return res.status(200).json({ completedSeries: records });
+    } catch (error) {
+      console.error('Get series progress error:', error);
+      return res.status(500).json({ error: 'Failed to fetch series progress.' });
+    }
+  }
+
+  /**
+   * Save a completed training series for the current user
+   */
+  public static async saveSeriesProgress(req: AuthenticatedRequest, res: Response) {
+    try {
+      if (!req.user) return res.status(401).json({ error: 'Unauthorized' });
+      const userId = req.user.id;
+      const { sectionType, seriesId } = req.body as { sectionType: string; seriesId: number };
+
+      if (!sectionType || !seriesId) {
+        return res.status(400).json({ error: 'sectionType and seriesId are required.' });
+      }
+
+      await (prisma as any).userSeriesProgress.upsert({
+        where: {
+          userId_sectionType_seriesId: {
+            userId,
+            sectionType: sectionType.toUpperCase(),
+            seriesId: Number(seriesId)
+          }
+        },
+        update: { completedAt: new Date() },
+        create: {
+          userId,
+          sectionType: sectionType.toUpperCase(),
+          seriesId: Number(seriesId)
+        }
+      });
+
+      return res.status(200).json({ message: 'Series completion saved.' });
+    } catch (error) {
+      console.error('Save series progress error:', error);
+      return res.status(500).json({ error: 'Failed to save series progress.' });
+    }
+  }
 }

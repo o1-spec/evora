@@ -3,6 +3,8 @@ import type { Application, Request, Response } from 'express';
 const expressLib = require('express');
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const cors = require('cors');
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const cookieParser = require('cookie-parser');
 import * as path from 'path';
 import authRouter from './routes/auth.routes';
 import learningRouter from './routes/learning.routes';
@@ -27,6 +29,8 @@ app.use('/api/billing', billingRouter);
 // Standard parsers for all other routes
 app.use(expressLib.json());
 app.use(expressLib.urlencoded({ extended: true }));
+app.use(cookieParser());
+
 
 // Serve static assets (e.g. generated voice files)
 app.use('/static', expressLib.static(path.join(__dirname, '../public')));

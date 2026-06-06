@@ -22,7 +22,8 @@ const NAV_LINKS = [
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   const router = useRouter();
   const pathname = usePathname();
-  const { user, logout } = useAuthStore();
+  const { user, logout, isLoading } = useAuthStore();
+
   const [mounted, setMounted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showSignOutModal, setShowSignOutModal] = useState(false);
@@ -31,17 +32,21 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
   useEffect(() => {
     setMounted(true);
-    const saved = localStorage.getItem('sidebar-collapsed');
-    if (saved !== null) {
-      setIsCollapsed(saved === 'true');
+    // Read sidebar pref from a plain JS-accessible cookie
+    const match = document.cookie.match(/(?:^|;\s*)sidebar-collapsed=([^;]*)/);
+    if (match) {
+      setIsCollapsed(match[1] === 'true');
     }
   }, []);
 
+
   useEffect(() => {
-    if (mounted && !user) {
+    // Only redirect when the session restore has finished and there's still no user
+    if (mounted && !isLoading && !user) {
       router.push('/login');
     }
-  }, [mounted, user, router]);
+  }, [mounted, isLoading, user, router]);
+
 
   const { data: profile } = useQuery({
     queryKey: ['user-profile'],
@@ -57,7 +62,68 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     window.location.href = '/';
   };
 
-  if (!mounted || !user) return null;
+  // Show a full-page loader while the session cookie is being verified
+  if (!mounted || isLoading) {
+    return (
+      <div style={{
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'hsl(var(--bg-base))',
+        gap: '1.5rem',
+      }}>
+        {/* Animated logo mark */}
+        <motion.div
+          animate={{ scale: [1, 1.08, 1], opacity: [0.7, 1, 0.7] }}
+          transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+          style={{
+            width: 52,
+            height: 52,
+            borderRadius: 14,
+            backgroundColor: 'hsl(var(--primary))',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            boxShadow: '0 8px 24px hsla(var(--primary), 0.35)',
+          }}
+        >
+          <Globe size={26} color="white" />
+        </motion.div>
+
+        {/* Spinner ring */}
+        <div style={{ position: 'relative', width: 40, height: 40 }}>
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 0.9, repeat: Infinity, ease: 'linear' }}
+            style={{
+              width: 40,
+              height: 40,
+              borderRadius: '50%',
+              border: '3px solid hsl(var(--border))',
+              borderTopColor: 'hsl(var(--primary))',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+            }}
+          />
+        </div>
+
+        <p style={{
+          fontFamily: 'Outfit, sans-serif',
+          fontSize: '0.875rem',
+          fontWeight: 500,
+          color: 'hsl(var(--text-secondary))',
+          letterSpacing: '0.01em',
+        }}>
+          Restoring your session…
+        </p>
+      </div>
+    );
+  }
+
+  if (!user) return null;
 
   return (
     <div
@@ -83,7 +149,8 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
           onClick={() => {
             const newVal = !isCollapsed;
             setIsCollapsed(newVal);
-            localStorage.setItem('sidebar-collapsed', String(newVal));
+            // Store in a plain cookie (1-year expiry, JS-readable, not httpOnly)
+            document.cookie = `sidebar-collapsed=${newVal}; max-age=${365 * 24 * 3600}; path=/; SameSite=Lax`;
           }}
           style={{
             display: 'flex',

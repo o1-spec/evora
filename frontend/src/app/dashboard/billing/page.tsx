@@ -25,7 +25,7 @@ export default function BillingPage() {
           subscriptionTier: data.user.subscriptionTier,
         };
         useAuthStore.setState({ user: updatedUserObj });
-        localStorage.setItem('user', JSON.stringify(updatedUserObj));
+
       }
       setSyncError(null);
       setSyncMessage('Subscription status successfully synchronized!');
