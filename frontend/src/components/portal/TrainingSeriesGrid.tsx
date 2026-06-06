@@ -12,6 +12,7 @@ import {
 import { readingQuestions, listeningQuestions, writtenTasks, oralTasks, TcfQuestionData, TcfWrittenTaskData, TcfOralTaskData } from '@/lib/tcfQuestions';
 import api from '@/lib/api';
 import PublicLayout from '@/components/portal/PublicLayout';
+import { useAuthStore } from '@/store/useAuthStore';
 
 interface TrainingSeriesGridProps {
   sectionType: 'READING' | 'WRITING' | 'LISTENING' | 'SPEAKING';
@@ -54,6 +55,7 @@ const SECTION_METADATA = {
 };
 
 export default function TrainingSeriesGrid({ sectionType, title }: TrainingSeriesGridProps) {
+  const { user } = useAuthStore();
   const meta = SECTION_METADATA[sectionType];
   const IconComponent = meta.icon;
 
@@ -198,7 +200,8 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
   // Generate 40 simulated Series
   const seriesList = Array.from({ length: 40 }, (_, i) => {
     const id = i + 1;
-    const isUnlocked = id <= 3;
+    const isPremiumUser = user?.subscriptionTier && user.subscriptionTier !== 'FREE';
+    const isUnlocked = isPremiumUser || id <= 3;
     const isFinished = id === 1; 
     
     // Dynamic series parameters based on sectionType
