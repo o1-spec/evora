@@ -129,12 +129,12 @@ export default function PricingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="p-6 md:p-10"
               style={{
                 position: "relative",
                 display: "flex",
                 flexDirection: "column",
                 borderRadius: "1.25rem",
-                padding: "2.5rem 2rem",
                 backgroundColor: "white",
                 border: plan.highlight
                   ? "2px solid hsl(var(--primary))"

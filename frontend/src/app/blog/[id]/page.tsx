@@ -132,10 +132,9 @@ export default function BlogPostDetailPage({ params }: BlogPostPageProps) {
         <div style={{ maxWidth: "800px", margin: "0 auto", width: "100%" }}>
           {/* Main Card holding text */}
           <div 
-            className="card" 
+            className="card p-6 md:p-12" 
             style={{ 
               backgroundColor: "white", 
-              padding: "3rem 2.5rem", 
               borderRadius: "1.5rem", 
               boxShadow: "0 4px 20px -2px rgba(0,0,0,0.03)",
               marginBottom: "4rem"

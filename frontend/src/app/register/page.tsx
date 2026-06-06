@@ -313,12 +313,12 @@ export default function RegisterPage() {
             initial={{ opacity: 0, y: 20 }} 
             animate={{ opacity: 1, y: 0 }} 
             transition={{ duration: 0.5, ease: 'easeOut' }} 
+            className="p-6 sm:p-10"
             style={{ 
               width: '100%', 
               maxWidth: 480,
               backgroundColor: 'white',
               borderRadius: '2rem',
-              padding: '2.5rem',
               boxShadow: '0 25px 50px -12px rgba(15, 23, 42, 0.04), 0 0 0 1px rgba(15, 23, 42, 0.02)',
               border: '1px solid rgba(226, 232, 240, 0.8)'
             }}

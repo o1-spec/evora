@@ -25,7 +25,7 @@ const storage: StorageEngine = multerFn.diskStorage({
   },
 });
 
-const upload = multerFn({ storage, limits: { fileSize: 15 * 1024 * 1024 } });
+const upload = multerFn({ storage, limits: { fileSize: 4 * 1024 * 1024 } });
 
 const router = Router();
 

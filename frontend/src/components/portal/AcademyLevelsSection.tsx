@@ -107,9 +107,8 @@ export default function AcademyLevelsSection() {
           {LEVELS.map((level) => (
             <div
               key={level.code}
-              className="card"
+              className="card p-6 md:p-8"
               style={{
-                padding: "2rem",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",

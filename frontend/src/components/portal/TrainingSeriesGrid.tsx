@@ -1592,13 +1592,12 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="card-elevated"
+          className="card-elevated p-6 sm:p-12"
           style={{
             width: '100%',
             maxWidth: '820px',
             backgroundColor: 'white',
             borderRadius: '2rem',
-            padding: '3rem',
             border: '1px solid rgba(255,255,255,0.7)',
             position: 'relative'
           }}
@@ -1978,10 +1977,10 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
           >
             {/* Sleek watermarked sheet */}
             <div
+              className="p-6 sm:p-10"
               style={{
                 width: '100%',
                 maxWidth: '560px',
-                padding: '2.5rem',
                 borderRadius: '1.25rem',
                 border: '1.5px dashed #cbd5e1',
                 backgroundColor: '#fafbfc',
@@ -2530,13 +2529,12 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="card-elevated"
+          className="card-elevated p-6 sm:p-12"
           style={{
             width: '100%',
             maxWidth: '820px',
             backgroundColor: 'white',
             borderRadius: '2rem',
-            padding: '3rem',
             border: '1px solid rgba(255,255,255,0.7)',
             position: 'relative'
           }}
@@ -2784,13 +2782,12 @@ export default function TrainingSeriesGrid({ sectionType, title }: TrainingSerie
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="card-elevated"
+          className="card-elevated p-6 sm:p-10"
           style={{
             width: '100%',
             maxWidth: '640px',
             backgroundColor: 'white',
             borderRadius: '2rem',
-            padding: '3rem',
             textAlign: 'center',
             border: '1px solid rgba(255,255,255,0.7)',
             position: 'relative',

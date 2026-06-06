@@ -73,7 +73,15 @@ export class StripeService {
     }
 
     // Sandbox Mock Checkout: Immediately return a special internal sandbox URL that triggers instant mock upgrades
-    return `/billing/sandbox-success?tier=${tier}&userId=${userId}`;
+    let origin = 'http://localhost:3000';
+    if (successUrl) {
+      try {
+        origin = new URL(successUrl).origin;
+      } catch (err) {
+        console.error('Failed to parse successUrl origin, using default localhost origin:', err);
+      }
+    }
+    return `${origin}/billing/sandbox-success?tier=${tier}&userId=${userId}`;
   }
 
   /**

@@ -100,10 +100,10 @@ export default function TrainingPage() {
 
           {/* Catalog CTA banner */}
           <div
+            className="p-6 md:p-10"
             style={{
               backgroundColor: "white",
               borderRadius: "1rem",
-              padding: "2.5rem",
               border: "1px solid hsl(var(--border))",
               textAlign: "center",
               maxWidth: "800px",

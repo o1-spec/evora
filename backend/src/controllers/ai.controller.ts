@@ -5,6 +5,7 @@ import { WhisperService } from '../services/whisper.service';
 import { OpenAIService } from '../services/openai.service';
 import { ElevenLabsService } from '../services/elevenlabs.service';
 import * as path from 'path';
+import { getAudioDuration } from '../utils/audio';
 import * as fs from 'fs';
 // eslint-disable-next-line @typescript-eslint/no-require-imports
 const axios = require('axios').default || require('axios');
@@ -24,8 +25,18 @@ export class AiController {
       const userId = req.user.id;
       const audioFilePath = req.file.path;
       const { taskInstruction } = req.body;
-
       const instruction = taskInstruction || "Exercice général de prononciation française.";
+
+      // Validate audio duration (max 5 minutes / 300 seconds)
+      const duration = await getAudioDuration(audioFilePath);
+      if (duration !== null && duration > 300) {
+        try {
+          fs.unlinkSync(audioFilePath);
+        } catch (err) {
+          console.error('Failed to delete temp audio file:', err);
+        }
+        return res.status(422).json({ error: 'La durée de l\'audio dépasse la limite autorisée de 5 minutes (300 secondes).' });
+      }
 
       // 1. Transcribe audio using Whisper
       const transcript = await WhisperService.transcribeAudio(audioFilePath);
@@ -224,6 +235,17 @@ Comment puis-je vous aider aujourd'hui ? Voulez-vous qu'on révise la différenc
       if (!req.user) return res.status(401).json({ error: 'Unauthorized' });
 
       const audioFilePath = req.file.path;
+
+      // Validate audio duration (max 5 minutes / 300 seconds)
+      const duration = await getAudioDuration(audioFilePath);
+      if (duration !== null && duration > 300) {
+        try {
+          fs.unlinkSync(audioFilePath);
+        } catch (err) {
+          console.error('Failed to delete temp audio file:', err);
+        }
+        return res.status(422).json({ error: 'La durée de l\'audio dépasse la limite autorisée de 5 minutes (300 secondes).' });
+      }
 
       // Transcribe via Whisper
       const transcript = await WhisperService.transcribeAudio(audioFilePath);

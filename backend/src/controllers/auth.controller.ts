@@ -168,7 +168,7 @@ export class AuthController {
       });
 
       if (!session || session.expiresAt < new Date()) {
-        if (session) await prisma.session.delete({ where: { id: session.id } });
+        if (session) await prisma.session.deleteMany({ where: { id: session.id } });
         return res.status(401).json({ error: 'Session invalide ou expirée.' });
       }
 
@@ -177,7 +177,7 @@ export class AuthController {
       try {
         decoded = jwt.verify(refreshToken, JWT_REFRESH_SECRET);
       } catch (err) {
-        await prisma.session.delete({ where: { id: session.id } });
+        await prisma.session.deleteMany({ where: { id: session.id } });
         return res.status(401).json({ error: 'Refresh token invalide.' });
       }
 
@@ -188,7 +188,7 @@ export class AuthController {
       const newRefreshToken = jwt.sign({ id: user.id }, JWT_REFRESH_SECRET, { expiresIn: JWT_REFRESH_EXPIRY as any });
 
       // Delete old session and insert new rotated session
-      await prisma.session.delete({ where: { id: session.id } });
+      await prisma.session.deleteMany({ where: { id: session.id } });
 
       const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
       await prisma.session.create({
