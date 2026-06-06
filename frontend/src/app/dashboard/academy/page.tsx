@@ -152,50 +152,53 @@ function ProgressBar({ value, color }: { value: number; color: string }) {
   );
 }
 
-function SkillCard({ skill, bandColor }: { skill: typeof TCF_BANDS[0]['skills'][0]; bandColor: string }) {
+function SkillCard({ skill, bandColor, isLocked = false }: { skill: typeof TCF_BANDS[0]['skills'][0]; bandColor: string; isLocked?: boolean }) {
   const Icon = skill.icon;
-  const pct = Math.round((skill.done / skill.exercises) * 100);
-  return (
-    <Link href={skill.href} style={{ textDecoration: 'none' }}>
-      <div
-        className="card"
-        style={{
-          padding: '1.25rem',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '0.75rem',
-          height: '100%',
-          transition: 'box-shadow 0.2s, transform 0.15s',
-          cursor: 'pointer',
-        }}
-        onMouseOver={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-2px)'; }}
-        onMouseOut={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; }}
-      >
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <div style={{ width: 34, height: 34, borderRadius: 8, backgroundColor: `${bandColor}18`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Icon size={17} color={bandColor} />
-            </div>
-            <div>
-              <div style={{ fontSize: '0.85rem', fontWeight: 700, color: 'hsl(var(--text-primary))' }}>{skill.label}</div>
-              <div style={{ fontSize: '0.7rem', color: 'hsl(var(--text-muted))' }}>{skill.sub}</div>
-            </div>
+  const pct = skill.exercises > 0 ? Math.round((skill.done / skill.exercises) * 100) : 0;
+
+  const inner = (
+    <div
+      className="card"
+      style={{
+        padding: '1.25rem',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '0.75rem',
+        height: '100%',
+        transition: 'box-shadow 0.2s, transform 0.15s',
+        cursor: isLocked ? 'not-allowed' : 'pointer',
+      }}
+      onMouseOver={!isLocked ? (e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-2px)'; }) : undefined}
+      onMouseOut={!isLocked ? (e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; }) : undefined}
+    >
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <div style={{ width: 34, height: 34, borderRadius: 8, backgroundColor: isLocked ? 'hsl(var(--bg-base))' : `${bandColor}18`, display: 'flex', alignItems: 'center', justifyContent: 'center', border: isLocked ? '1px solid hsl(var(--border))' : 'none' }}>
+            {isLocked ? <Lock size={15} color="hsl(var(--text-muted))" /> : <Icon size={17} color={bandColor} />}
           </div>
-          <ChevronRight size={14} color="hsl(var(--text-muted))" />
+          <div>
+            <div style={{ fontSize: '0.85rem', fontWeight: 700, color: isLocked ? 'hsl(var(--text-muted))' : 'hsl(var(--text-primary))' }}>{skill.label}</div>
+            <div style={{ fontSize: '0.7rem', color: 'hsl(var(--text-muted))' }}>{isLocked ? 'Locked' : skill.sub}</div>
+          </div>
         </div>
-
-        <ProgressBar value={pct} color={bandColor} />
-
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem' }}>
-          <span style={{ color: 'hsl(var(--text-muted))' }}>{skill.done}/{skill.exercises} exercises</span>
-          <span style={{ fontWeight: 700, color: bandColor }}>{pct}%</span>
-        </div>
+        {!isLocked && <ChevronRight size={14} color="hsl(var(--text-muted))" />}
       </div>
-    </Link>
+
+      <ProgressBar value={isLocked ? 0 : pct} color={isLocked ? 'hsl(var(--border))' : bandColor} />
+
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem' }}>
+        <span style={{ color: 'hsl(var(--text-muted))' }}>{isLocked ? '—' : `${skill.done}/${skill.exercises} exercises`}</span>
+        <span style={{ fontWeight: 700, color: isLocked ? 'hsl(var(--text-muted))' : bandColor }}>{isLocked ? '—' : `${pct}%`}</span>
+      </div>
+    </div>
   );
+
+  if (isLocked) return <div style={{ opacity: 0.5 }}>{inner}</div>;
+  return <Link href={skill.href} style={{ textDecoration: 'none' }}>{inner}</Link>;
 }
 
-function ModuleCard({ mod, levelColor, levelCode }: { mod: { label: string; icon: any; count: number; done: number }; levelColor: string; levelCode: string }) {
+
+function ModuleCard({ mod, levelColor, levelCode, isLocked = false }: { mod: { label: string; icon: any; count: number; done: number }; levelColor: string; levelCode: string; isLocked?: boolean }) {
   const Icon = mod.icon;
   const pct = mod.count > 0 ? Math.round((mod.done / mod.count) * 100) : 0;
 
@@ -211,34 +214,39 @@ function ModuleCard({ mod, levelColor, levelCode }: { mod: { label: string; icon
   else if (lbl.includes('stylist')) tabParam = 'stylistic';
   else if (lbl.includes('masterclass')) tabParam = 'masterclass';
 
+  const inner = (
+    <div
+      className="card"
+      style={{
+        padding: '1.25rem',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '0.75rem',
+        height: '100%',
+        cursor: isLocked ? 'not-allowed' : 'pointer',
+        transition: 'transform 0.15s, box-shadow 0.2s',
+      }}
+      onMouseOver={!isLocked ? (e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-2px)'; }) : undefined}
+      onMouseOut={!isLocked ? (e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; }) : undefined}
+    >
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <div style={{ width: 34, height: 34, borderRadius: 8, backgroundColor: isLocked ? 'hsl(var(--bg-base))' : `${levelColor}18`, display: 'flex', alignItems: 'center', justifyContent: 'center', border: isLocked ? '1px solid hsl(var(--border))' : 'none' }}>
+          {isLocked ? <Lock size={15} color="hsl(var(--text-muted))" /> : <Icon size={17} color={levelColor} />}
+        </div>
+        <span style={{ fontSize: '0.85rem', fontWeight: 700, color: isLocked ? 'hsl(var(--text-muted))' : 'hsl(var(--text-primary))' }}>{mod.label}</span>
+      </div>
+      <ProgressBar value={isLocked ? 0 : pct} color={isLocked ? 'hsl(var(--border))' : levelColor} />
+      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem' }}>
+        <span style={{ color: 'hsl(var(--text-muted))' }}>{isLocked ? '—' : `${mod.done}/${mod.count} leçons`}</span>
+        <span style={{ fontWeight: 700, color: isLocked ? 'hsl(var(--text-muted))' : levelColor }}>{isLocked ? '—' : `${pct}%`}</span>
+      </div>
+    </div>
+  );
+
+  if (isLocked) return <div style={{ opacity: 0.5 }}>{inner}</div>;
   return (
     <Link href={`/dashboard/academy/${levelCode.toLowerCase()}?tab=${tabParam}`} style={{ textDecoration: 'none' }}>
-      <div
-        className="card"
-        style={{
-          padding: '1.25rem',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '0.75rem',
-          height: '100%',
-          cursor: 'pointer',
-          transition: 'transform 0.15s, box-shadow 0.2s',
-        }}
-        onMouseOver={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-2px)'; }}
-        onMouseOut={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; }}
-      >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <div style={{ width: 34, height: 34, borderRadius: 8, backgroundColor: `${levelColor}18`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Icon size={17} color={levelColor} />
-          </div>
-          <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'hsl(var(--text-primary))' }}>{mod.label}</span>
-        </div>
-        <ProgressBar value={pct} color={levelColor} />
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem' }}>
-          <span style={{ color: 'hsl(var(--text-muted))' }}>{mod.done}/{mod.count} leçons</span>
-          <span style={{ fontWeight: 700, color: levelColor }}>{pct}%</span>
-        </div>
-      </div>
+      {inner}
     </Link>
   );
 }
@@ -554,68 +562,81 @@ export default function AcademyPage() {
               ))}
 
               {/* Real data bands — shown once loaded */}
-              {!isLoading && tcfBands.map((band, bi) => (
-                <motion.div
-                  key={band.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: bi * 0.08 }}
-                >
-                  {/* Band Header */}
-                  <div
-                    style={{
-                      backgroundColor: band.bgColor,
-                      border: `1px solid ${band.borderColor}`,
-                      borderRadius: '1rem',
-                      padding: '1.25rem 1.5rem',
-                      marginBottom: '1rem',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      flexWrap: 'wrap',
-                      gap: '1rem',
-                    }}
+              {!isLoading && tcfBands.map((band, bi) => {
+                const isLocked = bi > 0 && (tcfBands[bi - 1]?.progress ?? 0) < 100;
+                return (
+                  <motion.div
+                    key={band.id}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: bi * 0.08 }}
                   >
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                      <span style={{ fontSize: '1.5rem', lineHeight: 1 }}>{band.emoji}</span>
-                      <div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                          <h2 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.1rem', fontWeight: 800, color: 'hsl(var(--text-primary))' }}>
-                            {band.label}
-                          </h2>
-                          <span style={{ fontSize: '0.7rem', fontWeight: 700, color: band.color, backgroundColor: `${band.color}18`, padding: '0.15rem 0.5rem', borderRadius: 999 }}>
-                            {band.cefr}
-                          </span>
-                          <span style={{ fontSize: '0.7rem', fontWeight: 700, color: 'hsl(var(--text-muted))', backgroundColor: 'hsl(var(--bg-base))', padding: '0.15rem 0.5rem', borderRadius: 999, border: '1px solid hsl(var(--border))' }}>
-                            {band.clb}
-                          </span>
-                          {band.recommended && (
-                            <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#f97316', backgroundColor: 'rgba(249,115,22,0.1)', padding: '0.15rem 0.5rem', borderRadius: 999 }}>
-                              ★ Recommended
+                    {/* Band Header */}
+                    <div
+                      style={{
+                        backgroundColor: isLocked ? 'hsl(var(--bg-base))' : band.bgColor,
+                        border: `1px solid ${isLocked ? 'hsl(var(--border))' : band.borderColor}`,
+                        borderRadius: '1rem',
+                        padding: '1.25rem 1.5rem',
+                        marginBottom: '1rem',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                        flexWrap: 'wrap',
+                        gap: '1rem',
+                      }}
+                    >
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                        <span style={{ fontSize: '1.5rem', lineHeight: 1, filter: isLocked ? 'grayscale(1) opacity(0.35)' : 'none' }}>{band.emoji}</span>
+                        <div>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                            <h2 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.1rem', fontWeight: 800, color: isLocked ? 'hsl(var(--text-secondary))' : 'hsl(var(--text-primary))' }}>
+                              {band.label}
+                            </h2>
+                            <span style={{ fontSize: '0.7rem', fontWeight: 700, color: isLocked ? 'hsl(var(--text-muted))' : band.color, backgroundColor: isLocked ? 'hsl(var(--bg-base))' : `${band.color}18`, padding: '0.15rem 0.5rem', borderRadius: 999, border: isLocked ? '1px solid hsl(var(--border))' : 'none' }}>
+                              {band.cefr}
                             </span>
-                          )}
+                            <span style={{ fontSize: '0.7rem', fontWeight: 700, color: 'hsl(var(--text-muted))', backgroundColor: 'hsl(var(--bg-base))', padding: '0.15rem 0.5rem', borderRadius: 999, border: '1px solid hsl(var(--border))' }}>
+                              {band.clb}
+                            </span>
+                            {band.recommended && !isLocked && (
+                              <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#f97316', backgroundColor: 'rgba(249,115,22,0.1)', padding: '0.15rem 0.5rem', borderRadius: 999 }}>
+                                ★ Recommended
+                              </span>
+                            )}
+                          </div>
+                          <p style={{ fontSize: '0.8rem', color: 'hsl(var(--text-secondary))', marginTop: '0.2rem', maxWidth: '520px' }}>
+                            {isLocked
+                              ? `🔒 Complete "${tcfBands[bi - 1].label}" (100%) to unlock this band.`
+                              : band.desc}
+                          </p>
                         </div>
-                        <p style={{ fontSize: '0.8rem', color: 'hsl(var(--text-secondary))', marginTop: '0.2rem', maxWidth: '520px' }}>
-                          {band.desc}
-                        </p>
                       </div>
+                      {isLocked ? (
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', backgroundColor: 'white', padding: '0.4rem 0.85rem', borderRadius: '0.5rem', border: '1px solid hsl(var(--border))' }}>
+                          <Lock size={13} color="hsl(var(--text-muted))" />
+                          <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'hsl(var(--text-muted))' }}>Locked</span>
+                        </div>
+                      ) : (
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.3rem', minWidth: '100px' }}>
+                          <span style={{ fontSize: '0.75rem', fontWeight: 700, color: band.color }}>{band.progress}% complete</span>
+                          <div style={{ width: '100px' }}>
+                            <ProgressBar value={band.progress} color={band.color} />
+                          </div>
+                        </div>
+                      )}
                     </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.3rem', minWidth: '100px' }}>
-                      <span style={{ fontSize: '0.75rem', fontWeight: 700, color: band.color }}>{band.progress}% complete</span>
-                      <div style={{ width: '100px' }}>
-                        <ProgressBar value={band.progress} color={band.color} />
-                      </div>
-                    </div>
-                  </div>
 
-                  {/* Skill Cards Grid */}
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '1rem' }}>
-                    {band.skills.map((skill) => (
-                      <SkillCard key={skill.label} skill={skill} bandColor={band.color} />
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
+                    {/* Skill Cards Grid */}
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '1rem' }}>
+                      {band.skills.map((skill) => (
+                        <SkillCard key={skill.label} skill={skill} bandColor={band.color} isLocked={isLocked} />
+                      ))}
+                    </div>
+                  </motion.div>
+                );
+              })}
+
             </div>
           </motion.div>
         ) : (
@@ -725,60 +746,63 @@ export default function AcademyPage() {
               )}
 
               {/* Real level data — shown once loaded */}
-              {!isLoading && frenchLevels.map((level, li) => (
-                <motion.div
-                  key={level.code}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: li * 0.08 }}
-                >
-                  {/* Level Header */}
-                  <Link href={`/dashboard/academy/${level.code.toLowerCase()}`} style={{ textDecoration: 'none' }}>
-                    <div
-                      style={{
-                        backgroundColor: level.bgColor,
-                        border: `1px solid ${level.borderColor}`,
-                        borderRadius: '1rem',
-                        padding: '1.25rem 1.5rem',
-                        marginBottom: '1rem',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        flexWrap: 'wrap',
-                        gap: '1rem',
-                        cursor: 'pointer',
-                        transition: 'transform 0.15s, box-shadow 0.2s',
-                      }}
-                      onMouseOver={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-1px)'; }}
-                      onMouseOut={e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; }}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                        <div style={{
-                          width: 48, height: 48, borderRadius: 12,
-                          backgroundColor: `${level.color}18`,
-                          border: `2px solid ${level.borderColor}`,
-                          display: 'flex', alignItems: 'center', justifyContent: 'center',
-                          fontFamily: 'Outfit,sans-serif', fontWeight: 900, fontSize: '1rem', color: level.color,
-                          flexShrink: 0,
-                        }}>
-                          {level.code}
-                        </div>
-                        <div>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                            <h2 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.1rem', fontWeight: 800, color: 'hsl(var(--text-primary))' }}>
-                              {level.emoji} {level.title}
-                            </h2>
-                            {level.recommended && (
-                              <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.1)', padding: '0.15rem 0.5rem', borderRadius: 999 }}>
-                                ★ TCF Target Level
-                              </span>
-                            )}
-                          </div>
-                          <p style={{ fontSize: '0.8rem', color: 'hsl(var(--text-secondary))', marginTop: '0.2rem', maxWidth: '520px' }}>
-                            {level.desc}
-                          </p>
-                        </div>
+              {!isLoading && frenchLevels.map((level, li) => {
+                const isLocked = li > 0 && (frenchLevels[li - 1]?.progress ?? 0) < 100;
+                const levelHeaderInner = (
+                  <div
+                    style={{
+                      backgroundColor: isLocked ? 'hsl(var(--bg-base))' : level.bgColor,
+                      border: `1px solid ${isLocked ? 'hsl(var(--border))' : level.borderColor}`,
+                      borderRadius: '1rem',
+                      padding: '1.25rem 1.5rem',
+                      marginBottom: '1rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      flexWrap: 'wrap',
+                      gap: '1rem',
+                      cursor: isLocked ? 'default' : 'pointer',
+                      transition: 'transform 0.15s, box-shadow 0.2s',
+                    }}
+                    onMouseOver={!isLocked ? (e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-1px)'; }) : undefined}
+                    onMouseOut={!isLocked ? (e => { (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)'; }) : undefined}
+                  >
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                      <div style={{
+                        width: 48, height: 48, borderRadius: 12,
+                        backgroundColor: isLocked ? 'hsl(var(--bg-base))' : `${level.color}18`,
+                        border: `2px solid ${isLocked ? 'hsl(var(--border))' : level.borderColor}`,
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        fontFamily: 'Outfit,sans-serif', fontWeight: 900, fontSize: '1rem',
+                        color: isLocked ? 'hsl(var(--text-muted))' : level.color,
+                        flexShrink: 0,
+                      }}>
+                        {isLocked ? <Lock size={20} color="hsl(var(--text-muted))" /> : level.code}
                       </div>
+                      <div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
+                          <h2 style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.1rem', fontWeight: 800, color: isLocked ? 'hsl(var(--text-secondary))' : 'hsl(var(--text-primary))' }}>
+                            {isLocked ? level.code : `${level.emoji} ${level.title}`}
+                          </h2>
+                          {level.recommended && !isLocked && (
+                            <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#3b82f6', backgroundColor: 'rgba(59,130,246,0.1)', padding: '0.15rem 0.5rem', borderRadius: 999 }}>
+                              ★ TCF Target Level
+                            </span>
+                          )}
+                        </div>
+                        <p style={{ fontSize: '0.8rem', color: 'hsl(var(--text-secondary))', marginTop: '0.2rem', maxWidth: '520px' }}>
+                          {isLocked
+                            ? `🔒 Complete ${frenchLevels[li - 1].code} — ${frenchLevels[li - 1].title} (100%) to unlock this level.`
+                            : level.desc}
+                        </p>
+                      </div>
+                    </div>
+                    {isLocked ? (
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', backgroundColor: 'white', padding: '0.4rem 0.85rem', borderRadius: '0.5rem', border: '1px solid hsl(var(--border))' }}>
+                        <Lock size={13} color="hsl(var(--text-muted))" />
+                        <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'hsl(var(--text-muted))' }}>Locked</span>
+                      </div>
+                    ) : (
                       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.3rem', minWidth: '110px' }}>
                         <span style={{ fontSize: '0.75rem', fontWeight: 700, color: level.color }}>
                           {level.progress > 0 ? `${level.progress}% complete` : 'Not started'}
@@ -787,17 +811,32 @@ export default function AcademyPage() {
                           <ProgressBar value={level.progress} color={level.color} />
                         </div>
                       </div>
-                    </div>
-                  </Link>
-
-                  {/* Module Cards Grid */}
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '1rem' }}>
-                    {level.modules.map((mod: any) => (
-                      <ModuleCard key={mod.label} mod={mod} levelColor={level.color} levelCode={level.code} />
-                    ))}
+                    )}
                   </div>
-                </motion.div>
-              ))}
+                );
+                return (
+                  <motion.div
+                    key={level.code}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: li * 0.08 }}
+                  >
+                    {/* Level Header — clickable only when unlocked */}
+                    {isLocked
+                      ? levelHeaderInner
+                      : <Link href={`/dashboard/academy/${level.code.toLowerCase()}`} style={{ textDecoration: 'none' }}>{levelHeaderInner}</Link>
+                    }
+
+                    {/* Module Cards Grid */}
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '1rem' }}>
+                      {level.modules.map((mod: any) => (
+                        <ModuleCard key={mod.label} mod={mod} levelColor={level.color} levelCode={level.code} isLocked={isLocked} />
+                      ))}
+                    </div>
+                  </motion.div>
+                );
+              })}
+
             </div>
           </motion.div>
         )}
