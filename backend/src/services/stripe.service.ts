@@ -171,5 +171,90 @@ export class StripeService {
     }
   }
 
+  /**
+   * Sync a user's subscription status directly from Stripe API
+   */
+  public static async syncSubscriptionStatus(userId: string): Promise<any> {
+    const user = await prisma.user.findUnique({ where: { id: userId } });
+    if (!user) throw new Error('User not found');
+
+    if (this.stripe && user.stripeCustomerId) {
+      try {
+        const subscriptions = await this.stripe.subscriptions.list({
+          customer: user.stripeCustomerId,
+          status: 'active',
+          limit: 1
+        });
+
+        if (subscriptions.data.length > 0) {
+          const sub = subscriptions.data[0];
+          const priceId = sub.items.data[0]?.price.id;
+
+          let tier: SubscriptionTier = SubscriptionTier.FREE;
+          if (priceId === process.env.STRIPE_BASIC_PRICE_ID) tier = SubscriptionTier.BASIC;
+          else if (priceId === process.env.STRIPE_PREMIUM_PRICE_ID) tier = SubscriptionTier.PREMIUM;
+          else if (priceId === process.env.STRIPE_PRO_PRICE_ID) tier = SubscriptionTier.PRO;
+
+          const activeUntil = new Date(sub.current_period_end * 1000);
+
+          const updated = await prisma.user.update({
+            where: { id: userId },
+            data: {
+              subscriptionTier: tier,
+              subscriptionId: sub.id,
+              subActiveUntil: activeUntil
+            },
+            select: {
+              id: true,
+              email: true,
+              subscriptionTier: true,
+              subActiveUntil: true
+            }
+          });
+
+          return updated;
+        }
+      } catch (error) {
+        console.error('Stripe subscription list fetch error:', error);
+      }
+    }
+
+    // Fallback: If no active subscription is found on Stripe, or Stripe is not configured
+    // If the user currently has a mock subscription (sandbox), do not downgrade them
+    if (user.subscriptionId && user.subscriptionId.startsWith('sub_mock_sandbox_')) {
+      return {
+        id: user.id,
+        email: user.email,
+        subscriptionTier: user.subscriptionTier,
+        subActiveUntil: user.subActiveUntil
+      };
+    }
+
+    // Otherwise, downgrade to FREE if they had a Stripe subscription ID
+    if (user.subscriptionId) {
+      const updated = await prisma.user.update({
+        where: { id: userId },
+        data: {
+          subscriptionTier: SubscriptionTier.FREE,
+          subscriptionId: null,
+          subActiveUntil: null
+        },
+        select: {
+          id: true,
+          email: true,
+          subscriptionTier: true,
+          subActiveUntil: true
+        }
+      });
+      return updated;
+    }
+
+    return {
+      id: user.id,
+      email: user.email,
+      subscriptionTier: user.subscriptionTier,
+      subActiveUntil: user.subActiveUntil
+    };
+  }
 
 }

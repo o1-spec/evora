@@ -50,7 +50,7 @@ export default function RegisterPage() {
             <div style={{ fontSize: '1.25rem', fontWeight: 900, color: '#0f172a', fontFamily: 'Outfit, sans-serif' }}>Expression Écrite</div>
             <p style={{ fontSize: '0.7rem', color: '#64748b', marginTop: '0.25rem', lineHeight: 1.4 }}>Coherence Score: 88%</p>
             <div style={{ display: 'flex', gap: '0.25rem', marginTop: '0.75rem' }}>
-              {[1,2,3,4,5].map(i => <Star key={i} size={10} fill="#f59e0b" color="#f59e0b" />)}
+              {[1, 2, 3, 4, 5].map(i => <Star key={i} size={10} fill="#f59e0b" color="#f59e0b" />)}
             </div>
           </div>
 
@@ -82,9 +82,9 @@ export default function RegisterPage() {
       title: "39 Progressive Reading MCQs",
       description: "Excel at TCF Compréhension Écrite with authentic materials, including public announcements, classified ads, ecological news columns, and literary works.",
       element: (
-        <div style={{ 
-          width: '100%', maxWidth: '340px', margin: '0 auto', 
-          backgroundColor: 'white', borderRadius: '1.5rem', padding: '1.75rem', 
+        <div style={{
+          width: '100%', maxWidth: '340px', margin: '0 auto',
+          backgroundColor: 'white', borderRadius: '1.5rem', padding: '1.75rem',
           border: '1.5px solid #e2e8f0', boxShadow: '0 20px 40px -15px rgba(0,0,0,0.06)',
           textAlign: 'left', position: 'relative', overflow: 'hidden'
         }}>
@@ -102,19 +102,19 @@ export default function RegisterPage() {
           <h4 style={{ fontSize: '0.9rem', fontWeight: 800, color: '#0f172a', marginBottom: '1rem', lineHeight: 1.4 }}>
             Why are parcs limiting visitors according to the ecological news excerpt?
           </h4>
-          
+
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             {['To increase entrance ticket prices', 'To protect the local wildlife', 'To build new local infrastructure'].map((opt, i) => (
-              <div 
-                key={i} 
-                style={{ 
-                  display: 'flex', alignItems: 'center', gap: '0.6rem', padding: '0.6rem 0.85rem', 
+              <div
+                key={i}
+                style={{
+                  display: 'flex', alignItems: 'center', gap: '0.6rem', padding: '0.6rem 0.85rem',
                   borderRadius: '0.5rem', border: i === 1 ? '1.5px solid hsl(var(--primary))' : '1px solid #e2e8f0',
                   backgroundColor: i === 1 ? 'hsl(var(--primary-light))' : 'transparent',
                   fontSize: '0.75rem', fontWeight: i === 1 ? 700 : 500, color: i === 1 ? 'hsl(var(--primary-hover))' : '#334155'
                 }}
               >
-                <span style={{ 
+                <span style={{
                   width: 18, height: 18, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center',
                   backgroundColor: i === 1 ? 'hsl(var(--primary))' : '#f1f5f9', color: i === 1 ? 'white' : '#64748b', fontSize: '0.65rem', fontWeight: 900
                 }}>
@@ -134,9 +134,9 @@ export default function RegisterPage() {
       title: "Detailed CLB Scoreboards",
       description: "Track your active progress across all four French skills, see historical average bands, and target your official immigration scores successfully.",
       element: (
-        <div style={{ 
-          width: '100%', maxWidth: '340px', margin: '0 auto', 
-          backgroundColor: 'white', borderRadius: '1.5rem', padding: '1.75rem', 
+        <div style={{
+          width: '100%', maxWidth: '340px', margin: '0 auto',
+          backgroundColor: 'white', borderRadius: '1.5rem', padding: '1.75rem',
           border: '1.5px solid #e2e8f0', boxShadow: '0 20px 40px -15px rgba(0,0,0,0.06)',
           textAlign: 'left'
         }}>
@@ -191,11 +191,11 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen" style={{ 
+    <div className="flex flex-col lg:flex-row min-h-screen" style={{
       backgroundColor: '#f8fafc',
       background: 'radial-gradient(at 0% 0%, hsla(262, 83%, 58%, 0.04) 0px, transparent 50%), radial-gradient(at 100% 100%, hsla(262, 83%, 58%, 0.04) 0px, transparent 50%)'
     }}>
-      
+
       {/* Top Header - Logo (Mobile & Tablet) */}
       <div className="lg:hidden flex items-center justify-between p-5 border-b" style={{ borderColor: 'rgba(226, 232, 240, 0.8)', backgroundColor: 'rgba(255,255,255,0.8)', backdropFilter: 'blur(8px)', padding: '15px' }}>
         <Link href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', textDecoration: 'none' }}>
@@ -207,9 +207,9 @@ export default function RegisterPage() {
       </div>
 
       {/* Left side - Gorgeous UI Color-Matched Carousel Showcase (Desktop only) */}
-      <div 
-        className="hidden lg:flex flex-1 flex-col items-center justify-center p-16 relative overflow-hidden" 
-        style={{ 
+      <div
+        className="hidden lg:flex flex-1 flex-col items-center justify-center p-16 relative overflow-hidden"
+        style={{
           background: 'linear-gradient(135deg, hsl(214, 100%, 98%) 0%, hsl(220, 100%, 97%) 100%)',
           borderRight: '1px solid rgba(226,232,240,0.8)'
         }}
@@ -219,15 +219,15 @@ export default function RegisterPage() {
         <div style={{ position: 'absolute', bottom: '-10%', right: '-10%', width: '500px', height: '500px', borderRadius: '50%', background: 'radial-gradient(circle, rgba(16,185,129,0.04) 0%, transparent 70%)', filter: 'blur(40px)', pointerEvents: 'none' }} />
 
         {/* Animated Grid backing */}
-        <div style={{ 
-          position: 'absolute', inset: 0, 
+        <div style={{
+          position: 'absolute', inset: 0,
           backgroundImage: 'linear-gradient(rgba(15, 23, 42, 0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(15, 23, 42, 0.015) 1px, transparent 1px)',
           backgroundSize: '40px 40px',
           maskImage: 'radial-gradient(ellipse at center, black 40%, transparent 80%)'
         }} />
 
         <div style={{ maxWidth: 440, position: 'relative', zIndex: 10, textAlign: 'center' }}>
-          
+
           <AnimatePresence mode="wait">
             <motion.div
               key={activeSlide}
@@ -243,12 +243,12 @@ export default function RegisterPage() {
                 {currentSlide.badge}
               </div>
 
-              <h2 style={{ 
-                fontSize: '2.4rem', 
-                fontFamily: 'Outfit, sans-serif', 
-                fontWeight: 900, 
-                color: '#0f172a', 
-                lineHeight: 1.2, 
+              <h2 style={{
+                fontSize: '2.4rem',
+                fontFamily: 'Outfit, sans-serif',
+                fontWeight: 900,
+                color: '#0f172a',
+                lineHeight: 1.2,
                 marginBottom: '1rem',
                 letterSpacing: '-0.02em',
                 background: 'linear-gradient(to right, #0f172a, #334155)',
@@ -257,7 +257,7 @@ export default function RegisterPage() {
               }}>
                 {currentSlide.title}
               </h2>
-              
+
               <p style={{ fontSize: '1rem', color: '#475569', lineHeight: 1.6, marginBottom: '2.5rem', fontWeight: 500 }}>
                 {currentSlide.description}
               </p>
@@ -309,13 +309,13 @@ export default function RegisterPage() {
         </div>
 
         <div className="flex items-center justify-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.5, ease: 'easeOut' }} 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
             className="p-6 sm:p-10"
-            style={{ 
-              width: '100%', 
+            style={{
+              width: '100%',
               maxWidth: 480,
               backgroundColor: 'white',
               borderRadius: '2rem',
@@ -333,7 +333,7 @@ export default function RegisterPage() {
             <p style={{ color: '#64748b', marginBottom: '2rem', fontSize: '0.9rem', fontWeight: 500, lineHeight: 1.5 }}>Join Évora and start improving your French skills today.</p>
 
             {error && (
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 style={{ backgroundColor: '#fef2f2', color: '#b91c1c', padding: '1rem', borderRadius: '0.85rem', marginBottom: '1.75rem', fontSize: '0.85rem', fontWeight: 600, border: '1px solid #fee2e2', display: 'flex', gap: '0.5rem', alignItems: 'center' }}
@@ -356,8 +356,8 @@ export default function RegisterPage() {
                       value={formData.firstName}
                       onChange={handleChange}
                       className="input-field"
-                      style={{ 
-                        paddingLeft: '2.75rem', 
+                      style={{
+                        paddingLeft: '2.75rem',
                         padding: '0.85rem 1.25rem 0.85rem 2.75rem',
                         borderRadius: '0.85rem',
                         border: '1.5px solid #e2e8f0',
@@ -379,8 +379,8 @@ export default function RegisterPage() {
                       value={formData.lastName}
                       onChange={handleChange}
                       className="input-field"
-                      style={{ 
-                        paddingLeft: '2.75rem', 
+                      style={{
+                        paddingLeft: '2.75rem',
                         padding: '0.85rem 1.25rem 0.85rem 2.75rem',
                         borderRadius: '0.85rem',
                         border: '1.5px solid #e2e8f0',
@@ -404,8 +404,8 @@ export default function RegisterPage() {
                     value={formData.email}
                     onChange={handleChange}
                     className="input-field"
-                    style={{ 
-                      paddingLeft: '2.75rem', 
+                    style={{
+                      paddingLeft: '2.75rem',
                       padding: '0.85rem 1.25rem 0.85rem 2.75rem',
                       borderRadius: '0.85rem',
                       border: '1.5px solid #e2e8f0',
@@ -428,9 +428,9 @@ export default function RegisterPage() {
                     value={formData.password}
                     onChange={handleChange}
                     className="input-field"
-                    style={{ 
-                      paddingLeft: '2.75rem', 
-                      paddingRight: '2.75rem', 
+                    style={{
+                      paddingLeft: '2.75rem',
+                      paddingRight: '2.75rem',
                       padding: '0.85rem 2.75rem',
                       borderRadius: '0.85rem',
                       border: '1.5px solid #e2e8f0',
@@ -453,15 +453,15 @@ export default function RegisterPage() {
                 </div>
               </div>
 
-              <button 
-                type="submit" 
-                disabled={isLoading} 
-                className="btn-primary" 
-                style={{ 
-                  marginTop: '0.5rem', 
-                  width: '100%', 
-                  padding: '0.9rem', 
-                  fontSize: '0.95rem', 
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="btn-primary"
+                style={{
+                  marginTop: '0.5rem',
+                  width: '100%',
+                  padding: '0.9rem',
+                  fontSize: '0.95rem',
                   fontWeight: 700,
                   borderRadius: '0.85rem',
                   boxShadow: '0 8px 20px -4px rgba(59,130,246,0.3)',

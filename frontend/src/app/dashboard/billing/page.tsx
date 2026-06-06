@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useQuery, useMutation } from '@tanstack/react-query';
 import { motion } from 'framer-motion';
@@ -9,8 +10,33 @@ import { useAuthStore } from '@/store/useAuthStore';
 
 export default function BillingPage() {
   const { user } = useAuthStore();
-
   const router = useRouter();
+
+  const [syncMessage, setSyncMessage] = useState<string | null>(null);
+  const [syncError, setSyncError] = useState<string | null>(null);
+
+  const syncMutation = useMutation({
+    mutationFn: () => api.post('/billing/sync-status').then(r => r.data),
+    onSuccess: (data: any) => {
+      const currentStore = useAuthStore.getState();
+      if (currentStore.user && data.user) {
+        const updatedUserObj = {
+          ...currentStore.user,
+          subscriptionTier: data.user.subscriptionTier,
+        };
+        useAuthStore.setState({ user: updatedUserObj });
+        localStorage.setItem('user', JSON.stringify(updatedUserObj));
+      }
+      setSyncError(null);
+      setSyncMessage('Subscription status successfully synchronized!');
+      setTimeout(() => setSyncMessage(null), 5000);
+    },
+    onError: (err: any) => {
+      setSyncMessage(null);
+      setSyncError(err?.response?.data?.error || 'Failed to synchronize plan status. Please try again.');
+      setTimeout(() => setSyncError(null), 5000);
+    }
+  });
 
   const { data: plans, isLoading } = useQuery({
     queryKey: ['billing-plans'],
@@ -53,14 +79,71 @@ export default function BillingPage() {
         </p>
       </motion.div>
 
+      {/* Sync Status Notifications */}
+      {syncMessage && (
+        <div style={{
+          backgroundColor: 'rgba(34, 197, 94, 0.08)',
+          border: '1px solid rgba(34, 197, 94, 0.2)',
+          color: 'rgb(34, 197, 94)',
+          padding: '1rem',
+          borderRadius: '0.75rem',
+          marginBottom: '1.5rem',
+          fontSize: '0.9rem',
+          fontWeight: 500
+        }}>
+          ✓ {syncMessage}
+        </div>
+      )}
+      {syncError && (
+        <div style={{
+          backgroundColor: 'rgba(239, 68, 68, 0.08)',
+          border: '1px solid rgba(239, 68, 68, 0.2)',
+          color: 'rgb(239, 68, 68)',
+          padding: '1rem',
+          borderRadius: '0.75rem',
+          marginBottom: '1.5rem',
+          fontSize: '0.9rem',
+          fontWeight: 500
+        }}>
+          ⚠️ {syncError}
+        </div>
+      )}
+
       {/* Current Plan */}
       <div className="card" style={{ padding: '1.5rem 1.75rem', marginBottom: '2.5rem', borderLeft: `4px solid ${TIER_COLORS[user?.subscriptionTier || 'FREE']}` }}>
-        <div style={{ fontSize: '0.8rem', color: 'hsl(var(--text-secondary))', marginBottom: '0.375rem', fontWeight: 600, textTransform: 'uppercase' }}>Current Plan</div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-          <span style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.75rem', fontWeight: 800, color: TIER_COLORS[user?.subscriptionTier || 'FREE'] }}>
-            {user?.subscriptionTier || 'FREE'}
-          </span>
-          <span className="badge badge-primary" style={{ backgroundColor: `${TIER_COLORS[user?.subscriptionTier || 'FREE']}20`, color: TIER_COLORS[user?.subscriptionTier || 'FREE'] }}>Active</span>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
+          <div>
+            <div style={{ fontSize: '0.8rem', color: 'hsl(var(--text-secondary))', marginBottom: '0.375rem', fontWeight: 600, textTransform: 'uppercase' }}>Current Plan</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+              <span style={{ fontFamily: 'Outfit,sans-serif', fontSize: '1.75rem', fontWeight: 800, color: TIER_COLORS[user?.subscriptionTier || 'FREE'] }}>
+                {user?.subscriptionTier || 'FREE'}
+              </span>
+              <span className="badge badge-primary" style={{ backgroundColor: `${TIER_COLORS[user?.subscriptionTier || 'FREE']}20`, color: TIER_COLORS[user?.subscriptionTier || 'FREE'] }}>Active</span>
+            </div>
+          </div>
+          <button
+            onClick={() => syncMutation.mutate()}
+            disabled={syncMutation.isPending}
+            className="btn-secondary"
+            style={{
+              padding: '0.5rem 1.25rem',
+              fontSize: '0.85rem',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              borderRadius: '0.5rem',
+              cursor: 'pointer'
+            }}
+          >
+            {syncMutation.isPending ? (
+              <>
+                <Loader2 size={14} className="animate-spin" />
+                <span>Syncing...</span>
+              </>
+            ) : (
+              <span>Sync Plan Status</span>
+            )}
+          </button>
         </div>
       </div>
 

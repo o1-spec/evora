@@ -169,4 +169,24 @@ export class BillingController {
       return res.status(500).json({ error: 'Failed to activate mock subscription.' });
     }
   }
+
+  /**
+   * Fetch latest subscription status from Stripe and sync in local DB
+   */
+  public static async syncStatus(req: AuthenticatedRequest, res: Response) {
+    try {
+      if (!req.user) return res.status(401).json({ error: 'Unauthorized' });
+      const userId = req.user.id;
+
+      const syncedUser = await StripeService.syncSubscriptionStatus(userId);
+
+      return res.status(200).json({
+        message: 'Plan status successfully synchronized.',
+        user: syncedUser
+      });
+    } catch (error: any) {
+      console.error('Subscription sync error:', error);
+      return res.status(500).json({ error: error.message || 'Failed to synchronize active subscription status.' });
+    }
+  }
 }
