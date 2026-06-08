@@ -22,7 +22,10 @@ const IS_PROD = process.env.NODE_ENV === 'production';
 const REFRESH_COOKIE_OPTIONS = {
   httpOnly: true,
   secure: IS_PROD,                // HTTPS only in production
-  sameSite: IS_PROD ? 'strict' : 'lax',
+  // SameSite=None is required for cross-origin deployments (different frontend/backend domains).
+  // SameSite=Strict would block the cookie entirely for cross-origin requests.
+  // SameSite=None requires Secure=true, which is satisfied in production (HTTPS).
+  sameSite: IS_PROD ? 'none' : 'lax',
   path: '/',
   maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days in ms
 } as const;
@@ -32,7 +35,7 @@ function clearRefreshCookie(res: Response) {
   res.clearCookie('refreshToken', {
     httpOnly: true,
     secure: IS_PROD,
-    sameSite: IS_PROD ? 'strict' : 'lax',
+    sameSite: IS_PROD ? 'none' : 'lax',
     path: '/',
   });
 }

@@ -179,7 +179,8 @@ export default function RegisterPage() {
 
     try {
       await register(formData);
-      window.location.href = '/';
+      router.push('/dashboard');
+
     } catch (err: any) {
       setError(err.response?.data?.error || 'Failed to create account.');
       setIsLoading(false);
